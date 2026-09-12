@@ -140,7 +140,7 @@ Derived at planning time from attempts; nothing stored.
 - No code execution. Coding tasks are judged on the code as text against the rubric. Accepted loss: a syntactically wrong but conceptually right answer may pass.
 - Hint policy: up to 2 hints (from `payload.hints`), then answer shown → `incorrect`.
 - **MCQ consistency guard (2026-09-12):** generation must also return `correct_option_text`; an MCQ is kept only if it has exactly 4 options and `options[correct_option] === correct_option_text`, otherwise the same prompt is stored as `short_answer` (rubric-graded). Reason: the first live run produced a 5th option literally named "correct_option" with an index that contradicted the model's own expected outcome — rule-based grading would have marked right answers wrong.
-- `partial` counts as +30 and does not trigger a hint; the learner may retry once for a full-credit verdict (a retry after partial is treated as `with hint`).
+- `partial` counts as +30 and does not trigger a hint; the learner may retry once for a full-credit verdict (a retry after partial is treated as `with hint`). Implemented 2026-09-12 in `AttemptSession`: first partial sets `evidence.partial_retry`; a second non-correct answer enters the normal hint path; a later `correct` is stored as `correct_with_hint`. If the learner gives up after a partial, `result_status` is `incorrect` but `evidence.verdict` stays `partial` — MasteryService reads the verdict for the +30.
 
 **Revisit if.** Coding is the dominant use and the AI verdicts feel unreliable — then add a minimal PHP `proc_open` runner for Python with a timeout, single-file only.
 

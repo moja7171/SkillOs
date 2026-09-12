@@ -72,6 +72,7 @@
     .levelbar span { @apply block h-full; }
 
     .page { @apply px-4 sm:px-8 py-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]; }
+    .border-inline-end { border-inline-end-width: 1px; }
     .page-narrow { @apply px-4 sm:px-8 py-7 max-w-2xl mx-auto; }
 
     /* Rendered Markdown from AI text */
@@ -83,7 +84,7 @@
     .prose-fa ul { @apply list-disc; } .prose-fa ol { @apply list-decimal; }
     .prose-fa li { @apply my-1; }
     .prose-fa strong { @apply text-ink font-semibold; }
-    .prose-fa code { @apply px-1.5 py-0.5 rounded bg-code border border-line text-ink; direction: ltr; unicode-bidi: embed; }
+    .prose-fa code { @apply px-1.5 py-0.5 rounded bg-code border border-line text-ink whitespace-nowrap; direction: ltr; unicode-bidi: isolate; }
     .prose-fa pre { @apply my-3 p-4 rounded-lg bg-code border border-line overflow-x-auto leading-[1.65]; }
     .prose-fa pre code { @apply p-0 bg-transparent border-0; }
     .prose-fa blockquote { @apply border-s-2 border-line2 ps-3 text-muted; }

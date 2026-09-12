@@ -41,12 +41,12 @@ Owner provides videos + subtitles; Claude writes `content/python-advanced/` (les
 
 ## M2 — Session (unchanged from v0.2 S-08..S-13, "skill" → "lesson")
 
-### [ ] S-08 Learn activity (tabs video/text, "آماده‌ام" → completed)
-### [ ] S-09 Practice rendering by form
-### [ ] S-10 Rule evaluation (mcq)
-### [ ] S-11 AI evaluation (`evaluate_response`, Persian feedback, no score)
-### [ ] S-12 Hint → Retry → Answer loop, give up, evidence json
-### [ ] S-13 Feedback + Next
+### [x] S-08 Learn activity (tabs video/text, "آماده‌ام" → completed)
+### [x] S-09 Practice rendering by form
+### [x] S-10 Rule evaluation (mcq)
+### [x] S-11 AI evaluation (`evaluate_response`, Persian feedback, no score)
+### [x] S-12 Hint → Retry → Answer loop, give up, evidence json
+### [x] S-13 Feedback + Next (interim: next practice of the same lesson / retry / back to lesson — planner-driven Next arrives in M4)
 
 ## M3 — Mastery
 

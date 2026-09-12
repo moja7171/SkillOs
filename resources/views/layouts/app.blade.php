@@ -4,7 +4,11 @@
         @include('layouts.head')
     </head>
     <body class="min-h-screen bg-bg">
-        @include('layouts.navigation')
+        @isset($nav)
+            {{ $nav }}
+        @else
+            @include('layouts.navigation')
+        @endisset
 
         <main>
             {{ $slot }}

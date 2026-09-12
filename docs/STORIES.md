@@ -16,21 +16,21 @@ As a learner, I want "Generate design" to produce a real Outcome and Skill list 
 - And a failed call (bad key, timeout) shows an error message and leaves the item unchanged.
 - **Blocker:** needs the key from the learner (Google AI Studio, free tier).
 
-### [ ] S-02 Starting point
+### [x] S-02 Starting point
 As a learner, I want to tell the system where I currently stand, so the design is not aimed at a total beginner when I'm not one.
 - Given the create-item form
 - When I fill the optional "Where are you now?" textarea
 - Then it is stored on the item and included in the design prompt, and shown on the item page.
 - Schema: `learning_items.starting_point` text nullable.
 
-### [ ] S-03 Regenerate design
+### [x] S-03 Regenerate design
 As a learner, I want to reject a bad design by asking for a new one, without editing it by hand.
 - Given an item in `pending_review`
 - When I click Regenerate
 - Then a new draft replaces the old one and the item stays `pending_review`.
 - And Regenerate is **not** offered once the design is `approved` (skills already carry mastery).
 
-### [ ] S-04 Schema alignment
+### [x] S-04 Schema alignment
 As the system, I need the schema to match DESIGN v0.2 before content and planning are built on it.
 - `skills.content_generated_at` timestamp nullable
 - `plan_items.reason` string nullable
@@ -38,6 +38,7 @@ As the system, I need the schema to match DESIGN v0.2 before content and plannin
 - `activities.type` enum → `learn, practice`
 - `attempts.result_status` enum gains `completed` (used by Learn attempts)
 - Fresh `migrate:fresh` works; existing models/casts updated; nothing else breaks.
+- Done 2026-09-12 by editing the original migrations (never deployed, no real data) — see DECISIONS.md §9.
 
 ---
 

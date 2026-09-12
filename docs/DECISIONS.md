@@ -211,3 +211,15 @@ Prompt inputs: prompt, expected_outcome, rubric, response, hint_level. Instruct:
 | Async jobs | See §6. |
 | Reactivation assessment | Reviews-due-today on reactivation (>14 days) is enough. |
 | Edit skill structure before approve | Regenerate is cheaper than building a tree editor. Revisit if regenerate keeps producing one wrong skill. |
+
+---
+
+## 9. Pre-launch schema changes edit the original migrations (2026-09-12)
+
+**Decision.** Until the app holds real learning data, schema changes are made by editing the `2026_09_11_*` create-migrations and running `migrate:fresh`, not by adding alter-migrations.
+
+**Why.** SQLite makes enum/drop-column alters awkward, and the only data so far is smoke-test data. A pile of alter-migrations for a schema nobody has used yet is noise.
+
+**Revisit when.** The first real week of use (S-24) starts — from then on, every schema change is a new migration.
+
+Also recorded: the Breeze tests for removed features (email verification, password confirmation, password reset) are stale and fail; they are pending deletion. The profile page referenced the removed `verification.send` route and 500'd — fixed by removing that block.

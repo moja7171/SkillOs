@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['title', 'outcome_statement', 'design_status', 'design_draft', 'design_approved_at', 'status', 'priority', 'daily_time_minutes', 'preferred_time', 'last_activity_at'])]
+#[Fillable(['title', 'starting_point', 'outcome_statement', 'design_status', 'design_draft', 'design_approved_at', 'status', 'priority', 'daily_time_minutes', 'preferred_time', 'last_activity_at'])]
 class LearningItem extends Model
 {
     use HasFactory;

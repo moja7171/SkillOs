@@ -14,6 +14,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->unsignedSmallInteger('order')->default(0);
+            // Null until learn text + practices have been generated for this skill (lazy, idempotent).
+            $table->timestamp('content_generated_at')->nullable();
             $table->timestamps();
         });
     }

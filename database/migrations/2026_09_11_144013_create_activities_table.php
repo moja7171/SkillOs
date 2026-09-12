@@ -12,7 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('learning_item_id')->constrained()->cascadeOnDelete();
             $table->foreignId('skill_id')->constrained()->cascadeOnDelete();
-            $table->enum('type', ['learn', 'practice', 'review', 'assessment']);
+            // Review is not a type: it is a practice executed with plan_items.source = 'review'.
+            $table->enum('type', ['learn', 'practice']);
             $table->string('title');
             $table->unsignedSmallInteger('estimated_minutes')->default(10);
 
@@ -20,8 +21,6 @@ return new class extends Migration
             // separate tables: prompt/content, hints[], evaluation method + rubric,
             // expected_outcome, difficulty. Keeps the schema flexible per activity type.
             $table->json('payload')->nullable();
-
-            $table->enum('status', ['planned', 'in_progress', 'completed', 'skipped', 'rescheduled'])->default('planned');
 
             $table->timestamps();
         });

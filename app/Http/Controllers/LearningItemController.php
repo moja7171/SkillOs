@@ -26,6 +26,7 @@ class LearningItemController extends Controller
     {
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
+            'starting_point' => ['nullable', 'string', 'max:2000'],
         ]);
 
         $item = $request->user()->learningItems()->create($validated);
@@ -68,6 +69,9 @@ class LearningItemController extends Controller
     public function generateDesign(LearningItem $learningItem, LearningDesignGenerator $generator): RedirectResponse
     {
         $this->authorizeOwner($learningItem);
+
+        // Once approved, skills carry mastery and attempts; the design can no longer be thrown away.
+        abort_if($learningItem->isDesignApproved(), 403, 'The design is already approved.');
 
         $draft = $generator->generate($learningItem);
 

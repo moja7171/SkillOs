@@ -12,6 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title');
+            // Optional free text: where the learner currently stands. Fed to the design prompt.
+            $table->text('starting_point')->nullable();
 
             // Outcome — kept inline instead of a separate table for MVP speed.
             $table->text('outcome_statement')->nullable();

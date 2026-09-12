@@ -16,7 +16,8 @@ return new class extends Migration
             $table->timestamp('started_at')->nullable();
             $table->timestamp('completed_at')->nullable();
 
-            $table->enum('result_status', ['started', 'correct', 'correct_with_hint', 'incorrect', 'abandoned'])->default('started');
+            // 'completed' is for learn activities (no right/wrong); the rest are practice outcomes.
+            $table->enum('result_status', ['started', 'completed', 'correct', 'correct_with_hint', 'incorrect', 'abandoned'])->default('started');
             $table->unsignedTinyInteger('hint_level')->default(0);
 
             // Learner's response + AI/rule evaluation feedback, kept together as evidence.

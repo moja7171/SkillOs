@@ -19,8 +19,13 @@ class LearningDesignGenerator
      */
     public function generate(LearningItem $item): array
     {
+        $startingPoint = filled($item->starting_point)
+            ? "\nThe learner describes their current level as: \"{$item->starting_point}\". Skip what they already know and start from there.\n"
+            : '';
+
         $prompt = <<<PROMPT
             You are a learning design architect. A learner wants to learn: "{$item->title}".
+            {$startingPoint}
 
             Propose:
             1. A concrete, measurable Outcome statement: what the learner will be able to DO after completing this Learning Item.

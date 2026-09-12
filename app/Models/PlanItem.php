@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['scheduled_for', 'duration_minutes', 'status', 'source'])]
+#[Fillable(['scheduled_for', 'duration_minutes', 'status', 'source', 'reason'])]
 class PlanItem extends Model
 {
     protected function casts(): array

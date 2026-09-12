@@ -9,10 +9,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['name', 'description', 'order'])]
+#[Fillable(['name', 'description', 'order', 'content_generated_at'])]
 class Skill extends Model
 {
     use HasFactory;
+
+    protected function casts(): array
+    {
+        return [
+            'content_generated_at' => 'datetime',
+        ];
+    }
 
     public function learningItem(): BelongsTo
     {

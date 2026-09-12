@@ -24,6 +24,13 @@
                 </div>
             @endif
 
+            @if ($learningItem->starting_point)
+                <div class="text-sm text-gray-500">
+                    <span class="font-semibold uppercase tracking-wide text-xs">{{ __('Starting point') }}:</span>
+                    {{ $learningItem->starting_point }}
+                </div>
+            @endif
+
             @if ($learningItem->design_status === 'draft')
                 <div class="bg-white shadow-sm sm:rounded-lg p-6 text-center">
                     <p class="text-gray-600 mb-4">{{ __('No Outcome or Skill structure yet.') }}</p>

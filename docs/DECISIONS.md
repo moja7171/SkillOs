@@ -243,7 +243,7 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The user's request. "Always Persian" content was chosen over per-item language for simplicity; accepted risk is weaker technical terminology for programming topics.
 
 **Consequences.**
-- `generate_design`, `generate_skill_content`, `evaluate_response` prompts must ask for Persian output (design prompt still English as of this entry — fix in M1; the existing Python item should be regenerated).
+- Prompts stay in **English**; only what the learner sees must be Persian. Each prompt instructs the model to write its output fields in Persian, keeping English technical terms where natural (e.g. «virtual environment», `try/except`). The existing Python item was generated before this rule and should be regenerated.
 - Persian digits via `fa_num()`, Jalali via `fa_date()` (helpers in `app/Support/helpers.php`). Numbers inside code and durations stay Latin.
 - Validation/auth messages: `lang/fa/*.php` (only the rules in use).
 - Authored text (titles, outcomes, skill names) gets `dir="auto"` so any Latin content still reads correctly.

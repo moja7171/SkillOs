@@ -1,40 +1,43 @@
-# SkillOS — MVP Product Design (v0.2)
+# SkillOS — Product Design (v0.3)
 
-> v0.2 supersedes `SkillOS_MVP_Product_Design_v0.1_EN.docx`. Aligned with `PRD.md` v0.2 and with the schema actually implemented in `database/migrations`. Algorithms and numbers live in `DECISIONS.md`.
+> v0.3 follows the 2026-09-12 pivot (PRD.md v0.3, DECISIONS.md §12): fixed catalog of courses, lesson as the mastery unit, no Skill layer, AI only for evaluation. Algorithms and numbers live in `DECISIONS.md`.
 
 ## 1. Product Rules → Implementation Implications
 
 | Rule | Implication in code |
 |---|---|
-| Learning Item first, no Path | No table references a path. `skills.learning_item_id` is the only grouping. |
-| Human approval boundary | `learning_items.design_status` enum `draft → pending_review → approved`. `skills` rows are created only in the approve transition. |
-| Skill-centric mastery | `mastery_records` is per (user, skill). Item progress = aggregate of its skills' levels. |
-| Mastery from evidence only | The only writer of `mastery_records.numeric_mastery` is `MasteryService::applyAttempt()`. |
-| No raw scores | Numeric mastery and evaluation verdicts never reach a Blade view. |
-| Recovery not backlog | The planner is a pure function of current state; there is no stored future plan to replay. |
-| Explainable adaptivity | Every planner choice carries a short `reason` string shown in the UI ("Review due", "Next skill", "Retry after 3 misses"). |
+| Catalog, not user topics | `courses`/`lessons` have no `user_id`; they are written only by `content:import`. |
+| Lesson is the mastery unit | `mastery_records` is per (user, lesson). Course progress is an aggregate. |
+| Enrollment carries learner config | `enrollments` = user × course with priority, daily time, status. |
+| Two paths per lesson | Lesson page and Session show tabs ویدیو / متن from `lesson_videos` + `lessons.content`. |
+| AI evaluates only | The only runtime Gemini call is `evaluate_response`. |
+| Mastery from evidence only | The only writer of `numeric_mastery` is `MasteryService::applyAttempt()`. |
+| No raw scores | Numeric mastery and verdicts never reach a Blade view. |
+| Recovery not backlog | `Planner::today` is a pure function of state; nothing is stored ahead. |
+| Re-import is safe | Content is upserted by stable slugs/keys so attempts and mastery survive edits. |
 
 ## 2. Surfaces
 
-| Surface | Content | Primary action |
-|---|---|---|
-| Home | Continue Learning CTA, Today per item, active items with mastery summary, draft items | Continue Learning |
-| Learning Item | Title, Outcome, status, Skills with level, resources, schedule config | Continue Learning (scoped to item) |
-| Design review | Proposed Outcome + Skill list with prerequisites | Approve / Regenerate |
-| Session | Learn content → Practice → feedback → next | Submit / Next |
-| Skill | Level, learn text, video link, available practices | Practice / Re-learn |
-| Week | Today's plan + due reviews for 6 more days (read-only) | Open activity |
+| Surface | Route | Content | Primary action |
+|---|---|---|---|
+| Home | `/` | Continue Learning CTA, Today per course, My courses with progress bars | Continue Learning |
+| All courses | `/courses` | Catalog cards (title, outcome, lessons count, enrolled badge) | Enroll |
+| Course | `/courses/{slug}` | Outcome, sources, lessons table (#, title, level, minutes, lock), enrollment config in sidebar | Continue (scoped) / Enroll |
+| Lesson | `/lessons/{id}` | Tabs ویدیو / متن, key points, practices list, prerequisites with levels | Practice |
+| Session | `/session/{activity}` | Learn tabs → practice → hints → feedback → next | Submit / Next |
+| Week | `/week` | Today's plan + due reviews for 6 days (read-only) | Open activity |
+| Enrollment config | `/enrollments/{id}/edit` | Priority, Daily Time, Preferred time, Status | Save |
 
 ### 2.1 Session flow
 
 | Step | System | Learner sees |
 |---|---|---|
-| Start | Load activity + target skill; ensure skill content exists (generate lazily if not) | Title, goal, ~minutes |
-| Learn (if Learn activity or first practice of skill) | Show AI Text; show pasted video link if any | Content, "I'm ready" |
-| Practice | Render practice by form (MCQ options / textarea / code textarea) | The task |
-| Evaluate | MCQ → rule; otherwise Gemini with rubric → verdict + feedback | Feedback text only |
-| Wrong | Show hint[hint_level], increment, allow retry (max 2 hints) | Hint, retry box |
-| Exhausted | Show explanation/expected outcome; attempt = incorrect | Answer + explanation |
+| Start | Load activity + lesson | Title, course, ~minutes |
+| Learn (learn activity, or first practice of an unlearned lesson) | Tabs: video (recommended if present) / text; key points card | Content, "آماده‌ام" |
+| Practice | Render by form (mcq radios / textarea / code textarea) | The task |
+| Evaluate | mcq → rule; otherwise Gemini with rubric → verdict + feedback | Feedback text only |
+| Wrong | Show `hints[hint_level]`, increment, retry (max 2) | Hint, retry box |
+| Exhausted | Show expected outcome; attempt = incorrect | Answer + explanation |
 | Update | Store Attempt, apply mastery delta, set next review | New qualitative level if changed |
 | Next | Planner picks next activity | One Next Best Action |
 
@@ -43,7 +46,7 @@
 ```
 submitted ──correct──▶ correct (hint_level==0) / correct_with_hint (hint_level>0)
     │
-  wrong, hint_level<2 ──▶ show hint[hint_level]; hint_level++ ──▶ retry ──▶ submitted
+  wrong, hint_level<2 ──▶ show hint[hint_level]; hint_level++ ──▶ retry
     │
   wrong, hint_level==2 ──▶ show answer ──▶ incorrect
     │
@@ -52,7 +55,7 @@ submitted ──correct──▶ correct (hint_level==0) / correct_with_hint (hi
 
 ### 2.3 Visual system (approved mockup, 2026-09-12)
 
-Persian UI, `dir="rtl"`, desktop-first. LeetCode-inspired density: top nav, main column + 360px side column, 1px-bordered cards (radius 10px, no shadows), badges for levels, a table for skill lists, split-pane Session (learn content | practice).
+Persian UI, `dir="rtl"`, desktop-first. LeetCode-inspired density: top nav, main column + 360px side column, 1px-bordered cards (radius 10px, no shadows), badges for levels, a table for lesson lists, split-pane Session (learn content | practice).
 
 | Token | Dark (default) | Light |
 |---|---|---|
@@ -67,63 +70,60 @@ Persian UI, `dir="rtl"`, desktop-first. LeetCode-inspired density: top nav, main
 - Dates: Jalali via `fa_date()` (morilog/jalali); storage stays Gregorian.
 - Tokens live in `resources/css/app.css` (`:root` light, `.dark` dark); Tailwind exposes them as `bg-surface`, `text-muted`, `border-line`, `badge-l3`, etc. Components: `.card`, `.card-h`, `.btn(-primary|-ghost|-danger|-sm)`, `.badge-*`, `.input`, `.label`, `.alert-*`, `.table`, `.levelbar`, `.page`.
 - Theme toggle in the nav; choice in `localStorage.theme`, applied before first paint; dark is the default.
-- Level labels: not_started «شروع‌نشده», learning «در حال یادگیری», familiar «آشنا», proficient «ماهر», mastered «مسلط» (`MasteryRecord::LEVEL_LABELS`).
+- Level labels (per lesson): not_started «شروع‌نشده», learning «در حال یادگیری», familiar «آشنا», proficient «ماهر», mastered «مسلط» (`MasteryRecord::LEVEL_LABELS`).
 
-## 3. Data Model (as implemented)
+## 3. Data Model
 
-| Table | Purpose | Notes |
+| Table | Purpose | Key columns |
 |---|---|---|
-| `learning_items` | Topic + config + design state | `outcome_statement`, `design_status`, `design_draft` (json staging), `design_approved_at`, `status`, `priority`, `daily_time_minutes`, `preferred_time`, `last_activity_at`. Add: `starting_point` (text, nullable). |
-| `skills` | Approved decomposition | `order` gives suggested sequence. Add: `content_generated_at` (nullable) — null means content is lazily pending. |
-| `skill_dependencies` | Prerequisite edges | Directed; created from the draft's `prerequisite_keys`. Self-edges and unknown keys are dropped at approve time. |
-| `resources` | AI text / pasted video | `type` video|text, `content` for text, `url` for video, `is_recommended`. |
-| `activities` | Reusable activity templates | `type` learn|practice, `payload` json (see §4.3), `estimated_minutes`. **Drop `status` column** — state belongs to attempts and plan items. **Drop `review`/`assessment` from `type`**: review is a practice executed with `plan_items.source = review`. |
-| `attempts` | One execution of an activity | `result_status` started|correct|correct_with_hint|incorrect|abandoned, `hint_level`, `evidence` json `{response, verdict, feedback, hints_shown, source}`. |
-| `mastery_records` | Current state per (user, skill) | `numeric_mastery` 0–1000, `level`, `last_evaluated_at`, `next_review_due_at`. |
-| `plan_items` | Today's materialized plan | `scheduled_for` (today), `duration_minutes`, `status` scheduled|completed|skipped, `source` plan|review|recovery. Add: `reason` (string). |
+| `courses` | Catalog entry | `slug` (unique), `title`, `description`, `outcome_statement`, `source_note` |
+| `lessons` | Topic unit inside a course | `course_id`, `slug` (unique per course), `order`, `title`, `summary`, `content` (markdown), `key_points` json, `common_mistakes` json, `estimated_minutes` |
+| `lesson_videos` | 0..n videos per lesson | `lesson_id`, `order`, `title`, `url` |
+| `lesson_prerequisites` | Directed edges inside a course | `lesson_id`, `prerequisite_lesson_id` |
+| `activities` | Learn (one per lesson) and practice templates | `lesson_id`, `key` (stable per lesson, from content files), `type` learn|practice, `title`, `estimated_minutes`, `payload` json (§4.2) |
+| `enrollments` | User × course config | `user_id`, `course_id` (unique pair), `priority`, `daily_time_minutes`, `preferred_time`, `status`, `last_activity_at` |
+| `attempts` | One execution of an activity | `activity_id`, `user_id`, `started_at`, `completed_at`, `result_status`, `hint_level`, `evidence` json |
+| `mastery_records` | Current state per (user, lesson) | `numeric_mastery` 0–1000, `level`, `last_evaluated_at`, `next_review_due_at` |
+| `plan_items` | Today's materialized plan | `user_id`, `enrollment_id`, `activity_id`, `scheduled_for`, `duration_minutes`, `status`, `source`, `reason` |
 
-Removed relative to v0.1: `outcomes`, `mastery_events`, `review_items`, `notes`, `bookmarks`, `generation_runs`, `approval_records`.
+Removed in v0.3: `learning_items`, `skills`, `skill_dependencies`, `resources`.
 
 ### 3.1 Enums
 
 | Domain | Values |
 |---|---|
-| LearningItem.status | active, paused, archived, maintenance |
-| LearningItem.design_status | draft, pending_review, approved |
-| Skill level | not_started, learning, familiar, proficient, mastered |
+| Enrollment.status | active, paused, archived, maintenance |
+| Lesson level | not_started, learning, familiar, proficient, mastered |
 | Activity.type | learn, practice |
-| Practice form (in payload) | mcq, short_answer, coding, explanation, scenario |
-| Attempt.result_status | started, correct, correct_with_hint, incorrect, abandoned |
+| Practice form (payload) | mcq, short_answer, coding, explanation, scenario |
+| Attempt.result_status | started, completed, correct, correct_with_hint, incorrect, abandoned |
 | PlanItem.status | scheduled, completed, skipped |
 | PlanItem.source | plan, review, recovery |
 
-## 4. AI Architecture
+## 4. Content Pipeline & AI
 
-AI is a backend service. Two call types only, both synchronous, both structured JSON via Gemini `responseSchema`:
+### 4.1 Authoring (development time)
 
-| Call | When | Input | Output | Gate |
-|---|---|---|---|---|
-| `generate_design` | Learner clicks Generate / Regenerate | title, starting_point | outcome_statement, skills[] with keys, descriptions, prerequisite_keys | Human approve |
-| `generate_skill_content` | First time a skill is needed by the planner or opened by the learner | item title, outcome, skill name+description, neighbouring skill names, starting_point | learn text + 2–3 practices each with form, prompt, hints[2], expected_outcome, rubric, difficulty | None |
-| `evaluate_response` | Non-MCQ practice submitted | practice prompt, rubric, expected_outcome, learner response, hint_level | verdict (correct/partial/incorrect), feedback | None |
+```
+content/<course-slug>/
+  course.json            title, description, outcome_statement, source_note, lessons[]
+  lessons/<lesson-slug>.md             lesson text (markdown, Persian, English terms kept)
+  lessons/<lesson-slug>.practices.json practices[] (§4.2 payload + key, title, estimated_minutes)
+```
 
-Dropped from v0.1: `validate_learning_design`, `discover_video`, `generate_weekly_plan`, `generate_recovery_plan` (planning is deterministic, not AI).
+`course.json` lesson entry: `{slug, title, summary, estimated_minutes, key_points[], common_mistakes[], videos: [{title, url}], prerequisites: [slug] (default: previous lesson)}`.
 
-### 4.1 Reliability rules
+`php artisan content:import {course-slug}` upserts course by slug, lessons by (course, slug), practices by (lesson, key); removes lessons/practices no longer in the files only with `--prune`. Attempts and mastery reference ids that survive re-import.
 
-- A failed AI call never mutates state; the learner sees an error and can retry.
-- `evaluate_response` output is bounded to verdict + feedback; the model is instructed never to output a score.
-- Content generation is idempotent per skill (`content_generated_at` guard) so a double-click cannot duplicate practices.
-- Prompts and schemas live in `App\Services\Ai\*` classes, one class per call.
+Authoring workflow: owner drops materials (video + subtitle, docs, book excerpts) → Claude writes the files (Gemini may draft; Claude reviews) → import → commit.
 
-### 4.2 Practice payload shape
+### 4.2 Practice payload
 
 ```json
 {
-  "form": "short_answer",
+  "form": "coding",
   "prompt": "...",
-  "options": ["..."],            // mcq only
-  "correct_option": 2,           // mcq only
+  "options": ["..."], "correct_option": 1,      // mcq only
   "expected_outcome": "...",
   "hints": ["...", "..."],
   "rubric": "...",
@@ -131,49 +131,46 @@ Dropped from v0.1: `validate_learning_design`, `discover_video`, `generate_weekl
 }
 ```
 
-Learn payload: `{ "resource_id": <text resource> }`.
+Learn activity payload: `{}` (the lesson itself is the content).
+
+### 4.3 Runtime AI: one call
+
+| Call | When | Input | Output |
+|---|---|---|---|
+| `evaluate_response` | Non-mcq practice submitted | prompt, rubric, expected_outcome, learner response, hint_level | `{verdict: correct|partial|incorrect, feedback}` (Persian; no score; incorrect → no answer reveal) |
+
+A failed call never mutates state; the learner can retry.
 
 ## 5. Mastery & Remediation
 
-Contract: `numeric_mastery` changes only inside `MasteryService::applyAttempt(Attempt)`. It applies a delta from a fixed table, clamps to 0–1000, recomputes `level`, and sets `next_review_due_at` from the level. Numbers: `DECISIONS.md` §3–4.
-
-Remediation is not stored; it is re-derived by the planner from the last attempts on each skill.
+Contract unchanged: `MasteryService::applyAttempt(Attempt)` is the only writer; numbers in DECISIONS.md §3–4 apply per lesson. Course progress = count of lessons per level.
 
 ## 6. Planning
 
-`Planner::today(User)` is a pure function of: active items with `daily_time_minutes`, mastery records, recent attempts, and today's existing plan items. See `DECISIONS.md` §2 for the algorithm.
-
-Materialization: the first call on a given day inserts `plan_items` for today; later calls read them. Changing an item's Priority/Daily Time/Status deletes today's uncompleted plan items for that item and recomputes.
-
-`Planner::continueLearning(User)` returns the first uncompleted plan item across items plus two alternatives (next plan item; a free-choice practice of the current skill).
-
-Week view: today's plan items + `mastery_records.next_review_due_at` grouped by day for the next 6 days.
+`Planner::today(User)` — DECISIONS.md §2 with "skill" read as "lesson" and "item" as "enrollment". `current` lesson = first by order with level < proficient whose prerequisites are ≥ familiar.
 
 ## 7. Lifecycle
 
-- Pause / Archive: planner ignores the item. Its today plan items are deleted.
-- Reactivate: if `last_activity_at` is older than 14 days, set `next_review_due_at = today` for every skill at Familiar or above.
-- Maintenance: planner only schedules due reviews for the item, never new skills.
+Pause/Archive: enrollment leaves planning, data kept. Reactivate after >14 days: reviews due today for lessons ≥ familiar. Maintenance: reviews only.
 
-## 8. Build Sequence
+## 8. Build Sequence (v0.3)
 
-1. Gemini key + live test of `generate_design`. Schema tweaks: `starting_point`, `content_generated_at`, `plan_items.reason`, drop `activities.status`.
-2. `generate_skill_content` + storage as Resource + Activities.
-3. Session UI: Learn → Practice → evaluate (rule + AI) → hints → feedback. Attempts stored.
-4. `MasteryService` + level display on Skill and Item pages.
-5. `Planner::today` + `continueLearning` + Home page.
-6. Week view, Skip, Archive/Reactivate, Maintenance.
-7. Use it for a week. Tune numbers in `DECISIONS.md`.
+1. Schema + models for courses/lessons/enrollments; importer; sample course fixture; catalog + enroll + course page + lesson page (tabs).
+2. Import the first real course (Advanced Python) from the owner's materials.
+3. Session: learn → practice → evaluate (rule + Gemini) → hints → feedback; attempts.
+4. MasteryService + level display + course progress.
+5. Planner::today + Continue Learning + Home.
+6. Week view, Skip, lifecycle.
+7. Use it for a week; tune.
 
 ## Appendix — System Map
 
 | Layer | Objects | Question answered |
 |---|---|---|
-| Intent | LearningItem (+ outcome) | What do I want to learn? |
-| Design | Skills + dependencies | What capabilities are required? |
-| Assets | Resources + Activities | How is it taught and practised? |
-| Execution | Attempts | What did I actually do? |
-| State | MasteryRecords | Where am I now? |
-| Planning | Planner (function) + today's PlanItems | What next, and when? |
+| Catalog | Course, Lesson, Video, Practice | What can I learn, and how is it taught? |
+| Intent | Enrollment | What am I learning now, how much per day? |
+| Execution | Attempts | What did I do? |
+| State | MasteryRecords (per lesson) | Where am I? |
+| Planning | Planner + today's PlanItems | What next, when? |
 
 When in doubt, prioritize the loop: Activity → Evidence → Mastery → Next Action.

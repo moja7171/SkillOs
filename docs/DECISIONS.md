@@ -250,3 +250,22 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 - Authored text (titles, outcomes, skill names) gets `dir="auto"` so any Latin content still reads correctly.
 
 **Revisit if.** Technical content in Persian reads badly in practice — then add a per-item content language.
+
+---
+
+## 12. Pivot: fixed catalog, lesson as the unit, AI evaluates only (2026-09-12)
+
+**Decision.** Learners do not create topics. Courses are authored at development time from the owner's materials (videos with subtitles, documents, books) by Claude, with Gemini as an optional drafting assistant, written to `content/<course>/` and loaded by `php artisan content:import`. The learner enrolls from a catalog. The unit of mastery, practice and review is the **lesson** (one topic; usually one video). There is **no Skill layer**: courses are independent. Gemini at runtime does exactly one thing: `evaluate_response`.
+
+**Why.** The owner's stated goal: "build any course I want in a short time in this app, review it and practice it; the courses may be unrelated." A Skill/competency layer only pays off when several courses are combined, which is not planned. Runtime AI design/content generation was solving a problem the owner does not have (they already own the materials) and would have produced lower-quality, unreviewed text.
+
+**Consequences.**
+- Removed: `learning_items`, `skills`, `skill_dependencies`, `resources`, `LearningDesignGenerator`, `SkillContentGenerator`, the create/generate/approve flow, PRD §"human approval" (there is nothing to approve at runtime — review happens on the content files before import).
+- Added: `courses`, `lessons`, `lesson_videos`, `lesson_prerequisites`, `enrollments`; `activities.lesson_id` + stable `key`; `mastery_records.lesson_id`; `plan_items.enrollment_id`.
+- Sections §2 (planner), §3 (mastery), §4 (remediation), §5 (evaluation) stay valid with "skill" → "lesson", "item" → "enrollment". §5's MCQ guard now applies to authored content: the importer rejects an mcq without exactly 4 options and a valid `correct_option`.
+- §6 (lazy generation) and §7 (design/content schemas) are obsolete; only the `evaluate_response` schema remains in force.
+- Lesson text is a rewrite that follows the video, not the subtitle verbatim; may be supplemented from official references the owner names.
+- Deployment target includes shared hosting: SQLite, synchronous AI call, `public/build` committed, no Node on the server.
+- Videos are URLs: either a file the app serves or an external link. The lesson page embeds `<video>` for direct media URLs and an iframe for YouTube/Aparat links.
+
+**Deferred with reasons.** Skill layer (needs multiple related courses); course prerequisites (no second course yet); in-app authoring (Claude + files is faster and reviewed).

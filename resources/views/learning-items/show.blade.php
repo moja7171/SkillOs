@@ -24,6 +24,12 @@
                 </div>
             @endif
 
+            @if (session('error'))
+                <div class="bg-red-50 text-red-800 text-sm rounded-md p-4">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             @if ($learningItem->starting_point)
                 <div class="text-sm text-gray-500">
                     <span class="font-semibold uppercase tracking-wide text-xs">{{ __('Starting point') }}:</span>

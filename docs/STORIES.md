@@ -8,13 +8,13 @@ Status: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (note why
 
 ## M0 — Foundation: AI is live, schema matches DESIGN v0.2
 
-### [ ] S-01 Live design generation
+### [x] S-01 Live design generation
 As a learner, I want "Generate design" to produce a real Outcome and Skill list for my topic, so the pipeline is proven end-to-end.
 - Given `GEMINI_API_KEY` is set and I have an item "Python for data scripts"
 - When I click Generate design
 - Then within ~30s the item is `pending_review` with an outcome statement and 4–10 skills, each with a description, and at least one skill has a prerequisite.
 - And a failed call (bad key, timeout) shows an error message and leaves the item unchanged.
-- **Blocker:** needs the key from the learner (Google AI Studio, free tier).
+- Done 2026-09-12: live run on "Python for data scripts" → 7 skills, 7 prerequisite edges, 9s, starting point honoured. Model had to move to `gemini-3.6-flash` (DECISIONS.md §10).
 
 ### [x] S-02 Starting point
 As a learner, I want to tell the system where I currently stand, so the design is not aimed at a total beginner when I'm not one.

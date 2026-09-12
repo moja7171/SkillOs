@@ -7,6 +7,7 @@ use App\Services\Ai\LearningDesignGenerator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use RuntimeException;
 
 class LearningItemController extends Controller
 {
@@ -73,7 +74,14 @@ class LearningItemController extends Controller
         // Once approved, skills carry mastery and attempts; the design can no longer be thrown away.
         abort_if($learningItem->isDesignApproved(), 403, 'The design is already approved.');
 
-        $draft = $generator->generate($learningItem);
+        try {
+            $draft = $generator->generate($learningItem);
+        } catch (RuntimeException $e) {
+            report($e);
+
+            return redirect()->route('learning-items.show', $learningItem)
+                ->with('error', 'The AI could not generate a design right now. Please try again.');
+        }
 
         $learningItem->update([
             'design_draft' => $draft,

@@ -81,6 +81,25 @@ class LearningItemDesignTest extends TestCase
         $this->assertSame('A different outcome.', $item->design_draft['outcome_statement']);
     }
 
+    public function test_failed_ai_call_shows_error_and_leaves_item_unchanged(): void
+    {
+        $item = LearningItem::factory()->create();
+
+        $this->mock(GeminiClient::class)
+            ->shouldReceive('generateJson')
+            ->once()
+            ->andThrow(new \RuntimeException('Gemini request failed'));
+
+        $this->actingAs($item->user)
+            ->post(route('learning-items.generate-design', $item))
+            ->assertRedirect(route('learning-items.show', $item))
+            ->assertSessionHas('error');
+
+        $item->refresh();
+        $this->assertSame('draft', $item->design_status);
+        $this->assertNull($item->design_draft);
+    }
+
     public function test_generate_design_is_forbidden_once_approved(): void
     {
         $item = LearningItem::factory()->approved()->create();

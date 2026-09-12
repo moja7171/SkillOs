@@ -223,3 +223,13 @@ Prompt inputs: prompt, expected_outcome, rubric, response, hint_level. Instruct:
 **Revisit when.** The first real week of use (S-24) starts — from then on, every schema change is a new migration.
 
 Also recorded: the Breeze tests for removed features (email verification, password confirmation, password reset) are stale and fail; they are pending deletion. The profile page referenced the removed `verification.send` route and 500'd — fixed by removing that block.
+
+---
+
+## 10. Gemini model: `gemini-3.6-flash` (2026-09-12)
+
+**Decision.** `GEMINI_MODEL` defaults to `gemini-3.6-flash`.
+
+**Why.** The first live call with `gemini-2.5-flash` returned 404 "no longer available to new users"; Google's error message named `gemini-3.6-flash` as the replacement, and it works with the same `responseSchema` structured output (9s for a design). Newer `3.7`/`3.8` flash models are also listed for this key; not tried, no reason yet.
+
+**Revisit if.** Latency or quality of skill content / evaluation (M1–M2) is poor — try `gemini-3.8-flash` first, then a `-lite` variant for `evaluate_response` only, which is the call that runs most often.

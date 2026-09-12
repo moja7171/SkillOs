@@ -233,3 +233,19 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The first live call with `gemini-2.5-flash` returned 404 "no longer available to new users"; Google's error message named `gemini-3.6-flash` as the replacement, and it works with the same `responseSchema` structured output (9s for a design). Newer `3.7`/`3.8` flash models are also listed for this key; not tried, no reason yet.
 
 **Revisit if.** Latency or quality of skill content / evaluation (M1–M2) is poor — try `gemini-3.8-flash` first, then a `-lite` variant for `evaluate_response` only, which is the call that runs most often.
+
+---
+
+## 11. UI: Persian, RTL, Jalali, dark-first (2026-09-12)
+
+**Decision.** The whole UI is Persian (RTL, Vazirmatn); AI-generated content is **always Persian** too; dates are shown in the Jalali calendar; dark theme is the default with a light toggle. Visual system and tokens: DESIGN.md §2.3. Mockup approved by the user before implementation.
+
+**Why.** The user's request. "Always Persian" content was chosen over per-item language for simplicity; accepted risk is weaker technical terminology for programming topics.
+
+**Consequences.**
+- `generate_design`, `generate_skill_content`, `evaluate_response` prompts must ask for Persian output (design prompt still English as of this entry — fix in M1; the existing Python item should be regenerated).
+- Persian digits via `fa_num()`, Jalali via `fa_date()` (helpers in `app/Support/helpers.php`). Numbers inside code and durations stay Latin.
+- Validation/auth messages: `lang/fa/*.php` (only the rules in use).
+- Authored text (titles, outcomes, skill names) gets `dir="auto"` so any Latin content still reads correctly.
+
+**Revisit if.** Technical content in Persian reads badly in practice — then add a per-item content language.

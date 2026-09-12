@@ -51,4 +51,29 @@ class LearningItem extends Model
     {
         return $this->design_status === 'approved';
     }
+
+    /** @var array<string, string> */
+    public const STATUS_LABELS = [
+        'active' => 'فعال',
+        'paused' => 'متوقف',
+        'archived' => 'بایگانی',
+        'maintenance' => 'نگه‌داری',
+    ];
+
+    /** @var array<string, string> */
+    public const DESIGN_STATUS_LABELS = [
+        'draft' => 'بدون طرح',
+        'pending_review' => 'منتظر تأیید',
+        'approved' => 'تأییدشده',
+    ];
+
+    public function statusLabel(): string
+    {
+        return self::STATUS_LABELS[$this->status] ?? $this->status;
+    }
+
+    public function designStatusLabel(): string
+    {
+        return self::DESIGN_STATUS_LABELS[$this->design_status] ?? $this->design_status;
+    }
 }

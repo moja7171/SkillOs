@@ -4,11 +4,7 @@ use App\Http\Controllers\LearningItemController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return auth()->check()
-        ? redirect()->route('learning-items.index')
-        : view('welcome');
-});
+Route::get('/', fn () => redirect()->route(auth()->check() ? 'learning-items.index' : 'login'));
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', fn () => redirect()->route('learning-items.index'))->name('dashboard');

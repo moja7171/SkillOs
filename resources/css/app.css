@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---- Design tokens (see docs/DESIGN.md "Visual system") ---- */
+@layer base {
+    :root {
+        --bg: #f5f6f8; --surface: #ffffff; --surface2: #f0f2f5; --line: #e2e5ea; --line2: #d0d5dd;
+        --ink: #171a21; --muted: #5f6779; --faint: #98a0b0; --accent: #d98a0b; --accent-ink: #ffffff;
+        --ok: #1a9f72; --warn: #d98a0b; --bad: #d9384f; --code: #f6f7f9; --hover: #f8f9fb;
+        --l0: #a3aab8; --l1: #3b6fd6; --l2: #1a9f72; --l3: #d98a0b; --l4: #8a5cf5;
+        color-scheme: light;
+    }
+    .dark {
+        --bg: #0e1014; --surface: #151820; --surface2: #1c2029; --line: #262b36; --line2: #323847;
+        --ink: #e7e9ef; --muted: #8e96a8; --faint: #5c6474; --accent: #f0a020; --accent-ink: #1a1200;
+        --ok: #2fbf8f; --warn: #f0a020; --bad: #ef5a6f; --code: #0b0d11; --hover: #181c25;
+        --l0: #4b5263; --l1: #5b8def; --l2: #2fbf8f; --l3: #f0a020; --l4: #b58cff;
+        color-scheme: dark;
+    }
+    html { @apply bg-bg text-ink antialiased; }
+    body { @apply font-sans text-[14px] leading-[1.7]; }
+    code, pre, .mono { @apply font-mono text-[12.5px]; direction: ltr; text-align: left; }
+    a { @apply text-accent; }
+    a:hover { @apply text-ink; }
+}
+
+/* ---- Components mirrored from the approved mockup ---- */
+@layer components {
+    .card { @apply bg-surface border border-line rounded-card; }
+    .card-h { @apply flex items-center justify-between px-[18px] py-[14px] border-b border-line; }
+    .card-h h3 { @apply m-0 text-[13px] font-semibold text-muted; }
+
+    .btn { @apply inline-flex items-center justify-center gap-2 h-10 px-[18px] rounded-lg font-semibold text-[14px] border border-line2 bg-surface2 text-ink transition hover:text-ink hover:border-faint disabled:opacity-50 disabled:cursor-not-allowed; }
+    .btn-primary { @apply bg-accent text-accent-ink border-accent hover:text-accent-ink hover:brightness-110 hover:border-accent; }
+    .btn-ghost { @apply border-transparent bg-transparent text-muted hover:border-transparent hover:bg-surface2; }
+    .btn-danger { @apply bg-transparent; color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, transparent); }
+    .btn-danger:hover { color: var(--bad); border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, transparent); }
+    .btn-sm { @apply h-8 px-3 text-[13px]; }
+    .iconbtn { @apply w-[34px] h-[34px] rounded-lg border border-line grid place-items-center text-muted hover:text-ink hover:bg-surface2 transition; }
+
+    .badge { @apply inline-flex items-center gap-1.5 px-[9px] py-[2px] rounded-full text-[11.5px] font-semibold leading-[1.6] border border-transparent whitespace-nowrap; }
+    .badge .dot { @apply w-2 h-2 rounded-full bg-current inline-block; }
+    .badge-ghost { @apply text-muted border-line2; }
+    .badge-l0 { color: var(--l0); background: color-mix(in srgb, var(--l0) 14%, transparent); }
+    .badge-l1 { color: var(--l1); background: color-mix(in srgb, var(--l1) 14%, transparent); }
+    .badge-l2 { color: var(--l2); background: color-mix(in srgb, var(--l2) 14%, transparent); }
+    .badge-l3 { color: var(--l3); background: color-mix(in srgb, var(--l3) 14%, transparent); }
+    .badge-l4 { color: var(--l4); background: color-mix(in srgb, var(--l4) 14%, transparent); }
+    .badge-ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, transparent); }
+    .badge-warn { color: var(--warn); background: color-mix(in srgb, var(--warn) 14%, transparent); }
+    .badge-bad { color: var(--bad); background: color-mix(in srgb, var(--bad) 14%, transparent); }
+
+    .input { @apply block w-full rounded-lg border border-line2 bg-surface2 text-ink placeholder:text-faint px-3 py-2 text-[14px] focus:border-accent focus:ring-1 focus:ring-accent; }
+    .label { @apply block text-[13px] font-semibold text-muted mb-1; }
+    .help { @apply mt-1 text-[12.5px] text-faint; }
+    .error { @apply mt-1 text-[12.5px] text-bad; }
+
+    .alert { @apply rounded-lg px-4 py-3 text-[13.5px] border; }
+    .alert-ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 30%, transparent); background: color-mix(in srgb, var(--ok) 10%, transparent); }
+    .alert-bad { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 30%, transparent); background: color-mix(in srgb, var(--bad) 10%, transparent); }
+    .alert-warn { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 30%, transparent); background: color-mix(in srgb, var(--warn) 10%, transparent); }
+
+    .table { @apply w-full border-collapse; }
+    .table th { @apply text-start text-[12px] font-semibold text-muted px-[18px] py-[10px] border-b border-line; }
+    .table td { @apply px-[18px] py-3 border-b border-line align-middle; }
+    .table tr:last-child td { @apply border-b-0; }
+    .num { @apply font-mono text-[12px] text-faint; direction: ltr; }
+
+    .levelbar { @apply flex h-1.5 rounded-full overflow-hidden gap-[2px]; }
+    .levelbar span { @apply block h-full; }
+
+    .page { @apply px-4 sm:px-8 py-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]; }
+    .page-narrow { @apply px-4 sm:px-8 py-7 max-w-2xl mx-auto; }
+}

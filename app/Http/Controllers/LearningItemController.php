@@ -13,7 +13,7 @@ class LearningItemController extends Controller
 {
     public function index(Request $request): View
     {
-        $learningItems = $request->user()->learningItems()->latest()->get();
+        $learningItems = $request->user()->learningItems()->withCount('skills')->latest()->get();
 
         return view('learning-items.index', compact('learningItems'));
     }
@@ -39,7 +39,7 @@ class LearningItemController extends Controller
     {
         $this->authorizeOwner($learningItem);
 
-        $learningItem->load(['skills.prerequisites']);
+        $learningItem->load(['skills.prerequisites', 'skills.masteryRecords']);
 
         return view('learning-items.show', compact('learningItem'));
     }

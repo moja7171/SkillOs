@@ -50,6 +50,25 @@ submitted ──correct──▶ correct (hint_level==0) / correct_with_hint (hi
   give up (any time) ──▶ incorrect
 ```
 
+### 2.3 Visual system (approved mockup, 2026-09-12)
+
+Persian UI, `dir="rtl"`, desktop-first. LeetCode-inspired density: top nav, main column + 360px side column, 1px-bordered cards (radius 10px, no shadows), badges for levels, a table for skill lists, split-pane Session (learn content | practice).
+
+| Token | Dark (default) | Light |
+|---|---|---|
+| bg / surface / surface2 | #0e1014 / #151820 / #1c2029 | #f5f6f8 / #ffffff / #f0f2f5 |
+| line / line2 | #262b36 / #323847 | #e2e5ea / #d0d5dd |
+| ink / muted / faint | #e7e9ef / #8e96a8 / #5c6474 | #171a21 / #5f6779 / #98a0b0 |
+| accent (one, for CTAs and "Recommended") | #f0a020 | #d98a0b |
+| ok / warn / bad | #2fbf8f / #f0a020 / #ef5a6f | #1a9f72 / #d98a0b / #d9384f |
+| levels l0..l4 (not started → mastered) | #4b5263, #5b8def, #2fbf8f, #f0a020, #b58cff | #a3aab8, #3b6fd6, #1a9f72, #d98a0b, #8a5cf5 |
+
+- Fonts: Vazirmatn (UI) + JetBrains Mono (code, durations). Persian digits in prose (`fa_num()`), Latin in code and `.num` cells.
+- Dates: Jalali via `fa_date()` (morilog/jalali); storage stays Gregorian.
+- Tokens live in `resources/css/app.css` (`:root` light, `.dark` dark); Tailwind exposes them as `bg-surface`, `text-muted`, `border-line`, `badge-l3`, etc. Components: `.card`, `.card-h`, `.btn(-primary|-ghost|-danger|-sm)`, `.badge-*`, `.input`, `.label`, `.alert-*`, `.table`, `.levelbar`, `.page`.
+- Theme toggle in the nav; choice in `localStorage.theme`, applied before first paint; dark is the default.
+- Level labels: not_started «شروع‌نشده», learning «در حال یادگیری», familiar «آشنا», proficient «ماهر», mastered «مسلط» (`MasteryRecord::LEVEL_LABELS`).
+
 ## 3. Data Model (as implemented)
 
 | Table | Purpose | Notes |

@@ -1,54 +1,57 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Priority / Schedule') }} — {{ $learningItem->title }}
-        </h2>
-    </x-slot>
+<x-app-layout title="زمان‌بندی">
+    <div class="page-narrow max-w-xl">
+        <div class="text-[12.5px] text-muted flex items-center gap-2 mb-2">
+            <a href="{{ route('learning-items.index') }}" class="text-muted">یادگیری‌ها</a><span class="text-faint">/</span>
+            <a href="{{ route('learning-items.show', $learningItem) }}" class="text-muted">{{ $learningItem->title }}</a><span class="text-faint">/</span>
+            <span>زمان‌بندی</span>
+        </div>
+        <h1 class="m-0 text-[22px] font-bold mb-5">زمان‌بندی و وضعیت</h1>
 
-    <div class="py-12">
-        <div class="max-w-xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <form method="POST" action="{{ route('learning-items.update', $learningItem) }}" class="space-y-6">
-                    @csrf
-                    @method('PUT')
+        <div class="card p-6">
+            <form method="POST" action="{{ route('learning-items.update', $learningItem) }}" class="flex flex-col gap-5">
+                @csrf
+                @method('PUT')
 
-                    <div>
-                        <x-input-label for="priority" :value="__('Priority (1 = highest, 5 = lowest)')" />
-                        <select id="priority" name="priority" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                            @for ($p = 1; $p <= 5; $p++)
-                                <option value="{{ $p }}" @selected($learningItem->priority == $p)>{{ $p }}</option>
-                            @endfor
-                        </select>
-                        <x-input-error :messages="$errors->get('priority')" class="mt-2" />
-                    </div>
+                <div>
+                    <x-input-label for="priority" value="اولویت" />
+                    <select id="priority" name="priority" class="input">
+                        @for ($p = 1; $p <= 5; $p++)
+                            <option value="{{ $p }}" @selected(old('priority', $learningItem->priority) == $p)>{{ fa_num($p) }}{{ $p === 1 ? ' — بالاترین' : ($p === 5 ? ' — پایین‌ترین' : '') }}</option>
+                        @endfor
+                    </select>
+                    <p class="help">وقتی چند موضوع داری، اولویت تعیین می‌کنه کدوم اول توی «ادامه‌ی یادگیری» میاد.</p>
+                    <x-input-error :messages="$errors->get('priority')" />
+                </div>
 
-                    <div>
-                        <x-input-label for="daily_time_minutes" :value="__('Daily time (minutes, leave empty = not scheduled)')" />
-                        <x-text-input id="daily_time_minutes" name="daily_time_minutes" type="number" min="5" max="480" class="mt-1 block w-full" :value="old('daily_time_minutes', $learningItem->daily_time_minutes)" />
-                        <x-input-error :messages="$errors->get('daily_time_minutes')" class="mt-2" />
-                    </div>
+                <div>
+                    <x-input-label for="daily_time_minutes" value="زمان روزانه (دقیقه)" />
+                    <x-text-input id="daily_time_minutes" name="daily_time_minutes" type="number" min="5" max="480" step="5" dir="ltr" class="text-left" :value="old('daily_time_minutes', $learningItem->daily_time_minutes)" placeholder="مثلاً 30" />
+                    <p class="help">خالی بذاری یعنی این موضوع توی پلن روزانه نمیاد ولی می‌تونی آزادانه تمرین کنی.</p>
+                    <x-input-error :messages="$errors->get('daily_time_minutes')" />
+                </div>
 
-                    <div>
-                        <x-input-label for="preferred_time" :value="__('Preferred time of day (optional)')" />
-                        <x-text-input id="preferred_time" name="preferred_time" type="time" class="mt-1 block w-full" :value="old('preferred_time', $learningItem->preferred_time)" />
-                        <x-input-error :messages="$errors->get('preferred_time')" class="mt-2" />
-                    </div>
+                <div>
+                    <x-input-label for="preferred_time" value="ساعت ترجیحی (اختیاری)" />
+                    <x-text-input id="preferred_time" name="preferred_time" type="time" dir="ltr" class="text-left" :value="old('preferred_time', $learningItem->preferred_time ? substr($learningItem->preferred_time, 0, 5) : null)" />
+                    <x-input-error :messages="$errors->get('preferred_time')" />
+                </div>
 
-                    <div>
-                        <x-input-label for="status" :value="__('Status')" />
-                        <select id="status" name="status" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                            @foreach (['active', 'paused', 'archived', 'maintenance'] as $status)
-                                <option value="{{ $status }}" @selected($learningItem->status === $status)>{{ ucfirst($status) }}</option>
-                            @endforeach
-                        </select>
-                        <x-input-error :messages="$errors->get('status')" class="mt-2" />
-                    </div>
+                <div>
+                    <x-input-label for="status" value="وضعیت" />
+                    <select id="status" name="status" class="input">
+                        @foreach (\App\Models\LearningItem::STATUS_LABELS as $value => $label)
+                            <option value="{{ $value }}" @selected(old('status', $learningItem->status) === $value)>{{ $label }}</option>
+                        @endforeach
+                    </select>
+                    <p class="help">متوقف/بایگانی: از پلن خارج می‌شه ولی هیچ داده‌ای پاک نمی‌شه. نگه‌داری: فقط مرورها.</p>
+                    <x-input-error :messages="$errors->get('status')" />
+                </div>
 
-                    <div class="flex items-center justify-end">
-                        <x-primary-button>{{ __('Save') }}</x-primary-button>
-                    </div>
-                </form>
-            </div>
+                <div class="flex items-center justify-end gap-3">
+                    <a href="{{ route('learning-items.show', $learningItem) }}" class="btn btn-ghost">انصراف</a>
+                    <x-primary-button>ذخیره</x-primary-button>
+                </div>
+            </form>
         </div>
     </div>
 </x-app-layout>

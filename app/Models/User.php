@@ -31,9 +31,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function learningItems(): HasMany
+    public function enrollments(): HasMany
     {
-        return $this->hasMany(LearningItem::class);
+        return $this->hasMany(Enrollment::class);
+    }
+
+    public function attempts(): HasMany
+    {
+        return $this->hasMany(Attempt::class);
     }
 
     public function masteryRecords(): HasMany

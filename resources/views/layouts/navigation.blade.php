@@ -1,12 +1,12 @@
 <nav class="h-14 border-b border-line bg-surface flex items-center px-4 sm:px-8 gap-4 sm:gap-7">
-    <a href="{{ route('dashboard') }}" class="flex items-center gap-2.5 font-bold text-[16px] text-ink hover:text-ink">
+    <a href="{{ route('home') }}" class="flex items-center gap-2.5 font-bold text-[16px] text-ink hover:text-ink">
         <x-application-logo />
         <span class="hidden sm:inline">SkillOS</span>
     </a>
 
     <div class="flex gap-1">
-        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">خانه</x-nav-link>
-        <x-nav-link :href="route('learning-items.index')" :active="request()->routeIs('learning-items.*')">یادگیری‌ها</x-nav-link>
+        <x-nav-link :href="route('home')" :active="request()->routeIs('home')">خانه</x-nav-link>
+        <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.*') || request()->routeIs('lessons.*') || request()->routeIs('enrollments.*')">همه‌ی دوره‌ها</x-nav-link>
     </div>
 
     <div class="ms-auto flex items-center gap-3">

@@ -1,0 +1,32 @@
+[
+  {
+    "key": "range-output",
+    "title": "خروجی range",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کد `for i in range(2, 5): print(i)` چه اعدادی چاپ می‌کند؟",
+    "options": ["2 3 4 5", "2 3 4", "3 4 5", "1 2 3 4"],
+    "correct_option": 1,
+    "expected_outcome": "`range(2, 5)` از ۲ شروع می‌کند و **قبل از** ۵ می‌ایستد: 2 3 4.",
+    "hints": [
+      "range عدد پایانی را شامل می‌شود یا نه؟",
+      "range(a, b) از a تا b-1 است."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "sum-evens",
+    "title": "جمع اعداد زوج",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `sum_evens` بنویس که یک لیست عدد بگیرد و مجموع اعداد زوجش را برگرداند. `sum_evens([1, 2, 3, 4])` باید `6` بدهد.",
+    "expected_outcome": "```python\ndef sum_evens(numbers):\n    total = 0\n    for n in numbers:\n        if n % 2 == 0:\n            total += n\n    return total\n```",
+    "hints": [
+      "زوج بودن را با `n % 2 == 0` چک کن.",
+      "یک متغیر جمع‌کننده قبل از حلقه بساز و در پایان return کن."
+    ],
+    "rubric": "Correct: iterates the list, adds even numbers, returns the total (a comprehension with sum() is also correct). Partial: correct logic but prints instead of returning, or off-by-one in the even check. Incorrect: wrong result for [1,2,3,4]."
+  }
+]

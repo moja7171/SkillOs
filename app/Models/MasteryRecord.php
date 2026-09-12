@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['numeric_mastery', 'level', 'last_evaluated_at', 'next_review_due_at'])]
+#[Fillable(['user_id', 'lesson_id', 'numeric_mastery', 'level', 'last_evaluated_at', 'next_review_due_at'])]
 class MasteryRecord extends Model
 {
     /** Learner-facing level labels (Persian). The numeric value is never shown. */
@@ -40,8 +40,8 @@ class MasteryRecord extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function skill(): BelongsTo
+    public function lesson(): BelongsTo
     {
-        return $this->belongsTo(Skill::class);
+        return $this->belongsTo(Lesson::class);
     }
 }

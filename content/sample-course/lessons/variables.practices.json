@@ -1,0 +1,32 @@
+[
+  {
+    "key": "type-check",
+    "title": "نوع این مقدار چیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خروجی `print(type(3 / 2))` چیست؟",
+    "options": ["<class 'int'>", "<class 'float'>", "<class 'str'>", "خطا"],
+    "correct_option": 1,
+    "expected_outcome": "تقسیم `/` در پایتون همیشه float برمی‌گرداند، حتی وقتی نتیجه رند باشد؛ پس خروجی `<class 'float'>` است.",
+    "hints": [
+      "به عملگر تقسیم دقت کن — با `//` فرق دارد.",
+      "`3 / 2` برابر `1.5` است. `1.5` چه نوعی است؟"
+    ],
+    "rubric": "Correct only if option 1 (float) is selected."
+  },
+  {
+    "key": "fix-concat",
+    "title": "خطای TypeError را رفع کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کد زیر خطا می‌دهد. آن را طوری تغییر بده که چاپ کند: `Sara is 27 years old`\n\n```python\nname = \"Sara\"\nage = 27\nprint(name + \" is \" + age + \" years old\")\n```",
+    "expected_outcome": "باید `age` را با `str(age)` به رشته تبدیل کرد، یا از f-string استفاده کرد: `print(f\"{name} is {age} years old\")`.",
+    "hints": [
+      "پایتون نمی‌تواند رشته و عدد را با + بچسباند. کدام قسمت عدد است؟",
+      "یا `str(age)` بنویس، یا کل جمله را با f-string بساز: `f\"...{age}...\"`."
+    ],
+    "rubric": "Correct: the code produces exactly 'Sara is 27 years old' by converting age to str or using an f-string/format. Partial: the fix works but changes the output text or hard-codes 27 as a string literal. Incorrect: still concatenates int with str, or doesn't produce the sentence."
+  }
+]

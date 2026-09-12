@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['learning_item_id', 'skill_id', 'type', 'title', 'estimated_minutes', 'payload'])]
+#[Fillable(['lesson_id', 'key', 'type', 'title', 'estimated_minutes', 'payload'])]
 class Activity extends Model
 {
     /** Practice forms the AI may choose (payload.form) and their learner-facing labels. */
@@ -48,14 +48,9 @@ class Activity extends Model
         ];
     }
 
-    public function learningItem(): BelongsTo
+    public function lesson(): BelongsTo
     {
-        return $this->belongsTo(LearningItem::class);
-    }
-
-    public function skill(): BelongsTo
-    {
-        return $this->belongsTo(Skill::class);
+        return $this->belongsTo(Lesson::class);
     }
 
     public function attempts(): HasMany

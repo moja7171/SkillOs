@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['scheduled_for', 'duration_minutes', 'status', 'source', 'reason'])]
+#[Fillable(['user_id', 'enrollment_id', 'activity_id', 'scheduled_for', 'duration_minutes', 'status', 'source', 'reason'])]
 class PlanItem extends Model
 {
     protected function casts(): array
@@ -21,9 +21,9 @@ class PlanItem extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function learningItem(): BelongsTo
+    public function enrollment(): BelongsTo
     {
-        return $this->belongsTo(LearningItem::class);
+        return $this->belongsTo(Enrollment::class);
     }
 
     public function activity(): BelongsTo

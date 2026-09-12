@@ -8,30 +8,30 @@ Status: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped
 
 ## M0 — Catalog foundation
 
-### [ ] S-01 Schema v0.3
+### [x] S-01 Schema v0.3
 Tables per DESIGN.md §3: courses, lessons, lesson_videos, lesson_prerequisites, activities(lesson_id, key), enrollments, attempts, mastery_records(lesson_id), plan_items(enrollment_id). Old learning_items/skills/skill_dependencies/resources removed. `migrate:fresh` clean; models, factories, relationships in place.
 
-### [ ] S-02 Content importer
+### [x] S-02 Content importer
 As the owner, I want `php artisan content:import <slug>` to load a course from `content/<slug>/` so authoring stays in files.
 - Upserts course by slug, lessons by slug, learn activity per lesson, practices by key; videos and prerequisites replaced from the file; default prerequisite = previous lesson.
 - Re-import after editing a lesson text keeps existing attempts/mastery (same ids).
 - Validates: unique slugs, prerequisite slugs exist, mcq has 4 options and a valid correct_option, hints ≤ 2, difficulty/form enums. Errors name the file and field.
 - A sample course in `content/sample-course/` (2–3 short lessons) ships with the repo for tests and demos.
 
-### [ ] S-03 Catalog and enrollment
+### [x] S-03 Catalog and enrollment
 As a learner, I want to see all courses and enroll.
 - `/courses` lists courses with lessons count and an "enrolled" badge; `/courses/{slug}` shows outcome, sources, lessons table (level per lesson for me), enroll button.
 - Enroll creates an enrollment (active, priority 3, no daily time) and redirects to the course page; enrolling twice is a no-op.
 
-### [ ] S-04 Enrollment config
+### [x] S-04 Enrollment config
 Priority, Daily Time, Preferred time, Status — same form and rules as before (v0.2 S-04/edit page), now on `/enrollments/{id}/edit`.
 
-### [ ] S-05 Lesson page
+### [x] S-05 Lesson page
 As a learner, I want to open a lesson and switch between video and text.
 - Tabs ویدیو / متن (video tab first and marked Recommended when a video exists); markdown text; key points and common mistakes; practices list with form/difficulty/minutes; prerequisites with my levels; my level badge.
 - Locked state shown (with reason) when a prerequisite is below Familiar; the lesson can still be opened (free exploration).
 
-### [ ] S-06 My courses (interim Home)
+### [x] S-06 My courses (interim Home)
 `/` for a logged-in user lists enrolled courses with a level-distribution bar and "unscheduled" flag, plus a link to the catalog. Replaced by the real Home in M4.
 
 ## M1 — First real course

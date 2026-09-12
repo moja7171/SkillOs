@@ -1,0 +1,44 @@
+[
+  {
+    "key": "none-return",
+    "title": "این تابع چه برمی‌گرداند؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "بعد از اجرای کد زیر، مقدار `x` چیست و چرا؟\n\n```python\ndef double(n):\n    print(n * 2)\n\nx = double(4)\n```",
+    "expected_outcome": "`x` برابر `None` است. تابع فقط `8` را چاپ می‌کند و چون `return` ندارد، چیزی برنمی‌گرداند.",
+    "hints": [
+      "print و return یکی نیستند. کدام‌یک مقدار را به بیرون تابع می‌دهد؟",
+      "تابعی که return ندارد، به‌طور پیش‌فرض چه چیزی برمی‌گرداند؟"
+    ],
+    "rubric": "Correct: says x is None because the function prints instead of returning. Partial: says None without the reason, or says 8 is printed but is unsure about x. Incorrect: says x is 8."
+  },
+  {
+    "key": "default-param",
+    "title": "تابع با پارامتر پیش‌فرض",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `make_tag` بنویس که یک متن و یک نام تگ HTML بگیرد و متن را داخل آن تگ برگرداند. نام تگ باید پیش‌فرض `p` باشد.\n\nمثال: `make_tag(\"hi\")` → `\"<p>hi</p>\"` و `make_tag(\"hi\", \"b\")` → `\"<b>hi</b>\"`.",
+    "expected_outcome": "```python\ndef make_tag(text, tag=\"p\"):\n    return f\"<{tag}>{text}</{tag}>\"\n```",
+    "hints": [
+      "پارامتر دوم را با `=` و یک مقدار پیش‌فرض تعریف کن.",
+      "خروجی را با f-string بساز و حتماً `return` کن، نه print."
+    ],
+    "rubric": "Correct: defines make_tag(text, tag='p') and returns the wrapped string for both example calls. Partial: works but uses print instead of return, or the default is missing/wrong while the two-argument call works. Incorrect: wrong signature or wrong output format."
+  },
+  {
+    "key": "explain-scope",
+    "title": "چرا این کد خطا می‌دهد؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 5,
+    "prompt": "توضیح بده چرا کد زیر `NameError` می‌دهد و چطور باید درستش کرد:\n\n```python\ndef compute():\n    total = 10 + 5\n\ncompute()\nprint(total)\n```",
+    "expected_outcome": "`total` داخل تابع تعریف شده و **محلی (local)** است؛ بیرون تابع وجود ندارد. راه درست: تابع مقدار را `return` کند و بیرون در متغیری ذخیره شود: `total = compute()`.",
+    "hints": [
+      "متغیری که داخل تابع ساخته می‌شود، بعد از پایان تابع کجا می‌رود؟",
+      "به‌جای دسترسی از بیرون، تابع باید مقدار را به بیرون تحویل بدهد — با کدام کلیدواژه؟"
+    ],
+    "rubric": "Correct: explains local scope (total exists only inside compute) and proposes returning the value (total = compute()). Partial: identifies scope as the cause but proposes 'global' as the fix, or proposes return without explaining why. Incorrect: blames syntax or something unrelated."
+  }
+]

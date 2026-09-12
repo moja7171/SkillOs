@@ -1,0 +1,59 @@
+{
+  "title": "دوره‌ی نمونه: مبانی پایتون",
+  "description": "یک دوره‌ی کوتاه سه‌درسی که ساختار محتوای SkillOS را نشان می‌دهد. برای تست و دمو.",
+  "outcome_statement": "بتونی یک اسکریپت ساده‌ی پایتون بنویسی که با متغیر، تابع و حلقه کار می‌کند.",
+  "source_note": "نوشته‌شده به‌عنوان نمونه؛ بدون منبع ویدیویی واقعی.",
+  "lessons": [
+    {
+      "slug": "variables",
+      "title": "متغیرها و انواع داده",
+      "summary": "ذخیره‌ی مقدار در نام، و تفاوت int / float / str / bool.",
+      "estimated_minutes": 6,
+      "key_points": [
+        "متغیر یک برچسب روی یک مقدار است، نه یک جعبه.",
+        "نوع داده از خود مقدار می‌آید؛ پایتون type را حدس می‌زند (dynamic typing).",
+        "با type(x) می‌توانی نوع را ببینی."
+      ],
+      "common_mistakes": [
+        "جمع کردن str با int بدون تبدیل → TypeError.",
+        "استفاده از نام‌های رزروشده مثل list یا str به‌عنوان متغیر."
+      ],
+      "videos": [
+        { "title": "متغیرها در پایتون", "url": "https://www.w3schools.com/html/mov_bbb.mp4" }
+      ]
+    },
+    {
+      "slug": "functions",
+      "title": "تعریف و فراخوانی تابع",
+      "summary": "def، پارامتر، return و مقدار پیش‌فرض.",
+      "estimated_minutes": 8,
+      "key_points": [
+        "تابع با def تعریف و با نام + پرانتز فراخوانی می‌شود.",
+        "return اجرای تابع را تمام می‌کند؛ بدون return مقدار None برمی‌گردد.",
+        "پارامتر می‌تواند مقدار پیش‌فرض داشته باشد."
+      ],
+      "common_mistakes": [
+        "استفاده از print به‌جای return و بعد تعجب از None.",
+        "فراموش کردن پرانتز موقع فراخوانی."
+      ],
+      "videos": []
+    },
+    {
+      "slug": "loops",
+      "title": "حلقه‌های for و while",
+      "summary": "تکرار روی یک دنباله با for و تکرار تا برقراری شرط با while.",
+      "estimated_minutes": 8,
+      "key_points": [
+        "for روی هر iterable (list، str، range) پیمایش می‌کند.",
+        "while تا وقتی شرط True است ادامه می‌دهد؛ حتماً شرط باید روزی False شود.",
+        "break حلقه را می‌شکند، continue به دور بعد می‌پرد."
+      ],
+      "common_mistakes": [
+        "حلقه‌ی while بی‌پایان چون متغیر شرط به‌روز نمی‌شود.",
+        "تغییر لیست در حین پیمایش روی همان لیست."
+      ],
+      "videos": [],
+      "prerequisites": ["variables"]
+    }
+  ]
+}

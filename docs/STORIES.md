@@ -44,7 +44,7 @@ As the system, I need the schema to match DESIGN v0.2 before content and plannin
 
 ## M1 — Skill content
 
-### [ ] S-05 Generate skill content
+### [x] S-05 Generate skill content
 As the system, I want to produce learn text and practices for one Skill on demand, so content exists only for skills that are actually reached.
 - Given an approved skill with `content_generated_at = null`
 - When `SkillContentGenerator::generate(skill)` runs
@@ -52,14 +52,14 @@ As the system, I want to produce learn text and practices for one Skill on deman
 - And calling it again is a no-op (idempotent).
 - And at least one practice has difficulty `intro`.
 
-### [ ] S-06 Skill page
+### [x] S-06 Skill page
 As a learner, I want to open a Skill and see what it is, my level, its learn text, and its practices.
 - Shows name, description, qualitative level (never a number), prerequisites with their levels.
 - If content is missing, shows a "Prepare this skill" button that runs S-05 and reloads.
 - Renders learn text as markdown.
 - Lists practices with form + difficulty + estimated minutes and a Start button (free exploration, FR-14).
 
-### [ ] S-07 Paste a video
+### [x] S-07 Paste a video
 As a learner, I want to attach a video link to a Skill so I can learn from it instead of the text.
 - Given a Skill page
 - When I paste a URL and save

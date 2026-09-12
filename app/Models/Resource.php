@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['type', 'title', 'url', 'content', 'is_recommended'])]
+#[Fillable(['learning_item_id', 'skill_id', 'type', 'title', 'url', 'content', 'is_recommended'])]
 class Resource extends Model
 {
     protected function casts(): array

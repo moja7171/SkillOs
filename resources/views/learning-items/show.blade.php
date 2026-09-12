@@ -94,7 +94,7 @@
                                 <tr>
                                     <td class="num">{{ $i + 1 }}</td>
                                     <td dir="auto">
-                                        <div class="font-medium">{{ $skill->name }}</div>
+                                        <a href="{{ route('skills.show', $skill) }}" class="font-medium text-ink hover:text-accent">{{ $skill->name }}</a>
                                         @if ($skill->description)
                                             <div class="text-[12.5px] text-muted">{{ $skill->description }}</div>
                                         @endif

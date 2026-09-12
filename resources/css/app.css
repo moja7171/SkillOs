@@ -72,4 +72,18 @@
 
     .page { @apply px-4 sm:px-8 py-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]; }
     .page-narrow { @apply px-4 sm:px-8 py-7 max-w-2xl mx-auto; }
+
+    /* Rendered Markdown from AI text */
+    .prose-fa { @apply text-[14.5px] leading-[1.9]; }
+    .prose-fa h1, .prose-fa h2 { @apply text-[18px] font-bold mt-5 mb-2; }
+    .prose-fa h3, .prose-fa h4 { @apply text-[15px] font-semibold mt-4 mb-1.5; }
+    .prose-fa p { @apply my-2.5 text-muted; }
+    .prose-fa ul, .prose-fa ol { @apply my-2.5 ps-5 text-muted; }
+    .prose-fa ul { @apply list-disc; } .prose-fa ol { @apply list-decimal; }
+    .prose-fa li { @apply my-1; }
+    .prose-fa strong { @apply text-ink font-semibold; }
+    .prose-fa code { @apply px-1.5 py-0.5 rounded bg-code border border-line text-ink; direction: ltr; unicode-bidi: embed; }
+    .prose-fa pre { @apply my-3 p-4 rounded-lg bg-code border border-line overflow-x-auto leading-[1.65]; }
+    .prose-fa pre code { @apply p-0 bg-transparent border-0; }
+    .prose-fa blockquote { @apply border-s-2 border-line2 ps-3 text-muted; }
 }

@@ -32,6 +32,8 @@ class LearningDesignGenerator
             2. A breakdown into 4-10 Skills that compose that Outcome. Each Skill needs a short unique key (like "s1"), a name, a one-sentence description, and the keys of any other skills it depends on (prerequisites), if any.
 
             Order skills so prerequisites generally come before dependents. Keep it practical and scoped to a self-taught learner, not an exhaustive curriculum.
+
+            Write the outcome_statement, every skill name and every description in Persian (Farsi). Keep standard English technical terms as they are (e.g. "virtual environment", "DataFrame", "try/except") instead of forcing a translation. Skill keys stay short ASCII identifiers.
             PROMPT;
 
         $schema = [

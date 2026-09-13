@@ -20,7 +20,7 @@
                             </div>
                         @endforeach
                         @foreach ($day['reviews'] as $record)
-                            <a href="{{ route('lessons.show', $record->lesson) }}" class="flex items-center gap-2.5 px-4 py-2.5 border-b border-line last:border-b-0 text-[13.5px] text-ink hover:bg-hover">
+                            <a href="{{ $record->lesson->url() }}" class="flex items-center gap-2.5 px-4 py-2.5 border-b border-line last:border-b-0 text-[13.5px] text-ink hover:bg-hover">
                                 <span class="badge badge-l2">مرور</span>
                                 <span class="flex-1 min-w-0 truncate" dir="auto">{{ $record->lesson->title }} <span class="text-faint">· {{ $record->lesson->course->title }}</span></span>
                                 <x-level-badge :level="$record->level" />

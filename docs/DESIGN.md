@@ -23,7 +23,8 @@
 | Home | `/` | Continue Learning CTA, Today per course, My courses with progress bars | Continue Learning |
 | All courses | `/courses` | Catalog cards (title, outcome, lessons count, enrolled badge) | Enroll |
 | Course | `/courses/{slug}` | Outcome, sources, lessons table (#, title, level, minutes, lock), enrollment config in sidebar | Continue (scoped) / Enroll |
-| Lesson | `/lessons/{id}` | Tabs ویدیو / متن, key points, practices list, prerequisites with levels | Practice |
+| Lesson (course player) | `/courses/{slug}/lessons/{slug}` | Persistent curriculum sidebar on the left (sections, levels, current highlighted), tabs ویدیو / متن, key points, practices list, status / files / prerequisites, prev/next | Practice / Next lesson |
+| Continue | `/courses/{slug}/learn` | Redirects to the first lesson below «آشنا» | — |
 | Session | `/session/{activity}` | Learn tabs → practice → hints → feedback → next | Submit / Next |
 | Week | `/week` | Today's plan + due reviews for 6 days (read-only) | Open activity |
 | Enrollment config | `/enrollments/{id}/edit` | Priority, Daily Time, Preferred time, Status | Save |

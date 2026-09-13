@@ -56,13 +56,13 @@
             @if (! empty($lesson->key_points))
                 <div class="text-[12.5px] font-semibold mb-1.5">نکته‌های کلیدی</div>
                 <ul class="m-0 ps-5 list-disc text-[13px] text-muted">
-                    @foreach ($lesson->key_points as $point)<li dir="auto">{{ $point }}</li>@endforeach
+                    @foreach ($lesson->key_points as $point)<li dir="auto">{!! Str::inlineMarkdown($point, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</li>@endforeach
                 </ul>
             @endif
             @if (! empty($lesson->common_mistakes))
                 <div class="text-[12.5px] font-semibold mt-3 mb-1.5 text-bad">اشتباهات رایج</div>
                 <ul class="m-0 ps-5 list-disc text-[13px] text-muted">
-                    @foreach ($lesson->common_mistakes as $mistake)<li dir="auto">{{ $mistake }}</li>@endforeach
+                    @foreach ($lesson->common_mistakes as $mistake)<li dir="auto">{!! Str::inlineMarkdown($mistake, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</li>@endforeach
                 </ul>
             @endif
         </div>

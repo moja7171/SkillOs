@@ -20,6 +20,9 @@
                     <span class="text-[12.5px] font-semibold text-faint">هدف نهایی · </span>{{ $course->outcome_statement }}
                 </div>
             @endif
+            <div>
+                <a href="{{ route('courses.learn', $course) }}" class="btn btn-primary"><x-icon name="play" class="w-4 h-4" /> {{ $enrollment ? 'ادامه بده' : 'شروع کن' }}</a>
+            </div>
         </div>
     </div>
 
@@ -49,7 +52,7 @@
                             <tr>
                                 <td class="num">{{ $lesson->order + 1 }}</td>
                                 <td dir="auto">
-                                    <a href="{{ route('lessons.show', $lesson) }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent">{{ $lesson->title }}</a>
+                                    <a href="{{ $lesson->url() }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent">{{ $lesson->title }}</a>
                                     @if ($lesson->summary)
                                         <div class="text-[12.5px] text-muted">{{ $lesson->summary }}</div>
                                     @endif
@@ -60,7 +63,7 @@
                                     </div>
                                 </td>
                                 <td><x-level-badge :level="$levelOf($lesson)" /></td>
-                                <td class="text-end"><a href="{{ route('lessons.show', $lesson) }}" class="btn btn-sm">باز کن</a></td>
+                                <td class="text-end"><a href="{{ $lesson->url() }}" class="btn btn-sm">باز کن</a></td>
                             </tr>
                         @endforeach
                     </tbody>

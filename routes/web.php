@@ -7,6 +7,7 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
+use App\Models\Lesson;
 use App\Models\PlanItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::get('enrollments/{enrollment}/edit', [EnrollmentController::class, 'edit'])->name('enrollments.edit');
     Route::put('enrollments/{enrollment}', [EnrollmentController::class, 'update'])->name('enrollments.update');
 
-    Route::get('lessons/{lesson}', [LessonController::class, 'show'])->name('lessons.show');
+    Route::get('courses/{course}/learn', [LessonController::class, 'continue'])->name('courses.learn');
+    Route::get('courses/{course}/lessons/{lesson:slug}', [LessonController::class, 'show'])->scopeBindings()->name('lessons.show');
+    // Old bookmark form; lesson pages now live under their course.
+    Route::get('lessons/{lesson}', fn (Lesson $lesson) => redirect()->route('lessons.show', [$lesson->course, $lesson], 301));
 
     Route::post('activities/{activity}/start', [SessionController::class, 'start'])->name('session.start');
     Route::post('plan-items/{planItem}/start', [SessionController::class, 'startPlanned'])->name('session.start-planned');

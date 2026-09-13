@@ -303,10 +303,12 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 
 ---
 
-## 14. Video player: Plyr, self-hosted, with resume and speed memory (2026-09-13)
+---
 
-**Decision.** Local/YouTube videos render through Plyr (`resources/js/player.js`), themed to the tokens, Persian UI strings, controls: play, ±10s, progress with seek tooltip, time, volume, captions menu (off / English / فارسی — English default), speed 0.5–2×, PiP, fullscreen; keyboard: space/K, ←/→ (10s), ↑/↓, M, F, C, 0–9. Two additions on top of Plyr: resume from the last position per video (`localStorage skillos.player.pos.<videoId>`, skipped near start/end) and a remembered playback speed (`skillos.player.speed`). Icon sprite self-hosted at `public/plyr.svg`. Aparat stays an iframe.
+## 15. Lesson page = course player: curriculum sidebar, nested URLs, «ادامه» (2026-09-13)
 
-**Why.** The owner asked for a professional player; Plyr covers the feature list at ~30 KB without a build-time dependency on external CDNs (shared hosting, offline-friendly).
+**Decision.** The lesson page is laid out like a course player (Udemy-style): the lesson (video/text tabs, practices, status/files/prerequisites, prev/next) on the reading side and a **persistent curriculum sidebar on the left** — course title + progress, sections collapsible (the current one open), every lesson with number, minutes, video/text icon and a level dot (check ≥ «آشنا»), the current lesson highlighted and scrolled into view. Sticky on desktop (the main nav is now sticky too), a drawer on phones. Lesson URLs moved from `/lessons/{id}` to **`/courses/{course}/lessons/{lesson-slug}`** (scoped binding; old ids 301-redirect). New `GET /courses/{course}/learn` («ادامه بده» on the course page and Home) opens the first lesson below «آشنا», else the first lesson. `Lesson::url()` builds the link; `Course::lessons()` uses `chaperone()` so children know their course without extra queries.
 
-**Consequences.** `php artisan serve` ignores Range requests, so seeking only works in dev when media is served by something else (Apache/nginx in production; a tiny Range-capable Python server was used to verify). Per-viewer state is browser-local only — no server-side "watched" tracking (planner already uses the learn attempt for that).
+**Why.** With 100+ lessons per course, going back to the course page to pick the next lesson is the wrong loop; the owner asked for the list to be always visible while watching. Slug URLs are readable, stable across re-imports and match the content folder names.
+
+**Consequences.** `route('lessons.show')` needs `[$course, $lesson]` — use `$lesson->url()`. The lesson controller loads the whole curriculum with the learner's mastery (2 queries). Key points / common mistakes now render inline Markdown (backticked code).

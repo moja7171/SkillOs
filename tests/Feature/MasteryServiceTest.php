@@ -97,7 +97,7 @@ class MasteryServiceTest extends TestCase
         $page = $this->actingAs($user)->get(route('session.show', $attempt))->assertOk();
         $page->assertSee('سطح این درس')->assertSee('در حال یادگیری')->assertDontSee('150');
 
-        $this->actingAs($user)->get(route('lessons.show', $lesson))->assertOk()->assertSee('مرور بعدی')->assertDontSee('150');
+        $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('مرور بعدی')->assertDontSee('150');
         $this->actingAs($user)->get(route('courses.show', $lesson->course))->assertOk()->assertSee('در حال یادگیری');
     }
 }

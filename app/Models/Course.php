@@ -19,7 +19,7 @@ class Course extends Model
 
     public function lessons(): HasMany
     {
-        return $this->hasMany(Lesson::class)->orderBy('order');
+        return $this->hasMany(Lesson::class)->orderBy('order')->chaperone();
     }
 
     public function enrollments(): HasMany

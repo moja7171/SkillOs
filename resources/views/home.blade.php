@@ -107,7 +107,8 @@
                 @endif
                 @foreach ($enrollments as $enrollment)
                     @php $course = $enrollment->course; @endphp
-                    <a href="{{ route('courses.show', $course) }}" class="block px-[18px] py-3.5 border-b border-line last:border-b-0 text-ink hover:bg-hover">
+                    <div class="border-b border-line last:border-b-0">
+                    <a href="{{ route('courses.show', $course) }}" class="block px-[18px] pt-3.5 pb-2 text-ink hover:bg-hover">
                         <div class="flex items-center justify-between gap-2">
                             <span class="font-semibold truncate {{ $enrollment->status !== 'active' ? 'text-muted' : '' }}" dir="auto">{{ $course->title }}</span>
                             @if ($enrollment->status !== 'active')
@@ -121,6 +122,10 @@
                         </div>
                         <x-course-progress :lessons="$course->lessons" :user="$user" />
                     </a>
+                    <div class="px-[18px] pb-3 pt-1 flex gap-2">
+                        <a href="{{ route('courses.learn', $course) }}" class="btn btn-sm"><x-icon name="play" class="w-3.5 h-3.5" /> ادامه‌ی درس‌ها</a>
+                    </div>
+                    </div>
                 @endforeach
             </div>
         </div>

@@ -27,7 +27,7 @@
 <x-app-layout :title="$activity->title">
     <x-slot name="nav">
         <nav class="h-14 border-b border-line bg-surface flex items-center px-4 sm:px-6 gap-4">
-            <a href="{{ route('lessons.show', $lesson) }}" class="iconbtn" title="خروج از جلسه"><x-icon name="arrow" class="w-4 h-4" /></a>
+            <a href="{{ $lesson->url() }}" class="iconbtn" title="خروج از جلسه"><x-icon name="arrow" class="w-4 h-4" /></a>
             <div class="min-w-0 leading-[1.4]">
                 <div class="text-[12px] text-muted truncate" dir="auto">{{ $course->title }} <span class="text-faint">/</span> {{ $lesson->title }}</div>
                 <div class="font-bold text-[15px] truncate" dir="auto">{{ $isLearn ? 'یادگیری: ' : 'تمرین: ' }}{{ $activity->title }}</div>
@@ -188,7 +188,7 @@
                             @csrf
                             <button type="submit" class="btn"><x-icon name="refresh" class="w-4 h-4" /> دوباره همین تمرین</button>
                         </form>
-                        <a href="{{ route('lessons.show', $lesson) }}" class="btn btn-ghost ms-auto">برگرد به درس</a>
+                        <a href="{{ $lesson->url() }}" class="btn btn-ghost ms-auto">برگرد به درس</a>
                     @endif
                 </div>
             </div>

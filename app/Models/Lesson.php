@@ -65,6 +65,14 @@ class Lesson extends Model
     }
 
     /**
+     * Lesson pages live under their course: /courses/{course}/lessons/{lesson}.
+     */
+    public function url(): string
+    {
+        return route('lessons.show', [$this->course, $this]);
+    }
+
+    /**
      * The learner-facing level for one user. Loads mastery lazily if not eager-loaded.
      */
     public function levelFor(User $user): string

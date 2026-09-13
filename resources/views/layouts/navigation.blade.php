@@ -1,4 +1,4 @@
-<nav class="h-14 border-b border-line bg-surface flex items-center px-4 sm:px-8 gap-4 sm:gap-7">
+<nav class="sticky top-0 z-20 h-14 border-b border-line bg-surface flex items-center px-4 sm:px-8 gap-4 sm:gap-7">
     <a href="{{ route('home') }}" class="flex items-center gap-2.5 font-bold text-[16px] text-ink hover:text-ink">
         <x-application-logo />
         <span class="hidden sm:inline">SkillOS</span>

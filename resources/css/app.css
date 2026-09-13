@@ -86,6 +86,10 @@
     .prose-fa strong { @apply text-ink font-semibold; }
     .prose-fa code { @apply px-1.5 py-0.5 rounded bg-code border border-line text-ink whitespace-nowrap; direction: ltr; unicode-bidi: isolate; }
     .prose-fa pre { @apply my-3 p-4 rounded-lg bg-code border border-line overflow-x-auto leading-[1.65]; }
-    .prose-fa pre code { @apply p-0 bg-transparent border-0; }
+    .prose-fa pre code { @apply p-0 bg-transparent border-0 whitespace-pre block; direction: ltr; unicode-bidi: isolate; }
+    .prose-fa pre code .code-line { @apply block; direction: ltr; unicode-bidi: isolate; }
+    .prose-fa table { @apply my-3 w-auto text-[13.5px]; }
+    .prose-fa th { @apply text-start font-semibold text-muted px-3 py-1.5 border-b border-line2; }
+    .prose-fa td { @apply px-3 py-1.5 border-b border-line align-top; }
     .prose-fa blockquote { @apply border-s-2 border-line2 ps-3 text-muted; }
 }

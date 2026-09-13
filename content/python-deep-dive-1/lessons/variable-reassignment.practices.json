@@ -1,0 +1,26 @@
+[
+  {
+    "key": "plus-equals-object",
+    "title": "بعد از += چند شیء داریم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\na = 100\na = a + 1\n```\nبعد از خط دوم، درباره‌ی شیء int با مقدار ۱۰۰ چه می‌توان گفت؟",
+    "options": ["مقدارش به ۱۰۱ تغییر کرده", "دست‌نخورده است؛ a حالا به شیء جدیدی با مقدار ۱۰۱ اشاره می‌کند", "حذف شده و شیء ۱۰۱ جای آن نوشته شده", "به‌خاطر اینکه a دو طرف = بود، درجا به‌روز شده"],
+    "correct_option": 1,
+    "expected_outcome": "گزینه‌ی ۲. سمت راست اول ارزیابی می‌شود و یک شیء *جدید* می‌سازد؛ ارجاع a عوض می‌شود. محتوای int قابل تغییر نیست.",
+    "hints": ["پایتون کدام طرف = را اول ارزیابی می‌کند؟", "int immutable است — محتوایش هرگز عوض نمی‌شود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "count-objects",
+    "title": "چند شیء ساخته می‌شود؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "در کد زیر، در مجموع چند شیء `int` **مجزا** ساخته می‌شود و `a` در پایان به کدام اشاره می‌کند؟ (فرض کن اعداد بزرگ‌تر از ۲۵۶ هستند تا interning دخالت نکند.)\n\n```python\na = 1000\na = a + 1\na = a * 2\nb = a\n```",
+    "expected_outcome": "سه شیء: ۱۰۰۰، ۱۰۰۱ و ۲۰۰۲. هر عملیات یک int جدید می‌سازد. `b = a` شیء جدیدی نمی‌سازد؛ فقط ارجاع را کپی می‌کند. در پایان a (و b) به ۲۰۰۲ اشاره می‌کنند.",
+    "hints": ["هر عملیات ریاضی روی int یک شیء جدید تولید می‌کند.", "انتساب ساده‌ی `b = a` هیچ شیئی نمی‌سازد."],
+    "rubric": "Correct: 3 objects (1000, 1001, 2002), a points to 2002, and notes b = a creates nothing new. Partial: says 4 (counts b = a as a new object) or forgets to say where a points. Incorrect: says 1 or 2 objects."
+  }
+]

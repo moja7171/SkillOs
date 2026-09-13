@@ -1,0 +1,26 @@
+[
+  {
+    "key": "what-is-my-var",
+    "title": "my_var واقعاً چیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "بعد از اجرای `my_var = 10`، دقیق‌ترین توصیف از `my_var` کدام است؟",
+    "options": ["جعبه‌ای که عدد ۱۰ داخلش ذخیره شده", "نامی که به آدرس حافظه‌ی یک شیء int با مقدار ۱۰ اشاره می‌کند", "خود عدد ۱۰", "یک کپی از عدد ۱۰ در stack"],
+    "correct_option": 1,
+    "expected_outcome": "گزینه‌ی ۲. پایتون شیء int را در heap می‌سازد و `my_var` فقط یک ارجاع (آدرس) به آن است — نه جعبه، نه کپی.",
+    "hints": ["مدرس چه استعاره‌ای برای آدرس حافظه زد؟ صندوق پستی.", "متغیر «برابر ۱۰» نیست؛ برابر آدرسی است که ۱۰ آنجاست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "same-or-different-address",
+    "title": "پیش‌بینی id()",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "کد زیر را بدون اجرا بررسی کن. برای هر خط چاپ‌شده بگو `True` است یا `False` و **چرا**:\n\n```python\na = \"hello\"\nb = a\nc = \"world\"\nprint(id(a) == id(b))\nprint(id(a) == id(c))\n```",
+    "expected_outcome": "خط اول `True`: `b = a` آدرس a را به b می‌دهد، پس هر دو به همان شیء اشاره می‌کنند. خط دوم `False`: `\"world\"` شیء جداگانه‌ای در آدرس دیگری است.",
+    "hints": ["انتساب `b = a` مقدار را کپی نمی‌کند؛ ارجاع را کپی می‌کند.", "\"world\" یک شیء متفاوت است، پس آدرسش با \"hello\" فرق دارد."],
+    "rubric": "Correct: True for the first (b copies a's reference, same object) and False for the second (different object), with the reasoning. Partial: both answers right but the reasoning says 'because the values are equal/different' instead of referencing the same/different object. Incorrect: either boolean wrong."
+  }
+]

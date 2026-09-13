@@ -1,0 +1,26 @@
+[
+  {
+    "key": "append-vs-concat",
+    "title": "id ثابت می‌ماند یا نه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nx = [1, 2]\nbefore = id(x)\nx = x + [3]\nafter = id(x)\n```\n`before == after` چیست؟",
+    "options": ["True — لیست mutable است و درجا تغییر کرده", "False — عملگر + لیست جدیدی ساخته و ارجاع x عوض شده", "True — چون x دو طرف = هست", "بستگی به طول لیست دارد"],
+    "correct_option": 1,
+    "expected_outcome": "`False`. `+` لیست تازه‌ای برمی‌گرداند (برخلاف `append` که همان شیء را تغییر می‌دهد)، پس x به شیء جدیدی اشاره می‌کند.",
+    "hints": ["append و + از نظر نتیجه یکی‌اند ولی از نظر سازوکار نه.", "کدام‌یک شیء جدید می‌سازد؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "tuple-with-list",
+    "title": "tuple یخ‌زده یا نه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "برای هر خط بگو مجاز است یا خطا می‌دهد، و مقدار `t` بعد از خطوط مجاز چیست:\n\n```python\nt = ([1, 2], \"ab\", 3)\nt[0].append(9)      # (1)\nt[1] = \"cd\"          # (2)\nt[0] = [0]           # (3)\nt[2] += 1            # (4)\n```",
+    "expected_outcome": "(1) مجاز — t می‌شود `([1, 2, 9], \"ab\", 3)`؛ لیست داخل tuple mutable است. (2) TypeError — جایگزینی عنصر tuple ممنوع. (3) TypeError — همان دلیل، حتی اگر مقدار جدید لیست باشد. (4) TypeError — `t[2] += 1` یعنی `t[2] = t[2] + 1`، جایگزینی عنصر.",
+    "hints": ["tuple اجازه‌ی اضافه/حذف/جایگزینی عنصر نمی‌دهد؛ ولی تغییر *درونی* یک عنصر mutable مجاز است.", "`+=` روی عنصر tuple در نهایت یک انتساب به ایندکس است."],
+    "rubric": "Correct: (1) allowed with the new value, (2)(3)(4) all TypeError, with the reason (mutating the inner list vs replacing tuple slots). Partial: gets (1)-(3) right but thinks (4) is allowed. Incorrect: says (1) is an error or (2)/(3) are allowed."
+  }
+]

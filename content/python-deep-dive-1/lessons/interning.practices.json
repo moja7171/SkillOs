@@ -1,0 +1,37 @@
+[
+  {
+    "key": "interned-range",
+    "title": "کدام is درست است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در CPython کدام عبارت `True` است؟",
+    "options": ["a = 300; b = 300; a is b", "a = -5; b = -5; a is b", "a = \"hello world\"; b = \"hello world\"; a is b", "a = [1]; b = [1]; a is b"],
+    "correct_option": 1,
+    "expected_outcome": "فقط `-5` در بازه‌ی intern شده‌ی −۵ تا ۲۵۶ است. ۳۰۰ خارج بازه است؛ `\"hello world\"` فاصله دارد و شبیه identifier نیست؛ لیست‌ها هرگز به اشتراک گذاشته نمی‌شوند.",
+    "hints": ["بازه‌ی اعداد intern‌شده را یادت بیاور.", "رشته باید شبیه identifier باشد: بدون فاصله."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "membership-set",
+    "title": "تست عضویت را سریع کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این تابع در یک حلقه‌ی داغ میلیون‌ها بار صدا زده می‌شود. بدون تغییر رفتار، آن را طبق درس بهینه کن و در یک جمله بگو چرا سریع‌تر می‌شود.\n\n```python\nVOWELS = [\"a\", \"e\", \"i\", \"o\", \"u\"]\n\ndef is_vowel(ch):\n    return ch.lower() in VOWELS\n```",
+    "expected_outcome": "```python\nVOWELS = {\"a\", \"e\", \"i\", \"o\", \"u\"}   # یا frozenset\n\ndef is_vowel(ch):\n    return ch.lower() in VOWELS\n```\nعضویت در set با hash lookup است (O(1))؛ در list باید عنصر‌به‌عنصر مقایسه شود.",
+    "hints": ["کدام نوع container برای `in` سریع‌ترین بود؟", "فقط نوع VOWELS را عوض کن."],
+    "rubric": "Correct: VOWELS becomes a set or frozenset, behaviour unchanged, and the explanation mentions hash-based lookup vs sequential scan. Partial: changes to a tuple (no real gain) or changes to a set without explanation. Incorrect: changes behaviour (e.g. drops lower())."
+  },
+  {
+    "key": "peephole-consts",
+    "title": "کدام‌ها پیش‌محاسبه می‌شوند؟",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "برای هر انتساب بگو peephole optimizer نتیجه‌اش را پیش‌محاسبه می‌کند یا نه، و چرا:\n\n```python\ndef f():\n    a = 60 * 60 * 24\n    b = \"-\" * 30\n    c = (0,) * 10\n    d = [0] * 3\n    e = \"py\" * 5\n```",
+    "expected_outcome": "a: بله — عبارت ثابت عددی. b: نه — رشته‌ی ۳۰ کاراکتری، بلندتر از ۲۰. c: بله — tuple ده‌تایی، کوتاه‌تر از ۲۰. d: نه — لیست mutable است، ثابت محسوب نمی‌شود. e: بله — رشته‌ی ۱۰ کاراکتری.",
+    "hints": ["دو شرط: عبارت باید ثابت (immutable) باشد و نتیجه‌ی دنباله‌ای کوتاه‌تر از ۲۰ عنصر.", "طول نتیجه را حساب کن، نه طول عبارت."],
+    "rubric": "Correct: a yes, b no (length 30 > 20), c yes, d no (list is mutable), e yes — with reasons. Partial: one wrong, typically b or d. Incorrect: two or more wrong."
+  }
+]

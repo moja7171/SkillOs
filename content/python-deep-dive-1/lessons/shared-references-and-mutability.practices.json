@@ -1,0 +1,24 @@
+[
+  {
+    "key": "safe-shared-ref",
+    "title": "چرا ارجاع مشترک برای str امن است؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "پایتون برای `a = \"hello\"; b = \"hello\"` یک شیء مشترک می‌سازد ولی برای `a = [1]; b = [1]` نه. در دو سه جمله بگو چرا این تصمیم برای رشته امن است و برای لیست نه.",
+    "expected_outcome": "رشته immutable است: تنها راه «تغییر» b این است که ارجاعش به شیء دیگری برود، پس a هرگز تحت تأثیر قرار نمی‌گیرد. لیست mutable است: اگر b و a یک شیء بودند، `b.append(...)` مقدار a را هم عوض می‌کرد — رفتاری که هیچ‌کس انتظارش را ندارد.",
+    "hints": ["به تفاوت «عوض کردن ارجاع» و «عوض کردن state شیء» فکر کن.", "برای لیست، تغییر درجا از طریق یکی از نام‌ها از نام دیگر هم دیده می‌شود."],
+    "rubric": "Correct: links safety to immutability (string can't be changed in place, only re-pointed) and danger to mutability (in-place change visible through both names). Partial: says 'because strings are immutable' without explaining the consequence for the other name. Incorrect: attributes it to size or speed."
+  },
+  {
+    "key": "spot-the-alias",
+    "title": "باگ ارجاع مشترک را پیدا کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "این کد قرار است دو لیست مستقل بسازد ولی هر دو تغییر می‌کنند. خطای مفهومی را توضیح بده و کد را درست کن.\n\n```python\ndefaults = [\"read\"]\nadmin_perms = defaults\nadmin_perms.append(\"write\")\nprint(defaults)      # ['read', 'write']  ← نباید!\n```",
+    "expected_outcome": "`admin_perms = defaults` ارجاع مشترک می‌سازد، نه کپی. راه‌حل: کپی بگیر — `admin_perms = defaults.copy()` یا `list(defaults)` یا `defaults[:]` — بعد append کن. `defaults` باید `['read']` بماند و `admin_perms` برابر `['read', 'write']`.",
+    "hints": ["انتساب یک لیست به نام جدید، لیست جدید نمی‌سازد.", "برای داشتن شیء مستقل باید صریحاً کپی بگیری: `.copy()`، `list(...)` یا برش کامل."],
+    "rubric": "Correct: identifies the shared reference and copies the list (copy(), list(), or [:]) so defaults stays ['read']. Partial: fixes it by rebuilding admin_perms as a literal without naming the cause. Incorrect: defaults still changes."
+  }
+]

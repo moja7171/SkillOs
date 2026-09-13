@@ -1,0 +1,26 @@
+[
+  {
+    "key": "is-vs-eq",
+    "title": "is یا ==؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\na = [1, 2]\nb = [1, 2]\n```\nکدام گزینه درست است؟",
+    "options": ["a is b → True و a == b → True", "a is b → False و a == b → True", "a is b → True و a == b → False", "a is b → False و a == b → False"],
+    "correct_option": 1,
+    "expected_outcome": "دو لیست جدا (mutable، پس هیچ ارجاع مشترک خودکاری) با محتوای یکسان: `is` غلط، `==` درست.",
+    "hints": ["is آدرس را مقایسه می‌کند، == محتوا را.", "پایتون برای لیست‌ها هیچ‌وقت ارجاع مشترک خودکار نمی‌سازد."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "none-check",
+    "title": "بررسی None به‌روش درست",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `describe(value)` بنویس که:\n- اگر `value` برابر `None` باشد، رشته‌ی `\"missing\"` برگرداند (با عملگر identity، نه ==)؛\n- اگر `value` با `0` برابر باشد (از نظر مقدار — پس `0`, `0.0`, `False` همه شامل)، `\"zero\"` برگرداند؛\n- در غیر این صورت `\"value\"`.\n\nمثال‌ها: `describe(None)` → missing، `describe(0.0)` → zero، `describe(False)` → zero، `describe(\"\")` → value.",
+    "expected_outcome": "```python\ndef describe(value):\n    if value is None:\n        return \"missing\"\n    if value == 0:\n        return \"zero\"\n    return \"value\"\n```\nنکته: `\"\" == 0` False است پس \"value\" برمی‌گردد؛ `False == 0` True است.",
+    "hints": ["برای None از `is` استفاده کن، برای مقایسه‌ی عددی از `==`.", "ترتیب شرط‌ها مهم است: اول None را جدا کن."],
+    "rubric": "Correct: uses `is None` for the first check and `== 0` for the second, returns the right strings for all four examples. Partial: uses `== None` (works but wrong operator per the task) or reverses the check order so False is handled wrongly. Incorrect: uses truthiness (`if not value`) which returns 'zero' for the empty string."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "why-gc-exists",
+    "title": "GC برای چه کاری هست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام مورد را reference counting به‌تنهایی **نمی‌تواند** آزاد کند و garbage collector برای همان وجود دارد؟",
+    "options": ["اشیایی که در تابع ساخته شده‌اند و تابع تمام شده", "اشیای بزرگ مثل لیست‌های طولانی", "اشیایی که به هم ارجاع حلقوی دارند و از بیرون قابل دسترسی نیستند", "اشیای immutable مثل رشته‌ها"],
+    "correct_option": 2,
+    "expected_outcome": "گزینه‌ی ۳. در ارجاع حلقوی شمارنده‌ها هرگز صفر نمی‌شوند؛ GC چرخه‌ها را تشخیص می‌دهد و پاک می‌کند.",
+    "hints": ["به مثال A → B → A فکر کن.", "شمارنده‌ی هر کدام بعد از رفتن my_var چند بود؟"],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "predict-refcounts-cycle",
+    "title": "شمارنده‌ها در یک چرخه",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "با کلاس‌های A و B درس (A در سازنده‌اش B را با `self` می‌سازد، B ارجاع به A را نگه می‌دارد) و GC خاموش:\n\n```python\nmy_var = A()\nother = my_var\n```\n\n۱) شمارنده‌ی A و B الان چند است؟\n۲) بعد از `my_var = None` چند؟\n۳) بعد از `other = None` چند؟ آیا reference counting آن‌ها را آزاد می‌کند؟\n۴) چه چیزی آن‌ها را آزاد می‌کند؟",
+    "expected_outcome": "۱) A = 3 (my_var، other، و B.a)، B = 1 (A.b). ۲) A = 2، B = 1. ۳) A = 1، B = 1 — نه، هیچ‌کدام صفر نیست. ۴) فقط garbage collector (خودکار وقتی روشن باشد، یا `gc.collect()`).",
+    "hints": ["به ارجاع‌های داخل اشیا هم بشمار: B.a به A اشاره دارد و A.b به B.", "بعد از حذف همه‌ی نام‌های بیرونی، چرخه هنوز خودش را زنده نگه می‌دارد."],
+    "rubric": "Correct: A=3/B=1, then A=2/B=1, then A=1/B=1 with 'no', and GC as the answer to 4. Partial: forgets the internal reference (says A=2 initially) but gets the conclusion (cycle, GC needed) right. Incorrect: claims reference counting frees them after step 3."
+  }
+]

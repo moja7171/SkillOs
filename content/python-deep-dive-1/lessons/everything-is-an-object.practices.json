@@ -1,0 +1,26 @@
+[
+  {
+    "key": "parens-or-not",
+    "title": "با پرانتز یا بی‌پرانتز؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "می‌خواهی تابع `square` را به تابع `exec_function(fn, n)` بدهی تا روی عدد ۳ اجرا شود. کدام فراخوانی درست است؟",
+    "options": ["exec_function(square(), 3)", "exec_function(square, 3)", "exec_function(square(3))", "exec_function(\"square\", 3)"],
+    "correct_option": 1,
+    "expected_outcome": "`exec_function(square, 3)`. بدون پرانتز، خود شیء تابع پاس می‌شود؛ `square()` آن را (بدون آرگومان) صدا می‌زند و خطا می‌دهد؛ رشته‌ی \"square\" فقط یک رشته است.",
+    "hints": ["پرانتز یعنی *فراخوانی*.", "exec_function انتظار یک شیء صدازدنی دارد، نه نتیجه‌ی آن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "apply-twice",
+    "title": "تابعی که تابع می‌گیرد",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `apply_twice(fn, x)` بنویس که `fn` را دو بار پشت‌سرهم روی `x` اعمال کند و نتیجه را برگرداند. بعد یک تابع `add_ten(n)` تعریف کن و نشان بده `apply_twice(add_ten, 5)` برابر `25` است، و `apply_twice(square, 3)` (با square از درس) برابر `81`.",
+    "expected_outcome": "```python\ndef apply_twice(fn, x):\n    return fn(fn(x))\n\ndef add_ten(n):\n    return n + 10\n\nassert apply_twice(add_ten, 5) == 25\nassert apply_twice(square, 3) == 81\n```",
+    "hints": ["نتیجه‌ی فراخوانی اول را دوباره به fn بده.", "موقع پاس دادن add_ten و square پرانتز نگذار."],
+    "rubric": "Correct: apply_twice returns fn(fn(x)); add_ten defined; both checks hold (25 and 81). Partial: apply_twice right but the demonstration missing or one value wrong. Incorrect: calls fn only once or passes fn with parentheses."
+  }
+]

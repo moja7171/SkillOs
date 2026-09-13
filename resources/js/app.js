@@ -1,4 +1,6 @@
 import Alpine from 'alpinejs';
+import 'plyr/dist/plyr.css';
+import { mountPlayers } from './player';
 
 window.Alpine = Alpine;
 
@@ -23,6 +25,6 @@ function isolateCodeLines() {
         code.dataset.isolated = '1';
     });
 }
-document.addEventListener('DOMContentLoaded', isolateCodeLines);
+document.addEventListener('DOMContentLoaded', () => { isolateCodeLines(); mountPlayers(); });
 
 Alpine.start();

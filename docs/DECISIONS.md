@@ -290,3 +290,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 - `.srt` subtitles must be converted to `.vtt` (`ffmpeg -i x.srt x.vtt`) before referencing.
 - Owner also provided the course's official exercise files (slide PDFs + Jupyter notebooks per lecture). They live in `course/<slug>/files/NNN-slug.{pdf,ipynb}` and are attached to lessons via `attachments: [{title, file}]` → `lessons.attachments` json, shown as «فایل‌های درس». Files for lectures without videos are parked in `files/extra/<section>/`. Slides + notebooks are now primary sources for lesson texts alongside the English transcripts.
 - Subtitles arrived later the same day (fa + en, machine-translated fa). Video 085 has no Persian track. Lesson texts for 50 of 60 lessons are still outlines; they are written from the English transcripts next.
+
+---
+
+## 14. Video player: Plyr, self-hosted, with resume and speed memory (2026-09-13)
+
+**Decision.** Local/YouTube videos render through Plyr 3.7.8 (bundled via Vite, icon sprite self-hosted at `public/plyr.svg`) instead of the bare `<video controls>`. Persian UI strings; controls: big play, ±10s, progress with seek tooltip, time, volume, captions (fa/en/off), settings (captions, speed 0.5–2×), PiP, fullscreen. Keyboard: space/K, ←→/J/L, ↑↓, M, F, C, 0–9. Two additions in `resources/js/player.js`: the playback position is remembered per video (`localStorage`, resume unless within 5s of the start or 10s of the end) and the chosen speed is remembered globally. Aparat stays an iframe.
+
+**Why.** The owner asked for a professional player with speed, seeking, keyboard and subtitle selection. Plyr gives all of that accessibly in ~30 KB and honours `<track>` elements, so the content model didn't change.
+
+**Consequences.** `php artisan serve` cannot seek (no HTTP Range) — test seeking/resume against a Range-capable server (Apache/nginx in production; a throwaway Python range server in dev). Per-viewer state lives in the browser only.

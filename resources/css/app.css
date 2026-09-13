@@ -26,6 +26,31 @@
     a:hover { @apply text-ink; }
 }
 
+/* ---- Video player (Plyr) themed to the tokens ---- */
+.player-shell {
+    --plyr-color-main: var(--accent);
+    --plyr-video-background: #000;
+    --plyr-font-family: 'Vazirmatn', Tahoma, sans-serif;
+    --plyr-font-size-base: 13px;
+    --plyr-font-size-small: 12px;
+    --plyr-captions-background: rgba(0, 0, 0, .75);
+    --plyr-captions-text-color: #fff;
+    --plyr-font-size-captions-base: 17px;
+    --plyr-font-size-captions-medium: 20px;
+    --plyr-font-size-captions-large: 22px;
+    --plyr-control-radius: 6px;
+    --plyr-menu-background: var(--surface);
+    --plyr-menu-color: var(--ink);
+    --plyr-menu-border-color: var(--line2);
+    --plyr-menu-arrow-color: var(--surface);
+    --plyr-tooltip-background: var(--surface);
+    --plyr-tooltip-color: var(--ink);
+}
+.player-shell .plyr__captions .plyr__caption { line-height: 1.7; unicode-bidi: plaintext; }
+/* Plyr's menu is laid out LTR; labels stay Persian, just isolated so they read correctly. */
+.player-shell .plyr__menu__container [role="menuitemradio"] span:first-child { unicode-bidi: plaintext; }
+.player-shell .plyr__control--forward:focus-visible, .player-shell .plyr__control:focus-visible { outline: 2px solid var(--accent); }
+
 /* ---- Components mirrored from the approved mockup ---- */
 @layer components {
     .card { @apply bg-surface border border-line rounded-card; }

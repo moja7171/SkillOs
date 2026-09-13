@@ -24,12 +24,19 @@
                         <div class="text-[13px] font-semibold mb-2" dir="auto">{{ $video->title ?? 'قسمت '.fa_num($loop->iteration) }}</div>
                     @endif
                     @if ($embed['kind'] === 'file')
-                        <video controls preload="metadata" class="w-full rounded-lg bg-black aspect-video" crossorigin="anonymous">
-                            <source src="{{ $embed['src'] }}">
-                            @foreach ($video->subtitles ?? [] as $track)
-                                <track kind="subtitles" src="{{ $track['url'] }}" srclang="{{ $track['lang'] }}" label="{{ $track['label'] }}" @if ($loop->first) default @endif>
-                            @endforeach
-                        </video>
+                        <div class="player-shell rounded-lg overflow-hidden bg-black" dir="ltr">
+                            <video class="js-player" playsinline preload="metadata" crossorigin="anonymous"
+                                   data-video-id="{{ $video->id }}" data-captions-default="{{ $video->subtitles[0]['lang'] ?? 'en' }}">
+                                <source src="{{ $embed['src'] }}" type="video/mp4">
+                                @foreach ($video->subtitles ?? [] as $track)
+                                    <track kind="captions" src="{{ $track['url'] }}" srclang="{{ $track['lang'] }}" label="{{ $track['label'] }}" @if ($loop->first) default @endif>
+                                @endforeach
+                            </video>
+                        </div>
+                    @elseif ($embed['kind'] === 'youtube')
+                        <div class="player-shell rounded-lg overflow-hidden bg-black" dir="ltr">
+                            <div class="js-player" data-plyr-provider="youtube" data-plyr-embed-id="{{ basename($embed['src']) }}" data-video-id="{{ $video->id }}"></div>
+                        </div>
                     @elseif ($embed['kind'] === 'link')
                         <a href="{{ $embed['src'] }}" target="_blank" rel="noopener" class="btn">باز کردن ویدیو در تب جدید</a>
                     @else

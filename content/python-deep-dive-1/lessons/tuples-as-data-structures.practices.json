@@ -1,0 +1,37 @@
+[
+  {
+    "key": "tuple-mutability",
+    "title": "immutable تا کجا؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nt = (1, [2, 3], 'x')\n```\nکدام عبارت **بدون خطا** اجرا می‌شود؟",
+    "options": ["t[0] = 10", "t[1].append(4)", "t[2] += 'y'", "del t[1]"],
+    "correct_option": 1,
+    "expected_outcome": "tuple اجازه‌ی تغییر ارجاع عناصرش را نمی‌دهد (گزینه‌های 0، 2، 3 خطا)؛ ولی شیء mutable داخلش (لیست) قابل تغییر است. `t[2] += 'y'` خطا می‌دهد چون در نهایت انتساب به t[2] است.",
+    "hints": ["tuple ارجاع‌ها را قفل می‌کند، نه اشیاء را.", "+= روی عنصر tuple یک انتساب است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "unpack-records",
+    "title": "پردازش رکوردها",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "لیستی از رکوردهای `(symbol, year, month, day, open, high, low, close)` داری. (۱) با unpacking در حلقه و بدون اندیس عددی، برای هر رکورد رشته‌ی `'SYMBOL YYYY-MM-DD: close'` بساز. (۲) با extended unpacking فقط symbol و close را از یک رکورد بگیر. (۳) با generator expression میانگین close همه‌ی رکوردها را حساب کن.",
+    "expected_outcome": "```python\nfor symbol, year, month, day, *_, close in records:\n    print(f'{symbol} {year}-{month:02}-{day:02}: {close}')\n\nsymbol, *_, close = records[0]\n\navg = sum(r[-1] for r in records) / len(records)\n```",
+    "hints": ["*_ چند عنصر میانی را می‌بلعد.", "unpacking در سر حلقه‌ی for مجاز است."],
+    "rubric": "Correct: loop unpacking with *_ (or named middles), extended unpacking for symbol/close, and a sum(...)/len average. Partial: uses indices like r[0] in the loop, or wrong average. Incorrect: does not unpack."
+  },
+  {
+    "key": "why-tuple-record",
+    "title": "چرا tuple و نه list؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: چرا برای رکورد `('London', 'UK', 8780000)` tuple مناسب‌تر از list است؟ «tuple ناهمگن، list همگن» یعنی چه و چرا این الگو رایج است؟ ضعف tuple به‌عنوان رکورد چیست؟",
+    "expected_outcome": "رکورد طول و ترتیب ثابت دارد و معنی از موقعیت می‌آید؛ tuple این را تضمین می‌کند (immutable) و با محتوای immutable کاملاً قفل و امن برای پاس دادن است. tuple عناصر با نوع‌های مختلف (نام، کشور، جمعیت) دارد؛ list معمولاً عناصر هم‌نوع دارد چون قرار است روی همه‌شان یک عمل انجام شود (مثلاً `city[2]` برای همه). ضعف: معنی موقعیت‌ها فقط یک قرارداد است و در کد دیده نمی‌شود — named tuple آن را حل می‌کند.",
+    "hints": ["به طول/ترتیب ثابت و immutability فکر کن.", "چرا در حلقه روی لیست شهرها city[2] امن است؟"],
+    "rubric": "Correct: fixed length/order + immutability for records, heterogeneous vs homogeneous rationale, and the positional-meaning weakness. Partial: two of three. Incorrect: claims tuples are just read-only lists."
+  }
+]

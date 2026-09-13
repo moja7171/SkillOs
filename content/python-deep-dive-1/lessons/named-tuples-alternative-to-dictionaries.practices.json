@@ -1,0 +1,37 @@
+[
+  {
+    "key": "star-vs-doublestar",
+    "title": "کدام امن است؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\nData = namedtuple('Data', 'key3 key2 key1')\nd = {'key1': 1, 'key2': 2, 'key3': 3}\n```\nکدام عبارت `Data(key3=3, key2=2, key1=1)` می‌دهد؟",
+    "options": ["Data(*d.values())", "Data(**d)", "Data(d)", "Data._make(d)"],
+    "correct_option": 1,
+    "expected_outcome": "`**d` مقادیر را با **نام** فیلد تطبیق می‌دهد. `*d.values()` ترتیب dict (key1, key2, key3) را به فیلدهای (key3, key2, key1) می‌ریزد و اشتباه می‌شود؛ `Data(d)` یک آرگومان می‌دهد؛ `_make(d)` روی کلیدها پیمایش می‌کند.",
+    "hints": ["نام در برابر موقعیت.", "پیمایش dict روی کلیدهاست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "tuplify",
+    "title": "tuplify با کلید نامعتبر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابع `tuplify_dicts(dicts)` درس را بنویس و روی این ورودی اجرا کن:\n```python\nrows = [{'id': 1, 'name': 'a'}, {'id': 2, '_secret': 'x'}, {'name': 'c', 'id': 3, 'score': 9.5}]\n```\nخروجی را بنویس (با توجه به `rename=True` نام فیلد `_secret` چه می‌شود؟) و توضیح بده چرا `sorted(keys)` لازم است.",
+    "expected_outcome": "```python\ndef tuplify_dicts(dicts):\n    keys = {k for d in dicts for k in d}\n    Struct = namedtuple('Struct', sorted(keys), rename=True)\n    Struct.__new__.__defaults__ = (None,) * len(Struct._fields)\n    return [Struct(**d) for d in dicts]\n```\nsorted(keys) = ['_secret', 'id', 'name', 'score'] → با rename، `_secret` (اندیس 0) می‌شود `_0`. اما `Struct(**{'_secret': 'x'})` با نام `_secret` خطا می‌دهد چون فیلد حالا `_0` است — پس یا کلیدهای نامعتبر را قبلاً فیلتر/تغییر نام بده. خروجی برای دو dict دیگر: Struct(_0=None, id=1, name='a', score=None) و Struct(_0=None, id=3, name='c', score=9.5). sorted چون set ترتیب ندارد و فیلدها باید ترتیب پایدار داشته باشند.",
+    "hints": ["rename فقط نام فیلد را عوض می‌کند، نه کلید dict را.", "set بی‌ترتیب است."],
+    "rubric": "Correct: function as in the lesson, notices that rename produces _0 and that **d with the original '_secret' key then fails (proposes filtering/renaming keys), explains sorted for stable order. Partial: function right but misses the rename/kwargs mismatch. Incorrect: no defaults so rows with missing keys fail."
+  },
+  {
+    "key": "when-dict",
+    "title": "کِی dict بهتر است؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: چه زمانی named tuple را به dict ترجیح می‌دهی و چه زمانی برعکس؟ معادل `d[key_name]` و `d.get(k, default)` برای named tuple چیست؟",
+    "expected_outcome": "named tuple وقتی ساختار ثابت و شناخته‌شده دارد، فقط خوانده می‌شود و کلیدها identifier معتبرند (رکورد، ردیف دیتابیس، مقدار برگشتی) — سبک‌تر، immutable، با نام و autocomplete. dict وقتی کلیدها پویا/ناشناخته‌اند، اضافه/حذف می‌شوند، یا رشته/identifier نیستند. معادل‌ها: `getattr(nt, key_name)` و `getattr(nt, k, default)`.",
+    "hints": ["ثابت بودن ساختار و mutability.", "getattr سه آرگومان می‌گیرد."],
+    "rubric": "Correct: sensible criteria both ways plus getattr with and without default. Partial: criteria fine but getattr missing. Incorrect: says named tuples can take non-string keys."
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "key": "return-namedtuple",
+    "title": "بازنویسی تابع",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `stats(numbers)` بنویس که کمترین، بیشترین و میانگین یک لیست اعداد را به‌صورت named tuple `Stats(minimum, maximum, mean)` برگرداند. نشان بده هم دسترسی با نام و هم unpacking کار می‌کند، و برای لیست خالی چه می‌کنی.",
+    "expected_outcome": "```python\nfrom collections import namedtuple\nStats = namedtuple('Stats', 'minimum maximum mean')\n\ndef stats(numbers):\n    if not numbers:\n        raise ValueError('empty sequence')\n    return Stats(min(numbers), max(numbers), sum(numbers) / len(numbers))\n\ns = stats([3, 1, 2])\ns.mean          # 2.0\nlo, hi, avg = s\n```",
+    "hints": ["named tuple را بیرون از تابع تعریف کن.", "لیست خالی: min/max خطا می‌دهند — خودت تصمیم بگیر."],
+    "rubric": "Correct: Stats defined at module level, function returns an instance, attribute access and unpacking shown, empty case handled (raise or None). Partial: defines the namedtuple inside the function on every call. Incorrect: returns a dict or plain tuple."
+  },
+  {
+    "key": "why-namedtuple-return",
+    "title": "چرا نه tuple ساده؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در ۲ تا ۳ جمله: برگرداندن named tuple به‌جای tuple ساده چه فایده‌ای برای *صداکننده* دارد (دو مورد) و چه چیزی را از دست نمی‌دهد؟",
+    "expected_outcome": "صداکننده با نام فیلد می‌خواند (`color.alpha`) نه با اندیس، repr خوانا دارد، و ویرایشگر autocomplete می‌دهد حتی بدون import کردن کلاس. هیچ‌چیز از دست نمی‌رود: همچنان tuple است و unpacking، اندیس‌گذاری و پیمایش کار می‌کند.",
+    "hints": ["به تجربه‌ی نوشتن کد در ویرایشگر فکر کن.", "named tuple هنوز tuple است."],
+    "rubric": "Correct: at least two caller benefits (names, repr, autocomplete) and notes nothing is lost since it is still a tuple. Partial: one benefit. Incorrect: claims unpacking stops working."
+  }
+]

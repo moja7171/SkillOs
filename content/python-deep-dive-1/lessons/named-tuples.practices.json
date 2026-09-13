@@ -1,0 +1,37 @@
+[
+  {
+    "key": "what-namedtuple-returns",
+    "title": "namedtuple چه برمی‌گرداند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nfrom collections import namedtuple\nP = namedtuple('Point', 'x y')\np = P(1, 2)\n```\nکدام گزینه درست است؟",
+    "options": ["P یک instance از tuple است و p یک کپی از آن", "P یک کلاس است که از tuple ارث می‌برد؛ p یک tuple با نام فیلدهاست و repr آن Point(x=1, y=2) است", "P یک تابع است و p نتیجه‌ی فراخوانی آن به‌صورت dict", "repr p برابر P(x=1, y=2) است چون نام متغیر P است"],
+    "correct_option": 1,
+    "expected_outcome": "namedtuple یک class factory است: کلاس `Point` (زیرکلاس tuple) را می‌سازد و به P نسبت داده می‌شود؛ repr نام کلاس را نشان می‌دهد نه نام متغیر.",
+    "hints": ["namedtuple کلاس می‌سازد، نه شیء.", "نام کلاس از رشته‌ی اول می‌آید."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "build-stock",
+    "title": "رکورد سهام با namedtuple",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یک namedtuple به نام `Stock` با فیلدهای `symbol year month day open high low close` بساز (از رشته‌ی چندخطی استفاده کن). یک instance با keyword arguments بساز، `high - low` را با نام فیلدها حساب کن، با extended unpacking فقط `symbol` و `close` را بگیر، و نشان بده `_fields` و `_asdict()` چه می‌دهند.",
+    "expected_outcome": "```python\nStock = namedtuple('Stock', '''symbol\n    year month day\n    open high low close''')\ndjia = Stock(symbol='DJIA', year=2018, month=1, day=25,\n             open=26_313, high=26_458, low=26_260, close=26_393)\nspread = djia.high - djia.low          # 198\nsymbol, *_, close = djia\nStock._fields     # ('symbol', 'year', ..., 'close')\ndjia._asdict()    # {'symbol': 'DJIA', ...}\n```",
+    "hints": ["فیلدها را با whitespace/newline جدا کن.", "_fields روی کلاس، _asdict روی instance."],
+    "rubric": "Correct: multi-line field string, keyword construction, attribute arithmetic, extended unpacking, _fields on the class and _asdict on the instance. Partial: uses indices instead of names or calls _fields on the instance only. Incorrect: defines a regular class."
+  },
+  {
+    "key": "why-namedtuple",
+    "title": "چه چیزی رایگان می‌گیریم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: نسبت به یک کلاس دستی با `__init__`، named tuple چه چیزهایی را «رایگان» می‌دهد؟ چه چیزی از دست می‌دهیم؟ چرا `dot_product` نوشته‌شده با `zip` روی Point2D و Vector3D هر دو کار می‌کند ولی روی کلاس دستی نه؟",
+    "expected_outcome": "رایگان: `__repr__` خوانا، `__eq__` مبتنی بر مقدار، immutability، unpacking/iteration/indexing/slicing، سازگاری با توابع دنباله‌ای (max, zip, sorted) و ساخت با keyword. از دست می‌دهیم: mutability (نمی‌شود `pt.x = 100`) و فیلدهای با underscore. dot_product با zip روی هر iterable کار می‌کند و named tupleها tuple هستند؛ کلاس دستی iterable نیست مگر `__iter__` بنویسی.",
+    "hints": ["named tuple یک tuple است.", "به __repr__ و __eq__ که در کلاس دستی باید بنویسی فکر کن."],
+    "rubric": "Correct: lists several free features, the immutability trade-off, and explains iterability for zip. Partial: two of three. Incorrect: says named tuples are mutable or not tuples."
+  }
+]

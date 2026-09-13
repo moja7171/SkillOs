@@ -1,0 +1,37 @@
+[
+  {
+    "key": "right-aligned-defaults",
+    "title": "پیش‌فرض‌ها به کدام فیلدها می‌رسند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nRec = namedtuple('Rec', 'a b c d')\nRec.__new__.__defaults__ = (1, 2)\nRec(9, 8)\n```\nنتیجه چیست؟",
+    "options": ["Rec(a=1, b=2, c=9, d=8)", "Rec(a=9, b=8, c=1, d=2)", "TypeError — پیش‌فرض برای a و b تعریف نشده", "Rec(a=9, b=1, c=2, d=8)"],
+    "correct_option": 1,
+    "expected_outcome": "`__defaults__` از راست با پارامترها تراز می‌شود: c=1, d=2. آرگومان‌های positional به a و b می‌روند.",
+    "hints": ["پیش‌فرض‌ها همیشه مال آخرین پارامترها هستند.", "tuple را از راست بچین."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "defaults-and-docs",
+    "title": "پیش‌فرض و مستندسازی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یک namedtuple `Address` با فیلدهای `street city country postal_code` بساز که `country` پیش‌فرض `'IR'` و `postal_code` پیش‌فرض `None` داشته باشد — یک بار با `__new__.__defaults__` و یک بار با پارامتر `defaults=` (3.7+). docstring کلاس و فیلد `postal_code` را تنظیم کن. نشان بده `Address('Valiasr', 'Tehran')` چه می‌دهد و چرا نمی‌شود فقط برای `city` پیش‌فرض گذاشت.",
+    "expected_outcome": "```python\nAddress = namedtuple('Address', 'street city country postal_code')\nAddress.__new__.__defaults__ = ('IR', None)\n# or: Address = namedtuple('Address', 'street city country postal_code', defaults=('IR', None))\nAddress.__doc__ = 'A postal address'\nAddress.postal_code.__doc__ = 'Postal code, may be None'\nAddress('Valiasr', 'Tehran')   # Address(street='Valiasr', city='Tehran', country='IR', postal_code=None)\n```\nپیش‌فرض‌ها از راست تراز می‌شوند؛ پیش‌فرض برای city بدون پیش‌فرض برای country و postal_code ممکن نیست (پارامتر بی‌پیش‌فرض بعد از پیش‌فرض‌دار مجاز نیست).",
+    "hints": ["tuple پیش‌فرض‌ها به آخرین فیلدها می‌خورد.", "__doc__ قابل نوشتن است."],
+    "rubric": "Correct: both default mechanisms, right-aligned (IR, None), docstrings set, correct construction output, and explains why a middle-only default is impossible. Partial: one mechanism or wrong alignment. Incorrect: tries to pass defaults positionally to namedtuple() in the field list."
+  },
+  {
+    "key": "prototype-vs-defaults",
+    "title": "prototype یا __defaults__؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله، دو روش تعیین پیش‌فرض برای named tuple (prototype + `_replace` و `__new__.__defaults__`) را مقایسه کن: هر یک چطور کار می‌کند، سه ایراد روش prototype چیست، و چرا پیش‌فرض‌ها روی `__new__` گذاشته می‌شوند نه `__init__`؟",
+    "expected_outcome": "prototype: یک instance با همه‌ی مقادیر می‌سازیم و بقیه را با `_replace(...)` از آن مشتق می‌کنیم؛ ایرادها: نام کلاس در ساخت دیده نمی‌شود، به‌جای فراخوانی کلاس متد `_replace` صدا می‌زنیم، و فقط keyword مجاز است. `__defaults__`: tuple پیش‌فرض‌ها را روی سازنده می‌گذاریم و کلاس مثل همیشه (positional/keyword) صدا زده می‌شود. instanceهای named tuple در `__new__` ساخته می‌شوند (سازنده)، نه `__init__` (مقداردهی بعد از ساخت)، پس پارامترهای سازنده آنجا هستند.",
+    "hints": ["_replace فقط keyword می‌گیرد.", "__new__ می‌سازد، __init__ مقداردهی می‌کند."],
+    "rubric": "Correct: both mechanisms, the three prototype drawbacks, and the __new__ vs __init__ reason. Partial: two of three. Incorrect: says __init__ takes the fields."
+  }
+]

@@ -3195,8 +3195,17 @@
           "subtitle": "120-tuples-as-data-structures-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "tuple، list و str همه sequence‌اند؛ tuple و str immutable با طول و ترتیب ثابت.",
+        "کاما tuple می‌سازد، نه پرانتز؛ پرانتز فقط برای رفع ابهام.",
+        "tuple به‌عنوان رکورد: معنی از موقعیت می‌آید؛ معمولاً ناهمگن؛ لیست رکوردها همگن.",
+        "immutability tuple ارجاع‌ها را قفل می‌کند، نه اشیای درونش؛ `+=` tuple جدید می‌سازد.",
+        "unpacking (ساده، extended با `*`، در سر حلقه و enumerate) و برگرداندن چند مقدار از تابع."
+      ],
+      "common_mistakes": [
+        "فکر کردن به اینکه tuple فقط یک لیست فقط‌خواندنی است.",
+        "اندیس‌گذاری دستی به‌جای unpacking."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -3238,8 +3247,17 @@
           "subtitle": "122-named-tuples-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`namedtuple(name, fields)` یک کلاس (زیرکلاس tuple) می‌سازد — class factory.",
+        "فیلدها: لیست/tuple رشته‌ها یا یک رشته‌ی جداشده با فاصله/کاما؛ نباید با underscore شروع شوند (`rename=True`).",
+        "instance هم tuple است (اندیس، برش، unpacking، پیمایش، ==) هم با نام (`p.x`).",
+        "`__repr__` و `__eq__` رایگان؛ immutable؛ ساخت با positional یا keyword.",
+        "`_fields` روی کلاس، `_asdict()` روی instance؛ سربار ناچیز."
+      ],
+      "common_mistakes": [
+        "اشتباه گرفتن نام متغیر با نام کلاس داده‌شده به namedtuple.",
+        "تلاش برای `p.x = ...`."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -3281,8 +3299,17 @@
           "subtitle": "124-named-tuples-modifying-and-extending-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تغییر = ساختن نمونه‌ی جدید؛ `_replace(field=value)` راه استاندارد.",
+        "`_make(iterable)` class method برای ساخت از یک iterable؛ `NT(*values, extra)` برای مقادیر جدا.",
+        "کلاس با فیلد اضافه: `namedtuple('New', NT._fields + ('f',))`.",
+        "extended unpacking فقط یک `*` دارد؛ slicing برای فیلد میانی ناخوانا است.",
+        "`*a, _ = t` list می‌دهد، `t[:n]` tuple."
+      ],
+      "common_mistakes": [
+        "تایپ دوباره‌ی فهرست فیلدها برای گسترش.",
+        "استفاده از slicing برای تغییر چند فیلد."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -3324,8 +3351,17 @@
           "subtitle": "126-named-tuples-docstrings-and-default-values-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "namedtuple برای کلاس و فیلدها docstring می‌سازد؛ `__doc__` قابل نوشتن است.",
+        "روش prototype: instance پیش‌فرض + `_replace` (فقط keyword، کلاس پنهان).",
+        "`__defaults__` tuple پیش‌فرض‌های تابع است، راست‌تراز و قابل نوشتن.",
+        "instance با `__new__` ساخته می‌شود؛ `NT.__new__.__defaults__ = (...)` پیش‌فرض آخرین فیلدها را می‌دهد.",
+        "3.7+: `namedtuple(..., defaults=(...))` و `_field_defaults`."
+      ],
+      "common_mistakes": [
+        "انتظار پیش‌فرض برای فیلد میانی بدون فیلدهای بعدش.",
+        "گذاشتن پیش‌فرض روی __init__."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -3355,8 +3391,14 @@
           "subtitle": "127-named-tuples-application-returning-multiple-values.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تابعی که چند مقدار برمی‌گرداند، named tuple برگرداند: تغییر یک خط، فایده برای همه‌ی صداکننده‌ها.",
+        "دسترسی با نام، repr خوانا، autocomplete در ویرایشگر حتی بدون import کلاس.",
+        "unpacking همچنان کار می‌کند."
+      ],
+      "common_mistakes": [
+        "برگرداندن tuple ساده با بیش از دو-سه مقدار."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -3382,8 +3424,17 @@
           "subtitle": "128-named-tuples-application-alternative-to-dictionaries.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "dict با کلیدهای ثابت فقط‌خواندنی → named tuple: `namedtuple('D', d.keys())` و `D(**d)`.",
+        "`**dict` با نام تطبیق می‌دهد؛ `*values` به ترتیب وابسته و شکننده است.",
+        "`getattr(nt, name[, default])` معادل `d[name]` / `d.get`.",
+        "لیست dictهای ناهمگون: اجتماع کلیدها با set comprehension، sorted، rename=True، پیش‌فرض None روی `__new__.__defaults__`، سپس `Struct(**d)`.",
+        "کلاس فقط با __init__ و بدون نیاز به mutability → named tuple."
+      ],
+      "common_mistakes": [
+        "ساختن named tuple با `*d.values()` وقتی ترتیب فیلدها فرق دارد.",
+        "فراموش کردن پیش‌فرض None وقتی dictها کلید کم دارند."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",

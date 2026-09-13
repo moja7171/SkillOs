@@ -1,0 +1,37 @@
+[
+  {
+    "key": "replace-semantics",
+    "title": "_replace چه می‌کند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\np = Point2D(1, 2)\nq = p._replace(y=5)\n```\nکدام درست است؟",
+    "options": ["p تغییر کرده و q همان p است", "p دست‌نخورده است؛ q یک Point2D جدید (1, 5) است", "خطا — named tuple immutable است و _replace ندارد", "q یک dict است"],
+    "correct_option": 1,
+    "expected_outcome": "_replace کپی جدیدی با فیلدهای جایگزین‌شده برمی‌گرداند؛ tuple اصلی تغییر نمی‌کند. برای «تغییر» باید نتیجه را دوباره به p نسبت داد.",
+    "hints": ["immutable یعنی هر «تغییر» یک شیء جدید است.", "_replace مقدار برمی‌گرداند."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "extend-and-update",
+    "title": "گسترش و به‌روزرسانی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "با `Stock = namedtuple('Stock', 'symbol year month day open high low close')` و یک instance `djia`: (۱) `StockExt` را با فیلد اضافه‌ی `volume` **بدون** تایپ دوباره‌ی فیلدها بساز؛ (۲) `djia_ext` را از `djia` با volume=1_000_000 بساز؛ (۳) در `djia_ext` فقط `close` و `volume` را با `_replace` عوض کن؛ (۴) با `_make` از یک لیست ۹تایی یک StockExt بساز.",
+    "expected_outcome": "```python\nStockExt = namedtuple('StockExt', Stock._fields + ('volume',))\ndjia_ext = StockExt(*djia, 1_000_000)\ndjia_ext = djia_ext._replace(close=26_400, volume=1_200_000)\nvalues = list(djia) + [900_000]\nother = StockExt._make(values)\n```",
+    "hints": ["_fields یک tuple از رشته‌هاست؛ با tuple تک‌عضوی جمع کن.", "_make روی کلاس، _replace روی instance."],
+    "rubric": "Correct: all four steps with _fields concatenation, star-unpacking, _replace with keywords, and _make with an iterable. Partial: retypes the field list or uses _make on the instance. Incorrect: attempts attribute assignment."
+  },
+  {
+    "key": "why-not-slicing",
+    "title": "چرا نه slicing؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا برای تغییر فیلدی در وسط یک named tuple بزرگ، extended unpacking اصلاً کار نمی‌کند، slicing کار می‌کند ولی توصیه نمی‌شود، و `_replace` بهترین انتخاب است. تفاوت نوع خروجی `*current, _ = t` با `t[:7]` چیست؟",
+    "expected_outcome": "extended unpacking فقط یک `*` مجاز دارد، پس نمی‌شود «قبل، فیلد، بعد» را جدا کرد. slicing با اندیس‌های عددی کار می‌کند (`t[:3] + (v,) + t[4:]`) ولی ناخوانا و خطاخیز است و با چند فیلد بدتر می‌شود. `_replace(field=value)` با نام فیلد کار می‌کند و مستقل از موقعیت است. `*current, _` یک list می‌دهد؛ `t[:7]` یک tuple (slice نوع را حفظ می‌کند).",
+    "hints": ["چند * در یک انتساب مجاز است؟", "slice نوع ورودی را برمی‌گرداند."],
+    "rubric": "Correct: single-star limitation, slicing readability/error-proneness, _replace by name, and list-vs-tuple result types. Partial: three of four. Incorrect: claims unpacking can target the middle."
+  }
+]

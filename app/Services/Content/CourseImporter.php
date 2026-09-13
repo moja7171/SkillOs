@@ -256,9 +256,11 @@ class CourseImporter
      */
     protected function subtitleTracks(array $course, array $video): array
     {
+        // Explicit "subtitles" come first (the first track is the player's default);
+        // the Persian shorthand is appended after them.
         $tracks = $video['subtitles'] ?? [];
         if (! empty($video['subtitle'])) {
-            array_unshift($tracks, ['file' => $video['subtitle'], 'lang' => 'fa']);
+            $tracks[] = ['file' => $video['subtitle'], 'lang' => 'fa'];
         }
 
         $labels = ['fa' => 'زیرنویس فارسی', 'en' => 'English subtitles'];

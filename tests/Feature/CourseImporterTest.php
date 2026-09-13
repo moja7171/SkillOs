@@ -72,9 +72,9 @@ class CourseImporterTest extends TestCase
         $videos = $stored->videos;
         $this->assertSame('/media/demo/001-intro%20part.mp4', $videos[0]->url);
         $this->assertSame([
-            ['url' => '/media/demo/subs/001%20fa.vtt', 'lang' => 'fa', 'label' => 'زیرنویس فارسی'],
             ['url' => '/media/demo/subs/001%20en.vtt', 'lang' => 'en', 'label' => 'English subtitles'],
-        ], $videos[0]->subtitles);
+            ['url' => '/media/demo/subs/001%20fa.vtt', 'lang' => 'fa', 'label' => 'زیرنویس فارسی'],
+        ], $videos[0]->subtitles, 'explicit tracks first (default), shorthand Persian last');
         $this->assertSame('file', $videos[0]->embed()['kind']);
         $this->assertSame('https://www.youtube.com/watch?v=abc123xyz', $videos[1]->url);
         $this->assertSame([], $videos[1]->subtitles);

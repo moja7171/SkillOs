@@ -27,7 +27,7 @@
                         <video controls preload="metadata" class="w-full rounded-lg bg-black aspect-video" crossorigin="anonymous">
                             <source src="{{ $embed['src'] }}">
                             @if ($video->subtitle_url)
-                                <track kind="subtitles" src="{{ $video->subtitle_url }}" srclang="en" label="زیرنویس" default>
+                                <track kind="subtitles" src="{{ $video->subtitle_url }}" srclang="fa" label="زیرنویس فارسی" default>
                             @endif
                         </video>
                     @elseif ($embed['kind'] === 'link')

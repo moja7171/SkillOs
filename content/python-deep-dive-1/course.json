@@ -14,7 +14,8 @@
       "videos": [
         {
           "file": "001-course-overview.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "001-course-overview.fa.vtt"
         }
       ],
       "key_points": [],
@@ -29,10 +30,12 @@
       "videos": [
         {
           "file": "005-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "005-introduction.fa.vtt"
         },
         {
-          "file": "006-the-python-type-hierarchy.mp4"
+          "file": "006-the-python-type-hierarchy.mp4",
+          "subtitle": "006-the-python-type-hierarchy.fa.vtt"
         }
       ],
       "key_points": [],
@@ -46,7 +49,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "007-multi-line-statements-and-strings.mp4"
+          "file": "007-multi-line-statements-and-strings.mp4",
+          "subtitle": "007-multi-line-statements-and-strings.fa.vtt"
         }
       ],
       "key_points": [],
@@ -60,7 +64,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "008-variable-names.mp4"
+          "file": "008-variable-names.mp4",
+          "subtitle": "008-variable-names.fa.vtt"
         }
       ],
       "key_points": [],
@@ -74,7 +79,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "009-conditionals.mp4"
+          "file": "009-conditionals.mp4",
+          "subtitle": "009-conditionals.fa.vtt"
         }
       ],
       "key_points": [],
@@ -88,7 +94,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "010-functions.mp4"
+          "file": "010-functions.mp4",
+          "subtitle": "010-functions.fa.vtt"
         }
       ],
       "key_points": [],
@@ -102,7 +109,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "011-the-while-loop.mp4"
+          "file": "011-the-while-loop.mp4",
+          "subtitle": "011-the-while-loop.fa.vtt"
         }
       ],
       "key_points": [],
@@ -116,7 +124,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "012-break-continue-and-the-try-statement.mp4"
+          "file": "012-break-continue-and-the-try-statement.mp4",
+          "subtitle": "012-break-continue-and-the-try-statement.fa.vtt"
         }
       ],
       "key_points": [],
@@ -130,7 +139,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "013-the-for-loop.mp4"
+          "file": "013-the-for-loop.mp4",
+          "subtitle": "013-the-for-loop.fa.vtt"
         }
       ],
       "key_points": [],
@@ -144,7 +154,8 @@
       "estimated_minutes": 20,
       "videos": [
         {
-          "file": "014-classes.mp4"
+          "file": "014-classes.mp4",
+          "subtitle": "014-classes.fa.vtt"
         }
       ],
       "key_points": [],
@@ -159,10 +170,12 @@
       "videos": [
         {
           "file": "015-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "015-introduction.fa.vtt"
         },
         {
-          "file": "016-variables-are-memory-references.mp4"
+          "file": "016-variables-are-memory-references.mp4",
+          "subtitle": "016-variables-are-memory-references.fa.vtt"
         }
       ],
       "key_points": [],
@@ -176,7 +189,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "017-reference-counting.mp4"
+          "file": "017-reference-counting.mp4",
+          "subtitle": "017-reference-counting.fa.vtt"
         }
       ],
       "key_points": [],
@@ -190,7 +204,8 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "018-garbage-collection.mp4"
+          "file": "018-garbage-collection.mp4",
+          "subtitle": "018-garbage-collection.fa.vtt"
         }
       ],
       "key_points": [],
@@ -204,7 +219,8 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "019-dynamic-vs-static-typing.mp4"
+          "file": "019-dynamic-vs-static-typing.mp4",
+          "subtitle": "019-dynamic-vs-static-typing.fa.vtt"
         }
       ],
       "key_points": [],
@@ -218,7 +234,8 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "020-variable-re-assignment.mp4"
+          "file": "020-variable-re-assignment.mp4",
+          "subtitle": "020-variable-re-assignment.fa.vtt"
         }
       ],
       "key_points": [],
@@ -232,7 +249,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "021-object-mutability.mp4"
+          "file": "021-object-mutability.mp4",
+          "subtitle": "021-object-mutability.fa.vtt"
         }
       ],
       "key_points": [],
@@ -246,7 +264,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "022-function-arguments-and-mutability.mp4"
+          "file": "022-function-arguments-and-mutability.mp4",
+          "subtitle": "022-function-arguments-and-mutability.fa.vtt"
         }
       ],
       "key_points": [],
@@ -260,7 +279,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "023-shared-references-and-mutability.mp4"
+          "file": "023-shared-references-and-mutability.mp4",
+          "subtitle": "023-shared-references-and-mutability.fa.vtt"
         }
       ],
       "key_points": [],
@@ -274,7 +294,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "024-variable-equality.mp4"
+          "file": "024-variable-equality.mp4",
+          "subtitle": "024-variable-equality.fa.vtt"
         }
       ],
       "key_points": [],
@@ -288,7 +309,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "025-everything-is-an-object.mp4"
+          "file": "025-everything-is-an-object.mp4",
+          "subtitle": "025-everything-is-an-object.fa.vtt"
         }
       ],
       "key_points": [],
@@ -302,13 +324,16 @@
       "estimated_minutes": 25,
       "videos": [
         {
-          "file": "026-python-optimizations-interning.mp4"
+          "file": "026-python-optimizations-interning.mp4",
+          "subtitle": "026-python-optimizations-interning.fa.vtt"
         },
         {
-          "file": "027-python-optimizations-string-interning.mp4"
+          "file": "027-python-optimizations-string-interning.mp4",
+          "subtitle": "027-python-optimizations-string-interning.fa.vtt"
         },
         {
-          "file": "028-python-optimizations-peephole.mp4"
+          "file": "028-python-optimizations-peephole.mp4",
+          "subtitle": "028-python-optimizations-peephole.fa.vtt"
         }
       ],
       "key_points": [],
@@ -323,10 +348,12 @@
       "videos": [
         {
           "file": "029-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "029-introduction.fa.vtt"
         },
         {
-          "file": "030-integers-data-types.mp4"
+          "file": "030-integers-data-types.mp4",
+          "subtitle": "030-integers-data-types.fa.vtt"
         }
       ],
       "key_points": [],
@@ -340,7 +367,8 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "031-integers-operations.mp4"
+          "file": "031-integers-operations.mp4",
+          "subtitle": "031-integers-operations.fa.vtt"
         }
       ],
       "key_points": [],
@@ -355,11 +383,13 @@
       "videos": [
         {
           "file": "032-integers-constructors-and-bases-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "032-integers-constructors-and-bases-lecture.fa.vtt"
         },
         {
           "file": "033-integers-constructors-and-bases-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "033-integers-constructors-and-bases-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -374,11 +404,13 @@
       "videos": [
         {
           "file": "034-rational-numbers-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "034-rational-numbers-lecture.fa.vtt"
         },
         {
           "file": "035-rationals-numbers-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "035-rationals-numbers-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -393,11 +425,13 @@
       "videos": [
         {
           "file": "036-floats-internal-representations-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "036-floats-internal-representations-lecture.fa.vtt"
         },
         {
           "file": "037-floats-internal-representations-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "037-floats-internal-representations-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -412,11 +446,13 @@
       "videos": [
         {
           "file": "038-floats-equality-testing-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "038-floats-equality-testing-lecture.fa.vtt"
         },
         {
           "file": "039-floats-equality-testing-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "039-floats-equality-testing-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -431,11 +467,13 @@
       "videos": [
         {
           "file": "040-floats-coercing-to-integers-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "040-floats-coercing-to-integers-lecture.fa.vtt"
         },
         {
           "file": "041-floats-coercing-to-integers-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "041-floats-coercing-to-integers-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -450,11 +488,13 @@
       "videos": [
         {
           "file": "042-floats-rounding-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "042-floats-rounding-lecture.fa.vtt"
         },
         {
           "file": "043-floats-rounding-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "043-floats-rounding-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -469,11 +509,13 @@
       "videos": [
         {
           "file": "044-decimals-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "044-decimals-lecture.fa.vtt"
         },
         {
           "file": "045-decimals-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "045-decimals-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -488,11 +530,13 @@
       "videos": [
         {
           "file": "046-decimals-constructors-and-contexts-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "046-decimals-constructors-and-contexts-lecture.fa.vtt"
         },
         {
           "file": "047-decimals-constructors-and-contexts-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "047-decimals-constructors-and-contexts-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -507,11 +551,13 @@
       "videos": [
         {
           "file": "048-decimals-math-operations-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "048-decimals-math-operations-lecture.fa.vtt"
         },
         {
           "file": "049-decimals-math-operations-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "049-decimals-math-operations-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -525,7 +571,8 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "050-decimals-performance-considerations.mp4"
+          "file": "050-decimals-performance-considerations.mp4",
+          "subtitle": "050-decimals-performance-considerations.fa.vtt"
         }
       ],
       "key_points": [],
@@ -540,11 +587,13 @@
       "videos": [
         {
           "file": "051-complex-numbers-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "051-complex-numbers-lecture.fa.vtt"
         },
         {
           "file": "052-complex-numbers-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "052-complex-numbers-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -558,7 +607,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "053-booleans.mp4"
+          "file": "053-booleans.mp4",
+          "subtitle": "053-booleans.fa.vtt"
         }
       ],
       "key_points": [],
@@ -573,11 +623,13 @@
       "videos": [
         {
           "file": "054-booleans-truth-values-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "054-booleans-truth-values-lecture.fa.vtt"
         },
         {
           "file": "055-booleans-truth-values-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "055-booleans-truth-values-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -592,11 +644,13 @@
       "videos": [
         {
           "file": "056-booleans-precedence-and-short-circuiting-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "056-booleans-precedence-and-short-circuiting-lecture.fa.vtt"
         },
         {
           "file": "057-booleans-precedence-and-short-circuiting-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "057-booleans-precedence-and-short-circuiting-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -611,11 +665,13 @@
       "videos": [
         {
           "file": "058-booleans-boolean-operators-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "058-booleans-boolean-operators-lecture.fa.vtt"
         },
         {
           "file": "059-booleans-boolean-operators-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "059-booleans-boolean-operators-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -629,7 +685,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "060-comparison-operators.mp4"
+          "file": "060-comparison-operators.mp4",
+          "subtitle": "060-comparison-operators.fa.vtt"
         }
       ],
       "key_points": [],
@@ -644,10 +701,12 @@
       "videos": [
         {
           "file": "061-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "061-introduction.fa.vtt"
         },
         {
-          "file": "062-argument-vs-parameter.mp4"
+          "file": "062-argument-vs-parameter.mp4",
+          "subtitle": "062-argument-vs-parameter.fa.vtt"
         }
       ],
       "key_points": [],
@@ -662,11 +721,13 @@
       "videos": [
         {
           "file": "063-positional-and-keyword-arguments-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "063-positional-and-keyword-arguments-lecture.fa.vtt"
         },
         {
           "file": "064-positional-and-keyword-arguments-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "064-positional-and-keyword-arguments-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -681,11 +742,13 @@
       "videos": [
         {
           "file": "065-unpacking-iterables-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "065-unpacking-iterables-lecture.fa.vtt"
         },
         {
           "file": "066-unpacking-iterables-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "066-unpacking-iterables-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -700,11 +763,13 @@
       "videos": [
         {
           "file": "067-extended-unpacking-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "067-extended-unpacking-lecture.fa.vtt"
         },
         {
           "file": "068-extended-unpacking-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "068-extended-unpacking-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -719,11 +784,13 @@
       "videos": [
         {
           "file": "069-args-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "069-args-lecture.fa.vtt"
         },
         {
           "file": "070-args-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "070-args-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -738,11 +805,13 @@
       "videos": [
         {
           "file": "071-keyword-arguments-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "071-keyword-arguments-lecture.fa.vtt"
         },
         {
           "file": "072-keyword-arguments-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "072-keyword-arguments-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -756,7 +825,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "073-kwargs.mp4"
+          "file": "073-kwargs.mp4",
+          "subtitle": "073-kwargs.fa.vtt"
         }
       ],
       "key_points": [],
@@ -771,11 +841,13 @@
       "videos": [
         {
           "file": "074-putting-it-all-together-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "074-putting-it-all-together-lecture.fa.vtt"
         },
         {
           "file": "075-putting-it-all-together-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "075-putting-it-all-together-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -789,7 +861,8 @@
       "estimated_minutes": 18,
       "videos": [
         {
-          "file": "076-application-a-simple-function-timer.mp4"
+          "file": "076-application-a-simple-function-timer.mp4",
+          "subtitle": "076-application-a-simple-function-timer.fa.vtt"
         }
       ],
       "key_points": [],
@@ -803,10 +876,12 @@
       "estimated_minutes": 24,
       "videos": [
         {
-          "file": "077-parameter-defaults-beware.mp4"
+          "file": "077-parameter-defaults-beware.mp4",
+          "subtitle": "077-parameter-defaults-beware.fa.vtt"
         },
         {
-          "file": "078-parameter-defaults-beware-again.mp4"
+          "file": "078-parameter-defaults-beware-again.mp4",
+          "subtitle": "078-parameter-defaults-beware-again.fa.vtt"
         }
       ],
       "key_points": [],
@@ -821,11 +896,13 @@
       "videos": [
         {
           "file": "079-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "079-introduction.fa.vtt"
         },
         {
           "file": "080-docstrings-and-annotations-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "080-docstrings-and-annotations-lecture.fa.vtt"
         }
       ],
       "key_points": [],
@@ -840,11 +917,13 @@
       "videos": [
         {
           "file": "082-lambda-expressions-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "082-lambda-expressions-lecture.fa.vtt"
         },
         {
           "file": "083-lambda-expressions-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "083-lambda-expressions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -858,7 +937,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "084-lambdas-and-sorting.mp4"
+          "file": "084-lambdas-and-sorting.mp4",
+          "subtitle": "084-lambdas-and-sorting.fa.vtt"
         }
       ],
       "key_points": [],
@@ -887,11 +967,13 @@
       "videos": [
         {
           "file": "086-function-introspection-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "086-function-introspection-lecture.fa.vtt"
         },
         {
           "file": "087-function-introspection-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "087-function-introspection-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -905,7 +987,8 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "088-callables.mp4"
+          "file": "088-callables.mp4",
+          "subtitle": "088-callables.fa.vtt"
         }
       ],
       "key_points": [],
@@ -920,11 +1003,13 @@
       "videos": [
         {
           "file": "089-map-filter-zip-and-list-comprehensions-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "089-map-filter-zip-and-list-comprehensions-lecture.fa.vtt"
         },
         {
           "file": "090-map-filter-zip-and-list-comprehensions-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "090-map-filter-zip-and-list-comprehensions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -939,11 +1024,13 @@
       "videos": [
         {
           "file": "091-reducing-functions-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "091-reducing-functions-lecture.fa.vtt"
         },
         {
           "file": "092-reducing-functions-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "092-reducing-functions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -958,11 +1045,13 @@
       "videos": [
         {
           "file": "093-partial-functions-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "093-partial-functions-lecture.fa.vtt"
         },
         {
           "file": "094-partial-functions-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "094-partial-functions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -977,11 +1066,13 @@
       "videos": [
         {
           "file": "095-the-operator-module-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "095-the-operator-module-lecture.fa.vtt"
         },
         {
           "file": "096-the-operator-module-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "096-the-operator-module-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -996,15 +1087,18 @@
       "videos": [
         {
           "file": "097-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitle": "097-introduction.fa.vtt"
         },
         {
           "file": "098-global-and-local-scopes-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitle": "098-global-and-local-scopes-lecture.fa.vtt"
         },
         {
           "file": "099-global-and-local-scopes-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitle": "099-global-and-local-scopes-coding.fa.vtt"
         }
       ],
       "key_points": [],

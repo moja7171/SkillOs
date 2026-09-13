@@ -23,12 +23,12 @@
                     <div class="text-[12px] text-muted truncate">
                         <a href="{{ route('courses.show', $course) }}" class="text-muted hover:text-ink" dir="auto">{{ $course->title }}</a>
                         <span class="text-faint mx-1">/</span>
-                        <span dir="auto">{{ $lesson->section }}</span>
+                        <span>{{ $lesson->section }}</span>
                         <span class="text-faint mx-1">·</span>
                         <span>درس {{ fa_num($position) }} از {{ fa_num($total) }}</span>
                     </div>
                     <div class="flex items-center gap-2.5 flex-wrap">
-                        <h1 class="m-0 text-[20px] font-bold truncate" dir="auto">{{ $lesson->title }}</h1>
+                        <h1 class="m-0 text-[20px] font-bold truncate">{{ $lesson->title }}</h1>
                         <x-level-badge :level="$level" />
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <div class="flex items-center gap-3 px-[18px] py-3 border-b border-line last:border-b-0">
                             <span class="badge badge-ghost">{{ $practice->formLabel() }}</span>
                             <span @class(['badge', 'badge-ok' => $practice->payload['difficulty'] === 'intro', 'badge-warn' => $practice->payload['difficulty'] === 'core', 'badge-bad' => $practice->payload['difficulty'] === 'stretch'])>{{ $practice->difficultyLabel() }}</span>
-                            <span class="flex-1 min-w-0 truncate font-medium" dir="auto">{{ $practice->title }}</span>
+                            <span class="flex-1 min-w-0 truncate font-medium">{{ $practice->title }}</span>
                             <span class="num">{{ $practice->estimated_minutes }}m</span>
                             <form method="POST" action="{{ route('session.start', $practice) }}">
                                 @csrf
@@ -101,7 +101,7 @@
                         <div class="card-h"><h3>پیش‌نیازها</h3></div>
                         @forelse ($lesson->prerequisites as $prereq)
                             <a href="{{ $prereq->url() }}" class="flex items-center justify-between gap-3 px-[18px] py-2.5 border-b border-line last:border-b-0 text-ink hover:bg-hover">
-                                <span class="text-[13px] min-w-0 truncate" dir="auto">{{ $prereq->title }}</span>
+                                <span class="text-[13px] min-w-0 truncate">{{ $prereq->title }}</span>
                                 <x-level-badge :level="$prereq->levelFor($user)" />
                             </a>
                         @empty
@@ -112,10 +112,10 @@
 
                 <div class="flex items-center justify-between gap-3">
                     @if ($previous)
-                        <a href="{{ $previous->url() }}" class="btn btn-ghost min-w-0"><span class="truncate" dir="auto">→ {{ $previous->title }}</span></a>
+                        <a href="{{ $previous->url() }}" class="btn btn-ghost min-w-0"><span class="truncate">→ {{ $previous->title }}</span></a>
                     @else<span></span>@endif
                     @if ($next)
-                        <a href="{{ $next->url() }}" class="btn btn-primary min-w-0"><span class="truncate" dir="auto">درس بعدی: {{ $next->title }}</span> <x-icon name="arrow" class="w-4 h-4 shrink-0" /></a>
+                        <a href="{{ $next->url() }}" class="btn btn-primary min-w-0"><span class="truncate">درس بعدی: {{ $next->title }}</span> <x-icon name="arrow" class="w-4 h-4 shrink-0" /></a>
                     @else
                         <a href="{{ route('courses.show', $course) }}" class="btn">این آخرین درس بود — برگرد به دوره</a>
                     @endif
@@ -156,7 +156,7 @@
                         @if ($sectionTitle !== '')
                             <button type="button" @click="open = !open" class="w-full flex items-center gap-2 px-4 py-3 text-start bg-surface2 hover:bg-hover">
                                 <div class="min-w-0 flex-1">
-                                    <div class="text-[13px] font-semibold truncate" dir="auto">{{ $sectionTitle }}</div>
+                                    <div class="text-[13px] font-semibold truncate">{{ $sectionTitle }}</div>
                                     <div class="text-[11.5px] text-faint mt-0.5">{{ fa_num($sectionDone) }} / {{ fa_num($items->count()) }} · {{ fa_num($sectionMinutes) }} دقیقه</div>
                                 </div>
                                 <x-icon name="chevron" class="w-3.5 h-3.5 text-faint transition-transform" ::class="open ? '-rotate-90' : 'rotate-90'" />
@@ -172,7 +172,7 @@
                                         @if ($i >= 2)<x-icon name="check" class="w-2.5 h-2.5" />@endif
                                     </span>
                                     <span class="min-w-0 flex-1">
-                                        <span class="block truncate {{ $isCurrent ? 'font-semibold' : '' }}" dir="auto"><span class="num me-1">{{ $item->order + 1 }}.</span>{{ $item->title }}</span>
+                                        <span class="block truncate {{ $isCurrent ? 'font-semibold' : '' }}"><span class="num me-1">{{ $item->order + 1 }}.</span>{{ $item->title }}</span>
                                         <span class="block text-[11.5px] text-faint flex items-center gap-1.5">
                                             @if ($item->videos_count)<x-icon name="video" class="w-3 h-3" />@else<x-icon name="text" class="w-3 h-3" />@endif
                                             {{ fa_num($item->estimated_minutes) }} دقیقه

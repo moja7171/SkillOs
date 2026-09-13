@@ -45,13 +45,13 @@
                         @foreach ($course->lessons as $lesson)
                             @php $locked = $enrollment && $isLocked($lesson); @endphp
                             @if ($lesson->section && (! $loop->first) && $lesson->section !== $course->lessons[$loop->index - 1]->section)
-                                <tr><td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted" dir="auto">{{ $lesson->section }}</td></tr>
+                                <tr><td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted">{{ $lesson->section }}</td></tr>
                             @elseif ($lesson->section && $loop->first)
-                                <tr><td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted" dir="auto">{{ $lesson->section }}</td></tr>
+                                <tr><td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted">{{ $lesson->section }}</td></tr>
                             @endif
                             <tr>
                                 <td class="num">{{ $lesson->order + 1 }}</td>
-                                <td dir="auto">
+                                <td>
                                     <a href="{{ $lesson->url() }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent">{{ $lesson->title }}</a>
                                     @if ($lesson->summary)
                                         <div class="text-[12.5px] text-muted">{{ $lesson->summary }}</div>

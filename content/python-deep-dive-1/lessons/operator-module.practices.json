@@ -1,0 +1,37 @@
+[
+  {
+    "key": "itemgetter-tuple",
+    "title": "itemgetter چند اندیسی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nfrom operator import itemgetter\nf = itemgetter(0, -1)\nf('python'), f([10, 20, 30])\n```\nنتیجه چیست؟",
+    "options": ["('p', 'n'), (10, 30)", "'pn', [10, 30]", "('p', 'n'), (10, 20)", "TypeError — itemgetter اندیس منفی نمی‌پذیرد"],
+    "correct_option": 0,
+    "expected_outcome": "itemgetter با چند اندیس یک tuple از عناصر همان اندیس‌ها برمی‌گرداند؛ اندیس منفی مثل `s[-1]` کار می‌کند.",
+    "hints": ["چند اندیس → tuple.", "-1 یعنی آخرین عنصر."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "sort-with-operator",
+    "title": "بدون lambda مرتب کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "```python\nrows = [('ali', 30, 'tehran'), ('bob', 25, 'shiraz'), ('cara', 30, 'ahvaz')]\n```\n(۱) با `sorted` و `operator` (بدون lambda) بر اساس **سن و سپس نام** مرتب کن. (۲) با `reduce` و `operator` مجموع سن‌ها را حساب کن — راهنمایی: اول با `map` و `itemgetter` سن‌ها را بیرون بکش. (۳) با `methodcaller` نام‌ها را با حرف اول بزرگ برگردان.",
+    "expected_outcome": "```python\nfrom operator import itemgetter, add, methodcaller\nfrom functools import reduce\n\nsorted(rows, key=itemgetter(1, 0))\n# [('bob', 25, 'shiraz'), ('ali', 30, 'tehran'), ('cara', 30, 'ahvaz')]\nreduce(add, map(itemgetter(1), rows))          # 85\nlist(map(methodcaller('title'), map(itemgetter(0), rows)))   # ['Ali', 'Bob', 'Cara']\n```",
+    "hints": ["itemgetter(1, 0) یک tuple (سن، نام) می‌دهد که مقایسه‌ی lexicographic دارد.", "methodcaller('title') روی هر رشته .title() را صدا می‌زند."],
+    "rubric": "Correct: itemgetter(1, 0) key, reduce(add, map(itemgetter(1), rows)) == 85, methodcaller('title') mapping; no lambda used. Partial: two of three right or a lambda sneaks in. Incorrect: wrong sort order or wrong sum."
+  },
+  {
+    "key": "attrgetter-vs-methodcaller",
+    "title": "attrgetter در برابر methodcaller",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "`attrgetter('upper')('abc')` چه برمی‌گرداند و `methodcaller('upper')('abc')` چه؟ در ۲ تا ۳ جمله تفاوت را توضیح بده و بگو کدام‌یک را برای `key` در `sorted(words, key=...)` (مرتب‌سازی بدون حساسیت به بزرگی حروف) به کار می‌بری و چرا.",
+    "expected_outcome": "attrgetter متد bound `'abc'.upper` را برمی‌گرداند (بدون صدا زدن؛ باید `()` اضافه شود)، methodcaller همان لحظه صدا می‌زند و `'ABC'` می‌دهد. برای key باید تابعی باشد که برای هر عنصر مقدار مقایسه‌شدنی برگرداند، پس `methodcaller('upper')` (یا `str.upper`) درست است؛ با attrgetter خروجی key متد است نه رشته و مقایسه معنی ندارد/خطا می‌دهد.",
+    "hints": ["یکی متد را برمی‌گرداند، دیگری نتیجه‌ی صدا زدنش را.", "key باید چیزی قابل مقایسه برگرداند."],
+    "rubric": "Correct: attrgetter → bound method, methodcaller → 'ABC', picks methodcaller (or str.upper) for key with the right reason. Partial: outputs right but wrong/unclear key choice. Incorrect: says attrgetter returns 'ABC'."
+  }
+]

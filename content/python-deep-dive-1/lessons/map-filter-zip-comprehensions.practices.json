@@ -1,0 +1,37 @@
+[
+  {
+    "key": "zip-shortest",
+    "title": "zip کجا می‌ایستد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nlist(map(lambda x, y: x * y, [1, 2, 3, 4], (10, 20)))\n```\nنتیجه چیست؟",
+    "options": ["[10, 40, 30, 40]", "[10, 40]", "TypeError — طول‌ها برابر نیست", "[10, 40, None, None]"],
+    "correct_option": 1,
+    "expected_outcome": "map (مثل zip) با اتمام کوتاه‌ترین iterable متوقف می‌شود؛ tuple دو عنصر دارد، پس فقط دو حاصل‌ضرب.",
+    "hints": ["map چند iterable را به‌موازات مصرف می‌کند.", "کدام iterable زودتر تمام می‌شود؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "rewrite-comprehension",
+    "title": "بازنویسی به comprehension",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این عبارت را با یک list comprehension بازنویسی کن و خروجی را بنویس:\n```python\nnames = ['ali', 'bob', 'cara', 'dan']\nages = [30, 17, 25, 15]\nlist(filter(lambda t: t[1] >= 18, map(lambda n, a: (n.title(), a), names, ages)))\n```",
+    "expected_outcome": "```python\n[(n.title(), a) for n, a in zip(names, ages) if a >= 18]\n# [('Ali', 30), ('Cara', 25)]\n```\nزوج‌سازی دو لیست با zip + unpacking، فیلتر با if.",
+    "hints": ["برای پیمایش دو لیست به‌موازات، zip و unpacking در for.", "شرط filter به if انتهای comprehension می‌رود."],
+    "rubric": "Correct: comprehension with zip(names, ages), tuple unpacking, .title(), if a >= 18, and the right output. Partial: right structure but forgets title() or the condition, or wrong output. Incorrect: still uses map/filter or iterates by index without need."
+  },
+  {
+    "key": "exhausted-iterator",
+    "title": "چرا بار دوم خالی است؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\npairs = zip('abc', [1, 2, 3])\nprint(list(pairs))\nprint(list(pairs))\nsquares = [x * x for x in range(3)]\nprint(squares, squares)\n```\nخروجی چهار print را بنویس و در ۲ تا ۳ جمله توضیح بده چرا `pairs` و `squares` رفتار متفاوتی دارند و چه زمانی هر کدام انتخاب بهتری است.",
+    "expected_outcome": "`[('a', 1), ('b', 2), ('c', 3)]`، سپس `[]`، سپس `[0, 1, 4] [0, 1, 4]`. zip یک iterator تنبل و یک‌بارمصرف برمی‌گرداند: بار اول مصرف و exhausted می‌شود. list comprehension همان لحظه یک لیست کامل می‌سازد که بارها قابل استفاده است. iterator (map/filter/zip/generator expression) وقتی داده بزرگ است یا همه‌اش لازم نیست بهتر است؛ لیست وقتی نتیجه چند بار لازم است یا باید اندیس‌گذاری شود.",
+    "hints": ["iterator بعد از پیمایش کامل، خالی است.", "list comprehension همه را همان لحظه محاسبه می‌کند."],
+    "rubric": "Correct: all four outputs right, explains lazy one-shot iterator vs materialized list, and gives a sensible when-to-use. Partial: outputs right but explanation shallow. Incorrect: expects the second list(pairs) to repeat the tuples."
+  }
+]

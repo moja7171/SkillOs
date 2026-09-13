@@ -1,0 +1,26 @@
+[
+  {
+    "key": "why-it-works",
+    "title": "چرا به‌هم می‌ریزد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا `sorted(l, key=lambda x: random.random())` لیست را به‌هم می‌ریزد؟",
+    "options": ["چون sorted با key تصادفی، الگوریتم متفاوتی اجرا می‌کند", "چون مرتب‌سازی بر اساس نتیجه‌ی key انجام می‌شود و برای هر عنصر یک عدد تصادفی مستقل از عنصر ساخته می‌شود", "چون random.random() خود لیست را shuffle می‌کند", "چون lambda از x استفاده نمی‌کند و sorted خطا را نادیده می‌گیرد"],
+    "correct_option": 1,
+    "expected_outcome": "sorted فقط مقادیر key را مقایسه می‌کند؛ وقتی این مقادیر تصادفی باشند، ترتیب نهایی تصادفی است.",
+    "hints": ["sorted چه چیزی را با هم مقایسه می‌کند؟", "x در lambda استفاده نمی‌شود — ولی این خطا نیست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "shuffle-dict-keys",
+    "title": "به‌هم ریختن با حفظ نوع",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با همین ترفند، تابعی بنویس به نام `shuffled(s)` که یک **رشته** بگیرد و همان حروف را به ترتیب تصادفی به‌صورت **رشته** برگرداند، و تابعی `shuffled_tuple(t)` که یک tuple بگیرد و tuple برگرداند. (فقط `sorted` + `random.random`.)",
+    "expected_outcome": "```python\nimport random\n\ndef shuffled(s):\n    return ''.join(sorted(s, key=lambda _: random.random()))\n\ndef shuffled_tuple(t):\n    return tuple(sorted(t, key=lambda _: random.random()))\n```\nsorted همیشه لیست برمی‌گرداند، پس با `''.join` / `tuple()` نوع اصلی بازسازی می‌شود.",
+    "hints": ["sorted همیشه list می‌دهد.", "برای رشته: ''.join(...)؛ برای tuple: tuple(...)."],
+    "rubric": "Correct: both functions use sorted with a random key and convert back with join/tuple. Partial: one of the two, or forgets the conversion. Incorrect: uses random.shuffle instead of the sorted trick."
+  }
+]

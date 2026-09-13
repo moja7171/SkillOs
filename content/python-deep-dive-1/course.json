@@ -2181,8 +2181,17 @@
           "subtitle": "081-docstrings-and-annotations-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تابع شیء درجه‌یک است: پاس دادن، برگرداندن، انتساب، ذخیره در ساختار داده.",
+        "docstring = اولین خط بدنه اگر رشته‌ی تنها باشد؛ در `__doc__` ذخیره می‌شود.",
+        "annotation بعد از `:` برای پارامتر و `->` برای بازگشت؛ در `__annotations__` (dict با کلید `'return'`).",
+        "annotationها و docstring هیچ اثری بر اجرا ندارند — فقط متادیتا برای help/Sphinx/IDE.",
+        "عبارت annotation یک بار موقع `def` ارزیابی می‌شود."
+      ],
+      "common_mistakes": [
+        "comment را docstring دانستن.",
+        "تصور اینکه `a: int` نوع را اجبار می‌کند."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2224,8 +2233,17 @@
           "subtitle": "083-lambda-expressions-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`lambda params: expression` یک شیء تابع بی‌نام می‌سازد؛ expression فقط موقع فراخوانی ارزیابی می‌شود.",
+        "همه‌ی انواع پارامتر (پیش‌فرض، *args، keyword-only، **kwargs) مجازند.",
+        "بدنه فقط یک عبارت است: نه انتساب، نه annotation، نه چند statement.",
+        "lambda لزوماً closure نیست؛ یک تابع معمولی است.",
+        "کاربرد اصلی: پاس دادن تابع کوتاه در لحظه به تابع دیگر."
+      ],
+      "common_mistakes": [
+        "پرانتز دور پارامترهای lambda.",
+        "انتساب داخل بدنه‌ی lambda."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2255,8 +2273,17 @@
           "subtitle": "084-lambdas-and-sorting.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`sorted(iterable, key=..., reverse=...)` همیشه لیست جدید می‌دهد؛ in-place نیست.",
+        "`key` تابعی است که روی هر عنصر اعمال می‌شود و مرتب‌سازی بر اساس نتیجه‌اش انجام می‌شود.",
+        "با key می‌توان چیزهایی را که ترتیب طبیعی ندارند (مثل complex) مرتب کرد.",
+        "sort پایتون stable است: عناصر با key برابر ترتیب اولیه‌شان را حفظ می‌کنند.",
+        "پیمایش dict روی کلیدهاست؛ برای مرتب‌سازی بر اساس مقدار `key=lambda k: d[k]`."
+      ],
+      "common_mistakes": [
+        "انتظار اینکه sorted لیست اصلی را تغییر دهد.",
+        "فراموش کردن اینکه حروف بزرگ قبل از کوچک می‌آیند (ord)."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2275,8 +2302,14 @@
           "file": "085-challenge-randomize-an-iterable-using-sorted.mp4"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`sorted(l, key=lambda x: random.random())` ترتیب تصادفی می‌دهد چون key مستقل از عنصر است.",
+        "key روی هر عنصر دقیقاً یک بار صدا زده می‌شود.",
+        "برای shuffle واقعی از `random.shuffle` یا `random.sample` استفاده کن."
+      ],
+      "common_mistakes": [
+        "استفاده از x در lambda در حالی که لازم نیست — اشکالی ندارد ولی گیج‌کننده است."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2314,8 +2347,17 @@
           "subtitle": "087-function-introspection-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تابع attribute دارد و می‌توان attribute جدید به آن چسباند؛ `dir(fn)` همه را نشان می‌دهد.",
+        "`__name__`, `__defaults__` (tuple positional)، `__kwdefaults__` (dict)، `__code__.co_varnames`, `co_argcount`.",
+        "ماژول `inspect`: `isfunction`/`ismethod`/`isroutine`, `getsource`, `getmodule`, `getcomments`, `signature`.",
+        "`signature(fn).parameters` → اشیای Parameter با name/default/annotation/kind.",
+        "kindها: POSITIONAL_OR_KEYWORD, VAR_POSITIONAL, KEYWORD_ONLY, VAR_KEYWORD, POSITIONAL_ONLY (`/`، از 3.8 قابل تعریف)."
+      ],
+      "common_mistakes": [
+        "انتظار جای خالی در `__defaults__` برای پارامترهای بی‌پیش‌فرض.",
+        "فکر کردن به اینکه `co_argcount` *args را می‌شمارد."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2345,8 +2387,16 @@
           "subtitle": "088-callables.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "callable = هر شیئی که با `()` صدا زده شود؛ همیشه مقداری برمی‌گرداند (شاید None).",
+        "`callable(obj)` چک می‌کند؛ `s.upper` callable است ولی `s.upper()` نه.",
+        "کلاس‌ها callable‌اند: `__new__` می‌سازد، `__init__` مقداردهی می‌کند، instance برگردانده می‌شود.",
+        "instance وقتی callable است که کلاس `__call__` داشته باشد."
+      ],
+      "common_mistakes": [
+        "چک کردن callable روی نتیجه‌ی فراخوانی به‌جای خود متد.",
+        "تصور اینکه کلاس یک function است (type(MyClass) → type)."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -2388,8 +2438,17 @@
           "subtitle": "090-map-filter-zip-and-list-comprehensions-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`map(fn, *iterables)`: fn به‌موازات روی عناصر اعمال می‌شود؛ با کوتاه‌ترین متوقف.",
+        "`filter(fn, iterable)` عناصر truthy نگه می‌دارد؛ `fn=None` یعنی truthiness خود عنصر.",
+        "`zip(*iterables)` tupleهای متناظر می‌سازد؛ با کوتاه‌ترین متوقف.",
+        "هر سه iterator تنبل و یک‌بارمصرف برمی‌گردانند، نه لیست؛ خطاها تا پیمایش به تعویق می‌افتند.",
+        "list comprehension `[expr for x in it if cond]` خواناتر است؛ نسخه‌ی پرانتزی generator expression تنبل است."
+      ],
+      "common_mistakes": [
+        "پیمایش دوباره‌ی map/zip و گرفتن نتیجه‌ی خالی.",
+        "انتظار خطا هنگام ساخت map با تعداد آرگومان اشتباه."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2431,8 +2490,17 @@
           "subtitle": "092-reducing-functions-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "reduce یک iterable را با تابع دوآرگومانی به یک مقدار می‌رساند: `fn(result, next)` تکرارشونده.",
+        "`functools.reduce(fn, iterable, [initializer])` روی هر iterable کار می‌کند.",
+        "min/max/sum/any/all reductionهای built-in هستند؛ ضرب نیست.",
+        "initializer باید عنصر خنثی باشد (0 جمع، 1 ضرب) وگرنه در نتیجه شرکت می‌کند.",
+        "reduce بدون initializer روی iterable خالی TypeError می‌دهد."
+      ],
+      "common_mistakes": [
+        "initializer غیرخنثی.",
+        "بازنویسی any با `a or b` بدون bool — عنصر برمی‌گرداند نه bool."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2474,8 +2542,17 @@
           "subtitle": "094-partial-functions-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`partial(fn, *args, **kwargs)` callable جدیدی می‌سازد که بعضی آرگومان‌ها را از قبل ثابت کرده.",
+        "positionalهای ذخیره‌شده اول می‌نشینند؛ برای ثابت کردن پارامتر غیراول از keyword استفاده کن.",
+        "keyword ذخیره‌شده با keyword در فراخوانی override می‌شود.",
+        "partial ارجاع به شیء را ذخیره می‌کند نه نام متغیر (مثل پیش‌فرض‌ها؛ mutable مشترک).",
+        "کاربرد: جایی که تابعی با آرگومان کمتر لازم است (مثل key در sorted)."
+      ],
+      "common_mistakes": [
+        "`partial(pow, 2)` به قصد exponent=2.",
+        "انتظار اینکه reassign کردن متغیر روی partial اثر بگذارد."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2517,8 +2594,16 @@
           "subtitle": "096-the-operator-module-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "ماژول `operator` معادل تابعی عملگرها را دارد: add, mul, lt, eq, is_, and_, getitem, setitem …",
+        "`itemgetter(i, ...)` و `attrgetter('a', ...)` callable برمی‌گردانند (مثل partial)؛ چند آرگومان → tuple.",
+        "`attrgetter` متد را برمی‌گرداند بدون صدا زدن؛ `methodcaller('m', *args, **kw)` همان لحظه صدا می‌زند.",
+        "کاربرد اصلی: key در sorted و fn در map/reduce به‌جای lambda."
+      ],
+      "common_mistakes": [
+        "صدا زدن itemgetter/attrgetter بدون شیء.",
+        "استفاده از attrgetter برای متد و فراموش کردن `()`."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",

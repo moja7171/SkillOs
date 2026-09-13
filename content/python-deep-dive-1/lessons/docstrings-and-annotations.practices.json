@@ -1,0 +1,37 @@
+[
+  {
+    "key": "which-is-docstring",
+    "title": "کدام docstring است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef f(x):\n    # computes the square\n    'squares x'\n    'not this one'\n    return x ** 2\n```\n`f.__doc__` چیست؟",
+    "options": ["'# computes the square'", "'squares x'", "'not this one'", "None — چون اولین خط comment است"],
+    "correct_option": 1,
+    "expected_outcome": "comment کد نیست و حذف می‌شود؛ اولین *خط کد* بدنه رشته‌ی `'squares x'` است، پس docstring همان است. رشته‌ی دوم فقط یک رشته‌ی بی‌اثر است.",
+    "hints": ["comment اصلاً کامپایل نمی‌شود.", "اولین خط کد بدنه کدام است؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "annotations-dict",
+    "title": "`__annotations__` را بخوان",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\ndef area(w: float, h: float = 1.0, *, unit: 'cm or m' = 'cm') -> float:\n    return w * h\n```\n(۱) `area.__annotations__` دقیقاً چه dict‌ای است؟ (۲) اگر `area('3', 2)` صدا بزنیم چه می‌شود و چرا؟",
+    "expected_outcome": "(۱) `{'w': float, 'h': float, 'unit': 'cm or m', 'return': float}` — کلیدها نام پارامترها به‌علاوه‌ی `'return'`؛ مقدارها همان عبارت‌های annotation (اینجا خود کلاس `float` و یک رشته). (۲) بدون خطا `'33'` برمی‌گرداند (`'3' * 2`)؛ annotation فقط متادیتا است و پایتون نوع را چک نمی‌کند.",
+    "hints": ["کلید مقدار برگشتی چه نامی دارد؟", "annotation اجرای کد را تغییر نمی‌دهد."],
+    "rubric": "Correct: dict with w, h, unit, return keys and right values (float class, string) AND says the call runs and returns '33' because annotations are not enforced. Partial: dict right but claims a TypeError, or misses the return key. Incorrect: otherwise."
+  },
+  {
+    "key": "eval-once",
+    "title": "annotation کِی ارزیابی می‌شود؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "```python\nlimit = 10\n\ndef check(n: 'must be below ' + str(limit)) -> bool:\n    return n < limit\n\nlimit = 100\nprint(check(50))\nprint(check.__annotations__['n'])\n```\nخروجی هر print را بنویس و توضیح بده چرا این دو با هم ناسازگار به نظر می‌رسند و این رفتار به کدام نکته‌ی بخش قبل شبیه است.",
+    "expected_outcome": "`True` (بدنه هر بار `limit` فعلی = 100 را می‌خواند) و `'must be below 10'` (عبارت annotation یک بار موقع `def` با `limit = 10` ارزیابی و ذخیره شد). دقیقاً مثل مقدار پیش‌فرض پارامترها: هر دو در زمان ساخت تابع ارزیابی می‌شوند، نه در هر فراخوانی؛ بدنه اما هر بار اجرا می‌شود.",
+    "hints": ["def خودش یک بار اجرا می‌شود.", "درس «مراقب مقدارهای پیش‌فرض باش» را به یاد بیاور."],
+    "rubric": "Correct: True and 'must be below 10', explains def-time evaluation of annotations vs run-time body, and links it to default values. Partial: outputs right but explanation incomplete. Incorrect: claims annotation shows 100."
+  }
+]

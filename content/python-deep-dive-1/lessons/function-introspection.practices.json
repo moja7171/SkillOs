@@ -1,0 +1,37 @@
+[
+  {
+    "key": "defaults-tuple",
+    "title": "`__defaults__` چیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef f(a, b, c=3, d=4, *, e, g=6):\n    pass\n```\n`f.__defaults__` و `f.__kwdefaults__` به ترتیب چیست؟",
+    "options": ["(None, None, 3, 4) و {'e': None, 'g': 6}", "(3, 4) و {'g': 6}", "{'c': 3, 'd': 4} و {'g': 6}", "(3, 4, 6) و None"],
+    "correct_option": 1,
+    "expected_outcome": "`__defaults__` فقط پیش‌فرض‌های positional را به‌صورت tuple می‌دهد، بدون جای خالی برای a و b؛ `__kwdefaults__` دیکشنری پیش‌فرض‌های keyword-only است.",
+    "hints": ["پارامتر بدون پیش‌فرض اصلاً در tuple نمی‌آید.", "keyword-only در dict جدا ذخیره می‌شود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "describe-signature",
+    "title": "امضا را چاپ کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `describe(fn)` بنویس که با `inspect.signature` برای هر پارامتر `fn` یک خط به شکل `name kind default` چاپ کند و اگر پیش‌فرض ندارد به‌جای default بنویسد `-`. خروجی‌اش را برای `def g(x, y=1, *args, z, **kw): pass` بنویس.",
+    "expected_outcome": "```python\nimport inspect\n\ndef describe(fn):\n    for p in inspect.signature(fn).parameters.values():\n        default = '-' if p.default is inspect.Parameter.empty else p.default\n        print(p.name, p.kind, default)\n```\nخروجی:\n```\nx POSITIONAL_OR_KEYWORD -\ny POSITIONAL_OR_KEYWORD 1\nargs VAR_POSITIONAL -\nz KEYWORD_ONLY -\nkw VAR_KEYWORD -\n```",
+    "hints": ["sig.parameters.values() اشیای Parameter می‌دهد.", "نبودِ پیش‌فرض با inspect.Parameter.empty مشخص می‌شود."],
+    "rubric": "Correct: uses inspect.signature, iterates parameters, checks Parameter.empty (or inspect._empty) for the default, and lists the five kinds correctly. Partial: works but uses __defaults__ manually or gets one kind wrong. Incorrect: does not use signature or wrong output."
+  },
+  {
+    "key": "function-vs-method",
+    "title": "تابع، متد، routine",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Counter:\n    def inc(self): ...\n\nc = Counter()\n```\nبرای هر یک از `Counter.inc` و `c.inc` بگو `isfunction`، `ismethod` و `isroutine` چه برمی‌گردانند و در ۲ جمله توضیح بده تفاوت «تابع» و «متد» چیست.",
+    "expected_outcome": "`Counter.inc`: isfunction True، ismethod False، isroutine True. `c.inc`: isfunction False، ismethod True، isroutine True. متد callable‌ای است که به یک instance (یا کلاس) bound شده و آن را به‌عنوان آرگومان اول (self) دریافت می‌کند؛ همان `def` وقتی از طریق کلاس دسترسی می‌شود هنوز یک تابع ساده است. isroutine هر دو را می‌پذیرد.",
+    "hints": ["دسترسی از طریق instance آن را bound می‌کند.", "isroutine = function یا method."],
+    "rubric": "Correct: all six values right and explains bound-to-instance as the distinction. Partial: values right but explanation vague, or one value wrong. Incorrect: claims c.inc is a function."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "valid-lambda",
+    "title": "کدام lambda معتبر است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام گزینه یک عبارت lambda **معتبر** است؟",
+    "options": ["lambda (x, y): x + y", "lambda x: y = x * 2", "lambda x, y=1: x ** y", "lambda x: int -> x + 1"],
+    "correct_option": 2,
+    "expected_outcome": "پارامترها بدون پرانتز می‌آیند، بدنه باید یک عبارت باشد (نه انتساب) و annotation مجاز نیست. فقط `lambda x, y=1: x ** y` درست است — پیش‌فرض مجاز است.",
+    "hints": ["پارامترهای lambda پرانتز ندارند.", "بدنه یک عبارت است؛ انتساب عبارت نیست."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "apply-generic",
+    "title": "apply_func عمومی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `apply_twice(fn, *args, **kwargs)` بنویس که `fn` را با همان آرگومان‌ها صدا بزند و نتیجه را **دوباره** به `fn` بدهد (به‌صورت یک آرگومان positional) و خروجی نهایی را برگرداند. بعد با یک lambda نشان بده `apply_twice(..., 3)` برای «مربع» عدد ۸۱ می‌دهد. توضیح بده چرا `fn` باید پارامتر اول باشد.",
+    "expected_outcome": "```python\ndef apply_twice(fn, *args, **kwargs):\n    return fn(fn(*args, **kwargs))\n\napply_twice(lambda x: x ** 2, 3)   # 81\n```\n`fn` باید اول بیاید چون بعد از `**kwargs` هیچ پارامتری مجاز نیست و بعد از `*args` فقط keyword-only می‌شود.",
+    "hints": ["نتیجه‌ی فراخوانی اول را به‌عنوان تنها آرگومان دوباره پاس بده.", "بعد از **kwargs چیزی نمی‌آید."],
+    "rubric": "Correct: function unpacks *args/**kwargs into fn, feeds the result back, returns 81 for the square lambda, and explains fn must precede *args/**kwargs. Partial: works but explanation missing or passes the second call incorrectly. Incorrect: does not use the lambda or wrong result."
+  },
+  {
+    "key": "lambda-vs-def",
+    "title": "lambda در برابر def",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: `f = lambda x: x ** 2` با `def f(x): return x ** 2` چه تفاوت‌هایی دارد و چه شباهت‌هایی؟ (به شیء ساخته‌شده، نام، و محدودیت‌های بدنه اشاره کن.) چه زمانی lambda انتخاب مناسب‌تری است؟",
+    "expected_outcome": "هر دو یک شیء `function` واقعی می‌سازند و متغیر `f` به آن اشاره می‌کند؛ رفتار فراخوانی یکسان است و همه‌ی انواع پارامتر در هر دو مجاز است. تفاوت: `def` نام تابع (`__name__`) را `f` می‌گذارد ولی lambda `<lambda>` می‌ماند؛ بدنه‌ی lambda فقط یک عبارت است (نه statement، نه annotation، نه docstring). lambda برای توابع کوتاهی که در لحظه به تابع دیگری پاس می‌دهیم (مثل key در sorted) مناسب است.",
+    "hints": ["به `__name__` و خروجی نمایش تابع فکر کن.", "بدنه‌ی lambda چه چیزهایی نمی‌تواند داشته باشد؟"],
+    "rubric": "Correct: mentions both produce a real function object, the name difference (<lambda>), single-expression limitation (no statements/annotations), and a sensible use case. Partial: two of these. Incorrect: claims lambda is a different kind of object or is a closure."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "positional-goes-first",
+    "title": "کجا می‌نشیند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nfrom functools import partial\ndef pow(base, exponent):\n    return base ** exponent\nf = partial(pow, 3)\nf(2)\n```\nنتیجه چیست؟",
+    "options": ["8", "9", "TypeError", "6"],
+    "correct_option": 1,
+    "expected_outcome": "آرگومان positional ذخیره‌شده اول می‌نشیند: `3` به `base` می‌رود و `2` به `exponent`؛ پس 3 ** 2 = 9. برای ثابت کردن exponent باید `partial(pow, exponent=3)` نوشت.",
+    "hints": ["positionalهای ذخیره‌شده قبل از آرگومان‌های فراخوانی می‌آیند.", "کدام پارامتر ۳ را می‌گیرد؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "partial-for-map",
+    "title": "partial برای map",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابع زیر را داریم:\n```python\ndef scale(value, factor, offset=0):\n    return value * factor + offset\n```\nبا `partial` و `map` لیست `[1, 2, 3]` را به `[12, 22, 32]` تبدیل کن (factor=10، offset=2) — بدون lambda. بعد نشان بده چطور همان partial را با offset متفاوت برای یک عنصر صدا بزنی.",
+    "expected_outcome": "```python\nfrom functools import partial\nf = partial(scale, factor=10, offset=2)\nlist(map(f, [1, 2, 3]))     # [12, 22, 32]\nf(1, offset=100)            # 110  -- keyword overrides the stored one\n```\n(`partial(scale, 10, 2)` غلط است: 10 به value می‌رود.)",
+    "hints": ["factor پارامتر دوم است؛ با نام ثابتش کن.", "keyword در فراخوانی روی keyword ذخیره‌شده می‌نشیند."],
+    "rubric": "Correct: partial with keyword factor/offset, map gives [12, 22, 32], and shows overriding offset in a call. Partial: partial right but map result missing, or override not shown. Incorrect: positional partial that shifts value, or uses lambda."
+  },
+  {
+    "key": "baked-reference",
+    "title": "چه چیزی ذخیره می‌شود؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "```python\nrate = 0.1\ntaxed = partial(lambda p, r: p * (1 + r), r=rate)\nrate = 0.2\nprint(taxed(100))\n\ncfg = {'r': 0.1}\ntaxed2 = partial(lambda p, c: p * (1 + c['r']), c=cfg)\ncfg['r'] = 0.2\nprint(taxed2(100))\n```\nخروجی هر print را بنویس و در ۲ تا ۳ جمله توضیح بده چرا این دو متفاوت رفتار می‌کنند و این به کدام درس قبلی مربوط است.",
+    "expected_outcome": "`110.0` و `120.0`. partial ارجاع به شیء را ذخیره می‌کند نه نام متغیر: `rate = 0.2` نام را به شیء جدیدی می‌برد ولی partial همچنان به `0.1` اشاره دارد. `cfg` اما mutable است و `cfg['r'] = 0.2` همان شیء را تغییر می‌دهد، پس partial تغییر را می‌بیند. همان رفتار مقدارهای پیش‌فرض تابع (immutable ثابت، mutable مشترک).",
+    "hints": ["نام متغیر ذخیره نمی‌شود؛ ارجاع ذخیره می‌شود.", "reassign کردن با mutate کردن فرق دارد."],
+    "rubric": "Correct: 110.0 and 120.0, explains reference capture, distinguishes rebinding vs mutation, links to default-value behaviour. Partial: outputs right but explanation muddled. Incorrect: expects 120.0 for the first."
+  }
+]

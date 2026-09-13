@@ -1,0 +1,37 @@
+[
+  {
+    "key": "which-callable",
+    "title": "callable یا نه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ns = 'hello'\n```\nکدام گزینه `False` است؟",
+    "options": ["callable(s.upper)", "callable(str)", "callable(s.upper())", "callable(lambda: s)"],
+    "correct_option": 2,
+    "expected_outcome": "`s.upper()` فراخوانی شده و نتیجه‌اش یک رشته است؛ رشته callable نیست. متد، کلاس و lambda همه callable هستند.",
+    "hints": ["پرانتز یعنی فراخوانی انجام شده.", "نتیجه‌ی upper() چه نوعی است؟"],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "callable-accumulator",
+    "title": "یک instance قابل فراخوانی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کلاسی به نام `Averager` بنویس که هر بار با یک عدد صدا زده شود، آن را ذخیره کند و **میانگین همه‌ی اعداد تا الان** را برگرداند:\n```python\navg = Averager()\navg(10)   # 10.0\navg(20)   # 15.0\navg(30)   # 20.0\ncallable(avg)   # True\n```",
+    "expected_outcome": "```python\nclass Averager:\n    def __init__(self):\n        self.numbers = []\n\n    def __call__(self, value):\n        self.numbers.append(value)\n        return sum(self.numbers) / len(self.numbers)\n```\n(نگه داشتن total و count هم قابل قبول است.)",
+    "hints": ["__call__ instance را قابل فراخوانی می‌کند.", "وضعیت (اعداد یا مجموع/تعداد) در __init__ ساخته و در __call__ به‌روز می‌شود."],
+    "rubric": "Correct: defines __init__ state and __call__ that appends and returns the running mean; outputs match. Partial: works but returns int division or uses a class-level mutable list shared across instances. Incorrect: no __call__."
+  },
+  {
+    "key": "class-call-steps",
+    "title": "وقتی کلاس را صدا می‌زنی",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "وقتی می‌نویسی `a = Decimal('10.5')` دقیقاً چه اتفاقی می‌افتد؟ در ۳ تا ۴ جمله مراحل را بگو و توضیح بده چرا با اینکه `Decimal` تابع نیست، callable است، و چرا `a` (به‌طور پیش‌فرض) callable نیست.",
+    "expected_outcome": "فراخوانی کلاس اول `__new__` را اجرا می‌کند که شیء جدید را می‌سازد (اگر تعریف نشده از `object` ارث می‌رسد)، بعد `__init__` را با آن شیء در `self` اجرا می‌کند تا مقداردهی شود، و در نهایت شیء ساخته‌شده برگردانده می‌شود. `Decimal` از نوع `type` است نه `function`، ولی عملگر `()` رویش تعریف شده، پس callable است. `a` یک instance است و چون کلاس Decimal متد `__call__` ندارد، `a()` معنی ندارد و `callable(a)` False است.",
+    "hints": ["دو متد dunder در ساخت شیء نقش دارند.", "چه چیزی یک instance را callable می‌کند؟"],
+    "rubric": "Correct: mentions __new__ then __init__ then returning the instance, that classes are callable though type(Decimal) is type, and that instances need __call__. Partial: misses __new__ or the __call__ point. Incorrect: says Decimal is a function."
+  }
+]

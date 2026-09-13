@@ -1,0 +1,37 @@
+[
+  {
+    "key": "sort-by-value",
+    "title": "مرتب‌سازی dict بر اساس مقدار",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nd = {'x': 3, 'y': 1, 'z': 2}\nsorted(d, key=lambda k: d[k], reverse=True)\n```\nخروجی چیست؟",
+    "options": ["['x', 'z', 'y']", "[3, 2, 1]", "{'x': 3, 'z': 2, 'y': 1}", "['z', 'y', 'x']"],
+    "correct_option": 0,
+    "expected_outcome": "پیمایش dict کلیدها را می‌دهد، پس خروجی لیست کلیدهاست؛ key مقدار هر کلید را برمی‌گرداند و reverse ترتیب را نزولی می‌کند: x(3), z(2), y(1).",
+    "hints": ["sorted همیشه لیست برمی‌گرداند؛ روی dict، لیست کلیدها.", "reverse=True یعنی نزولی."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "sort-people",
+    "title": "مرتب‌سازی با key سفارشی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "لیستی از tupleهای `(name, age)` داریم:\n```python\npeople = [('Ali', 30), ('bob', 25), ('Cara', 30), ('dan', 25)]\n```\n(۱) با یک `sorted` و lambda، افراد را بر اساس سن صعودی مرتب کن به‌طوری که هم‌سن‌ها ترتیب اولیه‌شان حفظ شود؛ خروجی را بنویس. (۲) با یک `sorted` دیگر، بر اساس **نام بدون حساسیت به بزرگی حروف** مرتب کن.",
+    "expected_outcome": "```python\nsorted(people, key=lambda p: p[1])\n# [('bob', 25), ('dan', 25), ('Ali', 30), ('Cara', 30)]   -- stable: bob before dan, Ali before Cara\nsorted(people, key=lambda p: p[0].lower())\n# [('Ali', 30), ('bob', 25), ('Cara', 30), ('dan', 25)]\n```",
+    "hints": ["key یک تابع است که هر tuple را می‌گیرد و چیزی برای مقایسه برمی‌گرداند.", "برای بی‌اثر کردن بزرگی حروف، .lower() یا .upper()."],
+    "rubric": "Correct: both sorted calls with proper lambdas and correct outputs, notes stability keeps bob before dan. Partial: one of the two right, or outputs not stated. Incorrect: uses list.sort() on the tuple field wrongly or wrong order."
+  },
+  {
+    "key": "stable-sort",
+    "title": "چرا این ترتیب؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "```python\nwords = ['pear', 'fig', 'apple', 'kiwi', 'plum']\nsorted(words, key=len)\n```\nخروجی را بنویس و توضیح بده چرا `pear` قبل از `kiwi` و `plum` آمده، با اینکه از نظر الفبایی بعد از هر دو است. اگر بخواهیم هم‌طول‌ها الفبایی هم باشند، key را چطور می‌نویسی؟",
+    "expected_outcome": "`['fig', 'pear', 'kiwi', 'plum', 'apple']`. key فقط طول را مقایسه می‌کند؛ pear/kiwi/plum همه طول ۴ دارند و از نظر key برابرند، و چون sort پایتون stable است ترتیب اولیه‌شان (pear, kiwi, plum) حفظ می‌شود. برای شکستن تساوی: `key=lambda w: (len(w), w)` → `['fig', 'kiwi', 'pear', 'plum', 'apple']`.",
+    "hints": ["عناصر با key برابر چه می‌شوند؟", "tuple به‌عنوان key: اول عنصر اول مقایسه می‌شود، بعد دومی."],
+    "rubric": "Correct: right output, explains stability for equal keys, and proposes a tuple key (len, word). Partial: output and stability right but no tie-breaker. Incorrect: wrong output or claims sorted is unstable."
+  }
+]

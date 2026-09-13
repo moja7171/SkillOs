@@ -300,3 +300,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The owner asked for a professional player with speed, seeking, keyboard and subtitle selection. Plyr gives all of that accessibly in ~30 KB and honours `<track>` elements, so the content model didn't change.
 
 **Consequences.** `php artisan serve` cannot seek (no HTTP Range) — test seeking/resume against a Range-capable server (Apache/nginx in production; a throwaway Python range server in dev). Per-viewer state lives in the browser only.
+
+---
+
+## 14. Video player: Plyr, self-hosted, with resume and speed memory (2026-09-13)
+
+**Decision.** Local/YouTube videos render through Plyr (`resources/js/player.js`), themed to the tokens, Persian UI strings, controls: play, ±10s, progress with seek tooltip, time, volume, captions menu (off / English / فارسی — English default), speed 0.5–2×, PiP, fullscreen; keyboard: space/K, ←/→ (10s), ↑/↓, M, F, C, 0–9. Two additions on top of Plyr: resume from the last position per video (`localStorage skillos.player.pos.<videoId>`, skipped near start/end) and a remembered playback speed (`skillos.player.speed`). Icon sprite self-hosted at `public/plyr.svg`. Aparat stays an iframe.
+
+**Why.** The owner asked for a professional player; Plyr covers the feature list at ~30 KB without a build-time dependency on external CDNs (shared hosting, offline-friendly).
+
+**Consequences.** `php artisan serve` ignores Range requests, so seeking only works in dev when media is served by something else (Apache/nginx in production; a tiny Range-capable Python server was used to verify). Per-viewer state is browser-local only — no server-side "watched" tracking (planner already uses the learn attempt for that).

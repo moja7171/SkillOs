@@ -55,12 +55,12 @@ class CourseImporterTest extends TestCase
         $this->assertCount(4, $mcq->payload['options']);
     }
 
-    public function test_video_file_shorthand_resolves_against_video_base_url_with_subtitles_and_section(): void
+    public function test_video_file_shorthand_resolves_against_video_base_url_with_subtitle_tracks_and_section(): void
     {
         $lesson = $this->lesson('a');
         $lesson['section'] = 'بخش یک';
         $lesson['videos'] = [
-            ['file' => '001-intro part.mp4', 'subtitle' => 'subs/001 en.vtt', 'title' => 'مقدمه'],
+            ['file' => '001-intro part.mp4', 'subtitle' => 'subs/001 fa.vtt', 'subtitles' => [['file' => 'subs/001 en.vtt', 'lang' => 'en']], 'title' => 'مقدمه'],
             ['url' => 'https://www.youtube.com/watch?v=abc123xyz'],
         ];
         $this->writeCourse(['video_base_url' => '/media/demo/', 'lessons' => [$lesson]]);
@@ -71,10 +71,13 @@ class CourseImporterTest extends TestCase
         $this->assertSame('بخش یک', $stored->section);
         $videos = $stored->videos;
         $this->assertSame('/media/demo/001-intro%20part.mp4', $videos[0]->url);
-        $this->assertSame('/media/demo/subs/001%20en.vtt', $videos[0]->subtitle_url);
+        $this->assertSame([
+            ['url' => '/media/demo/subs/001%20fa.vtt', 'lang' => 'fa', 'label' => 'زیرنویس فارسی'],
+            ['url' => '/media/demo/subs/001%20en.vtt', 'lang' => 'en', 'label' => 'English subtitles'],
+        ], $videos[0]->subtitles);
         $this->assertSame('file', $videos[0]->embed()['kind']);
         $this->assertSame('https://www.youtube.com/watch?v=abc123xyz', $videos[1]->url);
-        $this->assertNull($videos[1]->subtitle_url);
+        $this->assertSame([], $videos[1]->subtitles);
     }
 
     public function test_reimport_updates_content_and_keeps_learner_data(): void

@@ -6,9 +6,16 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['lesson_id', 'order', 'title', 'url', 'subtitle_url'])]
+#[Fillable(['lesson_id', 'order', 'title', 'url', 'subtitles'])]
 class LessonVideo extends Model
 {
+    protected function casts(): array
+    {
+        return [
+            'subtitles' => 'array',
+        ];
+    }
+
     public function lesson(): BelongsTo
     {
         return $this->belongsTo(Lesson::class);

@@ -26,9 +26,9 @@
                     @if ($embed['kind'] === 'file')
                         <video controls preload="metadata" class="w-full rounded-lg bg-black aspect-video" crossorigin="anonymous">
                             <source src="{{ $embed['src'] }}">
-                            @if ($video->subtitle_url)
-                                <track kind="subtitles" src="{{ $video->subtitle_url }}" srclang="fa" label="زیرنویس فارسی" default>
-                            @endif
+                            @foreach ($video->subtitles ?? [] as $track)
+                                <track kind="subtitles" src="{{ $track['url'] }}" srclang="{{ $track['lang'] }}" label="{{ $track['label'] }}" @if ($loop->first) default @endif>
+                            @endforeach
                         </video>
                     @elseif ($embed['kind'] === 'link')
                         <a href="{{ $embed['src'] }}" target="_blank" rel="noopener" class="btn">باز کردن ویدیو در تب جدید</a>

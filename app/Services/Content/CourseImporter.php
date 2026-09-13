@@ -67,7 +67,7 @@ class CourseImporter
                         'order' => $i,
                         'title' => $video['title'] ?? null,
                         'url' => $this->mediaUrl($data, $video, 'url', 'file'),
-                        'subtitle_url' => $this->mediaUrl($data, $video, 'subtitle_url', 'subtitle'),
+                        'subtitles' => $this->subtitleTracks($data, $video),
                     ]);
                 }
 
@@ -244,6 +244,31 @@ class CourseImporter
         $base = rtrim((string) ($course['video_base_url'] ?? '/media/'), '/');
 
         return $base.'/'.implode('/', array_map('rawurlencode', explode('/', $video[$fileKey])));
+    }
+
+    /**
+     * Subtitle tracks: "subtitles": [{file|url, lang, label}] — or the shorthand
+     * "subtitle": "<file>" for a single Persian track.
+     *
+     * @param  array<string, mixed>  $course
+     * @param  array<string, mixed>  $video
+     * @return array<int, array{url: string, lang: string, label: string}>
+     */
+    protected function subtitleTracks(array $course, array $video): array
+    {
+        $tracks = $video['subtitles'] ?? [];
+        if (! empty($video['subtitle'])) {
+            array_unshift($tracks, ['file' => $video['subtitle'], 'lang' => 'fa']);
+        }
+
+        $labels = ['fa' => 'زیرنویس فارسی', 'en' => 'English subtitles'];
+
+        return array_values(array_filter(array_map(function (array $t) use ($course, $labels) {
+            $url = $this->mediaUrl($course, $t, 'url', 'file');
+            $lang = $t['lang'] ?? 'fa';
+
+            return $url ? ['url' => $url, 'lang' => $lang, 'label' => $t['label'] ?? ($labels[$lang] ?? $lang)] : null;
+        }, $tracks)));
     }
 
     /**

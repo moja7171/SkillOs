@@ -32,7 +32,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('order')->default(0);
             $table->string('title')->nullable();
             $table->string('url', 2000); // served file or external link
-            $table->string('subtitle_url', 2000)->nullable(); // WebVTT; rendered as a toggleable <track>
+            $table->json('subtitles')->nullable(); // [{url, lang, label}] WebVTT tracks; the player's CC menu toggles them
             $table->timestamps();
         });
 

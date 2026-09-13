@@ -1,0 +1,37 @@
+[
+  {
+    "key": "nonlocal-vs-global",
+    "title": "nonlocal تا کجا می‌گردد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ncounter = 0\n\ndef outer():\n    def inner():\n        nonlocal counter\n        counter += 1\n    inner()\n```\nنتیجه‌ی تعریف/اجرای این کد چیست؟",
+    "options": ["counter سراسری 1 می‌شود", "SyntaxError — nonlocal فقط در scopeهای تابعیِ بیرونی می‌گردد و counter فقط global است", "UnboundLocalError هنگام اجرای inner", "یک counter محلی در inner ساخته می‌شود"],
+    "correct_option": 1,
+    "expected_outcome": "`nonlocal` هرگز به global نمی‌رسد؛ چون هیچ تابع بیرونی‌ای `counter` ندارد، پایتون همان موقع کامپایل `SyntaxError: no binding for nonlocal 'counter' found` می‌دهد. برای متغیر ماژول باید `global counter` نوشت.",
+    "hints": ["nonlocal فقط scopeهای تابع‌های بیرونی را می‌بیند.", "این خطا زمان کامپایل است، نه اجرا."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "trace-layers",
+    "title": "ردگیری سه لایه",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\ndef outer():\n    x = 'a'\n    def inner1():\n        x = 'b'\n        def inner2():\n            nonlocal x\n            x = 'c'\n        inner2()\n        print(x)\n    inner1()\n    print(x)\n\nouter()\n```\nدو خط خروجی را بنویس و یک جمله بگو `nonlocal x` در inner2 به کدام x چسبید و چرا.",
+    "expected_outcome": "`c` سپس `a`. nonlocal به نزدیک‌ترین scope تابعیِ بیرونی که x دارد bind می‌شود — اینجا inner1 (چون `x = 'b'` آن را local کرده)؛ x در outer دست‌نخورده می‌ماند.",
+    "hints": ["انتساب در inner1 یک x محلی جدید می‌سازد.", "nonlocal اولین x را که در لایه‌های بیرونی پیدا کند می‌گیرد."],
+    "rubric": "Correct: outputs c then a, and says nonlocal bound to inner1's x because assignment made it local there. Partial: outputs right, reason missing/wrong. Incorrect: outputs c / c."
+  },
+  {
+    "key": "make-counter",
+    "title": "شمارنده با nonlocal",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `make_counter()` بنویس که یک تابع درونی `inc()` برگرداند؛ هر بار `inc()` صدا زده شود، شمارنده یکی زیاد و مقدار جدید برگردانده شود:\n```python\nc = make_counter()\nc(); c()\nc()   # 3\nd = make_counter()\nd()   # 1  -- independent\n```\nبدون متغیر global. توضیح بده اگر `nonlocal` را حذف کنی چه خطایی می‌گیری.",
+    "expected_outcome": "```python\ndef make_counter():\n    count = 0\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n    return inc\n```\nبدون `nonlocal`، `count += 1` انتساب است و count را local به inc می‌کند؛ خواندنش قبل از مقداردهی → UnboundLocalError. هر فراخوانی make_counter یک count جداگانه در scope خودش دارد، پس c و d مستقل‌اند.",
+    "hints": ["count += 1 یک انتساب است.", "هر فراخوانی make_counter یک scope تازه می‌سازد."],
+    "rubric": "Correct: nonlocal count, increments and returns, independent counters, names UnboundLocalError for the no-nonlocal case. Partial: works but wrong error name or uses a mutable list trick instead of nonlocal. Incorrect: uses global or shared state across counters."
+  }
+]

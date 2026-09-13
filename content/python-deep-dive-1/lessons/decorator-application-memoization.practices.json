@@ -1,0 +1,37 @@
+[
+  {
+    "key": "why-recursion-cached",
+    "title": "چرا فراخوانی‌های بازگشتی هم cache می‌شوند؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "در نسخه‌ی decorator (`@memoize def fib(n): ... fib(n-1) + fib(n-2)`)، چرا فراخوانی‌های بازگشتی داخل بدنه هم از cache استفاده می‌کنند، با اینکه decorator خودش بازگشت نمی‌زند؟",
+    "options": ["چون memoize بدنه‌ی تابع را بازنویسی می‌کند", "چون نام fib در ماژول به closure اشاره می‌کند و بازگشت همان نام را از global می‌خواند", "چون پایتون به‌طور خودکار توابع بازگشتی را cache می‌کند", "استفاده نمی‌کنند؛ فقط فراخوانی بیرونی cache می‌شود"],
+    "correct_option": 1,
+    "expected_outcome": "بعد از `@memoize`، `fib` در namespace ماژول = closure. بدنه‌ی تابع اصلی `fib` را از global می‌خواند → به closure می‌رسد → cache چک می‌شود.",
+    "hints": ["همان نکته‌ی درس timer، این بار به نفع ما.", "بدنه نام fib را از کجا پیدا می‌کند؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "memoize-args",
+    "title": "memoize برای چند آرگومان",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "decorator `memoize` را طوری تعمیم بده که با هر تعداد آرگومان **positional** کار کند (کلید cache را از `args` بساز) و متادیتا را با `wraps` حفظ کند. با تابع `def grid_paths(r, c)` (تعداد مسیرها در شبکه‌ی r×c: `1` اگر r==0 یا c==0 وگرنه `grid_paths(r-1,c)+grid_paths(r,c-1)`) نشان بده که `grid_paths(16, 16)` سریع جواب می‌دهد. چرا نمی‌شود لیست را کلید کرد؟",
+    "expected_outcome": "```python\nfrom functools import wraps\n\ndef memoize(fn):\n    cache = {}\n    @wraps(fn)\n    def inner(*args):\n        if args not in cache:        # args is a tuple → hashable if its items are\n            cache[args] = fn(*args)\n        return cache[args]\n    return inner\n\n@memoize\ndef grid_paths(r, c):\n    return 1 if r == 0 or c == 0 else grid_paths(r - 1, c) + grid_paths(r, c - 1)\n\ngrid_paths(16, 16)    # 601080390, instantly\n```\nلیست mutable است و hashable نیست، پس نمی‌تواند کلید dict باشد؛ tuple از اشیای hashable می‌تواند.",
+    "hints": ["args خودش یک tuple است.", "کلید dict باید hashable باشد."],
+    "rubric": "Correct: uses args tuple as key, wraps, forwards *args, returns cached value, and explains list unhashability. Partial: works but no wraps or weak hashability explanation. Incorrect: key built wrongly (e.g. str(args) is acceptable but note it; a single-arg version is incorrect)."
+  },
+  {
+    "key": "lru-eviction",
+    "title": "lru_cache(maxsize=4)",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "```python\n@lru_cache(maxsize=4)\ndef sq(n):\n    print('calc', n)\n    return n * n\n\nsq(1); sq(2); sq(3); sq(4); sq(1); sq(5); sq(2)\n```\nبرای هر فراخوانی بگو `calc` چاپ می‌شود یا نه، و توضیح بده چرا آخرین فراخوانی چنین رفتاری دارد.",
+    "expected_outcome": "calc 1, calc 2, calc 3, calc 4 (چهار تا پر)، sq(1) از cache (و 1 «تازه استفاده‌شده» می‌شود)، sq(5) → calc 5 و قدیمی‌ترین یعنی 2 حذف می‌شود (نه 1، چون 1 تازه استفاده شده)، sq(2) → calc 2 دوباره.",
+    "hints": ["LRU = کم‌استفاده‌ترین اخیر، نه قدیمی‌ترین ورودی.", "استفاده از cache، آن کلید را «تازه» می‌کند."],
+    "rubric": "Correct: calc for 1,2,3,4, hit on sq(1), calc 5 evicting 2, calc 2 again — with the LRU (recency) reasoning. Partial: evicts 1 instead of 2 (FIFO thinking). Incorrect: otherwise."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "stack-order",
+    "title": "ترتیب اجرا",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef a(fn):\n    def inner():\n        r = fn()\n        print('a')\n        return r\n    return inner\n\ndef b(fn):\n    def inner():\n        print('b')\n        return fn()\n    return inner\n\n@a\n@b\ndef f():\n    print('f')\n\nf()\n```\nخروجی چیست؟",
+    "options": ["a b f", "b f a", "f b a", "a f b"],
+    "correct_option": 1,
+    "expected_outcome": "`f = a(b(f))`. a.inner اول fn را صدا می‌زند (که b.inner است): b چاپ 'b'، سپس f چاپ 'f'؛ بعد a چاپ 'a'.",
+    "hints": ["decorator پایینی اول اعمال می‌شود؛ بیرونی اول اجرا.", "a بعد از فراخوانی چاپ می‌کند، b قبل."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "auth-logged-order",
+    "title": "auth و logged",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "decorator `auth` اگر کاربر مجاز نباشد بدون صدا زدن تابع، خطا برمی‌گرداند. در ۲ تا ۳ جمله بگو تفاوت `@auth @logged def save()` با `@logged @auth def save()` چیست و برای «فقط فراخوانی‌های موفق لاگ شوند» کدام را انتخاب می‌کنی. معادل هر کدام را به شکل فراخوانی تودرتو بنویس.",
+    "expected_outcome": "`@auth @logged` = `save = auth(logged(save))`: auth بیرونی است؛ اگر رد کند، logged هرگز اجرا نمی‌شود → فقط فراخوانی‌های مجاز/موفق لاگ می‌شوند. `@logged @auth` = `logged(auth(save))`: logged بیرونی است و هر تلاشی، حتی رد‌شده، لاگ می‌شود. برای لاگ فقط موفق‌ها: `@auth` بالا.",
+    "hints": ["بیرونی‌ترین decorator اول اجرا می‌شود.", "decoratorی که تابع را صدا نمی‌زند، زنجیره را قطع می‌کند."],
+    "rubric": "Correct: both nested forms right, explains that the outer decorator runs first and auth can short-circuit, picks @auth on top. Partial: right choice, muddled reasoning. Incorrect: reversed."
+  },
+  {
+    "key": "write-stacked",
+    "title": "لاگر با آرگومان‌ها",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "decorator `logged` را طوری بازنویسی کن که **قبل** از فراخوانی، نام تابع و آرگومان‌ها (positional و keyword) را چاپ کند و **بعد** از فراخوانی نتیجه را. سپس آن را همراه با `timed` روی تابعی بگذار طوری که خط «قبل» اولین خط خروجی و خط «بعد» آخرین خط باشد، و توضیح بده چرا این ترتیب decoratorها لازم است.",
+    "expected_outcome": "```python\ndef logged(fn):\n    @wraps(fn)\n    def inner(*args, **kwargs):\n        print(f'-> {fn.__name__}{args} {kwargs}')\n        result = fn(*args, **kwargs)\n        print(f'<- {fn.__name__} = {result!r}')\n        return result\n    return inner\n\n@logged\n@timed\ndef add(a, b): return a + b\n```\nlogged باید بیرونی (بالا) باشد تا «قبل» پیش از هر چیز و «بعد» پس از پایان timed چاپ شود؛ timed داخلی بین این دو اجرا می‌شود.",
+    "hints": ["decorator بیرونی هم اولین و هم آخرین کار را انجام می‌دهد.", "@logged باید بالاتر از @timed باشد."],
+    "rubric": "Correct: logged prints before and after around fn, returns result, uses wraps, stacked with logged on top and explains why. Partial: works but wrong stacking order or explanation. Incorrect: does not forward args or return."
+  }
+]

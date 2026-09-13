@@ -1,0 +1,37 @@
+[
+  {
+    "key": "at-syntax",
+    "title": "@ معادل چیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\n@log\ndef save(x):\n    ...\n```\nدقیقاً معادل کدام است؟",
+    "options": ["def save(x): ...\nsave = log(save)", "def save(x): ...\nsave = log(save(x))", "def save(x): ...\nlog(save)", "save = log\ndef save(x): ..."],
+    "correct_option": 0,
+    "expected_outcome": "`@log` یعنی بعد از تعریف، `save = log(save)` — decorator تابع را می‌گیرد (نه نتیجه‌اش را) و آنچه برمی‌گرداند به همان نام bind می‌شود.",
+    "hints": ["decorator خود تابع را می‌گیرد، نه فراخوانی‌اش را.", "نتیجه باید به همان نام نسبت داده شود."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "write-decorator",
+    "title": "decorator اعتبارسنجی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "decoratorی به نام `non_negative` بنویس که قبل از اجرای تابع، اگر هر آرگومان positional عددی منفی باشد `ValueError` بدهد، وگرنه تابع را اجرا کند و نتیجه را برگرداند. با `@wraps` متادیتا را حفظ کن. آن را روی `def area(w, h=1):` با docstring اعمال کن و نشان بده `area.__name__` و `help(area)` درست‌اند.",
+    "expected_outcome": "```python\nfrom functools import wraps\n\ndef non_negative(fn):\n    @wraps(fn)\n    def inner(*args, **kwargs):\n        if any(isinstance(a, (int, float)) and a < 0 for a in args):\n            raise ValueError('negative argument')\n        return fn(*args, **kwargs)\n    return inner\n\n@non_negative\ndef area(w, h=1):\n    \"\"\"rectangle area\"\"\"\n    return w * h\n\narea.__name__   # 'area'\narea(3, 4)      # 12\narea(-1)        # ValueError\n```",
+    "hints": ["closure باید *args/**kwargs بگیرد و عیناً پاس بدهد.", "@wraps(fn) روی inner، نه روی decorator."],
+    "rubric": "Correct: decorator returns a closure using @wraps(fn), validates args before calling, forwards args/kwargs, returns the result; shows __name__ == 'area'. Partial: works but forgets wraps or does not return fn's result. Incorrect: decorator calls fn at decoration time or has wrong structure."
+  },
+  {
+    "key": "why-wraps",
+    "title": "wraps چه چیزی را درست می‌کند؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: بعد از `add = counter(add)` چرا `help(add)` امضای `inner(*args, **kwargs)` را نشان می‌دهد؟ تنظیم دستی `__name__` و `__doc__` چه چیزی را درست می‌کند و چه چیزی را نه؟ `@wraps(fn)` چطور به کار می‌رود و چرا باید `fn` را به آن بدهیم؟",
+    "expected_outcome": "چون `add` دیگر تابع اصلی نیست بلکه closure `inner` است و help متادیتای همان را نشان می‌دهد. تنظیم دستی نام و docstring را درست می‌کند ولی امضا/annotation/پیش‌فرض‌ها را نه. `wraps(fn)` یک decorator می‌سازد که روی inner اعمال می‌شود (`@wraps(fn)` یا `inner = wraps(fn)(inner)`) و متادیتای fn را کپی می‌کند؛ باید fn را بدهیم چون wraps نمی‌داند تابع اصلی کدام آرگومان است.",
+    "hints": ["add بعد از decorate شدن به چه شیئی اشاره می‌کند؟", "wraps خودش decorator پارامتردار است."],
+    "rubric": "Correct: identifies add as the inner closure, manual fix covers name/doc but not signature, wraps(fn) as a parametrized decorator that copies metadata and needs fn. Partial: two of three. Incorrect: claims decoration modifies the original function in place."
+  }
+]

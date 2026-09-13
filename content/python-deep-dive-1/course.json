@@ -2650,8 +2650,17 @@
           "subtitle": "099-global-and-local-scopes-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "scope = بخشی از کد که یک binding معتبر است؛ namespace = جدول نام→شیء آن scope.",
+        "built-in ← global (= ماژول) ← local (تابع)؛ جست‌وجو از داخل به بیرون.",
+        "scope تابع در هر فراخوانی ساخته و با پایان آن نابود می‌شود.",
+        "در زمان کامپایل: نامی که در بدنه انتساب دارد، در کل تابع local است (مگر `global`).",
+        "بلوک‌های `for`/`if` scope نمی‌سازند."
+      ],
+      "common_mistakes": [
+        "خواندن متغیر global قبل از انتساب به همان نام در تابع → UnboundLocalError.",
+        "بازتعریف نام‌های built-in مثل `print` یا `list`."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2693,8 +2702,17 @@
           "subtitle": "101-nonlocal-scopes-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تابع درونی، scope تابع بیرونی را می‌بیند (enclosing / nonlocal).",
+        "انتساب در تابع درونی، متغیر local جدید می‌سازد و بیرونی را می‌پوشاند.",
+        "`nonlocal x` انتساب را به نزدیک‌ترین scope تابعیِ بیرونی که x دارد وصل می‌کند.",
+        "`nonlocal` هرگز به global نمی‌رسد؛ برای ماژول `global` لازم است.",
+        "لایه‌ای که خودش x دارد، هدف nonlocal لایه‌های پایین‌تر می‌شود."
+      ],
+      "common_mistakes": [
+        "استفاده از nonlocal برای متغیر ماژول (SyntaxError).",
+        "فراموش کردن nonlocal و گرفتن UnboundLocalError."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2736,8 +2754,18 @@
           "subtitle": "103-closures-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "closure = تابع + متغیرهای آزادش (scope گسترش‌یافته).",
+        "متغیر مشترک بین دو scope از طریق یک cell واسط نگه‌داری می‌شود؛ cell بعد از پایان تابع بیرونی زنده می‌ماند.",
+        "مقدار متغیر آزاد هنگام فراخوانی خوانده می‌شود، نه هنگام ساخت.",
+        "هر فراخوانی تابع بیرونی، closure و cell تازه می‌سازد؛ دو تابع درونی در یک فراخوانی cell مشترک دارند.",
+        "`__code__.co_freevars` و `__closure__` برای درون‌نگری.",
+        "دام حلقه: همه‌ی closureها به یک cell وصل‌اند؛ راه‌حل capture با پیش‌فرض."
+      ],
+      "common_mistakes": [
+        "ساختن lambda در حلقه با متغیر آزاد حلقه.",
+        "تصور اینکه lambda همیشه closure است."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2779,8 +2807,17 @@
           "subtitle": "105-closure-applications-part-2.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "کلاس کوچک با یک حالت و یک عمل را می‌توان closure نوشت (averager, timer, counter).",
+        "`__call__` instance را callable می‌کند و رابط کلاس و closure یکی می‌شود.",
+        "closure‌ای که تابع می‌گیرد و *args/**kwargs را عبور می‌دهد، می‌تواند رفتار اضافه (شمارش، زمان) بیفزاید.",
+        "تغییر محتوای dict/list متغیر آزاد nonlocal نمی‌خواهد؛ انتساب به عدد می‌خواهد.",
+        "بازتعریف نام تابع با closure = ایده‌ی decorator."
+      ],
+      "common_mistakes": [
+        "فراموش کردن nonlocal برای شمارنده‌های عددی.",
+        "وابسته کردن closure به متغیر global به‌جای پاس دادن آن."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter — قسمت ۱",
@@ -2816,8 +2853,16 @@
           "subtitle": "107-decorators-part-1-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "decorator: تابع می‌گیرد، closure برمی‌گرداند که کاری اضافه می‌کند و fn را با همان آرگومان‌ها صدا می‌زند.",
+        "`@dec` دقیقاً معادل `f = dec(f)` است.",
+        "تابع decorate‌شده شیء دیگری است: نام، docstring، امضا از inner می‌آید.",
+        "`functools.wraps(fn)` روی inner متادیتای fn را کپی می‌کند؛ خودش decorator پارامتردار است."
+      ],
+      "common_mistakes": [
+        "فراموش کردن return نتیجه‌ی fn در inner.",
+        "استفاده نکردن از wraps و از دست دادن help/signature."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2847,8 +2892,17 @@
           "subtitle": "108-decorator-application-timer.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "الگوی timed: perf_counter قبل و بعد، فراخوانی fn، برگرداندن نتیجه.",
+        "تابع بازگشتی را مستقیم decorate نکن؛ یک wrapper غیربازگشتی را زمان بگیر.",
+        "فیبوناچی بازگشتی نمایی کند است؛ حلقه از reduce هم سریع‌تر است.",
+        "برای اندازه‌گیری قابل اعتماد چند بار اجرا و میانگین بگیر.",
+        "پارامتر اضافه به decorator با نحو @ کار نمی‌کند → factory لازم است."
+      ],
+      "common_mistakes": [
+        "زمان‌سنجی هر سطح بازگشت به‌جای کل.",
+        "استفاده از ابزار پیچیده (reduce) فقط چون «باحال» است."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2874,8 +2928,15 @@
           "subtitle": "109-decorator-application-logger-stacked-decorators.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`@a @b def f` = `f = a(b(f))`: پایینی اول اعمال، بیرونی اول اجرا.",
+        "ترتیب چاپ به جای print نسبت به فراخوانی fn بستگی دارد، نه فقط به ترتیب decoratorها.",
+        "decoratorی که می‌تواند فراخوانی را قطع کند (auth) ترتیب را معنادار می‌کند.",
+        "importها را داخل decorator بگذار تا خودکفا باشد."
+      ],
+      "common_mistakes": [
+        "فرض اینکه decorator بالایی همیشه اول چاپ می‌کند."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2901,8 +2962,17 @@
           "subtitle": "110-decorator-application-memoization.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "memoization: cache نتایج بر اساس ورودی؛ حافظه در برابر زمان.",
+        "decorator memoize فقط cache را چک می‌کند؛ بازگشت داخل خود تابع است و از طریق نام decorate‌شده از cache می‌گذرد.",
+        "کلید cache باید hashable باشد (tuple از args).",
+        "`functools.lru_cache(maxsize=128)`؛ `maxsize=None` بی‌حد؛ eviction بر اساس least recently used.",
+        "`functools.cache` (3.9+) = lru_cache بی‌حد."
+      ],
+      "common_mistakes": [
+        "cache بی‌حد در تولید.",
+        "انتظار اینکه lru_cache قدیمی‌ترین ورودی را حذف کند (FIFO) — به‌جای کم‌استفاده‌ترین."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2933,8 +3003,17 @@
           ]
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`@x(args)` یعنی اول x(args) ارزیابی می‌شود و نتیجه باید decorator باشد.",
+        "decorator factory: تابعی که پارامتر می‌گیرد و یک decorator (closure) برمی‌گرداند — سه لایه: factory → dec → inner.",
+        "پارامترهای factory متغیرهای آزاد inner هستند.",
+        "factory و dec یک بار در زمان تعریف اجرا می‌شوند؛ inner در هر فراخوانی.",
+        "wraps و lru_cache همین الگو هستند."
+      ],
+      "common_mistakes": [
+        "اضافه کردن پارامتر مستقیم به decorator و شکستن نحو @.",
+        "فراموش کردن پرانتز: `@timed` به‌جای `@timed(10)`."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2964,8 +3043,15 @@
           "subtitle": "113-decorator-application-decorator-class.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "instance با `__call__` می‌تواند decorator باشد.",
+        "`__init__` پارامترهای factory را می‌گیرد، `__call__(fn)` نقش decorator را دارد و inner برمی‌گرداند.",
+        "حالت در attributeهای instance به‌جای cell.",
+        "بدون پارامتر: `__init__(fn)` و `__call__(*args)` جای inner."
+      ],
+      "common_mistakes": [
+        "گیج شدن بین __init__ که fn می‌گیرد و __init__ که پارامتر می‌گیرد."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2991,8 +3077,17 @@
           "subtitle": "114-decorator-application-decorating-classes.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "monkey patching: افزودن/تغییر attribute کلاس‌ها در زمان اجرا (نه built-inهای C).",
+        "decorator کلاس: کلاس می‌گیرد، patch می‌کند، کلاس را برمی‌گرداند (برای نحو @ ضروری).",
+        "تابع کمکی بدون متغیر آزاد را بیرون از decorator تعریف کن.",
+        "با `__eq__` + یک عملگر ترتیبی، `functools.total_ordering` بقیه را می‌سازد.",
+        "پایتون عملگر بازتابی (`a > b` ← `b < a`) را خودش امتحان می‌کند ولی `<=` را از `<` نمی‌سازد."
+      ],
+      "common_mistakes": [
+        "برنگرداندن cls و None شدن نام کلاس.",
+        "تعریف دستی هر شش عملگر مقایسه."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -3041,8 +3136,17 @@
           "subtitle": "117-decorator-application-dispatching-part-3.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "single dispatch: انتخاب پیاده‌سازی بر اساس نوع آرگومان اول — جایگزین overloading.",
+        "registry (dict نوع→تابع) در closure؛ `register(type)` factory است که fn را ثبت می‌کند و بدون تغییر برمی‌گرداند (قابل پشته شدن).",
+        "helperها به‌عنوان attribute روی تابع برگشتی (`.register`, `.dispatch`).",
+        "`type()` وراثت را نمی‌بیند؛ `functools.singledispatch` نزدیک‌ترین کلاس (ABCها مثل Integral/Sequence) را پیدا می‌کند.",
+        "str هم Sequence است → بازگشت بی‌نهایت مگر پیاده‌سازی خاص str ثبت شود."
+      ],
+      "common_mistakes": [
+        "ثبت Sequence بدون ثبت str.",
+        "فکر کردن به اینکه `_`های تکراری در registry یک تابع‌اند."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter — قسمت ۱",

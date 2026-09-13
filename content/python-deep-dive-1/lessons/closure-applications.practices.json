@@ -1,0 +1,37 @@
+[
+  {
+    "key": "why-nonlocal-here",
+    "title": "کجا nonlocal لازم است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در closure زیر کدام خط بدون `nonlocal` خطا می‌دهد؟\n```python\ndef tracker():\n    seen = []\n    total = 0\n    def add(x):\n        seen.append(x)        # (A)\n        total += x            # (B)\n        return total, seen\n    return add\n```",
+    "options": ["فقط (A)", "فقط (B)", "هر دو", "هیچ‌کدام"],
+    "correct_option": 1,
+    "expected_outcome": "(A) فقط شیء لیست را تغییر می‌دهد، انتساب به نام نیست. (B) `total += x` انتساب است و total را local می‌کند → UnboundLocalError؛ نیاز به `nonlocal total`.",
+    "hints": ["تغییر محتوای شیء با انتساب به نام فرق دارد.", "+= یک انتساب است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "call-timer",
+    "title": "زمان‌سنجِ تجمعی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `timed(fn, stats)` بنویس (الگوی `counter(fn, counters)` درس) که closure‌ای برگرداند: هر فراخوانی، `fn` را با همان آرگومان‌ها اجرا کند، زمان اجرا را با `perf_counter` بگیرد، و در `stats[fn.__name__]` مجموع زمان و تعداد فراخوانی‌ها را به شکل `{'calls': n, 'total': seconds}` نگه دارد. نتیجه‌ی `fn` باید برگردانده شود. با یک تابع نمونه نشان بده که نام تابع را می‌شود با همان نام بازتعریف کرد.",
+    "expected_outcome": "```python\nfrom time import perf_counter\n\ndef timed(fn, stats):\n    def inner(*args, **kwargs):\n        start = perf_counter()\n        result = fn(*args, **kwargs)\n        elapsed = perf_counter() - start\n        entry = stats.setdefault(fn.__name__, {'calls': 0, 'total': 0.0})\n        entry['calls'] += 1\n        entry['total'] += elapsed\n        return result\n    return inner\n\nstats = {}\ndef slow_add(a, b): return a + b\nslow_add = timed(slow_add, stats)\nslow_add(1, 2)     # 3;  stats['slow_add'] == {'calls': 1, 'total': ...}\n```",
+    "hints": ["نتیجه‌ی fn را قبل از اندازه‌گیری زمان نگه دار و بعد برگردان.", "stats یک dict است؛ تغییر محتوایش nonlocal نمی‌خواهد."],
+    "rubric": "Correct: closure forwards *args/**kwargs, measures with perf_counter around the call, updates calls/total in stats keyed by fn.__name__, returns fn's result, and shows rebinding the same name. Partial: forgets to return the result, or measures wrong span. Incorrect: no closure or uses global stats without parameter."
+  },
+  {
+    "key": "class-vs-closure",
+    "title": "کلاس یا closure؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: در مثال averager، حالت (state) در نسخه‌ی کلاس کجا نگه‌داری می‌شود و در نسخه‌ی closure کجا؟ چرا دو فراخوانی `averager()` دو میانگین‌گیر مستقل می‌دهند؟ چه زمانی ترجیح می‌دهی کلاس بنویسی؟",
+    "expected_outcome": "در کلاس، حالت در attributeهای instance (`self.total`, `self.count`) است؛ در closure، در cellهای متغیرهای آزاد (`total`, `count`) که با تابع درونی زنده می‌مانند. هر فراخوانی averager یک scope و cellهای تازه می‌سازد → مستقل، مثل دو instance جدا. کلاس وقتی بهتر است که چند عملیات/متد، وراثت، یا نیاز به خواندن حالت از بیرون داشته باشی؛ closure برای «یک حالت + یک عمل» کوتاه‌تر و سبک‌تر است.",
+    "hints": ["به cell و scope هر فراخوانی فکر کن.", "closure یک callable با یک رفتار است؛ کلاس چند رفتار می‌تواند داشته باشد."],
+    "rubric": "Correct: locates state in instance attributes vs closure cells, explains independence via per-call scopes, and gives a reasonable criterion for choosing a class. Partial: two of three. Incorrect: claims closures share state across calls to averager()."
+  }
+]

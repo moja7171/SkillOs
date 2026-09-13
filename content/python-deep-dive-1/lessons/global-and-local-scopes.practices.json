@@ -1,0 +1,37 @@
+[
+  {
+    "key": "unbound-local",
+    "title": "چرا خطا؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\ncount = 0\n\ndef bump():\n    print(count)\n    count = count + 1\n\nbump()\n```\nچه اتفاقی می‌افتد؟",
+    "options": ["0 چاپ می‌شود و count سراسری 1 می‌شود", "0 چاپ می‌شود و count سراسری 0 می‌ماند", "UnboundLocalError — چون count در تابع انتساب دارد، در کل تابع local است", "NameError — count در تابع تعریف نشده"],
+    "correct_option": 2,
+    "expected_outcome": "در زمان کامپایل، انتساب `count = ...` باعث می‌شود `count` در کل بدنه local باشد؛ `print(count)` قبل از مقداردهی اجرا می‌شود → UnboundLocalError. راه‌حل: `global count` یا پاس دادن/برگرداندن مقدار.",
+    "hints": ["پایتون قبل از اجرا تصمیم می‌گیرد کدام نام‌ها local‌اند.", "انتساب در هر جای تابع، نام را برای کل تابع local می‌کند."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "predict-scopes",
+    "title": "خروجی را پیش‌بینی کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\nx = 'global'\n\ndef f1():\n    print(x)\n\ndef f2():\n    x = 'local'\n    print(x)\n\ndef f3():\n    global x\n    x = 'changed'\n\nf1(); f2(); print(x); f3(); f1(); print(x)\n```\nشش خط خروجی را به ترتیب بنویس.",
+    "expected_outcome": "global / local / global / changed / changed. (پنج print: f1 → global؛ f2 → local؛ print(x) → global (f2 آن را تغییر نداد)؛ f3 تغییرش می‌دهد؛ f1 → changed؛ print(x) → changed.)",
+    "hints": ["f2 یک x محلی می‌سازد و به global دست نمی‌زند.", "global x در f3 انتساب را به ماژول می‌فرستد."],
+    "rubric": "Correct: the five outputs in order: global, local, global, changed, changed (accept if the learner says five lines instead of six). Partial: one wrong. Incorrect: thinks f2 modified the global."
+  },
+  {
+    "key": "compile-vs-run",
+    "title": "کامپایل در برابر اجرا",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در ۳ تا ۵ جمله توضیح بده: پایتون *کِی* تصمیم می‌گیرد یک نام داخل تابع local است، بر چه اساسی، و *کِی* local scope واقعاً ساخته می‌شود؟ چرا این تفاوت باعث می‌شود «اول بخوان بعد انتساب کن» به همان متغیر global داخل یک تابع بدون `global` غیرممکن باشد؟",
+    "expected_outcome": "تصمیم در زمان کامپایل `def` گرفته می‌شود: هر نامی که در بدنه مقدار می‌گیرد (انتساب، پارامتر) local علامت می‌خورد مگر با `global`؛ نام‌هایی که فقط خوانده می‌شوند non-local‌اند و در اجرا از scopeهای بیرونی جست‌وجو می‌شوند. اما خود scope/namespace فقط هنگام *فراخوانی* ساخته می‌شود و با بازگشت از بین می‌رود. چون local بودن یک ویژگی کل تابع است نه خط‌به‌خط، خواندن نام قبل از انتسابش در همان تابع، local ولی بدون مقدار است → UnboundLocalError.",
+    "hints": ["دو لحظه‌ی متفاوت: def و فراخوانی.", "local بودن به خط وابسته نیست، به کل بدنه وابسته است."],
+    "rubric": "Correct: distinguishes compile-time classification (assignment anywhere → local unless global) from run-time scope creation per call, and explains UnboundLocalError from that. Partial: one of the two moments explained. Incorrect: says scope is created at def time or classification happens line by line."
+  }
+]

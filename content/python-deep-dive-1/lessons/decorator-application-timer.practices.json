@@ -1,0 +1,37 @@
+[
+  {
+    "key": "recursive-decorate",
+    "title": "چرا تابع بازگشتی را decorate نکردیم؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "اگر `@timed` را مستقیم روی `calc_recursive_fib` بگذاریم و `calc_recursive_fib(6)` را صدا بزنیم چه می‌شود؟",
+    "options": ["فقط یک خط زمان چاپ می‌شود، چون decorator فقط دور فراخوانی بیرونی است", "برای هر فراخوانی بازگشتی یک خط زمان چاپ می‌شود، چون نام داخل بدنه به نسخه‌ی decorate‌شده اشاره می‌کند", "RecursionError، چون closure خودش را صدا می‌زند", "زمان اشتباه گزارش می‌شود ولی فقط یک خط"],
+    "correct_option": 1,
+    "expected_outcome": "بعد از decorate، نام `calc_recursive_fib` در ماژول به closure اشاره می‌کند و فراخوانی بازگشتی داخل بدنه همان نام را از global می‌خواند؛ پس هر سطح بازگشت جداگانه زمان‌سنجی و چاپ می‌شود. راه‌حل: یک تابع پوششی غیربازگشتی را decorate کن.",
+    "hints": ["بدنه‌ی تابع نام را از کجا پیدا می‌کند؟", "بعد از @timed آن نام به چه چیزی اشاره دارد؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "avg-timer",
+    "title": "زمان‌سنج با میانگین",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "decorator `timed` را طوری بنویس که تابع را **۵ بار** اجرا کند، میانگین و کمترین زمان را چاپ کند (`avg` و `min` با ۶ رقم اعشار) و نتیجه‌ی آخرین اجرا را برگرداند. از `@wraps` استفاده کن. بعد توضیح بده چرا `fn` ممکن است نباید ۵ بار اجرا شود (یک مثال بزن).",
+    "expected_outcome": "```python\nfrom functools import wraps\nfrom time import perf_counter\n\ndef timed(fn):\n    @wraps(fn)\n    def inner(*args, **kwargs):\n        times = []\n        for _ in range(5):\n            start = perf_counter()\n            result = fn(*args, **kwargs)\n            times.append(perf_counter() - start)\n        print(f'{fn.__name__}: avg {sum(times)/len(times):.6f}s, min {min(times):.6f}s')\n        return result\n    return inner\n```\nتکرار برای توابع با side effect خطرناک است (مثلاً تابعی که رکوردی در دیتابیس می‌سازد یا فایلی را append می‌کند ۵ بار اثر می‌گذارد).",
+    "hints": ["زمان هر اجرا را در لیست نگه دار.", "به side effect فکر کن."],
+    "rubric": "Correct: runs fn 5 times, reports avg and min, returns the result, uses wraps, and gives a valid side-effect example. Partial: timing right but misses the side-effect point or returns nothing. Incorrect: times only once."
+  },
+  {
+    "key": "reduce-fib-trace",
+    "title": "reduce فیبوناچی را ردگیری کن",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در `fib_reduce`، برای `n = 5` مقدار tuple بعد از هر قدم reduce را بنویس (از `(1, 0)` شروع می‌شود) و بگو خروجی نهایی چیست. پارامتر `n` داخل lambda چه نقشی دارد؟",
+    "expected_outcome": "(1,1) → (2,1) → (3,2) → (5,3) → (8,5)؛ خروجی `8` (عنصر اول). پارامتر دوم lambda عنصر جاری `range(n)` است و اصلاً استفاده نمی‌شود — range فقط برای تکرار n بار است.",
+    "hints": ["هر قدم: (a+b, a).", "reduce روی range(5) پنج بار lambda را صدا می‌زند."],
+    "rubric": "Correct: five tuples ending (8, 5), result 8, and notes the range element is unused/dummy. Partial: off by one step or wrong final value but right idea. Incorrect: does not understand the (a+b, a) step."
+  }
+]

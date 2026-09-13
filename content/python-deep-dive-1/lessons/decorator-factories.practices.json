@@ -1,0 +1,37 @@
+[
+  {
+    "key": "what-at-does",
+    "title": "@ با پرانتز",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\n@repeat(3)\ndef hello(): ...\n```\nمعادل دقیق کدام است؟",
+    "options": ["hello = repeat(3, hello)", "hello = repeat(hello)(3)", "hello = repeat(3)(hello)", "hello = repeat(hello, 3)"],
+    "correct_option": 2,
+    "expected_outcome": "عبارت بعد از @ اول ارزیابی می‌شود: `repeat(3)` باید یک decorator برگرداند که سپس روی hello اعمال می‌شود.",
+    "hints": ["repeat(3) اول اجرا می‌شود.", "نتیجه‌ی آن باید تابعی باشد که تابع می‌گیرد."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "write-factory",
+    "title": "decorator factory بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "factory‌ای به نام `retry(times, exceptions=(Exception,))` بنویس که decoratorی برگرداند: تابع را تا `times` بار تلاش کند؛ اگر یکی از `exceptions` رخ داد دوباره امتحان کند و اگر همه شکست خوردند آخرین خطا را دوباره raise کند. با `@wraps` متادیتا حفظ شود. با یک تابع که دو بار اول `ValueError` می‌دهد و بار سوم جواب می‌دهد تستش کن.",
+    "expected_outcome": "```python\nfrom functools import wraps\n\ndef retry(times, exceptions=(Exception,)):\n    def dec(fn):\n        @wraps(fn)\n        def inner(*args, **kwargs):\n            last = None\n            for _ in range(times):\n                try:\n                    return fn(*args, **kwargs)\n                except exceptions as e:\n                    last = e\n            raise last\n        return inner\n    return dec\n\ncalls = 0\n@retry(3, (ValueError,))\ndef flaky():\n    global calls\n    calls += 1\n    if calls < 3:\n        raise ValueError('not yet')\n    return 'ok'\n\nflaky()    # 'ok' on the third attempt\n```",
+    "hints": ["سه لایه: factory(times) → dec(fn) → inner(*args).", "times و exceptions متغیرهای آزاد inner هستند."],
+    "rubric": "Correct: three-level structure, loops up to times, catches only the given exceptions, re-raises the last error, uses wraps, and demonstrates success on the third try. Partial: works but catches everything regardless of the parameter or misses re-raise. Incorrect: two-level (decorator with extra parameter) that cannot be used with @retry(3)."
+  },
+  {
+    "key": "when-runs",
+    "title": "کِی اجرا می‌شود؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "با `dec_factory` درس (که در factory، در dec و در inner print دارد):\n```python\n@dec_factory(1, 2)\ndef f(): print('f')\n\nf()\nf()\n```\nخروجی کامل را بنویس (همه‌ی خطوط، به ترتیب) و بگو کدام خطوط فقط یک بار چاپ می‌شوند و چرا.",
+    "expected_outcome": "running dec_factory / running dec (هر دو در زمان تعریف، یک بار) / سپس برای هر f(): running inner / a=1, b=2 / f — دو بار. factory و decorator فقط موقع decorate شدن اجرا می‌شوند؛ inner در هر فراخوانی.",
+    "hints": ["@ در زمان تعریف تابع اجرا می‌شود.", "فقط inner در هر فراخوانی اجرا می‌شود."],
+    "rubric": "Correct: 2 definition-time lines once, then the 3-line block twice, with the reasoning. Partial: order right but claims dec runs per call. Incorrect: otherwise."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "closest-type",
+    "title": "کدام پیاده‌سازی انتخاب می‌شود؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "با `functools.singledispatch`، برای `htmlize` سه پیاده‌سازی ثبت شده: `Sequence`، `str` و پیش‌فرض (`object`). `htmlize('abc')` کدام را اجرا می‌کند و چرا؟",
+    "options": ["پیش‌فرض، چون str جزو built-inهاست", "Sequence، چون اول ثبت شده", "str، چون singledispatch نزدیک‌ترین کلاس در سلسله‌مراتب وراثت را انتخاب می‌کند", "خطا، چون str هم Sequence است و ابهام دارد"],
+    "correct_option": 2,
+    "expected_outcome": "str هم Sequence است، ولی singledispatch خاص‌ترین نوع منطبق را برمی‌دارد (MRO)؛ str از Sequence خاص‌تر است. به همین دلیل ثبت str جلوی بازگشت بی‌نهایت را می‌گیرد.",
+    "hints": ["str یک Sequence است ولی خاص‌تر.", "singledispatch وراثت را می‌فهمد؛ نسخه‌ی خودمان با type() نمی‌فهمید."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "register-with-sd",
+    "title": "یک تابع generic بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "با `functools.singledispatch` تابعی به نام `describe(obj)` بنویس: پیش‌فرض `'unknown'`؛ برای `numbers.Real` → `'number'`؛ برای `str` → `'text'`؛ برای `collections.abc.Mapping` → `'mapping with N keys'`؛ برای `collections.abc.Sequence` → `'sequence of N'`. نشان بده `describe(True)`, `describe('hi')`, `describe((1,2))`, `describe({'a':1})` چه می‌دهند و توضیح بده چرا `True` به number می‌رود و `'hi'` به text نه sequence.",
+    "expected_outcome": "```python\nfrom functools import singledispatch\nfrom numbers import Real\nfrom collections.abc import Mapping, Sequence\n\n@singledispatch\ndef describe(obj): return 'unknown'\n\n@describe.register(Real)\ndef _(obj): return 'number'\n\n@describe.register(str)\ndef _(obj): return 'text'\n\n@describe.register(Mapping)\ndef _(obj): return f'mapping with {len(obj)} keys'\n\n@describe.register(Sequence)\ndef _(obj): return f'sequence of {len(obj)}'\n\ndescribe(True)      # 'number'  (bool ⊂ int ⊂ Real)\ndescribe('hi')      # 'text'    (str is more specific than Sequence)\ndescribe((1, 2))    # 'sequence of 2'\ndescribe({'a': 1})  # 'mapping with 1 keys'\n```",
+    "hints": ["register(cls) یک decorator factory است.", "str خاص‌تر از Sequence است؛ bool زیرکلاس int است."],
+    "rubric": "Correct: singledispatch default plus four registrations with the ABCs, correct outputs, and explains bool→Real and str-over-Sequence specificity. Partial: registers concrete types (int, list) instead of ABCs, or one output wrong. Incorrect: uses isinstance chain instead."
+  },
+  {
+    "key": "how-register-works",
+    "title": "register چطور کار می‌کند؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در پیاده‌سازی دستی `singledispatch` درس: (۱) چرا `register` باید یک decorator *factory* باشد نه decorator ساده؟ (۲) چرا `inner` تابع را بدون تغییر برمی‌گرداند و این چه امکانی می‌دهد؟ (۳) `register` چطور از بیرون در دسترس است با اینکه داخل `singledispatch` تعریف شده؟ (۴) `registry` چه نوع متغیری برای این توابع است؟",
+    "expected_outcome": "(۱) چون باید نوع را بگیرد: `register(int)` اول با نوع صدا زده می‌شود و decoratorی برمی‌گرداند که تابع را می‌گیرد. (۲) برگرداندن خود fn یعنی نام تابع همچنان به تابع اصلی اشاره می‌کند و می‌شود چند `@register` را پشته کرد (هر کدام همان fn را می‌گیرد). (۳) به‌عنوان attribute روی تابع برگشتی چسبانده شده: `decorated.register = register`. (۴) متغیر آزاد closure — هر سه تابع درونی به همان cell/dict اشاره می‌کنند، پس ثبت از بیرون در dispatch دیده می‌شود.",
+    "hints": ["به تفاوت @register(int) با @register فکر کن.", "توابع attribute می‌گیرند."],
+    "rubric": "Correct: all four points (factory for the type argument, returning fn enables stacking, attribute on the returned function, registry as shared free variable). Partial: three of four. Incorrect: two or fewer."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "mapping",
+    "title": "نقش‌ها را تطبیق بده",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در «کلاس به‌عنوان decorator»، کدام گزینه درست است؟",
+    "options": ["`__init__` تابع هدف را می‌گیرد و `__call__` هنگام هر فراخوانی تابع اجرا می‌شود", "`__init__` پارامترهای decorator را می‌گیرد و `__call__` تابع هدف را می‌گیرد و closure برمی‌گرداند", "`__call__` هم پارامترها و هم تابع را با هم می‌گیرد", "کلاس باید از function ارث ببرد"],
+    "correct_option": 1,
+    "expected_outcome": "`@MyClass(10, 20)` اول instance می‌سازد (`__init__` با پارامترها)، سپس پایتون آن instance را با تابع صدا می‌زند (`__call__(fn)`) که مثل decorator، inner را برمی‌گرداند.",
+    "hints": ["به `MyClass(10, 20)(my_func)` فکر کن.", "کدام متد fn را می‌بیند؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "class-decorator-with-state",
+    "title": "decorator کلاسی با حالت",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "کلاسی به نام `CountCalls` بنویس که به‌عنوان decorator **بدون پارامتر** استفاده شود (`@CountCalls`) و تعداد فراخوانی‌های تابع را در attribute `count` نگه دارد:\n```python\n@CountCalls\ndef greet(name): return f'hi {name}'\ngreet('a'); greet('b')\ngreet.count    # 2\n```\nراهنمایی: اینجا `__init__` خود تابع را می‌گیرد و `__call__` جای inner را می‌گیرد. توضیح بده این با نسخه‌ی پارامتردار درس چه فرقی دارد.",
+    "expected_outcome": "```python\nfrom functools import update_wrapper\n\nclass CountCalls:\n    def __init__(self, fn):\n        self.fn = fn\n        self.count = 0\n        update_wrapper(self, fn)     # optional: copy metadata\n    def __call__(self, *args, **kwargs):\n        self.count += 1\n        return self.fn(*args, **kwargs)\n```\nبدون پارامتر، `@CountCalls` یعنی `greet = CountCalls(greet)`: خود instance جای closure را می‌گیرد و هر فراخوانی `__call__` است. در نسخه‌ی پارامتردار، `__init__` پارامترها را می‌گرفت و `__call__` تابع را؛ اینجا یک لایه کمتر است.",
+    "hints": ["greet = CountCalls(greet) — پس __init__ تابع را می‌گیرد.", "__call__ باید *args/**kwargs را عبور دهد و نتیجه را برگرداند."],
+    "rubric": "Correct: __init__ stores fn and count, __call__ increments and forwards, greet.count == 2, and explains the one-fewer-layer difference. Partial: works but explanation missing. Incorrect: uses the parametrized structure so @CountCalls fails."
+  },
+  {
+    "key": "closure-vs-class-state",
+    "title": "cell یا attribute؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۲ تا ۳ جمله: در factoryِ closure پارامترهای a و b کجا نگه‌داری می‌شوند و در نسخه‌ی کلاسی کجا؟ یک مزیت عملی نسخه‌ی کلاسی (مثلاً از بیرون) بگو و یک مورد که closure ترجیح دارد.",
+    "expected_outcome": "در closure، a و b متغیرهای آزادِ inner هستند و در cell زندگی می‌کنند؛ در کلاس، در `self.a`/`self.b` که attributeهای instance‌اند. مزیت کلاس: حالت از بیرون قابل خواندن/تغییر است (`obj.a`) و می‌توان متدهای کمکی و وراثت داشت؛ closure برای decoratorهای کوتاه، کم‌نویس‌تر و بدون boilerplate است.",
+    "hints": ["cell در برابر attribute.", "به دسترسی از بیرون فکر کن."],
+    "rubric": "Correct: cells vs instance attributes, plus one valid advantage each way. Partial: location right, trade-off missing. Incorrect: confuses where state lives."
+  }
+]

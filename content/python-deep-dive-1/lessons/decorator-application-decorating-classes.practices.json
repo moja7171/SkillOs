@@ -1,0 +1,37 @@
+[
+  {
+    "key": "return-cls",
+    "title": "اگر cls را برنگردانی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef add_tag(cls):\n    cls.tag = 'x'\n\n@add_tag\nclass Thing: pass\n\nThing()\n```\nچه می‌شود؟",
+    "options": ["کار می‌کند؛ Thing().tag == 'x'", "TypeError: 'NoneType' object is not callable — چون Thing به None bind شده", "AttributeError: tag", "SyntaxError — decorator کلاس باید کلاس برگرداند"],
+    "correct_option": 1,
+    "expected_outcome": "`@add_tag` یعنی `Thing = add_tag(Thing)`؛ تابع None برمی‌گرداند و نام Thing به None bind می‌شود. کلاس اصلی patch شده ولی دیگر با نام Thing در دسترس نیست.",
+    "hints": ["@ نتیجه‌ی decorator را به نام کلاس نسبت می‌دهد.", "تابع بدون return چه برمی‌گرداند؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "repr-decorator",
+    "title": "decorator برای __repr__",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "decorator کلاسی به نام `auto_repr` بنویس که به هر کلاس یک `__repr__` اضافه کند به شکل `ClassName(attr1=value1, attr2=value2, ...)` بر اساس `vars(self)` (با `!r` برای مقدارها). تابع کمکی را بیرون از decorator تعریف کن و توضیح بده چرا. روی یک کلاس `Point(x, y)` تست کن.",
+    "expected_outcome": "```python\ndef _repr(self):\n    fields = ', '.join(f'{k}={v!r}' for k, v in vars(self).items())\n    return f'{self.__class__.__name__}({fields})'\n\ndef auto_repr(cls):\n    cls.__repr__ = _repr\n    return cls\n\n@auto_repr\nclass Point:\n    def __init__(self, x, y):\n        self.x, self.y = x, y\n\nPoint(1, 2)    # Point(x=1, y=2)\n```\n_repr بیرون است چون متغیر آزاد ندارد (closure نیست) و نباید هر بار decorate کردن دوباره ساخته شود.",
+    "hints": ["vars(self) دیکشنری attributeهای instance است.", "به cls attribute اضافه کن و cls را برگردان."],
+    "rubric": "Correct: helper outside, assigned as cls.__repr__, returns cls, uses vars and class name, output matches, explains no-closure reasoning. Partial: works but helper nested without explanation or forgets return cls. Incorrect: patches the instance instead of the class."
+  },
+  {
+    "key": "total-ordering-why",
+    "title": "چرا total_ordering؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: چرا `p1 > p3` بدون تعریف `__gt__` کار کرد ولی `p1 <= p3` نه؟ `total_ordering` چه چیزی لازم دارد و چه چیزی می‌سازد؟ چرا نسخه‌ی دستی `complete_ordering` درس «ناقص» بود؟",
+    "expected_outcome": "پایتون برای `a > b` وقتی `__gt__` نیست، عملگر بازتابی `b.__lt__(a)` را امتحان می‌کند؛ ولی برای `<=` معادل بازتابی `>=` است که آن هم تعریف نشده، پس TypeError. total_ordering به `__eq__` و حداقل یکی از `__lt__/__le__/__gt__/__ge__` نیاز دارد و سه تای دیگر را از آنها می‌سازد. نسخه‌ی دستی فقط با `__lt__` کار می‌کرد، بررسی نوع و NotImplemented نداشت و در کلاس patch کردن dunderها بی‌احتیاط بود.",
+    "hints": ["عملگرهای بازتابی: a > b ↔ b < a.", "total_ordering از هر یک از چهار عملگر شروع می‌کند."],
+    "rubric": "Correct: explains reflection for >, why <= fails, total_ordering's requirements/output, and at least one shortcoming of the manual version. Partial: two of three. Incorrect: thinks Python auto-derives all comparisons."
+  }
+]

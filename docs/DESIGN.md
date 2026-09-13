@@ -9,6 +9,7 @@
 | Catalog, not user topics | `courses`/`lessons` have no `user_id`; they are written only by `content:import`. |
 | Lesson is the mastery unit | `mastery_records` is per (user, lesson). Course progress is an aggregate. |
 | Enrollment carries learner config | `enrollments` = user × course with priority, daily time, status. |
+| Logo | `<x-application-logo>` — amber rounded tile with a white rising path and a dark dot at the top (the learning path, «you are here»); same mark as `public/favicon.svg`. Wordmark: Skill**OS** with OS in accent. |
 | Two paths per lesson | Lesson page and Session show tabs ویدیو / متن from `lesson_videos` + `lessons.content`. |
 | AI evaluates only | The only runtime Gemini call is `evaluate_response`. |
 | Mastery from evidence only | The only writer of `numeric_mastery` is `MasteryService::applyAttempt()`. |

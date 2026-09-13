@@ -67,6 +67,11 @@ today(user):
 
 **Week view.** Today's plan items + reviews due per day for the next 6 days (from `next_review_due_at`). No simulation of progression.
 
+Implemented 2026-09-13 in `App\Services\Planning\Planner`. Three details settled in code:
+- If the current lesson already has a due review today, its practice candidate is dropped — the review *is* the practice (avoids planning the same lesson twice).
+- Minutes already on today's plan for a course (completed or open) are deducted from the budget on recompute, so raising/lowering Daily Time mid-day behaves sensibly.
+- `pickPractice` returns the least-recently-attempted practice of a lesson (unattempted first), so consecutive reviews rotate through a lesson's practices.
+
 **Why.** Stored plans need reschedule, expiry, recovery-plan generation, and conflict handling — four features replaced by one function. It also matches the PRD's real intent: "don't replay the backlog".
 
 **Revisit if.** We want to plan around fixed calendar commitments (e.g. "exam on the 20th").

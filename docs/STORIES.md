@@ -55,10 +55,10 @@ Owner provides videos + subtitles; Claude writes `content/python-advanced/` (les
 
 ## M4 — Planning, Continue Learning, Home
 
-### [ ] S-16 `Planner::today` (DECISIONS §2, per enrollment; fixtures tested)
-### [ ] S-17 Continue Learning (recommendation + 2 alternatives; plan item completion rules)
-### [ ] S-18 Home (CTA, Today per course, My courses)
-### [ ] S-19 Recompute today's plan on enrollment config change
+### [x] S-16 `Planner::today` (DECISIONS §2, per enrollment; fixtures tested)
+### [x] S-17 Continue Learning (recommendation + 2 alternatives; plan item completion rules)
+### [x] S-18 Home (CTA, Today per course, My courses)
+### [x] S-19 Recompute today's plan on enrollment config change
 
 ## M5 — Week, Skip, Lifecycle
 

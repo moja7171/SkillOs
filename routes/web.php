@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::get('lessons/{lesson}', [LessonController::class, 'show'])->name('lessons.show');
 
     Route::post('activities/{activity}/start', [SessionController::class, 'start'])->name('session.start');
+    Route::post('plan-items/{planItem}/start', [SessionController::class, 'startPlanned'])->name('session.start-planned');
     Route::get('session/{attempt}', [SessionController::class, 'show'])->name('session.show');
     Route::post('session/{attempt}/complete', [SessionController::class, 'complete'])->name('session.complete');
     Route::post('session/{attempt}/submit', [SessionController::class, 'submit'])->name('session.submit');

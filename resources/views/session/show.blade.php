@@ -19,7 +19,10 @@
     $resultClass = match ($attempt->result_status) {
         'correct' => 'badge-ok', 'correct_with_hint' => 'badge-warn', 'incorrect' => 'badge-bad', default => 'badge-ghost',
     };
-    $nextLabel = $next ? ($isLearn ? 'برو سراغ تمرین: '.$next->title : 'تمرین بعدی: '.$next->title) : 'برگرد به درس';
+    $nextLabel = $nextPlanItem
+        ? 'بعدی: '.$nextPlanItem->activity->title
+        : ($next ? ($isLearn ? 'برو سراغ تمرین: '.$next->title : 'تمرین بعدی: '.$next->title) : 'برگرد به درس');
+    $nextAction = $nextPlanItem ? route('session.start-planned', $nextPlanItem) : ($next ? route('session.start', $next) : null);
 @endphp
 <x-app-layout :title="$activity->title">
     <x-slot name="nav">
@@ -62,13 +65,13 @@
                             <x-level-badge :level="$evidence['level_change']['to']" />
                         @endif
                     </div>
-                    @if ($next)
-                        <form method="POST" action="{{ route('session.start', $next) }}">
+                    @if ($nextAction)
+                        <form method="POST" action="{{ $nextAction }}">
                             @csrf
                             <x-primary-button><x-icon name="play" class="w-4 h-4" /> {{ $nextLabel }}</x-primary-button>
                         </form>
                     @else
-                        <a href="{{ route('lessons.show', $lesson) }}" class="btn btn-primary">برگرد به درس</a>
+                        <a href="{{ route('home') }}" class="btn btn-primary">برگرد به خانه</a>
                     @endif
                 @endif
             </div>
@@ -173,11 +176,13 @@
                             <button type="submit" class="btn btn-ghost">بی‌خیال، جواب رو نشون بده</button>
                         </form>
                     @else
-                        @if ($next)
-                            <form method="POST" action="{{ route('session.start', $next) }}">
+                        @if ($nextAction)
+                            <form method="POST" action="{{ $nextAction }}">
                                 @csrf
                                 <x-primary-button><x-icon name="play" class="w-4 h-4" /> {{ $nextLabel }}</x-primary-button>
                             </form>
+                        @else
+                            <a href="{{ route('home') }}" class="btn btn-primary">برگرد به خانه</a>
                         @endif
                         <form method="POST" action="{{ route('session.start', $activity) }}">
                             @csrf

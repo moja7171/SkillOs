@@ -4,6 +4,7 @@ namespace App\Services\Evaluation;
 
 use App\Models\Activity;
 use App\Models\Attempt;
+use App\Models\PlanItem;
 use App\Models\User;
 use App\Services\Mastery\MasteryService;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\DB;
  *   partial_retry   true once a partial verdict granted a retry
  *   revealed        true when the expected outcome was shown
  *   source          free|plan|review — where the attempt was launched from
+ *   plan_item_id    set when launched from today's plan; that item completes on finalize
  *   history         [{response, verdict, feedback}]
  *   level_change    {from, to} when the lesson's level moved on finalize
  */
@@ -27,15 +29,29 @@ class AttemptSession
 
     public function __construct(protected Evaluator $evaluator, protected MasteryService $mastery) {}
 
-    public function start(User $user, Activity $activity, string $source = 'free'): Attempt
+    public function start(User $user, Activity $activity, string $source = 'free', ?PlanItem $planItem = null): Attempt
     {
+        $evidence = ['source' => $source, 'hints_shown' => 0, 'history' => []];
+        if ($planItem) {
+            $evidence['plan_item_id'] = $planItem->id;
+        }
+
         return $user->attempts()->create([
             'activity_id' => $activity->id,
             'started_at' => now(),
             'result_status' => 'started',
             'hint_level' => 0,
-            'evidence' => ['source' => $source, 'hints_shown' => 0, 'history' => []],
+            'evidence' => $evidence,
         ]);
+    }
+
+    /**
+     * Launch from today's plan: the attempt inherits the item's source (plan|review)
+     * and completes it when finalized. Outside-plan attempts never complete plan items.
+     */
+    public function startPlanned(User $user, PlanItem $planItem): Attempt
+    {
+        return $this->start($user, $planItem->activity, $planItem->source === 'review' ? 'review' : 'plan', $planItem);
     }
 
     /**
@@ -117,6 +133,11 @@ class AttemptSession
                 $evidence['level_change'] = ['from' => $change['old_level'], 'to' => $change['new_level']];
                 $attempt->evidence = $evidence;
                 $attempt->save();
+            }
+
+            if ($planItemId = $attempt->evidence['plan_item_id'] ?? null) {
+                PlanItem::where('id', $planItemId)->where('user_id', $attempt->user_id)->where('status', 'scheduled')
+                    ->update(['status' => 'completed']);
             }
 
             $attempt->activity->lesson->course->enrollments()

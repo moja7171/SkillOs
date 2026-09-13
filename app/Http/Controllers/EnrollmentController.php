@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Enrollment;
+use App\Services\Planning\Planner;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -30,7 +31,7 @@ class EnrollmentController extends Controller
         return view('enrollments.edit', compact('enrollment'));
     }
 
-    public function update(Request $request, Enrollment $enrollment): RedirectResponse
+    public function update(Request $request, Enrollment $enrollment, Planner $planner): RedirectResponse
     {
         $this->authorizeOwner($enrollment);
 
@@ -42,6 +43,7 @@ class EnrollmentController extends Controller
         ]);
 
         $enrollment->update($validated);
+        $planner->recompute($enrollment);
 
         return redirect()->route('courses.show', $enrollment->course)->with('status', 'زمان‌بندی ذخیره شد.');
     }

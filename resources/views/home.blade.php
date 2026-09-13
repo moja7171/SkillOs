@@ -1,39 +1,124 @@
+@php $user = auth()->user(); @endphp
 <x-app-layout title="خانه">
-    <div class="page-narrow max-w-3xl">
-        <div class="flex items-center justify-between mb-5">
-            <h1 class="m-0 text-[22px] font-bold">دوره‌های من</h1>
-            <a href="{{ route('courses.index') }}" class="btn btn-sm">همه‌ی دوره‌ها</a>
-        </div>
+    <div class="page">
+        <div class="flex flex-col gap-5">
+            @if (session('status'))
+                <div class="alert alert-ok">{{ session('status') }}</div>
+            @endif
 
-        @if ($enrollments->isEmpty())
-            <div class="card p-10 text-center">
-                <div class="text-[16px] font-semibold mb-1">هنوز دوره‌ای برنداشتی</div>
-                <div class="text-muted mb-5">از کاتالوگ یه دوره انتخاب کن، زمان روزانه‌ش رو تنظیم کن و شروع کن.</div>
-                <a href="{{ route('courses.index') }}" class="btn btn-primary">دیدن دوره‌ها</a>
-            </div>
-        @endif
-
-        <div class="flex flex-col gap-3">
-            @foreach ($enrollments as $enrollment)
-                @php $course = $enrollment->course; @endphp
-                <a href="{{ route('courses.show', $course) }}" class="card p-[18px] block text-ink hover:text-ink hover:border-line2 transition">
-                    <div class="flex items-start justify-between gap-4">
-                        <div class="min-w-0">
-                            <div class="text-[16px] font-semibold" dir="auto">{{ $course->title }}</div>
-                            <div class="text-[13px] text-muted mt-1 line-clamp-2" dir="auto">{{ $course->outcome_statement }}</div>
+            {{-- Continue Learning --}}
+            @if ($primary)
+                <div class="card" style="border-color: var(--line2);">
+                    <div class="p-6 flex flex-col lg:flex-row gap-6 items-start">
+                        <div class="flex flex-col gap-2.5 flex-1 min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="badge badge-warn"><span class="dot"></span>ادامه‌ی یادگیری</span>
+                                <x-plan-item-badge :item="$primary" />
+                                @unless ($primary->activity->isLearn())<span class="badge badge-ghost">{{ $primary->activity->formLabel() }}</span>@endunless
+                            </div>
+                            <div class="text-[22px] font-bold leading-[1.4]" dir="auto">{{ $primary->activity->title }}</div>
+                            <div class="text-muted" dir="auto">{{ $primary->activity->lesson->course->title }} &nbsp;·&nbsp; {{ $primary->activity->lesson->title }} &nbsp;·&nbsp; <span class="text-faint">دلیل:</span> {{ $primary->reason }}</div>
+                            <div class="flex items-center gap-4 mt-1.5">
+                                <form method="POST" action="{{ route('session.start-planned', $primary) }}">
+                                    @csrf
+                                    <x-primary-button><x-icon name="play" class="w-4 h-4" /> شروع کن</x-primary-button>
+                                </form>
+                                <span class="text-[12.5px] text-muted flex items-center gap-1.5"><x-icon name="clock" class="w-[15px] h-[15px]" /> حدود {{ fa_num($primary->duration_minutes) }} دقیقه</span>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2 shrink-0 flex-wrap justify-end">
-                            <span class="badge {{ $enrollment->status === 'active' ? 'badge-ok' : 'badge-ghost' }}"><span class="dot"></span>{{ $enrollment->statusLabel() }}</span>
-                            @if ($enrollment->daily_time_minutes)
-                                <span class="badge badge-ghost">{{ fa_num($enrollment->daily_time_minutes) }} دقیقه در روز</span>
-                            @else
-                                <span class="badge badge-warn">بدون زمان روزانه</span>
-                            @endif
+
+                        @if ($alternatives->isNotEmpty())
+                            <div class="flex flex-col gap-2 w-full lg:w-[340px] shrink-0">
+                                <div class="text-[12.5px] text-muted font-semibold">یا به‌جاش:</div>
+                                @foreach ($alternatives as $alt)
+                                    @php $isItem = $alt instanceof \App\Models\PlanItem; $act = $isItem ? $alt->activity : $alt; @endphp
+                                    <form method="POST" action="{{ $isItem ? route('session.start-planned', $alt) : route('session.start', $act) }}">
+                                        @csrf
+                                        <button type="submit" class="w-full card bg-surface2 px-3.5 py-2.5 flex items-center gap-2.5 text-start text-ink hover:border-line2">
+                                            @if ($isItem)<x-plan-item-badge :item="$alt" />@else<span class="badge badge-ghost">آزاد</span>@endif
+                                            <span class="flex-1 min-w-0 truncate" dir="auto">{{ $act->title }} <span class="text-faint">· {{ $act->lesson->course->title }}</span></span>
+                                            <span class="text-faint text-[12.5px] shrink-0">{{ fa_num($act->estimated_minutes) }} دقیقه</span>
+                                        </button>
+                                    </form>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            @elseif ($enrollments->where('status', 'active')->isNotEmpty())
+                <div class="card p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div class="flex-1">
+                        <div class="text-[16px] font-semibold mb-1">{{ $todayByEnrollment->isNotEmpty() ? 'پلن امروز تموم شد' : 'هنوز چیزی برای امروز نیست' }}</div>
+                        <div class="text-muted text-[13.5px]">
+                            {{ $todayByEnrollment->isNotEmpty() ? 'می‌تونی از صفحه‌ی هر دوره آزادانه تمرین کنی.' : 'برای دوره‌هات زمان روزانه تعیین کن تا پلن ساخته بشه.' }}
                         </div>
                     </div>
-                    <x-course-progress :lessons="$course->lessons" :user="auth()->user()" class="mt-3" />
-                </a>
-            @endforeach
+                    <a href="{{ route('courses.index') }}" class="btn btn-sm">دوره‌ها</a>
+                </div>
+            @endif
+
+            {{-- Today --}}
+            @if ($todayByEnrollment->isNotEmpty())
+                <div class="card">
+                    <div class="card-h">
+                        <h3>امروز — {{ fa_date(now(), 'l j F') }}</h3>
+                        <span class="text-[12.5px] text-muted">{{ fa_num($todayByEnrollment->flatten()->where('status', 'completed')->count()) }} از {{ fa_num($todayByEnrollment->flatten()->count()) }} انجام شده · {{ fa_num($doneMinutes) }} از {{ fa_num($plannedMinutes) }} دقیقه</span>
+                    </div>
+                    @foreach ($todayByEnrollment as $items)
+                        @foreach ($items as $item)
+                            <div class="flex items-center gap-3.5 px-[18px] py-3 border-b border-line last:border-b-0 {{ $primary && $item->is($primary) ? 'bg-hover' : '' }}">
+                                @if ($item->status === 'completed')
+                                    <span class="w-5 h-5 rounded-md grid place-items-center shrink-0 text-[#06261a]" style="background: var(--ok);"><x-icon name="check" class="w-3 h-3" /></span>
+                                @elseif ($item->status === 'skipped')
+                                    <span class="w-5 h-5 rounded-md border-[1.5px] border-line2 grid place-items-center shrink-0 text-faint"><x-icon name="x" class="w-3 h-3" /></span>
+                                @else
+                                    <span class="w-5 h-5 rounded-md border-[1.5px] shrink-0 {{ $primary && $item->is($primary) ? 'border-accent' : 'border-line2' }}"></span>
+                                @endif
+                                <x-plan-item-badge :item="$item" />
+                                <span class="flex-1 min-w-0 truncate {{ $item->status === 'completed' ? 'text-muted line-through' : ($primary && $item->is($primary) ? 'font-semibold' : '') }}" dir="auto">{{ $item->activity->title }}</span>
+                                <span class="text-faint text-[12.5px] hidden sm:inline truncate max-w-[180px]" dir="auto">{{ $item->activity->lesson->course->title }}</span>
+                                <span class="num">{{ $item->duration_minutes }}m</span>
+                                @if ($item->status === 'scheduled')
+                                    <form method="POST" action="{{ route('session.start-planned', $item) }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm">شروع</button>
+                                    </form>
+                                @endif
+                            </div>
+                        @endforeach
+                    @endforeach
+                </div>
+            @endif
+        </div>
+
+        {{-- My courses --}}
+        <div class="flex flex-col gap-5">
+            <div class="card">
+                <div class="card-h"><h3>دوره‌های من</h3><a href="{{ route('courses.index') }}" class="text-[12.5px]">+ دوره‌ی جدید</a></div>
+                @if ($enrollments->isEmpty())
+                    <div class="px-[18px] py-6 text-center">
+                        <div class="text-muted text-[13.5px] mb-3">هنوز دوره‌ای برنداشتی.</div>
+                        <a href="{{ route('courses.index') }}" class="btn btn-primary btn-sm">دیدن دوره‌ها</a>
+                    </div>
+                @endif
+                @foreach ($enrollments as $enrollment)
+                    @php $course = $enrollment->course; @endphp
+                    <a href="{{ route('courses.show', $course) }}" class="block px-[18px] py-3.5 border-b border-line last:border-b-0 text-ink hover:bg-hover">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="font-semibold truncate {{ $enrollment->status !== 'active' ? 'text-muted' : '' }}" dir="auto">{{ $course->title }}</span>
+                            @if ($enrollment->status !== 'active')
+                                <span class="badge badge-ghost shrink-0">{{ $enrollment->statusLabel() }}</span>
+                            @else
+                                <span class="badge badge-ghost shrink-0">اولویت {{ fa_num($enrollment->priority) }}</span>
+                            @endif
+                        </div>
+                        <div class="text-[12.5px] {{ $enrollment->daily_time_minutes ? 'text-muted' : 'text-warn' }} mt-0.5 mb-2">
+                            {{ $enrollment->daily_time_minutes ? fa_num($enrollment->daily_time_minutes).' دقیقه در روز' : 'بدون زمان روزانه — توی پلن نمیاد' }} · {{ fa_num($course->lessons->count()) }} درس
+                        </div>
+                        <x-course-progress :lessons="$course->lessons" :user="$user" />
+                    </a>
+                @endforeach
+            </div>
         </div>
     </div>
 </x-app-layout>

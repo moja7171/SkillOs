@@ -1,0 +1,26 @@
+[
+  {
+    "key": "trunc-floor-ceil-neg",
+    "title": "سه تابع روی یک عدد منفی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "برای `x = -7.2`، سه‌تایی `(trunc(x), floor(x), ceil(x))` کدام است؟",
+    "options": ["(-7, -8, -7)", "(-7, -7, -8)", "(-8, -8, -7)", "(-7, -8, -6)"],
+    "correct_option": 0,
+    "expected_outcome": "trunc اعشار را می‌بُرد → −7؛ floor بزرگ‌ترین صحیح ≤ −7.2 → −8؛ ceil کوچک‌ترین صحیح ≥ −7.2 → −7.",
+    "hints": ["برای اعداد منفی، trunc به سمت صفر می‌رود و floor از صفر دور می‌شود.", "روی محور: −7.2 بین −8 و −7."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "pages-needed",
+    "title": "تعداد صفحه‌های لازم",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `pages_needed(items, per_page)` بنویس که تعداد صفحه‌های لازم برای نمایش `items` آیتم را برگرداند (هر صفحه حداکثر `per_page` آیتم). `pages_needed(23, 10)` → 3، `pages_needed(20, 10)` → 2، `pages_needed(0, 10)` → 0.\n\nدو پیاده‌سازی بده: یکی با تابعی از `math`، یکی **فقط با `//`** بدون import.",
+    "expected_outcome": "```python\nfrom math import ceil\n\ndef pages_needed(items, per_page):\n    return ceil(items / per_page)\n\n# بدون import، با floor division:\ndef pages_needed(items, per_page):\n    return (items + per_page - 1) // per_page\n# یا: -(-items // per_page)\n```",
+    "hints": ["23/10 = 2.3 و باید ۳ صفحه شود — کدام تابع به بالا می‌رود؟", "برای نسخه‌ی بدون import: ceil(a/b) با floor division = (a + b − 1) // b، یا ترفند -(-a // b)."],
+    "rubric": "Correct: ceil(items / per_page) and an integer-only version ((items + per_page - 1) // per_page or -(-items // per_page)), all three examples right. Partial: only one implementation, or the // version off by one for exact multiples (returns 3 for 20,10). Incorrect: uses round or int (truncation) giving 2 for 23,10."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "tuple-ctor",
+    "title": "tuple سازنده",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام فراخوانی `Decimal('-12.5')` می‌سازد؟",
+    "options": ["Decimal((1, (1, 2, 5), -1))", "Decimal((-1, (1, 2, 5), -1))", "Decimal((1, (1, 2, 5), 1))", "Decimal(1, (1, 2, 5), -1)"],
+    "correct_option": 0,
+    "expected_outcome": "علامت `1` یعنی منفی (نه `-1`)، ارقام `125`، نما `-1` → 125 × 10⁻¹ = 12.5. گزینه‌ی آخر سه آرگومان می‌فرستد و خطا می‌دهد.",
+    "hints": ["sign فقط 0 یا 1 است.", "نما جای ممیز را تعیین می‌کند: 125 × 10⁻¹."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "prec-vs-ctor",
+    "title": "precision کجا اثر دارد؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "بدون اجرا، خروجی هر print را بنویس و یک جمله بگو چرا:\n\n```python\nimport decimal\nfrom decimal import Decimal\ndecimal.getcontext().prec = 3\n\na = Decimal('1.23456')\nprint(a)            # (1)\nprint(a + 0)        # (2)\nprint(Decimal(0.5) == Decimal('0.5'))   # (3)\nprint(Decimal(0.2) == Decimal('0.2'))   # (4)\n```",
+    "expected_outcome": "(1) 1.23456 — سازنده به precision کاری ندارد. (2) 1.23 — جمع یک عملیات حسابی است و با دقت ۳ گرد می‌شود. (3) True — 0.5 = 1/2 در float دقیق است. (4) False — 0.2 در float تقریبی است و Decimal همان تقریب را ذخیره می‌کند.",
+    "hints": ["precision فقط روی نتیجه‌ی عملیات اثر دارد.", "کدام floatها دقیق‌اند؟ آن‌هایی که مخرجشان توان ۲ است."],
+    "rubric": "Correct: 1.23456, 1.23, True, False with reasons (constructor ignores prec; arithmetic applies it; 0.5 exact, 0.2 not). Partial: (1)/(2) right but (3)/(4) both False or both True. Incorrect: says (1) is 1.23."
+  }
+]

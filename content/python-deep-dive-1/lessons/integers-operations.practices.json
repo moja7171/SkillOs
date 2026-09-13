@@ -1,0 +1,26 @@
+[
+  {
+    "key": "negative-floor-div",
+    "title": "تقسیم صحیح عدد منفی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "مقدار `-7 // 2` و `-7 % 2` چیست؟",
+    "options": ["-3 و -1", "-4 و 1", "-3 و 1", "-4 و -1"],
+    "correct_option": 1,
+    "expected_outcome": "`-7 / 2 = -3.5`؛ floor آن `-4` است. برای برقراری `-7 == 2 * (-4) + r` باید `r = 1`. پس `(-4, 1)`.",
+    "hints": ["floor یعنی بزرگ‌ترین صحیح *کوچک‌تر یا مساوی*؛ −3.5 روی محور بین −4 و −3 است.", "بعد از پیدا کردن //، مقدار % را از معادله‌ی n == d*(n//d) + n%d حساب کن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "divmod-clock",
+    "title": "ساعت و دقیقه با divmod",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `to_hm(minutes)` بنویس که تعداد دقیقه را به tuple `(hours, minutes)` تبدیل کند، **بدون** استفاده از `/` (تقسیم معمولی). `to_hm(135)` → `(2, 15)`. برای اعداد منفی هم باید معادله‌ی `minutes == 60 * hours + mins` برقرار بماند — یعنی `to_hm(-15)` باید `(-1, 45)` بدهد.",
+    "expected_outcome": "```python\ndef to_hm(minutes):\n    return divmod(minutes, 60)\n```\nیا معادلش `(minutes // 60, minutes % 60)`. برای `-15`: floor(−0.25) = −1 و باقی‌مانده 45 چون `60 * (-1) + 45 == -15`.",
+    "hints": ["`divmod(n, d)` هر دو مقدار `//` و `%` را یک‌جا می‌دهد.", "برای اعداد منفی چیزی خاص لازم نیست؛ همان // و % معادله را خودشان برقرار می‌کنند."],
+    "rubric": "Correct: uses divmod or // and %, returns (2, 15) for 135 and (-1, 45) for -15, no true division. Partial: right for positive input but special-cases negatives incorrectly (e.g. returns (0, -15)) or uses / with int(). Incorrect: wrong for 135."
+  }
+]

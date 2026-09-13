@@ -1,0 +1,26 @@
+[
+  {
+    "key": "isclose-default-trap",
+    "title": "دام پیش‌فرض isclose",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`math.isclose(1e-10, 0.0)` چه برمی‌گرداند و چرا؟",
+    "options": ["True — اختلاف خیلی کوچک است", "False — چون abs_tol پیش‌فرض صفر است و تلورانس نسبی نزدیک صفر بی‌فایده است", "True — چون rel_tol پیش‌فرض 1e-9 بزرگ‌تر از اختلاف است", "خطا — با صفر نمی‌شود مقایسه کرد"],
+    "correct_option": 1,
+    "expected_outcome": "False. tol = max(1e-9 × 1e-10, 0) = 1e-19 که از اختلاف 1e-10 کوچک‌تر است. باید abs_tol بدهی.",
+    "hints": ["فرمول: tol = max(rel_tol × max(|a|,|b|), abs_tol).", "max(|a|,|b|) اینجا خودش 1e-10 است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "money-equal",
+    "title": "مقایسه‌ی مبالغ",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `same_amount(a, b)` بنویس که دو مبلغ float را «برابر» بداند اگر تا یک‌صدم (۰٫۰۱) به هم نزدیک باشند — چه مبلغ‌ها نزدیک صفر باشند چه میلیونی. از `math.isclose` استفاده کن و مقادیر تلورانس را طوری انتخاب کن که هر دو حالت زیر درست باشد:\n\n```python\nsame_amount(0.1 + 0.2, 0.3)          # True\nsame_amount(0.004, 0.0)              # True  (زیر یک‌صدم)\nsame_amount(1_000_000.004, 1_000_000.0)   # True\nsame_amount(0.01, 0.03)              # False\n```",
+    "expected_outcome": "```python\nfrom math import isclose\n\ndef same_amount(a, b):\n    return isclose(a, b, rel_tol=1e-9, abs_tol=0.01)\n```\nabs_tol=0.01 حالت‌های نزدیک صفر و 0.004 را می‌گیرد؛ rel_tol کوچک برای اعداد بزرگ کافی است (اختلاف 0.004 در یک میلیون از abs_tol هم کمتر است).",
+    "hints": ["چه چیزی «تا یک‌صدم» را بیان می‌کند: rel_tol یا abs_tol؟", "abs_tol را روی 0.01 بگذار و rel_tol را کوچک نگه دار."],
+    "rubric": "Correct: uses isclose with abs_tol around 0.01 (and any small rel_tol) so all four examples hold. Partial: uses only rel_tol (fails the near-zero case) or uses round/abs difference instead of isclose but gets the examples right. Incorrect: any example wrong."
+  }
+]

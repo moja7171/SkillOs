@@ -865,8 +865,15 @@
           "subtitle": "030-integers-data-types.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پنج نوع عددی: int، Fraction، float/Decimal، complex، و bool.",
+        "int پایتون عرض ثابت ندارد؛ با بزرگ شدن عدد بیت می‌گیرد — حد فقط حافظه است.",
+        "هر int ۲۴ بایت سربار دارد (sys.getsizeof)؛ اعداد بزرگ کندتر محاسبه می‌شوند.",
+        "بازه‌ی n بیت علامت‌دار: −2ⁿ⁻¹ تا 2ⁿ⁻¹−1."
+      ],
+      "common_mistakes": [
+        "فرض اینکه int پایتون مثل Java ۳۲/۶۴ بیتی است و overflow می‌کند."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — 030-integers-data-types",
@@ -896,8 +903,16 @@
           "subtitle": "031-integers-operations.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "/ همیشه float می‌دهد، حتی 10 / 2.",
+        "// floor division است، نه truncation: −7 // 2 == −4.",
+        "% علامت مخرج را می‌گیرد: −13 % 4 == 3.",
+        "همیشه: n == d * (n // d) + (n % d)."
+      ],
+      "common_mistakes": [
+        "استفاده از // به‌عنوان «قسمت صحیح» برای اعداد منفی.",
+        "انتظار −1 از −13 % 4."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -939,8 +954,16 @@
           "subtitle": "033-integers-constructors-and-bases-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "int(float) truncate می‌کند؛ int('...', base=b) مبنای ۲ تا ۳۶.",
+        "bin/oct/hex رشته با پیشوند 0b/0o/0x می‌دهند؛ همین پیشوندها literal هم می‌سازند.",
+        "تغییر مبنا = تکرار divmod(n, b) و جمع کردن باقی‌مانده‌ها از راست.",
+        "رقم ≠ نویسه: encoding قدمی جداست با نگاشت دلخواه."
+      ],
+      "common_mistakes": [
+        "رقمی بزرگ‌تر یا مساوی مبنا در رشته → ValueError.",
+        "گرفتن div قبل از mod در الگوریتم تغییر مبنا."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -982,8 +1005,15 @@
           "subtitle": "035-rationals-numbers-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "Fraction(num, den) خودکار ساده می‌کند و علامت را به صورت می‌برد.",
+        "Fraction از رشته ('22/7' یا '0.125') دقیق است؛ از float همان تقریب float را می‌گیرد.",
+        "هر float یک عدد گویاست (رقم متناهی)؛ Fraction(0.3) کسر عجیبی می‌دهد.",
+        "limit_denominator(n) نزدیک‌ترین کسر با مخرج ≤ n."
+      ],
+      "common_mistakes": [
+        "ساختن Fraction از literal float به‌جای رشته."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1025,8 +1055,16 @@
           "subtitle": "037-floats-internal-representations-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "float = IEEE 754 binary64: ۱ بیت علامت، ۱۱ بیت نما، ۵۲ بیت ارقام (~۱۵–۱۷ رقم ده‌دهی).",
+        "عدد = مجموع رقم × توان مبنا؛ در دودویی ارقام ۰/۱ و توان‌های ۲.",
+        "0.1 در دودویی تکرارشونده است → تقریبی؛ 0.125 = 1/8 دقیق.",
+        "print نمایش را گرد می‌کند؛ format(x, '.25f') واقعیت را نشان می‌دهد."
+      ],
+      "common_mistakes": [
+        "فرض اینکه هر عدد ده‌دهی کوتاه در float دقیق است.",
+        "تصور اینکه این نقص پایتون است — هر زبانی با float دودویی همین است."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1068,8 +1106,16 @@
           "subtitle": "039-floats-equality-testing-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "float را با == مقایسه نکن.",
+        "تلورانس مطلق برای اعداد بزرگ بد است؛ تلورانس نسبی نزدیک صفر بد است.",
+        "math.isclose هر دو را ترکیب می‌کند: tol = max(rel_tol·max(|a|,|b|), abs_tol).",
+        "abs_tol پیش‌فرض صفر است — همیشه تعیینش کن."
+      ],
+      "common_mistakes": [
+        "isclose(x, 0) بدون abs_tol → همیشه False.",
+        "round کردن دو طرف به‌عنوان راه‌حل عمومی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1111,8 +1157,15 @@
           "subtitle": "041-floats-coercing-to-integers-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "trunc / int(): بریدن اعشار، به سمت صفر.",
+        "floor: بزرگ‌ترین صحیح ≤ x — برای منفی‌ها از trunc کوچک‌تر.",
+        "ceil: کوچک‌ترین صحیح ≥ x.",
+        "a // b == floor(a / b)."
+      ],
+      "common_mistakes": [
+        "یکی گرفتن floor و trunc برای اعداد منفی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1154,8 +1207,16 @@
           "subtitle": "043-floats-rounding-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "round(x, n) به نزدیک‌ترین مضرب 10⁻ⁿ؛ n می‌تواند منفی باشد.",
+        "بدون n خروجی int است؛ با n (حتی 0) نوع ورودی برمی‌گردد.",
+        "تساوی‌ها با banker's rounding به رقم زوج می‌روند: round(2.5) == 2.",
+        "دور از صفر: int(x + copysign(0.5, x))."
+      ],
+      "common_mistakes": [
+        "انتظار round(1.25, 1) == 1.3.",
+        "ترفند int(x + 0.5) برای اعداد منفی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1197,8 +1258,15 @@
           "subtitle": "045-decimals-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "خطای float در انباشت میلیون‌ها عملیات به اختلاف واقعی می‌رسد — مالی به دقت ده‌دهی نیاز دارد.",
+        "Decimal (PEP 327): دقیق و با precision قابل تنظیم؛ Fraction درست ولی گران است.",
+        "context: prec (پیش‌فرض ۲۸) و rounding (پیش‌فرض ROUND_HALF_EVEN، قابل تغییر).",
+        "getcontext() سراسری/فعلی؛ localcontext() با with برای تغییر موقت."
+      ],
+      "common_mistakes": [
+        "تغییر context سراسری و فراموش کردن بازگردانی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1240,8 +1308,16 @@
           "subtitle": "047-decimals-constructors-and-contexts-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "Decimal از int، رشته، tuple (sign, digits, exponent) یا Decimal دیگر.",
+        "Decimal(0.1) تقریب float را دقیقاً ذخیره می‌کند — از رشته بساز.",
+        "precision فقط روی عملیات حسابی اثر دارد، نه سازنده.",
+        "نتیجه‌ی محاسبه در context محلی بعد از خروج همان می‌ماند."
+      ],
+      "common_mistakes": [
+        "Decimal(float).",
+        "پرانتز تکی در سازنده‌ی tuple (سه آرگومان به‌جای یکی)."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1283,8 +1359,14 @@
           "subtitle": "049-decimals-math-operations-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "// روی Decimal truncated است، روی int floor؛ % متناسب تغییر می‌کند، معادله برقرار می‌ماند.",
+        "توابع ریاضی Decimal متد هستند: d.sqrt(), d.ln(), d.exp(); مثلثاتی ندارد.",
+        "math.sqrt(decimal) اول به float تبدیل می‌کند و دقت را از دست می‌دهد."
+      ],
+      "common_mistakes": [
+        "استفاده از ماژول math روی Decimal."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1314,8 +1396,14 @@
           "subtitle": "050-decimals-performance-considerations.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "Decimal ~۱۰۴ بایت در برابر ۲۴ بایت float.",
+        "ساخت ~۱۰×، جمع/ضرب ~۲×، جذر ~۲۰× کندتر از float.",
+        "فقط وقتی دقت ده‌دهی واقعاً لازم است از Decimal استفاده کن."
+      ],
+      "common_mistakes": [
+        "استفاده از Decimal «برای دقت بیشتر» بدون نیاز واقعی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -1357,8 +1445,16 @@
           "subtitle": "052-complex-numbers-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "complex(x, y) یا literal x + yj؛ real و imag همیشه float هستند.",
+        "// و % و مقایسه‌های ترتیبی تعریف نشده‌اند.",
+        "cmath به‌جای math: phase، rect، sqrt، exp، isclose.",
+        "abs(z) طول بردار است."
+      ],
+      "common_mistakes": [
+        "cmath.isclose نزدیک صفر بدون abs_tol.",
+        "math.sqrt روی complex → TypeError."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1388,8 +1484,15 @@
           "subtitle": "053-booleans.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "bool زیرکلاس int است؛ True == 1 و False == 0 ولی True is 1 غلط است.",
+        "True/False singleton هستند → مقایسه با is یا == یکی است.",
+        "bool در محاسبات مثل ۰/۱ رفتار می‌کند (True + True == 2).",
+        "bool(x) ارزش درستی x را می‌پرسد؛ برای int: صفر False، بقیه True (−1 هم True)."
+      ],
+      "common_mistakes": [
+        "فرض اینکه −1 falsy است."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -1422,17 +1525,19 @@
         {
           "file": "055-booleans-truth-values-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitles": [
-            {
-              "file": "055-booleans-truth-values-coding.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "055-booleans-truth-values-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پیش‌فرض همه‌چیز truthy است؛ falsy: None، False، صفر عددی، دنباله/mapping خالی.",
+        "bool(x) → __bool__، وگرنه __len__ != 0، وگرنه True.",
+        "if my_list: هم None هم لیست خالی را رد می‌کند.",
+        "ترتیب شرط‌ها مهم است."
+      ],
+      "common_mistakes": [
+        "if x is not None: و بعد x[0] با رشته‌ی خالی.",
+        "len(None)."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1454,12 +1559,6 @@
         {
           "file": "056-booleans-precedence-and-short-circuiting-lecture.mp4",
           "title": "بخش نظری",
-          "subtitles": [
-            {
-              "file": "056-booleans-precedence-and-short-circuiting-lecture.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "056-booleans-precedence-and-short-circuiting-lecture.fa.vtt"
         },
         {
@@ -1474,8 +1573,16 @@
           "subtitle": "057-booleans-precedence-and-short-circuiting-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تقدم: پرانتز > مقایسه > not > and > or.",
+        "وقتی شک داری پرانتز بگذار.",
+        "short-circuit: True or Y و False and Y سمت راست را ارزیابی نمی‌کنند.",
+        "if name and name[0] in digits: هم امن است هم کوتاه."
+      ],
+      "common_mistakes": [
+        "True or True and False را True and False خواندن.",
+        "شرط گران/خطرناک را سمت چپ and گذاشتن."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1517,8 +1624,16 @@
           "subtitle": "059-booleans-boolean-operators-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "x or y: اگر x truthy، x؛ وگرنه y. x and y: اگر x falsy، x؛ وگرنه y.",
+        "and/or شیء برمی‌گردانند، not همیشه bool.",
+        "or برای مقدار پیش‌فرض: s = s or 'n/a'.",
+        "and به‌عنوان محافظ: n and total / n."
+      ],
+      "common_mistakes": [
+        "انتظار True/False از and/or.",
+        "فراموش کردن `or default` در الگوی (s and s[0])."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1548,8 +1663,15 @@
           "subtitle": "060-comparison-operators.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "is/is not هویت؛ ==/!= مقدار؛ < > ترتیب (نه complex)؛ in عضویت.",
+        "مقایسه بین انواع عددی مختلف مجاز است؛ با float احتیاط.",
+        "a < b < c یعنی a < b and b < c — با short-circuit.",
+        "زنجیره برای بازه عالی است؛ زنجیره‌های مختلط خوانا نیستند."
+      ],
+      "common_mistakes": [
+        "1 == 2 == False را (1 == 2) == False خواندن."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -1620,12 +1742,6 @@
         {
           "file": "064-positional-and-keyword-arguments-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitles": [
-            {
-              "file": "064-positional-and-keyword-arguments-coding.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "064-positional-and-keyword-arguments-coding.fa.vtt"
         }
       ],
@@ -1934,12 +2050,6 @@
         },
         {
           "file": "078-parameter-defaults-beware-again.mp4",
-          "subtitles": [
-            {
-              "file": "078-parameter-defaults-beware-again.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "078-parameter-defaults-beware-again.fa.vtt"
         }
       ],
@@ -2092,13 +2202,7 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "085-challenge-randomize-an-iterable-using-sorted.mp4",
-          "subtitles": [
-            {
-              "file": "085-challenge-randomize-an-iterable-using-sorted.en.vtt",
-              "lang": "en"
-            }
-          ]
+          "file": "085-challenge-randomize-an-iterable-using-sorted.mp4"
         }
       ],
       "key_points": [],
@@ -2366,12 +2470,6 @@
         {
           "file": "097-introduction.mp4",
           "title": "مقدمه",
-          "subtitles": [
-            {
-              "file": "097-introduction.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "097-introduction.fa.vtt"
         },
         {
@@ -2549,12 +2647,6 @@
         {
           "file": "106-decorators-part-1-lecture.mp4",
           "title": "بخش نظری",
-          "subtitles": [
-            {
-              "file": "106-decorators-part-1-lecture.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "106-decorators-part-1-lecture.fa.vtt"
         },
         {
@@ -2673,12 +2765,6 @@
         {
           "file": "111-decorator-factories-lecture.mp4",
           "title": "بخش نظری",
-          "subtitles": [
-            {
-              "file": "111-decorator-factories-lecture.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "111-decorator-factories-lecture.fa.vtt"
         },
         {
@@ -3304,12 +3390,6 @@
         {
           "file": "138-what-are-packages-lecture.mp4",
           "title": "بخش نظری",
-          "subtitles": [
-            {
-              "file": "138-what-are-packages-lecture.en.vtt",
-              "lang": "en"
-            }
-          ],
           "subtitle": "138-what-are-packages-lecture.fa.vtt"
         },
         {

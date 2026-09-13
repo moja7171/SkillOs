@@ -1,0 +1,27 @@
+[
+  {
+    "key": "true-is-one",
+    "title": "True و 1",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام گزینه درست است؟",
+    "options": ["True is 1 → True و True == 1 → True", "True is 1 → False و True == 1 → True", "True is 1 → True و True == 1 → False", "هر دو False"],
+    "correct_option": 1,
+    "expected_outcome": "مقدار True برابر ۱ است (==)، ولی True شیئی از نوع bool در آدرسی متفاوت از شیء int(1) است (is → False).",
+    "hints": ["is آدرس را مقایسه می‌کند؛ True و 1 دو شیء با دو نوع‌اند.", "int(True) == 1."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "count-with-bools",
+    "title": "شمارش با جمع boolها",
+    "form": "coding",
+
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با استفاده از این واقعیت که bool زیرکلاس int است، تابعی به نام `count_positive(numbers)` بنویس که تعداد اعداد مثبت لیست را **در یک خط و با `sum`** برگرداند — بدون `if` و بدون شمارنده.\n\n`count_positive([3, -1, 0, 8, 2])` → 3",
+    "expected_outcome": "```python\ndef count_positive(numbers):\n    return sum(n > 0 for n in numbers)\n```\nهر `n > 0` یک bool (۰ یا ۱) است و sum آن‌ها را جمع می‌زند.",
+    "hints": ["نتیجه‌ی هر مقایسه True/False است و True در جمع ۱ حساب می‌شود.", "sum روی یک generator از مقایسه‌ها."],
+    "rubric": "Correct: sum(n > 0 for n in numbers) or equivalent comprehension, returns 3 for the example. Partial: uses sum(1 for n in numbers if n > 0) (works but uses if) . Incorrect: loop with a counter or wrong result."
+  }
+]

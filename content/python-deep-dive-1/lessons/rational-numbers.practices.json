@@ -1,0 +1,26 @@
+[
+  {
+    "key": "auto-reduce",
+    "title": "Fraction چه برمی‌گرداند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`Fraction(4, -8)` برابر کدام است؟",
+    "options": ["Fraction(4, -8)", "Fraction(-1, 2)", "Fraction(1, -2)", "Fraction(-4, 8)"],
+    "correct_option": 1,
+    "expected_outcome": "Fraction خودکار ساده می‌کند (۴/۸ → ۱/۲) و علامت را همیشه به صورت می‌برد → `Fraction(-1, 2)`.",
+    "hints": ["دو کار خودکار: ساده‌سازی و جای علامت.", "علامت منفی به صورت (numerator) می‌رود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-huge-fraction",
+    "title": "کسر عجیب از کجا آمد؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "`Fraction(0.125)` می‌دهد `1/8` ولی `Fraction(0.1)` می‌دهد `3602879701896397/36028797018963968`. در ۲ تا ۴ جمله توضیح بده چرا، و بگو با چه فراخوانی‌ای `1/10` می‌گیری (دو راه).",
+    "expected_outcome": "0.125 = 1/8 مخرجش توان ۲ است و در دودویی دقیق ذخیره می‌شود؛ 0.1 نمایش دودویی متناهی ندارد و float آن یک تقریب است — Fraction دقیقاً همان تقریب را به کسر تبدیل می‌کند. برای 1/10: `Fraction(\"0.1\")` (از رشته، بدون عبور از float) یا `Fraction(0.1).limit_denominator(10)`.",
+    "hints": ["به مخرج نگاه کن: کدام توان ۲ است؟", "دو راه: رشته به‌جای float، یا limit_denominator."],
+    "rubric": "Correct: explains 1/8 has a finite binary representation (power-of-two denominator) while 0.1 does not so the float is an approximation, and gives both Fraction('0.1') and limit_denominator. Partial: right explanation with only one of the two fixes, or the fixes without the explanation. Incorrect: blames Fraction or Python for a bug."
+  }
+]

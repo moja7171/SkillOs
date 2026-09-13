@@ -1,0 +1,13 @@
+[
+  {
+    "key": "pick-type",
+    "title": "float یا Decimal؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "برای هر سناریو بگو float یا Decimal، و یک دلیل از درس:\n\n1. محاسبه‌ی مانده‌ی حساب بعد از میلیون‌ها تراکنش با دو رقم اعشار.\n2. شبیه‌سازی فیزیک با میلیاردها عمل ضرب و جذر روی مختصات.\n3. محاسبه‌ی مالیات یک فاکتور با نرخ ۹٪ که باید سنت‌به‌سنت با حسابداری بخواند.\n4. محاسبه‌ی میانگین دمای سنسور.",
+    "expected_outcome": "1. Decimal — خطای float انباشته می‌شود و در مالی قابل قبول نیست. 2. float — جذر Decimal ~۲۰× کندتر است و دقت دودویی کافی است. 3. Decimal — نتیجه باید دقیقاً ده‌دهی باشد. 4. float — دقت اضافه ارزشی ندارد و هزینه دارد.",
+    "hints": ["سؤال کلیدی: آیا خطای تقریب انباشته می‌شود یا نتیجه باید دقیقاً ده‌دهی باشد؟", "هر جا حجم محاسبه زیاد است و دقت ده‌دهی لازم نیست، float."],
+    "rubric": "Correct: Decimal for 1 and 3, float for 2 and 4, each with a reason tied to accumulation/exactness vs speed/memory. Partial: three of four right. Incorrect: Decimal everywhere 'for precision' or float everywhere."
+  }
+]

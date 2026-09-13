@@ -1,0 +1,26 @@
+[
+  {
+    "key": "decimal-floordiv",
+    "title": "// روی Decimal منفی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`divmod(Decimal(-7), Decimal(2))` چه برمی‌گرداند؟",
+    "options": ["(Decimal('-4'), Decimal('1'))", "(Decimal('-3'), Decimal('-1'))", "(Decimal('-3'), Decimal('1'))", "(Decimal('-4'), Decimal('-1'))"],
+    "correct_option": 1,
+    "expected_outcome": "Decimal تقسیم را truncate می‌کند: −7/2 = −3.5 → −3. برای برقراری معادله: 2 × (−3) + r = −7 → r = −1. (با int می‌شد (−4, 1).)",
+    "hints": ["برای Decimal، // = truncation نه floor.", "باقی‌مانده را از n == d*(n//d) + n%d حساب کن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "exact-sqrt-check",
+    "title": "جذر دقیق",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `is_perfect_square_decimal(s)` بنویس که رشته‌ای مثل `'0.0004'` یا `'2.25'` بگیرد و `True` برگرداند اگر جذرش در Decimal دقیقاً به خودش برگردد (یعنی `root * root == عدد`). **فقط از Decimal استفاده کن، نه از math.**\n\n```python\nis_perfect_square_decimal('0.0004')   # True   (0.02²)\nis_perfect_square_decimal('2.25')     # True   (1.5²)\nis_perfect_square_decimal('2')        # False\n```",
+    "expected_outcome": "```python\nfrom decimal import Decimal\n\ndef is_perfect_square_decimal(s):\n    d = Decimal(s)\n    root = d.sqrt()\n    return root * root == d\n```\nبا math.sqrt این تست شکننده می‌شد چون همه‌چیز به float تبدیل می‌شود.",
+    "hints": ["جذر Decimal یک متد است: `d.sqrt()`.", "از رشته Decimal بساز و مربع جذر را با خود عدد مقایسه کن."],
+    "rubric": "Correct: constructs Decimal from the string, uses .sqrt(), compares root*root == d, examples hold. Partial: uses math.sqrt (converts to float) but gets the examples right by luck, or constructs Decimal from float(s). Incorrect: wrong results."
+  }
+]

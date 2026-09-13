@@ -1,0 +1,37 @@
+[
+  {
+    "key": "or-returns-object",
+    "title": "or چه برمی‌گرداند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "مقدار `[] or 0 or 'x' or 5` چیست؟",
+    "options": ["True", "'x'", "5", "[]"],
+    "correct_option": 1,
+    "expected_outcome": "or چپ به راست اولین عملوند truthy را برمی‌گرداند: `[]` و `0` falsy هستند، `'x'` اولین truthy است. `5` اصلاً ارزیابی نمی‌شود.",
+    "hints": ["or خود شیء را برمی‌گرداند، نه True/False.", "اولین truthy از چپ."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "predict-and-or",
+    "title": "پیش‌بینی خروجی",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "مقدار هر عبارت را بنویس:\n\n1. `None or 0 or ''`\n2. `'abc' and 0`\n3. `0 and 1/0`\n4. `(None and None[0]) or 'default'`\n5. `not (5 and 0)`",
+    "expected_outcome": "1. `''` — همه falsy؛ آخرین عملوند برمی‌گردد. 2. `0` — 'abc' truthy → y برمی‌گردد. 3. `0` — x falsy، تقسیم ارزیابی نمی‌شود. 4. `'default'` — سمت چپ None است (بدون خطا، چون None[0] ارزیابی نشد). 5. `True` — `5 and 0` می‌شود 0، not 0 → True.",
+    "hints": ["or: اولین truthy یا آخرین عملوند. and: اولین falsy یا آخرین عملوند.", "not همیشه bool می‌دهد."],
+    "rubric": "Correct: '', 0, 0, 'default', True. Partial: one wrong (commonly 1 as None or 5 as False). Incorrect: two or more wrong, or claims 3/4 raise."
+  },
+  {
+    "key": "safe-average",
+    "title": "میانگین بدون if",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `average(values)` بنویس که میانگین لیست را برگرداند و برای لیست خالی (یا `None`) عدد `0` برگرداند — **بدون if/else و بدون try**، با `and`/`or`.\n\n```python\naverage([2, 4, 6])   # 4.0\naverage([])          # 0\naverage(None)        # 0\n```",
+    "expected_outcome": "```python\ndef average(values):\n    return (values and sum(values) / len(values)) or 0\n```\nبرای [] و None سمت چپ falsy است و تقسیم ارزیابی نمی‌شود؛ or 0 نتیجه را به 0 تبدیل می‌کند.",
+    "hints": ["الگوی `(s and s[0]) or ''` از درس را روی این مسئله پیاده کن.", "values falsy → and آن را برمی‌گرداند → or 0 جایگزین می‌کند."],
+    "rubric": "Correct: (values and sum(values)/len(values)) or 0 or equivalent; three examples hold; no if/try. Partial: works for [] but returns None for None (missing `or 0`), or uses a conditional expression. Incorrect: raises for empty/None."
+  }
+]

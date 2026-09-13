@@ -1,0 +1,26 @@
+[
+  {
+    "key": "precedence",
+    "title": "تقدم عملگرها",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "مقدار `not False or True and False` چیست؟",
+    "options": ["True", "False", "خطا", "None"],
+    "correct_option": 0,
+    "expected_outcome": "not اول: `(not False)` = True. بعد and: `True and False` = False. بعد or: `True or False` = **True**. یعنی `(not False) or (True and False)`.",
+    "hints": ["ترتیب: not، بعد and، بعد or.", "پرانتز بگذار: (not False) or (True and False)."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "safe-first-char",
+    "title": "شرط امن با short-circuit",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `starts_with_digit(name)` بنویس که برای `None`، رشته‌ی خالی، یا رشته‌ای که با رقم شروع نمی‌شود `False` و در غیر این صورت `True` برگرداند — **در یک return و بدون try/except**، با تکیه بر short-circuit و ارزش درستی.\n\n```python\nstarts_with_digit(None)     # False\nstarts_with_digit('')       # False\nstarts_with_digit('7up')    # True\nstarts_with_digit('abc')    # False\n```",
+    "expected_outcome": "```python\nimport string\n\ndef starts_with_digit(name):\n    return bool(name and name[0] in string.digits)\n```\n(بدون bool هم کار می‌کند ولی برای None خود None برمی‌گرداند، نه False — درس بعد توضیح می‌دهد چرا.)",
+    "hints": ["`name and name[0] in string.digits` — اگر name falsy باشد، سمت راست ارزیابی نمی‌شود.", "ترتیب مهم است: اول name، بعد name[0]."],
+    "rubric": "Correct: single expression using `name and name[0] in string.digits` (or isdigit), possibly wrapped in bool(); all four cases give the right truthiness. Partial: correct behaviour but with an if/else chain or separate None check statements. Incorrect: raises for None or ''."
+  }
+]

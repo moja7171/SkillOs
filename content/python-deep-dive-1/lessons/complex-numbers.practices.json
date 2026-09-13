@@ -1,0 +1,26 @@
+[
+  {
+    "key": "complex-unsupported",
+    "title": "کدام عمل خطا می‌دهد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "با `z = 3 + 4j` کدام عبارت **خطا** می‌دهد؟",
+    "options": ["z ** 2", "abs(z)", "z // 2", "z + 1.5"],
+    "correct_option": 2,
+    "expected_outcome": "`//` (و `%`، `divmod`، `<`، `>`) برای complex تعریف نشده‌اند. `abs(z)` طول بردار (۵٫۰) را می‌دهد، بقیه حساب مختلط معمولی است.",
+    "hints": ["floor یک عدد مختلط معنی ندارد.", "abs معمولی روی complex کار می‌کند."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "polar-roundtrip",
+    "title": "رفت‌وبرگشت قطبی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `roundtrip_ok(z)` بنویس که یک عدد مختلط بگیرد، آن را به مختصات قطبی (طول و زاویه) ببرد، دوباره به مستطیلی برگرداند، و `True` برگرداند اگر نتیجه با `z` «نزدیک» باشد. طوری بنویس که برای `z = 0j` هم `True` بدهد.\n\n```python\nroundtrip_ok(1 + 1j)   # True\nroundtrip_ok(-2.5j)    # True\nroundtrip_ok(0j)       # True\n```",
+    "expected_outcome": "```python\nimport cmath\n\ndef roundtrip_ok(z):\n    r, phi = abs(z), cmath.phase(z)\n    back = cmath.rect(r, phi)\n    return cmath.isclose(back, z, abs_tol=1e-9)\n```\nabs_tol لازم است وگرنه برای 0j (و اعداد نزدیک صفر) isclose با تلورانس نسبی صفر، False می‌دهد.",
+    "hints": ["طول با abs، زاویه با cmath.phase، برگشت با cmath.rect.", "برای مقایسه از cmath.isclose با abs_tol استفاده کن — به‌خاطر 0j."],
+    "rubric": "Correct: uses abs + cmath.phase, cmath.rect, and cmath.isclose with a non-zero abs_tol; all three examples True. Partial: correct conversion but == comparison or isclose without abs_tol (fails for 0j). Incorrect: uses math functions on complex or wrong conversion."
+  }
+]

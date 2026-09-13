@@ -1,0 +1,37 @@
+[
+  {
+    "key": "int-from-string-base",
+    "title": "int با مبنا",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام عبارت **خطا** می‌دهد؟",
+    "options": ["int(\"ff\", base=16)", "int(\"0b101\", base=2)", "int(\"12\", base=2)", "int(\"z\", base=36)"],
+    "correct_option": 2,
+    "expected_outcome": "`int(\"12\", base=2)`: رقم `2` در مبنای ۲ وجود ندارد → ValueError. بقیه معتبرند: حروف کوچک/بزرگ فرقی ندارند، پیشوند `0b` در رشته مجاز است، و `z` = ۳۵ آخرین رقم مبنای ۳۶ است.",
+    "hints": ["هر رقم باید کوچک‌تر از مبنا باشد.", "پیشوندهای 0b/0o/0x داخل رشته هم پذیرفته می‌شوند."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "trace-rebase",
+    "title": "ردگیری الگوریتم تغییر مبنا",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "الگوریتم `from_base10` درس را **دستی** برای `n = 45` و `b = 3` اجرا کن: هر دور مقدار `divmod(n, 3)` و وضعیت لیست `digits` را بنویس، و نمایش نهایی را بده. بعد با `int(...)` نشان بده چطور برمی‌گردد.",
+    "expected_outcome": "دور ۱: divmod(45,3) = (15, 0) → digits [0]. دور ۲: (5, 0) → [0, 0]. دور ۳: (1, 2) → [2, 0, 0]. دور ۴: (0, 1) → [1, 2, 0, 0]، n صفر شد. نتیجه `1200₃`. برگشت: `int(\"1200\", base=3) == 45` (27 + 18 + 0 + 0).",
+    "hints": ["هر دور: mod رقم جدید (از راست) و div عدد بعدی.", "insert(0, m) یعنی رقم جدید جلوی لیست می‌رود."],
+    "rubric": "Correct: four rounds with (15,0), (5,0), (1,2), (0,1), final digits [1,2,0,0] → '1200', and int('1200', base=3) == 45. Partial: right final answer but the rounds are wrong/missing, or digits reversed as '0021'. Incorrect: wrong final representation."
+  },
+  {
+    "key": "encode-custom-map",
+    "title": "نگاشت دلخواه برای encoding",
+    "form": "coding",
+    "difficulty": "stretch",
+    "estimated_minutes": 6,
+    "prompt": "با استفاده از `from_base10` و `encode` درس، تابعی به نام `to_base4_symbols(n)` بنویس که عدد نامنفی `n` را در مبنای ۴ با نویسه‌های `'.'`, `'-'`, `'+'`, `'#'` (به ترتیب برای ۰ تا ۳) encode کند.\n\nمثال: `to_base4_symbols(10)` → `'++'`  (چون 10 = 2·4 + 2)، و `to_base4_symbols(7)` → `'-#'`.",
+    "expected_outcome": "```python\ndef to_base4_symbols(n):\n    return encode(from_base10(n, 4), '.-+#')\n```\n`from_base10(10, 4)` → `[2, 2]` → `'++'`؛ `from_base10(7, 4)` → `[1, 3]` → `'-#'`.",
+    "hints": ["تغییر مبنا و encoding دو قدم جدا هستند؛ فقط نگاشت را عوض کن.", "digit_map یک رشته‌ی ۴ نویسه‌ای است که ایندکسش همان رقم است."],
+    "rubric": "Correct: reuses the two-step approach (digits in base 4, then map through '.-+#') and returns '++' for 10 and '-#' for 7. Partial: correct outputs but hard-codes a lookup table with if/else instead of the map, or handles only single-digit results. Incorrect: wrong outputs."
+  }
+]

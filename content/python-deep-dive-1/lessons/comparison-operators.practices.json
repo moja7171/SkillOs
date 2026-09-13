@@ -1,0 +1,26 @@
+[
+  {
+    "key": "chain-meaning",
+    "title": "معنی زنجیره",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`1 == 2 == False` چه مقداری دارد و چرا؟",
+    "options": ["True — چون (1 == 2) برابر False است و False == False", "False — چون یعنی (1 == 2) and (2 == False) و 2 == False غلط است", "خطا — نمی‌شود int را با bool مقایسه کرد", "True — چون 1 == 2 غلط است"],
+    "correct_option": 1,
+    "expected_outcome": "زنجیره جفت‌های مجاور را با and می‌بندد: `(1 == 2) and (2 == False)`. جفت اول False است (و short-circuit می‌شود). برای معنی «نتیجه‌ی مقایسه برابر False است» باید پرانتز بگذاری: `(1 == 2) == False`.",
+    "hints": ["a == b == c یعنی a == b and b == c.", "پرانتز معنی را عوض می‌کند."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "in-range-check",
+    "title": "بررسی بازه با زنجیره",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `is_valid_percent(x)` بنویس که `True` برگرداند اگر `x` عددی (int، float، Fraction یا Decimal — نه complex) در بازه‌ی بسته‌ی ۰ تا ۱۰۰ باشد. از **یک زنجیره‌ی مقایسه** استفاده کن. برای complex باید `False` برگردد (نه خطا) — از `isinstance(x, complex)` کمک بگیر.\n\n```python\nis_valid_percent(50)              # True\nis_valid_percent(Decimal('100'))  # True\nis_valid_percent(100.5)           # False\nis_valid_percent(3 + 0j)          # False\n```",
+    "expected_outcome": "```python\ndef is_valid_percent(x):\n    return not isinstance(x, complex) and 0 <= x <= 100\n```\nshort-circuit جلوی TypeError مقایسه‌ی ترتیبی complex را می‌گیرد.",
+    "hints": ["0 <= x <= 100 یک زنجیره است.", "complex را قبل از زنجیره با and رد کن تا مقایسه‌ی ترتیبی هرگز اجرا نشود."],
+    "rubric": "Correct: uses the chained comparison 0 <= x <= 100 guarded by a complex check via and (short-circuit); all four examples hold. Partial: chain right but complex case raises TypeError, or uses two separate comparisons with and. Incorrect: wrong bounds (exclusive) or wrong results."
+  }
+]

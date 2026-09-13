@@ -1,0 +1,26 @@
+[
+  {
+    "key": "falsy-list",
+    "title": "کدام truthy است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام مقدار **truthy** است؟",
+    "options": ["Decimal('0.0')", "[None]", "''", "0j"],
+    "correct_option": 1,
+    "expected_outcome": "`[None]` یک لیست با یک عنصر است — طولش ۱ → truthy. محتوای عنصر مهم نیست. بقیه صفر عددی یا دنباله‌ی خالی‌اند.",
+    "hints": ["برای دنباله‌ها فقط *طول* مهم است.", "صفر هر نوع عددی falsy است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "custom-bool",
+    "title": "ارزش درستی کلاس خودت",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "کلاسی به نام `Cart` بنویس که در `__init__` یک لیست `items` (پیش‌فرض خالی) نگه دارد و طوری باشد که `bool(Cart())` برابر `False` و `bool(Cart(['book']))` برابر `True` شود — **با پیاده‌سازی `__len__`، نه `__bool__`**. بعد نشان بده `if cart:` با هر دو نمونه درست کار می‌کند.",
+    "expected_outcome": "```python\nclass Cart:\n    def __init__(self, items=None):\n        self.items = list(items) if items else []\n\n    def __len__(self):\n        return len(self.items)\n\nassert not Cart()\nassert Cart(['book'])\n```\nچون `__bool__` نیست، پایتون به `__len__` برمی‌گردد.",
+    "hints": ["اگر __bool__ نباشد، پایتون len(x) != 0 را می‌گیرد.", "__len__ باید یک int نامنفی برگرداند."],
+    "rubric": "Correct: defines __len__ returning len(self.items), no __bool__, and both truthiness checks hold. Partial: defines __bool__ instead of __len__ (works but ignores the constraint), or the mutable-default-argument trap (items=[]) without handling. Incorrect: truthiness wrong."
+  }
+]

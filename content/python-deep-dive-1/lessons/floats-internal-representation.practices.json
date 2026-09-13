@@ -1,0 +1,26 @@
+[
+  {
+    "key": "exact-or-not",
+    "title": "کدام float دقیق است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام عدد در float **دقیقاً** ذخیره می‌شود (نمایش دودویی متناهی دارد)؟",
+    "options": ["0.1", "0.2", "0.375", "0.3"],
+    "correct_option": 2,
+    "expected_outcome": "0.375 = 3/8 = 0.011₂ — مخرج توان ۲ است. 0.1، 0.2 و 0.3 در دودویی تکرارشونده‌اند و تقریبی ذخیره می‌شوند.",
+    "hints": ["عدد را به کسر تبدیل کن و به مخرجش نگاه کن.", "مخرج توان ۲ → متناهی در دودویی."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "binary-fraction",
+    "title": "از دودویی به ده‌دهی و برعکس",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "۱) مقدار ده‌دهی `0.1011₂` را حساب کن.\n۲) `0.625` را به‌صورت کسر دودویی بنویس.\n۳) توضیح بده چرا `0.1 + 0.1 + 0.1 == 0.3` در پایتون `False` است ولی `0.125 + 0.125 + 0.125 == 0.375` `True`.",
+    "expected_outcome": "۱) 1/2 + 0 + 1/8 + 1/16 = 0.6875. ۲) 0.625 = 1/2 + 1/8 = 0.101₂. ۳) 0.1 و 0.3 نمایش دودویی متناهی ندارند؛ هر کدام تقریبی ذخیره می‌شود و خطاهای تقریب یکسان جمع نمی‌شوند. 0.125 و 0.375 (مخرج ۸) دقیق ذخیره می‌شوند، پس جمع هم دقیق است.",
+    "hints": ["جایگاه‌های بعد از ممیز دودویی: 1/2، 1/4، 1/8، 1/16.", "برای بخش ۳ به متناهی/نامتناهی بودن نمایش دودویی فکر کن، نه به خود مقدارها."],
+    "rubric": "Correct: 0.6875, 0.101 (binary), and the explanation that 0.1/0.3 are approximations while eighths are exact. Partial: two of three right. Incorrect: arithmetic wrong and explanation missing."
+  }
+]

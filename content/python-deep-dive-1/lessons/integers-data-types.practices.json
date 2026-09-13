@@ -1,0 +1,26 @@
+[
+  {
+    "key": "signed-range",
+    "title": "بازه‌ی عدد علامت‌دار",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یک عدد صحیح **علامت‌دار ۸ بیتی** چه بازه‌ای را می‌پوشاند؟",
+    "options": ["0 تا 255", "−127 تا 127", "−128 تا 127", "−256 تا 255"],
+    "correct_option": 2,
+    "expected_outcome": "−128 تا 127: یک بیت خرج علامت می‌شود (۷ بیت مقدار → ۱۲۷)، و چون صفر علامت ندارد یک عدد اضافه در سمت منفی جا می‌شود. فرمول: −2ⁿ⁻¹ تا 2ⁿ⁻¹−1.",
+    "hints": ["یکی از ۸ بیت برای علامت است.", "صفر نه مثبت است نه منفی — این یک جای خالی در سمت منفی می‌دهد."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "python-int-vs-java",
+    "title": "پایتون با Java چه فرقی دارد؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "در Java باید بین `int` (۳۲ بیت) و `long` (۶۴ بیت) انتخاب کنی و اگر عدد از بازه بیرون بزند overflow می‌شود. در ۲ تا ۴ جمله بگو پایتون این مسئله را چطور حل کرده، و دو هزینه‌ای که در ازایش می‌پردازی چیست.",
+    "expected_outcome": "پایتون `int` با تعداد بیت متغیر دارد: هر چه عدد بزرگ شود خودش بیت اضافه می‌کند، پس overflow وجود ندارد و حد فقط حافظه است. هزینه: (۱) حافظه — هر int سربار ۲۴ بایتی دارد و اعداد بزرگ بایت‌های بیشتری می‌گیرند (`sys.getsizeof`)، (۲) سرعت — عملیات روی اعداد بزرگ‌تر از عرض CPU باید تکه‌تکه انجام شود و کندتر است.",
+    "hints": ["عرض ثابت در برابر عرض متغیر.", "مدرس دو benchmark نشان داد: اندازه با getsizeof و زمان با perf_counter."],
+    "rubric": "Correct: says Python ints grow to arbitrary size (no fixed width / no overflow, limited by memory) and names both costs: more memory per object and slower arithmetic for large values. Partial: gets the arbitrary size but only one cost. Incorrect: claims Python ints are 64-bit or overflow."
+  }
+]

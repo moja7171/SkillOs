@@ -1,0 +1,37 @@
+[
+  {
+    "key": "bankers",
+    "title": "banker's rounding",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "مقدار `round(2.5)` و `round(3.5)` در پایتون چیست؟",
+    "options": ["3 و 4", "2 و 4", "2 و 3", "3 و 3"],
+    "correct_option": 1,
+    "expected_outcome": "هر دو تساوی‌اند؛ به عدد زوج گرد می‌شوند: 2.5 → 2، 3.5 → 4.",
+    "hints": ["در تساوی، رقم آخر زوج برنده است.", "بین 2 و 3 کدام زوج است؟ بین 3 و 4؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "negative-n",
+    "title": "n منفی",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "بدون اجرا، مقدار هر کدام را بنویس و در یک عبارت بگو به مضرب چه عددی گرد شده:\n\n1. `round(1234.5678, -2)`\n2. `round(1250, -2)`\n3. `round(1350, -2)`\n4. `round(4999, -4)`",
+    "expected_outcome": "1. 1200.0 (مضرب 100؛ 34.5678 < 50). 2. 1200 — تساوی، 12 زوج. 3. 1400 — تساوی، 14 زوج. 4. 0 (مضرب 10000؛ 4999 به 0 نزدیک‌تر از 10000 است).",
+    "hints": ["n = −2 یعنی نزدیک‌ترین مضرب 100.", "در تساوی‌ها (1250، 1350) رقم معنادار آخر باید زوج باشد."],
+    "rubric": "Correct: 1200.0 (or 1200), 1200, 1400, 0 with the multiple named. Partial: gets the non-tie cases but rounds ties away from zero (1300, 1400). Incorrect: treats negative n as decimal places."
+  },
+  {
+    "key": "round-half-up-decimals",
+    "title": "گرد کردن دور از صفر با n دلخواه",
+    "form": "coding",
+    "difficulty": "stretch",
+    "estimated_minutes": 8,
+    "prompt": "تابع `_round(x)` درس فقط به عدد صحیح گرد می‌کند. آن را به `round_away(x, n=0)` گسترش بده که به نزدیک‌ترین مضرب `10⁻ⁿ` گرد کند، با تساوی **دور از صفر**. مثال‌ها:\n\n```python\nround_away(1.25, 1)    # 1.3\nround_away(-1.25, 1)   # -1.3\nround_away(2.5)        # 3\nround_away(1250, -2)   # 1300\n```",
+    "expected_outcome": "```python\nfrom math import copysign\n\ndef round_away(x, n=0):\n    m = 10 ** n\n    return int(x * m + copysign(0.5, x)) / m if n > 0 else int(x * m + copysign(0.5, x)) // 1 / m\n```\nساده‌تر و کافی:\n```python\ndef round_away(x, n=0):\n    m = 10 ** n\n    r = int(x * m + copysign(0.5, x)) / m\n    return int(r) if n <= 0 else r\n```\nایده: عدد را در 10ⁿ ضرب کن، با ترفند copysign به صحیح گرد کن، دوباره تقسیم کن. (به‌خاطر نمایش float، 1.25*10 ممکن است 12.499999 باشد؛ برای دقت کامل باید Decimal استفاده کرد — درس‌های بعد.)",
+    "hints": ["مقیاس‌دهی: x را در 10ⁿ ضرب کن، مثل درس گرد کن، بعد تقسیم کن.", "برای n ≤ 0 خروجی صحیح برگردان."],
+    "rubric": "Correct: scales by 10**n, applies the copysign(0.5, x) trick, scales back, and all four examples hold (int result for n <= 0 acceptable either way). Partial: works for n > 0 only, or ties for negatives go toward zero. Incorrect: uses built-in round (banker's) so 1.25 -> 1.2."
+  }
+]

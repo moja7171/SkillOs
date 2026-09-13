@@ -50,8 +50,8 @@ Owner provides videos + subtitles; Claude writes `content/python-advanced/` (les
 
 ## M3 — Mastery
 
-### [ ] S-14 MasteryService (per lesson; DECISIONS §3; unit-tested table)
-### [ ] S-15 Level display on lesson/course pages; course progress summary; no numeric leaks
+### [x] S-14 MasteryService (per lesson; DECISIONS §3; unit-tested table)
+### [x] S-15 Level display on lesson/course pages; course progress summary; no numeric leaks
 
 ## M4 — Planning, Continue Learning, Home
 

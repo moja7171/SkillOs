@@ -5,6 +5,7 @@ namespace App\Services\Evaluation;
 use App\Models\Activity;
 use App\Models\Attempt;
 use App\Models\User;
+use App\Services\Mastery\MasteryService;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -18,12 +19,13 @@ use Illuminate\Support\Facades\DB;
  *   revealed        true when the expected outcome was shown
  *   source          free|plan|review — where the attempt was launched from
  *   history         [{response, verdict, feedback}]
+ *   level_change    {from, to} when the lesson's level moved on finalize
  */
 class AttemptSession
 {
     public const MAX_HINTS = 2;
 
-    public function __construct(protected Evaluator $evaluator) {}
+    public function __construct(protected Evaluator $evaluator, protected MasteryService $mastery) {}
 
     public function start(User $user, Activity $activity, string $source = 'free'): Attempt
     {
@@ -108,6 +110,14 @@ class AttemptSession
             $attempt->result_status = $resultStatus;
             $attempt->completed_at = now();
             $attempt->save();
+
+            $change = $this->mastery->applyAttempt($attempt);
+            if ($change['old_level'] !== $change['new_level']) {
+                $evidence = $attempt->evidence;
+                $evidence['level_change'] = ['from' => $change['old_level'], 'to' => $change['new_level']];
+                $attempt->evidence = $evidence;
+                $attempt->save();
+            }
 
             $attempt->activity->lesson->course->enrollments()
                 ->where('user_id', $attempt->user_id)

@@ -56,7 +56,12 @@
                         <x-primary-button><x-icon name="check" class="w-4 h-4" /> آماده‌ام</x-primary-button>
                     </form>
                 @else
-                    <div class="text-[13.5px]">این درس رو خوندی. حالا امتحانش کن.</div>
+                    <div class="text-[13.5px] flex items-center gap-2 flex-wrap">
+                        <span>این درس رو خوندی. حالا امتحانش کن.</span>
+                        @if (! empty($evidence['level_change']))
+                            <x-level-badge :level="$evidence['level_change']['to']" />
+                        @endif
+                    </div>
                     @if ($next)
                         <form method="POST" action="{{ route('session.start', $next) }}">
                             @csrf
@@ -133,6 +138,16 @@
                                 @if ($feedback)<span class="opacity-90">{!! Str::inlineMarkdown($feedback, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span>@endif
                             </div>
                         </div>
+
+                        @if (! empty($evidence['level_change']))
+                            @php $lc = $evidence['level_change']; @endphp
+                            <div class="flex items-center gap-2 text-[13.5px]">
+                                <span class="text-muted">سطح این درس:</span>
+                                <x-level-badge :level="$lc['from']" />
+                                <span class="text-faint">←</span>
+                                <x-level-badge :level="$lc['to']" />
+                            </div>
+                        @endif
 
                         @if ($revealed || in_array($attempt->result_status, ['correct', 'correct_with_hint']))
                             <div class="card p-4">

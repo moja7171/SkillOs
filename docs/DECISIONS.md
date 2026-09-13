@@ -111,6 +111,8 @@ Scale 0–1000. `not_started` until the first attempt.
 
 A failed review therefore drops the level (or at least the number) and pulls the next review closer automatically.
 
+Implemented 2026-09-13 in `MasteryService` (constants `DELTAS`, `THRESHOLDS`, `REVIEW_INTERVAL_DAYS`). Two details settled in code: a learn completion creates the record at 0 → level «learning» with a review due tomorrow (so a lesson that was only read gets practised the next day); `next_review_due_at` is set to the start of the due day.
+
 **Why.** Leitner-style, no parameters to fit, every change explainable. Thresholds are guesses; tune after a month of real use.
 
 **Revisit if.** Levels feel too fast (mastered after 6 clean practices) or too sticky. Adjust deltas first, thresholds second.

@@ -71,6 +71,16 @@
                 </div>
             @endunless
 
+            @php $record = $lesson->masteryRecords->first(); @endphp
+            <div class="card">
+                <div class="card-h"><h3>وضعیت من</h3></div>
+                <div class="px-[18px] py-1.5">
+                    <div class="flex justify-between items-center py-2 border-b border-line"><span class="text-muted">سطح</span><x-level-badge :level="$level" /></div>
+                    <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">مرور بعدی</span><span class="font-semibold">{{ $record?->next_review_due_at ? fa_date($record->next_review_due_at, 'l j F') : '—' }}</span></div>
+                    <div class="flex justify-between py-2"><span class="text-muted">آخرین فعالیت</span><span class="font-semibold">{{ $record?->last_evaluated_at ? fa_date($record->last_evaluated_at, 'j F') : '—' }}</span></div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-h"><h3>پیش‌نیازها</h3></div>
                 @if ($lesson->prerequisites->isEmpty())

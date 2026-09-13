@@ -62,7 +62,7 @@ Owner provides videos + subtitles; Claude writes `content/python-advanced/` (les
 
 ## M5 — Week, Skip, Lifecycle
 
-### [ ] S-20 Week view · [ ] S-21 Skip · [ ] S-22 Pause/Archive/Maintenance · [ ] S-23 Reactivation after >14 days
+### [x] S-20 Week view · [x] S-21 Skip · [x] S-22 Pause/Archive/Maintenance · [x] S-23 Reactivation after >14 days
 
 ## M6 — Real use
 

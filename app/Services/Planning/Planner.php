@@ -9,6 +9,7 @@ use App\Models\Lesson;
 use App\Models\MasteryRecord;
 use App\Models\PlanItem;
 use App\Models\User;
+use Carbon\CarbonInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
@@ -22,6 +23,8 @@ class Planner
     public const MAX_REVIEWS_PER_COURSE = 3;
 
     public const RECENT_FAILURES_FOR_RELEARN = 3;
+
+    public const REACTIVATION_GAP_DAYS = 14;
 
     /**
      * Today's plan items for the user, computing them for any scheduled enrollment
@@ -57,6 +60,68 @@ class Planner
                 $this->materialize($enrollment->user, $enrollment, $this->todayItems($enrollment->user));
             }
         });
+    }
+
+    /**
+     * Skip a planned activity for today. Nothing is rescheduled: tomorrow's plan is
+     * computed fresh, and a skipped review is simply still due.
+     */
+    public function skip(PlanItem $item): void
+    {
+        if ($item->status === 'scheduled') {
+            $item->update(['status' => 'skipped']);
+        }
+    }
+
+    /**
+     * Returning after a long gap: check retention before advancing (PRD §15).
+     * Every lesson at Familiar or above gets a review due today.
+     */
+    public function reactivate(Enrollment $enrollment): int
+    {
+        $gap = $enrollment->last_activity_at;
+        if ($gap === null || $gap->gt(now()->subDays(self::REACTIVATION_GAP_DAYS))) {
+            return 0;
+        }
+
+        return MasteryRecord::where('user_id', $enrollment->user_id)
+            ->whereIn('lesson_id', $enrollment->course->lessons()->select('id'))
+            ->whereIn('level', ['familiar', 'proficient', 'mastered'])
+            ->update(['next_review_due_at' => today()]);
+    }
+
+    /**
+     * Read-only week: today's plan, then reviews known to come due on each of the next days.
+     *
+     * @return array<int, array{date: CarbonInterface, items: Collection<int, PlanItem>, reviews: Collection<int, MasteryRecord>}>
+     */
+    public function week(User $user, int $days = 7): array
+    {
+        $items = $this->today($user);
+        $scheduledLessonIds = $user->enrollments()->get()->filter->isScheduled()
+            ->flatMap(fn (Enrollment $e) => $e->course->lessons()->pluck('id'));
+
+        $reviews = MasteryRecord::with('lesson.course')
+            ->where('user_id', $user->id)
+            ->whereIn('lesson_id', $scheduledLessonIds)
+            ->whereNotNull('next_review_due_at')
+            ->whereDate('next_review_due_at', '>', today())
+            ->whereDate('next_review_due_at', '<', today()->addDays($days))
+            ->orderBy('next_review_due_at')
+            ->get()
+            ->groupBy(fn (MasteryRecord $r) => $r->next_review_due_at->toDateString());
+
+        $week = [];
+        for ($i = 0; $i < $days; $i++) {
+            $date = today()->addDays($i);
+            $week[] = [
+                'date' => $date,
+                'items' => $i === 0 ? $this->orderForLearner($items) : collect(),
+                'reviews' => $i === 0 ? collect() : ($reviews[$date->toDateString()] ?? collect()),
+            ];
+        }
+
+        return $week;
     }
 
     /**
@@ -171,6 +236,11 @@ class Planner
             }
         }
 
+        // Maintenance mode: keep what was learned, never advance.
+        if ($enrollment->isReviewsOnly()) {
+            return $this->fillBudget($candidates, $budget, $excludeActivityIds);
+        }
+
         // 2. The current lesson: first below proficient whose prerequisites are at least familiar.
         $current = $lessons->first(fn (Lesson $l) => $levelIndex($l) < 3
             && $l->prerequisites->every(fn (Lesson $p) => $levelIndex($p) >= 2));
@@ -203,7 +273,18 @@ class Planner
             }
         }
 
-        // Fill the budget in order; never split an activity; allow one generous overflow.
+        return $this->fillBudget($candidates, $budget, $excludeActivityIds);
+    }
+
+    /**
+     * Fill the budget in order; never split an activity; allow one generous overflow.
+     *
+     * @param  array<int, array{activity: Activity, source: string, reason: string}>  $candidates
+     * @param  array<int, int>  $excludeActivityIds
+     * @return array<int, array{activity: Activity, source: string, reason: string}>
+     */
+    protected function fillBudget(array $candidates, int $budget, array $excludeActivityIds): array
+    {
         $chosen = [];
         $seen = $excludeActivityIds;
         foreach ($candidates as $candidate) {

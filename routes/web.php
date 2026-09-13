@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('activities/{activity}/start', [SessionController::class, 'start'])->name('session.start');
     Route::post('plan-items/{planItem}/start', [SessionController::class, 'startPlanned'])->name('session.start-planned');
+    Route::post('plan-items/{planItem}/skip', [PlanController::class, 'skip'])->name('plan-items.skip');
+    Route::get('week', [PlanController::class, 'week'])->name('week');
     Route::get('session/{attempt}', [SessionController::class, 'show'])->name('session.show');
     Route::post('session/{attempt}/complete', [SessionController::class, 'complete'])->name('session.complete');
     Route::post('session/{attempt}/submit', [SessionController::class, 'submit'])->name('session.submit');

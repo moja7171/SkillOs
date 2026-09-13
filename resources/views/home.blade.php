@@ -79,6 +79,10 @@
                                 <span class="text-faint text-[12.5px] hidden sm:inline truncate max-w-[180px]" dir="auto">{{ $item->activity->lesson->course->title }}</span>
                                 <span class="num">{{ $item->duration_minutes }}m</span>
                                 @if ($item->status === 'scheduled')
+                                    <form method="POST" action="{{ route('plan-items.skip', $item) }}">
+                                        @csrf
+                                        <button type="submit" class="iconbtn w-8 h-8" title="نه امروز"><x-icon name="x" class="w-3.5 h-3.5" /></button>
+                                    </form>
                                     <form method="POST" action="{{ route('session.start-planned', $item) }}">
                                         @csrf
                                         <button type="submit" class="btn btn-sm">شروع</button>

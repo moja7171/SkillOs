@@ -42,8 +42,19 @@ class EnrollmentController extends Controller
             'status' => ['required', 'in:active,paused,archived,maintenance'],
         ]);
 
+        $wasInactive = in_array($enrollment->status, ['paused', 'archived'], true);
         $enrollment->update($validated);
+
+        $queued = 0;
+        if ($wasInactive && $enrollment->status === 'active') {
+            $queued = $planner->reactivate($enrollment);
+        }
         $planner->recompute($enrollment);
+
+        if ($queued > 0) {
+            return redirect()->route('courses.show', $enrollment->course)
+                ->with('status', 'خوش برگشتی. چون مدتی نبودی، '.fa_num($queued).' درس برای مرور امروز آماده شده.');
+        }
 
         return redirect()->route('courses.show', $enrollment->course)->with('status', 'زمان‌بندی ذخیره شد.');
     }

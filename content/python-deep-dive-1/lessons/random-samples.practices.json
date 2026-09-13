@@ -1,0 +1,26 @@
+[
+  {
+    "key": "which-function",
+    "title": "کدام تابع؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "برای هر نیاز، کدام ترکیب درست است؟ (الف) قرعه‌کشی ۳ برنده‌ی متفاوت از ۱۰۰ نفر؛ (ب) شبیه‌سازی ۱۰۰ پرتاب سکه.",
+    "options": ["الف: choices، ب: sample", "الف: sample، ب: choices", "هر دو sample", "هر دو choices"],
+    "correct_option": 1,
+    "expected_outcome": "برنده‌ها نباید تکرار شوند → sample (بدون جای‌گذاری)؛ پرتاب‌های سکه مستقل و تکرارپذیرند و k=100 از جمعیت ۲تایی بزرگ‌تر است → choices.",
+    "hints": ["تکرار مجاز است یا نه؟", "k بزرگ‌تر از جمعیت فقط با choices."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "deal-hands",
+    "title": "پخش کارت",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `deal(deck, players, cards_each)` بنویس که از یک دست کارت (لیست ۵۲تایی) برای هر بازیکن `cards_each` کارت بدهد، بدون هیچ کارت تکراری بین بازیکنان، و باقی‌مانده‌ی دست را هم برگرداند. اگر کارت کافی نبود ValueError بده. راهنمایی: یک `sample` به اندازه‌ی کل نیاز، بعد برش.",
+    "expected_outcome": "```python\nimport random\n\ndef deal(deck, players, cards_each):\n    need = players * cards_each\n    if need > len(deck):\n        raise ValueError('not enough cards')\n    drawn = random.sample(deck, k=need)\n    hands = [drawn[i * cards_each:(i + 1) * cards_each] for i in range(players)]\n    remaining = [c for c in deck if c not in set(drawn)]\n    return hands, remaining\n```",
+    "hints": ["یک sample برای همه، بعد تقسیم.", "باقی‌مانده = کارت‌هایی که در sample نیستند."],
+    "rubric": "Correct: single sample of players*cards_each, sliced into hands, remaining computed, error on shortage. Partial: repeats sample per player without removing dealt cards (duplicates possible). Incorrect: uses choices."
+  }
+]

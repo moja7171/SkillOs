@@ -36,8 +36,8 @@ As a learner, I want to open a lesson and switch between video and text.
 
 ## M1 — First real course
 
-### [~] C-01 Advanced Python course content
-Owner provided 95 videos (no subtitles) as `course/python-deep-dive-1/`, served via `public/media/` symlink. 2026-09-13: `content/python-deep-dive-1/` has all 106 lessons (159 videos, 11 sections; lectures 100–162 arrived later without subtitles yet) (videos grouped, sections), full text + practices for «مرور سریع» (10), «متغیرها و حافظه» (11), «انواع عددی» (18), «پارامترهای تابع» (10), «توابع درجه‌یک» (10) «دامنه‌ها، closureها و decoratorها» (12), «tuple و named tuple» (6), «ماژول‌ها، پکیج‌ها و namespaceها» (12) and «به‌روزرسانی‌های پایتون» (8) — 97 of 106 — written from English transcripts + slides + notebooks; 9 outlines remain. 9 English subtitles are empty upstream (055, 056, 064, 078, 085, 097, 106, 111, 138; parked in `course/.../broken-subs/`). Claude writes (lesson texts following the videos, 2–3 practices per lesson with rubrics), imports, owner reviews in the app, fixes iterate as commits.
+### [x] C-01 Advanced Python course content (authoring done 2026-09-14; owner review ongoing)
+Owner provided the videos + subtitles + exercise files as `course/python-deep-dive-1/`, served via `public/media/` symlink. `content/python-deep-dive-1/` has all 106 lessons (159 videos, 11 sections), full text + practices for «مرور سریع» (10), «متغیرها و حافظه» (11), «انواع عددی» (18), «پارامترهای تابع» (10), «توابع درجه‌یک» (10) «دامنه‌ها، closureها و decoratorها» (12), «tuple و named tuple» (6), «ماژول‌ها، پکیج‌ها و namespaceها» (12), «به‌روزرسانی‌های پایتون» (8) and «مطالب تکمیلی» (9) — **all 106 lessons** authored (258 practices) from English transcripts + slides + notebooks + example files. 9 English subtitles are empty upstream (055, 056, 064, 078, 085, 097, 106, 111, 138; parked in `course/.../broken-subs/`). Claude writes (lesson texts following the videos, 2–3 practices per lesson with rubrics), imports, owner reviews in the app, fixes iterate as commits.
 
 ## M2 — Session (unchanged from v0.2 S-08..S-13, "skill" → "lesson")
 

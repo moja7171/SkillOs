@@ -1,0 +1,37 @@
+[
+  {
+    "key": "argv-types",
+    "title": "نوع sys.argv",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`python add.py 2 3` و کد `print(sys.argv[1] + sys.argv[2])` چه چاپ می‌کند؟",
+    "options": ["5", "'23'", "TypeError", "['2', '3']"],
+    "correct_option": 1,
+    "expected_outcome": "آرگومان‌ها رشته‌اند؛ `'2' + '3'` الحاق است. برای جمع باید int کرد.",
+    "hints": ["sys.argv لیست رشته‌هاست.", "+ روی رشته الحاق است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "build-cli",
+    "title": "CLI با argparse",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 7,
+    "prompt": "اسکریپت `stats.py` بنویس که با argparse: یک یا چند عدد float به‌صورت positional (`nargs='+'`)، گزینه‌ی `-p/--precision` (int، پیش‌فرض 2)، و flagهای ناسازگار `--mean` / `--median` (اگر هیچ‌کدام نبود هر دو چاپ شود) بگیرد. برای `python stats.py 1 2 3 4 --median -p 1` خروجی را بنویس.",
+    "expected_outcome": "```python\nimport argparse, statistics\n\nparser = argparse.ArgumentParser(description='Basic stats of numbers.')\nparser.add_argument('numbers', nargs='+', type=float)\nparser.add_argument('-p', '--precision', type=int, default=2)\ng = parser.add_mutually_exclusive_group()\ng.add_argument('--mean', action='store_true')\ng.add_argument('--median', action='store_true')\nargs = parser.parse_args()\n\nshow_mean = args.mean or not args.median\nshow_median = args.median or not args.mean\nif show_mean:\n    print(f'mean={statistics.mean(args.numbers):.{args.precision}f}')\nif show_median:\n    print(f'median={statistics.median(args.numbers):.{args.precision}f}')\n```\n`python stats.py 1 2 3 4 --median -p 1` → `median=2.5`",
+    "hints": ["positional با nargs='+'.", "add_mutually_exclusive_group برای --mean/--median."],
+    "rubric": "Correct: positional floats with nargs='+', precision option with default, mutually exclusive flags, both printed when neither given, correct sample output. Partial: missing the neither-case or the group. Incorrect: parses sys.argv manually."
+  },
+  {
+    "key": "flags-actions",
+    "title": "action چه می‌کند؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "با تعریف‌های example9 (`--monty store_const const='Python'`, `-v store_const const=True default=True`, `-v2 store_const const=True` بدون default, `-q store_false`, `-n default='John'`)، مقدار attributeها را برای (۱) `python example9.py` و (۲) `python example9.py --monty -v2 -q -n Eric` بنویس.",
+    "expected_outcome": "(۱) monty=None, verbose=True, verbose2=None, quiet=True, name='John'. (۲) monty='Python', verbose=True, verbose2=True, quiet=False, name='Eric'.",
+    "hints": ["store_false یعنی پیش‌فرض True.", "بدون default، مقدار None است."],
+    "rubric": "Correct: all ten values. Partial: one wrong (commonly quiet or verbose2). Incorrect: two or more wrong."
+  }
+]

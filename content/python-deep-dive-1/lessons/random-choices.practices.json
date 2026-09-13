@@ -1,0 +1,26 @@
+[
+  {
+    "key": "choices-vs-choice",
+    "title": "choices چه می‌دهد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`random.choices(['x', 'y'], k=5)` می‌تواند چه برگرداند؟",
+    "options": ["فقط لیست‌هایی با ۲ عنصر، چون جمعیت ۲ عضو دارد", "لیستی ۵ عنصری که ممکن است 'x' یا 'y' تکراری داشته باشد", "ValueError چون k بزرگ‌تر از جمعیت است", "یک رشته‌ی ۵ حرفی"],
+    "correct_option": 1,
+    "expected_outcome": "choices با جای‌گذاری انتخاب می‌کند؛ k مستقل از اندازه‌ی جمعیت است و همیشه لیست برمی‌گرداند.",
+    "hints": ["with replacement.", "خروجی همیشه list است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "weighted-loot",
+    "title": "انتخاب وزن‌دار",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `roll_loot(k, seed=None)` بنویس که از `['common', 'rare', 'epic']` با احتمال‌های ۷۰٪/۲۵٪/۵٪ k آیتم برگرداند و با `Counter` توزیع ۱۰٬۰۰۰ آیتم را نشان بده. چرا مجموع وزن‌ها لازم نیست ۱ یا ۱۰۰ باشد؟",
+    "expected_outcome": "```python\nimport random\nfrom collections import Counter\n\ndef roll_loot(k, seed=None):\n    rng = random.Random(seed)\n    return rng.choices(['common', 'rare', 'epic'], weights=[70, 25, 5], k=k)\n\nCounter(roll_loot(10_000, seed=0))   # ≈ common 7000, rare 2500, epic 500\n```\nوزن‌ها نسبی‌اند؛ احتمال هر عنصر = وزنش تقسیم بر مجموع، پس [14, 5, 1] هم همان توزیع را می‌دهد.",
+    "hints": ["weights هم‌طول با جمعیت.", "احتمال = وزن / مجموع وزن‌ها."],
+    "rubric": "Correct: choices with weights and k, Counter check, relative-weights explanation. Partial: works but explanation missing. Incorrect: implements manual cumulative logic incorrectly or uses sample."
+  }
+]

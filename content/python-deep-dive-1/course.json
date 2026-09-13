@@ -4350,8 +4350,16 @@
           "subtitle": "154-additional-resources.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "docs.python.org — نسخه را انتخاب کن.",
+        "PEPها برای «چرا»: 8 (سبک)، 20 (`import this`)، 484 (type hints)، PEP زمان‌بندی هر نسخه.",
+        "کتاب‌ها: Learning Python، Fluent Python، Python Cookbook، Effective Python، Python in a Nutshell.",
+        "Raymond Hettinger، ویدیوهای PyCon، Planet Python، Stack Overflow.",
+        "`zip(*m)` برای transpose."
+      ],
+      "common_mistakes": [
+        "استفاده از مستندات نسخه‌ی اشتباه."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — 154-additional-resources",
@@ -4378,8 +4386,17 @@
           "subtitle": "155-random-seeds.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "random شبه‌تصادفی است؛ seed یکسان → دنباله‌ی یکسان (تکرارپذیری برای debug).",
+        "`random.seed(n)` دنباله را از اول شروع می‌کند؛ بدون seed از زمان سیستم.",
+        "shuffle، gauss، choice و … همه از همان generator می‌خوانند.",
+        "`random.Random(seed)` generator مستقل بدون دست زدن به حالت سراسری.",
+        "برای امنیت `secrets`."
+      ],
+      "common_mistakes": [
+        "seed سراسری داخل کتابخانه/تابع.",
+        "random برای توکن امنیتی."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4406,8 +4423,15 @@
           "subtitle": "156-random-choices.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`random.choice(seq)` یک عنصر؛ به‌جای اندیس تصادفی.",
+        "`random.choices(pop, k=n, weights=...)` با جای‌گذاری؛ k می‌تواند از جمعیت بزرگ‌تر باشد.",
+        "weights نسبی‌اند؛ `cum_weights` هم هست.",
+        "بررسی توزیع با Counter یا شمارش فراوانی."
+      ],
+      "common_mistakes": [
+        "استفاده از choices وقتی تکرار مجاز نیست."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4434,8 +4458,16 @@
           "subtitle": "157-random-samples.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`random.sample(pop, k)` بدون جای‌گذاری، بدون تکرار؛ k ≤ جمعیت.",
+        "k = اندازه‌ی جمعیت → کپی shuffle‌شده.",
+        "با seed تکرارپذیر.",
+        "3.11+: sample روی set کار نمی‌کند."
+      ],
+      "common_mistakes": [
+        "sample با k بزرگ‌تر از جمعیت.",
+        "choices برای پخش کارت."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4462,8 +4494,17 @@
           "subtitle": "158-timing-code-using-timeit.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`timeit(stmt, setup, number=1_000_000, globals)` زمان کل را برمی‌گرداند.",
+        "namespace جدا: import در setup (یک بار) یا globals=globals()/locals().",
+        "`timeit.repeat` و گزارش کمینه؛ `%timeit` در نوت‌بوک.",
+        "اختلاف‌های میکروثانیه‌ای را قبل از profile بهینه نکن؛ خوانایی مقدم است.",
+        "کد داخل تابع کمی سریع‌تر از سطح ماژول است."
+      ],
+      "common_mistakes": [
+        "import در stmt به‌جای setup.",
+        "number پیش‌فرض برای کد سنگین."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4490,8 +4531,14 @@
           "subtitle": "159-don-t-use-args-and-kwargs-names-blindly.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`*`/`**` مهم‌اند، نه نام args/kwargs.",
+        "pass-through (decorator) → args/kwargs مناسب؛ آرگومان معنی‌دار → نام گویا (`*values`, `**custom_attributes`).",
+        "نام باید نقش را بگوید."
+      ],
+      "common_mistakes": [
+        "*args برای آرگومان‌هایی که معنی مشخصی دارند."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4518,8 +4565,17 @@
           "subtitle": "160-command-line-arguments.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`sys.argv` لیست رشته‌ها؛ [0] نام فایل؛ shell روی فاصله می‌شکند.",
+        "`argparse`: ArgumentParser(description), add_argument (positional/named, type, help, required, dest, default), parse_args.",
+        "`nargs='*'`/`'+'` برای چند مقدار؛ action: store_const، store_true/false، append، count.",
+        "`add_mutually_exclusive_group` برای گزینه‌های ناسازگار؛ `-h` خودکار.",
+        "type هر callable تبدیل‌کننده."
+      ],
+      "common_mistakes": [
+        "فراموش کردن تبدیل نوع sys.argv.",
+        "پارس دستی وقتی argparse هست."
+      ],
       "attachments": [
         {
           "title": "فایل پایتون — example1.py",
@@ -4582,8 +4638,16 @@
           "subtitle": "161-sentinel-values-for-parameter-defaults.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پیش‌فرض None نمی‌تواند «None داده شد» را از «داده نشد» تشخیص دهد.",
+        "sentinel = `object()` یکتا با مقایسه‌ی `is`.",
+        "می‌توان sentinel را از `__defaults__`/`__kwdefaults__` خواند.",
+        "نمونه در کتابخانه‌ی استاندارد: dataclasses.MISSING، inspect.Parameter.empty."
+      ],
+      "common_mistakes": [
+        "sentinel رشته‌ای/عددی که کاربر می‌تواند بدهد.",
+        "مقایسه‌ی sentinel با ==."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4610,8 +4674,15 @@
           "subtitle": "162-simulating-a-simple-switch-in-python.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "if/elif: بدنه‌های بزرگ، caseهای ثابت.",
+        "dict dispatch: caseها پویا؛ مقدارها callable.",
+        "decorator ثبت‌کننده (switcher): مثل singledispatch با کلید مقدار؛ ثبت توزیع‌شده.",
+        "3.10+: `match` خواناترین راه برای switch ساده."
+      ],
+      "common_mistakes": [
+        "ساختن dict dispatch داخل تابع در هر فراخوانی."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",

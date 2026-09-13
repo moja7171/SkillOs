@@ -1,0 +1,26 @@
+[
+  {
+    "key": "why-object",
+    "title": "چرا object()؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا `_MISSING = object()` sentinel بهتری از `_MISSING = 'missing'` است؟",
+    "options": ["چون رشته‌ها قابل مقایسه با is نیستند", "چون کاربر ممکن است عیناً همان رشته را پاس بدهد، ولی به instance خاص ما از object دسترسی ندارد", "چون object() سریع‌تر است", "چون رشته‌ها intern می‌شوند و همیشه برابرند"],
+    "correct_option": 1,
+    "expected_outcome": "sentinel باید مقداری باشد که هرگز به‌طور طبیعی از بیرون نیاید؛ یک شیء یکتا با مقایسه‌ی هویتی (`is`) این را تضمین می‌کند.",
+    "hints": ["یکتایی + مقایسه با is.", "رشته می‌تواند اتفاقی برابر شود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "update-with-sentinel",
+    "title": "update با تشخیص None",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `update_user(user, *, name=..., email=...)` بنویس (user یک dict است) که فقط فیلدهای **داده‌شده** را تغییر دهد؛ دادن `email=None` باید ایمیل را پاک کند (None بگذارد)، ولی ندادن email باید آن را دست‌نخورده بگذارد. با یک sentinel نام‌دار پیاده‌سازی کن و سه فراخوانی نمونه بنویس.",
+    "expected_outcome": "```python\n_MISSING = object()\n\ndef update_user(user, *, name=_MISSING, email=_MISSING):\n    if name is not _MISSING:\n        user['name'] = name\n    if email is not _MISSING:\n        user['email'] = email\n    return user\n\nu = {'name': 'a', 'email': 'a@x'}\nupdate_user(u, name='b')            # email unchanged\nupdate_user(u, email=None)          # email cleared\nupdate_user(u)                      # nothing changes\n```",
+    "hints": ["یک sentinel ماژول‌سطح.", "مقایسه با is."],
+    "rubric": "Correct: named sentinel, keyword-only params, `is not` checks, None clears while omission preserves. Partial: uses None default (cannot distinguish). Incorrect: uses == or mutates unconditionally."
+  }
+]

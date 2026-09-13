@@ -1,0 +1,37 @@
+[
+  {
+    "key": "dict-dispatch-advantage",
+    "title": "مزیت dict",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "مزیت اصلی dispatch با dict نسبت به if/elif چیست؟",
+    "options": ["هر شاخه می‌تواند چند خط منطق داشته باشد", "جدول caseها در زمان اجرا قابل تغییر است (اضافه/حذف)", "سریع‌تر از match است", "نیازی به default ندارد"],
+    "correct_option": 1,
+    "expected_outcome": "dict یک ساختار داده‌ی زنده است؛ if/elif در کد ثابت است. در عوض شاخه‌های dict باید callable باشند.",
+    "hints": ["چه چیزی در dict می‌شود که در کد نمی‌شود؟", "به پویایی فکر کن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "switcher-with-args",
+    "title": "switcher با آرگومان",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "decorator `switcher` درس را طوری تغییر بده که caseها آرگومان بگیرند: `calc('add', 2, 3)` → 5، `calc('mul', 2, 3)` → 6، عملیات ناشناخته → default که `ValueError` می‌دهد. با `@calc.register('add')` و `@calc.register('mul')` ثبت کن و بگو چرا `register` باید fn را برگرداند.",
+    "expected_outcome": "```python\ndef switcher(fn):\n    registry = {'default': fn}\n    def register(case):\n        def inner(f):\n            registry[case] = f\n            return f\n        return inner\n    def decorator(case, *args, **kwargs):\n        return registry.get(case, registry['default'])(*args, **kwargs)\n    decorator.register = register\n    return decorator\n\n@switcher\ndef calc(*args, **kwargs):\n    raise ValueError('unknown operation')\n\n@calc.register('add')\ndef _(a, b): return a + b\n\n@calc.register('mul')\ndef _(a, b): return a * b\n\ncalc('add', 2, 3)   # 5\n```\nبرگرداندن fn نام تابع را دست‌نخورده نگه می‌دارد و اجازه‌ی پشته کردن چند register را می‌دهد.",
+    "hints": ["decorator باید *args/**kwargs را به تابع انتخاب‌شده عبور دهد.", "default هم همان آرگومان‌ها را می‌گیرد."],
+    "rubric": "Correct: registry keyed by value, dispatcher forwards args, default raises, register returns fn with the stacking/name reason. Partial: works but default signature breaks with args. Incorrect: if/elif."
+  },
+  {
+    "key": "pick-approach",
+    "title": "کدام رویکرد؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "برای هر سناریو بگو if/elif، dict، decorator ثبت‌کننده یا `match` را انتخاب می‌کنی و چرا: (۱) تبدیل کد وضعیت HTTP به پیام، ثابت و ۱۰ مورد؛ (۲) سیستم پلاگین که ماژول‌های دیگر دستور جدید ثبت می‌کنند؛ (۳) شاخه‌هایی که هر کدام ۲۰ خط منطق با شرط‌های تودرتو دارند.",
+    "expected_outcome": "(۱) match (3.10+) یا dict ثابت — ساده و خوانا. (۲) decorator ثبت‌کننده — ثبت توزیع‌شده در زمان import ماژول‌ها. (۳) if/elif یا match با فراخوانی توابع جدا — بدنه‌های بزرگ در dict/lambda جا نمی‌شوند.",
+    "hints": ["پویا بودن caseها.", "اندازه‌ی بدنه‌ی هر شاخه."],
+    "rubric": "Correct: sensible choice for each with rationale (static → match/dict, dynamic/distributed → registry decorator, heavy bodies → if/elif or functions). Partial: two of three. Incorrect: same tool for all without reasoning."
+  }
+]

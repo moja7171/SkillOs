@@ -1,0 +1,24 @@
+[
+  {
+    "key": "rename",
+    "title": "نام بهتر",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "برای هر امضا نام بهتری برای پارامتر متغیر پیشنهاد بده یا بگو `args`/`kwargs` مناسب است و چرا:\n(۱) `def mean(*args)`\n(۲) `def retry(fn, *args, **kwargs)` که فقط fn را با آنها صدا می‌زند\n(۳) `def connect(host, **kwargs)` که kwargs گزینه‌های اتصال (timeout, ssl, ...) هستند",
+    "expected_outcome": "(۱) `*values` یا `*numbers` — آرگومان‌ها معنی دارند. (۲) `*args, **kwargs` مناسب است — عبور شفاف بدون دانش از معنا. (۳) `**options` یا `**connection_options`.",
+    "hints": ["آیا تابع معنای آرگومان‌ها را می‌داند؟", "pass-through = args/kwargs."],
+    "rubric": "Correct: meaningful names for 1 and 3, keeps args/kwargs for the pass-through with the reason. Partial: two of three. Incorrect: renames the pass-through or keeps args everywhere."
+  },
+  {
+    "key": "tagged-logger",
+    "title": "لاگر با تگ‌های دلخواه",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `log(message, *tags, **fields)` بنویس که یک خط به شکل `[tag1,tag2] message key=value key=value` برگرداند؛ نام پارامترها را طوری انتخاب کن که نقششان روشن باشد (نه args/kwargs). مثال: `log('started', 'db', 'init', host='x', port=5432)`.",
+    "expected_outcome": "```python\ndef log(message, *tags, **fields):\n    tag_str = f\"[{','.join(tags)}] \" if tags else ''\n    field_str = ' '.join(f'{k}={v}' for k, v in fields.items())\n    return f'{tag_str}{message} {field_str}'.rstrip()\n\nlog('started', 'db', 'init', host='x', port=5432)   # '[db,init] started host=x port=5432'\n```",
+    "hints": ["*tags و **fields به‌جای *args/**kwargs.", "ترتیب fields حفظ می‌شود (3.6+)."],
+    "rubric": "Correct: meaningful *tags/**fields names, formatting matches, handles no tags. Partial: works but uses args/kwargs names. Incorrect: wrong output."
+  }
+]

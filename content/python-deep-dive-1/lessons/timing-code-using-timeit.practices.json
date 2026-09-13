@@ -1,0 +1,37 @@
+[
+  {
+    "key": "timeit-default",
+    "title": "خروجی timeit یعنی چه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`timeit(stmt='x = 1 + 1')` مقدار `0.02` برمی‌گرداند. یعنی چه؟",
+    "options": ["هر اجرا ۰٫۰۲ ثانیه طول کشیده", "مجموع ۱٬۰۰۰٬۰۰۰ اجرا ۰٫۰۲ ثانیه بوده (≈ ۲۰ نانوثانیه هر کدام)", "میانگین ۱۰۰۰ اجرا ۰٫۰۲ ثانیه", "خطا — stmt به globals نیاز دارد"],
+    "correct_option": 1,
+    "expected_outcome": "پیش‌فرض number=1_000_000 و خروجی زمان کل است، نه میانگین.",
+    "hints": ["number پیش‌فرض یک میلیون است.", "total، نه average."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "compare-implementations",
+    "title": "مقایسه‌ی دو پیاده‌سازی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "دو تابع `join_plus(words)` (الحاق با `+=` در حلقه) و `join_join(words)` (`' '.join`) بنویس و با `timeit` (number مناسب، مثلاً ۱۰٬۰۰۰، و `globals`) زمان هر کدام را روی لیستی از ۱۰۰۰ کلمه بگیر. از `timeit.repeat` با `repeat=3` استفاده کن و کمینه را گزارش بده. کدام سریع‌تر است و چرا؟",
+    "expected_outcome": "```python\nfrom timeit import repeat\n\nwords = ['w'] * 1000\n\ndef join_plus(words):\n    s = ''\n    for w in words:\n        s += w + ' '\n    return s\n\ndef join_join(words):\n    return ' '.join(words)\n\nfor fn in ('join_plus', 'join_join'):\n    t = min(repeat(f'{fn}(words)', globals=globals(), number=10_000, repeat=3))\n    print(fn, f'{t:.3f}s')\n```\njoin سریع‌تر است: `+=` هر بار رشته‌ی جدید می‌سازد (immutable)، join یک بار حافظه تخصیص می‌دهد.",
+    "hints": ["globals=globals() تا توابع و words دیده شوند.", "min(repeat(...)) نویز را حذف می‌کند."],
+    "rubric": "Correct: both functions, repeat with globals and a sane number, reports the min, and explains immutability/allocation. Partial: uses default number (too slow) or timeit without globals then fixes. Incorrect: cannot run."
+  },
+  {
+    "key": "globals-locals",
+    "title": "globals یا locals؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: چرا `timeit(stmt='math.sqrt(2)')` بدون setup/globals خطا می‌دهد؟ تفاوت گذاشتن import در `stmt` با `setup` چیست؟ کِی باید `globals=locals()` بدهی؟",
+    "expected_outcome": "timeit کد را در namespace مستقل خودش اجرا می‌کند و از importها/متغیرهای ما خبر ندارد. import داخل stmt در هر تکرار اجرا و زمان‌سنجی می‌شود (نادرست)؛ setup یک بار قبل از تکرارها اجرا می‌شود. وقتی داخل تابع هستی و stmt به متغیرهای محلی تابع نیاز دارد، `globals=locals()` آن namespace را در اختیارش می‌گذارد (globals() آنها را ندارد).",
+    "hints": ["namespace جدا.", "setup یک بار، stmt number بار."],
+    "rubric": "Correct: isolated namespace, setup-once vs stmt-every-time, locals() inside functions. Partial: two of three. Incorrect: thinks timeit sees the caller's variables automatically."
+  }
+]

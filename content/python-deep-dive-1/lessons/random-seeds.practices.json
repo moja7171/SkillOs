@@ -1,0 +1,26 @@
+[
+  {
+    "key": "seed-behaviour",
+    "title": "بعد از seed",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nrandom.seed(7); a = random.random()\nb = random.random()\nrandom.seed(7); c = random.random()\n```\nکدام درست است؟",
+    "options": ["a == b == c", "a == c و b متفاوت", "a == b و c متفاوت", "هر سه متفاوت"],
+    "correct_option": 1,
+    "expected_outcome": "seed دنباله را از اول شروع می‌کند: a اولین عدد دنباله‌ی seed 7 است، b دومین؛ بعد از seed مجدد، c دوباره اولین عدد است = a.",
+    "hints": ["seed = بازگشت به ابتدای دنباله.", "b عدد دوم است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "reproducible-test",
+    "title": "تست تکرارپذیر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `simulate(n, seed=None)` بنویس که n بار تاس بریزد و تعداد ۶ها را برگرداند، طوری که با seed مشخص همیشه همان نتیجه را بدهد **بدون** تغییر seed سراسری ماژول `random` (تا کد دیگر برنامه تحت تأثیر نباشد). توضیح بده چرا این بهتر از `random.seed(seed)` داخل تابع است.",
+    "expected_outcome": "```python\nimport random\n\ndef simulate(n, seed=None):\n    rng = random.Random(seed)          # independent generator\n    return sum(1 for _ in range(n) if rng.randint(1, 6) == 6)\n\nsimulate(1000, seed=1) == simulate(1000, seed=1)   # True\n```\n`random.seed` حالت سراسری را عوض می‌کند و هر کد دیگری که random استفاده می‌کند دنباله‌اش تغییر می‌کند؛ instance جدا این اثر جانبی را ندارد.",
+    "hints": ["random.Random(seed) یک generator مستقل است.", "seed سراسری side effect دارد."],
+    "rubric": "Correct: uses random.Random(seed) instance, repeatable, and explains the global-state side effect. Partial: uses random.seed inside the function. Incorrect: not repeatable."
+  }
+]

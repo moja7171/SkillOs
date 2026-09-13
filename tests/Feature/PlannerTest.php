@@ -235,6 +235,28 @@ class PlannerTest extends TestCase
         $this->assertCount(1, app(Planner::class)->today($this->user), 'paused: open items removed, completed kept');
     }
 
+    public function test_get_on_action_urls_redirects_instead_of_405(): void
+    {
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
+        $item = app(Planner::class)->today($this->user)->first();
+
+        // No open attempt yet: home.
+        $this->actingAs($this->user)->get("/plan-items/{$item->id}/start")->assertRedirect(route('home'));
+
+        // With an open attempt: resume it.
+        $this->actingAs($this->user)->post(route('session.start-planned', $item));
+        $attempt = Attempt::latest('id')->first();
+        $this->actingAs($this->user)->get("/plan-items/{$item->id}/start")->assertRedirect(route('session.show', $attempt));
+        $this->actingAs($this->user)->get("/activities/{$item->activity_id}/start")->assertRedirect(route('session.show', $attempt));
+
+        // Any other POST-only URL: back to the referrer with a note, never a 405 page.
+        $this->actingAs($this->user)
+            ->from(route('home'))
+            ->get("/plan-items/{$item->id}/skip")
+            ->assertRedirect(route('home'))
+            ->assertSessionHas('status');
+    }
+
     public function test_stranger_cannot_start_someone_elses_plan_item(): void
     {
         Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();

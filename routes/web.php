@@ -7,6 +7,8 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
+use App\Models\PlanItem;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
@@ -23,6 +25,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('activities/{activity}/start', [SessionController::class, 'start'])->name('session.start');
     Route::post('plan-items/{planItem}/start', [SessionController::class, 'startPlanned'])->name('session.start-planned');
+    Route::get('activities/{activity}/start', [SessionController::class, 'resumeOrHome']);
+    Route::get('plan-items/{planItem}/start', fn (PlanItem $planItem, Request $request) => app(SessionController::class)->resumeOrHome($request, $planItem->activity));
     Route::post('plan-items/{planItem}/skip', [PlanController::class, 'skip'])->name('plan-items.skip');
     Route::get('week', [PlanController::class, 'week'])->name('week');
     Route::get('session/{attempt}', [SessionController::class, 'show'])->name('session.show');

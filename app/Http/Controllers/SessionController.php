@@ -33,6 +33,23 @@ class SessionController extends Controller
         return redirect()->route('session.show', $attempt);
     }
 
+    /**
+     * Browser Back/Forward or a refresh can replay an action URL as GET. Instead of a 405,
+     * resume the learner's open attempt for that activity, or send them home.
+     */
+    public function resumeOrHome(Request $request, Activity $activity): RedirectResponse
+    {
+        $open = $request->user()->attempts()
+            ->where('activity_id', $activity->id)
+            ->where('result_status', 'started')
+            ->latest('id')
+            ->first();
+
+        return $open
+            ? redirect()->route('session.show', $open)
+            : redirect()->route('home');
+    }
+
     public function show(Request $request, Attempt $attempt): View
     {
         $this->authorizeOwner($attempt);

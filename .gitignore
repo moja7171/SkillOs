@@ -25,3 +25,7 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# owner-provided course media (videos, subtitles) — never committed
+/course
+/public/media

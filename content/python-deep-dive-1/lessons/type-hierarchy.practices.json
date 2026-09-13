@@ -1,0 +1,26 @@
+[
+  {
+    "key": "bool-is-int",
+    "title": "bool در کدام خانواده است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خروجی `isinstance(True, int)` چیست و چرا؟",
+    "options": ["False — چون bool و int دو نوع جدا هستند", "True — چون bool زیرکلاس int است", "خطا — isinstance با True کار نمی‌کند", "True — چون همه‌چیز در پایتون int است"],
+    "correct_option": 1,
+    "expected_outcome": "`True` است: `bool` زیرکلاس `int` است و `True`/`False` معادل `1`/`0` رفتار می‌کنند (مثلاً `True + True == 2`).",
+    "hints": ["به خانواده‌ی Integral در نقشه‌ی انواع نگاه کن.", "bool زیرکلاس int تعریف شده؛ isinstance با زیرکلاس‌ها True برمی‌گرداند."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "classify-types",
+    "title": "دسته‌بندی چند شیء",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "برای هر یک از این‌ها بگو در کدام خانواده‌ی نقشه‌ی انواع قرار می‌گیرد و تغییرپذیر است یا نه:\n\n1. `(1, 2, 3)`\n2. `{\"a\": 1}`\n3. `len`\n4. `frozenset({1, 2})`\n5. `None`",
+    "expected_outcome": "1. tuple → Sequence، تغییرناپذیر. 2. dict → Mapping، تغییرپذیر. 3. len → Callable (تابع built-in). 4. frozenset → Set، تغییرناپذیر. 5. None → Singleton.",
+    "hints": ["تغییرپذیری یعنی بتوانی شیء را درجا عوض کنی بدون ساختن شیء جدید.", "tuple و frozenset «نسخه‌ی تغییرناپذیر» list و set هستند؛ len یک تابع است."],
+    "rubric": "Correct: all five families right and mutability right for the four collections (tuple immutable, dict mutable, frozenset immutable). Partial: one or two items wrong or mutability missing. Incorrect: three or more wrong."
+  }
+]

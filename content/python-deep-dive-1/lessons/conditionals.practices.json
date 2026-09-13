@@ -1,0 +1,26 @@
+[
+  {
+    "key": "elif-order",
+    "title": "ترتیب شرط‌ها",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خروجی این کد چیست؟\n\n```python\na = 3\nif a < 10:\n    print(\"under ten\")\nelif a < 5:\n    print(\"under five\")\nelse:\n    print(\"other\")\n```",
+    "options": ["under five", "under ten", "under ten و بعد under five", "other"],
+    "correct_option": 1,
+    "expected_outcome": "«under ten». شرط‌ها به ترتیب چک می‌شوند و `3 < 10` درست است، پس شاخه‌ی اول اجرا می‌شود و بقیه نادیده گرفته می‌شوند — با اینکه `3 < 5` هم درست بود.",
+    "hints": ["فقط اولین شرطِ درست اجرا می‌شود.", "`3 < 10` قبل از `3 < 5` چک می‌شود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "ternary-rewrite",
+    "title": "بازنویسی با عبارت شرطی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابع زیر را طوری بازنویسی کن که بدنه‌اش **یک خط** `return` با عبارت شرطی باشد، با همان رفتار.\n\n```python\ndef parity(n):\n    if n % 2 == 0:\n        return \"even\"\n    else:\n        return \"odd\"\n```",
+    "expected_outcome": "```python\ndef parity(n):\n    return \"even\" if n % 2 == 0 else \"odd\"\n```",
+    "hints": ["ساختار: `مقدار_درست if شرط else مقدار_غلط`.", "کل عبارت را بعد از `return` بگذار."],
+    "rubric": "Correct: single return with 'even' if n % 2 == 0 else 'odd' (or equivalent condition). Partial: uses the conditional expression but keeps extra statements or inverts the strings. Incorrect: still if/else block or wrong output."
+  }
+]

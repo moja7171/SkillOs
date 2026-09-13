@@ -1,0 +1,26 @@
+[
+  {
+    "key": "call-vs-reference",
+    "title": "تابع یا فراخوانی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "بعد از این کد، `result` چیست؟\n\n```python\ndef greet():\n    return \"hi\"\n\nresult = greet\n```",
+    "options": ["رشته‌ی \"hi\"", "خود تابع greet", "None", "خطا — greet بدون پرانتز مجاز نیست"],
+    "correct_option": 1,
+    "expected_outcome": "`result` خود تابع است. بدون پرانتز، تابع صدا زده نمی‌شود؛ فقط یک نام دیگر به همان شیء تابع اشاره می‌کند. `result()` حالا \"hi\" برمی‌گرداند.",
+    "hints": ["پرانتز کجاست؟", "نام تابع بدون پرانتز = شیء تابع، نه نتیجه‌اش."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "lambda-to-def",
+    "title": "lambda و def معادل",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "۱) این lambda را به یک تابع `def` با همان نام و رفتار تبدیل کن:\n\n```python\nclamp = lambda x, lo, hi: max(lo, min(x, hi))\n```\n\n۲) بعد یک خط بنویس که نشان دهد `clamp(15, 0, 10)` برابر `10` است (مثلاً با `assert`).",
+    "expected_outcome": "```python\ndef clamp(x, lo, hi):\n    return max(lo, min(x, hi))\n\nassert clamp(15, 0, 10) == 10\n```",
+    "hints": ["بدنه‌ی lambda یک عبارت است که به‌طور ضمنی return می‌شود؛ در def باید return را خودت بنویسی.", "پارامترها همان سه تا هستند: x, lo, hi."],
+    "rubric": "Correct: def clamp(x, lo, hi) returning max(lo, min(x, hi)) (or equivalent logic) plus a check that clamp(15, 0, 10) == 10. Partial: def is right but the check is missing or wrong. Incorrect: missing return or wrong logic."
+  }
+]

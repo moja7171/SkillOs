@@ -1,0 +1,26 @@
+[
+  {
+    "key": "while-else",
+    "title": "else حلقه کی اجرا می‌شود؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خروجی این کد چیست؟\n\n```python\ni = 0\nwhile i < 3:\n    if i == 1:\n        break\n    i += 1\nelse:\n    print(\"done\")\nprint(i)\n```",
+    "options": ["done و بعد 1", "فقط 1", "done و بعد 3", "فقط 3"],
+    "correct_option": 1,
+    "expected_outcome": "فقط `1`. حلقه در `i == 1` با `break` تمام می‌شود، پس بند `else` اجرا نمی‌شود و `i` همان ۱ می‌ماند.",
+    "hints": ["else حلقه فقط وقتی اجرا می‌شود که حلقه *بدون* break تمام شود.", "حلقه در کدام دور break می‌کند؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "find-or-append",
+    "title": "جست‌وجو و افزودن با while/else",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `add_if_missing(items, value)` بنویس که با یک حلقه‌ی `while` لیست را بگردد؛ اگر `value` پیدا نشد آن را به انتهای لیست اضافه کند. **از بند `else` حلقه استفاده کن و هیچ متغیر flag (مثل `found`) نساز.** تابع باید لیست را برگرداند.",
+    "expected_outcome": "```python\ndef add_if_missing(items, value):\n    i = 0\n    while i < len(items):\n        if items[i] == value:\n            break\n        i += 1\n    else:\n        items.append(value)\n    return items\n```",
+    "hints": ["بدنه‌ی else وقتی اجرا می‌شود که حلقه بدون break تمام شده — یعنی چیزی پیدا نشده.", "داخل حلقه اگر پیدا کردی break کن؛ append را بگذار توی else."],
+    "rubric": "Correct: while loop with break on match and append inside the loop's else clause, no flag variable, returns the list. Partial: correct behaviour but uses a found-flag or checks `value in items` instead of the while/else pattern. Incorrect: wrong behaviour (duplicates appended, or missing value not appended)."
+  }
+]

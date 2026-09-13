@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['lesson_id', 'order', 'title', 'url'])]
+#[Fillable(['lesson_id', 'order', 'title', 'url', 'subtitle_url'])]
 class LessonVideo extends Model
 {
     public function lesson(): BelongsTo

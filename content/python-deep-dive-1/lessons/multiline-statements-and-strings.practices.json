@@ -1,0 +1,26 @@
+[
+  {
+    "key": "backslash-trap",
+    "title": "کدام خط خطا می‌دهد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام‌یک از این‌ها **خطای سینتکس** می‌دهد؟\n\n(الف) `x = (1 +\\n     2)`\n(ب) `x = 1 + \\\\\\n    2`\n(پ) `x = 1 + \\\\  # sum\\n    2`\n(ت) `x = [1,\\n     2]`",
+    "options": ["الف", "ب", "پ", "ت"],
+    "correct_option": 2,
+    "expected_outcome": "گزینه‌ی (پ): بعد از `\\` هیچ‌چیز — حتی کامنت — نباید بیاید. (الف) و (ت) ادامه‌ی ضمنی داخل پرانتز/براکت‌اند و (ب) ادامه‌ی صریح درست است.",
+    "hints": ["به قانون «بعد از \\ هیچ‌چیز نباید بیاید» فکر کن.", "کامنت هم «چیزی» است."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "dedent-string",
+    "title": "رشته‌ی چندخطی بدون تورفتگی اضافه",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابع زیر قرار است متنی سه‌خطی برگرداند که هر خط از ابتدای سطر شروع شود، ولی به خاطر تورفتگی داخل تابع، هر خط با چند فاصله شروع می‌شود. آن را درست کن — به هر روشی که در درس دیدی.\n\n```python\ndef banner():\n    return \"\"\"Line one\n    Line two\n    Line three\"\"\"\n\nprint(banner())\n```",
+    "expected_outcome": "دو راه درست: (۱) رشته‌های کوتاه داخل پرانتز: `return (\"Line one\\n\" \"Line two\\n\" \"Line three\")` — (۲) `textwrap.dedent` روی یک رشته‌ی سه‌کوتیشنی که خط اولش هم تورفته باشد. خروجی باید سه خط بدون فاصله‌ی ابتدایی باشد.",
+    "hints": ["فاصله‌های ابتدای هر خط داخل رشته‌ی سه‌کوتیشنی، جزو رشته‌اند.", "یا از چند رشته‌ی معمولی داخل پرانتز استفاده کن، یا `textwrap.dedent`."],
+    "rubric": "Correct: the function returns 'Line one\\nLine two\\nLine three' with no leading spaces on any line, using adjacent strings in parentheses, textwrap.dedent, or explicit \\n strings. Partial: output is right but relies on stripping each line manually in a fragile way, or only the first line is fixed. Incorrect: lines still indented or syntax error."
+  }
+]

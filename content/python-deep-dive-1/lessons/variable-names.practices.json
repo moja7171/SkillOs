@@ -1,0 +1,24 @@
+[
+  {
+    "key": "valid-names",
+    "title": "کدام نام‌ها مجازند؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "برای هر نام بگو به‌عنوان نام متغیر مجاز است یا نه، و اگر نه چرا:\n\n1. `2nd_value`\n2. `_cache`\n3. `class`\n4. `myVar`\n5. `print`",
+    "expected_outcome": "1. نه — با رقم شروع شده. 2. بله. 3. نه — کلیدواژه. 4. بله (مجاز، ولی خلاف قرارداد snake_case). 5. بله — مجاز است چون print تابع است نه کلیدواژه، ولی تابع print را پنهان می‌کند.",
+    "hints": ["قانون شروع نام و لیست کلیدواژه‌ها را یادت بیاور.", "بین «مجاز» و «ایده‌ی خوب» فرق بگذار — print کلیدواژه نیست."],
+    "rubric": "Correct: 1 invalid (starts with digit), 2 valid, 3 invalid (keyword), 4 valid, 5 valid-but-shadows-builtin. Partial: says print is invalid, or misses one reason. Incorrect: two or more wrong."
+  },
+  {
+    "key": "rename-pep8",
+    "title": "بازنویسی طبق PEP 8",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این کد کار می‌کند ولی نام‌گذاری‌اش خلاف قرارداد است. فقط نام‌ها را طبق PEP 8 اصلاح کن (متغیر، تابع، کلاس، ثابت) بدون تغییر رفتار.\n\n```python\nmaxretries = 3\n\nclass bank_account:\n    def GetBalance(self):\n        return self.Balance\n\ndef ComputeTotal(ItemList):\n    Total = 0\n    for I in ItemList:\n        Total += I\n    return Total\n```",
+    "expected_outcome": "```python\nMAX_RETRIES = 3\n\nclass BankAccount:\n    def get_balance(self):\n        return self.balance\n\ndef compute_total(items):\n    total = 0\n    for item in items:\n        total += item\n    return total\n```",
+    "hints": ["ثابت → UPPER_SNAKE، کلاس → CamelCase، بقیه → snake_case.", "متغیرهای داخل تابع و پارامترها هم snake_case هستند؛ نام تک‌حرفی I را هم معنادار کن."],
+    "rubric": "Correct: MAX_RETRIES, BankAccount, get_balance/balance, compute_total, snake_case parameter and locals; behaviour unchanged. Partial: most renamed but one category missed (e.g. constant left lowercase, or class left snake_case). Incorrect: behaviour changed or most names untouched."
+  }
+]

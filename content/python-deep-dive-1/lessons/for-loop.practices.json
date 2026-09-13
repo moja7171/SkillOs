@@ -1,0 +1,26 @@
+[
+  {
+    "key": "for-is-iteration",
+    "title": "for چه می‌کند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام جمله درباره‌ی `for` در پایتون درست است؟",
+    "options": ["یک شمارنده‌ی عددی دارد که با هر دور یک واحد زیاد می‌شود", "روی هر iterable پیمایش می‌کند و هر بار یک عنصر می‌دهد", "فقط با range و لیست کار می‌کند", "متغیر حلقه بعد از پایان حلقه پاک می‌شود"],
+    "correct_option": 1,
+    "expected_outcome": "گزینه‌ی ۲. for پایتون شمارنده ندارد؛ روی هر iterable (رشته، لیست، range، دیکشنری، فایل، ...) پیمایش می‌کند. متغیر حلقه هم بعد از حلقه زنده می‌ماند.",
+    "hints": ["به تفاوت با for در C فکر کن.", "رشته و دیکشنری هم با for کار می‌کنند — پس محدود به range نیست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "enumerate-positions",
+    "title": "موقعیت‌های یک کاراکتر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `positions(text, char)` بنویس که لیست ایندکس‌هایی را برگرداند که `char` در `text` ظاهر شده. **از `enumerate` استفاده کن، نه از شمارنده‌ی دستی یا `range(len(...))`.**\n\nمثال: `positions(\"banana\", \"a\")` → `[1, 3, 5]`",
+    "expected_outcome": "```python\ndef positions(text, char):\n    return [i for i, c in enumerate(text) if c == char]\n```\nیا همان با حلقه‌ی for و append.",
+    "hints": ["enumerate هر بار (ایندکس, کاراکتر) می‌دهد.", "`for i, c in enumerate(text)` و بعد شرط `c == char`."],
+    "rubric": "Correct: uses enumerate and returns [1, 3, 5] for the example (loop with append or a comprehension both fine). Partial: right result but uses range(len(text)) or a manual counter. Incorrect: wrong result."
+  }
+]

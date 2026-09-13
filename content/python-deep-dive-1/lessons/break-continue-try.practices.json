@@ -1,0 +1,24 @@
+[
+  {
+    "key": "finally-with-continue",
+    "title": "finally و continue",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "خروجی دقیق این کد را بنویس (خط به خط):\n\n```python\nfor i in range(3):\n    try:\n        if i == 1:\n            continue\n        print(\"try\", i)\n    finally:\n        print(\"finally\", i)\n```",
+    "expected_outcome": "try 0 / finally 0 / finally 1 / try 2 / finally 2 — در دور `i == 1`، `continue` می‌پرد ولی `finally` قبلش اجرا می‌شود؛ فقط «try 1» چاپ نمی‌شود.",
+    "hints": ["finally همیشه اجرا می‌شود، حتی وقتی continue داخل try باشد.", "در دور i == 1 کدام خط رد می‌شود و کدام نه؟"],
+    "rubric": "Correct: exactly five lines: 'try 0', 'finally 0', 'finally 1', 'try 2', 'finally 2' in that order. Partial: says finally runs on continue but gets one line wrong, or lists the right lines in wrong order. Incorrect: omits 'finally 1'."
+  },
+  {
+    "key": "skip-and-stop",
+    "title": "رد کردن و توقف",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `first_negatives(numbers, limit)` بنویس که با یک حلقه روی `numbers` برود، اعداد غیرمنفی را **رد کند** (`continue`)، اعداد منفی را در لیستی جمع کند، و به محض اینکه تعداد منفی‌ها به `limit` رسید **متوقف شود** (`break`). لیست منفی‌ها را برگرداند.\n\nمثال: `first_negatives([1, -2, 3, -4, -5, -6], 2)` → `[-2, -4]`",
+    "expected_outcome": "```python\ndef first_negatives(numbers, limit):\n    found = []\n    for n in numbers:\n        if n >= 0:\n            continue\n        found.append(n)\n        if len(found) == limit:\n            break\n    return found\n```",
+    "hints": ["دو شرط جدا: یکی برای رد کردن (continue)، یکی برای توقف (break).", "شرط توقف را *بعد از* افزودن به لیست چک کن."],
+    "rubric": "Correct: uses continue for non-negatives and break once len == limit, returns [-2, -4] for the example. Partial: right result but without continue/break (e.g. slicing a filtered list) or off-by-one so it returns 3 items. Incorrect: wrong result."
+  }
+]

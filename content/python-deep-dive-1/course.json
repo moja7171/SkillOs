@@ -1,0 +1,1014 @@
+{
+  "title": "Python 3 Deep Dive — بخش ۱: برنامه‌نویسی تابعی",
+  "description": "عمیق‌شدن در سازوکار درونی پایتون: مدل حافظه، انواع عددی، پارامترهای تابع، توابع درجه‌یک و دامنه‌ها. برای کسی که پایتون را بلد است و می‌خواهد بفهمد زیر پوستش چه می‌گذرد.",
+  "outcome_statement": "بتونی توضیح بدی پایتون با متغیرها، اعداد و توابع دقیقاً چه می‌کند — نه فقط اینکه چه می‌نویسی — و کدی بنویسی که از این سازوکار (unpacking، *args/**kwargs، lambda، map/filter/reduce، partial، scope) درست استفاده کند.",
+  "source_note": "ویدیوهای دوره‌ی «Python 3: Deep Dive (Part 1 – Functional)» از Fred Baptiste، ۹۵ ویدیو (تا پایان بخش دامنه‌ها). متن درس‌ها بازنویسی و خلاصه‌ی موضوع هر ویدیو است، با مراجعه به docs.python.org در صورت نیاز.",
+  "video_base_url": "/media/python-deep-dive-1/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "معرفی دوره",
+      "summary": "دوره درباره‌ی چیست، چه پیش‌نیازی می‌خواهد و چطور پیش می‌رود.",
+      "section": "شروع",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "001-course-overview.mp4",
+          "title": "مقدمه"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "type-hierarchy",
+      "title": "سلسله‌مراتب انواع در پایتون",
+      "summary": "نقشه‌ی کلی انواع داده‌ی پایتون: numbers، collections، callables و بقیه.",
+      "section": "مرور سریع",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "005-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "006-the-python-type-hierarchy.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "multiline-statements-and-strings",
+      "title": "دستورهای چندخطی و رشته‌های چندخطی",
+      "summary": "شکستن یک دستور در چند خط، و رشته‌های سه‌کوتیشنی.",
+      "section": "مرور سریع",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "007-multi-line-statements-and-strings.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "variable-names",
+      "title": "نام‌گذاری متغیرها",
+      "summary": "قواعد و قراردادهای نام‌گذاری در پایتون (PEP 8).",
+      "section": "مرور سریع",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "008-variable-names.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "conditionals",
+      "title": "شرط‌ها",
+      "summary": "if / elif / else و عبارت شرطی سه‌تایی.",
+      "section": "مرور سریع",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "009-conditionals.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "functions",
+      "title": "توابع",
+      "summary": "def، lambda، فراخوانی و توابع built-in.",
+      "section": "مرور سریع",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "010-functions.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "while-loop",
+      "title": "حلقه‌ی while",
+      "summary": "تکرار تا برقراری شرط، و بند else حلقه.",
+      "section": "مرور سریع",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "011-the-while-loop.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "break-continue-try",
+      "title": "break، continue و try",
+      "summary": "کنترل جریان درون حلقه و تعامل آن با try/except/finally.",
+      "section": "مرور سریع",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "012-break-continue-and-the-try-statement.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "for-loop",
+      "title": "حلقه‌ی for",
+      "summary": "پیمایش iterableها، enumerate و else حلقه.",
+      "section": "مرور سریع",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "013-the-for-loop.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "classes",
+      "title": "کلاس‌ها",
+      "summary": "تعریف کلاس، __init__، property و متدهای ویژه.",
+      "section": "مرور سریع",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "014-classes.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "variables-are-memory-references",
+      "title": "متغیرها ارجاع به حافظه‌اند",
+      "summary": "متغیر نام است، نه جعبه: id() و آدرس حافظه.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "015-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "016-variables-are-memory-references.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "reference-counting",
+      "title": "شمارش ارجاع",
+      "summary": "چطور پایتون می‌فهمد یک شیء دیگر استفاده نمی‌شود.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "017-reference-counting.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "garbage-collection",
+      "title": "Garbage Collection",
+      "summary": "ارجاع‌های حلقوی و نقش ماژول gc.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "018-garbage-collection.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dynamic-vs-static-typing",
+      "title": "نوع‌دهی پویا در برابر ایستا",
+      "summary": "نوع به شیء تعلق دارد، نه به متغیر.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "019-dynamic-vs-static-typing.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "variable-reassignment",
+      "title": "انتساب دوباره‌ی متغیر",
+      "summary": "انتساب جدید، شیء جدید؛ نه تغییر شیء قبلی.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "020-variable-re-assignment.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "object-mutability",
+      "title": "تغییرپذیری اشیا",
+      "summary": "mutable در برابر immutable و چرا مهم است.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "021-object-mutability.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "function-arguments-and-mutability",
+      "title": "آرگومان‌های تابع و تغییرپذیری",
+      "summary": "پاس دادن به تابع چه چیزی را به اشتراک می‌گذارد.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "022-function-arguments-and-mutability.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "shared-references-and-mutability",
+      "title": "ارجاع‌های مشترک",
+      "summary": "وقتی دو نام به یک شیء اشاره می‌کنند.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "023-shared-references-and-mutability.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "variable-equality",
+      "title": "برابری متغیرها",
+      "summary": "is در برابر ==، و None.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "024-variable-equality.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "everything-is-an-object",
+      "title": "همه‌چیز شیء است",
+      "summary": "توابع، کلاس‌ها و حتی انواع، شیء هستند.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "025-everything-is-an-object.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "interning",
+      "title": "بهینه‌سازی‌های پایتون: Interning",
+      "summary": "کش اعداد کوچک، interning رشته‌ها و peephole.",
+      "section": "متغیرها و حافظه",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "026-python-optimizations-interning.mp4"
+        },
+        {
+          "file": "027-python-optimizations-string-interning.mp4"
+        },
+        {
+          "file": "028-python-optimizations-peephole.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "integers-data-types",
+      "title": "اعداد صحیح: نوع داده",
+      "summary": "int با اندازه‌ی دلخواه و هزینه‌اش.",
+      "section": "انواع عددی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "029-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "030-integers-data-types.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "integers-operations",
+      "title": "اعداد صحیح: عملیات",
+      "summary": "تقسیم، تقسیم صحیح، باقی‌مانده و divmod.",
+      "section": "انواع عددی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "031-integers-operations.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "integers-constructors-and-bases",
+      "title": "اعداد صحیح: سازنده‌ها و مبناها",
+      "summary": "int() از رشته و مبناهای مختلف.",
+      "section": "انواع عددی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "032-integers-constructors-and-bases-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "033-integers-constructors-and-bases-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "rational-numbers",
+      "title": "اعداد گویا",
+      "summary": "ماژول fractions و Fraction.",
+      "section": "انواع عددی",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "034-rational-numbers-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "035-rationals-numbers-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "floats-internal-representation",
+      "title": "اعداد اعشاری: نمایش داخلی",
+      "summary": "چرا 0.1 دقیقاً 0.1 نیست.",
+      "section": "انواع عددی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "036-floats-internal-representations-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "037-floats-internal-representations-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "floats-equality-testing",
+      "title": "اعداد اعشاری: آزمون برابری",
+      "summary": "مقایسه‌ی floatها با math.isclose.",
+      "section": "انواع عددی",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "038-floats-equality-testing-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "039-floats-equality-testing-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "floats-coercing-to-integers",
+      "title": "اعداد اعشاری: تبدیل به صحیح",
+      "summary": "trunc، floor، ceil و round.",
+      "section": "انواع عددی",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "040-floats-coercing-to-integers-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "041-floats-coercing-to-integers-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "floats-rounding",
+      "title": "اعداد اعشاری: گرد کردن",
+      "summary": "round و رفتار banker's rounding.",
+      "section": "انواع عددی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "042-floats-rounding-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "043-floats-rounding-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "decimals",
+      "title": "Decimal",
+      "summary": "ماژول decimal برای دقت دلخواه.",
+      "section": "انواع عددی",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "044-decimals-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "045-decimals-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "decimals-constructors-and-contexts",
+      "title": "Decimal: سازنده‌ها و contextها",
+      "summary": "ساخت Decimal و کنترل دقت با context.",
+      "section": "انواع عددی",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "046-decimals-constructors-and-contexts-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "047-decimals-constructors-and-contexts-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "decimals-math-operations",
+      "title": "Decimal: عملیات ریاضی",
+      "summary": "تفاوت‌های //، % و توابع ریاضی روی Decimal.",
+      "section": "انواع عددی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "048-decimals-math-operations-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "049-decimals-math-operations-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "decimals-performance",
+      "title": "Decimal: ملاحظات کارایی",
+      "summary": "هزینه‌ی حافظه و سرعت Decimal در برابر float.",
+      "section": "انواع عددی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "050-decimals-performance-considerations.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "complex-numbers",
+      "title": "اعداد مختلط",
+      "summary": "نوع complex و ماژول cmath.",
+      "section": "انواع عددی",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "051-complex-numbers-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "052-complex-numbers-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "booleans",
+      "title": "Booleanها",
+      "summary": "bool زیرکلاس int است.",
+      "section": "انواع عددی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "053-booleans.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "booleans-truth-values",
+      "title": "Booleanها: ارزش درستی",
+      "summary": "چه چیزهایی falsy هستند و چرا.",
+      "section": "انواع عددی",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "054-booleans-truth-values-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "055-booleans-truth-values-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "booleans-precedence-and-short-circuiting",
+      "title": "Booleanها: تقدم و ارزیابی کوتاه",
+      "summary": "not / and / or و short-circuit.",
+      "section": "انواع عددی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "056-booleans-precedence-and-short-circuiting-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "057-booleans-precedence-and-short-circuiting-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "booleans-boolean-operators",
+      "title": "Booleanها: عملگرهای بولی",
+      "summary": "and و or چه چیزی برمی‌گردانند.",
+      "section": "انواع عددی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "058-booleans-boolean-operators-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "059-booleans-boolean-operators-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "comparison-operators",
+      "title": "عملگرهای مقایسه",
+      "summary": "برابری، ترتیب، identity و زنجیره‌ی مقایسه.",
+      "section": "انواع عددی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "060-comparison-operators.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "argument-vs-parameter",
+      "title": "آرگومان در برابر پارامتر",
+      "summary": "تفاوت این دو واژه و چرا مهم است.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "061-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "062-argument-vs-parameter.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "positional-and-keyword-arguments",
+      "title": "آرگومان‌های موقعیتی و کلیدواژه‌ای",
+      "summary": "ترتیب، مقدار پیش‌فرض و فراخوانی با نام.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "063-positional-and-keyword-arguments-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "064-positional-and-keyword-arguments-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "unpacking-iterables",
+      "title": "باز کردن iterableها",
+      "summary": "a, b = b, a و باز کردن روی هر iterable.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "065-unpacking-iterables-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "066-unpacking-iterables-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "extended-unpacking",
+      "title": "باز کردن گسترده",
+      "summary": "a, *b, c = ... و کاربردهایش.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "067-extended-unpacking-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "068-extended-unpacking-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "args",
+      "title": "*args",
+      "summary": "دریافت تعداد دلخواه آرگومان موقعیتی.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "069-args-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "070-args-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "keyword-arguments",
+      "title": "آرگومان‌های فقط‌کلیدواژه‌ای",
+      "summary": "پارامترهای بعد از * که فقط با نام پاس می‌شوند.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "071-keyword-arguments-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "072-keyword-arguments-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "kwargs",
+      "title": "**kwargs",
+      "summary": "دریافت تعداد دلخواه آرگومان کلیدواژه‌ای.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "073-kwargs.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "putting-it-all-together",
+      "title": "همه با هم",
+      "summary": "ترتیب کامل پارامترها در یک امضای تابع.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "074-putting-it-all-together-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "075-putting-it-all-together-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "simple-function-timer",
+      "title": "کاربرد: یک زمان‌سنج ساده برای تابع",
+      "summary": "ساخت تابعی که زمان اجرای تابع دیگر را می‌گیرد.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "076-application-a-simple-function-timer.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "parameter-defaults-beware",
+      "title": "مراقب مقدارهای پیش‌فرض باش",
+      "summary": "مقدار پیش‌فرض یک بار ساخته می‌شود؛ دام‌های mutable و datetime.",
+      "section": "پارامترهای تابع",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "077-parameter-defaults-beware.mp4"
+        },
+        {
+          "file": "078-parameter-defaults-beware-again.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "docstrings-and-annotations",
+      "title": "Docstring و Annotation",
+      "summary": "مستندسازی تابع و annotationها.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "079-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "080-docstrings-and-annotations-lecture.mp4",
+          "title": "بخش نظری"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "lambda-expressions",
+      "title": "عبارت‌های lambda",
+      "summary": "توابع بی‌نام و محدودیت‌هایشان.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "082-lambda-expressions-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "083-lambda-expressions-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "lambdas-and-sorting",
+      "title": "lambda و مرتب‌سازی",
+      "summary": "پارامتر key در sorted.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "084-lambdas-and-sorting.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "challenge-randomize-with-sorted",
+      "title": "چالش: به‌هم‌ریختن یک iterable با sorted",
+      "summary": "ترفند random.random در key.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "085-challenge-randomize-an-iterable-using-sorted.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "function-introspection",
+      "title": "درون‌نگری تابع",
+      "summary": "dir، __code__، ماژول inspect.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "086-function-introspection-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "087-function-introspection-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "callables",
+      "title": "Callableها",
+      "summary": "هر چیزی که بتوان صدایش زد.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "088-callables.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "map-filter-zip-comprehensions",
+      "title": "map، filter، zip و comprehensionها",
+      "summary": "سبک تابعی در برابر comprehension.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 26,
+      "videos": [
+        {
+          "file": "089-map-filter-zip-and-list-comprehensions-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "090-map-filter-zip-and-list-comprehensions-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "reducing-functions",
+      "title": "توابع کاهنده",
+      "summary": "functools.reduce و ساخت min/max/sum.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "091-reducing-functions-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "092-reducing-functions-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "partial-functions",
+      "title": "توابع جزئی",
+      "summary": "functools.partial و کاربردهایش.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "093-partial-functions-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "094-partial-functions-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "operator-module",
+      "title": "ماژول operator",
+      "summary": "عملگرها به‌صورت تابع: itemgetter، attrgetter، methodcaller.",
+      "section": "توابع درجه‌یک",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "095-the-operator-module-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "096-the-operator-module-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "global-and-local-scopes",
+      "title": "دامنه‌های global و local",
+      "summary": "دامنه‌ی ماژول، دامنه‌ی تابع و کلیدواژه‌ی global.",
+      "section": "دامنه‌ها",
+      "estimated_minutes": 26,
+      "videos": [
+        {
+          "file": "097-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "098-global-and-local-scopes-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "099-global-and-local-scopes-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

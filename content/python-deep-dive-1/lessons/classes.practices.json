@@ -1,0 +1,26 @@
+[
+  {
+    "key": "repr-vs-str",
+    "title": "repr یا str؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کلاسی فقط `__repr__` را تعریف کرده و `__str__` را نه. `print(obj)` چه چیزی چاپ می‌کند؟",
+    "options": ["خطا — __str__ تعریف نشده", "آدرس حافظه مثل <Rectangle object at 0x...>", "خروجی __repr__", "رشته‌ی خالی"],
+    "correct_option": 2,
+    "expected_outcome": "خروجی `__repr__`. وقتی `__str__` تعریف نشده، پایتون به `__repr__` برمی‌گردد. برعکسش صادق نیست: تعریف `__str__` جای `__repr__` را نمی‌گیرد.",
+    "hints": ["print از str() استفاده می‌کند؛ str() وقتی __str__ نباشد چه می‌کند؟", "__repr__ جایگزین پیش‌فرض __str__ است."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "temperature-property",
+    "title": "property با اعتبارسنجی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 8,
+    "prompt": "کلاس `Temperature` بنویس که با `Temperature(celsius)` ساخته می‌شود و:\n\n- ویژگی `celsius` با `@property` خوانده و نوشته می‌شود؛ مقدار کمتر از `-273.15` باید `ValueError` بدهد.\n- ویژگی فقط‌خواندنی `fahrenheit` که از celsius محاسبه می‌شود (`c * 9/5 + 32`).\n- `__repr__` به شکل `Temperature(25)`.\n\nمثال: `t = Temperature(25); t.fahrenheit` → `77.0`؛ `t.celsius = -300` → `ValueError`.",
+    "expected_outcome": "```python\nclass Temperature:\n    def __init__(self, celsius):\n        self.celsius = celsius   # از setter عبور می‌کند\n\n    @property\n    def celsius(self):\n        return self._celsius\n\n    @celsius.setter\n    def celsius(self, value):\n        if value < -273.15:\n            raise ValueError(\"below absolute zero\")\n        self._celsius = value\n\n    @property\n    def fahrenheit(self):\n        return self._celsius * 9 / 5 + 32\n\n    def __repr__(self):\n        return f\"Temperature({self._celsius})\"\n```",
+    "hints": ["مقدار واقعی را در `self._celsius` نگه دار و `celsius` را با @property و @celsius.setter بساز.", "اگر در __init__ بنویسی `self.celsius = celsius`، اعتبارسنجی setter موقع ساخت هم اجرا می‌شود. fahrenheit فقط getter می‌خواهد."],
+    "rubric": "Correct: celsius property with getter+setter that raises ValueError below -273.15, read-only fahrenheit property computing c*9/5+32, __repr__ 'Temperature(25)', and the example values hold. Partial: validation missing on construction (assigns self._celsius directly in __init__), or fahrenheit implemented as a method instead of a property, or repr format off. Incorrect: no property usage or wrong conversions."
+  }
+]

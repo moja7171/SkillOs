@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('slug'); // stable identity across re-imports
             $table->unsignedSmallInteger('order')->default(0);
             $table->string('title');
+            $table->string('section')->nullable(); // display grouping only; no behaviour attached
             $table->text('summary')->nullable();
             $table->longText('content')->nullable(); // rewritten lesson text, markdown
             $table->json('key_points')->nullable();
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('order')->default(0);
             $table->string('title')->nullable();
             $table->string('url', 2000); // served file or external link
+            $table->string('subtitle_url', 2000)->nullable(); // WebVTT; rendered as a toggleable <track>
             $table->timestamps();
         });
 

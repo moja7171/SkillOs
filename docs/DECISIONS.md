@@ -276,3 +276,16 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 - Videos are URLs: either a file the app serves or an external link. The lesson page embeds `<video>` for direct media URLs and an iframe for YouTube/Aparat links.
 
 **Deferred with reasons.** Skill layer (needs multiple related courses); course prerequisites (no second course yet); in-app authoring (Claude + files is faster and reviewed).
+
+---
+
+## 13. Course media: local files under `course/`, served through `public/media` (2026-09-13)
+
+**Decision.** Owner-provided media lives in `course/<course-slug>/` (gitignored, 12 GB for the first course), exposed as `public/media/<course-slug>` via a symlink. `course.json` sets `video_base_url` and each video names a `file`; the importer builds the URL. Subtitles are WebVTT files referenced the same way (`subtitle`) and rendered as a `<track>` — the browser's native CC button toggles them.
+
+**Why.** The owner may host videos elsewhere later; changing `video_base_url` is then the only edit. Native `<track>` gives on/off subtitles without any JS. Filenames were normalized (`001-course-overview.mp4`) because the originals had a colon, spaces and download-site tags.
+
+**Consequences.**
+- `php artisan serve` ignores HTTP Range requests, so seeking in dev is sluggish; Apache/nginx in production handle it.
+- `.srt` subtitles must be converted to `.vtt` (`ffmpeg -i x.srt x.vtt`) before referencing.
+- The first course arrived **without subtitles**; lesson texts for 50 of 60 lessons are outlines until transcripts exist (owner's subtitle files, or local/Gemini transcription — open question as of this entry).

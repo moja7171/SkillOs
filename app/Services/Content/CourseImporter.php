@@ -51,6 +51,7 @@ class CourseImporter
                 $lesson = Lesson::updateOrCreate(['course_id' => $course->id, 'slug' => $ld['slug']], [
                     'order' => $order,
                     'title' => $ld['title'],
+                    'section' => $ld['section'] ?? null,
                     'summary' => $ld['summary'] ?? null,
                     'content' => $ld['content'],
                     'key_points' => $ld['key_points'] ?? [],
@@ -62,7 +63,12 @@ class CourseImporter
                 // Videos carry no learner state: replace wholesale.
                 $lesson->videos()->delete();
                 foreach ($ld['videos'] ?? [] as $i => $video) {
-                    $lesson->videos()->create(['order' => $i, 'title' => $video['title'] ?? null, 'url' => $video['url']]);
+                    $lesson->videos()->create([
+                        'order' => $i,
+                        'title' => $video['title'] ?? null,
+                        'url' => $this->mediaUrl($data, $video, 'url', 'file'),
+                        'subtitle_url' => $this->mediaUrl($data, $video, 'subtitle_url', 'subtitle'),
+                    ]);
                 }
 
                 Activity::updateOrCreate(['lesson_id' => $lesson->id, 'key' => 'learn'], [
@@ -163,8 +169,8 @@ class CourseImporter
             }
 
             foreach ($ld['videos'] ?? [] as $v => $video) {
-                if (empty($video['url'])) {
-                    throw new ImportException("$where videos[$v]: url is required.");
+                if (empty($video['url']) && empty($video['file'])) {
+                    throw new ImportException("$where videos[$v]: url or file is required.");
                 }
             }
 
@@ -215,6 +221,29 @@ class CourseImporter
         }
 
         return $practices;
+    }
+
+    /**
+     * A video may give a full "url", or a "file" relative to the course's video_base_url
+     * (same for "subtitle_url" / "subtitle"). Moving the media elsewhere later means
+     * changing one line in course.json.
+     *
+     * @param  array<string, mixed>  $course
+     * @param  array<string, mixed>  $video
+     */
+    protected function mediaUrl(array $course, array $video, string $urlKey, string $fileKey): ?string
+    {
+        if (! empty($video[$urlKey])) {
+            return $video[$urlKey];
+        }
+
+        if (empty($video[$fileKey])) {
+            return null;
+        }
+
+        $base = rtrim((string) ($course['video_base_url'] ?? '/media/'), '/');
+
+        return $base.'/'.implode('/', array_map('rawurlencode', explode('/', $video[$fileKey])));
     }
 
     /**

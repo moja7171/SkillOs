@@ -24,7 +24,12 @@
                         <div class="text-[13px] font-semibold mb-2" dir="auto">{{ $video->title ?? 'قسمت '.fa_num($loop->iteration) }}</div>
                     @endif
                     @if ($embed['kind'] === 'file')
-                        <video controls preload="metadata" class="w-full rounded-lg bg-black aspect-video" src="{{ $embed['src'] }}"></video>
+                        <video controls preload="metadata" class="w-full rounded-lg bg-black aspect-video" crossorigin="anonymous">
+                            <source src="{{ $embed['src'] }}">
+                            @if ($video->subtitle_url)
+                                <track kind="subtitles" src="{{ $video->subtitle_url }}" srclang="en" label="زیرنویس" default>
+                            @endif
+                        </video>
                     @elseif ($embed['kind'] === 'link')
                         <a href="{{ $embed['src'] }}" target="_blank" rel="noopener" class="btn">باز کردن ویدیو در تب جدید</a>
                     @else

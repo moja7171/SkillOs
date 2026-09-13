@@ -29,7 +29,13 @@
         "هر درس ویدیو + متن هم‌راستا + تمرین دارد؛ تمرین جای اصلی یادگیری است.",
         "همه‌چیز را خودت در Jupyter یا REPL اجرا کن."
       ],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/001-course-overview.pdf"
+        }
+      ]
     },
     {
       "slug": "type-hierarchy",
@@ -69,6 +75,16 @@
       "common_mistakes": [
         "فرض اینکه bool نوعی جدا از int است.",
         "قاطی کردن tuple (تغییرناپذیر) با list."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — مقدمه",
+          "file": "files/005-introduction.pdf"
+        },
+        {
+          "title": "اسلایدهای درس (PDF) — 006-the-python-type-hierarchy",
+          "file": "files/006-the-python-type-hierarchy.pdf"
+        }
       ]
     },
     {
@@ -97,6 +113,16 @@
       "common_mistakes": [
         "کامنت بعد از \\ → SyntaxError.",
         "تورفتگی ناخواسته داخل رشته‌ی چندخطی درون تابع."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/007-multi-line-statements-and-strings.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/007-multi-line-statements-and-strings.ipynb"
+        }
       ]
     },
     {
@@ -125,6 +151,12 @@
       "common_mistakes": [
         "پنهان کردن built-inها با نام‌هایی مثل list یا print.",
         "ساختن dunder جدید برای خودت."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/008-variable-names.pdf"
+        }
       ]
     },
     {
@@ -153,6 +185,12 @@
       "common_mistakes": [
         "ترتیب غلط elifها که شاخه‌ای را غیرقابل‌دسترس می‌کند.",
         "ternary تودرتو و ناخوانا."
+      ],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/009-conditionals.ipynb"
+        }
       ]
     },
     {
@@ -182,6 +220,12 @@
       "common_mistakes": [
         "انتساب lambda به نام به‌جای def.",
         "انتظار type checking از annotation."
+      ],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/010-functions.ipynb"
+        }
       ]
     },
     {
@@ -210,6 +254,12 @@
       "common_mistakes": [
         "فراموش کردن به‌روزرسانی متغیر شرط → حلقه‌ی بی‌پایان.",
         "فکر کردن اینکه else بعد از break هم اجرا می‌شود."
+      ],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/011-the-while-loop.ipynb"
+        }
       ]
     },
     {
@@ -238,6 +288,12 @@
       "common_mistakes": [
         "انتظار اینکه continue داخل try، finally را رد کند.",
         "گرفتن Exception عمومی و پنهان کردن باگ‌ها."
+      ],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/012-break-continue-and-the-try-statement.ipynb"
+        }
       ]
     },
     {
@@ -267,6 +323,12 @@
       "common_mistakes": [
         "range(len(x)) به‌جای enumerate.",
         "تغییر لیست حین پیمایش روی همان لیست."
+      ],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/013-the-for-loop.ipynb"
+        }
       ]
     },
     {
@@ -296,6 +358,12 @@
       "common_mistakes": [
         "نوشتن getter/setter از اول به سبک جاوا.",
         "برگرداندن False به‌جای NotImplemented در __lt__."
+      ],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/014-classes.ipynb"
+        }
       ]
     },
     {
@@ -336,6 +404,16 @@
       "common_mistakes": [
         "فکر کردن اینکه my_var «برابر» ۱۰ است نه ارجاع به آن.",
         "مقایسه‌ی آدرس‌های خودت با آدرس‌های مدرس."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — 016-variables-are-memory-references",
+          "file": "files/016-variables-are-memory-references.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 016-variables-are-memory-references",
+          "file": "files/016-variables-are-memory-references.ipynb"
+        }
       ]
     },
     {
@@ -365,6 +443,16 @@
       "common_mistakes": [
         "تکیه به مقدار خامِ getrefcount بدون کم کردن ۱.",
         "خواندن آدرس شیئی که دیگر وجود ندارد."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/017-reference-counting.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/017-reference-counting.ipynb"
+        }
       ]
     },
     {
@@ -394,6 +482,16 @@
       "common_mistakes": [
         "خاموش کردن GC برای کارایی بدون بررسی چرخه‌ها.",
         "اشتباه گرفتن GC با reference counting."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/018-garbage-collection.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/018-garbage-collection.ipynb"
+        }
       ]
     },
     {
@@ -422,6 +520,16 @@
       "common_mistakes": [
         "گفتن «نوع متغیر عوض شد».",
         "انتظار اجبار نوع از annotation."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/019-dynamic-vs-static-typing.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/019-dynamic-vs-static-typing.ipynb"
+        }
       ]
     },
     {
@@ -449,6 +557,16 @@
       ],
       "common_mistakes": [
         "فکر کردن اینکه += مقدار داخل int را عوض می‌کند."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/020-variable-re-assignment.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/020-variable-re-assignment.ipynb"
+        }
       ]
     },
     {
@@ -477,6 +595,16 @@
       "common_mistakes": [
         "انتظار «یخ‌زدگی کامل» از tuple.",
         "قاطی کردن نتیجه‌ی یکسان append و + با سازوکار متفاوتشان."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/021-object-mutability.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/021-object-mutability.ipynb"
+        }
       ]
     },
     {
@@ -506,6 +634,16 @@
       "common_mistakes": [
         "تغییر ناخواسته‌ی لیست ورودی داخل تابع.",
         "انتظار اینکه s += \"x\" رشته‌ی اصلی را عوض کند."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/022-function-arguments-and-mutability.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/022-function-arguments-and-mutability.ipynb"
+        }
       ]
     },
     {
@@ -534,6 +672,16 @@
       "common_mistakes": [
         "تکیه به ارجاع مشترک خودکار (a = 500; b = 500 مشترک نیست).",
         "کپی نکردن لیست و تغییر ناخواسته‌ی هر دو نام."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/023-shared-references-and-mutability.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/023-shared-references-and-mutability.ipynb"
+        }
       ]
     },
     {
@@ -563,6 +711,16 @@
       "common_mistakes": [
         "استفاده از is برای مقایسه‌ی رشته/عدد.",
         "== None به‌جای is None."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/024-variable-equality.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/024-variable-equality.ipynb"
+        }
       ]
     },
     {
@@ -591,6 +749,16 @@
       ],
       "common_mistakes": [
         "گذاشتن پرانتز موقع پاس دادن تابع (fn() به‌جای fn)."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/025-everything-is-an-object.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/025-everything-is-an-object.ipynb"
+        }
       ]
     },
     {
@@ -640,6 +808,32 @@
       "common_mistakes": [
         "تکیه به is برای مقایسه‌ی رشته یا اعداد بزرگ.",
         "intern کردن همه‌چیز بدون نیاز واقعی."
+      ],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — 026-python-optimizations-interning",
+          "file": "files/026-python-optimizations-interning.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 026-python-optimizations-interning",
+          "file": "files/026-python-optimizations-interning.ipynb"
+        },
+        {
+          "title": "اسلایدهای درس (PDF) — 027-python-optimizations-string-interning",
+          "file": "files/027-python-optimizations-string-interning.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 027-python-optimizations-string-interning",
+          "file": "files/027-python-optimizations-string-interning.ipynb"
+        },
+        {
+          "title": "اسلایدهای درس (PDF) — 028-python-optimizations-peephole",
+          "file": "files/028-python-optimizations-peephole.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 028-python-optimizations-peephole",
+          "file": "files/028-python-optimizations-peephole.ipynb"
+        }
       ]
     },
     {
@@ -672,7 +866,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — 030-integers-data-types",
+          "file": "files/030-integers-data-types.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 030-integers-data-types",
+          "file": "files/030-integers-data-types.ipynb"
+        }
+      ]
     },
     {
       "slug": "integers-operations",
@@ -693,7 +897,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/031-integers-operations.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/031-integers-operations.ipynb"
+        }
+      ]
     },
     {
       "slug": "integers-constructors-and-bases",
@@ -726,7 +940,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/032-integers-constructors-and-bases-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/033-integers-constructors-and-bases-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "rational-numbers",
@@ -759,7 +983,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/034-rational-numbers-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/035-rationals-numbers-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "floats-internal-representation",
@@ -792,7 +1026,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/036-floats-internal-representations-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/037-floats-internal-representations-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "floats-equality-testing",
@@ -825,7 +1069,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/038-floats-equality-testing-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/039-floats-equality-testing-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "floats-coercing-to-integers",
@@ -858,7 +1112,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/040-floats-coercing-to-integers-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/041-floats-coercing-to-integers-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "floats-rounding",
@@ -891,7 +1155,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/042-floats-rounding-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/043-floats-rounding-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "decimals",
@@ -924,7 +1198,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/044-decimals-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/045-decimals-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "decimals-constructors-and-contexts",
@@ -957,7 +1241,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/046-decimals-constructors-and-contexts-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/047-decimals-constructors-and-contexts-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "decimals-math-operations",
@@ -990,7 +1284,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/048-decimals-math-operations-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/049-decimals-math-operations-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "decimals-performance",
@@ -1011,7 +1315,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/050-decimals-performance-considerations.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/050-decimals-performance-considerations.ipynb"
+        }
+      ]
     },
     {
       "slug": "complex-numbers",
@@ -1044,7 +1358,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/051-complex-numbers-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/052-complex-numbers-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "booleans",
@@ -1065,7 +1389,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/053-booleans.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/053-booleans.ipynb"
+        }
+      ]
     },
     {
       "slug": "booleans-truth-values",
@@ -1098,7 +1432,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/054-booleans-truth-values-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/055-booleans-truth-values-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "booleans-precedence-and-short-circuiting",
@@ -1131,7 +1475,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/056-booleans-precedence-and-short-circuiting-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/057-booleans-precedence-and-short-circuiting-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "booleans-boolean-operators",
@@ -1164,7 +1518,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/058-booleans-boolean-operators-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/059-booleans-boolean-operators-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "comparison-operators",
@@ -1185,7 +1549,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/060-comparison-operators.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/060-comparison-operators.ipynb"
+        }
+      ]
     },
     {
       "slug": "argument-vs-parameter",
@@ -1217,7 +1591,13 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — 062-argument-vs-parameter",
+          "file": "files/062-argument-vs-parameter.pdf"
+        }
+      ]
     },
     {
       "slug": "positional-and-keyword-arguments",
@@ -1250,7 +1630,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/063-positional-and-keyword-arguments-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/064-positional-and-keyword-arguments-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "unpacking-iterables",
@@ -1283,7 +1673,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/065-unpacking-iterables-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/066-unpacking-iterables-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "extended-unpacking",
@@ -1316,7 +1716,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/067-extended-unpacking-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/068-extended-unpacking-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "args",
@@ -1349,7 +1759,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/069-args-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/070-args-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "keyword-arguments",
@@ -1382,7 +1802,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/071-keyword-arguments-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/072-keyword-arguments-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "kwargs",
@@ -1403,7 +1833,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/073-kwargs.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/073-kwargs.ipynb"
+        }
+      ]
     },
     {
       "slug": "putting-it-all-together",
@@ -1436,7 +1876,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/074-putting-it-all-together-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/075-putting-it-all-together-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "simple-function-timer",
@@ -1457,7 +1907,13 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/076-application-a-simple-function-timer.ipynb"
+        }
+      ]
     },
     {
       "slug": "parameter-defaults-beware",
@@ -1488,7 +1944,21 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — 077-parameter-defaults-beware",
+          "file": "files/077-parameter-defaults-beware.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 077-parameter-defaults-beware",
+          "file": "files/077-parameter-defaults-beware.ipynb"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — 078-parameter-defaults-beware-again",
+          "file": "files/078-parameter-defaults-beware-again.ipynb"
+        }
+      ]
     },
     {
       "slug": "docstrings-and-annotations",
@@ -1532,7 +2002,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/080-docstrings-and-annotations-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/081-docstrings-and-annotations-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "lambda-expressions",
@@ -1565,7 +2045,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/082-lambda-expressions-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/083-lambda-expressions-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "lambdas-and-sorting",
@@ -1586,7 +2076,13 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/084-lambdas-and-sorting.ipynb"
+        }
+      ]
     },
     {
       "slug": "challenge-randomize-with-sorted",
@@ -1606,7 +2102,13 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/085-challenge-randomize-an-iterable-using-sorted.ipynb"
+        }
+      ]
     },
     {
       "slug": "function-introspection",
@@ -1639,7 +2141,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/086-function-introspection-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/087-function-introspection-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "callables",
@@ -1660,7 +2172,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/088-callables.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/088-callables.ipynb"
+        }
+      ]
     },
     {
       "slug": "map-filter-zip-comprehensions",
@@ -1693,7 +2215,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/089-map-filter-zip-and-list-comprehensions-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/090-map-filter-zip-and-list-comprehensions-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "reducing-functions",
@@ -1726,7 +2258,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/091-reducing-functions-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/092-reducing-functions-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "partial-functions",
@@ -1759,7 +2301,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/093-partial-functions-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/094-partial-functions-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "operator-module",
@@ -1792,7 +2344,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/095-the-operator-module-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/096-the-operator-module-coding.ipynb"
+        }
+      ]
     },
     {
       "slug": "global-and-local-scopes",
@@ -1836,7 +2398,17 @@
         }
       ],
       "key_points": [],
-      "common_mistakes": []
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/098-global-and-local-scopes-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/099-global-and-local-scopes-coding.ipynb"
+        }
+      ]
     }
   ]
 }

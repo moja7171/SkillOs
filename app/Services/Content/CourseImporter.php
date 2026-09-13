@@ -56,6 +56,7 @@ class CourseImporter
                     'content' => $ld['content'],
                     'key_points' => $ld['key_points'] ?? [],
                     'common_mistakes' => $ld['common_mistakes'] ?? [],
+                    'attachments' => $this->attachments($data, $ld),
                     'estimated_minutes' => (int) ($ld['estimated_minutes'] ?? 10),
                 ]);
                 $lessonsBySlug[$ld['slug']] = $lesson;
@@ -271,6 +272,22 @@ class CourseImporter
 
             return $url ? ['url' => $url, 'lang' => $lang, 'label' => $t['label'] ?? ($labels[$lang] ?? $lang)] : null;
         }, $tracks)));
+    }
+
+    /**
+     * Downloadable lesson files: "attachments": [{title, file|url}] resolved like videos.
+     *
+     * @param  array<string, mixed>  $course
+     * @param  array<string, mixed>  $lesson
+     * @return array<int, array{title: string, url: string}>
+     */
+    protected function attachments(array $course, array $lesson): array
+    {
+        return array_values(array_filter(array_map(function (array $a) use ($course) {
+            $url = $this->mediaUrl($course, $a, 'url', 'file');
+
+            return $url ? ['title' => $a['title'] ?? basename($url), 'url' => $url] : null;
+        }, $lesson['attachments'] ?? [])));
     }
 
     /**

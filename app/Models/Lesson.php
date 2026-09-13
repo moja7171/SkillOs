@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-#[Fillable(['course_id', 'slug', 'order', 'title', 'section', 'summary', 'content', 'key_points', 'common_mistakes', 'estimated_minutes'])]
+#[Fillable(['course_id', 'slug', 'order', 'title', 'section', 'summary', 'content', 'key_points', 'common_mistakes', 'attachments', 'estimated_minutes'])]
 class Lesson extends Model
 {
     use HasFactory;
@@ -20,6 +20,7 @@ class Lesson extends Model
         return [
             'key_points' => 'array',
             'common_mistakes' => 'array',
+            'attachments' => 'array',
         ];
     }
 

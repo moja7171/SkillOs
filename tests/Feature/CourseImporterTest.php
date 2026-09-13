@@ -59,6 +59,7 @@ class CourseImporterTest extends TestCase
     {
         $lesson = $this->lesson('a');
         $lesson['section'] = 'بخش یک';
+        $lesson['attachments'] = [['title' => 'اسلایدها', 'file' => 'files/01 slides.pdf'], ['url' => 'https://example.com/nb.ipynb']];
         $lesson['videos'] = [
             ['file' => '001-intro part.mp4', 'subtitle' => 'subs/001 fa.vtt', 'subtitles' => [['file' => 'subs/001 en.vtt', 'lang' => 'en']], 'title' => 'مقدمه'],
             ['url' => 'https://www.youtube.com/watch?v=abc123xyz'],
@@ -69,6 +70,10 @@ class CourseImporterTest extends TestCase
 
         $stored = Lesson::where('slug', 'a')->sole();
         $this->assertSame('بخش یک', $stored->section);
+        $this->assertSame([
+            ['title' => 'اسلایدها', 'url' => '/media/demo/files/01%20slides.pdf'],
+            ['title' => 'nb.ipynb', 'url' => 'https://example.com/nb.ipynb'],
+        ], $stored->attachments);
         $videos = $stored->videos;
         $this->assertSame('/media/demo/001-intro%20part.mp4', $videos[0]->url);
         $this->assertSame([

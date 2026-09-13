@@ -81,6 +81,19 @@
                 </div>
             </div>
 
+            @if (! empty($lesson->attachments))
+                <div class="card">
+                    <div class="card-h"><h3>فایل‌های درس</h3></div>
+                    @foreach ($lesson->attachments as $file)
+                        @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); @endphp
+                        <a href="{{ $file['url'] }}" target="_blank" rel="noopener" download class="flex items-center gap-3 px-[18px] py-2.5 border-b border-line last:border-b-0 text-ink hover:bg-hover">
+                            <span class="badge badge-ghost uppercase">{{ $ext ?: 'file' }}</span>
+                            <span class="text-[13.5px] flex-1 min-w-0 truncate" dir="auto">{{ $file['title'] }}</span>
+                        </a>
+                    @endforeach
+                </div>
+            @endif
+
             <div class="card">
                 <div class="card-h"><h3>پیش‌نیازها</h3></div>
                 @if ($lesson->prerequisites->isEmpty())

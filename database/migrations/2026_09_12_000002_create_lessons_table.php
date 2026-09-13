@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('content')->nullable(); // rewritten lesson text, markdown
             $table->json('key_points')->nullable();
             $table->json('common_mistakes')->nullable();
+            $table->json('attachments')->nullable(); // [{title, url}] slides, notebooks, source files
             $table->unsignedSmallInteger('estimated_minutes')->default(10);
             $table->timestamps();
 

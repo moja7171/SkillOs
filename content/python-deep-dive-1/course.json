@@ -15,13 +15,13 @@
         {
           "file": "001-course-overview.mp4",
           "title": "مقدمه",
-          "subtitle": "001-course-overview.fa.vtt",
           "subtitles": [
             {
               "file": "001-course-overview.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "001-course-overview.fa.vtt"
         }
       ],
       "key_points": [
@@ -47,23 +47,23 @@
         {
           "file": "005-introduction.mp4",
           "title": "مقدمه",
-          "subtitle": "005-introduction.fa.vtt",
           "subtitles": [
             {
               "file": "005-introduction.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "005-introduction.fa.vtt"
         },
         {
           "file": "006-the-python-type-hierarchy.mp4",
-          "subtitle": "006-the-python-type-hierarchy.fa.vtt",
           "subtitles": [
             {
               "file": "006-the-python-type-hierarchy.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "006-the-python-type-hierarchy.fa.vtt"
         }
       ],
       "key_points": [
@@ -96,13 +96,13 @@
       "videos": [
         {
           "file": "007-multi-line-statements-and-strings.mp4",
-          "subtitle": "007-multi-line-statements-and-strings.fa.vtt",
           "subtitles": [
             {
               "file": "007-multi-line-statements-and-strings.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "007-multi-line-statements-and-strings.fa.vtt"
         }
       ],
       "key_points": [
@@ -134,13 +134,13 @@
       "videos": [
         {
           "file": "008-variable-names.mp4",
-          "subtitle": "008-variable-names.fa.vtt",
           "subtitles": [
             {
               "file": "008-variable-names.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "008-variable-names.fa.vtt"
         }
       ],
       "key_points": [
@@ -168,13 +168,13 @@
       "videos": [
         {
           "file": "009-conditionals.mp4",
-          "subtitle": "009-conditionals.fa.vtt",
           "subtitles": [
             {
               "file": "009-conditionals.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "009-conditionals.fa.vtt"
         }
       ],
       "key_points": [
@@ -202,13 +202,13 @@
       "videos": [
         {
           "file": "010-functions.mp4",
-          "subtitle": "010-functions.fa.vtt",
           "subtitles": [
             {
               "file": "010-functions.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "010-functions.fa.vtt"
         }
       ],
       "key_points": [
@@ -237,13 +237,13 @@
       "videos": [
         {
           "file": "011-the-while-loop.mp4",
-          "subtitle": "011-the-while-loop.fa.vtt",
           "subtitles": [
             {
               "file": "011-the-while-loop.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "011-the-while-loop.fa.vtt"
         }
       ],
       "key_points": [
@@ -271,13 +271,13 @@
       "videos": [
         {
           "file": "012-break-continue-and-the-try-statement.mp4",
-          "subtitle": "012-break-continue-and-the-try-statement.fa.vtt",
           "subtitles": [
             {
               "file": "012-break-continue-and-the-try-statement.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "012-break-continue-and-the-try-statement.fa.vtt"
         }
       ],
       "key_points": [
@@ -305,13 +305,13 @@
       "videos": [
         {
           "file": "013-the-for-loop.mp4",
-          "subtitle": "013-the-for-loop.fa.vtt",
           "subtitles": [
             {
               "file": "013-the-for-loop.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "013-the-for-loop.fa.vtt"
         }
       ],
       "key_points": [
@@ -340,13 +340,13 @@
       "videos": [
         {
           "file": "014-classes.mp4",
-          "subtitle": "014-classes.fa.vtt",
           "subtitles": [
             {
               "file": "014-classes.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "014-classes.fa.vtt"
         }
       ],
       "key_points": [
@@ -376,23 +376,23 @@
         {
           "file": "015-introduction.mp4",
           "title": "مقدمه",
-          "subtitle": "015-introduction.fa.vtt",
           "subtitles": [
             {
               "file": "015-introduction.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "015-introduction.fa.vtt"
         },
         {
           "file": "016-variables-are-memory-references.mp4",
-          "subtitle": "016-variables-are-memory-references.fa.vtt",
           "subtitles": [
             {
               "file": "016-variables-are-memory-references.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "016-variables-are-memory-references.fa.vtt"
         }
       ],
       "key_points": [
@@ -425,13 +425,13 @@
       "videos": [
         {
           "file": "017-reference-counting.mp4",
-          "subtitle": "017-reference-counting.fa.vtt",
           "subtitles": [
             {
               "file": "017-reference-counting.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "017-reference-counting.fa.vtt"
         }
       ],
       "key_points": [
@@ -464,13 +464,13 @@
       "videos": [
         {
           "file": "018-garbage-collection.mp4",
-          "subtitle": "018-garbage-collection.fa.vtt",
           "subtitles": [
             {
               "file": "018-garbage-collection.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "018-garbage-collection.fa.vtt"
         }
       ],
       "key_points": [
@@ -503,13 +503,13 @@
       "videos": [
         {
           "file": "019-dynamic-vs-static-typing.mp4",
-          "subtitle": "019-dynamic-vs-static-typing.fa.vtt",
           "subtitles": [
             {
               "file": "019-dynamic-vs-static-typing.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "019-dynamic-vs-static-typing.fa.vtt"
         }
       ],
       "key_points": [
@@ -541,13 +541,13 @@
       "videos": [
         {
           "file": "020-variable-re-assignment.mp4",
-          "subtitle": "020-variable-re-assignment.fa.vtt",
           "subtitles": [
             {
               "file": "020-variable-re-assignment.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "020-variable-re-assignment.fa.vtt"
         }
       ],
       "key_points": [
@@ -578,13 +578,13 @@
       "videos": [
         {
           "file": "021-object-mutability.mp4",
-          "subtitle": "021-object-mutability.fa.vtt",
           "subtitles": [
             {
               "file": "021-object-mutability.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "021-object-mutability.fa.vtt"
         }
       ],
       "key_points": [
@@ -616,13 +616,13 @@
       "videos": [
         {
           "file": "022-function-arguments-and-mutability.mp4",
-          "subtitle": "022-function-arguments-and-mutability.fa.vtt",
           "subtitles": [
             {
               "file": "022-function-arguments-and-mutability.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "022-function-arguments-and-mutability.fa.vtt"
         }
       ],
       "key_points": [
@@ -655,13 +655,13 @@
       "videos": [
         {
           "file": "023-shared-references-and-mutability.mp4",
-          "subtitle": "023-shared-references-and-mutability.fa.vtt",
           "subtitles": [
             {
               "file": "023-shared-references-and-mutability.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "023-shared-references-and-mutability.fa.vtt"
         }
       ],
       "key_points": [
@@ -693,13 +693,13 @@
       "videos": [
         {
           "file": "024-variable-equality.mp4",
-          "subtitle": "024-variable-equality.fa.vtt",
           "subtitles": [
             {
               "file": "024-variable-equality.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "024-variable-equality.fa.vtt"
         }
       ],
       "key_points": [
@@ -732,13 +732,13 @@
       "videos": [
         {
           "file": "025-everything-is-an-object.mp4",
-          "subtitle": "025-everything-is-an-object.fa.vtt",
           "subtitles": [
             {
               "file": "025-everything-is-an-object.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "025-everything-is-an-object.fa.vtt"
         }
       ],
       "key_points": [
@@ -770,33 +770,33 @@
       "videos": [
         {
           "file": "026-python-optimizations-interning.mp4",
-          "subtitle": "026-python-optimizations-interning.fa.vtt",
           "subtitles": [
             {
               "file": "026-python-optimizations-interning.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "026-python-optimizations-interning.fa.vtt"
         },
         {
           "file": "027-python-optimizations-string-interning.mp4",
-          "subtitle": "027-python-optimizations-string-interning.fa.vtt",
           "subtitles": [
             {
               "file": "027-python-optimizations-string-interning.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "027-python-optimizations-string-interning.fa.vtt"
         },
         {
           "file": "028-python-optimizations-peephole.mp4",
-          "subtitle": "028-python-optimizations-peephole.fa.vtt",
           "subtitles": [
             {
               "file": "028-python-optimizations-peephole.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "028-python-optimizations-peephole.fa.vtt"
         }
       ],
       "key_points": [
@@ -846,23 +846,23 @@
         {
           "file": "029-introduction.mp4",
           "title": "مقدمه",
-          "subtitle": "029-introduction.fa.vtt",
           "subtitles": [
             {
               "file": "029-introduction.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "029-introduction.fa.vtt"
         },
         {
           "file": "030-integers-data-types.mp4",
-          "subtitle": "030-integers-data-types.fa.vtt",
           "subtitles": [
             {
               "file": "030-integers-data-types.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "030-integers-data-types.fa.vtt"
         }
       ],
       "key_points": [],
@@ -887,13 +887,13 @@
       "videos": [
         {
           "file": "031-integers-operations.mp4",
-          "subtitle": "031-integers-operations.fa.vtt",
           "subtitles": [
             {
               "file": "031-integers-operations.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "031-integers-operations.fa.vtt"
         }
       ],
       "key_points": [],
@@ -919,24 +919,24 @@
         {
           "file": "032-integers-constructors-and-bases-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "032-integers-constructors-and-bases-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "032-integers-constructors-and-bases-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "032-integers-constructors-and-bases-lecture.fa.vtt"
         },
         {
           "file": "033-integers-constructors-and-bases-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "033-integers-constructors-and-bases-coding.fa.vtt",
           "subtitles": [
             {
               "file": "033-integers-constructors-and-bases-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "033-integers-constructors-and-bases-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -962,24 +962,24 @@
         {
           "file": "034-rational-numbers-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "034-rational-numbers-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "034-rational-numbers-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "034-rational-numbers-lecture.fa.vtt"
         },
         {
           "file": "035-rationals-numbers-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "035-rationals-numbers-coding.fa.vtt",
           "subtitles": [
             {
               "file": "035-rationals-numbers-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "035-rationals-numbers-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1005,24 +1005,24 @@
         {
           "file": "036-floats-internal-representations-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "036-floats-internal-representations-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "036-floats-internal-representations-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "036-floats-internal-representations-lecture.fa.vtt"
         },
         {
           "file": "037-floats-internal-representations-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "037-floats-internal-representations-coding.fa.vtt",
           "subtitles": [
             {
               "file": "037-floats-internal-representations-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "037-floats-internal-representations-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1048,24 +1048,24 @@
         {
           "file": "038-floats-equality-testing-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "038-floats-equality-testing-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "038-floats-equality-testing-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "038-floats-equality-testing-lecture.fa.vtt"
         },
         {
           "file": "039-floats-equality-testing-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "039-floats-equality-testing-coding.fa.vtt",
           "subtitles": [
             {
               "file": "039-floats-equality-testing-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "039-floats-equality-testing-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1091,24 +1091,24 @@
         {
           "file": "040-floats-coercing-to-integers-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "040-floats-coercing-to-integers-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "040-floats-coercing-to-integers-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "040-floats-coercing-to-integers-lecture.fa.vtt"
         },
         {
           "file": "041-floats-coercing-to-integers-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "041-floats-coercing-to-integers-coding.fa.vtt",
           "subtitles": [
             {
               "file": "041-floats-coercing-to-integers-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "041-floats-coercing-to-integers-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1134,24 +1134,24 @@
         {
           "file": "042-floats-rounding-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "042-floats-rounding-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "042-floats-rounding-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "042-floats-rounding-lecture.fa.vtt"
         },
         {
           "file": "043-floats-rounding-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "043-floats-rounding-coding.fa.vtt",
           "subtitles": [
             {
               "file": "043-floats-rounding-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "043-floats-rounding-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1177,24 +1177,24 @@
         {
           "file": "044-decimals-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "044-decimals-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "044-decimals-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "044-decimals-lecture.fa.vtt"
         },
         {
           "file": "045-decimals-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "045-decimals-coding.fa.vtt",
           "subtitles": [
             {
               "file": "045-decimals-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "045-decimals-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1220,24 +1220,24 @@
         {
           "file": "046-decimals-constructors-and-contexts-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "046-decimals-constructors-and-contexts-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "046-decimals-constructors-and-contexts-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "046-decimals-constructors-and-contexts-lecture.fa.vtt"
         },
         {
           "file": "047-decimals-constructors-and-contexts-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "047-decimals-constructors-and-contexts-coding.fa.vtt",
           "subtitles": [
             {
               "file": "047-decimals-constructors-and-contexts-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "047-decimals-constructors-and-contexts-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1263,24 +1263,24 @@
         {
           "file": "048-decimals-math-operations-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "048-decimals-math-operations-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "048-decimals-math-operations-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "048-decimals-math-operations-lecture.fa.vtt"
         },
         {
           "file": "049-decimals-math-operations-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "049-decimals-math-operations-coding.fa.vtt",
           "subtitles": [
             {
               "file": "049-decimals-math-operations-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "049-decimals-math-operations-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1305,13 +1305,13 @@
       "videos": [
         {
           "file": "050-decimals-performance-considerations.mp4",
-          "subtitle": "050-decimals-performance-considerations.fa.vtt",
           "subtitles": [
             {
               "file": "050-decimals-performance-considerations.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "050-decimals-performance-considerations.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1337,24 +1337,24 @@
         {
           "file": "051-complex-numbers-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "051-complex-numbers-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "051-complex-numbers-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "051-complex-numbers-lecture.fa.vtt"
         },
         {
           "file": "052-complex-numbers-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "052-complex-numbers-coding.fa.vtt",
           "subtitles": [
             {
               "file": "052-complex-numbers-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "052-complex-numbers-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1379,13 +1379,13 @@
       "videos": [
         {
           "file": "053-booleans.mp4",
-          "subtitle": "053-booleans.fa.vtt",
           "subtitles": [
             {
               "file": "053-booleans.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "053-booleans.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1411,24 +1411,24 @@
         {
           "file": "054-booleans-truth-values-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "054-booleans-truth-values-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "054-booleans-truth-values-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "054-booleans-truth-values-lecture.fa.vtt"
         },
         {
           "file": "055-booleans-truth-values-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "055-booleans-truth-values-coding.fa.vtt",
           "subtitles": [
             {
               "file": "055-booleans-truth-values-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "055-booleans-truth-values-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1454,24 +1454,24 @@
         {
           "file": "056-booleans-precedence-and-short-circuiting-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "056-booleans-precedence-and-short-circuiting-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "056-booleans-precedence-and-short-circuiting-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "056-booleans-precedence-and-short-circuiting-lecture.fa.vtt"
         },
         {
           "file": "057-booleans-precedence-and-short-circuiting-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "057-booleans-precedence-and-short-circuiting-coding.fa.vtt",
           "subtitles": [
             {
               "file": "057-booleans-precedence-and-short-circuiting-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "057-booleans-precedence-and-short-circuiting-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1497,24 +1497,24 @@
         {
           "file": "058-booleans-boolean-operators-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "058-booleans-boolean-operators-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "058-booleans-boolean-operators-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "058-booleans-boolean-operators-lecture.fa.vtt"
         },
         {
           "file": "059-booleans-boolean-operators-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "059-booleans-boolean-operators-coding.fa.vtt",
           "subtitles": [
             {
               "file": "059-booleans-boolean-operators-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "059-booleans-boolean-operators-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1539,13 +1539,13 @@
       "videos": [
         {
           "file": "060-comparison-operators.mp4",
-          "subtitle": "060-comparison-operators.fa.vtt",
           "subtitles": [
             {
               "file": "060-comparison-operators.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "060-comparison-operators.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1571,23 +1571,23 @@
         {
           "file": "061-introduction.mp4",
           "title": "مقدمه",
-          "subtitle": "061-introduction.fa.vtt",
           "subtitles": [
             {
               "file": "061-introduction.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "061-introduction.fa.vtt"
         },
         {
           "file": "062-argument-vs-parameter.mp4",
-          "subtitle": "062-argument-vs-parameter.fa.vtt",
           "subtitles": [
             {
               "file": "062-argument-vs-parameter.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "062-argument-vs-parameter.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1609,24 +1609,24 @@
         {
           "file": "063-positional-and-keyword-arguments-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "063-positional-and-keyword-arguments-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "063-positional-and-keyword-arguments-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "063-positional-and-keyword-arguments-lecture.fa.vtt"
         },
         {
           "file": "064-positional-and-keyword-arguments-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "064-positional-and-keyword-arguments-coding.fa.vtt",
           "subtitles": [
             {
               "file": "064-positional-and-keyword-arguments-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "064-positional-and-keyword-arguments-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1652,24 +1652,24 @@
         {
           "file": "065-unpacking-iterables-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "065-unpacking-iterables-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "065-unpacking-iterables-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "065-unpacking-iterables-lecture.fa.vtt"
         },
         {
           "file": "066-unpacking-iterables-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "066-unpacking-iterables-coding.fa.vtt",
           "subtitles": [
             {
               "file": "066-unpacking-iterables-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "066-unpacking-iterables-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1695,24 +1695,24 @@
         {
           "file": "067-extended-unpacking-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "067-extended-unpacking-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "067-extended-unpacking-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "067-extended-unpacking-lecture.fa.vtt"
         },
         {
           "file": "068-extended-unpacking-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "068-extended-unpacking-coding.fa.vtt",
           "subtitles": [
             {
               "file": "068-extended-unpacking-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "068-extended-unpacking-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1738,24 +1738,24 @@
         {
           "file": "069-args-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "069-args-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "069-args-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "069-args-lecture.fa.vtt"
         },
         {
           "file": "070-args-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "070-args-coding.fa.vtt",
           "subtitles": [
             {
               "file": "070-args-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "070-args-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1781,24 +1781,24 @@
         {
           "file": "071-keyword-arguments-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "071-keyword-arguments-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "071-keyword-arguments-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "071-keyword-arguments-lecture.fa.vtt"
         },
         {
           "file": "072-keyword-arguments-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "072-keyword-arguments-coding.fa.vtt",
           "subtitles": [
             {
               "file": "072-keyword-arguments-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "072-keyword-arguments-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1823,13 +1823,13 @@
       "videos": [
         {
           "file": "073-kwargs.mp4",
-          "subtitle": "073-kwargs.fa.vtt",
           "subtitles": [
             {
               "file": "073-kwargs.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "073-kwargs.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1855,24 +1855,24 @@
         {
           "file": "074-putting-it-all-together-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "074-putting-it-all-together-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "074-putting-it-all-together-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "074-putting-it-all-together-lecture.fa.vtt"
         },
         {
           "file": "075-putting-it-all-together-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "075-putting-it-all-together-coding.fa.vtt",
           "subtitles": [
             {
               "file": "075-putting-it-all-together-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "075-putting-it-all-together-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1897,13 +1897,13 @@
       "videos": [
         {
           "file": "076-application-a-simple-function-timer.mp4",
-          "subtitle": "076-application-a-simple-function-timer.fa.vtt",
           "subtitles": [
             {
               "file": "076-application-a-simple-function-timer.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "076-application-a-simple-function-timer.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1924,23 +1924,23 @@
       "videos": [
         {
           "file": "077-parameter-defaults-beware.mp4",
-          "subtitle": "077-parameter-defaults-beware.fa.vtt",
           "subtitles": [
             {
               "file": "077-parameter-defaults-beware.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "077-parameter-defaults-beware.fa.vtt"
         },
         {
           "file": "078-parameter-defaults-beware-again.mp4",
-          "subtitle": "078-parameter-defaults-beware-again.fa.vtt",
           "subtitles": [
             {
               "file": "078-parameter-defaults-beware-again.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "078-parameter-defaults-beware-again.fa.vtt"
         }
       ],
       "key_points": [],
@@ -1970,35 +1970,35 @@
         {
           "file": "079-introduction.mp4",
           "title": "مقدمه",
-          "subtitle": "079-introduction.fa.vtt",
           "subtitles": [
             {
               "file": "079-introduction.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "079-introduction.fa.vtt"
         },
         {
           "file": "080-docstrings-and-annotations-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "080-docstrings-and-annotations-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "080-docstrings-and-annotations-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "080-docstrings-and-annotations-lecture.fa.vtt"
         },
         {
           "file": "081-docstrings-and-annotations-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "081-docstrings-and-annotations-coding.fa.vtt",
           "subtitles": [
             {
               "file": "081-docstrings-and-annotations-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "081-docstrings-and-annotations-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2024,24 +2024,24 @@
         {
           "file": "082-lambda-expressions-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "082-lambda-expressions-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "082-lambda-expressions-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "082-lambda-expressions-lecture.fa.vtt"
         },
         {
           "file": "083-lambda-expressions-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "083-lambda-expressions-coding.fa.vtt",
           "subtitles": [
             {
               "file": "083-lambda-expressions-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "083-lambda-expressions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2066,13 +2066,13 @@
       "videos": [
         {
           "file": "084-lambdas-and-sorting.mp4",
-          "subtitle": "084-lambdas-and-sorting.fa.vtt",
           "subtitles": [
             {
               "file": "084-lambdas-and-sorting.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "084-lambdas-and-sorting.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2120,24 +2120,24 @@
         {
           "file": "086-function-introspection-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "086-function-introspection-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "086-function-introspection-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "086-function-introspection-lecture.fa.vtt"
         },
         {
           "file": "087-function-introspection-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "087-function-introspection-coding.fa.vtt",
           "subtitles": [
             {
               "file": "087-function-introspection-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "087-function-introspection-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2162,13 +2162,13 @@
       "videos": [
         {
           "file": "088-callables.mp4",
-          "subtitle": "088-callables.fa.vtt",
           "subtitles": [
             {
               "file": "088-callables.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "088-callables.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2194,24 +2194,24 @@
         {
           "file": "089-map-filter-zip-and-list-comprehensions-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "089-map-filter-zip-and-list-comprehensions-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "089-map-filter-zip-and-list-comprehensions-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "089-map-filter-zip-and-list-comprehensions-lecture.fa.vtt"
         },
         {
           "file": "090-map-filter-zip-and-list-comprehensions-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "090-map-filter-zip-and-list-comprehensions-coding.fa.vtt",
           "subtitles": [
             {
               "file": "090-map-filter-zip-and-list-comprehensions-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "090-map-filter-zip-and-list-comprehensions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2237,24 +2237,24 @@
         {
           "file": "091-reducing-functions-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "091-reducing-functions-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "091-reducing-functions-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "091-reducing-functions-lecture.fa.vtt"
         },
         {
           "file": "092-reducing-functions-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "092-reducing-functions-coding.fa.vtt",
           "subtitles": [
             {
               "file": "092-reducing-functions-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "092-reducing-functions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2280,24 +2280,24 @@
         {
           "file": "093-partial-functions-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "093-partial-functions-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "093-partial-functions-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "093-partial-functions-lecture.fa.vtt"
         },
         {
           "file": "094-partial-functions-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "094-partial-functions-coding.fa.vtt",
           "subtitles": [
             {
               "file": "094-partial-functions-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "094-partial-functions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2323,24 +2323,24 @@
         {
           "file": "095-the-operator-module-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "095-the-operator-module-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "095-the-operator-module-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "095-the-operator-module-lecture.fa.vtt"
         },
         {
           "file": "096-the-operator-module-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "096-the-operator-module-coding.fa.vtt",
           "subtitles": [
             {
               "file": "096-the-operator-module-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "096-the-operator-module-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2366,35 +2366,35 @@
         {
           "file": "097-introduction.mp4",
           "title": "مقدمه",
-          "subtitle": "097-introduction.fa.vtt",
           "subtitles": [
             {
               "file": "097-introduction.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "097-introduction.fa.vtt"
         },
         {
           "file": "098-global-and-local-scopes-lecture.mp4",
           "title": "بخش نظری",
-          "subtitle": "098-global-and-local-scopes-lecture.fa.vtt",
           "subtitles": [
             {
               "file": "098-global-and-local-scopes-lecture.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "098-global-and-local-scopes-lecture.fa.vtt"
         },
         {
           "file": "099-global-and-local-scopes-coding.mp4",
           "title": "بخش کدنویسی",
-          "subtitle": "099-global-and-local-scopes-coding.fa.vtt",
           "subtitles": [
             {
               "file": "099-global-and-local-scopes-coding.en.vtt",
               "lang": "en"
             }
-          ]
+          ],
+          "subtitle": "099-global-and-local-scopes-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2419,11 +2419,25 @@
       "videos": [
         {
           "file": "100-nonlocal-scopes-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "100-nonlocal-scopes-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "100-nonlocal-scopes-lecture.fa.vtt"
         },
         {
           "file": "101-nonlocal-scopes-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "101-nonlocal-scopes-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "101-nonlocal-scopes-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2448,11 +2462,25 @@
       "videos": [
         {
           "file": "102-closures-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "102-closures-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "102-closures-lecture.fa.vtt"
         },
         {
           "file": "103-closures-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "103-closures-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "103-closures-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2477,11 +2505,25 @@
       "videos": [
         {
           "file": "104-closure-applications-part-1.mp4",
-          "title": "قسمت ۱"
+          "title": "قسمت ۱",
+          "subtitles": [
+            {
+              "file": "104-closure-applications-part-1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "104-closure-applications-part-1.fa.vtt"
         },
         {
           "file": "105-closure-applications-part-2.mp4",
-          "title": "قسمت ۲"
+          "title": "قسمت ۲",
+          "subtitles": [
+            {
+              "file": "105-closure-applications-part-2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "105-closure-applications-part-2.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2506,11 +2548,25 @@
       "videos": [
         {
           "file": "106-decorators-part-1-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "106-decorators-part-1-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "106-decorators-part-1-lecture.fa.vtt"
         },
         {
           "file": "107-decorators-part-1-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "107-decorators-part-1-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "107-decorators-part-1-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2534,7 +2590,14 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "108-decorator-application-timer.mp4"
+          "file": "108-decorator-application-timer.mp4",
+          "subtitles": [
+            {
+              "file": "108-decorator-application-timer.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "108-decorator-application-timer.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2554,7 +2617,14 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "109-decorator-application-logger-stacked-decorators.mp4"
+          "file": "109-decorator-application-logger-stacked-decorators.mp4",
+          "subtitles": [
+            {
+              "file": "109-decorator-application-logger-stacked-decorators.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "109-decorator-application-logger-stacked-decorators.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2574,7 +2644,14 @@
       "estimated_minutes": 18,
       "videos": [
         {
-          "file": "110-decorator-application-memoization.mp4"
+          "file": "110-decorator-application-memoization.mp4",
+          "subtitles": [
+            {
+              "file": "110-decorator-application-memoization.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "110-decorator-application-memoization.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2595,11 +2672,24 @@
       "videos": [
         {
           "file": "111-decorator-factories-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "111-decorator-factories-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "111-decorator-factories-lecture.fa.vtt"
         },
         {
           "file": "112-decorator-factories-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "112-decorator-factories-coding.en.vtt",
+              "lang": "en"
+            }
+          ]
         }
       ],
       "key_points": [],
@@ -2623,7 +2713,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "113-decorator-application-decorator-class.mp4"
+          "file": "113-decorator-application-decorator-class.mp4",
+          "subtitles": [
+            {
+              "file": "113-decorator-application-decorator-class.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "113-decorator-application-decorator-class.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2643,7 +2740,14 @@
       "estimated_minutes": 22,
       "videos": [
         {
-          "file": "114-decorator-application-decorating-classes.mp4"
+          "file": "114-decorator-application-decorating-classes.mp4",
+          "subtitles": [
+            {
+              "file": "114-decorator-application-decorating-classes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "114-decorator-application-decorating-classes.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2664,15 +2768,36 @@
       "videos": [
         {
           "file": "115-decorator-application-dispatching-part-1.mp4",
-          "title": "قسمت ۱"
+          "title": "قسمت ۱",
+          "subtitles": [
+            {
+              "file": "115-decorator-application-dispatching-part-1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "115-decorator-application-dispatching-part-1.fa.vtt"
         },
         {
           "file": "116-decorator-application-dispatching-part-2.mp4",
-          "title": "قسمت ۲"
+          "title": "قسمت ۲",
+          "subtitles": [
+            {
+              "file": "116-decorator-application-dispatching-part-2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "116-decorator-application-dispatching-part-2.fa.vtt"
         },
         {
           "file": "117-decorator-application-dispatching-part-3.mp4",
-          "title": "قسمت ۳"
+          "title": "قسمت ۳",
+          "subtitles": [
+            {
+              "file": "117-decorator-application-dispatching-part-3.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "117-decorator-application-dispatching-part-3.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2693,15 +2818,36 @@
       "videos": [
         {
           "file": "118-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitles": [
+            {
+              "file": "118-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "118-introduction.fa.vtt"
         },
         {
           "file": "119-tuples-as-data-structures-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "119-tuples-as-data-structures-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "119-tuples-as-data-structures-lecture.fa.vtt"
         },
         {
           "file": "120-tuples-as-data-structures-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "120-tuples-as-data-structures-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "120-tuples-as-data-structures-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2726,11 +2872,25 @@
       "videos": [
         {
           "file": "121-named-tuples-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "121-named-tuples-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "121-named-tuples-lecture.fa.vtt"
         },
         {
           "file": "122-named-tuples-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "122-named-tuples-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "122-named-tuples-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2755,11 +2915,25 @@
       "videos": [
         {
           "file": "123-named-tuples-modifying-and-extending-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "123-named-tuples-modifying-and-extending-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "123-named-tuples-modifying-and-extending-lecture.fa.vtt"
         },
         {
           "file": "124-named-tuples-modifying-and-extending-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "124-named-tuples-modifying-and-extending-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "124-named-tuples-modifying-and-extending-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2784,11 +2958,25 @@
       "videos": [
         {
           "file": "125-named-tuples-docstrings-and-default-values-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "125-named-tuples-docstrings-and-default-values-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "125-named-tuples-docstrings-and-default-values-lecture.fa.vtt"
         },
         {
           "file": "126-named-tuples-docstrings-and-default-values-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "126-named-tuples-docstrings-and-default-values-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "126-named-tuples-docstrings-and-default-values-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2812,7 +3000,14 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "127-named-tuples-application-returning-multiple-values.mp4"
+          "file": "127-named-tuples-application-returning-multiple-values.mp4",
+          "subtitles": [
+            {
+              "file": "127-named-tuples-application-returning-multiple-values.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "127-named-tuples-application-returning-multiple-values.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2832,7 +3027,14 @@
       "estimated_minutes": 14,
       "videos": [
         {
-          "file": "128-named-tuples-application-alternative-to-dictionaries.mp4"
+          "file": "128-named-tuples-application-alternative-to-dictionaries.mp4",
+          "subtitles": [
+            {
+              "file": "128-named-tuples-application-alternative-to-dictionaries.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "128-named-tuples-application-alternative-to-dictionaries.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2853,10 +3055,24 @@
       "videos": [
         {
           "file": "129-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitles": [
+            {
+              "file": "129-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "129-introduction.fa.vtt"
         },
         {
-          "file": "130-what-is-a-module.mp4"
+          "file": "130-what-is-a-module.mp4",
+          "subtitles": [
+            {
+              "file": "130-what-is-a-module.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "130-what-is-a-module.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2876,7 +3092,14 @@
       "estimated_minutes": 22,
       "videos": [
         {
-          "file": "131-how-does-python-import-modules.mp4"
+          "file": "131-how-does-python-import-modules.mp4",
+          "subtitles": [
+            {
+              "file": "131-how-does-python-import-modules.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "131-how-does-python-import-modules.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2916,7 +3139,14 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "132-imports-and-importlib.mp4"
+          "file": "132-imports-and-importlib.mp4",
+          "subtitles": [
+            {
+              "file": "132-imports-and-importlib.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "132-imports-and-importlib.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2937,11 +3167,25 @@
       "videos": [
         {
           "file": "133-import-variants-and-misconceptions-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "133-import-variants-and-misconceptions-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "133-import-variants-and-misconceptions-lecture.fa.vtt"
         },
         {
           "file": "134-import-variants-and-misconceptions-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "134-import-variants-and-misconceptions-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "134-import-variants-and-misconceptions-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2965,7 +3209,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "135-reloading-modules.mp4"
+          "file": "135-reloading-modules.mp4",
+          "subtitles": [
+            {
+              "file": "135-reloading-modules.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "135-reloading-modules.fa.vtt"
         }
       ],
       "key_points": [],
@@ -2985,7 +3236,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "136-using-main.mp4"
+          "file": "136-using-main.mp4",
+          "subtitles": [
+            {
+              "file": "136-using-main.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "136-using-main.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3017,7 +3275,14 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "137-modules-recap.mp4"
+          "file": "137-modules-recap.mp4",
+          "subtitles": [
+            {
+              "file": "137-modules-recap.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "137-modules-recap.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3038,11 +3303,25 @@
       "videos": [
         {
           "file": "138-what-are-packages-lecture.mp4",
-          "title": "بخش نظری"
+          "title": "بخش نظری",
+          "subtitles": [
+            {
+              "file": "138-what-are-packages-lecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "138-what-are-packages-lecture.fa.vtt"
         },
         {
           "file": "139-what-are-packages-coding.mp4",
-          "title": "بخش کدنویسی"
+          "title": "بخش کدنویسی",
+          "subtitles": [
+            {
+              "file": "139-what-are-packages-coding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "139-what-are-packages-coding.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3082,7 +3361,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "140-why-packages.mp4"
+          "file": "140-why-packages.mp4",
+          "subtitles": [
+            {
+              "file": "140-why-packages.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "140-why-packages.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3103,11 +3389,25 @@
       "videos": [
         {
           "file": "141-structuring-packages-part-1.mp4",
-          "title": "قسمت ۱"
+          "title": "قسمت ۱",
+          "subtitles": [
+            {
+              "file": "141-structuring-packages-part-1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "141-structuring-packages-part-1.fa.vtt"
         },
         {
           "file": "142-structuring-packages-part-2.mp4",
-          "title": "قسمت ۲"
+          "title": "قسمت ۲",
+          "subtitles": [
+            {
+              "file": "142-structuring-packages-part-2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "142-structuring-packages-part-2.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3203,7 +3503,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "143-namespace-packages.mp4"
+          "file": "143-namespace-packages.mp4",
+          "subtitles": [
+            {
+              "file": "143-namespace-packages.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "143-namespace-packages.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3223,7 +3530,14 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "144-importing-from-zip-archives.mp4"
+          "file": "144-importing-from-zip-archives.mp4",
+          "subtitles": [
+            {
+              "file": "144-importing-from-zip-archives.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "144-importing-from-zip-archives.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3243,7 +3557,14 @@
       "estimated_minutes": 25,
       "videos": [
         {
-          "file": "145-python-3-10.mp4"
+          "file": "145-python-3-10.mp4",
+          "subtitles": [
+            {
+              "file": "145-python-3-10.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "145-python-3-10.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3264,7 +3585,14 @@
       "estimated_minutes": 20,
       "videos": [
         {
-          "file": "146-python-3-9.mp4"
+          "file": "146-python-3-9.mp4",
+          "subtitles": [
+            {
+              "file": "146-python-3-9.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "146-python-3-9.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3285,7 +3613,14 @@
       "estimated_minutes": 20,
       "videos": [
         {
-          "file": "147-python-3-8-3-7.mp4"
+          "file": "147-python-3-8-3-7.mp4",
+          "subtitles": [
+            {
+              "file": "147-python-3-8-3-7.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "147-python-3-8-3-7.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3306,7 +3641,14 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "148-python-3-6-highlights.mp4"
+          "file": "148-python-3-6-highlights.mp4",
+          "subtitles": [
+            {
+              "file": "148-python-3-6-highlights.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "148-python-3-6-highlights.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3327,7 +3669,14 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "149-python-3-6-dictionary-ordering.mp4"
+          "file": "149-python-3-6-dictionary-ordering.mp4",
+          "subtitles": [
+            {
+              "file": "149-python-3-6-dictionary-ordering.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "149-python-3-6-dictionary-ordering.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3348,7 +3697,14 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "150-python-3-6-underscores-in-numeric-literals.mp4"
+          "file": "150-python-3-6-underscores-in-numeric-literals.mp4",
+          "subtitles": [
+            {
+              "file": "150-python-3-6-underscores-in-numeric-literals.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "150-python-3-6-underscores-in-numeric-literals.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3369,7 +3725,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.mp4"
+          "file": "151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.mp4",
+          "subtitles": [
+            {
+              "file": "151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3390,7 +3753,14 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "152-python-3-6-f-strings.mp4"
+          "file": "152-python-3-6-f-strings.mp4",
+          "subtitles": [
+            {
+              "file": "152-python-3-6-f-strings.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "152-python-3-6-f-strings.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3412,10 +3782,24 @@
       "videos": [
         {
           "file": "153-introduction.mp4",
-          "title": "مقدمه"
+          "title": "مقدمه",
+          "subtitles": [
+            {
+              "file": "153-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "153-introduction.fa.vtt"
         },
         {
-          "file": "154-additional-resources.mp4"
+          "file": "154-additional-resources.mp4",
+          "subtitles": [
+            {
+              "file": "154-additional-resources.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "154-additional-resources.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3436,7 +3820,14 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "155-random-seeds.mp4"
+          "file": "155-random-seeds.mp4",
+          "subtitles": [
+            {
+              "file": "155-random-seeds.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "155-random-seeds.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3457,7 +3848,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "156-random-choices.mp4"
+          "file": "156-random-choices.mp4",
+          "subtitles": [
+            {
+              "file": "156-random-choices.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "156-random-choices.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3478,7 +3876,14 @@
       "estimated_minutes": 10,
       "videos": [
         {
-          "file": "157-random-samples.mp4"
+          "file": "157-random-samples.mp4",
+          "subtitles": [
+            {
+              "file": "157-random-samples.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "157-random-samples.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3499,7 +3904,14 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "158-timing-code-using-timeit.mp4"
+          "file": "158-timing-code-using-timeit.mp4",
+          "subtitles": [
+            {
+              "file": "158-timing-code-using-timeit.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "158-timing-code-using-timeit.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3520,7 +3932,14 @@
       "estimated_minutes": 8,
       "videos": [
         {
-          "file": "159-don-t-use-args-and-kwargs-names-blindly.mp4"
+          "file": "159-don-t-use-args-and-kwargs-names-blindly.mp4",
+          "subtitles": [
+            {
+              "file": "159-don-t-use-args-and-kwargs-names-blindly.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "159-don-t-use-args-and-kwargs-names-blindly.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3541,7 +3960,14 @@
       "estimated_minutes": 25,
       "videos": [
         {
-          "file": "160-command-line-arguments.mp4"
+          "file": "160-command-line-arguments.mp4",
+          "subtitles": [
+            {
+              "file": "160-command-line-arguments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "160-command-line-arguments.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3598,7 +4024,14 @@
       "estimated_minutes": 12,
       "videos": [
         {
-          "file": "161-sentinel-values-for-parameter-defaults.mp4"
+          "file": "161-sentinel-values-for-parameter-defaults.mp4",
+          "subtitles": [
+            {
+              "file": "161-sentinel-values-for-parameter-defaults.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "161-sentinel-values-for-parameter-defaults.fa.vtt"
         }
       ],
       "key_points": [],
@@ -3619,7 +4052,14 @@
       "estimated_minutes": 15,
       "videos": [
         {
-          "file": "162-simulating-a-simple-switch-in-python.mp4"
+          "file": "162-simulating-a-simple-switch-in-python.mp4",
+          "subtitles": [
+            {
+              "file": "162-simulating-a-simple-switch-in-python.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "162-simulating-a-simple-switch-in-python.fa.vtt"
         }
       ],
       "key_points": [],

@@ -152,7 +152,7 @@
                         $sectionDone = $items->filter(fn ($l) => MasteryRecord::LEVEL_INDEX[$l->levelFor($user)] >= 2)->count();
                         $sectionMinutes = $items->sum('estimated_minutes');
                     @endphp
-                    <div x-data="{ open: {{ $isCurrentSection ? 'true' : 'false' }} }" class="border-b border-line">
+                    <div x-data="{ open: {{ ($isCurrentSection || $sectionTitle === '') ? 'true' : 'false' }} }" class="border-b border-line">
                         @if ($sectionTitle !== '')
                             <button type="button" @click="open = !open" class="w-full flex items-center gap-2 px-4 py-3 text-start bg-surface2 hover:bg-hover">
                                 <div class="min-w-0 flex-1">

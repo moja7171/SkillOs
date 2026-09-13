@@ -1,0 +1,37 @@
+[
+  {
+    "key": "when-evaluated",
+    "title": "پیش‌فرض کِی ارزیابی می‌شود؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nimport random\n\ndef roll(value=random.randint(1, 6)):\n    return value\n\nprint(roll(), roll(), roll())\n```\nدرباره‌ی خروجی چه می‌توان گفت؟",
+    "options": ["سه عدد تصادفی مستقل", "سه عدد یکسان — randint یک بار موقع def اجرا شد", "خطا — پیش‌فرض نمی‌تواند فراخوانی تابع باشد", "همیشه 1 1 1"],
+    "correct_option": 1,
+    "expected_outcome": "پیش‌فرض یک بار موقع اجرای `def` ارزیابی می‌شود؛ هر سه فراخوانی همان عدد را می‌بینند. برای عدد تازه در هر فراخوانی: `value=None` و محاسبه داخل بدنه.",
+    "hints": ["def خودش یک بار اجرا می‌شود.", "بدنه هر بار اجرا می‌شود، پیش‌فرض نه."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "fix-mutable-default",
+    "title": "دام را ببند",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابع زیر باگ دارد: هر «تگ» جدید، تگ‌های ثبت‌شده‌ی قبلی را هم برمی‌گرداند. توضیح بده چرا و آن را طبق الگوی درس درست کن؛ `register('a')` و بعد `register('b')` باید هر کدام فقط یک تگ داشته باشند، ولی `register('c', tags)` باید به لیست داده‌شده اضافه کند.\n\n```python\ndef register(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```",
+    "expected_outcome": "`[]` یک بار موقع def ساخته می‌شود و بین همه‌ی فراخوانی‌ها مشترک است.\n```python\ndef register(tag, tags=None):\n    if tags is None:\n        tags = []\n    tags.append(tag)\n    return tags\n```\n(`if not tags` هم قابل قبول است، ولی `is None` لیست خالیِ داده‌شده را از «نداده» تشخیص می‌دهد.)",
+    "hints": ["پیش‌فرض mutable بین فراخوانی‌ها مشترک است.", "پیش‌فرض None و ساختن لیست داخل بدنه."],
+    "rubric": "Correct: explains the shared default list and rewrites with tags=None plus creating a fresh list in the body; behaviour matches. Partial: fix right but explanation vague, or uses tags.copy() on each call (works but not the taught pattern). Incorrect: keeps the mutable default."
+  },
+  {
+    "key": "intentional-cache",
+    "title": "cache عمدی",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در مثال `factorial(n, cache={})` درس، همان «دام» به کار مفیدی تبدیل شد. در ۳ تا ۵ جمله توضیح بده (۱) چرا cache بین فراخوانی‌ها می‌ماند، (۲) چه خطری دارد اگر کسی `factorial(5, {})` صدا بزند یا cache را از بیرون تغییر دهد، و (۳) چرا مدرس می‌گوید closure/decorator راه بهتری است.",
+    "expected_outcome": "(۱) dict پیش‌فرض یک بار موقع def ساخته می‌شود و هر فراخوانی همان شیء را می‌بیند، پس نتایج ذخیره‌شده باقی می‌مانند. (۲) پیش‌فرض بخشی از امضای عمومی تابع است: کاربر می‌تواند cache را با dict خودش جایگزین کند (کش از دست می‌رود) یا با `factorial.__defaults__` به آن دست بزند؛ cache در معرض دید و دست‌کاری است. (۳) با closure/decorator، cache خصوصیِ تابع می‌شود و از امضا پنهان می‌ماند — همان memoization بدون نشت به رابط تابع.",
+    "hints": ["پیش‌فرض یک شیء زنده است که بین فراخوانی‌ها مشترک می‌ماند.", "به این فکر کن که cache در امضای تابع «دیده» می‌شود."],
+    "rubric": "Correct: mentions single evaluation at def time (shared object), the exposure/override risk via the parameter, and that closures/decorators hide the cache from the signature. Partial: two of three points. Incorrect: claims the cache is recreated per call."
+  }
+]

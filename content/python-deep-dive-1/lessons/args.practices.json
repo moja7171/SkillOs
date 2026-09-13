@@ -1,0 +1,26 @@
+[
+  {
+    "key": "args-type",
+    "title": "نوع args",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "```python\ndef f(a, *rest):\n    return rest\n\nf(1, 2, 3)\n```\nخروجی چیست؟",
+    "options": ["[2, 3]", "(2, 3)", "2", "{2, 3}"],
+    "correct_option": 1,
+    "expected_outcome": "`(2, 3)` — در پارامتر تابع، `*` بقیه‌ی آرگومان‌های موقعیتی را در یک **tuple** جمع می‌کند (برخلاف unpacking معمولی که list می‌دهد).",
+    "hints": ["نام rest مهم نیست؛ ستاره مهم است.", "در تابع tuple، در انتساب list."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "variadic-max-diff",
+    "title": "بیشترین اختلاف",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `spread(first, *rest)` بنویس که **حداقل یک** عدد بگیرد و اختلاف بزرگ‌ترین و کوچک‌ترین را برگرداند. بعد نشان بده که (۱) `spread(5)` برابر `0` است، (۲) `spread()` با `TypeError` رد می‌شود، و (۳) می‌توان یک لیست آماده را به آن داد: `nums = [3, 9, 1]` → `spread(*nums)` برابر `8`.",
+    "expected_outcome": "```python\ndef spread(first, *rest):\n    values = (first, *rest)\n    return max(values) - min(values)\n\nassert spread(5) == 0\nnums = [3, 9, 1]\nassert spread(*nums) == 8\n# spread()  → TypeError: missing 1 required positional argument: 'first'\n```",
+    "hints": ["الگوی avg(a, *args) درس: یک پارامتر اجباری + بقیه.", "لیست را با * موقع فراخوانی باز کن."],
+    "rubric": "Correct: signature (first, *rest), combines first with rest, returns max-min, spread(5) == 0, spread(*nums) == 8, and explains spread() raises TypeError. Partial: uses *args only (so spread() doesn't raise) or forgets to include first in the max/min. Incorrect: wrong result."
+  }
+]

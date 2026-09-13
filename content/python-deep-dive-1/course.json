@@ -1712,8 +1712,14 @@
           "subtitle": "062-argument-vs-parameter.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پارامتر: نام در تعریف تابع؛ آرگومان: مقدار در فراخوانی.",
+        "آرگومان‌ها با ارجاع (reference) پاس می‌شوند — پارامتر و آرگومان به یک شیء اشاره می‌کنند.",
+        "پارامترها متغیرهای محلی تابع‌اند؛ اسکوپ فراخوانی‌کننده و تابع جدا هستند."
+      ],
+      "common_mistakes": [
+        "فکر کردن به «کپی شدن مقدار» هنگام فراخوانی تابع."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — 062-argument-vs-parameter",
@@ -1745,8 +1751,15 @@
           "subtitle": "064-positional-and-keyword-arguments-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "آرگومان positional با ترتیب، keyword با نام پارامتر تطبیق می‌خورد.",
+        "پیش‌فرض‌ها فقط از انتهای لیست پارامترها مجازند.",
+        "بعد از اولین keyword argument دیگر positional نمی‌آید."
+      ],
+      "common_mistakes": [
+        "گذاشتن پارامتر بدون پیش‌فرض بعد از پارامتر با پیش‌فرض.",
+        "تصور اینکه ترتیب keyword argumentها مهم است."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1788,8 +1801,16 @@
           "subtitle": "066-unpacking-iterables-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "unpacking یعنی پخش کردن عناصر یک iterable روی چند متغیر؛ سمت راست اول به‌طور کامل ارزیابی می‌شود.",
+        "tuple را کاما می‌سازد نه پرانتز؛ `a = 1,` یک tuple است.",
+        "swap با `a, b = b, a` بدون متغیر موقت کار می‌کند.",
+        "unpacking روی هر iterable کار می‌کند: string، set، dict (کلیدها)."
+      ],
+      "common_mistakes": [
+        "فکر کردن به اینکه `(1)` یک tuple است.",
+        "اتکا به ترتیب unpacking یک set."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1831,8 +1852,16 @@
           "subtitle": "068-extended-unpacking-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`a, *b = seq` باقی‌مانده را همیشه به‌صورت **list** می‌دهد، حتی برای tuple یا string.",
+        "فقط یک `*` در سمت چپ مجاز است؛ می‌تواند هر جایی باشد.",
+        "`*` در سمت راست چند iterable را با هم ترکیب می‌کند؛ `**` برای dictها.",
+        "با unpacking تودرتو می‌شود ساختارهای پیچیده را باز کرد."
+      ],
+      "common_mistakes": [
+        "انتظار tuple برای بخش `*`.",
+        "استفاده از دو `*` در سمت چپ."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1874,8 +1903,15 @@
           "subtitle": "070-args-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`*args` آرگومان‌های positional اضافه را در یک **tuple** جمع می‌کند.",
+        "بعد از `*args` دیگر positional argument نمی‌شود داد.",
+        "`*` در فراخوانی، یک iterable را به آرگومان‌های جدا باز می‌کند."
+      ],
+      "common_mistakes": [
+        "اسم `args` را الزامی دانستن؛ `*` مهم است نه نام.",
+        "پاس دادن لیست بدون `*` وقتی تابع `*args` دارد."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1917,8 +1953,14 @@
           "subtitle": "072-keyword-arguments-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`*` تنها در امضا: هر چه بعدش می‌آید فقط با نام پاس می‌شود (keyword-only).",
+        "بعد از `*args` هم پارامترها keyword-only هستند.",
+        "پارامتر keyword-only می‌تواند بدون پیش‌فرض و در نتیجه اجباری باشد."
+      ],
+      "common_mistakes": [
+        "تلاش برای پاس دادن پارامتر keyword-only با موقعیت."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -1948,8 +1990,14 @@
           "subtitle": "073-kwargs.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`**kwargs` آرگومان‌های کلیدواژه‌ای اضافه را در یک **dict** جمع می‌کند.",
+        "هیچ پارامتری بعد از `**kwargs` مجاز نیست.",
+        "`**kwargs` می‌تواند بدون `*args` بیاید، ولی نه قبل از پارامترهای positional."
+      ],
+      "common_mistakes": [
+        "گذاشتن پارامتر بعد از `**kwargs`."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -1991,8 +2039,15 @@
           "subtitle": "075-putting-it-all-together-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "ترتیب امضا: positional → `*args` یا `*` → keyword-only → `**kwargs`.",
+        "نمی‌توان positional اجباری بعد از پیش‌فرض داشت، ولی keyword-only اجباری بعد از پیش‌فرض مجاز است.",
+        "مثال `print(*objects, sep=' ', end='\\n')` همین الگوست.",
+        "وقتی امضا گیج‌کننده می‌شود، احتمالاً باید بازطراحی شود."
+      ],
+      "common_mistakes": [
+        "فراموش کردن اینکه بعد از `*args` هیچ positional دیگری نمی‌آید."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -2022,8 +2077,14 @@
           "subtitle": "076-application-a-simple-function-timer.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "تابع می‌تواند تابع دیگری را به همراه `*args` و `**kwargs` بگیرد و فراخوانی کند.",
+        "`time.perf_counter()` برای اندازه‌گیری زمان اجرا.",
+        "`*args, **kwargs` را عیناً به تابع درونی پاس می‌دهیم."
+      ],
+      "common_mistakes": [
+        "استفاده از `time.time()` به جای `perf_counter` برای benchmark."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -2053,8 +2114,17 @@
           "subtitle": "078-parameter-defaults-beware-again.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "مقدار پیش‌فرض **یک بار** هنگام اجرای `def` ارزیابی می‌شود، نه هر فراخوانی.",
+        "پیش‌فرضی که فراخوانی تابع است (مثل `datetime.utcnow()`) در همه‌ی فراخوانی‌ها ثابت می‌ماند.",
+        "پیش‌فرض mutable (لیست، dict) بین همه‌ی فراخوانی‌ها مشترک است.",
+        "الگوی درست: پیش‌فرض `None` و ساختن مقدار داخل بدنه.",
+        "اشتراک پیش‌فرض گاهی عمدی است (cache/memoization)."
+      ],
+      "common_mistakes": [
+        "`def f(x=[])` و انتظار لیست تازه در هر فراخوانی.",
+        "`dt=datetime.now()` به‌عنوان پیش‌فرض."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — 077-parameter-defaults-beware",

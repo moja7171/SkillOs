@@ -1,0 +1,37 @@
+[
+  {
+    "key": "multiple-values",
+    "title": "چرا TypeError؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef f(a, b=2, *args):\n    ...\nf(1, 'x', 'y', b=5)\n```\nچرا این فراخوانی `TypeError: multiple values for argument 'b'` می‌دهد؟",
+    "options": ["چون b فقط با نام قابل پاس دادن است", "چون 'x' به‌عنوان آرگومان موقعیتی دوم به b داده می‌شود و بعد b=5 تکراری است", "چون *args نمی‌تواند رشته بگیرد", "چون b پیش‌فرض دارد و نمی‌شود مقدار جدید داد"],
+    "correct_option": 1,
+    "expected_outcome": "پایتون موقعیتی‌ها را به ترتیب پر می‌کند: 1→a، 'x'→b، 'y'→args. بعد b=5 دوباره b را می‌دهد. با *args، نمی‌توان از روی پیش‌فرض موقعیتی پرید.",
+    "hints": ["دومین آرگومان موقعیتی به کدام پارامتر می‌رسد؟", "پیش‌فرض موقعیتی قبل از *args عملاً غیرقابل استفاده است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "read-signature",
+    "title": "امضا را بخوان",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "برای `def connect(host, port=5432, *, timeout, retries=3, **options): ...` بگو هر فراخوانی معتبر است یا نه و اگر معتبر است مقدار `options` چیست:\n\n1. `connect('db', timeout=5)`\n2. `connect('db', 5433, 5)`\n3. `connect('db', retries=1, timeout=2, ssl=True)`\n4. `connect(host='db', timeout=1, port=1)`\n5. `connect('db')`",
+    "expected_outcome": "1. معتبر، options={}. 2. نامعتبر — سه موقعیتی ولی بعد از port، * است (timeout باید با نام). 3. معتبر، options={'ssl': True}. 4. معتبر (همه نام‌دار مجاز)، options={}. 5. نامعتبر — timeout اجباری است.",
+    "hints": ["* تنها: بعد از port موقعیتی ممنوع.", "timeout بدون پیش‌فرض = keyword-only اجباری."],
+    "rubric": "Correct: 1 valid {}, 2 invalid, 3 valid {'ssl': True}, 4 valid {}, 5 invalid, with reasons. Partial: one wrong. Incorrect: two or more wrong."
+  },
+  {
+    "key": "logger-flag",
+    "title": "تابع با پرچم رفتاری",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `join_words(*words, sep=' ', upper=False)` بنویس که کلمات را با `sep` به هم بچسباند و اگر `upper` درست باشد نتیجه را بزرگ کند. `sep` و `upper` باید **فقط با نام** قابل تنظیم باشند. برای فراخوانی بدون کلمه، رشته‌ی خالی برگرداند.\n\n```python\njoin_words('a', 'b', 'c')                 # 'a b c'\njoin_words('a', 'b', sep='-', upper=True) # 'A-B'\njoin_words()                              # ''\n```",
+    "expected_outcome": "```python\ndef join_words(*words, sep=' ', upper=False):\n    result = sep.join(words)\n    return result.upper() if upper else result\n```\nپارامترهای بعد از *words خودکار keyword-only هستند.",
+    "hints": ["الگوی print: *args + keyword-onlyهای پیش‌فرض‌دار.", "sep.join روی tuple خالی '' می‌دهد."],
+    "rubric": "Correct: *words followed by keyword-only sep and upper with defaults; three examples hold. Partial: works but sep/upper can be passed positionally (no * separation — impossible here since *words precedes them; accept) or upper applied before join. Incorrect: wrong output."
+  }
+]

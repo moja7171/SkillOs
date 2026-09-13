@@ -1,0 +1,37 @@
+[
+  {
+    "key": "invalid-call",
+    "title": "کدام فراخوانی نامعتبر است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "با `def f(a, b=2, c=3): ...` کدام فراخوانی **خطا** می‌دهد؟",
+    "options": [
+      "f(1, c=9)",
+      "f(c=9, a=1)",
+      "f(1, b=5, 9)",
+      "f(1, 2, 3)"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "`f(1, b=5, 9)`: بعد از یک آرگومان نام‌دار، آرگومان موقعیتی مجاز نیست (SyntaxError). بقیه معتبرند.",
+    "hints": [
+      "قانون: بعد از اولین آرگومان نام‌دار، همه باید نام‌دار باشند.",
+      "هر خط را از چپ بخوان و ببین کجا positional بعد از keyword آمده."
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "fix-signature",
+    "title": "امضای تابع را درست کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این تعریف خطا می‌دهد. آن را طوری اصلاح کن که `sep` اختیاری با پیش‌فرض `', '` باشد، `end` اختیاری با پیش‌فرض خط جدید، و `items` اجباری. بعد یک فراخوانی بنویس که فقط `end` را عوض کند و `sep` را پیش‌فرض بگذارد.\n\n```python\ndef join_print(items, sep=', ', end):\n    print(sep.join(items), end=end)\n```",
+    "expected_outcome": "```python\ndef join_print(items, sep=', ', end='\\n'):\n    print(sep.join(items), end=end)\n\njoin_print(['a', 'b'], end='!\\n')\n```",
+    "hints": [
+      "پارامتر بعد از یک پیش‌فرض باید خودش پیش‌فرض داشته باشد.",
+      "برای رد کردن sep و دادن end، از آرگومان نام‌دار استفاده کن."
+    ],
+    "rubric": "Correct: end gets a default ('\\n'), items stays required, and the call passes end by keyword while omitting sep. Partial: signature fixed but the call passes sep positionally as well, or gives end a default but also gives items one. Incorrect: signature still invalid."
+  }
+]

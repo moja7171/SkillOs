@@ -1,0 +1,26 @@
+[
+  {
+    "key": "bare-star",
+    "title": "ستاره‌ی تنها",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "با `def f(a, *, b): ...` کدام فراخوانی معتبر است؟",
+    "options": ["f(1, 2)", "f(1, b=2)", "f(a=1, 2)", "f(1, 2, b=3)"],
+    "correct_option": 1,
+    "expected_outcome": "`*` تنها یعنی بعد از `a` هیچ آرگومان موقعیتی دیگری قبول نمی‌شود و `b` فقط با نام. `f(1, 2)` و `f(1, 2, b=3)` موقعیتی اضافه دارند؛ `f(a=1, 2)` موقعیتی بعد از نام‌دار است.",
+    "hints": ["* تنها: پایان موقعیتی‌ها، بدون جمع کردن.", "b باید با نام پاس شود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "force-keyword",
+    "title": "امضای امن برای انتقال پول",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابع `transfer(amount, source, dest)` با فراخوانی موقعیتی خطرناک است — جابه‌جا کردن source و dest پول را برعکس می‌فرستد. امضا را طوری بازنویسی کن که `amount` موقعیتی بماند ولی `source` و `dest` **فقط با نام** قابل پاس دادن باشند، و یک پارامتر اختیاری keyword-only به نام `note` با پیش‌فرض `''` اضافه کن. بعد یک فراخوانی درست و یکی که باید `TypeError` بدهد بنویس.",
+    "expected_outcome": "```python\ndef transfer(amount, *, source, dest, note=''):\n    ...\n\ntransfer(100, source='A', dest='B')            # OK\ntransfer(100, 'A', 'B')                          # TypeError: takes 1 positional argument but 3 were given\n```",
+    "hints": ["برای اجبار به نام بدون جمع کردن موقعیتی‌های اضافه، از * تنها استفاده کن.", "پارامتر keyword-only با پیش‌فرض بعد از اجباری‌ها مجاز است."],
+    "rubric": "Correct: def transfer(amount, *, source, dest, note='') with a keyword call and a positional call that raises TypeError. Partial: uses *args instead of bare * (positional extras silently swallowed), or note placed before source/dest (still valid but not what was asked — accept). Incorrect: source/dest still positional."
+  }
+]

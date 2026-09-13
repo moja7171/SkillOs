@@ -1,0 +1,26 @@
+[
+  {
+    "key": "forward-args",
+    "title": "عبور دادن آرگومان‌ها",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "داخل `def wrapper(fn, *args, **kwargs):` کدام خط `fn` را دقیقاً با همان آرگومان‌هایی که به wrapper داده شده صدا می‌زند؟",
+    "options": ["fn(args, kwargs)", "fn(*args, **kwargs)", "fn(*args, kwargs)", "fn(args, **kwargs)"],
+    "correct_option": 1,
+    "expected_outcome": "`fn(*args, **kwargs)` — tuple با یک ستاره و dict با دو ستاره باز می‌شوند. بدون ستاره، خود tuple/dict به‌عنوان یک آرگومان پاس می‌شود.",
+    "hints": ["args یک tuple است؛ باید باز شود.", "kwargs یک dict است؛ ** برای dict."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "call-counter",
+    "title": "چند بار صدا بزن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `call_n(fn, *args, n=1, **kwargs)` بنویس که `fn` را `n` بار با آرگومان‌های داده‌شده صدا بزند و **لیست نتایج** را برگرداند. `n` باید keyword-only باشد و به `kwargs` نرود.\n\n```python\ncall_n(max, 3, 7, 1, n=2)                 # [7, 7]\ncall_n(int, '1010', base=2, n=3)          # [10, 10, 10]\ncall_n(len, 'abc')                        # [3]\n```",
+    "expected_outcome": "```python\ndef call_n(fn, *args, n=1, **kwargs):\n    return [fn(*args, **kwargs) for _ in range(n)]\n```\nیا با حلقه و append. چون n در امضا نام‌دار مشخص است، در kwargs ظاهر نمی‌شود.",
+    "hints": ["الگوی time_it: keyword-only بعد از *args.", "داخل حلقه fn را با *args و **kwargs صدا بزن."],
+    "rubric": "Correct: signature (fn, *args, n=1, **kwargs), calls fn(*args, **kwargs) n times, returns the list; all examples hold. Partial: n placed in kwargs and popped manually, or returns only the last result. Incorrect: passes args/kwargs without unpacking."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "terms",
+    "title": "کدام آرگومان است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "```python\ndef area(width, height):\n    return width * height\n\nw = 3\narea(w, 4)\n```\nدر این کد، «پارامترها» کدام‌اند؟",
+    "options": [
+      "w و 4",
+      "width و height",
+      "w و height",
+      "3 و 4"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "پارامترها نام‌های داخل تعریف تابع هستند (`width`, `height`)؛ `w` و `4` آرگومان‌های فراخوانی‌اند.",
+    "hints": [
+      "تعریف = پارامتر، فراخوانی = آرگومان.",
+      "در فراخوانی چه چیزی «داده» می‌شود؟ همان آرگومان است."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "same-object",
+    "title": "یک شیء، دو نام",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\ndef f(a):\n    print(id(a) == id(x))\n    a = a + [1]\n    print(id(a) == id(x))\n\nx = [0]\nf(x)\nprint(x)\n```\nسه خط خروجی را پیش‌بینی کن و برای هر کدام یک جمله دلیل بیاور.",
+    "expected_outcome": "`True` — a همان شیء x است (پاس به‌صورت ارجاع). `False` — `a + [1]` لیست جدیدی می‌سازد و a به آن اشاره می‌کند. `[0]` — x دست‌نخورده ماند چون a فقط ارجاعش عوض شد، شیء اصلی تغییر نکرد (با `a.append(1)` فرق می‌کرد).",
+    "hints": [
+      "آرگومان آدرس شیء را پاس می‌دهد.",
+      "+ روی لیست شیء جدید می‌سازد؛ append درجا تغییر می‌دهد."
+    ],
+    "rubric": "Correct: True, False, [0] with the reference-passing / new-object reasoning. Partial: outputs right but explains the last line as 'lists are copied into functions'. Incorrect: predicts x == [0, 1]."
+  }
+]

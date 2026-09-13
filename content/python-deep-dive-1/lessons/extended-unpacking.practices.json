@@ -1,0 +1,37 @@
+[
+  {
+    "key": "star-left",
+    "title": "بقیه کجا می‌رود؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "بعد از `a, *b, c = (1, 2, 3, 4)` مقدار `b` چیست؟",
+    "options": ["(2, 3)", "[2, 3]", "[2, 3, 4]", "(2, 3, 4)"],
+    "correct_option": 1,
+    "expected_outcome": "`[2, 3]` — a اولی، c آخری، b بقیه؛ و `*` همیشه **لیست** می‌سازد حتی وقتی منبع tuple است.",
+    "hints": ["c آخرین عنصر را می‌گیرد.", "نوع نتیجه‌ی * همیشه list است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "merge-settings",
+    "title": "ادغام تنظیمات",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `effective_settings(defaults, user, override)` بنویس که سه دیکشنری را طوری ادغام کند که `override` بر `user` و `user` بر `defaults` غلبه کند — **در یک عبارت** با unpacking. بعد نشان بده:\n\n```python\neffective_settings({'theme': 'light', 'lang': 'en'}, {'theme': 'dark'}, {'lang': 'fa'})\n# {'theme': 'dark', 'lang': 'fa'}\n```",
+    "expected_outcome": "```python\ndef effective_settings(defaults, user, override):\n    return {**defaults, **user, **override}\n```\nآخری برنده است، پس ترتیب: پیش‌فرض، کاربر، override.",
+    "hints": ["** دیکشنری را با کلید و مقدار پهن می‌کند.", "کلید تکراری: مقدارِ آخرین دیکشنری می‌ماند."],
+    "rubric": "Correct: {**defaults, **user, **override} (this order) and the example gives theme dark, lang fa. Partial: right operator, wrong order (defaults win). Incorrect: uses * (keys only) or update() without returning a new dict."
+  },
+  {
+    "key": "nested-header",
+    "title": "unpacking تودرتو",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "یک رکورد به شکل `record = ('2024-05-01', ['alice', 'bob', 'carol'], ('x', 9, 8, 7))` داری. **یک خط** unpacking بنویس که `date`، `first_name`، `other_names` (لیست بقیه‌ی نام‌ها)، `tag` (رشته‌ی 'x') و `scores` (لیست [9, 8, 7]) را بگیرد. بعد مقدار `other_names` و `scores` را بنویس.",
+    "expected_outcome": "```python\ndate, (first_name, *other_names), (tag, *scores) = record\n```\nother_names = ['bob', 'carol']، scores = [9, 8, 7]. دو `*` در دو سطح مختلف مجازند.",
+    "hints": ["عنصر دوم و سوم را با پرانتز به tupleهای تودرتو باز کن.", "در هر سطح فقط یک * مجاز است — سطح‌های مختلف هر کدام می‌توانند یکی داشته باشند."],
+    "rubric": "Correct: date, (first_name, *other_names), (tag, *scores) = record with the two resulting lists stated. Partial: two-step unpacking that gets the right values, or a single-level unpack that leaves lists unsplit. Incorrect: wrong values."
+  }
+]

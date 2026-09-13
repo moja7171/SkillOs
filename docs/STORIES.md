@@ -37,7 +37,7 @@ As a learner, I want to open a lesson and switch between video and text.
 ## M1 — First real course
 
 ### [~] C-01 Advanced Python course content
-Owner provided 95 videos (no subtitles) as `course/python-deep-dive-1/`, served via `public/media/` symlink. 2026-09-13: `content/python-deep-dive-1/` has all 106 lessons (159 videos, 11 sections; lectures 100–162 arrived later without subtitles yet) (videos grouped, sections), full text + practices for «مرور سریع» (10), «متغیرها و حافظه» (11) and «انواع عددی» (18) — 39 of 106 — written from English transcripts + slides + notebooks; 67 outlines remain. 9 English subtitles are empty upstream (055, 056, 064, 078, 085, 097, 106, 111, 138; parked in `course/.../broken-subs/`). Claude writes (lesson texts following the videos, 2–3 practices per lesson with rubrics), imports, owner reviews in the app, fixes iterate as commits.
+Owner provided 95 videos (no subtitles) as `course/python-deep-dive-1/`, served via `public/media/` symlink. 2026-09-13: `content/python-deep-dive-1/` has all 106 lessons (159 videos, 11 sections; lectures 100–162 arrived later without subtitles yet) (videos grouped, sections), full text + practices for «مرور سریع» (10), «متغیرها و حافظه» (11), «انواع عددی» (18) and «پارامترهای تابع» (10) — 49 of 106 — written from English transcripts + slides + notebooks; 57 outlines remain. 9 English subtitles are empty upstream (055, 056, 064, 078, 085, 097, 106, 111, 138; parked in `course/.../broken-subs/`). Claude writes (lesson texts following the videos, 2–3 practices per lesson with rubrics), imports, owner reviews in the app, fixes iterate as commits.
 
 ## M2 — Session (unchanged from v0.2 S-08..S-13, "skill" → "lesson")
 

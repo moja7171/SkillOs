@@ -1,0 +1,51 @@
+[
+  {
+    "key": "single-tuple",
+    "title": "tuple تک‌عنصری",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "کدام‌یک یک tuple با یک عنصر می‌سازد؟",
+    "options": [
+      "(5)",
+      "5,",
+      "tuple(5)",
+      "[5]"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "`5,` (یا `(5,)`) — کاما tuple می‌سازد. `(5)` فقط ۵ است؛ `tuple(5)` خطا می‌دهد (int iterable نیست)؛ `[5]` لیست است.",
+    "hints": [
+      "پرانتز tuple نمی‌سازد؛ کاما می‌سازد.",
+      "`type((1))` را با `type((1,))` مقایسه کن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "rotate",
+    "title": "چرخش سه متغیر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "سه متغیر `a, b, c = 1, 2, 3` داری. با **یک خط** و بدون متغیر موقت، مقادیر را یک جایگاه بچرخان تا `a=2, b=3, c=1` شود. بعد در یک جمله بگو چرا این کار بدون temp درست است.",
+    "expected_outcome": "```python\na, b, c = b, c, a\n```\nچون پایتون سمت راست را کامل ارزیابی می‌کند (یک tuple با ارجاع‌های فعلی b، c، a می‌سازد) و بعد انتساب می‌کند.",
+    "hints": [
+      "a, b = b, a را به سه متغیر گسترش بده.",
+      "سمت راست اول و کامل ارزیابی می‌شود."
+    ],
+    "rubric": "Correct: a, b, c = b, c, a and explains right-hand-side-first evaluation. Partial: correct line without the explanation, or uses a temp. Incorrect: wrong rotation."
+  },
+  {
+    "key": "dict-items-unpack",
+    "title": "باز کردن جفت‌های دیکشنری",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "برای `d = {'x': 10, 'y': 20}` بنویس هر خط چه چیزی به متغیرها می‌دهد:\n\n1. `a, b = d`\n2. `a, b = d.values()`\n3. `(k1, v1), (k2, v2) = d.items()`",
+    "expected_outcome": "1. کلیدها: a='x', b='y'. 2. مقدارها: a=10, b=20. 3. هر آیتم یک tuple (کلید, مقدار) است که تودرتو باز می‌شود: k1='x', v1=10, k2='y', v2=20. (ترتیب dict از ۳٫۷ ترتیب درج است.)",
+    "hints": [
+      "پیمایش dict روی کلیدهاست.",
+      "items() جفت‌های (key, value) می‌دهد که خودشان قابل باز شدن‌اند."
+    ],
+    "rubric": "Correct: keys, values, and nested (key, value) pairs respectively. Partial: 1 and 2 right but 3 described wrongly. Incorrect: says 1 gives values."
+  }
+]

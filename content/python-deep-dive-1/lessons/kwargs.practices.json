@@ -1,0 +1,26 @@
+[
+  {
+    "key": "kwargs-content",
+    "title": "محتوای kwargs",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef f(a, *args, d=0, **extra):\n    return a, args, d, extra\n\nf(1, 2, 3, d=4, x=5)\n```\nخروجی چیست؟",
+    "options": ["(1, (2, 3), 4, {'x': 5})", "(1, [2, 3], 4, {'x': 5})", "(1, (2, 3), 0, {'d': 4, 'x': 5})", "(1, (2, 3, 4), 0, {'x': 5})"],
+    "correct_option": 0,
+    "expected_outcome": "2 و 3 موقعیتی اضافه → args (tuple)؛ d نام‌دار مشخص → 4؛ x نام‌دار اضافه → extra.",
+    "hints": ["نام‌دارهایی که پارامتر مشخص دارند به همان می‌روند، بقیه به **.", "args tuple است."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "build-tag",
+    "title": "ساخت تگ HTML با ویژگی‌های دلخواه",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `tag(name, *children, **attrs)` بنویس که رشته‌ی HTML بسازد: نام تگ، هر تعداد فرزند (رشته) که به هم چسبانده می‌شوند، و هر تعداد ویژگی نام‌دار که به‌صورت `key=\"value\"` داخل تگ می‌آیند. چون `class` کلیدواژه است، `cls` را به `class` ترجمه کن.\n\n```python\ntag('p', 'hi')                          # '<p>hi</p>'\ntag('a', 'x', href='/u', cls='btn')     # '<a href=\"/u\" class=\"btn\">x</a>'\ntag('br')                               # '<br></br>'  (ساده‌سازی؛ خودبسته لازم نیست)\n```",
+    "expected_outcome": "```python\ndef tag(name, *children, **attrs):\n    parts = []\n    for key, value in attrs.items():\n        key = 'class' if key == 'cls' else key\n        parts.append(f' {key}=\"{value}\"')\n    return f\"<{name}{''.join(parts)}>{''.join(children)}</{name}>\"\n```",
+    "hints": ["children یک tuple و attrs یک dict است — روی هر دو حلقه بزن یا join کن.", "برای cls→class یک شرط کوچک روی کلید."],
+    "rubric": "Correct: signature (name, *children, **attrs), joins children, renders attrs as key=\"value\" with cls mapped to class; all three examples hold. Partial: attrs order or spacing slightly off but structure right, or cls not mapped. Incorrect: wrong signature (e.g. children as a list parameter)."
+  }
+]

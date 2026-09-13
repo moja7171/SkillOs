@@ -1,0 +1,37 @@
+[
+  {
+    "key": "what-in-namespace",
+    "title": "چه نامی اضافه می‌شود؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "بعد از `import a.b.c` (که a و b پکیج و c ماژول‌اند)، کدام درست است؟",
+    "options": ["a، b و c هر سه در namespace ما هستند", "فقط c در namespace ماست؛ a و b در sys.modules", "فقط a در namespace ماست؛ 'a', 'a.b', 'a.b.c' در sys.modules", "فقط 'a.b.c' در sys.modules و هیچ نامی در namespace ما"],
+    "correct_option": 2,
+    "expected_outcome": "import تودرتو هر سطح را جداگانه با نام نقطه‌دار در cache می‌گذارد، ولی در namespace فراخواننده فقط نام سطح اول را bind می‌کند؛ بقیه از طریق زنجیره‌ی attribute در دسترس‌اند.",
+    "hints": ["به `a.b.c.value` فکر کن — از کدام نام شروع می‌شود؟", "sys.modules کلیدهای نقطه‌دار دارد."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "build-package",
+    "title": "یک پکیج بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "ساختار زیر را بساز (محتوای هر فایل را بنویس):\n```\nshop/\n    __init__.py\n    catalog.py      # ITEMS = ['pen', 'book']\n    billing/\n        __init__.py\n        tax.py      # def with_tax(p): return p * 1.09\n```\nطوری که (۱) `import shop` هم `shop.catalog.ITEMS` و هم `shop.billing.tax.with_tax` را بدون import اضافه در دسترس کند، (۲) بگو `shop.billing.__path__`, `shop.billing.tax.__package__` و `shop.__file__` چه هستند، (۳) توضیح بده چرا نوشتن `import tax` داخل `billing/__init__.py` خطا می‌دهد.",
+    "expected_outcome": "```python\n# shop/__init__.py\nimport shop.catalog\nimport shop.billing\n\n# shop/billing/__init__.py\nimport shop.billing.tax\n```\n`shop.billing.__path__` = ['.../shop/billing']، `shop.billing.tax.__package__` = 'shop.billing'، `shop.__file__` = '.../shop/__init__.py'. `import tax` خطا می‌دهد چون finderها فقط در sys.path می‌گردند و پوشه‌ی billing آنجا نیست؛ باید مسیر نقطه‌دار کامل (یا relative import) داد.",
+    "hints": ["__init__ می‌تواند زیرماژول‌ها را import کند.", "sys.path در برابر __path__."],
+    "rubric": "Correct: both __init__ files with full dotted imports, correct attribute values, and the sys.path explanation. Partial: imports right but attribute values wrong. Incorrect: bare `import tax`."
+  },
+  {
+    "key": "package-vs-module",
+    "title": "پکیج در برابر ماژول",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: چه چیزی یک پکیج را از ماژول متمایز می‌کند (از نظر فنی و از نظر فایل‌سیستم)؟ کد پکیج کجاست و چرا؟ import کردن یک پکیج به‌طور پیش‌فرض زیرماژول‌هایش را بار می‌کند؟",
+    "expected_outcome": "پکیج ماژولی است با `__path__` (پوشه‌اش) که می‌تواند ماژول/پکیج دیگر را در بر بگیرد؛ در فایل‌سیستم یک پوشه با `__init__.py` است. کد پکیج در `__init__.py` است چون به یک پوشه نمی‌شود کد داد ولی پکیج ماژول است و باید کدی اجرا شود. نه — فقط `__init__.py`های مسیر اجرا می‌شوند؛ زیرماژول‌ها باید صریحاً (یا از داخل __init__) import شوند.",
+    "hints": ["__path__ و __init__.py.", "بعد از import pack1، pack1.module1a هست؟"],
+    "rubric": "Correct: __path__/directory + __init__.py, code location rationale, and no auto-import of submodules. Partial: two of three. Incorrect: says importing a package imports everything inside."
+  }
+]

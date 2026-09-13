@@ -1,0 +1,37 @@
+[
+  {
+    "key": "import-module-name",
+    "title": "import_module و namespace",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nimport importlib\nimportlib.import_module('fractions')\nfractions.Fraction(1, 2)\n```\nچه می‌شود؟",
+    "options": ["کار می‌کند؛ import_module مثل import عمل می‌کند", "NameError — ماژول بارگذاری و در sys.modules ثبت شده، ولی نام fractions در namespace ما ساخته نشده", "ModuleNotFoundError", "خطا چون import_module فقط ماژول‌های built-in را می‌پذیرد"],
+    "correct_option": 1,
+    "expected_outcome": "import_module ماژول را برمی‌گرداند؛ باید خودت نتیجه را به نامی نسبت بدهی: `fractions = importlib.import_module('fractions')`.",
+    "hints": ["import statement دو کار می‌کند؛ import_module فقط یکی را.", "مقدار برگشتی را کجا گذاشتی؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "plugin-loader",
+    "title": "بارگذاری پلاگین‌ها با نام",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تابعی به نام `load_plugins(names)` بنویس که لیستی از نام ماژول‌ها (رشته) بگیرد، هر کدام را با `importlib` بارگذاری کند و dict `{name: module}` برگرداند؛ اگر ماژولی پیدا نشد، قبل از تلاش برای بارگذاری با `find_spec` تشخیص بده و به‌جای خطا، `None` بگذار. نشان بده برای `['math', 'nope', 'json']` چه برمی‌گردد.",
+    "expected_outcome": "```python\nimport importlib\nfrom importlib.util import find_spec\n\ndef load_plugins(names):\n    result = {}\n    for name in names:\n        result[name] = importlib.import_module(name) if find_spec(name) else None\n    return result\n\nload_plugins(['math', 'nope', 'json'])\n# {'math': <module 'math' (built-in)>, 'nope': None, 'json': <module 'json' from '...'>}\n```",
+    "hints": ["find_spec بدون بارگذاری None یا ModuleSpec می‌دهد.", "import_module ماژول را برمی‌گرداند."],
+    "rubric": "Correct: uses find_spec to guard, import_module to load, returns the mapping with None for the missing one. Partial: uses try/except ModuleNotFoundError instead of find_spec (acceptable but note the ask). Incorrect: uses the import statement with a variable."
+  },
+  {
+    "key": "finder-loader",
+    "title": "finder، loader، spec",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: وقتی `import mymod` اجرا می‌شود و mymod در sys.modules نیست، `sys.meta_path` چه نقشی دارد، ModuleSpec چیست و چه اطلاعاتی دارد، و چرا اضافه کردن یک پوشه به `sys.path` باعث می‌شود PathFinder ماژول را پیدا کند؟ ModuleNotFoundError دقیقاً کِی رخ می‌دهد؟",
+    "expected_outcome": "پایتون finderهای sys.meta_path را به ترتیب صدا می‌زند (BuiltinImporter، FrozenImporter، PathFinder)؛ هر کدام یا None برمی‌گرداند یا یک ModuleSpec شامل نام، loader مناسب و origin (مکان منبع). PathFinder در پوشه‌های sys.path دنبال فایل/پکیج می‌گردد، پس افزودن پوشه یعنی جزو محل‌های جست‌وجو می‌شود. اگر همه‌ی finderها None بدهند، ModuleNotFoundError.",
+    "hints": ["finder پیدا می‌کند، loader بار می‌کند.", "spec = نام + loader + origin."],
+    "rubric": "Correct: ordered meta_path query, spec contents, sys.path's relation to PathFinder, and the all-None → error condition. Partial: three of four. Incorrect: thinks sys.path is searched by all finders."
+  }
+]

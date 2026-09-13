@@ -3471,8 +3471,17 @@
           "subtitle": "130-what-is-a-module.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "ماژول یک شیء از نوع `types.ModuleType` است؛ namespace آن `__dict__` (= `globals()` از داخل خودش).",
+        "`import` ماژول را در حافظه می‌سازد (اگر نبود) و نام را در `globals()` فراخواننده bind می‌کند.",
+        "`sys.modules` cache سراسری است؛ هر ماژول یک بار بارگذاری می‌شود.",
+        "built-inها (math) با C نوشته شده‌اند و `__file__` ندارند؛ کتابخانه‌ی استاندارد (fractions) فایل .py دارد.",
+        "می‌توان ماژول را دستی ساخت و attribute به آن داد؛ `obj.attr` یک lookup در `__dict__` است."
+      ],
+      "common_mistakes": [
+        "تصور اینکه import دوم ماژول را دوباره اجرا می‌کند.",
+        "اشتباه گرفتن نام در namespace با خود شیء ماژول."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter — 130-what-is-a-module",
@@ -3498,8 +3507,17 @@
           "subtitle": "131-how-does-python-import-modules.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "import در زمان اجرا انجام می‌شود؛ `sys.path` فهرست محل‌های جست‌وجوست.",
+        "مراحل: cache → پیدا کردن → ساخت ModuleType → ثبت در sys.modules → compile → exec در `mod.__dict__`.",
+        "بار اول، کد ماژول اجرا می‌شود؛ فایل اجراشده `__name__ == '__main__'` دارد.",
+        "`del` نام از globals، ماژول را حذف نمی‌کند؛ import بعدی فقط نام را برمی‌گرداند.",
+        "importer دستی با compile/exec با import استاندارد سازگار است چون cache را مشترک می‌کند."
+      ],
+      "common_mistakes": [
+        "گذاشتن هر چیزی در sys.modules (import هر چه آنجاست برمی‌گرداند).",
+        "انتظار اینکه ویرایشگر ماژول ثبت‌شده در cache را بشناسد."
+      ],
       "attachments": [
         {
           "title": "فایل پایتون — importer.py",
@@ -3545,8 +3563,17 @@
           "subtitle": "132-imports-and-importlib.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`importlib.import_module(name)` برای نام پویا؛ ماژول را برمی‌گرداند ولی نام نمی‌سازد.",
+        "finder (spec: نام، loader، origin) + loader = importer؛ `sys.meta_path` ترتیب finderها.",
+        "BuiltinImporter، FrozenImporter، PathFinder (روی sys.path).",
+        "`importlib.util.find_spec` بدون بارگذاری.",
+        "ModuleNotFoundError = هیچ finderی پیدا نکرد؛ برای فایل‌ها یعنی مسیر در sys.path نیست."
+      ],
+      "common_mistakes": [
+        "فراموش کردن bind کردن نتیجه‌ی import_module.",
+        "هک sys.path به‌جای نصب/پیکربندی درست."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -3584,8 +3611,17 @@
           "subtitle": "134-import-variants-and-misconceptions-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "همه‌ی شکل‌های import کل ماژول را بارگذاری می‌کنند؛ فقط نام‌های bind‌شده فرق دارند.",
+        "`from x import y` یعنی y → x.y در namespace ما، بدون نام x.",
+        "`import *` و حتی from-import می‌توانند نام‌های قبلی را بازنویسی کنند؛ alias راه‌حل است.",
+        "تفاوت `math.sqrt` و `sqrt` یک lookup dict است؛ اختلاف مطلق را ببین نه درصد.",
+        "import داخل تابع بیشتر مشکل خوانایی دارد؛ هزینه‌ی کارایی فقط در فراخوانی‌های میلیونی معنادار است."
+      ],
+      "common_mistakes": [
+        "باور اینکه from-import ماژول را «کمتر» بارگذاری می‌کند.",
+        "انتخاب شکل import بر اساس سرعت به‌جای خوانایی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -3615,8 +3651,17 @@
           "subtitle": "135-reloading-modules.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "import دوباره کاری نمی‌کند؛ برای نسخه‌ی جدید باید reload کرد.",
+        "`del sys.modules[...]` + import شیء جدید می‌سازد و ارجاع‌های قدیمی می‌مانند.",
+        "`importlib.reload(mod)` همان شیء را در جا به‌روز می‌کند (id ثابت).",
+        "نام‌های from-import‌شده به شیء تابع قدیمی چسبیده‌اند و باید دوباره bind شوند.",
+        "reload فقط برای کار تعاملی؛ در production restart."
+      ],
+      "common_mistakes": [
+        "reload در production.",
+        "انتظار به‌روز شدن نام‌های from-import بعد از reload."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -3642,8 +3687,17 @@
           "subtitle": "136-using-main.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "نقطه‌ی ورود `__name__ == '__main__'` دارد؛ ماژول‌های import‌شده نام خودشان را.",
+        "`if __name__ == '__main__':` کد خط فرمان را از کد کتابخانه‌ای جدا می‌کند.",
+        "argparse با `description=__doc__`، positional و `-r/--repeats`.",
+        "`python -m module` ماژول را به‌عنوان اسکریپت اجرا می‌کند (zipfile, timeit).",
+        "`__main__.py` اجرای پوشه یا zip را ممکن می‌کند: `python dir/`, `python app.zip`."
+      ],
+      "common_mistakes": [
+        "گذاشتن کد اجرایی در سطح ماژول که هنگام import اجرا می‌شود.",
+        "فکر کردن به اینکه __name__ نام فایل است."
+      ],
       "attachments": [
         {
           "title": "فایل پایتون — __main__.py",
@@ -3681,8 +3735,16 @@
           "subtitle": "137-modules-recap.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "cache → finder/spec → loader → ماژول خالی → ثبت در sys.modules → compile → exec.",
+        "ثبت در cache قبل از exec، برای import دایره‌ای.",
+        "finderها در sys.meta_path؛ PathFinder روی sys.path و `<package>.__path__`.",
+        "`__spec__`, `__name__`, `__package__`, `__file__` (built-inها ندارند).",
+        "منابع: tutorial/modules, reference/import, PEP 302."
+      ],
+      "common_mistakes": [
+        "فرض اینکه هر ماژول یک فایل است."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -3714,8 +3776,17 @@
           "subtitle": "139-what-are-packages-coding.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پکیج ماژولی است با `__path__` که می‌تواند ماژول/پکیج در بر بگیرد.",
+        "فایل‌سیستم: پوشه + `__init__.py`؛ کد پکیج در `__init__.py`.",
+        "`__file__` → __init__.py، `__path__` → پوشه، `__package__` → نام نقطه‌دار.",
+        "`import a.b.c` هر سطح را در sys.modules ثبت می‌کند ولی فقط `a` را در namespace ما.",
+        "import پکیج زیرماژول‌ها را بار نمی‌کند مگر صریحاً یا از داخل __init__ (با مسیر کامل)."
+      ],
+      "common_mistakes": [
+        "`import sub` برای ماژول داخل پکیج (finderها در sys.path می‌گردند).",
+        "انتظار `pack.mod` بعد از `import pack` بدون import زیرماژول."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF) — بخش نظری",
@@ -3761,8 +3832,14 @@
           "subtitle": "140-why-packages.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پکیج = سلسله‌مراتب برای سازمان‌دهی: کوچک‌تر، قابل تست‌تر، خواناتر.",
+        "توسعه‌دهنده کد را می‌شکند؛ کاربر یک import می‌خواهد.",
+        "`__init__.py` نام‌های عمومی را export می‌کند و پیاده‌سازی داخلی را پنهان."
+      ],
+      "common_mistakes": [
+        "مجبور کردن کاربر به دانستن ساختار داخلی."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -3800,8 +3877,17 @@
           "subtitle": "142-structuring-packages-part-2.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`__init__.py` با `from .mod import *` نام‌های زیرماژول‌ها را به سطح پکیج می‌کشد.",
+        "relative import (`.`, `..`) وابستگی به نام پکیج والد را حذف می‌کند.",
+        "کنترل export برای `import *`: پیشوند `_` یا `__all__`.",
+        "`__all__` پکیج را از جمع `__all__` زیرماژول‌ها بساز (یک منبع حقیقت).",
+        "همان الگو برای پکیج‌های تودرتو؛ کاربر `models.User` می‌نویسد نه مسیر فایل."
+      ],
+      "common_mistakes": [
+        "پیمایش globals() هنگام تغییرش (روی dict(globals()) پیمایش کن).",
+        "hard-code کردن نام پکیج والد در __init__."
+      ],
       "attachments": [
         {
           "title": "فایل پایتون — __init__.py",
@@ -3903,8 +3989,15 @@
           "subtitle": "143-namespace-packages.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "namespace package: پوشه بدون `__init__.py` (PEP 420)؛ نوعش module است.",
+        "`__file__` ندارد، `__path__` پویاست، می‌تواند در چند پوشه/zip پخش باشد.",
+        "کد اولیه ندارد؛ نمی‌شود در آن export کرد.",
+        "اول پکیج معمولی را یاد بگیر؛ namespace برای سناریوهای خاص."
+      ],
+      "common_mistakes": [
+        "جا انداختن __init__.py به‌طور ناخواسته."
+      ],
       "attachments": [
         {
           "title": "اسلایدهای درس (PDF)",
@@ -3930,8 +4023,15 @@
           "subtitle": "144-importing-from-zip-archives.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "پایتون از داخل zip import می‌کند؛ آرشیو را به sys.path اضافه کن.",
+        "همه‌ی پکیج‌ها، __init__ها و relative importها از داخل zip کار می‌کنند.",
+        "با `__main__.py` در ریشه، `python app.zip` اجرا می‌شود؛ `zipapp` ابزار رسمی.",
+        "extensionهای باینری از zip بار نمی‌شوند."
+      ],
+      "common_mistakes": [
+        "import common.zip به‌جای افزودن آرشیو به sys.path."
+      ],
       "attachments": [
         {
           "title": "فایل پایتون — main.py",

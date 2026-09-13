@@ -1,0 +1,37 @@
+[
+  {
+    "key": "what-is-loaded",
+    "title": "چه چیزی بارگذاری می‌شود؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "بعد از اجرای `from fractions import Fraction as F` کدام درست است؟",
+    "options": ["فقط کلاس Fraction بارگذاری شده و بقیه‌ی ماژول نه", "کل ماژول fractions بارگذاری و در sys.modules ثبت شده؛ در namespace ما فقط نام F هست", "نام‌های fractions و F هر دو در namespace ما هستند", "ماژول بارگذاری نشده تا وقتی F استفاده شود"],
+    "correct_option": 1,
+    "expected_outcome": "همه‌ی شکل‌های import کل ماژول را بار می‌کنند؛ فقط نام‌های bind‌شده فرق می‌کند. اینجا فقط F (به fractions.Fraction) در globals است.",
+    "hints": ["پایتون نمی‌تواند بخشی از ماژول را اجرا کند.", "چه نامی در globals ساخته شد؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "name-collision",
+    "title": "تصادم نام را پیدا کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfrom math import *\nfrom cmath import *\nprint(sqrt(-1))\nfrom math import sqrt\nprint(sqrt(-1))\n```\nهر print چه می‌کند و چرا؟ این کد را طوری بازنویسی کن که هر دو sqrt هم‌زمان در دسترس باشند.",
+    "expected_outcome": "print اول `1j` — cmath بعد از math import شده و sqrt را جایگزین کرده. print دوم `ValueError: math domain error` — `from math import sqrt` دوباره sqrt را به نسخه‌ی math برگرداند. بازنویسی: `from math import sqrt as r_sqrt` و `from cmath import sqrt as c_sqrt` (یا `import math, cmath` و استفاده‌ی qualified).",
+    "hints": ["آخرین import برنده است.", "alias یا fully qualified."],
+    "rubric": "Correct: 1j then ValueError with the replacement reasoning, and an alias/qualified rewrite. Partial: outputs right, rewrite missing. Incorrect: thinks math.sqrt(-1) returns a complex number."
+  },
+  {
+    "key": "nested-import-cost",
+    "title": "هزینه‌ی import داخل تابع",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در ۳ تا ۵ جمله: چرا `import math` داخل تابعی که ۱۰ میلیون بار صدا زده می‌شود ~۵۰٪ کندتر است ولی `from math import sqrt` داخل همان تابع ~۲۰۰٪ کندتر؟ چرا با این حال دلیل اصلی پرهیز از import داخل تابع، کارایی نیست؟ در چه شرایطی import داخل تابع مجاز/منطقی است؟",
+    "expected_outcome": "هر فراخوانی، namespace محلی تازه می‌سازد؛ `import math` هر بار sys.modules را چک می‌کند و ارجاع ماژول را در locals می‌گذارد؛ `from math import sqrt` علاوه بر آن باید sqrt را در namespace ماژول پیدا و در locals bind کند — یک قدم اضافه که در ۱۰ میلیون تکرار سنگین می‌شود. دلیل اصلی، خوانایی است: وابستگی‌ها یک‌جا در بالای فایل دیده نمی‌شوند. مجاز: شکستن import دایره‌ای، decorator/ماژول خودکفا، یا وابستگی سنگین/اختیاری که فقط در مسیر خاصی لازم است — وقتی تابع به‌ندرت صدا زده می‌شود.",
+    "hints": ["به کاری که هر بار فراخوانی باید انجام شود فکر کن.", "خوانایی در برابر میکروثانیه‌ها."],
+    "rubric": "Correct: per-call locals rebinding, the extra lookup for from-import, readability as the main reason, and a valid legitimate use. Partial: three of four. Incorrect: claims the module is reloaded on every call."
+  }
+]

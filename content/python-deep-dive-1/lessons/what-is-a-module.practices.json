@@ -1,0 +1,37 @@
+[
+  {
+    "key": "import-twice",
+    "title": "دو بار import",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nimport math\na = id(math)\nimport math\nb = id(math)\nimport sys\nc = id(sys.modules['math'])\n```\nرابطه‌ی a، b و c چیست؟",
+    "options": ["a == b == c", "a != b، چون import دوم دوباره بارگذاری می‌کند", "a == b ولی c متفاوت است", "خطا — نمی‌شود یک ماژول را دو بار import کرد"],
+    "correct_option": 0,
+    "expected_outcome": "ماژول یک بار ساخته و در sys.modules ذخیره می‌شود؛ importهای بعدی همان شیء را برمی‌گردانند و globals به همان اشاره می‌کند.",
+    "hints": ["sys.modules یک cache است.", "import اول ماژول را می‌سازد، بقیه فقط نام را bind می‌کنند."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "build-module",
+    "title": "ماژول دستی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "با `types.ModuleType` ماژولی به نام `geometry` بساز که یک ثابت `PI`، یک تابع `area(r)` و یک namedtuple `Circle(x, y, r)` داشته باشد. سپس (۱) نشان بده `geometry.__dict__` کلیدهای جدید را دارد، (۲) `area` را با `getattr` بخوان و صدا بزن، (۳) توضیح بده چرا `import geometry` هنوز کار نمی‌کند و چه کاری آن را ممکن می‌کند.",
+    "expected_outcome": "```python\nfrom types import ModuleType\nfrom collections import namedtuple\nimport sys\n\ngeometry = ModuleType('geometry', 'Toy geometry module')\ngeometry.PI = 3.14159\ngeometry.area = lambda r: geometry.PI * r ** 2\ngeometry.Circle = namedtuple('Circle', 'x y r')\n'area' in geometry.__dict__          # True\ngetattr(geometry, 'area')(2)         # 12.56636\n```\n`import geometry` نمی‌داند این شیء کجاست چون در sys.modules نیست و فایلی هم نیست؛ با `sys.modules['geometry'] = geometry` (هک، فقط برای فهم) import کار می‌کند.",
+    "hints": ["attribute گذاشتن روی ماژول = نوشتن در __dict__.", "import اول در sys.modules می‌گردد."],
+    "rubric": "Correct: ModuleType built with the three attributes, __dict__ check, getattr call, and explains sys.modules registration. Partial: misses the import explanation. Incorrect: uses a class instead of a module."
+  },
+  {
+    "key": "namespace-dict",
+    "title": "namespace یعنی dict",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: وقتی می‌نویسی `math.sqrt(2)`، پایتون چه جست‌وجوهایی انجام می‌دهد (از نام `math` تا شیء تابع)؟ `globals()`، `sys.modules` و `math.__dict__` هر کدام چه نقشی دارند؟",
+    "expected_outcome": "`math` در namespace ماژول جاری (`globals()`، یک dict) جست‌وجو می‌شود و به شیء ماژول می‌رسد؛ آن شیء همان است که در `sys.modules['math']` (cache سراسری) نگه داشته شده. سپس `.sqrt` یک lookup در `math.__dict__` (namespace خود ماژول) است که شیء تابع را می‌دهد؛ در نهایت با `(2)` صدا زده می‌شود. globals نام محلی به ماژول را نگه می‌دارد، sys.modules تضمین یک‌بار بارگذاری، و __dict__ محتوای ماژول.",
+    "hints": ["دو dict در دو سطح: ماژول جاری و ماژول math.", "sys.modules کجای این مسیر است؟"],
+    "rubric": "Correct: globals lookup → module object (cached in sys.modules) → __dict__ lookup → call; roles of each dict stated. Partial: two of three. Incorrect: thinks import copies functions into globals."
+  }
+]

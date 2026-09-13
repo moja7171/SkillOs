@@ -1,0 +1,37 @@
+[
+  {
+    "key": "name-value",
+    "title": "__name__ چیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`app.py` را با `python app.py` اجرا می‌کنیم و app.py داخلش `import tools` دارد که tools.py هم `import helpers` دارد. `__name__` در هر سه فایل چیست؟",
+    "options": ["'app', 'tools', 'helpers'", "'__main__', 'tools', 'helpers'", "'__main__', '__main__', '__main__'", "'app.py', 'tools.py', 'helpers.py'"],
+    "correct_option": 1,
+    "expected_outcome": "فقط نقطه‌ی ورود `__main__` می‌شود؛ ماژول‌های import‌شده نام خودشان (بدون .py) را دارند، مستقل از اینکه چند سطح پایین‌تر import شده‌اند.",
+    "hints": ["فقط یک فایل مستقیم اجرا شده.", "نام ماژول پسوند ندارد."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "dual-use-module",
+    "title": "ماژول دومنظوره",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "ماژولی به نام `wordcount.py` بنویس با تابع `count_words(text) -> dict` (تعداد هر کلمه) که (۱) با `import wordcount` بدون هیچ اثر جانبی قابل استفاده باشد و (۲) با `python wordcount.py FILE [-n N]` پرتکرارترین N کلمه‌ی یک فایل را چاپ کند (پیش‌فرض N=5) با `argparse`. توضیح بده چرا بلوک خط فرمان هنگام import اجرا نمی‌شود.",
+    "expected_outcome": "```python\n\"\"\"Counts words in a text file.\"\"\"\nimport argparse\nfrom collections import Counter\n\ndef count_words(text):\n    return dict(Counter(text.split()))\n\nif __name__ == '__main__':\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument('file')\n    parser.add_argument('-n', type=int, default=5)\n    args = parser.parse_args()\n    with open(args.file) as f:\n        counts = count_words(f.read())\n    for word, n in sorted(counts.items(), key=lambda kv: kv[1], reverse=True)[:args.n]:\n        print(word, n)\n```\nهنگام import، `__name__ == 'wordcount'` است نه `'__main__'`، پس بلوک اجرا نمی‌شود.",
+    "hints": ["همه‌ی کد خط فرمان زیر if __name__ == '__main__'.", "argparse: یک positional و یک -n."],
+    "rubric": "Correct: importable function, argparse CLI under the __main__ guard, top-N output, and the __name__ explanation. Partial: CLI works but parsing/printing at module level (runs on import). Incorrect: no guard."
+  },
+  {
+    "key": "main-py",
+    "title": "__main__.py و zip",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۲ تا ۳ جمله: `python somedir/` چه فایلی را اجرا می‌کند و اگر نباشد چه می‌شود؟ چطور می‌توان یک برنامه‌ی چندفایلی را در یک آرشیو zip گذاشت و مستقیم اجرا کرد؟ `python -m zipfile` نمونه‌ی کدام الگوی این درس است؟",
+    "expected_outcome": "پایتون در پوشه دنبال `__main__.py` می‌گردد و آن را به‌عنوان نقطه‌ی ورود اجرا می‌کند؛ اگر نباشد: can't find '__main__' module. با `python -m zipfile -c app __main__.py other.py` آرشیو بساز و `python app` را اجرا کن — پایتون داخل zip را می‌خواند. `python -m zipfile` یعنی خود ماژول zipfile با بلوک `if __name__ == '__main__'` یک رابط خط فرمان دارد — همان الگوی ماژول دومنظوره.",
+    "hints": ["نام فایل ورودی پوشه چیست؟", "-m ماژول را به‌عنوان اسکریپت اجرا می‌کند."],
+    "rubric": "Correct: __main__.py lookup and error, zip creation + direct run, and -m/zipfile as the dual-use pattern. Partial: two of three. Incorrect: thinks python dir/ runs every file."
+  }
+]

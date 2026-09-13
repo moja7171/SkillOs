@@ -1,0 +1,37 @@
+[
+  {
+    "key": "order-of-steps",
+    "title": "ترتیب مراحل import",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "چرا importer درس، ماژول را **قبل** از `exec` در `sys.modules` ثبت می‌کند و نه بعد از آن؟",
+    "options": ["چون exec بدون آن خطا می‌دهد", "تا اگر کد ماژول خودش ماژولی را import کند که به این ماژول برمی‌گردد (import دایره‌ای)، از cache برگردانده شود و بی‌نهایت بارگذاری نشود", "چون sys.modules فقط ماژول‌های خالی می‌پذیرد", "فرقی نمی‌کند؛ صرفاً سبک است"],
+    "correct_option": 1,
+    "expected_outcome": "پایتون واقعی هم همین کار را می‌کند: ثبت زودهنگام در cache باعث می‌شود importهای دایره‌ای همان شیء (نیمه‌کاره) را ببینند و به حلقه‌ی بی‌نهایت نیفتند.",
+    "hints": ["به ماژولی فکر کن که حین اجرا، ماژول دیگری را import می‌کند که خودش این را import می‌کند.", "cache اول از همه چک می‌شود."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "trace-output",
+    "title": "خروجی را پیش‌بینی کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\n# a.py\nprint('loading a')\nX = 1\n\n# b.py\nprint('loading b')\nimport a\nprint('b sees', a.X)\n\n# main.py\nimport a\nimport b\nimport a\nprint(__name__, a.__name__, b.__name__)\n```\n`python main.py` چه چاپ می‌کند؟",
+    "expected_outcome": "loading a / loading b / b sees 1 / __main__ a b. ماژول a فقط یک بار اجرا می‌شود (بار دوم و سوم از sys.modules)؛ فایل اجراشده __main__ نام دارد.",
+    "hints": ["هر ماژول یک بار اجرا می‌شود.", "__name__ فایل اصلی چیست؟"],
+    "rubric": "Correct: four lines as listed, a loaded once, __main__ for main. Partial: prints 'loading a' twice or wrong __name__. Incorrect: otherwise."
+  },
+  {
+    "key": "explain-compile-exec",
+    "title": "compile و exec",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در ۳ تا ۵ جمله توضیح بده importer دستی درس چطور کار می‌کند: نقش `compile`، نقش آرگومان دوم `exec` (چرا `mod.__dict__`؟)، و چرا بعد از این کار `import module1` استاندارد در ماژول دیگری بدون وجود فایل `module1.py` موفق می‌شود ولی ویرایشگر اعتراض می‌کند.",
+    "expected_outcome": "compile متن منبع را به code object (bytecode) تبدیل می‌کند و filename فقط متادیتای منبع است. exec آن کد را اجرا می‌کند و dict داده‌شده را به‌عنوان namespace سراسری به کار می‌برد؛ با `mod.__dict__` هر def/متغیر سطح ماژول مستقیم داخل namespace ماژول می‌نشیند. چون ماژول با نام 'module1' در sys.modules ثبت شده، import استاندارد در مرحله‌ی اول (cache) آن را می‌یابد و اصلاً دنبال فایل نمی‌گردد؛ ویرایشگر اما به‌صورت ایستا دنبال فایل می‌گردد و نمی‌یابد.",
+    "hints": ["exec(code, globals) — globals کجاست؟", "قدم اول import چیست؟"],
+    "rubric": "Correct: compile→code object, exec with mod.__dict__ as globals, cache-first import explains success, static editor check explains the warning. Partial: three of four. Incorrect: claims exec creates the module."
+  }
+]

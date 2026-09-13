@@ -1,0 +1,37 @@
+[
+  {
+    "key": "reload-vs-del",
+    "title": "تفاوت reload و del",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "چرا `importlib.reload(mod)` از `del sys.modules['mod']; import mod` امن‌تر است؟",
+    "options": ["چون reload فایل را دوباره نمی‌خواند", "چون reload همان شیء ماژول را در جا به‌روز می‌کند و همه‌ی ارجاع‌های موجود به ماژول نسخه‌ی جدید را می‌بینند؛ del/import شیء جدیدی می‌سازد و ارجاع‌های قدیمی می‌مانند", "چون del روی sys.modules خطا می‌دهد", "تفاوتی ندارد"],
+    "correct_option": 1,
+    "expected_outcome": "reload آدرس شیء ماژول را حفظ می‌کند (id ثابت)؛ del + import یک ModuleType جدید می‌سازد و ماژول‌های دیگر به قدیمی وصل می‌مانند.",
+    "hints": ["id(test) قبل و بعد را مقایسه کن.", "چه کسی به شیء قدیمی ارجاع دارد؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "from-import-after-reload",
+    "title": "بعد از reload",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nimport helpers\nfrom helpers import fmt\n# ... helpers.py is edited on disk: fmt now adds a prefix ...\nimportlib.reload(helpers)\nprint(helpers.fmt('x') == fmt('x'))\n```\nنتیجه چیست و چرا؟ چه خطی باید اضافه شود تا `fmt` هم به‌روز شود؟",
+    "expected_outcome": "False. `helpers.fmt` بعد از reload تابع جدید است (lookup در namespace به‌روزشده‌ی ماژول)، ولی نام `fmt` در globals ما هنوز به شیء تابع قدیمی bind است. اصلاح: `from helpers import fmt` دوباره (یا `fmt = helpers.fmt`).",
+    "hints": ["from-import یک ارجاع به شیء تابع می‌سازد، نه به ماژول.", "reload ماژول را عوض می‌کند، نه نام‌های ما را."],
+    "rubric": "Correct: False with the stale-binding reasoning and a re-import/rebind fix. Partial: says False without explanation. Incorrect: says True."
+  },
+  {
+    "key": "when-reload",
+    "title": "کِی reload؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در ۲ تا ۳ جمله: در چه محیطی reload منطقی است و چرا در production توصیه نمی‌شود؟ جایگزین درست تغییر کد در production چیست؟",
+    "expected_outcome": "در کار تعاملی (نوت‌بوک/REPL) برای دیدن تغییرات بدون restart. در production چون ارجاع‌های from-import و ماژول‌های دیگر ممکن است به اشیای قدیمی بچسبند و حالت ناسازگار پیش بیاید. جایگزین: restart برنامه (deploy مجدد).",
+    "hints": ["به ارجاع‌های پراکنده در ماژول‌های دیگر فکر کن.", "ساده‌ترین راه سازگاری چیست؟"],
+    "rubric": "Correct: interactive use OK, production risk from stale references, restart as the alternative. Partial: two of three. Incorrect: recommends reload in production."
+  }
+]

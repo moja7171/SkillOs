@@ -1,0 +1,37 @@
+[
+  {
+    "key": "relative-import",
+    "title": "نقطه‌ها",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در `common/models/posts/__init__.py` می‌خواهیم `User` را از `common/models/users/user.py` import کنیم. کدام relative import درست است؟",
+    "options": ["from .users.user import User", "from ..users.user import User", "from ...users.user import User", "from users.user import User"],
+    "correct_option": 1,
+    "expected_outcome": "`.` = پکیج posts، `..` = پکیج models (والد)، که users داخل آن است. گزینه‌ی آخر absolute است و users در sys.path نیست.",
+    "hints": ["هر نقطه یک سطح بالاتر.", "users همسایه‌ی posts است، پس باید یک سطح بالا رفت."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "build-clean-package",
+    "title": "پکیج تمیز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 7,
+    "prompt": "پکیج `geo` را بساز با `shapes/circle.py` (`class Circle`, `_circle_helper`) و `shapes/square.py` (`class Square`, `square_helper`) و `units.py` (`def to_meters`, `def _conv`). با relative import و `__all__` طوری بنویس که: `import geo` بدهد `geo.Circle`, `geo.Square`, `geo.to_meters`؛ `from geo import *` فقط همین سه نام را بیاورد؛ و `square_helper` بیرون نرود. محتوای هر `__init__.py` و `__all__`ها را بنویس.",
+    "expected_outcome": "```python\n# geo/shapes/circle.py\n__all__ = ['Circle']\n# geo/shapes/square.py\n__all__ = ['Square']\n# geo/units.py\n__all__ = ['to_meters']\n# geo/shapes/__init__.py\nfrom .circle import *\nfrom .square import *\n__all__ = circle.__all__ + square.__all__\n# geo/__init__.py\nfrom .shapes import *\nfrom .units import *\n__all__ = shapes.__all__ + units.__all__\n```\n`square_helper` بدون underscore است ولی چون در `__all__` نیست، `import *` آن را نمی‌آورد.",
+    "hints": ["__all__ در هر ماژول، و در __init__ از جمع آنها.", "relative import با نقطه."],
+    "rubric": "Correct: __all__ in every leaf module, relative star-imports in both __init__ files, package __all__ composed from children, and explains why square_helper stays private. Partial: works but hard-codes absolute package paths or omits package-level __all__. Incorrect: user must import geo.shapes.circle."
+  },
+  {
+    "key": "why-relative",
+    "title": "چرا relative و __all__؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: relative import در `__init__.py` چه مشکلی را حل می‌کند؟ چرا `import *` که معمولاً بد است، در `__init__.py` به‌جاست؟ دو راه کنترل export با `import *` چیست و چرا ساختن `__all__` پکیج از `__all__` زیرماژول‌ها بهتر از فهرست دستی است؟",
+    "expected_outcome": "relative import وابستگی به نام پکیج والد را حذف می‌کند تا تغییر نام/جابه‌جایی پکیج، __init__ را نشکند. در __init__ هدف دقیقاً «بالا کشیدن» نام‌های عمومی زیرماژول‌ها به namespace پکیج است و با __all__ کنترل‌شده است، پس خطر آلودگی نام کم است. کنترل: پیشوند `_` و فهرست `__all__`. ترکیب `__all__`ها یک منبع حقیقت دارد؛ با فهرست دستی باید هر نام جدید را دو جا اضافه کنی.",
+    "hints": ["hard-code نام پکیج والد چه مشکلی دارد؟", "single source of truth."],
+    "rubric": "Correct: rename-safety, controlled star-import rationale, both export controls, and the single-source argument. Partial: three of four. Incorrect: says import * is always fine."
+  }
+]

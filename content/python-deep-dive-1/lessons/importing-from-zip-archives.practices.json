@@ -1,0 +1,26 @@
+[
+  {
+    "key": "zip-path",
+    "title": "چطور از zip import کنیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "پکیج `tools` داخل `libs.zip` است. کدام روش `import tools` را ممکن می‌کند؟",
+    "options": ["import libs.zip.tools", "sys.path.append('libs.zip') و بعد import tools", "import zipfile; zipfile.import_('tools')", "فقط بعد از extract کردن آرشیو"],
+    "correct_option": 1,
+    "expected_outcome": "آرشیو باید در sys.path باشد؛ PathFinder داخل zip را مثل یک پوشه جست‌وجو می‌کند.",
+    "hints": ["پایتون باید بداند کجا بگردد.", "zip مثل یک پوشه در sys.path."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "single-file-app",
+    "title": "برنامه‌ی تک‌فایلی",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله توضیح بده چطور یک برنامه‌ی چندپکیجی را به یک فایل قابل اجرا با `python app.zip` تبدیل می‌کنی (چه فایلی باید در ریشه‌ی آرشیو باشد، چطور آرشیو را می‌سازی)، دو مزیت این روش، و یک محدودیت آن.",
+    "expected_outcome": "در ریشه‌ی آرشیو `__main__.py` (نقطه‌ی ورود) به‌همراه پکیج‌ها قرار می‌گیرد؛ با `python -m zipfile -c app.zip __main__.py pkg/` یا `python -m zipapp` ساخته می‌شود؛ `python app.zip` پایتون را وادار می‌کند `__main__` را از داخل zip اجرا کند. مزایا: توزیع یک فایل، بدون نصب. محدودیت: extensionهای باینری (.so/.pyd) از داخل zip بارگذاری نمی‌شوند و برای وابستگی‌های خارجی راه استاندارد pip است.",
+    "hints": ["درس __main__ را به یاد بیاور.", "کدام نوع فایل از zip بار نمی‌شود؟"],
+    "rubric": "Correct: __main__.py at the root, zipfile/zipapp creation, run with python app.zip, two benefits, one limitation. Partial: three of four. Incorrect: thinks the zip must be extracted."
+  }
+]

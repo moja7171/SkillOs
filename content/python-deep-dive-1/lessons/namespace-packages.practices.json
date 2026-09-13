@@ -1,0 +1,24 @@
+[
+  {
+    "key": "identify-kinds",
+    "title": "هر چیز چیست؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```\nsvc/\n    api/\n        __init__.py\n        routes.py\n    core/\n        engine.py\n        plugins/\n            __init__.py\n            base.py\n```\nبرای `svc`, `api`, `routes.py`, `core`, `engine.py`, `plugins` بگو هر کدام namespace package، regular package یا module است، و `svc.__file__` چه مقداری دارد.",
+    "expected_outcome": "svc: namespace package (بدون __init__)؛ api: regular package؛ routes.py: module؛ core: namespace package؛ engine.py: module؛ plugins: regular package. `svc.__file__` تنظیم نشده (AttributeError / None با getattr).",
+    "hints": ["فقط وجود __init__.py مهم است.", "namespace package فایل کد ندارد."],
+    "rubric": "Correct: all six classified right and __file__ absent for svc. Partial: one wrong. Incorrect: two or more wrong."
+  },
+  {
+    "key": "regular-vs-namespace",
+    "title": "کِی namespace package؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: دو تفاوت عملی مهم پکیج معمولی و namespace package چیست؟ یک مورد استفاده‌ی واقعی برای namespace package بگو، و توضیح بده چرا برای اکثر پروژه‌ها پکیج معمولی پیش‌فرض بهتری است.",
+    "expected_outcome": "تفاوت: namespace package `__init__.py` و کد اولیه ندارد (نمی‌شود نام‌ها را export یا هنگام import کاری کرد) و می‌تواند در چند پوشه/آرشیو پخش باشد با `__path__` پویا؛ پکیج معمولی یک پوشه با `__init__.py` و `__file__` است. مورد استفاده: چند توزیع مستقل که زیر یک namespace مشترک (مثل `company.tool1`, `company.tool2`) نصب می‌شوند. پکیج معمولی پیش‌فرض بهتر است چون رفتارش صریح است، `__init__` برای رابط عمومی لازم است، و ابزارها/توسعه‌دهندگان آن را انتظار دارند.",
+    "hints": ["__init__ چه امکاناتی می‌دهد که namespace ندارد؟", "پخش شدن یک namespace روی چند محل."],
+    "rubric": "Correct: no __init__/code and multi-location path as differences, a plausible use case, and the explicitness argument. Partial: two of three. Incorrect: treats a missing __init__ as always harmless."
+  }
+]

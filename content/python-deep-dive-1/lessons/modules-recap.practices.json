@@ -1,0 +1,37 @@
+[
+  {
+    "key": "step-order",
+    "title": "ترتیب درست",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "ترتیب درست مراحل import یک ماژول که در cache نیست کدام است؟",
+    "options": ["پیدا کردن → اجرا → ساخت شیء → ثبت در sys.modules", "چک cache → پیدا کردن (finder/spec) → بار کردن کد (loader) → ساخت شیء خالی → ثبت در sys.modules → compile → exec", "چک cache → compile → exec → ثبت در sys.modules", "ساخت شیء → exec → پیدا کردن loader"],
+    "correct_option": 1,
+    "expected_outcome": "ثبت در cache قبل از اجرای کد است — برای import دایره‌ای.",
+    "hints": ["cache همیشه اول.", "ثبت قبل از exec."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "inspect-modules",
+    "title": "درون‌نگری سه ماژول",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `describe_module(mod)` بنویس که برای یک شیء ماژول، نام، loader (نام کلاس)، origin و `__file__` (یا `'<built-in>'` اگر نداشت) را به‌صورت dict برگرداند. آن را روی `math`, `fractions` و یک ماژول خودت اجرا کن و بگو کدام‌ها `__file__` ندارند و چرا.",
+    "expected_outcome": "```python\ndef describe_module(mod):\n    spec = mod.__spec__\n    return {\n        'name': mod.__name__,\n        'loader': type(spec.loader).__name__ if not isinstance(spec.loader, type) else spec.loader.__name__,\n        'origin': spec.origin,\n        'file': getattr(mod, '__file__', '<built-in>'),\n    }\n```\nmath (built-in، با C در مفسر) `__file__` ندارد و origin='built-in'؛ fractions و ماژول خودت SourceFileLoader دارند و مسیر فایل.",
+    "hints": ["__file__ را با getattr و پیش‌فرض بخوان.", "loader برای built-in خود کلاس است، برای فایل یک instance."],
+    "rubric": "Correct: reads __spec__ fields, handles missing __file__ with getattr default, and explains built-ins have no file. Partial: crashes on math or mislabels loader. Incorrect: does not use __spec__."
+  },
+  {
+    "key": "circular-import",
+    "title": "import دایره‌ای",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "```python\n# a.py\nimport b\ndef fa(): return 'fa'\n\n# b.py\nimport a\ndef fb(): return a.fa()\n```\nاگر `python -c \"import a\"` اجرا شود، در ۳ تا ۴ جمله توضیح بده چرا حلقه‌ی بی‌نهایت رخ نمی‌دهد، در لحظه‌ای که b.py اجرا می‌شود `a` در sys.modules چه وضعی دارد، و چرا `from a import fa` در b.py به‌جای `import a` خطا می‌داد.",
+    "expected_outcome": "a قبل از اجرای کدش در sys.modules ثبت می‌شود؛ وقتی b `import a` می‌کند، شیء a (هنوز خالی، بدون fa) از cache برمی‌گردد و اجرا ادامه می‌یابد؛ بعداً a تکمیل می‌شود و `a.fa()` در زمان فراخوانی fb پیدا می‌شود. `from a import fa` اما همان لحظه دنبال نام fa در ماژول نیمه‌کاره می‌گردد و ImportError (cannot import name) می‌دهد چون هنوز تعریف نشده.",
+    "hints": ["ثبت زودهنگام در cache.", "from-import نام را همان لحظه می‌خواهد؛ import ماژول را."],
+    "rubric": "Correct: early registration prevents the loop, a is partially initialized when b runs, deferred attribute lookup works, from-import fails at that moment. Partial: three of four. Incorrect: claims Python detects the cycle and raises."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "init-role",
+    "title": "نقش __init__.py برای کاربر",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا توسعه‌دهنده‌ی `mylib` در `__init__.py` می‌نویسد `from mylib.submod1 import my_func`؟",
+    "options": ["چون بدون آن submod1 هرگز قابل import نیست", "تا کاربر با `from mylib import my_func` یا `mylib.my_func()` به آن برسد و ساختار داخلی پنهان بماند", "چون پایتون بدون این خط پکیج را نمی‌شناسد", "برای اینکه my_func سریع‌تر اجرا شود"],
+    "correct_option": 1,
+    "expected_outcome": "__init__.py رابط عمومی پکیج را می‌سازد: نام‌های موردنیاز کاربر را در namespace پکیج قرار می‌دهد و پیاده‌سازی داخلی را قابل تغییر نگه می‌دارد.",
+    "hints": ["به تجربه‌ی کاربر پکیج فکر کن.", "namespace پکیج = namespace __init__.py."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "design-layout",
+    "title": "طراحی ساختار",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "برنامه‌ای داری با این اجزا: `parse_csv`, `parse_json`, `to_csv`, `to_json`, `Invoice`, `Customer`, `send_email`, `send_sms`, `retry` (decorator عمومی), `log`. یک ساختار پکیجی پیشنهاد بده (درخت پوشه‌ها) و در ۲ تا ۳ جمله بگو چه معیارهایی برای گروه‌بندی به کار بردی و کاربر نهایی چطور باید به `Invoice` و `send_email` دسترسی داشته باشد.",
+    "expected_outcome": "مثلاً:\n```\napp/\n  io/ {__init__, csv.py (parse_csv,to_csv), json.py (parse_json,to_json)}\n  models/ {__init__, invoice.py, customer.py}\n  notify/ {__init__, email.py, sms.py}\n  utils/ {__init__, retry.py, log.py}\n```\nمعیار: هم‌خانواده بودن (فرمت‌ها، مدل‌ها، کانال‌های اطلاع‌رسانی، ابزار عمومی)، اندازه‌ی ماژول، و اینکه چیزهایی که با هم تغییر می‌کنند کنار هم باشند. کاربر: `from app.models import Invoice` و `from app.notify import send_email` — با export در __init__ هر پکیج.",
+    "hints": ["چیزهای هم‌خانواده را کنار هم بگذار.", "__init__ هر پکیج نام‌های عمومی را export کند."],
+    "rubric": "Correct: a sensible hierarchy grouping by concern, stated criteria, and user-facing access via package-level exports. Partial: flat modules only, or no export strategy. Incorrect: one file."
+  }
+]

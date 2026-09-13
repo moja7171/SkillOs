@@ -1,0 +1,26 @@
+[
+  {
+    "key": "valid-literal",
+    "title": "کدام معتبر است؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "کدام literal عددی **نامعتبر** است؟",
+    "options": ["1_000_000", "0b_1010_1010", "1__000", "3.14_15"],
+    "correct_option": 2,
+    "expected_outcome": "زیرخط باید بین دو رقم باشد و تک؛ `1__000` دو زیرخط پشت هم دارد → SyntaxError. بقیه معتبرند.",
+    "hints": ["فقط بین ارقام، فقط یکی.", "پیشوند پایه با زیرخط بعدش مجاز است."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "format-underscore",
+    "title": "قالب‌بندی با زیرخط",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خروجی هر عبارت چیست؟\n```python\nf'{1234567:_}'\nf'{255:_b}'\nint('1_0', 2)\nstr(1_000)\n```",
+    "expected_outcome": "'1_234_567'، '1111_1111' (هر ۴ رقم برای باینری)، 2، '1000' (str زیرخط نمی‌گذارد).",
+    "hints": ["برای b/o/x هر ۴ رقم.", "str پیش‌فرض بدون جداکننده است."],
+    "rubric": "Correct: all four. Partial: one wrong. Incorrect: two or more wrong."
+  }
+]

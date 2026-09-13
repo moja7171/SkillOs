@@ -4057,8 +4057,16 @@
           "subtitle": "145-python-3-10.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`match`/`case`: pattern matching — literal، OR با `|`، wildcard `_`، الگوی sequence با capture و `*`، guard با `if`.",
+        "`str` در الگوهای sequence تطبیق نمی‌خورد.",
+        "`zip(..., strict=True)` اگر طول‌ها نابرابر باشد ValueError می‌دهد (EAFP).",
+        "پیام‌های خطای نحوی بهتر شد."
+      ],
+      "common_mistakes": [
+        "استفاده از match فقط به‌عنوان switch ساده و غفلت از تطبیق ساختار.",
+        "zip بدون strict وقتی طول برابر فرض می‌شود."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4085,8 +4093,16 @@
           "subtitle": "146-python-3-9.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`zoneinfo.ZoneInfo('Asia/Tehran')` منطقه‌ی زمانی استاندارد؛ اول datetime را aware کن.",
+        "`math.gcd(*args)` و `math.lcm`.",
+        "`d1 | d2` اجتماع dict (راست برنده، ترتیب کلید از چپ)؛ `|=` درجا.",
+        "`removeprefix`/`removesuffix` — برخلاف `lstrip`/`rstrip` که مجموعه‌ی کاراکتر می‌گیرند."
+      ],
+      "common_mistakes": [
+        "استفاده از lstrip برای حذف پیشوند رشته‌ای.",
+        "ChainMap را هم‌معنی با | دانستن (اولین برنده است)."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4113,8 +4129,18 @@
           "subtitle": "147-python-3-8-3-7.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`/` در امضا: پارامترهای positional-only.",
+        "f-string `{x=}` برای debug (متن عبارت + repr، با format spec).",
+        "`as_integer_ratio()` روی bool/int/Fraction هم.",
+        "`@lru_cache` بدون پرانتز؛ `math.dist`.",
+        "3.7: `_source` حذف، `defaults=` برای namedtuple (راست‌تراز، دام mutable)، `_asdict` → dict.",
+        "هشدار `is` با literal."
+      ],
+      "common_mistakes": [
+        "استفاده از `is` برای مقایسه‌ی مقدار.",
+        "`defaults=([],)*n` — یک شیء مشترک."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4141,8 +4167,14 @@
           "subtitle": "148-python-3-6-highlights.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "dict ترتیب درج (3.6 پیاده‌سازی، 3.7 تضمین)؛ ترتیب kwargs (PEP 468)؛ زیرخط در عدد؛ f-string.",
+        "type annotation (PEP 484/526) فقط برای ابزارهای بیرونی؛ پایتون dynamically typed می‌ماند.",
+        "`pprint` کلیدها را الفبایی مرتب می‌کند."
+      ],
+      "common_mistakes": [
+        "انتظار اینکه annotation نوع را اجبار کند."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4169,8 +4201,16 @@
           "subtitle": "149-python-3-6-dictionary-ordering.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "ترتیب درج حفظ می‌شود؛ جایگزینی مقدار جایگاه را نگه می‌دارد؛ حذف و درج دوباره به انتها می‌رود.",
+        "`popitem` آخری را برمی‌دارد؛ `update` کلیدهای جدید را به انتها اضافه می‌کند.",
+        "move to end: `d[k] = d.pop(k)`؛ pop first: `d.pop(next(iter(d)))`.",
+        "OrderedDict هنوز `move_to_end`/`popitem(last=False)` را راحت‌تر دارد.",
+        "نمایش Jupyter/pprint ممکن است ترتیب را الفبایی نشان دهد."
+      ],
+      "common_mistakes": [
+        "تکیه بر ترتیب dict در کدی که باید روی <3.6 اجرا شود."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4197,8 +4237,14 @@
           "subtitle": "150-python-3-6-underscores-in-numeric-literals.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`1_000_000`, `0x_FF_FF`, `30_000.05` — زیرخط فقط بین ارقام، تک.",
+        "format spec `_` جداکننده‌ی هزارگان (هر ۴ رقم برای b/o/x).",
+        "`int('1_000')`, `int('FF_FF', 16)` تبدیل را می‌پذیرند؛ `str()` زیرخط نمی‌گذارد."
+      ],
+      "common_mistakes": [
+        "زیرخط در ابتدا/انتها یا دوتایی."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4225,8 +4271,13 @@
           "subtitle": "151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "PEP 468: ترتیب kwargs در تابع حفظ می‌شود — مستقل از ترتیب درج dict.",
+        "کاربرد: factory برای named tuple با پیش‌فرض از kwargs (`fields.keys()`/`values()` هم‌ترتیب)."
+      ],
+      "common_mistakes": [
+        "فرض اینکه این همان تضمین ترتیب dict است."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",
@@ -4253,8 +4304,15 @@
           "subtitle": "152-python-3-6-f-strings.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": [],
+      "key_points": [
+        "`f'{expr:spec}'` هر عبارتی را با همه‌ی format specها درج می‌کند.",
+        "در closure، ظاهر شدن نام در f-string آن را متغیر آزاد می‌کند.",
+        "عبارت‌های پیچیده را بیرون از رشته حساب کن.",
+        "برای قالب ذخیره‌شده/ترجمه، `.format` یا `Template`."
+      ],
+      "common_mistakes": [
+        "منطق پیچیده داخل f-string."
+      ],
       "attachments": [
         {
           "title": "نوت‌بوک Jupyter",

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "match-guard",
+    "title": "match با guard",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef f(x):\n    match x:\n        case [a, b] if a == b:\n            return 'pair'\n        case [a, b]:\n            return 'two'\n        case [_, *rest]:\n            return len(rest)\n        case _:\n            return 'other'\n```\n`f([3, 3])`, `f([1, 2])`, `f([1, 2, 3, 4])`, `f('ab')` به ترتیب چیست؟",
+    "options": ["'pair', 'two', 3, 'two'", "'pair', 'two', 3, 'other'", "'two', 'two', 4, 'other'", "'pair', 'two', 4, 'pair'"],
+    "correct_option": 1,
+    "expected_outcome": "[3,3] با guard می‌خورد؛ [1,2] guard رد و به case بعدی می‌رود؛ [1,2,3,4] یک عنصر اول و rest سه‌تایی؛ رشته 'ab' با الگوی sequence تطبیق نمی‌خورد (str در match به‌عنوان sequence شمرده نمی‌شود) → other.",
+    "hints": ["guard رد شود، به case بعدی می‌رود.", "str در الگوهای sequence تطبیق نمی‌خورد."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "command-parser",
+    "title": "parser فرمان با match",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تابعی به نام `handle(cmd)` بنویس که `cmd` یک لیست از رشته‌ها باشد و با `match`: `['go', dir]` با dir در {'n','s','e','w'} → `'moving <dir>'`؛ `['say', *words]` (حداقل یک کلمه) → متن جمله؛ `['quit']` یا `['exit']` → `'bye'`؛ هر چیز دیگر → `ValueError`. برای جهت نامعتبر هم ValueError بده (با guard یا الگوی OR).",
+    "expected_outcome": "```python\ndef handle(cmd):\n    match cmd:\n        case ['go', ('n' | 's' | 'e' | 'w') as d]:\n            return f'moving {d}'\n        case ['say', first, *rest]:\n            return ' '.join([first, *rest])\n        case ['quit'] | ['exit']:\n            return 'bye'\n        case _:\n            raise ValueError(f'bad command: {cmd}')\n```",
+    "hints": ["الگوی OR داخل پرانتز با as برای capture.", "['say'] خالی نباید بخورد — یک عنصر اجباری بگذار."],
+    "rubric": "Correct: sequence patterns with capture, OR pattern for directions (or a guard), say with at least one word, quit/exit alternation, default raises. Partial: accepts ['say'] with no words or invalid directions. Incorrect: uses if/elif instead of match."
+  },
+  {
+    "key": "zip-strict-why",
+    "title": "چرا strict؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۳ تا ۴ جمله: مشکل رفتار پیش‌فرض `zip` در کدی که طول برابر را فرض می‌کند چیست؟ چرا «اول طول‌ها را چک کن» با iteratorها جواب نمی‌دهد؟ `strict=True` چطور این را حل می‌کند و به کدام فلسفه‌ی مدیریت خطا نزدیک است؟",
+    "expected_outcome": "zip بی‌صدا با کوتاه‌ترین متوقف می‌شود و داده گم می‌شود بدون خطا. با iterator/generator، محاسبه‌ی طول آنها را مصرف می‌کند و zip بعدی خالی برمی‌گردد. strict=True هنگام مصرف، اگر یکی زودتر تمام شود ValueError می‌دهد — بدون چک قبلی؛ EAFP (ask forgiveness) به‌جای LBYL (look before you leap).",
+    "hints": ["len روی generator چه می‌کند؟", "EAFP در برابر LBYL."],
+    "rubric": "Correct: silent truncation, iterator exhaustion problem, strict raising on mismatch, EAFP framing. Partial: three of four. Incorrect: thinks strict pads the shorter."
+  }
+]

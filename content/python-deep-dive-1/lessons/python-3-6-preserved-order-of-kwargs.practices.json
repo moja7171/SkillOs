@@ -1,0 +1,24 @@
+[
+  {
+    "key": "kwargs-order",
+    "title": "ترتیب kwargs",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef show(**kw):\n    return list(kw)\n\nshow(z=1, a=2, m=3)\n```\nخروجی چیست و از کدام نسخه تضمین می‌شود؟ چرا این با «ترتیب درج dict» یکی نیست؟",
+    "expected_outcome": "['z', 'a', 'm']؛ از 3.6 (PEP 468). PEP جداگانه‌ای است که ترتیب جمع‌آوری kwargs را تضمین می‌کند؛ ترتیب درج dict عمومی در 3.6 جزئیات پیاده‌سازی و از 3.7 رسمی شد.",
+    "hints": ["PEP 468.", "دو تضمین متفاوت با دو PEP."],
+    "rubric": "Correct: order preserved, 3.6, and distinguishes PEP 468 from dict ordering. Partial: order right, distinction missing. Incorrect: says order is arbitrary."
+  },
+  {
+    "key": "record-factory",
+    "title": "factory با ترتیب",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `make_record(name, **fields)` بنویس که یک named tuple با فیلدها به ترتیب kwargs بسازد و پیش‌فرض‌ها را از مقادیر kwargs بگیرد — ولی این بار با پارامتر `defaults=` (3.7+). نشان بده `make_record('P', x=0, y=0, label='')('P')` چه می‌دهد و چرا `P(1, 2)` هم معتبر است.",
+    "expected_outcome": "```python\ndef make_record(name, **fields):\n    return namedtuple(name, fields.keys(), defaults=tuple(fields.values()))\n\nP = make_record('P', x=0, y=0, label='')\nP()           # P(x=0, y=0, label='')\nP(1, 2)       # P(x=1, y=2, label='')  — positional args fill from the left, defaults from the right\n```",
+    "hints": ["defaults tuple هم‌ترتیب با fields.values().", "پیش‌فرض‌ها راست‌تراز می‌شوند."],
+    "rubric": "Correct: uses defaults= with values in kwargs order, shows both calls. Partial: uses __defaults__ trick instead (acceptable but note). Incorrect: field/default order mismatch."
+  }
+]

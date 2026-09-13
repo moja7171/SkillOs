@@ -1,0 +1,24 @@
+[
+  {
+    "key": "fstring-output",
+    "title": "خروجی f-string",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nitems = ['a', 'b', 'c']\nprice = 1234.5\nprint(f'{len(items)} items, total {price:,.2f}, first={items[0]!r}, {\"yes\" if price > 1000 else \"no\"}')\n```\nخروجی چیست؟",
+    "expected_outcome": "3 items, total 1,234.50, first='a', yes",
+    "hints": ["!r یعنی repr.", "`,` جداکننده‌ی هزارگان."],
+    "rubric": "Correct: exact line. Partial: one element wrong (e.g. missing quotes on 'a'). Incorrect: otherwise."
+  },
+  {
+    "key": "rewrite-format",
+    "title": "بازنویسی به f-string",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "این کد را با f-string بازنویسی کن و توضیح بده چه زمانی `.format` را ترجیح می‌دهی:\n```python\nmsg = '{name} scored {score:.1f}% ({rank}/{total})'.format(name=user.name, score=pct, rank=i + 1, total=len(users))\n```",
+    "expected_outcome": "```python\nmsg = f'{user.name} scored {pct:.1f}% ({i + 1}/{len(users)})'\n```\n.format وقتی قالب جدا از داده‌ها تعریف/ذخیره می‌شود (ترجمه، پیکربندی، قالبی که چند بار با داده‌های مختلف پر می‌شود) — چون f-string همان لحظه ارزیابی می‌شود.",
+    "hints": ["عبارت مستقیم داخل {}.", "f-string قالب قابل ذخیره نیست."],
+    "rubric": "Correct: equivalent f-string and a valid case for .format (templates evaluated later / i18n). Partial: f-string right, rationale missing. Incorrect: wrong spec."
+  }
+]

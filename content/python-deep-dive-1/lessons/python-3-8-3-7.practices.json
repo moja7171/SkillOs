@@ -1,0 +1,37 @@
+[
+  {
+    "key": "positional-only-call",
+    "title": "کدام فراخوانی خطا می‌دهد؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef f(a, b, /, c, *, d):\n    ...\n```\nکدام فراخوانی **خطا** می‌دهد؟",
+    "options": ["f(1, 2, 3, d=4)", "f(1, 2, c=3, d=4)", "f(1, b=2, c=3, d=4)", "f(1, 2, 3, d=4) و f(1, 2, c=3, d=4) هر دو"],
+    "correct_option": 2,
+    "expected_outcome": "a و b قبل از / positional-only هستند؛ `b=2` با نام مجاز نیست. c معمولی است (هر دو شکل)، d keyword-only.",
+    "hints":["قبل از / فقط موقعیت.", "بعد از * فقط نام."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "debug-fstring",
+    "title": "f-string اشکال‌زدایی",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nname = 'ali'\nscores = [3, 4]\nprint(f'{name=}, {len(scores)=}, {sum(scores)/len(scores)=:.1f}')\n```\nخروجی دقیق چیست؟",
+    "expected_outcome": "`name='ali', len(scores)=2, sum(scores)/len(scores)=3.5` — با `=` متن عبارت به‌همراه repr (کوتیشن دور رشته) می‌آید؛ format spec بعد از `:` روی مقدار اعمال می‌شود.",
+    "hints": ["= متن عبارت را هم چاپ می‌کند.", "بدون spec، repr است (کوتیشن)."],
+    "rubric": "Correct: exact output including quotes around ali and 3.5. Partial: misses the quotes or the expression text. Incorrect: otherwise."
+  },
+  {
+    "key": "defaults-mutable",
+    "title": "defaults و mutable",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا `namedtuple('NT', 'a b c', defaults=([],) * 3)` بعد از `nt.a.append(10)` هر سه فیلد را `[10]` نشان می‌دهد، این به کدام درس‌های قبلی برمی‌گردد، و چطور می‌توان سه لیست مستقل داشت.",
+    "expected_outcome": "`([],) * 3` یک شیء لیست را سه بار ارجاع می‌دهد؛ پیش‌فرض‌ها یک بار ساخته می‌شوند و بین instanceها هم مشترک‌اند (همان دام پیش‌فرض mutable در توابع و اشتراک ارجاع). راه‌حل: `defaults=([], [], [])` — که باز هم بین instanceهای مختلف NT مشترک است؛ اگر لیست تازه برای هر instance می‌خواهی، پیش‌فرض None بگذار و بعد `_replace` کن یا اصلاً از mutable در named tuple پرهیز کن.",
+    "hints": ["به `[[]] * 3` فکر کن.", "پیش‌فرض یک بار ساخته می‌شود."],
+    "rubric": "Correct: same-object replication, link to mutable-default lesson, and a fix (separate literals or None default) with the per-instance caveat. Partial: cause right, fix incomplete. Incorrect: thinks defaults are copied."
+  }
+]

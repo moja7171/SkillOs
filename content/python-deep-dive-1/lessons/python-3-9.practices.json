@@ -1,0 +1,51 @@
+[
+  {
+    "key": "lstrip-trap",
+    "title": "دام lstrip",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "`'lemon_file.txt'.lstrip('file_')` چه می‌دهد؟",
+    "options": [
+      "'lemon_file.txt'",
+      "'mon_file.txt'",
+      "'lemon.txt'",
+      "'.txt'"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "lstrip آرگومان را مجموعه‌ی کاراکتر {f, i, l, e, _} می‌بیند و از ابتدا هر کاراکتری را که در مجموعه است حذف می‌کند: 'l' و 'e' حذف می‌شوند، 'm' در مجموعه نیست → توقف. نتیجه 'mon_file.txt'. برای حذف یک پیشوند واقعی از removeprefix استفاده کن (اینجا چون رشته با 'file_' شروع نمی‌شود، دست‌نخورده می‌ماند).",
+    "hints": [
+      "lstrip مجموعه‌ی کاراکتر می‌گیرد، نه رشته.",
+      "تا اولین کاراکتری که در مجموعه نیست ادامه می‌دهد."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "dict-union",
+    "title": "اجتماع dict",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\ndefaults = {'theme': 'dark', 'lang': 'fa', 'size': 12}\nuser = {'size': 14, 'lang': 'en'}\n```\n(۱) با `|` تنظیمات نهایی را بساز که مقادیر کاربر برنده باشند و بگو ترتیب کلیدها چیست. (۲) همان با `{**...}` و با `ChainMap` — کدام‌یک با `|` هم‌معنی است؟",
+    "expected_outcome": "`defaults | user` → {'theme': 'dark', 'lang': 'en', 'size': 14} (ترتیب کلیدهای defaults حفظ می‌شود). `{**defaults, **user}` هم‌معنی است. `ChainMap(defaults, user)` برعکس است (اولین برنده) — باید `ChainMap(user, defaults)` نوشت.",
+    "hints": [
+      "راست برنده است در | و **.",
+      "ChainMap اولین را برمی‌گرداند."
+    ],
+    "rubric": "Correct: union result with order, identifies {**} as equivalent and ChainMap as reversed (or reorders it). Partial: result right, ChainMap point missing. Incorrect: wrong winner."
+  },
+  {
+    "key": "tz-convert",
+    "title": "تبدیل timezone",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با `zoneinfo`، تابعی به نام `to_tehran(dt)` بنویس که یک datetime بگیرد؛ اگر naive بود آن را UTC فرض کند و aware کند، سپس به `Asia/Tehran` تبدیل کند. با `datetime(2022, 3, 20, 6, 1)` تستش کن و بگو چه ساعتی می‌شود.",
+    "expected_outcome": "```python\nfrom datetime import datetime, timezone\nfrom zoneinfo import ZoneInfo\n\ndef to_tehran(dt):\n    if dt.tzinfo is None:\n        dt = dt.replace(tzinfo=timezone.utc)\n    return dt.astimezone(ZoneInfo('Asia/Tehran'))\n\nto_tehran(datetime(2022, 3, 20, 6, 1))   # 2022-03-20 09:31+03:30\n```\n(ایران از 2022 دیگر DST ندارد؛ اختلاف ثابت +03:30.)",
+    "hints": [
+      "naive = tzinfo is None.",
+      "astimezone با ZoneInfo."
+    ],
+    "rubric": "Correct: naive check, replace with UTC, astimezone(ZoneInfo('Asia/Tehran')), result 09:31 +03:30. Partial: forgets the naive handling. Incorrect: uses pytz localize on ZoneInfo or wrong offset."
+  }
+]

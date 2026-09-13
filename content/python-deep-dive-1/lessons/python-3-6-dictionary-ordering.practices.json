@@ -1,0 +1,24 @@
+[
+  {
+    "key": "order-after-ops",
+    "title": "ترتیب بعد از عملیات",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nd = {'k1': 1, 'k2': 2, 'k3': 3}\nd['k2'] = 20\ndel d['k1']\nd['k1'] = 10\nd.update({'k3': 30, 'k4': 4})\nprint(list(d))\nprint(d.popitem())\n```\nخروجی دو print چیست؟",
+    "expected_outcome": "['k2', 'k3', 'k1', 'k4'] و ('k4', 4). جایگزینی مقدار جایگاه را حفظ می‌کند؛ حذف و درج دوباره به انتها می‌برد؛ update کلید موجود را سر جایش به‌روز و کلید جدید را به انتها اضافه می‌کند؛ popitem آخری را برمی‌دارد.",
+    "hints": ["حذف + درج دوباره = انتها.", "update کلید موجود را جابه‌جا نمی‌کند."],
+    "rubric": "Correct: both outputs. Partial: order right, popitem wrong or vice versa. Incorrect: otherwise."
+  },
+  {
+    "key": "move-to-front",
+    "title": "move_to_front",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تابعی به نام `move_to_front(d, key)` بنویس که با dict معمولی (بدون OrderedDict) کلید داده‌شده را به ابتدای ترتیب ببرد و **همان dict** را درجا تغییر دهد. راه ساده‌تری از چرخاندن همه‌ی کلیدها هست؟ (راهنمایی: بازسازی و `clear`/`update`.)",
+    "expected_outcome": "```python\ndef move_to_front(d, key):\n    value = d.pop(key)\n    rest = dict(d)          # snapshot of the remaining items in order\n    d.clear()\n    d[key] = value\n    d.update(rest)\n```\ndrjaست (id ثابت) و از چرخاندن تک‌تک کلیدها خواناتر است؛ هزینه O(n) هر دو.",
+    "hints": ["pop، سپس همه را پاک و دوباره درج کن.", "برای درجا ماندن از clear/update استفاده کن نه d = ..."],
+    "rubric": "Correct: mutates in place, key ends up first, order of the rest preserved. Partial: returns a new dict instead of mutating. Incorrect: loses items or order."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "annotations-effect",
+    "title": "annotation چه می‌کند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef total(xs: list[int]) -> int:\n    return sum(xs)\n\ntotal((1.5, 2.5))\n```\nچه می‌شود؟",
+    "options": ["TypeError چون tuple لیست نیست", "4.0 — پایتون annotation را اجرا نمی‌کند", "TypeError چون float به‌جای int", "SyntaxError"],
+    "correct_option": 1,
+    "expected_outcome": "annotation فقط متادیتا برای ابزارهای بیرونی است؛ sum روی tuple از floatها 4.0 می‌دهد.",
+    "hints": ["type hint را چه کسی چک می‌کند؟", "پایتون dynamically typed می‌ماند."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "which-version",
+    "title": "کدام نسخه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "برای هر ویژگی بگو از کدام نسخه در دسترس است و آیا در 3.6 تضمین‌شده بود: (۱) ترتیب درج dict، (۲) f-string، (۳) `1_000`، (۴) `dict | dict`، (۵) `match`.",
+    "expected_outcome": "(۱) 3.6 به‌عنوان جزئیات پیاده‌سازی، تضمین از 3.7؛ (۲) 3.6؛ (۳) 3.6؛ (۴) 3.9؛ (۵) 3.10.",
+    "hints": ["سه‌تای اول در همین درس.", "دو تای آخر در درس‌های 3.9 و 3.10."],
+    "rubric": "Correct: all five with the 3.6-vs-3.7 nuance for dict order. Partial: one wrong. Incorrect: two or more wrong."
+  }
+]

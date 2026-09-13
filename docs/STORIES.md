@@ -37,7 +37,7 @@ As a learner, I want to open a lesson and switch between video and text.
 ## M1 — First real course
 
 ### [~] C-01 Advanced Python course content
-Owner provided 95 videos (no subtitles) as `course/python-deep-dive-1/`, served via `public/media/` symlink. 2026-09-13: `content/python-deep-dive-1/` has all 60 lessons (videos grouped, sections), full text + practices for «مرور سریع» (10) and «متغیرها و حافظه» (11), written from the English transcripts; the other 39 have outline text only. Claude writes (lesson texts following the videos, 2–3 practices per lesson with rubrics), imports, owner reviews in the app, fixes iterate as commits.
+Owner provided 95 videos (no subtitles) as `course/python-deep-dive-1/`, served via `public/media/` symlink. 2026-09-13: `content/python-deep-dive-1/` has all 106 lessons (159 videos, 11 sections; lectures 100–162 arrived later without subtitles yet) (videos grouped, sections), full text + practices for «مرور سریع» (10) and «متغیرها و حافظه» (11), written from the English transcripts; the other 39 have outline text only. Claude writes (lesson texts following the videos, 2–3 practices per lesson with rubrics), imports, owner reviews in the app, fixes iterate as commits.
 
 ## M2 — Session (unchanged from v0.2 S-08..S-13, "skill" → "lesson")
 

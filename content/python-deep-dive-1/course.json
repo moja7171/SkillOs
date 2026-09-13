@@ -2360,7 +2360,7 @@
       "slug": "global-and-local-scopes",
       "title": "دامنه‌های global و local",
       "summary": "دامنه‌ی ماژول، دامنه‌ی تابع و کلیدواژه‌ی global.",
-      "section": "دامنه‌ها",
+      "section": "دامنه‌ها، closureها و decoratorها",
       "estimated_minutes": 26,
       "videos": [
         {
@@ -2409,6 +2409,1228 @@
           "file": "files/099-global-and-local-scopes-coding.ipynb"
         }
       ]
+    },
+    {
+      "slug": "nonlocal-scopes",
+      "title": "دامنه‌های nonlocal",
+      "summary": "توابع تودرتو و کلیدواژه‌ی nonlocal.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "100-nonlocal-scopes-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "101-nonlocal-scopes-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/100-nonlocal-scopes-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/101-nonlocal-scopes-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "closures",
+      "title": "Closureها",
+      "summary": "تابعی که متغیرهای آزادش را با خود حمل می‌کند؛ cell و free variable.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 30,
+      "videos": [
+        {
+          "file": "102-closures-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "103-closures-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/102-closures-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/103-closures-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "closure-applications",
+      "title": "کاربردهای closure",
+      "summary": "شمارنده، میانگین متحرک و کش با closure.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "104-closure-applications-part-1.mp4",
+          "title": "قسمت ۱"
+        },
+        {
+          "file": "105-closure-applications-part-2.mp4",
+          "title": "قسمت ۲"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter — قسمت ۱",
+          "file": "files/104-closure-applications-part-1.ipynb"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — قسمت ۲",
+          "file": "files/105-closure-applications-part-2.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorators-1",
+      "title": "Decoratorها — بخش ۱",
+      "summary": "تابعی که تابع می‌گیرد و تابع برمی‌گرداند؛ سینتکس @ و functools.wraps.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 30,
+      "videos": [
+        {
+          "file": "106-decorators-part-1-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "107-decorators-part-1-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/106-decorators-part-1-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/107-decorators-part-1-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-application-timer",
+      "title": "کاربرد decorator: زمان‌سنج",
+      "summary": "اندازه‌گیری زمان اجرای تابع با decorator.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "108-decorator-application-timer.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/108-decorator-application-timer.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-application-logger-stacked",
+      "title": "کاربرد decorator: لاگر و decoratorهای پشته‌ای",
+      "summary": "چند decorator روی یک تابع و ترتیب اعمالشان.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "109-decorator-application-logger-stacked-decorators.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/109-decorator-application-logger-stacked-decorators.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-application-memoization",
+      "title": "کاربرد decorator: memoization",
+      "summary": "کش کردن نتیجه‌ی تابع؛ functools.lru_cache.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "110-decorator-application-memoization.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/110-decorator-application-memoization.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-factories",
+      "title": "Decorator factory",
+      "summary": "decoratorی که پارامتر می‌گیرد.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "111-decorator-factories-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "112-decorator-factories-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/111-decorator-factories-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/112-decorator-factories-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-application-decorator-class",
+      "title": "کاربرد decorator: کلاس به‌عنوان decorator",
+      "summary": "پیاده‌سازی decorator با کلاس و __call__.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "113-decorator-application-decorator-class.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/113-decorator-application-decorator-class.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-application-decorating-classes",
+      "title": "کاربرد decorator: تزئین کلاس‌ها",
+      "summary": "افزودن رفتار به کلاس با decorator؛ total_ordering.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "114-decorator-application-decorating-classes.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/114-decorator-application-decorating-classes.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "decorator-application-dispatching",
+      "title": "کاربرد decorator: single dispatch",
+      "summary": "توابع generic بر اساس نوع آرگومان؛ functools.singledispatch.",
+      "section": "دامنه‌ها، closureها و decoratorها",
+      "estimated_minutes": 40,
+      "videos": [
+        {
+          "file": "115-decorator-application-dispatching-part-1.mp4",
+          "title": "قسمت ۱"
+        },
+        {
+          "file": "116-decorator-application-dispatching-part-2.mp4",
+          "title": "قسمت ۲"
+        },
+        {
+          "file": "117-decorator-application-dispatching-part-3.mp4",
+          "title": "قسمت ۳"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter — قسمت ۱",
+          "file": "files/115-decorator-application-dispatching-part-1.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "tuples-as-data-structures",
+      "title": "tuple به‌عنوان ساختار داده",
+      "summary": "tuple نه به‌عنوان لیست تغییرناپذیر، بلکه رکورد با موقعیت معنادار.",
+      "section": "tuple به‌عنوان ساختار داده و named tuple",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "118-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "119-tuples-as-data-structures-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "120-tuples-as-data-structures-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/119-tuples-as-data-structures-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/120-tuples-as-data-structures-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "named-tuples",
+      "title": "Named tupleها",
+      "summary": "collections.namedtuple: رکورد با فیلدهای نام‌دار.",
+      "section": "tuple به‌عنوان ساختار داده و named tuple",
+      "estimated_minutes": 28,
+      "videos": [
+        {
+          "file": "121-named-tuples-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "122-named-tuples-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/121-named-tuples-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/122-named-tuples-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "named-tuples-modifying-and-extending",
+      "title": "تغییر و گسترش named tuple",
+      "summary": "_replace، _fields و ساخت named tuple جدید از قبلی.",
+      "section": "tuple به‌عنوان ساختار داده و named tuple",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "123-named-tuples-modifying-and-extending-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "124-named-tuples-modifying-and-extending-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/123-named-tuples-modifying-and-extending-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/124-named-tuples-modifying-and-extending-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "named-tuples-docstrings-and-default-values",
+      "title": "Docstring و مقدار پیش‌فرض در named tuple",
+      "summary": "مستندسازی فیلدها و تعیین مقدار پیش‌فرض.",
+      "section": "tuple به‌عنوان ساختار داده و named tuple",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "125-named-tuples-docstrings-and-default-values-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "126-named-tuples-docstrings-and-default-values-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/125-named-tuples-docstrings-and-default-values-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/126-named-tuples-docstrings-and-default-values-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "named-tuples-returning-multiple-values",
+      "title": "کاربرد: برگرداندن چند مقدار از تابع",
+      "summary": "named tuple به‌جای tuple بی‌نام در return.",
+      "section": "tuple به‌عنوان ساختار داده و named tuple",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "127-named-tuples-application-returning-multiple-values.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/127-named-tuples-application-returning-multiple-values.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "named-tuples-alternative-to-dictionaries",
+      "title": "کاربرد: جایگزین دیکشنری",
+      "summary": "کِی named tuple بهتر از dict است.",
+      "section": "tuple به‌عنوان ساختار داده و named tuple",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "128-named-tuples-application-alternative-to-dictionaries.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/128-named-tuples-application-alternative-to-dictionaries.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "what-is-a-module",
+      "title": "ماژول چیست؟",
+      "summary": "ماژول یک شیء است؛ sys.modules و globals().",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "129-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "130-what-is-a-module.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter — 130-what-is-a-module",
+          "file": "files/130-what-is-a-module.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "how-python-imports-modules",
+      "title": "پایتون چطور ماژول را import می‌کند",
+      "summary": "finderها، loaderها و sys.path.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "131-how-does-python-import-modules.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "فایل پایتون — importer.py",
+          "file": "files/131-how-does-python-import-modules-importer.py"
+        },
+        {
+          "title": "فایل پایتون — main.py",
+          "file": "files/131-how-does-python-import-modules-main.py"
+        },
+        {
+          "title": "فایل پایتون — module1.py",
+          "file": "files/131-how-does-python-import-modules-module1.py"
+        },
+        {
+          "title": "فایل پایتون — module1_source.py",
+          "file": "files/131-how-does-python-import-modules-module1_source.py"
+        },
+        {
+          "title": "فایل پایتون — module2.py",
+          "file": "files/131-how-does-python-import-modules-module2.py"
+        },
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/131-how-does-python-import-modules.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "imports-and-importlib",
+      "title": "import و importlib",
+      "summary": "import برنامه‌ای با importlib.import_module.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "132-imports-and-importlib.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/132-imports-and-importlib.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "import-variants-and-misconceptions",
+      "title": "انواع import و سوءبرداشت‌ها",
+      "summary": "import x، from x import y، from x import * و هزینه‌ی واقعی هر کدام.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 30,
+      "videos": [
+        {
+          "file": "133-import-variants-and-misconceptions-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "134-import-variants-and-misconceptions-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/133-import-variants-and-misconceptions-lecture.pdf"
+        },
+        {
+          "title": "نوت‌بوک Jupyter — بخش کدنویسی",
+          "file": "files/134-import-variants-and-misconceptions-coding.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "reloading-modules",
+      "title": "بارگذاری مجدد ماژول",
+      "summary": "importlib.reload و خطراتش.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "135-reloading-modules.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/135-reloading-modules.ipynb"
+        }
+      ]
+    },
+    {
+      "slug": "using-main",
+      "title": "استفاده از __main__",
+      "summary": "if __name__ == '__main__' و اجرای ماژول به‌عنوان اسکریپت.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "136-using-main.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "فایل پایتون — __main__.py",
+          "file": "files/136-using-main-__main__.py"
+        },
+        {
+          "title": "فایل پایتون — module1.py",
+          "file": "files/136-using-main-module1.py"
+        },
+        {
+          "title": "فایل پایتون — run.py",
+          "file": "files/136-using-main-run.py"
+        },
+        {
+          "title": "فایل پایتون — timing.py",
+          "file": "files/136-using-main-timing.py"
+        }
+      ]
+    },
+    {
+      "slug": "modules-recap",
+      "title": "جمع‌بندی ماژول‌ها",
+      "summary": "مرور ماژول‌ها قبل از ورود به پکیج‌ها.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "137-modules-recap.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/137-modules-recap.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "what-are-packages",
+      "title": "پکیج چیست؟",
+      "summary": "پکیج = ماژولی که __path__ دارد؛ __init__.py.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 28,
+      "videos": [
+        {
+          "file": "138-what-are-packages-lecture.mp4",
+          "title": "بخش نظری"
+        },
+        {
+          "file": "139-what-are-packages-coding.mp4",
+          "title": "بخش کدنویسی"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — بخش نظری",
+          "file": "files/138-what-are-packages-lecture.pdf"
+        },
+        {
+          "title": "فایل پایتون — __init__.py",
+          "file": "files/139-what-are-packages-coding-__init__.py"
+        },
+        {
+          "title": "فایل پایتون — module1.py",
+          "file": "files/139-what-are-packages-coding-module1.py"
+        },
+        {
+          "title": "فایل پایتون — module1_1a.py",
+          "file": "files/139-what-are-packages-coding-module1_1a.py"
+        },
+        {
+          "title": "فایل پایتون — module1_1b.py",
+          "file": "files/139-what-are-packages-coding-module1_1b.py"
+        },
+        {
+          "title": "فایل پایتون — module1a.py",
+          "file": "files/139-what-are-packages-coding-module1a.py"
+        }
+      ]
+    },
+    {
+      "slug": "why-packages",
+      "title": "چرا پکیج؟",
+      "summary": "سازمان‌دهی کد و کنترل رابط عمومی با __init__.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "140-why-packages.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/140-why-packages.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "structuring-packages",
+      "title": "ساختاردهی پکیج",
+      "summary": "الگوهای import داخل پکیج و رابط عمومی؛ دو قسمت.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 30,
+      "videos": [
+        {
+          "file": "141-structuring-packages-part-1.mp4",
+          "title": "قسمت ۱"
+        },
+        {
+          "file": "142-structuring-packages-part-2.mp4",
+          "title": "قسمت ۲"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "فایل پایتون — __init__.py",
+          "file": "files/141-structuring-packages-part-1-__init__.py"
+        },
+        {
+          "title": "فایل پایتون — boolean.py",
+          "file": "files/141-structuring-packages-part-1-boolean.py"
+        },
+        {
+          "title": "فایل پایتون — calculator.py",
+          "file": "files/141-structuring-packages-part-1-calculator.py"
+        },
+        {
+          "title": "فایل پایتون — date.py",
+          "file": "files/141-structuring-packages-part-1-date.py"
+        },
+        {
+          "title": "فایل پایتون — json.py",
+          "file": "files/141-structuring-packages-part-1-json.py"
+        },
+        {
+          "title": "فایل پایتون — main.py",
+          "file": "files/141-structuring-packages-part-1-main.py"
+        },
+        {
+          "title": "فایل پایتون — numeric.py",
+          "file": "files/141-structuring-packages-part-1-numeric.py"
+        },
+        {
+          "title": "فایل پایتون — post.py",
+          "file": "files/141-structuring-packages-part-1-post.py"
+        },
+        {
+          "title": "فایل پایتون — posts.py",
+          "file": "files/141-structuring-packages-part-1-posts.py"
+        },
+        {
+          "title": "فایل پایتون — user.py",
+          "file": "files/141-structuring-packages-part-1-user.py"
+        },
+        {
+          "title": "فایل پایتون — __init__.py",
+          "file": "files/142-structuring-packages-part-2-__init__.py"
+        },
+        {
+          "title": "فایل پایتون — boolean.py",
+          "file": "files/142-structuring-packages-part-2-boolean.py"
+        },
+        {
+          "title": "فایل پایتون — calculator.py",
+          "file": "files/142-structuring-packages-part-2-calculator.py"
+        },
+        {
+          "title": "فایل پایتون — date.py",
+          "file": "files/142-structuring-packages-part-2-date.py"
+        },
+        {
+          "title": "فایل پایتون — json.py",
+          "file": "files/142-structuring-packages-part-2-json.py"
+        },
+        {
+          "title": "فایل پایتون — main.py",
+          "file": "files/142-structuring-packages-part-2-main.py"
+        },
+        {
+          "title": "فایل پایتون — numeric.py",
+          "file": "files/142-structuring-packages-part-2-numeric.py"
+        },
+        {
+          "title": "فایل پایتون — post.py",
+          "file": "files/142-structuring-packages-part-2-post.py"
+        },
+        {
+          "title": "فایل پایتون — posts.py",
+          "file": "files/142-structuring-packages-part-2-posts.py"
+        },
+        {
+          "title": "فایل پایتون — user.py",
+          "file": "files/142-structuring-packages-part-2-user.py"
+        }
+      ]
+    },
+    {
+      "slug": "namespace-packages",
+      "title": "Namespace packageها",
+      "summary": "پکیج بدون __init__.py و تفاوتش با پکیج معمولی.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "143-namespace-packages.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF)",
+          "file": "files/143-namespace-packages.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "importing-from-zip-archives",
+      "title": "import از آرشیو zip",
+      "summary": "افزودن zip به sys.path.",
+      "section": "ماژول‌ها، پکیج‌ها و namespaceها",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "144-importing-from-zip-archives.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "فایل پایتون — main.py",
+          "file": "files/144-importing-from-zip-archives-main.py"
+        }
+      ]
+    },
+    {
+      "slug": "python-3-10",
+      "title": "تازه‌های Python 3.10",
+      "summary": "match statement، union types و پیام‌های خطای بهتر.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "145-python-3-10.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/145-python-3-10.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-9",
+      "title": "تازه‌های Python 3.9",
+      "summary": "عملگرهای | برای dict، removeprefix/removesuffix، zoneinfo.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "146-python-3-9.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/146-python-3-9.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-8-3-7",
+      "title": "تازه‌های Python 3.8 و 3.7",
+      "summary": "walrus operator، positional-only parameters، f-string =.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "147-python-3-8-3-7.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/147-python-3-8-3-7.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-6-highlights",
+      "title": "برجسته‌های Python 3.6",
+      "summary": "مرور تغییرات 3.6.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "148-python-3-6-highlights.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/148-python-3-6-highlights.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-6-dictionary-ordering",
+      "title": "ترتیب dict در 3.6",
+      "summary": "dict ترتیب درج را حفظ می‌کند.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "149-python-3-6-dictionary-ordering.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/149-python-3-6-dictionary-ordering.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-6-underscores-in-numeric-literals",
+      "title": "زیرخط در literal عددی",
+      "summary": "1_000_000 و قالب‌بندی با _.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "150-python-3-6-underscores-in-numeric-literals.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/150-python-3-6-underscores-in-numeric-literals.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-6-preserved-order-of-kwargs",
+      "title": "حفظ ترتیب kwargs",
+      "summary": "**kwargs ترتیب را نگه می‌دارد؛ کاربرد با named tuple.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/151-python-3-6-preserved-order-of-kwargs-and-named-tuple-application.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "python-3-6-f-strings",
+      "title": "f-string",
+      "summary": "قالب‌بندی رشته با f\"...\" و عبارت‌های داخل آن.",
+      "section": "به‌روزرسانی‌های پایتون",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "152-python-3-6-f-strings.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/152-python-3-6-f-strings.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "additional-resources",
+      "title": "منابع تکمیلی",
+      "summary": "کتاب‌ها، سایت‌ها و منابعی که مدرس توصیه می‌کند.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "153-introduction.mp4",
+          "title": "مقدمه"
+        },
+        {
+          "file": "154-additional-resources.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "اسلایدهای درس (PDF) — 154-additional-resources",
+          "file": "files/154-additional-resources.pdf"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "random-seeds",
+      "title": "seed در random",
+      "summary": "تکرارپذیر کردن اعداد تصادفی.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "155-random-seeds.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/155-random-seeds.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "random-choices",
+      "title": "random.choices",
+      "summary": "انتخاب با جایگذاری و وزن.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "156-random-choices.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/156-random-choices.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "random-samples",
+      "title": "random.sample",
+      "summary": "نمونه‌گیری بدون جایگذاری.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "157-random-samples.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/157-random-samples.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "timing-code-using-timeit",
+      "title": "زمان‌سنجی با timeit",
+      "summary": "اندازه‌گیری درست زمان اجرا.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "158-timing-code-using-timeit.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/158-timing-code-using-timeit.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "dont-use-args-kwargs-names-blindly",
+      "title": "نام‌های args و kwargs را کورکورانه به کار نبر",
+      "summary": "نام‌گذاری معنادار برای پارامترهای ستاره‌دار.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "159-don-t-use-args-and-kwargs-names-blindly.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/159-don-t-use-args-and-kwargs-names-blindly.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "command-line-arguments",
+      "title": "آرگومان‌های خط فرمان",
+      "summary": "sys.argv و argparse.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "160-command-line-arguments.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "فایل پایتون — example1.py",
+          "file": "files/160-command-line-arguments-example1.py"
+        },
+        {
+          "title": "فایل پایتون — example10.py",
+          "file": "files/160-command-line-arguments-example10.py"
+        },
+        {
+          "title": "فایل پایتون — example2.py",
+          "file": "files/160-command-line-arguments-example2.py"
+        },
+        {
+          "title": "فایل پایتون — example3.py",
+          "file": "files/160-command-line-arguments-example3.py"
+        },
+        {
+          "title": "فایل پایتون — example4.py",
+          "file": "files/160-command-line-arguments-example4.py"
+        },
+        {
+          "title": "فایل پایتون — example5.py",
+          "file": "files/160-command-line-arguments-example5.py"
+        },
+        {
+          "title": "فایل پایتون — example6.py",
+          "file": "files/160-command-line-arguments-example6.py"
+        },
+        {
+          "title": "فایل پایتون — example7.py",
+          "file": "files/160-command-line-arguments-example7.py"
+        },
+        {
+          "title": "فایل پایتون — example8.py",
+          "file": "files/160-command-line-arguments-example8.py"
+        },
+        {
+          "title": "فایل پایتون — example9.py",
+          "file": "files/160-command-line-arguments-example9.py"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "sentinel-values-for-parameter-defaults",
+      "title": "مقدار sentinel برای پیش‌فرض پارامتر",
+      "summary": "وقتی None خودش مقدار معتبر است.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "161-sentinel-values-for-parameter-defaults.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/161-sentinel-values-for-parameter-defaults.ipynb"
+        }
+      ],
+      "prerequisites": []
+    },
+    {
+      "slug": "simulating-a-simple-switch",
+      "title": "شبیه‌سازی switch در پایتون",
+      "summary": "dict of functions و decorator برای ثبت شاخه‌ها.",
+      "section": "مطالب تکمیلی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "162-simulating-a-simple-switch-in-python.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": [],
+      "attachments": [
+        {
+          "title": "نوت‌بوک Jupyter",
+          "file": "files/162-simulating-a-simple-switch-in-python.ipynb"
+        }
+      ],
+      "prerequisites": []
     }
   ]
 }

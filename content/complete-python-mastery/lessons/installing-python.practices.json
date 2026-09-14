@@ -1,0 +1,15 @@
+[
+  {
+    "key": "python3-on-mac",
+    "title": "اجرای پایتون ۳ روی مک",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "روی مک یا لینوکس، برای باز کردن مفسر **پایتون ۳** (نه پایتون ۲) در ترمینال کدام دستور را باید تایپ کنی؟",
+    "options": ["python", "python3", "py -3", "python.exe"],
+    "correct_option": 1,
+    "expected_outcome": "روی مک و لینوکس دستور `python` معمولاً به پایتون ۲ اشاره دارد؛ برای پایتون ۳ باید `python3` تایپ کنی.",
+    "hints": ["دستور ساده‌ی `python` روی مک/لینوکس معمولاً به کدام نسخه اشاره دارد؟", "برای مشخص کردن نسخه‌ی سوم، یک رقم به آخر دستور `python` اضافه می‌شود."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

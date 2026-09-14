@@ -1,0 +1,24 @@
+[
+  {
+    "key": "pep8-spacing",
+    "title": "فاصله‌گذاری طبق PEP 8",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام یک از این دو خط با استانداردهای PEP 8 سازگار است؟\n```python\nx=1\n```\nیا\n```python\nx = 1\n```",
+    "expected_outcome": "x = 1",
+    "hints": ["به قانون فاصله‌گذاری دور عملگر انتساب که در متن درس آمد فکر کن.", "PEP 8 دور `=` فاصله می‌خواهد."],
+    "rubric": "Correct only if the answer identifies \"x = 1\" (with spaces around =) as PEP 8 compliant."
+  },
+  {
+    "key": "what-is-pep8",
+    "title": "PEP 8 چیست؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در ۲ تا ۳ جمله توضیح بده PEP 8 چیست و چرا رعایتش برای یک تیم برنامه‌نویسی اهمیت دارد.",
+    "expected_outcome": "PEP 8 راهنمای رسمی سبک نوشتن کد پایتون است. رعایتش باعث می‌شود کد افراد مختلف یک تیم یکدست و خواناتر باشد و خواندن کد یکدیگر راحت‌تر شود.",
+    "hints": ["PEP مخفف چیست؟ به سندهای رسمی زبان پایتون فکر کن.", "یکدستی کد بین اعضای تیم چه فایده‌ای دارد؟"],
+    "rubric": "Correct: identifies PEP 8 as Python's official style guide AND mentions consistency/readability across a team. Partial: only one of the two. Incorrect: neither."
+  }
+]

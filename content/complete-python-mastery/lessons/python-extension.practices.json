@@ -1,0 +1,15 @@
+[
+  {
+    "key": "extension-features",
+    "title": "امکانات افزونه‌ی Python",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدام مورد جزو امکاناتی که افزونه‌ی رسمی Python به VS Code اضافه می‌کند **نیست**؟",
+    "options": ["Linting (پیدا کردن خطای احتمالی)", "Debugging (اجرای گام‌به‌گام)", "کامپایل کد پایتون به کد ماشین ویندوز", "تکمیل خودکار کد"],
+    "correct_option": 2,
+    "expected_outcome": "افزونه‌ی Python امکاناتی مثل linting، debugging، تکمیل خودکار، فرمت‌بندی، تست و snippet اضافه می‌کند؛ اجرای کد همچنان کار خود مفسر CPython است، نه افزونه.",
+    "hints": ["به لیست امکاناتی که در متن درس آمده نگاه کن.", "اجرای واقعی کد کار مفسر پایتون است، نه ویرایشگر یا افزونه‌اش."],
+    "rubric": "Correct only if option 2 is selected."
+  }
+]

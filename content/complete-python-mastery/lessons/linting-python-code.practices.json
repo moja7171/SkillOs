@@ -1,0 +1,26 @@
+[
+  {
+    "key": "why-print-errors-in-py3",
+    "title": "چرا print بدون پرانتز خطا می‌دهد؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nprint \"Hello, World!\"\n```\nدر پایتون ۳ چرا این خط باعث خطای لینتر می‌شود، در حالی‌که در پایتون ۲ معتبر بود؟",
+    "expected_outcome": "در پایتون ۳، print یک تابع است و هر فراخوانی تابع باید با پرانتز باشد: print(\"Hello, World!\"). در پایتون ۲، print یک statement بود نه تابع، پس بدون پرانتز هم کار می‌کرد.",
+    "hints": ["در پایتون ۳، print دیگر یک statement نیست.", "برای فراخوانی هر تابع در پایتون باید پرانتز بگذاری."],
+    "rubric": "Correct: explains that print is a function in Python 3 (requires parentheses to be called) unlike Python 2 where it was a statement. Partial: says parentheses are missing but doesn't explain the function/statement distinction. Incorrect: unrelated or wrong explanation."
+  },
+  {
+    "key": "what-does-linter-catch",
+    "title": "لینتر چه چیزی را پیدا می‌کند؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "لینتر معمولاً چه نوع مشکلی را پیش از اجرای برنامه پیدا می‌کند؟",
+    "options": ["کندی برنامه هنگام اجرا", "خطاهای نحوی و مشکلات احتمالی کد", "مصرف حافظه‌ی برنامه", "امنیت شبکه‌ی برنامه"],
+    "correct_option": 1,
+    "expected_outcome": "لینتر کد را تحلیل می‌کند و خطاهای نحوی و مشکلات احتمالی را — بدون نیاز به اجرای برنامه — پیدا می‌کند.",
+    "hints": ["به تعریف linting در متن درس برگرد.", "لینتر قبل از اجرا کار می‌کند، نه حین اجرا."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

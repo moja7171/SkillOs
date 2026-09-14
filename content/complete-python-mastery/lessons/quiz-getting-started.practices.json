@@ -1,0 +1,35 @@
+[
+  {
+    "key": "quiz-what-is-expression",
+    "title": "عبارت (expression) چیست؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "به‌طور خلاصه بگو عبارت (expression) در برنامه‌نویسی چیست، و مثال بزن.",
+    "expected_outcome": "عبارت تکه‌کدی است که یک مقدار تولید می‌کند؛ مثلاً \"*\" * 3 مقدار \"***\" را تولید می‌کند.",
+    "hints": ["به تعریفی که در چند درس قبل دیدی برگرد.", "هر چیزی که وقتی اجرا می‌شود یک مقدار برگرداند، یک عبارت است."],
+    "rubric": "Correct: defines an expression as code that produces a value, with a correct example. Partial: gives the definition without an example, or vice versa. Incorrect: neither."
+  },
+  {
+    "key": "quiz-what-is-syntax-error",
+    "title": "خطای نحوی چیست؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خطای نحوی (syntax error) به چه معناست؟",
+    "expected_outcome": "خطایی که به‌خاطر گرامر یا نحو غلط و ناقص در کد رخ می‌دهد.",
+    "hints": ["Syntax یعنی گرامر یا دستور زبان.", "یک جمله‌ی ناقص یا بی‌گرامر مثال خوبی است."],
+    "rubric": "Correct only if the answer describes a syntax error as bad/incorrect grammar or structure in the code."
+  },
+  {
+    "key": "quiz-what-does-linter-do",
+    "title": "لینتر چه کاری انجام می‌دهد؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یک لینتر (linter) چه کاری انجام می‌دهد؟",
+    "expected_outcome": "کد را — پیش از اجرای برنامه — برای پیدا کردن خطاهای احتمالی، بیشتر از نوع نحوی، بررسی می‌کند.",
+    "hints": ["لینتر قبل از اجرا کار می‌کند یا بعدش؟", "بیشتر دنبال چه نوع خطایی می‌گردد؟"],
+    "rubric": "Correct only if the answer says a linter checks code for potential (mostly syntactic) errors before running the program."
+  }
+]

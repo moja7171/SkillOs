@@ -1,0 +1,20 @@
+[
+  {
+    "key": "editor-vs-ide",
+    "title": "ویرایشگر کد در برابر IDE",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تفاوت اصلی یک IDE با یک ویرایشگر کد ساده چیست؟",
+    "options": [
+      "IDE فقط برای زبان پایتون کار می‌کند",
+      "IDE امکاناتی مثل تکمیل خودکار، دیباگ و تست را از قبل دارد",
+      "ویرایشگر کد فقط روی ویندوز کار می‌کند",
+      "هیچ فرقی ندارند"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "IDE (Integrated Development Environment) نسبت به یک ویرایشگر کد ساده، امکانات بیشتری مثل autocompletion، دیباگ و تست به‌صورت پیش‌فرض دارد.",
+    "hints": ["IDE مخفف چیست؟ به کلمه‌ی Integrated دقت کن.", "ویرایشگرهای کد این امکانات را معمولاً با افزونه اضافه می‌کنند، نه از پیش."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

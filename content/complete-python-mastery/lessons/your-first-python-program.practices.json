@@ -1,0 +1,24 @@
+[
+  {
+    "key": "print-hello",
+    "title": "چاپ یک پیام",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "کدی بنویس که دقیقاً همین پیام را چاپ کند:\n```\nHello, World!\n```",
+    "expected_outcome": "```python\nprint(\"Hello, World!\")\n```",
+    "hints": ["از تابع درونی `print` استفاده کن.", "متن را داخل کوتیشن (تکی یا دوتایی) بگذار و فراموش نکن پرانتز باز و بسته کنی."],
+    "rubric": "Correct: uses print(...) with the exact text \"Hello, World!\" inside quotes. Partial: calls print but with wrong text or missing punctuation. Incorrect: doesn't call print, or wrong syntax (e.g. Python 2 style without parentheses)."
+  },
+  {
+    "key": "predict-star-multiplication",
+    "title": "ضرب یک رشته",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\nprint(\"*\" * 10)\n```\nاین کد چه چیزی روی صفحه چاپ می‌کند؟",
+    "expected_outcome": "**********",
+    "hints": ["ضرب یک رشته در یک عدد، آن رشته را همان تعداد بار تکرار می‌کند.", "رشته یک کاراکتر `*` است؛ در ۱۰ ضرب می‌شود."],
+    "rubric": "Correct only if the answer is exactly ten asterisk characters (**********)."
+  }
+]

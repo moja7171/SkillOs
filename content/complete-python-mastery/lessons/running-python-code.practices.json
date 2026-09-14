@@ -1,0 +1,13 @@
+[
+  {
+    "key": "code-runner-mac-fix",
+    "title": "اصلاح Code Runner روی مک",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "روی مک، افزونه‌ی Code Runner به‌صورت پیش‌فرض با دستور `python` فایل را اجرا می‌کند که اشتباه است. باید مقدار کدام تنظیمات را عوض کنی و به چه مقداری؟",
+    "expected_outcome": "تنظیمات code-runner.executorMap را در User Settings (JSON) عوض می‌کنی و دستور پایتون را به python3 تغییر می‌دهی.",
+    "hints": ["اسم این تنظیمات دقیقاً در متن درس آمده.", "روی مک باید دستور اجرای پایتون از `python` به کدام مقدار تغییر کند؟"],
+    "rubric": "Correct: mentions changing code-runner.executorMap (or equivalent phrasing) to use python3 instead of python. Partial: mentions python3 but not the setting name, or vice versa. Incorrect: neither."
+  }
+]

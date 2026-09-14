@@ -1,0 +1,26 @@
+[
+  {
+    "key": "match-implementations",
+    "title": "زبان پایه‌ی هر پیاده‌سازی",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "کدام پیاده‌سازی پایتون با زبان جاوا نوشته شده و امکان استفاده از کد جاوا داخل برنامه‌ی پایتونی را می‌دهد؟",
+    "options": ["CPython", "Jython", "IronPython", "PyPy"],
+    "correct_option": 1,
+    "expected_outcome": "Jython با جاوا نوشته شده و کد پایتون را به بایت‌کد جاوا تبدیل می‌کند، پس اجازه می‌دهد کد جاوا را در برنامه‌ی پایتونی import کنی.",
+    "hints": ["اسم این پیاده‌سازی شباهت زیادی به اسم جاوا دارد.", "IronPython معادلش برای #C است."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "cpython-is-default",
+    "title": "پیاده‌سازی پیش‌فرض",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "وقتی از python.org پایتون را دانلود و نصب می‌کنی، کدام پیاده‌سازی پایتون را نصب کرده‌ای؟",
+    "expected_outcome": "CPython",
+    "hints": ["این پیاده‌سازی با زبان C نوشته شده و اسمش هم از همین می‌آید.", "پیش‌فرض و رایج‌ترین پیاده‌سازی پایتون است."],
+    "rubric": "Correct only if the answer is CPython."
+  }
+]

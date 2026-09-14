@@ -312,3 +312,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** With 100+ lessons per course, going back to the course page to pick the next lesson is the wrong loop; the owner asked for the list to be always visible while watching. Slug URLs are readable, stable across re-imports and match the content folder names.
 
 **Consequences.** `route('lessons.show')` needs `[$course, $lesson]` — use `$lesson->url()`. The lesson controller loads the whole curriculum with the learner's mastery (2 queries). Key points / common mistakes now render inline Markdown (backticked code).
+
+---
+
+## 16. Deploy to shared hosting without SSH; media served from the owner's machine (2026-09-14)
+
+**Decision.** Releases are zips built locally by `tools/build-release.sh` from a committed tree (`git archive` + `composer install --no-dev`), laid out as `skillos/` (app) + `public_html/` (web root with a front controller that finds `../skillos` or `./skillos` and calls `usePublicPath`). All post-upload steps run over HTTP: `GET /_ops/{status|migrate|import|optimize|clear}?token=OPS_TOKEN` (`OpsController`; 404 unless the token matches; `hash_equals`). The zip never contains `.env`, `database/`, `storage/` or `course/`, so an update is "extract over the old release, hit the three ops URLs". Registration can require `REGISTRATION_CODE`. Media stays on the owner's machine: `MEDIA_BASE_URL` (config/media.php + `media_url()` helper) rebases every stored `/media/...` URL onto a local origin served by `tools/media-server.py` (stdlib Python, HTTP Range + CORS so Plyr can seek and load `<track>` subtitles).
+
+**Why.** The owner's host has no shell and no Composer/Node; a deploy path that only needs a file manager and a browser is the only workable one. The 20 GB of course video is personal and large, and the browser is always on the owner's machine, so serving it from `localhost` (a "potentially trustworthy" origin, exempt from mixed-content blocking) costs nothing and keeps the host tiny.
+
+**Consequences.** Friends who use the site do not see videos unless they run the media server with their own copy, or media is uploaded to `public_html/media/` and `MEDIA_BASE_URL` is cleared; text + practices work regardless. `OPS_TOKEN` travels in the query string — keep it long, and rotate it if it ever ends up in a shared log. Config caching (`/_ops/optimize`) must be re-run after editing `.env`.

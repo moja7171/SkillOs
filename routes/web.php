@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\OpsController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
@@ -11,6 +12,9 @@ use App\Models\Lesson;
 use App\Models\PlanItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+// Deploy tasks over HTTP for shared hosting (OPS_TOKEN required; 404 otherwise).
+Route::get('_ops/{action}', OpsController::class)->name('ops');
 
 Route::middleware('auth')->group(function () {
     Route::get('/', HomeController::class)->name('home');

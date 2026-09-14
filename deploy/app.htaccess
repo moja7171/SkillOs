@@ -1,0 +1,3 @@
+# Placed at skillos/.htaccess by the release bundle: if the app folder ends up
+# inside public_html, nothing in it may be served directly.
+Require all denied

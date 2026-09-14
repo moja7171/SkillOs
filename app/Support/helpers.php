@@ -29,3 +29,21 @@ if (! function_exists('fa_date')) {
         return fa_num(Jalalian::fromCarbon($carbon)->format($format));
     }
 }
+
+if (! function_exists('media_url')) {
+    /**
+     * Resolve a stored media URL for the current environment: `/media/...` paths are
+     * re-based onto MEDIA_BASE_URL when it is set (see config/media.php), anything else
+     * (absolute URLs, YouTube, ...) is returned untouched.
+     */
+    function media_url(?string $url): ?string
+    {
+        $base = config('media.base_url');
+
+        if ($url === null || ! $base || ! str_starts_with($url, '/media/')) {
+            return $url;
+        }
+
+        return rtrim($base, '/').substr($url, strlen('/media'));
+    }
+}

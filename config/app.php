@@ -16,6 +16,13 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
+    | Secret for /_ops/{action} (deploy tasks over HTTP on hosts without SSH) and
+    | an optional invite code required to register. Both are off when empty.
+    */
+    'ops_token' => env('OPS_TOKEN'),
+    'registration_code' => env('REGISTRATION_CODE'),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------

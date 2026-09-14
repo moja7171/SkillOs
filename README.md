@@ -38,15 +38,39 @@ php artisan content:import <course-slug>          # upsert by slug/key — learn
 php artisan content:import <course-slug> --prune  # also delete lessons/practices removed from the files
 ```
 
-## Deploying to shared hosting
+## Deploying to shared hosting (no SSH)
 
-No Node, no queue worker, no cron needed. `public/build` is committed, so the server never runs `npm`.
+The host only needs PHP 8.3+ with `pdo_sqlite`, `mbstring`, `openssl`, `fileinfo` and a file manager. No Node, no Composer, no cron, no queue worker on the host: the release zip is built on your machine and every deploy step runs over HTTP.
 
-1. Upload the repo (or `git pull`) and point the web root at `public/`.
-2. `composer install --no-dev --optimize-autoloader`
-3. `.env`: `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL=https://…`, `APP_KEY` (`php artisan key:generate`), `GEMINI_API_KEY`, keep `DB_CONNECTION=sqlite`.
-4. `touch database/database.sqlite` and make `database/` and `storage/` writable by PHP.
-5. `php artisan migrate --force`, then `php artisan content:import <slug>` for each course.
-6. `php artisan optimize` (config/route/view caches). Re-run after every deploy.
+### First deploy
 
-Videos: a lesson's `url` may be an external link (YouTube/Aparat are embedded) or a file you host anywhere — the app only stores the URL.
+1. **Build the bundle** (from a committed tree): `tools/build-release.sh` → `release/skillos-<date>-<sha>.zip` containing `skillos/` (the app with `vendor/`) and `public_html/` (the web root).
+2. **Upload + extract** the zip in the host's file manager into your home directory, so you get `~/skillos/` next to `~/public_html/`. If the host gives you only `public_html`, extract there instead: `public_html/skillos/` is denied by its `.htaccess` and the front controller finds it.
+3. **Create `skillos/.env`** from `skillos/.env.production.example`: `APP_URL`, `APP_KEY` (run `php artisan key:generate --show` locally and paste), `GEMINI_API_KEY`, a long random `OPS_TOKEN`, optionally `REGISTRATION_CODE`, and `MEDIA_BASE_URL` (see below). Make sure `skillos/storage`, `skillos/bootstrap/cache` and `skillos/database` are writable (usually already, PHP runs as your user).
+4. In the browser, with `T` = your `OPS_TOKEN`:
+   - `https://your-domain/_ops/status?token=T` — sanity check (PHP version, writable dirs, courses found)
+   - `https://your-domain/_ops/migrate?token=T` — creates the SQLite file and runs migrations
+   - `https://your-domain/_ops/import?token=T` — imports every course under `content/` (`&slug=x` for one, `&prune=1` to delete removed lessons)
+   - `https://your-domain/_ops/optimize?token=T` — caches config/routes/views
+5. Register the first account at `/register` (with the invite code if you set one).
+
+### Every later update (code or content)
+
+```sh
+git commit …                      # content edits, fixes, features
+tools/build-release.sh            # new zip
+```
+
+Upload + extract over the previous release (the zip never contains `.env`, `database/` or `storage/`, so nothing is lost), then hit `/_ops/migrate`, `/_ops/import` and `/_ops/optimize` again. That is the whole update path; `/_ops/clear` drops the caches if something looks stale.
+
+Content-only updates can skip the zip: upload the changed `content/<course>/` files into `skillos/content/` and hit `/_ops/import`.
+
+### Videos that stay on your own machine
+
+Course media is never in the bundle. With `MEDIA_BASE_URL=http://localhost:8765` in the host's `.env`, lesson pages render video/subtitle/file URLs pointing at **the viewer's own machine**, and browsers treat `http://localhost` as a secure origin so an https site may load from it. Run this on the machine that has the `course/` folder:
+
+```sh
+python3 tools/media-server.py          # serves ./course at http://localhost:8765 with Range + CORS
+```
+
+Leave it running while you study; `--root`/`--port` change the folder/port, `--bind 0.0.0.0` exposes it to your LAN (then use the machine's LAN IP as `MEDIA_BASE_URL`). Leave `MEDIA_BASE_URL` empty when the media is uploaded to the host under `public_html/media/<course>/` instead.

@@ -1,6 +1,6 @@
 <x-guest-layout>
     <h1 class="m-0 text-[18px] font-bold mb-1">ثبت‌نام</h1>
-    <p class="text-muted text-[13px] mb-5">یه حساب بساز و اولین موضوعت رو اضافه کن.</p>
+    <p class="text-muted text-[13px] mb-5">یه حساب بساز و دوره‌ها رو بردار.</p>
 
     <form method="POST" action="{{ route('register') }}" class="flex flex-col gap-4">
         @csrf
@@ -28,6 +28,14 @@
             <x-text-input id="password_confirmation" type="password" name="password_confirmation" dir="ltr" class="text-left" required autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password_confirmation')" />
         </div>
+
+        @if (config('app.registration_code'))
+            <div>
+                <x-input-label for="code" value="کد دعوت" />
+                <x-text-input id="code" type="text" name="code" dir="ltr" class="text-left" :value="old('code')" required />
+                <x-input-error :messages="$errors->get('code')" />
+            </div>
+        @endif
 
         <div class="flex items-center justify-between mt-2">
             <a href="{{ route('login') }}" class="text-[13px] text-muted">قبلاً ثبت‌نام کردی؟ ورود</a>

@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\OpsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -11,6 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        // Deploy tasks over HTTP for shared hosting. Registered outside the `web` group on
+        // purpose: no session/CSRF, so /_ops/migrate works before the database exists.
+        then: function () {
+            Route::get('_ops/{action}', OpsController::class)->name('ops');
+        },
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //

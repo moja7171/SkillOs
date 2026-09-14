@@ -1,0 +1,2838 @@
+{
+  "title": "پایتون از صفر",
+  "description": "دوره‌ی مقدماتی و جامع پایتون برای کسانی که هیچ پیش‌زمینه‌ای ندارند؛ از نصب و نحو پایه تا ساختارهای داده، استثناها و برنامه‌نویسی شی‌گرا.",
+  "outcome_statement": "در پایان این دوره می‌تونی برنامه‌های واقعی پایتون بنویسی: با متغیرها، شرط‌ها، حلقه‌ها و توابع کار کنی، از لیست/دیکشنری/ست به‌درستی استفاده کنی، استثناها رو مدیریت کنی و با کلاس و شی برنامه‌نویسی شی‌گرا انجام بدی.",
+  "source_note": "برگرفته از دوره‌ی «The Complete Python Course» (Programming with Mosh)؛ متن دروس از روی زیرنویس انگلیسی نوشته شده، نه ترجمه‌ی ماشینی فارسی.",
+  "video_base_url": "/media/complete-python-mastery/",
+  "lessons": [
+    {
+      "slug": "what-is-python",
+      "title": "چیستی پایتون",
+      "summary": "پایتون چیست، چرا محبوب است و برای چه کارهایی استفاده می‌شود.",
+      "section": "شروع به کار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "001-what-is-python.mp4",
+          "subtitles": [
+            {
+              "file": "001-what-is-python.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-what-is-python.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "installing-python",
+      "title": "نصب پایتون",
+      "summary": "دانلود و نصب پایتون روی سیستم و بررسی نصب موفق.",
+      "section": "شروع به کار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "002-installing-python.mp4",
+          "subtitles": [
+            {
+              "file": "002-installing-python.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-installing-python.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "python-interpreter",
+      "title": "مفسر پایتون",
+      "summary": "مفسر پایتون چیست و کد چطور خط‌به‌خط در آن اجرا می‌شود.",
+      "section": "شروع به کار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "003-python-interpreter.mp4",
+          "subtitles": [
+            {
+              "file": "003-python-interpreter.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-python-interpreter.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "code-editors",
+      "title": "ویرایشگرهای کد",
+      "summary": "تفاوت IDEها و ویرایشگرهای سبک، و چرا VS Code برای این دوره انتخاب شده.",
+      "section": "شروع به کار",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "004-code-editors.mp4",
+          "subtitles": [
+            {
+              "file": "004-code-editors.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-code-editors.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "your-first-python-program",
+      "title": "اولین برنامه‌ی پایتونت",
+      "summary": "نوشتن و اجرای اولین برنامه‌ی «Hello World» در VS Code.",
+      "section": "شروع به کار",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "005-your-first-python-program.mp4",
+          "subtitles": [
+            {
+              "file": "005-your-first-python-program.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-your-first-python-program.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "python-extension",
+      "title": "اکستنشن پایتون",
+      "summary": "نصب و تنظیم اکستنشن پایتون در VS Code برای تکمیل خودکار و دیباگ.",
+      "section": "شروع به کار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "006-python-extension.mp4",
+          "subtitles": [
+            {
+              "file": "006-python-extension.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-python-extension.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "linting-python-code",
+      "title": "Lint کردن کد پایتون",
+      "summary": "لینتر چیست و چطور خطاها و مشکلات سبک کد را پیش از اجرا نشان می‌دهد.",
+      "section": "شروع به کار",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "007-linting-python-code.mp4",
+          "subtitles": [
+            {
+              "file": "007-linting-python-code.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-linting-python-code.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "formatting-python-code",
+      "title": "فرمت‌بندی کد پایتون",
+      "summary": "فرمت‌بندی خودکار کد با ابزارهایی مثل Black برای خوانایی یکدست.",
+      "section": "شروع به کار",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "008-formatting-python-code.mp4",
+          "subtitles": [
+            {
+              "file": "008-formatting-python-code.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-formatting-python-code.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "running-python-code",
+      "title": "اجرای کد پایتون",
+      "summary": "روش‌های مختلف اجرای فایل پایتون از خط فرمان و از داخل ویرایشگر.",
+      "section": "شروع به کار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "009-running-python-code.mp4",
+          "subtitles": [
+            {
+              "file": "009-running-python-code.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-running-python-code.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "python-implementations",
+      "title": "پیاده‌سازی‌های مختلف پایتون",
+      "summary": "CPython در برابر پیاده‌سازی‌های دیگر مثل PyPy، Jython و IronPython.",
+      "section": "شروع به کار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "010-python-implementations.mp4",
+          "subtitles": [
+            {
+              "file": "010-python-implementations.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-python-implementations.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-python-code-is-executed",
+      "title": "کد پایتون چطور اجرا می‌شود؟",
+      "summary": "مسیر تبدیل کد منبع به بایت‌کد و اجرای آن روی ماشین مجازی پایتون.",
+      "section": "شروع به کار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "011-how-python-code-is-executed.mp4",
+          "subtitles": [
+            {
+              "file": "011-how-python-code-is-executed.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-how-python-code-is-executed.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "quiz-getting-started",
+      "title": "آزمون: شروع به کار",
+      "summary": "مرور سریع مفاهیم این بخش با چند سؤال کوتاه.",
+      "section": "شروع به کار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "012-quiz.mp4",
+          "subtitles": [
+            {
+              "file": "012-quiz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-quiz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "variables",
+      "title": "متغیرها",
+      "summary": "متغیر چیست، چطور مقداردهی می‌شود و پایتون چطور نوع داده را تشخیص می‌دهد.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "015-variables.mp4",
+          "subtitles": [
+            {
+              "file": "015-variables.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-variables.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "variable-names",
+      "title": "نام‌گذاری متغیرها",
+      "summary": "قواعد و قراردادهای نام‌گذاری متغیر در پایتون (snake_case و موارد مجاز/ممنوع).",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "016-variable-names.mp4",
+          "subtitles": [
+            {
+              "file": "016-variable-names.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-variable-names.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "strings",
+      "title": "رشته‌ها",
+      "summary": "ساخت رشته با کوتیشن تکی/دوتایی، رشته‌های چندخطی و دسترسی به کاراکترها.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "017-strings.mp4",
+          "subtitles": [
+            {
+              "file": "017-strings.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-strings.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "escape-sequences",
+      "title": "کاراکترهای Escape",
+      "summary": "کاراکترهای ویژه مثل \\n و \\t و راه‌های درج آن‌ها در رشته.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "018-escape-sequences.mp4",
+          "subtitles": [
+            {
+              "file": "018-escape-sequences.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-escape-sequences.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "formatted-strings",
+      "title": "رشته‌های فرمت‌شده (f-string)",
+      "summary": "درج مقدار متغیرها داخل رشته با f-string به‌جای الحاق دستی.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "019-formatted-strings.mp4",
+          "subtitles": [
+            {
+              "file": "019-formatted-strings.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-formatted-strings.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "string-methods",
+      "title": "متدهای رشته",
+      "summary": "متدهای پرکاربرد رشته مثل strip، upper/lower، replace و find.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "020-string-methods.mp4",
+          "subtitles": [
+            {
+              "file": "020-string-methods.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-string-methods.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "numbers",
+      "title": "اعداد",
+      "summary": "انواع عددی int و float و عملگرهای ریاضی پایه.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "021-numbers.mp4",
+          "subtitles": [
+            {
+              "file": "021-numbers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-numbers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-numbers",
+      "title": "کار با اعداد",
+      "summary": "توابع و متدهای کاربردی برای گرد کردن، مقدار مطلق و کار با ماژول math.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "022-working-with-numbers.mp4",
+          "subtitles": [
+            {
+              "file": "022-working-with-numbers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-working-with-numbers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "type-conversion",
+      "title": "تبدیل نوع داده",
+      "summary": "تبدیل صریح بین رشته، عدد صحیح و اعشاری با int/float/str.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "023-type-conversion.mp4",
+          "subtitles": [
+            {
+              "file": "023-type-conversion.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-type-conversion.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "quiz-variables-and-types",
+      "title": "آزمون: متغیرها و انواع داده",
+      "summary": "مرور سریع مفاهیم این بخش با چند سؤال کوتاه.",
+      "section": "متغیرها و انواع داده",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "024-quiz.mp4",
+          "subtitles": [
+            {
+              "file": "024-quiz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-quiz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "comparison-operators",
+      "title": "عملگرهای مقایسه‌ای",
+      "summary": "مقایسه‌ی مقادیر با ==، !=، <، > و نتیجه‌ی بولی آن‌ها.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "025-comparison-operators.mp4",
+          "subtitles": [
+            {
+              "file": "025-comparison-operators.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-comparison-operators.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "conditional-statements",
+      "title": "عبارت‌های شرطی",
+      "summary": "ساخت شاخه‌های اجرایی مختلف با if/elif/else.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "026-conditional-statements.mp4",
+          "subtitles": [
+            {
+              "file": "026-conditional-statements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-conditional-statements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "ternary-operator",
+      "title": "عملگر شرطی سه‌گانه",
+      "summary": "نوشتن یک if/else ساده در یک خط با عملگر شرطی.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "027-ternary-operator.mp4",
+          "subtitles": [
+            {
+              "file": "027-ternary-operator.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-ternary-operator.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "logical-operators",
+      "title": "عملگرهای منطقی",
+      "summary": "ترکیب چند شرط با and، or و not.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "028-logical-operators.mp4",
+          "subtitles": [
+            {
+              "file": "028-logical-operators.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-logical-operators.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "short-circuit-evaluation",
+      "title": "ارزیابی اتصالی‌کوتاه",
+      "summary": "چرا پایتون در and/or به محض روشن‌شدن نتیجه، ارزیابی را متوقف می‌کند.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "029-short-circuit-evaluation.mp4",
+          "subtitles": [
+            {
+              "file": "029-short-circuit-evaluation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-short-circuit-evaluation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "chaining-comparison-operators",
+      "title": "زنجیره‌کردن عملگرهای مقایسه‌ای",
+      "summary": "نوشتن مقایسه‌های زنجیره‌ای مثل a < b < c به‌جای and جداگانه.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "030-chaining-comparison-operators.mp4",
+          "subtitles": [
+            {
+              "file": "030-chaining-comparison-operators.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-chaining-comparison-operators.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "quiz-conditionals",
+      "title": "آزمون: عبارت‌های شرطی",
+      "summary": "مرور سریع مفاهیم این بخش با چند سؤال کوتاه.",
+      "section": "عبارت‌های شرطی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "031-quiz.mp4",
+          "subtitles": [
+            {
+              "file": "031-quiz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-quiz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "for-loops",
+      "title": "حلقه‌ی for",
+      "summary": "پیمایش روی یک دنباله با for و تابع range.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "032-for-loops.mp4",
+          "subtitles": [
+            {
+              "file": "032-for-loops.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-for-loops.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "for-else",
+      "title": "for...else",
+      "summary": "بخش else یک حلقه‌ی for و زمان اجرای آن وقتی حلقه با break قطع نشود.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "033-for-else.mp4",
+          "subtitles": [
+            {
+              "file": "033-for-else.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-for-else.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "nested-loops",
+      "title": "حلقه‌های تو در تو",
+      "summary": "قرار دادن یک حلقه داخل حلقه‌ی دیگر، مثلاً برای کار با ماتریس.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "034-nested-loops.mp4",
+          "subtitles": [
+            {
+              "file": "034-nested-loops.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-nested-loops.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "iterables",
+      "title": "پیمایش‌پذیرها (Iterable)",
+      "summary": "iterable چیست و چرا لیست، رشته و رنج همگی iterable هستند.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "035-iterables.mp4",
+          "subtitles": [
+            {
+              "file": "035-iterables.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-iterables.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "while-loops",
+      "title": "حلقه‌ی while",
+      "summary": "تکرار یک بلوک کد تا زمانی که شرطی برقرار باشد.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "036-while-loops.mp4",
+          "subtitles": [
+            {
+              "file": "036-while-loops.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-while-loops.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "infinite-loops",
+      "title": "حلقه‌های بی‌نهایت",
+      "summary": "چرا حلقه‌ی بی‌نهایت رخ می‌دهد و چطور از آن خارج شویم.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "037-infinite-loops.mp4",
+          "subtitles": [
+            {
+              "file": "037-infinite-loops.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-infinite-loops.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exercise-loops",
+      "title": "تمرین: حلقه‌ها",
+      "summary": "یک تمرین عملی برای جمع‌بندی for، while و حلقه‌های تو در تو.",
+      "section": "حلقه‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "038-exercise.mp4",
+          "subtitles": [
+            {
+              "file": "038-exercise.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-exercise.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "defining-functions",
+      "title": "تعریف تابع",
+      "summary": "تعریف یک تابع با def، فراخوانی آن و مقدار بازگشتی.",
+      "section": "توابع",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "039-defining-functions.mp4",
+          "subtitles": [
+            {
+              "file": "039-defining-functions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-defining-functions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "arguments",
+      "title": "آرگومان‌ها",
+      "summary": "پارامتر در برابر آرگومان و ارسال مقدار هنگام فراخوانی تابع.",
+      "section": "توابع",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "040-arguments.mp4",
+          "subtitles": [
+            {
+              "file": "040-arguments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-arguments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "types-of-functions",
+      "title": "انواع تابع",
+      "summary": "توابعی که مقدار برمی‌گردانند در برابر توابعی که فقط کاری انجام می‌دهند.",
+      "section": "توابع",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "041-types-of-functions.mp4",
+          "subtitles": [
+            {
+              "file": "041-types-of-functions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-types-of-functions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "keyword-arguments",
+      "title": "آرگومان‌های کلیدی",
+      "summary": "ارسال آرگومان با ذکر نام پارامتر به‌جای رعایت ترتیب.",
+      "section": "توابع",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "042-keyword-arguments.mp4",
+          "subtitles": [
+            {
+              "file": "042-keyword-arguments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-keyword-arguments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "default-arguments",
+      "title": "آرگومان‌های پیش‌فرض",
+      "summary": "مقدار پیش‌فرض برای پارامترها و ترتیب درست تعریف آن‌ها.",
+      "section": "توابع",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "043-default-arguments.mp4",
+          "subtitles": [
+            {
+              "file": "043-default-arguments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-default-arguments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "args",
+      "title": "*args",
+      "summary": "جمع‌آوری تعداد نامشخصی آرگومان موقعیتی در یک tuple با *args.",
+      "section": "توابع",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "044-xargs.mp4",
+          "subtitles": [
+            {
+              "file": "044-xargs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-xargs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "kwargs",
+      "title": "**kwargs",
+      "summary": "جمع‌آوری تعداد نامشخصی آرگومان کلیدی در یک دیکشنری با **kwargs.",
+      "section": "توابع",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "045-xxargs.mp4",
+          "subtitles": [
+            {
+              "file": "045-xxargs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "045-xxargs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scope",
+      "title": "دامنه (Scope)",
+      "summary": "دامنه‌ی محلی و سراسری متغیرها و اینکه توابع چطور به آن‌ها دسترسی دارند.",
+      "section": "توابع",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "046-scope.mp4",
+          "subtitles": [
+            {
+              "file": "046-scope.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-scope.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "debugging",
+      "title": "دیباگ کردن",
+      "summary": "استفاده از دیباگر VS Code برای گذاشتن breakpoint و بررسی مقدار متغیرها.",
+      "section": "توابع",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "047-debugging.mp4",
+          "subtitles": [
+            {
+              "file": "047-debugging.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-debugging.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "vscode-coding-tricks",
+      "title": "ترفندهای کدنویسی در VS Code",
+      "summary": "میان‌برها و ترفندهای VS Code برای کدنویسی سریع‌تر، در ویندوز و مک.",
+      "section": "توابع",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "048-vscode-coding-tricks-windows.mp4",
+          "title": "ویندوز",
+          "subtitles": [
+            {
+              "file": "048-vscode-coding-tricks-windows.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-vscode-coding-tricks-windows.fa.vtt"
+        },
+        {
+          "file": "049-vscode-coding-tricks-mac.mp4",
+          "title": "مک",
+          "subtitles": [
+            {
+              "file": "049-vscode-coding-tricks-mac.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "049-vscode-coding-tricks-mac.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exercise-functions",
+      "title": "تمرین و پاسخ: توابع",
+      "summary": "یک تمرین عملی روی توابع همراه با پاسخ کامل.",
+      "section": "توابع",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "050-exercise.mp4",
+          "title": "تمرین",
+          "subtitles": [
+            {
+              "file": "050-exercise.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "050-exercise.fa.vtt"
+        },
+        {
+          "file": "051-solution.mp4",
+          "title": "پاسخ",
+          "subtitles": [
+            {
+              "file": "051-solution.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-solution.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "lists",
+      "title": "لیست‌ها",
+      "summary": "ساخت یک لیست و ویژگی‌های کلی این ساختار داده‌ی قابل‌تغییر.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "053-lists.mp4",
+          "subtitles": [
+            {
+              "file": "053-lists.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-lists.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "accessing-items",
+      "title": "دسترسی به آیتم‌ها",
+      "summary": "دسترسی به عضوهای لیست با ایندکس و برش (slicing).",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "054-accessing-items.mp4",
+          "subtitles": [
+            {
+              "file": "054-accessing-items.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-accessing-items.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "list-unpacking",
+      "title": "Unpacking لیست",
+      "summary": "باز کردن مقادیر یک لیست داخل چند متغیر جدا در یک خط.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "055-list-unpacking.mp4",
+          "subtitles": [
+            {
+              "file": "055-list-unpacking.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-list-unpacking.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "looping-over-lists",
+      "title": "پیمایش روی لیست",
+      "summary": "پیمایش روی آیتم‌های لیست، با و بدون نیاز به ایندکس (enumerate).",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "056-looping-over-lists.mp4",
+          "subtitles": [
+            {
+              "file": "056-looping-over-lists.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-looping-over-lists.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "adding-or-removing-items",
+      "title": "افزودن یا حذف آیتم",
+      "summary": "متدهای append، insert، remove و pop برای تغییر محتوای لیست.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "057-adding-or-removing-items.mp4",
+          "subtitles": [
+            {
+              "file": "057-adding-or-removing-items.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-adding-or-removing-items.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "finding-items",
+      "title": "پیدا کردن آیتم",
+      "summary": "بررسی وجود یک مقدار در لیست و پیدا کردن ایندکس آن.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "058-finding-items.mp4",
+          "subtitles": [
+            {
+              "file": "058-finding-items.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-finding-items.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sorting-lists",
+      "title": "مرتب‌سازی لیست",
+      "summary": "مرتب‌سازی لیست با sort و sorted، و مرتب‌سازی سفارشی با key.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "059-sorting-lists.mp4",
+          "subtitles": [
+            {
+              "file": "059-sorting-lists.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-sorting-lists.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "lambda-functions",
+      "title": "توابع Lambda",
+      "summary": "نوشتن توابع بی‌نام و کوتاه با lambda برای استفاده‌ی یک‌باره.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "060-lambda-functions.mp4",
+          "subtitles": [
+            {
+              "file": "060-lambda-functions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-lambda-functions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "map-function",
+      "title": "تابع map",
+      "summary": "اعمال یک تابع روی تک‌تک آیتم‌های یک iterable با map.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "061-map-function.mp4",
+          "subtitles": [
+            {
+              "file": "061-map-function.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-map-function.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "filter-function",
+      "title": "تابع filter",
+      "summary": "فیلتر کردن آیتم‌های یک iterable بر اساس یک شرط با filter.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "062-filter-function.mp4",
+          "subtitles": [
+            {
+              "file": "062-filter-function.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-filter-function.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "list-comprehensions",
+      "title": "List Comprehension",
+      "summary": "ساخت لیست جدید در یک خط با List Comprehension به‌جای map/filter.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "063-list-comprehensions.mp4",
+          "subtitles": [
+            {
+              "file": "063-list-comprehensions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-list-comprehensions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "zip-function",
+      "title": "تابع zip",
+      "summary": "ترکیب چند iterable هم‌طول در جفت‌های متناظر با zip.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "064-zip-function.mp4",
+          "subtitles": [
+            {
+              "file": "064-zip-function.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-zip-function.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "stacks",
+      "title": "پشته (Stack)",
+      "summary": "ساختار داده‌ی LIFO و پیاده‌سازی آن با لیست پایتون.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "065-stacks.mp4",
+          "subtitles": [
+            {
+              "file": "065-stacks.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-stacks.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "queues",
+      "title": "صف (Queue)",
+      "summary": "ساختار داده‌ی FIFO و چرا لیست انتخاب مناسبی برای آن نیست.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "066-queues.mp4",
+          "subtitles": [
+            {
+              "file": "066-queues.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-queues.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tuples",
+      "title": "Tuple ها",
+      "summary": "دنباله‌ی غیرقابل‌تغییر (immutable) و کاربردهای رایج آن.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "067-tuples.mp4",
+          "subtitles": [
+            {
+              "file": "067-tuples.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-tuples.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "swapping-variables",
+      "title": "جابه‌جایی مقدار متغیرها",
+      "summary": "جابه‌جا کردن مقدار دو متغیر در یک خط با tuple unpacking.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "068-swapping-variables.mp4",
+          "subtitles": [
+            {
+              "file": "068-swapping-variables.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-swapping-variables.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "arrays",
+      "title": "آرایه‌ها (Array)",
+      "summary": "ماژول array برای نگه‌داری داده‌های هم‌نوع، و تفاوتش با لیست.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "069-arrays.mp4",
+          "subtitles": [
+            {
+              "file": "069-arrays.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "069-arrays.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sets",
+      "title": "مجموعه‌ها (Set)",
+      "summary": "ساختار داده‌ی بدون آیتم تکراری و عملگرهای اجتماع/اشتراک/تفاضل.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "070-sets.mp4",
+          "subtitles": [
+            {
+              "file": "070-sets.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "070-sets.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dictionaries",
+      "title": "دیکشنری‌ها",
+      "summary": "نگاشت کلید به مقدار، دسترسی، افزودن و حذف عضو.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "071-dictionaries.mp4",
+          "subtitles": [
+            {
+              "file": "071-dictionaries.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "071-dictionaries.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dictionary-comprehensions",
+      "title": "Dictionary Comprehension",
+      "summary": "ساخت دیکشنری جدید در یک خط با Dictionary Comprehension.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "072-dictionary-comprehensions.mp4",
+          "subtitles": [
+            {
+              "file": "072-dictionary-comprehensions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "072-dictionary-comprehensions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "generator-expressions",
+      "title": "Generator Expression",
+      "summary": "تولید مقادیر یکی‌یکی و با مصرف حافظه‌ی کم به‌جای ساخت کل لیست.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "073-generator-expressions.mp4",
+          "subtitles": [
+            {
+              "file": "073-generator-expressions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "073-generator-expressions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "unpacking-operator",
+      "title": "عملگر Unpacking",
+      "summary": "باز کردن محتوای لیست/دیکشنری داخل فراخوانی تابع یا لیست دیگر با * و **.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "074-unpacking-operator.mp4",
+          "subtitles": [
+            {
+              "file": "074-unpacking-operator.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "074-unpacking-operator.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exercise-collections",
+      "title": "تمرین: ساختارهای داده",
+      "summary": "یک تمرین عملی روی لیست، دیکشنری و ساختارهای داده‌ی این بخش.",
+      "section": "ساختارهای داده‌ی درونی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "075-exercise.mp4",
+          "subtitles": [
+            {
+              "file": "075-exercise.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "075-exercise.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exceptions",
+      "title": "استثناها (Exceptions)",
+      "summary": "استثنا چیست و چرا بدون مدیریت آن برنامه با خطا متوقف می‌شود.",
+      "section": "استثناها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "076-exceptions.mp4",
+          "subtitles": [
+            {
+              "file": "076-exceptions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "076-exceptions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "handling-exceptions",
+      "title": "مدیریت استثناها",
+      "summary": "گرفتن استثنا با try/except و جلوگیری از توقف برنامه.",
+      "section": "استثناها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "077-handling-exceptions.mp4",
+          "subtitles": [
+            {
+              "file": "077-handling-exceptions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "077-handling-exceptions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "handling-different-exceptions",
+      "title": "مدیریت چند نوع استثنا",
+      "summary": "نوشتن چند بلوک except برای انواع مختلف خطا با پیام‌های جدا.",
+      "section": "استثناها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "078-handling-different-exceptions.mp4",
+          "subtitles": [
+            {
+              "file": "078-handling-different-exceptions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "078-handling-different-exceptions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cleaning-up",
+      "title": "پاک‌سازی منابع (finally)",
+      "summary": "بلوک finally برای اجرای کد پاک‌سازی، چه استثنا رخ دهد چه ندهد.",
+      "section": "استثناها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "079-cleaning-up.mp4",
+          "subtitles": [
+            {
+              "file": "079-cleaning-up.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "079-cleaning-up.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-with-statement",
+      "title": "عبارت with",
+      "summary": "مدیریت خودکار باز و بسته‌شدن منابع (مثل فایل) با عبارت with.",
+      "section": "استثناها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "080-the-with-statement.mp4",
+          "subtitles": [
+            {
+              "file": "080-the-with-statement.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "080-the-with-statement.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "raising-exceptions",
+      "title": "صادر کردن استثنا (raise)",
+      "summary": "صادر کردن دستی یک استثنا با raise وقتی ورودی نامعتبر است.",
+      "section": "استثناها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "081-raising-exceptions.mp4",
+          "subtitles": [
+            {
+              "file": "081-raising-exceptions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "081-raising-exceptions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cost-of-raising-exceptions",
+      "title": "هزینه‌ی صادر کردن استثنا",
+      "summary": "هزینه‌ی عملکردی raise کردن استثنا و چرا نباید برای کنترل جریان عادی از آن استفاده کرد.",
+      "section": "استثناها",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "082-cost-of-raising-exceptions.mp4",
+          "subtitles": [
+            {
+              "file": "082-cost-of-raising-exceptions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "082-cost-of-raising-exceptions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "classes",
+      "title": "کلاس‌ها",
+      "summary": "کلاس چیست و چرا برای مدل‌کردن داده و رفتار با هم به کار می‌رود.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "083-classes.mp4",
+          "subtitles": [
+            {
+              "file": "083-classes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "083-classes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "creating-classes",
+      "title": "ساخت کلاس",
+      "summary": "تعریف یک کلاس ساده در پایتون و ساخت نمونه (instance) از آن.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "084-creating-classes.mp4",
+          "subtitles": [
+            {
+              "file": "084-creating-classes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "084-creating-classes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "constructors",
+      "title": "سازنده (Constructor)",
+      "summary": "متد __init__ برای مقداردهی اولیه‌ی نمونه‌ی تازه‌ساخته‌شده.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "085-constructors.mp4",
+          "subtitles": [
+            {
+              "file": "085-constructors.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "085-constructors.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "class-vs-instance-attributes",
+      "title": "ویژگی‌های کلاس در مقابل نمونه",
+      "summary": "تفاوت ویژگی مشترک بین همه‌ی نمونه‌ها با ویژگی مخصوص هر نمونه.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "086-class-vs-instance-attributes.mp4",
+          "subtitles": [
+            {
+              "file": "086-class-vs-instance-attributes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "086-class-vs-instance-attributes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "class-vs-instance-methods",
+      "title": "متدهای کلاس در مقابل نمونه",
+      "summary": "متد نمونه، classmethod و staticmethod و کاربرد هرکدام.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "087-class-vs-instance-methods.mp4",
+          "subtitles": [
+            {
+              "file": "087-class-vs-instance-methods.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "087-class-vs-instance-methods.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "magic-methods",
+      "title": "متدهای جادویی (Magic Methods)",
+      "summary": "متدهایی مثل __str__ و __repr__ که رفتار پیش‌فرض آبجکت را سفارشی می‌کنند.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "088-magic-methods.mp4",
+          "subtitles": [
+            {
+              "file": "088-magic-methods.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "088-magic-methods.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "comparing-objects",
+      "title": "مقایسه‌ی آبجکت‌ها",
+      "summary": "پیاده‌سازی __eq__ و __lt__ برای مقایسه‌ی معنادار دو نمونه.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "089-comparing-objects.mp4",
+          "subtitles": [
+            {
+              "file": "089-comparing-objects.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "089-comparing-objects.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "performing-arithmetic-operations",
+      "title": "عملیات ریاضی روی آبجکت‌ها",
+      "summary": "پیاده‌سازی __add__ و مانند آن برای پشتیبانی از + روی آبجکت‌های سفارشی.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "090-performing-arithmetic-operations.mp4",
+          "subtitles": [
+            {
+              "file": "090-performing-arithmetic-operations.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "090-performing-arithmetic-operations.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "making-custom-containers",
+      "title": "ساخت Container سفارشی",
+      "summary": "پیاده‌سازی __len__ و __getitem__ برای رفتار مثل لیست/دیکشنری.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "091-making-custom-containers.mp4",
+          "subtitles": [
+            {
+              "file": "091-making-custom-containers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "091-making-custom-containers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "private-members",
+      "title": "اعضای خصوصی (Private)",
+      "summary": "قرارداد نام‌گذاری با یک یا دو زیرخط برای نشان‌دادن اعضای خصوصی.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "092-private-members.mp4",
+          "subtitles": [
+            {
+              "file": "092-private-members.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "092-private-members.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "properties",
+      "title": "Property ها",
+      "summary": "کنترل خواندن/نوشتن یک ویژگی با دکوراتور property به‌جای getter/setter صریح.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "093-properties.mp4",
+          "subtitles": [
+            {
+              "file": "093-properties.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "093-properties.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "inheritance",
+      "title": "وراثت (Inheritance)",
+      "summary": "ساخت کلاس فرزند که رفتار کلاس والد را به ارث می‌برد و گسترش می‌دهد.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "094-inheritance.mp4",
+          "subtitles": [
+            {
+              "file": "094-inheritance.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "094-inheritance.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-object-class",
+      "title": "کلاس object",
+      "summary": "چرا همه‌ی کلاس‌های پایتون در نهایت از کلاس object ارث می‌برند.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "095-the-object-class.mp4",
+          "subtitles": [
+            {
+              "file": "095-the-object-class.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "095-the-object-class.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "method-overriding",
+      "title": "بازنویسی متد (Override)",
+      "summary": "بازنویسی متد کلاس والد در کلاس فرزند و فراخوانی آن با super().",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "096-method-overriding.mp4",
+          "subtitles": [
+            {
+              "file": "096-method-overriding.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "096-method-overriding.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "multi-level-inheritance",
+      "title": "وراثت چندسطحی",
+      "summary": "زنجیره‌ای از کلاس‌ها که هرکدام از قبلی ارث می‌برند.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "097-multi-level-inheritance.mp4",
+          "subtitles": [
+            {
+              "file": "097-multi-level-inheritance.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "097-multi-level-inheritance.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "multiple-inheritance",
+      "title": "وراثت چندگانه",
+      "summary": "ارث‌بری یک کلاس از چند کلاس والد به‌طور هم‌زمان.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "098-multiple-inheritance.mp4",
+          "subtitles": [
+            {
+              "file": "098-multiple-inheritance.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "098-multiple-inheritance.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "a-good-example-of-inheritance",
+      "title": "یک مثال خوب از وراثت",
+      "summary": "یک مثال واقعی که نشان می‌دهد وراثت کِی طراحی خوبی است.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "099-a-good-example-of-inheritance.mp4",
+          "subtitles": [
+            {
+              "file": "099-a-good-example-of-inheritance.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "099-a-good-example-of-inheritance.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "abstract-base-classes",
+      "title": "کلاس‌های پایه‌ی انتزاعی (ABC)",
+      "summary": "اجبار کلاس‌های فرزند به پیاده‌سازی متدهای مشخص با ABC.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "100-abstract-base-classes.mp4",
+          "subtitles": [
+            {
+              "file": "100-abstract-base-classes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "100-abstract-base-classes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "polymorphism",
+      "title": "چندریختی (Polymorphism)",
+      "summary": "فراخوانی یک متد مشترک روی آبجکت‌های مختلف، هرکدام با رفتار خودشان.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "101-polymorphism.mp4",
+          "subtitles": [
+            {
+              "file": "101-polymorphism.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "101-polymorphism.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "duck-typing",
+      "title": "Duck Typing",
+      "summary": "اهمیت‌دادن به رفتار یک آبجکت به‌جای نوع دقیق آن در پایتون.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "102-duck-typing.mp4",
+          "subtitles": [
+            {
+              "file": "102-duck-typing.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "102-duck-typing.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "extending-built-in-types",
+      "title": "توسعه‌ی انواع درونی پایتون",
+      "summary": "ساخت کلاسی که از list یا dict ارث می‌برد و رفتار آن را گسترش می‌دهد.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "103-extending-built-in-types.mp4",
+          "subtitles": [
+            {
+              "file": "103-extending-built-in-types.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "103-extending-built-in-types.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "data-classes",
+      "title": "Data Class ها",
+      "summary": "ساخت سریع کلاس‌های نگه‌دارنده‌ی داده با دکوراتور dataclass.",
+      "section": "برنامه‌نویسی شی‌گرا",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "104-data-classes.mp4",
+          "subtitles": [
+            {
+              "file": "104-data-classes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "104-data-classes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "creating-modules",
+      "title": "ساخت ماژول",
+      "summary": "یک فایل پایتون به‌عنوان ماژول و import کردن آن در فایل دیگر.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "105-creating-modules.mp4",
+          "subtitles": [
+            {
+              "file": "105-creating-modules.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "105-creating-modules.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "compiled-python-files",
+      "title": "فایل‌های کامپایل‌شده‌ی پایتون",
+      "summary": "پوشه‌ی __pycache__ و فایل‌های .pyc که پایتون برای اجرای سریع‌تر می‌سازد.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "106-compiled-python-files.mp4",
+          "subtitles": [
+            {
+              "file": "106-compiled-python-files.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "106-compiled-python-files.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "module-search-path",
+      "title": "مسیر جست‌وجوی ماژول",
+      "summary": "ترتیبی که پایتون برای پیدا کردن یک ماژول در sys.path جست‌وجو می‌کند.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "107-module-search-path.mp4",
+          "subtitles": [
+            {
+              "file": "107-module-search-path.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "107-module-search-path.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "packages",
+      "title": "پکیج‌ها",
+      "summary": "گروه‌بندی چند ماژول مرتبط در یک پوشه به‌عنوان پکیج.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "108-packages.mp4",
+          "subtitles": [
+            {
+              "file": "108-packages.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "108-packages.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sub-packages",
+      "title": "زیرپکیج‌ها",
+      "summary": "پکیج داخل پکیج برای سازمان‌دهی پروژه‌های بزرگ‌تر.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "109-sub-packages.mp4",
+          "subtitles": [
+            {
+              "file": "109-sub-packages.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "109-sub-packages.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "intra-package-references",
+      "title": "ارجاع درون‌پکیجی",
+      "summary": "import نسبی بین ماژول‌های یک پکیج به‌جای مسیر کامل.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "110-intra-package-references.mp4",
+          "subtitles": [
+            {
+              "file": "110-intra-package-references.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "110-intra-package-references.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-dir-function",
+      "title": "تابع dir",
+      "summary": "لیست‌کردن ویژگی‌ها و متدهای یک آبجکت یا ماژول با تابع dir.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "111-the-dir-function.mp4",
+          "subtitles": [
+            {
+              "file": "111-the-dir-function.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "111-the-dir-function.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "executing-modules-as-scripts",
+      "title": "اجرای ماژول به‌عنوان اسکریپت",
+      "summary": "بررسی __name__ == '__main__' برای تشخیص اجرای مستقیم فایل از import شدن آن.",
+      "section": "ماژول‌ها و پکیج‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "112-executing-modules-as-scripts.mp4",
+          "subtitles": [
+            {
+              "file": "112-executing-modules-as-scripts.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "112-executing-modules-as-scripts.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "python-standard-library",
+      "title": "کتابخانه‌ی استاندارد پایتون",
+      "summary": "معرفی کلی ماژول‌های آماده‌ی پایتون که بدون نصب اضافه در دسترس‌اند.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "113-python-standard-library.mp4",
+          "subtitles": [
+            {
+              "file": "113-python-standard-library.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "113-python-standard-library.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-paths",
+      "title": "کار با مسیرها (pathlib)",
+      "summary": "کار با مسیر فایل و پوشه به‌شکل مستقل از سیستم‌عامل با ماژول pathlib.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "114-working-with-paths.mp4",
+          "subtitles": [
+            {
+              "file": "114-working-with-paths.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "114-working-with-paths.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-directories",
+      "title": "کار با دایرکتوری‌ها",
+      "summary": "ساخت، لیست‌کردن و حذف پوشه‌ها با pathlib و os.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "115-working-with-directories.mp4",
+          "subtitles": [
+            {
+              "file": "115-working-with-directories.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "115-working-with-directories.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-files",
+      "title": "کار با فایل‌ها",
+      "summary": "باز کردن، خواندن و نوشتن فایل متنی با open و مدیریت صحیح بستن آن.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "116-working-with-files.mp4",
+          "subtitles": [
+            {
+              "file": "116-working-with-files.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "116-working-with-files.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-zip-files",
+      "title": "کار با فایل‌های Zip",
+      "summary": "فشرده‌سازی و استخراج فایل‌ها با ماژول zipfile.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "117-working-with-zip-files.mp4",
+          "subtitles": [
+            {
+              "file": "117-working-with-zip-files.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "117-working-with-zip-files.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-csv-files",
+      "title": "کار با فایل‌های CSV",
+      "summary": "خواندن و نوشتن داده‌ی جدولی با ماژول csv.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "118-working-with-csv-files.mp4",
+          "subtitles": [
+            {
+              "file": "118-working-with-csv-files.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "118-working-with-csv-files.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-json-files",
+      "title": "کار با فایل‌های JSON",
+      "summary": "تبدیل بین آبجکت پایتون و JSON با json.dumps/json.loads.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "119-working-with-json-files.mp4",
+          "subtitles": [
+            {
+              "file": "119-working-with-json-files.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "119-working-with-json-files.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-a-sqlite-database",
+      "title": "کار با پایگاه‌داده‌ی SQLite",
+      "summary": "اتصال به یک پایگاه‌داده‌ی SQLite و اجرای کوئری با ماژول sqlite3.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "120-working-with-a-sqlite-database.mp4",
+          "subtitles": [
+            {
+              "file": "120-working-with-a-sqlite-database.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "120-working-with-a-sqlite-database.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-timestamps",
+      "title": "کار با Timestamp",
+      "summary": "نمایش زمان به‌صورت عدد ثانیه از مبدأ (epoch) با ماژول time.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "121-working-with-timestamps.mp4",
+          "subtitles": [
+            {
+              "file": "121-working-with-timestamps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "121-working-with-timestamps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-datetimes",
+      "title": "کار با تاریخ و زمان",
+      "summary": "ساخت و فرمت‌بندی تاریخ/زمان با ماژول datetime.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "122-working-with-datetimes.mp4",
+          "subtitles": [
+            {
+              "file": "122-working-with-datetimes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "122-working-with-datetimes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-time-deltas",
+      "title": "کار با Time Delta",
+      "summary": "محاسبه‌ی فاصله‌ی زمانی بین دو تاریخ با timedelta.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "123-working-with-time-deltas.mp4",
+          "subtitles": [
+            {
+              "file": "123-working-with-time-deltas.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "123-working-with-time-deltas.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "generating-random-values",
+      "title": "تولید مقادیر تصادفی",
+      "summary": "تولید عدد، انتخاب یا ترتیب تصادفی با ماژول random.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "124-generating-random-values.mp4",
+          "subtitles": [
+            {
+              "file": "124-generating-random-values.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "124-generating-random-values.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "opening-the-browser",
+      "title": "باز کردن مرورگر",
+      "summary": "باز کردن یک آدرس در مرورگر پیش‌فرض سیستم با ماژول webbrowser.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "125-opening-the-browser.mp4",
+          "subtitles": [
+            {
+              "file": "125-opening-the-browser.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "125-opening-the-browser.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sending-emails",
+      "title": "ارسال ایمیل",
+      "summary": "ارسال ایمیل از طریق کد پایتون با ماژول smtplib.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "126-sending-emails.mp4",
+          "subtitles": [
+            {
+              "file": "126-sending-emails.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "126-sending-emails.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "templates",
+      "title": "قالب‌ها (Templates)",
+      "summary": "ساخت متن پویا از یک الگوی ثابت با ماژول string.Template.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "127-templates.mp4",
+          "subtitles": [
+            {
+              "file": "127-templates.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "127-templates.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "command-line-arguments",
+      "title": "آرگومان‌های خط فرمان",
+      "summary": "خواندن آرگومان‌های ورودی برنامه هنگام اجرا از ترمینال با sys.argv.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "128-command-line-arguments.mp4",
+          "subtitles": [
+            {
+              "file": "128-command-line-arguments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "128-command-line-arguments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "running-external-programs",
+      "title": "اجرای برنامه‌های خارجی",
+      "summary": "اجرای یک دستور یا برنامه‌ی دیگر از داخل کد پایتون با ماژول subprocess.",
+      "section": "کتابخانه‌ی استاندارد پایتون",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "129-running-external-programs.mp4",
+          "subtitles": [
+            {
+              "file": "129-running-external-programs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "129-running-external-programs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "pypi",
+      "title": "PyPI",
+      "summary": "مخزن مرکزی پکیج‌های شخص‌ثالث پایتون و جست‌وجوی پکیج در آن.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "130-pypi.mp4",
+          "subtitles": [
+            {
+              "file": "130-pypi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "130-pypi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "pip",
+      "title": "pip",
+      "summary": "نصب، به‌روزرسانی و حذف پکیج از PyPI با ابزار pip.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "131-pip.mp4",
+          "subtitles": [
+            {
+              "file": "131-pip.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "131-pip.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "virtual-environments",
+      "title": "محیط‌های مجازی (venv)",
+      "summary": "چرا هر پروژه به محیط مجازی جدا نیاز دارد و ساخت آن با venv.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "132-virtual-environments.mp4",
+          "subtitles": [
+            {
+              "file": "132-virtual-environments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "132-virtual-environments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "pipenv",
+      "title": "Pipenv",
+      "summary": "مدیریت هم‌زمان پکیج و محیط مجازی با ابزار Pipenv.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "133-pipenv.mp4",
+          "subtitles": [
+            {
+              "file": "133-pipenv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "133-pipenv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "virtual-environments-in-vscode",
+      "title": "محیط مجازی در VS Code",
+      "summary": "انتخاب و فعال‌سازی محیط مجازی درست برای پروژه داخل VS Code.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "134-virtual-environments-in-vscode.mp4",
+          "subtitles": [
+            {
+              "file": "134-virtual-environments-in-vscode.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "134-virtual-environments-in-vscode.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "pipfile",
+      "title": "Pipfile",
+      "summary": "فایل Pipfile و Pipfile.lock که Pipenv برای نگه‌داری وابستگی‌ها می‌سازد.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "135-pipfile.mp4",
+          "subtitles": [
+            {
+              "file": "135-pipfile.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "135-pipfile.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "managing-dependencies",
+      "title": "مدیریت وابستگی‌ها",
+      "summary": "ثبت و نصب دقیق وابستگی‌های پروژه، از requirements.txt تا Pipfile.lock.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "136-managing-dependencies.mp4",
+          "title": "بخش ۱",
+          "subtitles": [
+            {
+              "file": "136-managing-dependencies.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "136-managing-dependencies.fa.vtt"
+        },
+        {
+          "file": "137-managing-dependencies.mp4",
+          "title": "بخش ۲",
+          "subtitles": [
+            {
+              "file": "137-managing-dependencies.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "137-managing-dependencies.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "docstrings",
+      "title": "Docstring ها",
+      "summary": "مستندسازی تابع و کلاس با docstring درست زیر خط تعریف.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "138-docstrings.mp4",
+          "subtitles": [
+            {
+              "file": "138-docstrings.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "138-docstrings.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "pydoc",
+      "title": "pydoc",
+      "summary": "ساخت مستندات قابل‌مرور از docstringهای پروژه با ابزار pydoc.",
+      "section": "مدیریت پکیج‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "139-pydoc.mp4",
+          "subtitles": [
+            {
+              "file": "139-pydoc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "139-pydoc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

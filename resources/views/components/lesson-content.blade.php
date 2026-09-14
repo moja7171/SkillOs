@@ -16,20 +16,29 @@
     </div>
 
     @if ($hasVideo)
-        {{-- One player at a time, capped in width so the page stays scannable; fullscreen is still available from the player. --}}
-        <div x-show="tab === 'video'" x-data="{ video: 0, pick(i) { this.video = i; $el.querySelectorAll('video').forEach(v => v.pause()); } }" class="p-4 flex flex-col gap-3">
+        {{-- One player at a time, capped in width so the page stays scannable; fullscreen is still available from the player.
+             The picker is small numbered buttons (never wraps to a second line, unlike full-label chips) plus a label for the
+             active one; every video past the first starts with `display:none` inline so nothing stacks before Alpine boots. --}}
+        <div x-show="tab === 'video'"
+             x-data="{ video: 0, labels: {{ Js::from($lesson->videos->map(fn ($v, $i) => $v->title ?? 'قسمت '.fa_num($i + 1))->values()) }}, pick(i) { this.video = i; $el.querySelectorAll('video').forEach(v => v.pause()); } }"
+             class="p-4 flex flex-col gap-3">
             @if ($lesson->videos->count() > 1)
-                <div class="flex items-center gap-1.5 flex-wrap">
-                    @foreach ($lesson->videos as $video)
-                        <button type="button" class="btn btn-sm" :class="video === {{ $loop->index }} ? '' : 'btn-ghost'" @click="pick({{ $loop->index }})" dir="auto">
-                            <span class="num">{{ $loop->iteration }}</span> {{ $video->title ?? 'قسمت '.fa_num($loop->iteration) }}
-                        </button>
-                    @endforeach
+                <div class="flex items-center gap-2 min-w-0">
+                    <div class="flex items-center gap-1 shrink-0">
+                        @foreach ($lesson->videos as $video)
+                            <button type="button" class="w-7 h-7 rounded-md text-[12px] font-semibold grid place-items-center transition shrink-0"
+                                    :class="video === {{ $loop->index }} ? 'bg-accent text-accent-ink' : 'bg-surface2 text-muted hover:text-ink'"
+                                    @click="pick({{ $loop->index }})" title="{{ $video->title ?? 'قسمت '.fa_num($loop->iteration) }}">
+                                {{ fa_num($loop->iteration) }}
+                            </button>
+                        @endforeach
+                    </div>
+                    <span class="text-[12.5px] text-muted truncate" x-text="labels[video]" dir="auto"></span>
                 </div>
             @endif
             @foreach ($lesson->videos as $video)
                 @php $embed = $video->embed(); @endphp
-                <div x-show="video === {{ $loop->index }}" class="w-full max-w-[720px] mx-auto">
+                <div x-show="video === {{ $loop->index }}" @if (! $loop->first) style="display:none" @endif class="w-full max-w-[720px] mx-auto">
                     @if ($embed['kind'] === 'file')
                         <div class="player-shell rounded-lg overflow-hidden bg-black" dir="ltr">
                             <video class="js-player" playsinline preload="metadata" crossorigin="anonymous"

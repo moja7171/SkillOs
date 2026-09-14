@@ -110,6 +110,44 @@ class PlannerTest extends TestCase
         $this->assertSame('review', $items[0]->source);
     }
 
+    public function test_non_video_day_never_starts_an_unlearned_lesson(): void
+    {
+        $notToday = array_values(array_diff(range(0, 6), [now()->dayOfWeek]));
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create(['video_days' => $notToday]);
+
+        $items = app(Planner::class)->today($this->user);
+
+        // Nothing to learn (video gated) and nothing yet to practice: falls back to keeping lesson 0 sharp.
+        $this->assertSame(['حفظ آمادگی'], $items->pluck('reason')->all());
+        $this->assertSame($this->lessons[0]->practices()->first()->id, $items[0]->activity_id);
+    }
+
+    public function test_non_video_day_still_offers_practice_of_an_already_learned_current_lesson(): void
+    {
+        $notToday = array_values(array_diff(range(0, 6), [now()->dayOfWeek]));
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create(['video_days' => $notToday]);
+        $this->completedLearn($this->lessons[0]);
+
+        $items = app(Planner::class)->today($this->user);
+
+        $this->assertSame([[$this->lessons[0]->practices()->first()->id, 'تمرین درس فعلی']], $items->map(fn (PlanItem $i) => [$i->activity_id, $i->reason])->all());
+    }
+
+    public function test_relearn_after_failures_waits_for_a_video_day(): void
+    {
+        $notToday = array_values(array_diff(range(0, 6), [now()->dayOfWeek]));
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create(['video_days' => $notToday]);
+        $this->completedLearn($this->lessons[0]);
+        $practice = $this->lessons[0]->practices()->first();
+        foreach (range(1, 3) as $_) {
+            Attempt::create(['activity_id' => $practice->id, 'user_id' => $this->user->id, 'result_status' => 'incorrect']);
+        }
+
+        $items = app(Planner::class)->today($this->user);
+
+        $this->assertSame(['تمرین درس فعلی'], $items->pluck('reason')->all(), 'no video today, so the relearn video is withheld but practice continues');
+    }
+
     public function test_review_generates_a_new_practice_once_the_pool_is_exhausted(): void
     {
         Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();

@@ -257,14 +257,16 @@ class Planner
                 ->latest('id')->limit(self::RECENT_FAILURES_FOR_RELEARN)->pluck('result_status');
 
             $learned = $learn && Attempt::where('user_id', $user->id)->where('activity_id', $learn->id)->where('result_status', 'completed')->exists();
+            $isVideoDay = $enrollment->isVideoDay();
 
-            if ($learn && $recent->count() === self::RECENT_FAILURES_FOR_RELEARN && $recent->every(fn ($s) => $s === 'incorrect')) {
+            if ($isVideoDay && $learn && $recent->count() === self::RECENT_FAILURES_FOR_RELEARN && $recent->every(fn ($s) => $s === 'incorrect')) {
                 $candidates[] = ['activity' => $learn, 'source' => 'plan', 'reason' => 'یادگیری دوباره بعد از سه اشتباه'];
-            } elseif ($learn && ! $learned) {
+            } elseif ($isVideoDay && $learn && ! $learned) {
                 $candidates[] = ['activity' => $learn, 'source' => 'plan', 'reason' => 'شروع درس'];
             }
 
-            if ($practice = $this->pickPractice($user, $current)) {
+            // A lesson not yet learned has nothing to practice on a non-video day; wait for it.
+            if (($learned || $isVideoDay) && $practice = $this->pickPractice($user, $current)) {
                 $candidates[] = ['activity' => $practice, 'source' => 'plan', 'reason' => 'تمرین درس فعلی'];
             }
         }

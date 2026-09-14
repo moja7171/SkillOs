@@ -17,6 +17,9 @@ return new class extends Migration
             $table->unsignedTinyInteger('priority')->default(3);
             $table->unsignedSmallInteger('daily_time_minutes')->nullable();
             $table->time('preferred_time')->nullable();
+            // Weekdays (Carbon's 0=Sunday..6=Saturday) new lessons may be planned on; null/empty
+            // means every day. Reviews and practice of already-learned lessons are unaffected.
+            $table->json('video_days')->nullable();
             $table->timestamp('last_activity_at')->nullable();
             $table->timestamps();
 

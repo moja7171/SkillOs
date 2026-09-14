@@ -40,7 +40,11 @@ class EnrollmentController extends Controller
             'daily_time_minutes' => ['nullable', 'integer', 'min:5', 'max:480'],
             'preferred_time' => ['nullable', 'date_format:H:i'],
             'status' => ['required', 'in:active,paused,archived,maintenance'],
+            'video_days' => ['nullable', 'array'],
+            'video_days.*' => ['integer', 'between:0,6'],
         ]);
+        // Unchecked = no restriction; the "video_days" key is absent from an empty checkbox group.
+        $validated['video_days'] = $request->filled('video_days') ? array_values(array_map('intval', $validated['video_days'])) : null;
 
         $wasInactive = in_array($enrollment->status, ['paused', 'archived'], true);
         $enrollment->update($validated);

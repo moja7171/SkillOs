@@ -35,6 +35,24 @@
                     <x-input-error :messages="$errors->get('preferred_time')" />
                 </div>
 
+                <div x-data="{ limited: {{ ! empty(old('video_days', $enrollment->video_days)) ? 'true' : 'false' }} }">
+                    <label class="flex items-center gap-2 text-[13.5px] font-medium mb-2">
+                        <input type="checkbox" x-model="limited" class="form-checkbox rounded border-line2 bg-surface2 text-accent focus:ring-accent">
+                        روزهای دیدن ویدیو رو محدود کن
+                    </label>
+                    <p class="help mb-2">بقیه‌ی روزها فقط مرور و تمرینِ درس‌هایی که قبلاً خوندی توی پلن میاد، بدون درس جدید.</p>
+                    <div x-show="limited" x-cloak class="flex flex-wrap gap-2">
+                        @foreach (\App\Models\Enrollment::WEEKDAY_LABELS as $value => $label)
+                            <label class="btn btn-sm cursor-pointer has-[:checked]:bg-accent has-[:checked]:text-accent-ink has-[:checked]:border-accent">
+                                <input type="checkbox" name="video_days[]" value="{{ $value }}" class="hidden"
+                                       @checked(in_array($value, old('video_days', $enrollment->video_days ?? []), false))>
+                                {{ $label }}
+                            </label>
+                        @endforeach
+                    </div>
+                    <x-input-error :messages="$errors->get('video_days')" />
+                </div>
+
                 <div>
                     <x-input-label for="status" value="وضعیت" />
                     <select id="status" name="status" class="input">

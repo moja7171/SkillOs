@@ -42,6 +42,22 @@ class EnrollmentTest extends TestCase
         $this->assertSame('paused', $enrollment->status);
     }
 
+    public function test_owner_can_set_and_clear_video_days(): void
+    {
+        $enrollment = Enrollment::factory()->create();
+
+        $this->actingAs($enrollment->user)->put(route('enrollments.update', $enrollment), [
+            'priority' => 1, 'status' => 'active', 'video_days' => ['1', '4'],
+        ]);
+        $this->assertSame([1, 4], $enrollment->fresh()->video_days);
+
+        // An empty checkbox group sends no "video_days" key at all: clears back to "every day".
+        $this->actingAs($enrollment->user)->put(route('enrollments.update', $enrollment), [
+            'priority' => 1, 'status' => 'active',
+        ]);
+        $this->assertNull($enrollment->fresh()->video_days);
+    }
+
     public function test_another_user_cannot_edit_or_update_an_enrollment(): void
     {
         $enrollment = Enrollment::factory()->create();

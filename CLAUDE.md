@@ -1,3 +1,9 @@
+# SkillOS — project instructions (read first)
+
+Before any work in this repo — coding, analysis, or content — read **`docs/AUTHORING.md`** (how lessons are written, file formats, the owner's standing rules, tools, gotchas). For product/architecture context: `docs/DECISIONS.md` (why things are the way they are), `docs/DESIGN.md` (data model, UI), `docs/STORIES.md` (build tracker), `README.md` (setup, authoring commands, deploy without SSH).
+
+Standing rules from the owner: lesson texts are written from the **English** subtitles; learner-visible text is Persian with English technical terms kept; AI prompts/rubrics stay English; no Skill layer, no learner-created topics; log important changes in `docs/DECISIONS.md` and tick `docs/STORIES.md`; one section per commit.
+
 <laravel-boost-guidelines>
 === foundation rules ===
 

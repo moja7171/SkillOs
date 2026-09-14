@@ -322,3 +322,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The owner's host has no shell and no Composer/Node; a deploy path that only needs a file manager and a browser is the only workable one. The 20 GB of course video is personal and large, and the browser is always on the owner's machine, so serving it from `localhost` (a "potentially trustworthy" origin, exempt from mixed-content blocking) costs nothing and keeps the host tiny.
 
 **Consequences.** Friends who use the site do not see videos unless they run the media server with their own copy, or media is uploaded to `public_html/media/` and `MEDIA_BASE_URL` is cleared; text + practices work regardless. `OPS_TOKEN` travels in the query string — keep it long, and rotate it if it ever ends up in a shared log. Config caching (`/_ops/optimize`) must be re-run after editing `.env`.
+
+---
+
+## 17. Authoring manual is the entry point for every session (2026-09-14)
+
+**Decision.** `docs/AUTHORING.md` holds the complete lesson-authoring process (sources, formats, style, practices, workflow, gotchas, definition of done) and `CLAUDE.md`/`AGENTS.md` open with a pointer to it plus the owner's standing rules, so every model session — content or code — reads it first. Reusable helpers live in `tools/authoring/` (`vtt2txt.py`, `srt2vtt.py`, `nbdump.py`, `validate.py`) instead of throwaway scratch scripts.
+
+**Why.** Remaining courses will be authored with smaller models across many sessions; the process knowledge was only in one conversation's memory and in a scratchpad that gets wiped.
+
+**Consequences.** Changes to the content format must update `AUTHORING.md` (and `DESIGN.md` §4). `validate.py` is the gate before `content:import`.

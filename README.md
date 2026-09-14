@@ -2,7 +2,7 @@
 
 A personal learning OS: authored courses → lessons (video + rewritten text + practices) → daily plan → learn / practice / AI feedback → spaced review. Persian UI, RTL, Jalali dates. Built for one person plus a couple of friends.
 
-Product docs live in `docs/` — `PRD.md`, `DESIGN.md`, `DECISIONS.md` (algorithms and numbers), `STORIES.md` (build tracker).
+Product docs live in `docs/` — `PRD.md`, `DESIGN.md`, `DECISIONS.md` (algorithms and numbers), `STORIES.md` (build tracker), and **`AUTHORING.md` — the manual for writing lessons; read it before touching `content/`**.
 
 ## Local setup
 
@@ -31,7 +31,7 @@ content/<course-slug>/
   lessons/<lesson-slug>.practices.json practices[] with key, form, prompt, hints[2], expected_outcome, rubric, difficulty
 ```
 
-See `content/sample-course/` for the shape and `docs/DESIGN.md` §4 for field rules. Then:
+See `docs/AUTHORING.md` for the full workflow and style rules, `content/sample-course/` for the shape, and `tools/authoring/` for the helper scripts (`vtt2txt.py`, `srt2vtt.py`, `nbdump.py`, `validate.py`). Then:
 
 ```sh
 php artisan content:import <course-slug>          # upsert by slug/key — learner progress survives edits

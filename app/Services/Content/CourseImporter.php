@@ -104,7 +104,9 @@ class CourseImporter
                 }
 
                 if ($prune) {
-                    $lesson->activities()->whereNotIn('key', $keys)->delete();
+                    // AI-generated review practices (DECISIONS.md §18) aren't in the content
+                    // files and must survive a prune.
+                    $lesson->activities()->whereNotIn('key', $keys)->where('generated', false)->delete();
                 }
             }
 

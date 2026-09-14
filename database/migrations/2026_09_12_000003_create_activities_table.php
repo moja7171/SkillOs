@@ -20,6 +20,9 @@ return new class extends Migration
             // Practice: form, prompt, options/correct_option (mcq), expected_outcome,
             // hints[2], rubric, difficulty. Learn: empty.
             $table->json('payload')->nullable();
+            // AI-generated review practice (never mcq), added to the pool once the authored
+            // ones are exhausted (DECISIONS.md §18) — never touched by content:import --prune.
+            $table->boolean('generated')->default(false);
             $table->timestamps();
 
             $table->unique(['lesson_id', 'key']);

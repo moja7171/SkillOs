@@ -332,3 +332,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** Remaining courses will be authored with smaller models across many sessions; the process knowledge was only in one conversation's memory and in a scratchpad that gets wiped.
 
 **Consequences.** Changes to the content format must update `AUTHORING.md` (and `DESIGN.md` §4). `validate.py` is the gate before `content:import`.
+
+---
+
+## 18. Reviews grow their own practice pool via AI once the authored ones are exhausted (2026-09-14)
+
+**Decision.** A review is still "the least-recently-attempted practice of the lesson" (`Planner::pickPractice`), unchanged. What's new: before picking, `Planner::pickReviewPractice()` checks whether the learner has already attempted *every* practice in the lesson's pool at least once; if so, `ReviewPracticeGenerator` asks Gemini for one new practice (never `mcq`, to avoid the option-consistency failure in §5), validates it the same way `CourseImporter` validates authored ones, and adds it to the lesson permanently as `activities.generated = true`. The normal rotation then picks it — freshest first, since it has no attempts yet. Nothing else about spaced repetition changed: intervals, the 3-reviews/day cap and the mastery deltas (§3) are untouched, and there is still no pre-review recap screen — a review opens straight on the question. `content:import --prune` skips `generated` rows so re-importing a course never deletes them. A generation failure (no `GEMINI_API_KEY`, network, bad output) is caught and reported, and the learner silently gets the normal authored rotation instead — never blocked.
+
+**Why.** Most lessons ship with only 2-3 authored practices; a learner reviewing the same lesson for months eventually just re-sees the same question, memorizing the answer rather than the skill. Generating a fresh one only when the pool is actually exhausted (rather than every review) keeps the Gemini cost/latency rare instead of paid on every review, while the pool still grows over time so variety compounds. Content stays authored everywhere else (§6, §12) — this is a narrow, explicit exception scoped to the review path only.
+
+**Consequences.** A lesson's `activities` table row count is no longer purely a function of its content files — `generated=true` rows are owner-invisible unless they open the lesson and check. If the owner ever wants to prune or review AI-written practices by hand, filter on `generated`. `ReviewPracticeGenerator::FORMS` intentionally excludes `mcq`.

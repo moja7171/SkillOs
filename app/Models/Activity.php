@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['lesson_id', 'key', 'type', 'title', 'estimated_minutes', 'payload'])]
+#[Fillable(['lesson_id', 'key', 'type', 'title', 'estimated_minutes', 'payload', 'generated'])]
 class Activity extends Model
 {
     /** Practice forms the AI may choose (payload.form) and their learner-facing labels. */
@@ -45,6 +45,7 @@ class Activity extends Model
     {
         return [
             'payload' => 'array',
+            'generated' => 'boolean',
         ];
     }
 

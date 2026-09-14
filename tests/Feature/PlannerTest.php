@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Activity;
 use App\Models\Attempt;
 use App\Models\Course;
 use App\Models\Enrollment;
@@ -107,6 +108,45 @@ class PlannerTest extends TestCase
 
         $this->assertCount(1, $items);
         $this->assertSame('review', $items[0]->source);
+    }
+
+    public function test_review_generates_a_new_practice_once_the_pool_is_exhausted(): void
+    {
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
+        $this->mastery($this->lessons[0], 300, 'yesterday');
+        $this->completedLearn($this->lessons[0]);
+        $practice = $this->lessons[0]->practices()->first();
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $this->user->id, 'result_status' => 'correct', 'completed_at' => now()]);
+
+        $this->mock(GeminiClient::class)->shouldReceive('generateJson')->once()->andReturn([
+            'title' => 'تمرین تازه', 'form' => 'short_answer', 'difficulty' => 'core',
+            'prompt' => 'سوال جدید', 'expected_outcome' => 'x', 'rubric' => 'y', 'hints' => ['h1', 'h2'],
+        ]);
+
+        $items = app(Planner::class)->today($this->user);
+
+        $this->assertCount(1, $items);
+        $this->assertSame('review', $items[0]->source);
+        $generated = $this->lessons[0]->activities()->where('generated', true)->sole();
+        $this->assertSame($generated->id, $items[0]->activity_id, 'the fresh, never-attempted practice is picked first');
+    }
+
+    public function test_review_falls_back_to_the_normal_pool_when_generation_fails(): void
+    {
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
+        $this->mastery($this->lessons[0], 300, 'yesterday');
+        $this->completedLearn($this->lessons[0]);
+        $practice = $this->lessons[0]->practices()->first();
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $this->user->id, 'result_status' => 'correct', 'completed_at' => now()]);
+
+        $this->mock(GeminiClient::class)->shouldReceive('generateJson')->once()->andThrow(new \RuntimeException('no api key'));
+
+        $items = app(Planner::class)->today($this->user);
+
+        $this->assertCount(1, $items);
+        $this->assertSame('review', $items[0]->source);
+        $this->assertSame($practice->id, $items[0]->activity_id);
+        $this->assertSame(0, Activity::where('generated', true)->count());
     }
 
     public function test_overdue_reviews_are_capped_per_course(): void

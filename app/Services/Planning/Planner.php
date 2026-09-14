@@ -9,9 +9,11 @@ use App\Models\Lesson;
 use App\Models\MasteryRecord;
 use App\Models\PlanItem;
 use App\Models\User;
+use App\Services\Content\ReviewPracticeGenerator;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Throwable;
 
 /**
  * Today's plan, computed from current state (DECISIONS.md §2) and materialized as
@@ -25,6 +27,8 @@ class Planner
     public const RECENT_FAILURES_FOR_RELEARN = 3;
 
     public const REACTIVATION_GAP_DAYS = 14;
+
+    public function __construct(protected ReviewPracticeGenerator $reviewPracticeGenerator) {}
 
     /**
      * Today's plan items for the user, computing them for any scheduled enrollment
@@ -230,7 +234,7 @@ class Planner
             ->take(self::MAX_REVIEWS_PER_COURSE);
 
         foreach ($due as $lesson) {
-            if ($practice = $this->pickPractice($user, $lesson)) {
+            if ($practice = $this->pickReviewPractice($user, $lesson)) {
                 $candidates[] = ['activity' => $practice, 'source' => 'review', 'reason' => 'مرور سررسید'];
                 $lessonsCovered[] = $lesson->id;
             }
@@ -304,6 +308,41 @@ class Planner
         }
 
         return $chosen;
+    }
+
+    /**
+     * A review practice for this lesson. Once the learner has attempted every practice
+     * in the pool at least once, a new one is generated and added to it for good
+     * (DECISIONS.md §18), so repeat reviews don't just cycle the same authored 2-3
+     * questions; a generation failure (no API key, network) is swallowed and the
+     * learner still gets the normal rotation.
+     */
+    protected function pickReviewPractice(User $user, Lesson $lesson): ?Activity
+    {
+        $practices = $lesson->activities->where('type', 'practice');
+
+        if ($practices->isNotEmpty() && $this->allAttempted($user, $practices)) {
+            try {
+                $generated = $this->reviewPracticeGenerator->generate($lesson);
+                $lesson->setRelation('activities', $lesson->activities->push($generated));
+            } catch (Throwable $e) {
+                report($e);
+            }
+        }
+
+        return $this->pickPractice($user, $lesson);
+    }
+
+    /**
+     * @param  Collection<int, Activity>  $practices
+     */
+    protected function allAttempted(User $user, Collection $practices): bool
+    {
+        $attempted = Attempt::where('user_id', $user->id)
+            ->whereIn('activity_id', $practices->pluck('id'))
+            ->distinct()->pluck('activity_id');
+
+        return $practices->pluck('id')->diff($attempted)->isEmpty();
     }
 
     /**

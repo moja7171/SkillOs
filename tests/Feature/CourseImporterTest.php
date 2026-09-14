@@ -119,6 +119,22 @@ class CourseImporterTest extends TestCase
         $this->assertSame(['a'], Lesson::pluck('slug')->all());
     }
 
+    public function test_prune_never_deletes_ai_generated_practices(): void
+    {
+        $this->writeCourse(['lessons' => [$this->lesson('a')]]);
+        app(CourseImporter::class)->import('t', root: $this->root);
+
+        $lesson = Lesson::where('slug', 'a')->sole();
+        $lesson->activities()->create([
+            'key' => 'review-ai-xyz', 'type' => 'practice', 'title' => 'مرور تولیدی', 'generated' => true,
+            'payload' => ['form' => 'short_answer', 'prompt' => 'س', 'expected_outcome' => 'x', 'hints' => ['h1', 'h2'], 'rubric' => 'r', 'difficulty' => 'core'],
+        ]);
+
+        app(CourseImporter::class)->import('t', prune: true, root: $this->root);
+
+        $this->assertTrue(Activity::where('lesson_id', $lesson->id)->where('key', 'review-ai-xyz')->exists());
+    }
+
     public function test_rejects_inconsistent_mcq_before_writing_anything(): void
     {
         $bad = $this->lesson('a');

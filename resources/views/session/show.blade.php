@@ -36,6 +36,9 @@
                 @if ($isLearn)
                     <span class="badge badge-l1">یادگیری</span>
                 @else
+                    @if (($evidence['source'] ?? null) === 'review')
+                        <span class="badge badge-l2">مرور</span>
+                    @endif
                     <span class="badge badge-l3">تمرین</span>
                     <span class="badge badge-ghost">{{ $activity->formLabel() }}</span>
                     <span @class(['badge', 'badge-ok' => ($payload['difficulty'] ?? '') === 'intro', 'badge-warn' => ($payload['difficulty'] ?? '') === 'core', 'badge-bad' => ($payload['difficulty'] ?? '') === 'stretch'])>{{ $activity->difficultyLabel() }}</span>

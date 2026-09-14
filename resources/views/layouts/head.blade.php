@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+<link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}?v={{ filemtime(public_path('favicon.svg')) }}">
 <meta name="theme-color" content="#0e1014">
 
 <title>{{ isset($title) ? $title.' · ' : '' }}{{ config('app.name', 'SkillOS') }}</title>

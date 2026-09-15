@@ -174,28 +174,39 @@
                         <a href="{{ route('courses.index') }}" class="btn btn-primary btn-sm">دیدن دوره‌ها</a>
                     </div>
                 @endif
-                @foreach ($enrollments as $enrollment)
-                    @php $course = $enrollment->course; @endphp
-                    <div class="border-b border-line last:border-b-0">
-                    <a href="{{ route('courses.show', $course) }}" class="block px-[18px] pt-3.5 pb-2 text-ink hover:bg-hover">
-                        <div class="flex items-center justify-between gap-2">
-                            <span class="font-semibold truncate {{ $enrollment->status !== 'active' ? 'text-muted' : '' }}" dir="auto">{{ $course->title }}</span>
-                            @if ($enrollment->status !== 'active')
-                                <span class="badge badge-ghost shrink-0">{{ $enrollment->statusLabel() }}</span>
-                            @else
-                                <span class="badge badge-ghost shrink-0">اولویت {{ fa_num($enrollment->priority) }}</span>
-                            @endif
+                <div class="p-3 flex flex-col gap-2.5">
+                    @foreach ($enrollments as $enrollment)
+                        @php $course = $enrollment->course; $color = course_color($course->id); @endphp
+                        {{-- Each enrollment is its own bg-surface2 chip (same nesting pattern as the
+                             "یا به‌جاش" alternatives list on this page) instead of a flat, hairline-
+                             separated row — clearer separation when there's more than one or two. --}}
+                        <div class="card bg-surface2">
+                            <a href="{{ route('courses.show', $course) }}" class="flex items-start gap-3 p-3.5 text-ink hover:bg-hover">
+                                <span class="w-10 h-10 rounded-lg grid place-items-center shrink-0 text-[15px] font-bold"
+                                      style="background: color-mix(in srgb, {{ $color }} 20%, transparent); color: {{ $color }};">
+                                    {{ mb_substr($course->title, 0, 1) }}
+                                </span>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="font-semibold truncate text-right {{ $enrollment->status !== 'active' ? 'text-muted' : '' }}" dir="auto">{{ $course->title }}</span>
+                                        @if ($enrollment->status !== 'active')
+                                            <span class="badge badge-ghost shrink-0">{{ $enrollment->statusLabel() }}</span>
+                                        @else
+                                            <span class="badge badge-ghost shrink-0">اولویت {{ fa_num($enrollment->priority) }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="text-[12.5px] {{ $enrollment->daily_time_minutes ? 'text-muted' : 'text-warn' }} mt-0.5 mb-2">
+                                        {{ $enrollment->daily_time_minutes ? fa_num($enrollment->daily_time_minutes).' دقیقه در روز' : 'بدون زمان روزانه — توی پلن نمیاد' }} · {{ fa_num($course->lessons->count()) }} درس
+                                    </div>
+                                    <x-course-progress :lessons="$course->lessons" :user="$user" />
+                                </div>
+                            </a>
+                            <div class="px-3.5 pb-3.5 pt-1 ps-[3.25rem]">
+                                <a href="{{ route('courses.learn', $course) }}" class="btn btn-sm"><x-icon name="play" class="w-3.5 h-3.5" /> ادامه‌ی درس‌ها</a>
+                            </div>
                         </div>
-                        <div class="text-[12.5px] {{ $enrollment->daily_time_minutes ? 'text-muted' : 'text-warn' }} mt-0.5 mb-2">
-                            {{ $enrollment->daily_time_minutes ? fa_num($enrollment->daily_time_minutes).' دقیقه در روز' : 'بدون زمان روزانه — توی پلن نمیاد' }} · {{ fa_num($course->lessons->count()) }} درس
-                        </div>
-                        <x-course-progress :lessons="$course->lessons" :user="$user" />
-                    </a>
-                    <div class="px-[18px] pb-3 pt-1 flex gap-2">
-                        <a href="{{ route('courses.learn', $course) }}" class="btn btn-sm"><x-icon name="play" class="w-3.5 h-3.5" /> ادامه‌ی درس‌ها</a>
-                    </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

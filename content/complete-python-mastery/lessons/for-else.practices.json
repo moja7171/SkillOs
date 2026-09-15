@@ -1,0 +1,39 @@
+[
+  {
+    "key": "break-trace",
+    "title": "کِی از حلقه می‌زنیم بیرون؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nfor number in range(5):\n    if number == 2:\n        break\n    print(number)\n```\nچی چاپ می‌شه؟",
+    "options": ["0 1", "0 1 2", "0 1 2 3 4", "2"],
+    "correct_option": 0,
+    "expected_outcome": "0 1 — وقتی number به 2 می‌رسه، break قبل از اینکه print اجرا بشه، از حلقه می‌زنه بیرون.",
+    "hints": ["ترتیب مهمه: break قبل از print همون تکراره.", "وقتی number==2 می‌شه، دیگه به خط print همون تکرار نمی‌رسیم."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "for-else-with-break",
+    "title": "else اجرا می‌شه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfor number in range(3):\n    if number == 1:\n        break\nelse:\n    print(\"done\")\n```\nآیا `done` چاپ می‌شه؟",
+    "options": ["نه، چون break زده شده", "بله، چون حلقه تموم شده", "بله، چون number به 1 رسیده", "خطا می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "نه — بلوک else یه حلقه فقط وقتی اجرا می‌شه که حلقه بدون break کامل تموم بشه. اینجا وقتی number به 1 می‌رسه، break زده می‌شه، پس else نادیده گرفته می‌شه.",
+    "hints": ["else حلقه معنیش با else معمولی if فرق داره.", "کلید اینه: آیا حلقه break خورده یا نه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "retry-scenario",
+    "title": "یه سناریوی واقعی‌تر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه تابع تصوری داری به اسم `send()` که یا `True` (موفق) برمی‌گردونه یا `False` (ناموفق). می‌خوای حداکثر ۳ بار امتحان کنی پیام رو بفرستی؛ به محض موفقیت، دیگه ادامه نده. اگه بعد از ۳ بار بازم موفق نشد، پیام `\"failed\"` رو چاپ کن. با `for...else` بنویسش (لازم نیست خود `send()` رو پیاده کنی، فقط ساختار حلقه رو).",
+    "expected_outcome": "```python\nfor attempt in range(3):\n    if send():\n        print(\"successful\")\n        break\nelse:\n    print(\"failed\")\n```",
+    "hints": ["به محض موفقیت (send() که True برگردوند)، باید break بزنی.", "پیام \"failed\" باید توی بلوک else حلقه باشه، نه بعد از خود break."],
+    "rubric": "Correct: uses a for loop up to 3 times, calls send() inside an if, breaks on success, and prints the failure message only in the loop's else block. Partial: correct overall shape but misses break, or checks the condition wrong (e.g. `if not send()`). Incorrect: no for...else structure, or failure message placed outside the else (would print even after a successful break in some variations)."
+  }
+]

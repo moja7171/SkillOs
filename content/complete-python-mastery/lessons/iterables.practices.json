@@ -1,0 +1,26 @@
+[
+  {
+    "key": "range-type",
+    "title": "نوع range چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nprint(type(range(10)))\n```\nخروجی چیه؟",
+    "options": ["<class 'range'>", "<class 'int'>", "<class 'list'>", "<class 'str'>"],
+    "correct_option": 0,
+    "expected_outcome": "<class 'range'> — range یه نوع پیچیده‌ی جداگانه‌ست، نه یه عدد و نه یه لیست.",
+    "hints": ["range خودش یه نوع مستقله، شبیه به هیچ‌کدوم از نوع‌های اولیه نیست.", "type روی هر مقداری نوع دقیق خودش رو نشون می‌ده."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "string-is-iterable",
+    "title": "روی رشته هم می‌شه پیمایش کرد؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nfor c in \"abc\":\n    print(c)\n```\nخروجی چیه؟",
+    "expected_outcome": "a\nb\nc — رشته پیمایش‌پذیره، توی هر تکرار یه کاراکترش رو می‌گیریم.",
+    "hints": ["رشته یکی از انواع پیمایش‌پذیرهاست.", "هر تکرار یه کاراکتر می‌گیره، به ترتیب."],
+    "rubric": "Correct only if the answer lists a, b, c (each on its own, in that order)."
+  }
+]

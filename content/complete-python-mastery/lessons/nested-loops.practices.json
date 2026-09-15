@@ -1,0 +1,26 @@
+[
+  {
+    "key": "nested-count",
+    "title": "چندبار چاپ می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfor x in range(4):\n    for y in range(2):\n        print(x, y)\n```\nاین کد در کل چندبار `print` رو اجرا می‌کنه؟",
+    "options": ["6", "8", "4", "2"],
+    "correct_option": 1,
+    "expected_outcome": "8 — حلقه‌ی درونی برای هر تکرار حلقه‌ی بیرونی کامل اجرا می‌شه: 4 (برای x) ضرب‌در 2 (برای y) می‌شه 8.",
+    "hints": ["حلقه‌ی درونی به ازای هر تکرار حلقه‌ی بیرونی، کامل از اول تا آخر اجرا می‌شه.", "تعداد کل = تعداد تکرار بیرونی ضرب‌در تعداد تکرار درونی."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "nested-trace-values",
+    "title": "دومین چیزی که چاپ می‌شه",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfor x in range(3):\n    for y in range(3):\n        print(f\"({x}, {y})\")\n```\nدومین خطی که توی خروجی می‌بینیم چیه؟",
+    "expected_outcome": "(0, 1) — اول (0, 0) چاپ می‌شه (x=0, y=0)، بعد چون هنوز توی همون تکرار حلقه‌ی بیرونی هستیم (x هنوز 0)، حلقه‌ی درونی می‌ره سراغ y=1، پس (0, 1).",
+    "hints": ["x توی دو خط اول هنوز عوض نمی‌شه.", "حلقه‌ی درونی (y) قبل از اینکه x عوض بشه، خودش رو کامل می‌کنه."],
+    "rubric": "Correct only if the answer is (0, 1) or an equivalent statement (x=0, y=1)."
+  }
+]

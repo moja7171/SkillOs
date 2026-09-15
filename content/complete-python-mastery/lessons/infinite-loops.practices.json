@@ -1,0 +1,26 @@
+[
+  {
+    "key": "infinite-loop-needs-break",
+    "title": "این حلقه کِی تموم می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nwhile True:\n    print(\"hi\")\n```\nاین حلقه کِی متوقف می‌شه؟",
+    "options": ["هیچ‌وقت، مگه اینکه یه break داخلش باشه", "بعد از یه بار اجرا", "وقتی hi چاپ بشه", "پایتون خودش بعد از چند بار متوقفش می‌کنه"],
+    "correct_option": 0,
+    "expected_outcome": "هیچ‌وقت — شرط while True همیشه True‌ه، پس بدون یه break صریح داخل حلقه، تا ابد ادامه پیدا می‌کنه.",
+    "hints": ["شرط این حلقه هیچ‌وقت خودش False نمی‌شه.", "تنها راه خروج یه break صریحه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "add-exit-condition",
+    "title": "یه راه خروج بذار",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این حلقه‌ی بی‌نهایت رو طوری کامل کن که با تایپ‌کردن `\"stop\"` (با هر ترکیبی از حروف بزرگ/کوچیک) متوقف بشه، وگرنه هرچی کاربر تایپ کرد رو با `echo:` چاپ کنه:\n```python\nwhile True:\n    text = input(\"> \")\n    # اینجا کامل کن\n```",
+    "expected_outcome": "```python\nwhile True:\n    text = input(\"> \")\n    if text.lower() == \"stop\":\n        break\n    print(\"echo:\", text)\n```",
+    "hints": ["مقایسه رو case-insensitive کن، با .lower().", "به محض تشخیص stop، باید break بزنی — قبل از چاپ echo."],
+    "rubric": "Correct: checks text.lower() == \"stop\" (or equivalent), breaks on match, and prints echo otherwise (or after the check, before break triggers). Partial: missing .lower() (case-sensitive only) or prints echo even on the stop command. Incorrect: no break, or wrong condition entirely."
+  }
+]

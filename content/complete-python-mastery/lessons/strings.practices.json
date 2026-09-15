@@ -1,0 +1,24 @@
+[
+  {
+    "key": "predict-slice",
+    "title": "این برش چی میده؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\ncourse = \"Python programming\"\nprint(course[7:11])\n```\nخروجی چیه؟",
+    "expected_outcome": "prog",
+    "hints": ["ایندکس‌ها رو از صفر بشمار: P(0) y(1) t(2) h(3) o(4) n(5) space(6) p(7)...", "برش course[7:11] یعنی از ایندکس ۷ شروع کن، تا قبل از ایندکس ۱۱ برو."],
+    "rubric": "Correct only if the answer is exactly \"prog\" (case-sensitive)."
+  },
+  {
+    "key": "get-last-char",
+    "title": "آخرین کاراکتر رو بگیر",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "با استفاده از ایندکس منفی، کدی بنویس که آخرین کاراکتر متغیر `name = \"Mosh\"` رو چاپ کنه.",
+    "expected_outcome": "```python\nprint(name[-1])\n```",
+    "hints": ["ایندکس منفی از آخر رشته می‌شماره.", "ایندکس -1 یعنی آخرین کاراکتر."],
+    "rubric": "Correct: uses name[-1] (or equivalent negative indexing) to get the last character. Partial: uses a correct concept but wrong index (e.g. len(name)-1 without brackets, or off-by-one). Incorrect: unrelated approach."
+  }
+]

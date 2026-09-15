@@ -1,0 +1,26 @@
+[
+  {
+    "key": "best-variable-name",
+    "title": "کدوم اسم بهتره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای تعداد سفارش‌های یه فروشگاه رو ذخیره کنی. کدوم اسم متغیر بهترین انتخابه؟",
+    "options": ["oc", "OrderCount", "order_count", "o_c"],
+    "correct_option": 2,
+    "expected_outcome": "order_count — حروف کوچیک، معنادار، با زیرخط جدا شده. طبق قواعد استاندارد پایتون.",
+    "hints": ["اسم باید هم معنادار باشه هم حروفش کوچیک.", "برای جدا کردن چند کلمه از زیرخط استفاده می‌کنیم، نه حروف بزرگ."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "fix-the-spacing",
+    "title": "این کد رو تمیز کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "این خط رو طبق قواعد PEP 8 درست بنویس:\n```python\nprice=100\n```",
+    "expected_outcome": "```python\nprice = 100\n```",
+    "hints": ["مشکل کجاست؟ به علامت مساوی نگاه کن.", "طبق PEP 8 دور = باید فاصله باشه."],
+    "rubric": "Correct: writes `price = 100` with a space on both sides of the equal sign. Partial: fixes spacing but changes the variable name or value. Incorrect: no spacing fix."
+  }
+]

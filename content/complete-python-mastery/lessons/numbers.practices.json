@@ -1,0 +1,24 @@
+[
+  {
+    "key": "slash-vs-double-slash",
+    "title": "/ و // فرقشون چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nprint(7 / 2)\nprint(7 // 2)\n```\nهر خط چی چاپ می‌کنه؟",
+    "expected_outcome": "خط اول: 3.5 — خط دوم: 3",
+    "hints": ["/ همیشه float میده، حتی اگه بخش‌پذیر باشه.", "// فقط قسمت صحیح تقسیم رو نگه می‌داره، اعشار رو دور می‌ندازه."],
+    "rubric": "Correct: gives 3.5 for the first line and 3 for the second. Partial: gets one of the two right. Incorrect: neither."
+  },
+  {
+    "key": "augmented-assignment",
+    "title": "کوتاه‌ترش کن",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "این خط رو با عملگر انتساب ترکیبی کوتاه‌تر بنویس:\n```python\nx = x - 5\n```",
+    "expected_outcome": "```python\nx -= 5\n```",
+    "hints": ["برای هر عملگر ریاضی، یه نسخه‌ی کوتاه‌شده هم هست.", "همون‌جور که += برای جمع بود، این یکی برای تفریقه."],
+    "rubric": "Correct only if the answer is `x -= 5` (or equivalent spacing)."
+  }
+]

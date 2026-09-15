@@ -1,0 +1,31 @@
+[
+  {
+    "key": "find-vs-in",
+    "title": "find یا in؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "فرق اصلی متد `find` با عملگر `in` چیه؟",
+    "options": [
+      "هیچ فرقی ندارن",
+      "find ایندکس رو برمی‌گردونه، in فقط True/False میده",
+      "in فقط روی عدد کار می‌کنه",
+      "find فقط حروف بزرگ رو پیدا می‌کنه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "find می‌گه دقیقاً از کجای رشته شروع میشه (یا -1 اگه نبود)؛ in فقط بهت میگه هست یا نیست (یه مقدار بولی).",
+    "hints": ["یکی‌شون عدد برمی‌گردونه، اون یکی بولی.", "وقتی فقط می‌خوای بدونی «هست یا نه»، کدوم ساده‌تره؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "predict-strip",
+    "title": "strip چی رو پاک می‌کنه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nname = \"   Mosh   \"\nprint(name.strip())\n```\nخروجی دقیقاً چیه؟ (فاصله‌ها رو هم مشخص کن اگه مونده)",
+    "expected_outcome": "Mosh (بدون هیچ فاصله‌ی اضافه‌ای اول و آخرش)",
+    "hints": ["strip فاصله‌های اول و آخر رو حذف می‌کنه، وسطشو دست نمی‌زنه.", "این متد رشته‌ی اصلی رو تغییر نمیده، یه رشته‌ی جدید برمی‌گردونه."],
+    "rubric": "Correct only if the answer is \"Mosh\" with no leading/trailing whitespace."
+  }
+]

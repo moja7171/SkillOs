@@ -345,8 +345,14 @@
           "subtitle": "015-variables.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "متغیر یه برچسبه که به یه جای حافظه اشاره می‌کنه.",
+        "چهار نوع داده‌ی پایه: int، float، bool، str.",
+        "پایتون به بزرگی/کوچکی حروف حساسه — True و False همیشه با حرف بزرگ."
+      ],
+      "common_mistakes": [
+        "نوشتن true/false به‌جای True/False."
+      ]
     },
     {
       "slug": "variable-names",
@@ -366,8 +372,15 @@
           "subtitle": "016-variable-names.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "اسم متغیر باید معنادار و توصیفی باشه.",
+        "حروف کوچیک + زیرخط بین کلمات.",
+        "دور علامت = فاصله بذار."
+      ],
+      "common_mistakes": [
+        "استفاده از اسم‌های مبهم مثل c1، cn.",
+        "فراموش کردن فاصله دور =."
+      ]
     },
     {
       "slug": "strings",
@@ -387,8 +400,14 @@
           "subtitle": "017-strings.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "برای گرفتن طول رشته از len() استفاده کن.",
+        "ایندکس از صفر شروع می‌شه؛ ایندکس منفی از آخر می‌شماره.",
+        "برش [start:end] شامل end نمی‌شه."
+      ],
+      "common_mistakes": [
+        "فکر کردن اینکه course[0:3] شامل ایندکس 3 هم می‌شه."
+      ]
     },
     {
       "slug": "escape-sequences",
@@ -408,8 +427,14 @@
           "subtitle": "018-escape-sequences.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "بک‌اسلش کاراکتر بعد از خودشو escape می‌کنه.",
+        "\\n خط جدید، \\\\ یه بک‌اسلش واقعی، \\\" یا \\' کوتیشن داخل رشته.",
+        "# برای نوشتن کامنت استفاده می‌شه."
+      ],
+      "common_mistakes": [
+        "گذاشتن کوتیشن بدون escape وسط رشته‌ای که با همون نوع کوتیشن باز شده."
+      ]
     },
     {
       "slug": "formatted-strings",
@@ -429,8 +454,14 @@
           "subtitle": "019-formatted-strings.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "f-string با گذاشتن f قبل از رشته ساخته می‌شه.",
+        "هرچی داخل آکولاد باشه، به‌عنوان یه عبارت محاسبه می‌شه.",
+        "می‌تونی هر عبارت معتبر پایتونی (نه فقط اسم متغیر) رو داخل آکولاد بذاری."
+      ],
+      "common_mistakes": [
+        "فراموش کردن حرف f قبل از رشته."
+      ]
     },
     {
       "slug": "string-methods",
@@ -450,8 +481,15 @@
           "subtitle": "020-string-methods.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "متدهای رشته رشته‌ی جدید برمی‌گردونن، اصلیو تغییر نمی‌دن.",
+        "strip فاصله‌های اول/آخر رو پاک می‌کنه.",
+        "find ایندکس برمی‌گردونه (یا -1)، in فقط True/False می‌ده."
+      ],
+      "common_mistakes": [
+        "انتظار داشتن که متد رشته‌ی اصلی رو عوض کنه.",
+        "قاطی کردن find و in."
+      ]
     },
     {
       "slug": "numbers",
@@ -471,8 +509,15 @@
           "subtitle": "021-numbers.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "سه نوع عدد: int، float، complex.",
+        "/ همیشه float می‌ده؛ // فقط قسمت صحیح رو نگه می‌داره.",
+        "% باقی‌مونده‌ی تقسیمه.",
+        "عملگر انتساب ترکیبی (+=، -=...) میان‌بر برای x = x op y هست."
+      ],
+      "common_mistakes": [
+        "قاطی کردن / با //."
+      ]
     },
     {
       "slug": "working-with-numbers",
@@ -492,7 +537,11 @@
           "subtitle": "022-working-with-numbers.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "round() گرد می‌کنه، abs() قدر مطلق می‌ده.",
+        "برای محاسبات پیچیده‌تر باید ماژول math رو import کنی.",
+        "توابع ماژول با نقطه صدا زده می‌شن، مثل math.ceil()."
+      ],
       "common_mistakes": []
     },
     {
@@ -513,8 +562,14 @@
           "subtitle": "023-type-conversion.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "input() همیشه یه رشته برمی‌گردونه، حتی اگه عدد تایپ بشه.",
+        "برای تبدیل نوع: int، float، str، bool.",
+        "فقط 0، رشته‌ی خالی و None فالسی‌ان؛ بقیه‌چیزا truthy."
+      ],
+      "common_mistakes": [
+        "جمع کردن ورودی input() با یه عدد بدون تبدیل نوع اول."
+      ]
     },
     {
       "slug": "quiz-variables-and-types",
@@ -534,7 +589,11 @@
           "subtitle": "024-quiz.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "انواع اولیه: رشته، عدد، بولی.",
+        "برش [start:end] شامل end نمی‌شه.",
+        "% باقی‌مونده‌ی تقسیمه."
+      ],
       "common_mistakes": []
     },
     {

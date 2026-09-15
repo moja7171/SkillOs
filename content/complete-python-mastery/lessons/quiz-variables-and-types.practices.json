@@ -1,0 +1,35 @@
+[
+  {
+    "key": "quiz-primitive-types",
+    "title": "انواع اولیه رو نام ببر",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "سه نوع داده‌ی اولیه‌ی پایتون رو نام ببر.",
+    "expected_outcome": "رشته (string)، عدد (int/float/complex) و بولی (bool).",
+    "hints": ["یکی‌شون متنه، یکی عدد، یکی درست/غلط.", "به درس‌های همین بخش برگرد."],
+    "rubric": "Correct only if all three are named: string, number (int/float), and boolean."
+  },
+  {
+    "key": "quiz-slicing",
+    "title": "یه برش دیگه",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfruit = \"apple\"\nprint(fruit[1:-1])\n```\nخروجی چیه؟",
+    "expected_outcome": "ppl",
+    "hints": ["ایندکس‌ها: a(0) p(1) p(2) l(3) e(4).", "از ایندکس 1 شروع کن، تا قبل از آخرین کاراکتر (-1) برو."],
+    "rubric": "Correct only if the answer is exactly \"ppl\"."
+  },
+  {
+    "key": "quiz-modulus",
+    "title": "باقی‌مونده رو حساب کن",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nprint(7 % 2)\n```\nخروجی چیه؟",
+    "expected_outcome": "1",
+    "hints": ["% باقی‌مونده‌ی تقسیم رو میده.", "7 تقسیم بر 2 میشه 3 باقی‌مونده 1."],
+    "rubric": "Correct only if the answer is 1."
+  }
+]

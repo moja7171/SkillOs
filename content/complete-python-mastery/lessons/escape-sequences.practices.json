@@ -1,0 +1,24 @@
+[
+  {
+    "key": "escape-a-quote",
+    "title": "کوتیشن رو escape کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "کدی بنویس که دقیقاً همین متن رو چاپ کنه (با کوتیشن دوتایی دور «programming»):\n```\nPython \"programming\"\n```",
+    "expected_outcome": "```python\nprint(\"Python \\\"programming\\\"\")\n```",
+    "hints": ["از بک‌اسلش برای escape کردن کوتیشن‌های داخلی استفاده کن.", "الگوش اینه: \\\" جای هر کوتیشن دوتایی‌ای که وسط رشته میاد."],
+    "rubric": "Correct: the code prints exactly `Python \"programming\"` — either by escaping the inner double quotes with a backslash, or by using single quotes for the outer string. Incorrect: invalid syntax, or the quotes are missing/wrong in the output."
+  },
+  {
+    "key": "predict-newline",
+    "title": "این چند خط چاپ میشه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nprint(\"Python\\nprogramming\")\n```\nاین کد روی چند تا خط چاپ میشه؟",
+    "expected_outcome": "دو خط — چون \\n یعنی خط جدید (newline).",
+    "hints": ["\\n یه escape sequence خاصه.", "n مخفف newline ـه."],
+    "rubric": "Correct only if the answer says two lines (because \\n creates a newline)."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "why-input-plus-int-fails",
+    "title": "چرا input() + عدد خطا میده؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nx = input(\"x: \")\ny = x + 1\n```\nچرا این کد خطا میده، و چطور درستش می‌کنیم؟",
+    "expected_outcome": "چون input همیشه یه رشته (str) برمی‌گردونه، حتی اگه کاربر عدد تایپ کرده باشه. پایتون نمی‌تونه یه رشته رو مستقیم با یه عدد جمع کنه. راه‌حل: اول با int(x) تبدیلش کنیم به عدد.",
+    "hints": ["input چه نوع داده‌ای برمی‌گردونه، همیشه؟", "قبل از جمع کردن باید نوعشو با int() عوض کنی."],
+    "rubric": "Correct: explains that input() always returns a string, so adding an int to it fails, AND mentions converting with int() as the fix. Partial: mentions only one of the two (either the cause or the fix). Incorrect: neither."
+  },
+  {
+    "key": "truthy-or-falsy",
+    "title": "Truthy یا Falsy؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "کدوم‌یکی از این‌ها وقتی به bool تبدیل بشه، `False` میده؟",
+    "options": ["\"0\"", "0", "\"False\"", "-1"],
+    "correct_option": 1,
+    "expected_outcome": "فقط عدد 0 (به‌عنوان int، نه رشته) به False تبدیل میشه. رشته‌ی \"0\" یه رشته‌ی غیرخالیه، پس truthy ـه — حتی رشته‌ی \"False\" هم چون خالی نیست، True حساب میشه.",
+    "hints": ["فقط 0 خالص (عدد)، رشته‌ی خالی و None فالسی‌ان.", "\"0\" یه رشته با یه کاراکتره — خالی نیست."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

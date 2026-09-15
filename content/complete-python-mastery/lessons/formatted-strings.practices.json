@@ -1,0 +1,24 @@
+[
+  {
+    "key": "build-f-string",
+    "title": "با f-string بساز",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "دو متغیر داری: `city = \"Tehran\"` و `country = \"Iran\"`. با f-string یه متغیر جدید به اسم `full` بساز که مقدارش بشه `Tehran, Iran`.",
+    "expected_outcome": "```python\nfull = f\"{city}, {country}\"\n```",
+    "hints": ["قبل از رشته یه f بذار.", "هر متغیری که می‌خوای وسط متن بیاد رو داخل آکولاد بذار."],
+    "rubric": "Correct: uses an f-string with {city} and {country} to build exactly \"Tehran, Iran\". Partial: uses correct concatenation logic but wrong syntax (e.g. missing the f prefix while still using curly braces). Incorrect: doesn't use an f-string or produces the wrong text."
+  },
+  {
+    "key": "expression-inside-braces",
+    "title": "داخل آکولاد هم حساب میشه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "```python\nx = 2\nprint(f\"{x * 3}\")\n```\nخروجی چیه؟",
+    "expected_outcome": "6",
+    "hints": ["داخل آکولاد هر عبارت معتبر پایتونی جواب میده، نه فقط اسم متغیر.", "این یه ضرب ساده‌ست: 2 در 3."],
+    "rubric": "Correct only if the answer is 6."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "local-scope-error",
+    "title": "این کد چی چاپ می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\ndef calculate():\n    result = 42\n\n\ncalculate()\nprint(result)\n```\nچی اتفاق می‌افته؟",
+    "options": ["NameError: result تعریف نشده", "42 چاپ می‌شه", "None چاپ می‌شه", "0 چاپ می‌شه"],
+    "correct_option": 0,
+    "expected_outcome": "NameError — result یه متغیر محلیه، فقط داخل calculate وجود داره. بیرون از تابع اصلاً قابل‌دیدن نیست.",
+    "hints": ["result کجا تعریف شده؟ داخل تابع یا بیرونش؟", "متغیرهای محلی بیرون از تابعشون قابل‌دسترسی نیستن."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "shadowed-global-trace",
+    "title": "مقدار نهایی چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\ncounter = 0\n\ndef increment():\n    counter = counter + 1\n    print(counter)\n\n\nincrement()\n```\nاین کد وقتی اجرا بشه چی می‌شه؟",
+    "expected_outcome": "UnboundLocalError. چون داخل increment قصد نوشتن (assignment) روی counter داری، پایتون counter رو یه متغیر محلی در نظر می‌گیره — ولی قبل از خوندنش (سمت راست counter + 1) هنوز مقداردهی نشده، پس با خطا مواجه می‌شی. برای دسترسی به counter سراسری و تغییرش، باید اول `global counter` رو بنویسی.",
+    "hints": ["چون داخل تابع داری روی counter مقداردهی می‌کنی، پایتون اونو محلی در نظر می‌گیره، نه سراسری.", "برای استفاده از متغیر سراسری داخل یه تابع (برای نوشتن روش)، یه کلیدواژه‌ی خاص لازمه."],
+    "rubric": "Correct if the answer identifies this raises an UnboundLocalError (or explains counter is treated as local due to the assignment, so it can't be read before being locally defined) and mentions the global keyword as the fix. Correct_with_hint if it only says there's an error without the reasoning. Incorrect if it says 1 is printed."
+  },
+  {
+    "key": "why-avoid-global",
+    "title": "چرا تغییردادن global بده؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا تغییردادن یه متغیر سراسری از داخل یه تابع (با global) یه عادت بده، حتی با اینکه از نظر فنی درست کار می‌کنه.",
+    "expected_outcome": "چون ممکنه چندین تابع مختلف به همون متغیر سراسری وابسته باشن؛ اگه یه تابع مقدارش رو تغییر بده، ممکنه رفتار توابع دیگه‌ای که به همون متغیر متکی‌ان، بدون اینکه انتظارش رو داشته باشی خراب بشه — یه اثر جانبی (side effect) که پیداکردن باگش سخته.",
+    "hints": ["به این فکر کن اگه چند تابع مختلف به یه متغیر سراسری وابسته باشن، چه اتفاقی می‌افته.", "کلیدواژه: اثر جانبی (side effect) روی توابع دیگه."],
+    "rubric": "Correct if the answer mentions that other functions relying on the same global variable can be affected unexpectedly (a side effect), making bugs hard to trace. Correct_with_hint if it vaguely says \"it's risky\" without the side-effect reasoning. Incorrect otherwise."
+  }
+]

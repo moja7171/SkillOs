@@ -1,0 +1,26 @@
+[
+  {
+    "key": "none-default-return",
+    "title": "این تابع چی برمی‌گردونه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef log(message):\n    print(message)\n\n\nresult = log(\"saved\")\nprint(result)\n```\nخط آخر چی چاپ می‌کنه؟",
+    "options": ["None", "saved", "چیزی چاپ نمی‌شه", "خطا می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "None — تابع log هیچ return صریحی نداره، پس به‌طور پیش‌فرض None برمی‌گردونه؛ همونی که توی result ذخیره و چاپ می‌شه.",
+    "hints": ["یه تابع بدون return صریح، به‌طور پیش‌فرض چی برمی‌گردونه؟", "توجه کن print(message) خودش چیزی برنمی‌گردونه، فقط چاپ می‌کنه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "rewrite-to-return",
+    "title": "این تابع رو انعطاف‌پذیرتر کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این تابع فقط می‌تونه توی ترمینال چاپ کنه:\n```python\ndef get_full_name(first, last):\n    print(f\"{first} {last}\")\n```\nبازنویسی‌ش کن طوری که به‌جای چاپ‌کردن، مقدار رو برگردونه — تا هر جا خواستیم بتونیم باهاش کار کنیم (چاپش کنیم، توی یه فایل بنویسیمش و غیره).",
+    "expected_outcome": "```python\ndef get_full_name(first, last):\n    return f\"{first} {last}\"\n```",
+    "hints": ["print رو با return عوض کن.", "همون f-string رو نگه دار، فقط جلوش return بذار به‌جای print."],
+    "rubric": "Correct: replaces print with return, keeping the same f-string logic. Partial: returns the value but changes the format unnecessarily. Incorrect: still prints instead of returning, or returns something other than the formatted name."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "args-tuple-trace",
+    "title": "numbers چه‌جور چیزیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef total(*values):\n    print(type(values))\n\n\ntotal(1, 2, 3)\n```\nخروجی چیه؟",
+    "options": ["<class 'tuple'>", "<class 'list'>", "<class 'int'>", "<class 'dict'>"],
+    "correct_option": 0,
+    "expected_outcome": "<class 'tuple'> — پارامتری که با * تعریف می‌شه، داخل تابع همیشه به‌شکل یه تاپل جمع می‌شه.",
+    "hints": ["*args آرگومان‌ها رو توی یه ساختار با پرانتز جمع می‌کنه.", "این ساختار شبیه لیسته، ولی تغییرناپذیره."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "return-inside-loop-bug",
+    "title": "یه هم‌تیمی این تابع رو نوشته",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی می‌خواد همه‌ی اعداد رو با هم جمع بزنه، ولی همیشه فقط اولین عدد رو برمی‌گردونه:\n```python\ndef total(*values):\n    result = 0\n    for value in values:\n        result += value\n        return result\n```\nدر ۲ تا ۳ جمله بگو مشکل کجاست و چطور درستش کنه.",
+    "expected_outcome": "خط return تورفتگیش با بدنه‌ی حلقه یکیه، پس توی همون تکرار اول اجرا و تابع خارج می‌شه — بقیه‌ی اعداد اصلاً جمع زده نمی‌شن. راه‌حل: تورفتگی return رو کم کن تا هم‌تراز با for باشه، بعد از تموم‌شدن کل حلقه اجرا بشه.",
+    "hints": ["به تورفتگی خط return دقت کن، نسبت به for.", "return باید بعد از پایان کامل حلقه اجرا بشه، نه توی هر تکرار."],
+    "rubric": "Correct if the answer identifies the return statement's indentation (inside the loop body) as the bug and proposes dedenting it to align with the for statement. Correct_with_hint if it identifies the symptom without the indentation fix. Incorrect otherwise."
+  },
+  {
+    "key": "write-args-function",
+    "title": "میانگین هر تعداد عدد",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه تابع `average` بنویس که با `*args` هر تعداد عدد بگیره و میانگینشون رو برگردونه. مثلاً `average(2, 4, 6)` باید `4.0` برگردونه.",
+    "expected_outcome": "```python\ndef average(*numbers):\n    return sum(numbers) / len(numbers)\n```",
+    "hints": ["numbers یه تاپله؛ می‌تونی روش sum و len صدا بزنی، درست مثل یه لیست.", "میانگین یعنی مجموع تقسیم بر تعداد."],
+    "rubric": "Correct: uses *numbers (or equivalent *args name), computes sum(numbers) / len(numbers) or an equivalent loop-based average. Partial: correct idea but off-by-one or integer division issues. Incorrect: fixed number of parameters instead of *args, or wrong formula."
+  }
+]

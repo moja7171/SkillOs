@@ -1,0 +1,24 @@
+[
+  {
+    "key": "define-and-call",
+    "title": "یه تابع بساز",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه تابع به اسم `say_bye` بنویس که وقتی صداش می‌زنی، دقیقاً همین رو چاپ کنه: `Bye for now`. بعدش صداش بزن.",
+    "expected_outcome": "```python\ndef say_bye():\n    print(\"Bye for now\")\n\n\nsay_bye()\n```",
+    "hints": ["با def شروع کن، بعدش اسم تابع و یه پرانتز خالی.", "فقط تعریف‌کردن کافی نیست — باید اسمش رو با پرانتز صدا بزنی تا اجرا بشه."],
+    "rubric": "Correct: defines a function named say_bye with a print statement of exactly \"Bye for now\", and calls it. Partial: function defined correctly but never called, or called but not defined. Incorrect: wrong function name, wrong message, or missing def/parentheses."
+  },
+  {
+    "key": "define-vs-call",
+    "title": "یه هم‌تیمی گیج شده",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته و می‌گه «هیچی چاپ نمی‌شه، مشکل چیه؟»:\n```python\ndef greet():\n    print(\"Hi\")\n```\nدر ۱ تا ۲ جمله بهش بگو مشکل کجاست.",
+    "expected_outcome": "تابع تعریف شده ولی هیچ‌جا صدا زده نشده. تعریف یه تابع فقط بهش شکل می‌ده؛ برای اجراش باید بعدش `greet()` رو هم بنویسی.",
+    "hints": ["تعریف تابع با اجراش فرق داره.", "برای اجرا، باید اسمش رو با پرانتز صدا بزنی."],
+    "rubric": "Correct if the answer says the function is never called, and that calling it requires greet() after the definition."
+  }
+]

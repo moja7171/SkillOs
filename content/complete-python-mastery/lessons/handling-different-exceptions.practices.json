@@ -1,0 +1,35 @@
+[
+  {
+    "key": "unhandled-exception-type",
+    "title": "چرا هنوز کرش می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\ntry:\n    age = int(input(\"Age: \"))\n    result = 100 / age\nexcept ValueError:\n    print(\"invalid input\")\n```\nوقتی کاربر `0` وارد می‌کنه، برنامه بازم کرش می‌کنه. چرا، و چطور درستش کنیم؟",
+    "expected_outcome": "چون 100/0 یه ZeroDivisionError صادر می‌کنه، نه ValueError — و این کد فقط ValueError رو مدیریت می‌کنه. باید یه except دیگه برای ZeroDivisionError هم اضافه کنیم.",
+    "hints": ["نوع استثنایی که 100/0 می‌ده با نوعی که فقط مدیریت شده فرق داره.", "باید یه except جدید برای ZeroDivisionError اضافه بشه."],
+    "rubric": "Correct if the answer identifies ZeroDivisionError as the unhandled exception type and proposes adding an except clause for it."
+  },
+  {
+    "key": "shared-except-clause",
+    "title": "یه بلوک برای هر دو نوع",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این دو بلوک except پیام یکسانی چاپ می‌کنن. با یه except مشترک (با تاپل از انواع خطا) این تکرار رو حذف کن:\n```python\ntry:\n    price = float(input(\"Price: \"))\n    quantity = 10 / int(input(\"Quantity: \"))\nexcept ValueError:\n    print(\"invalid input\")\nexcept ZeroDivisionError:\n    print(\"invalid input\")\n```",
+    "expected_outcome": "```python\ntry:\n    price = float(input(\"Price: \"))\n    quantity = 10 / int(input(\"Quantity: \"))\nexcept (ValueError, ZeroDivisionError):\n    print(\"invalid input\")\n```",
+    "hints": ["دو نوع خطا رو توی یه پرانتز، جدا با کاما، به یه except بده.", "پیام رو فقط یه‌بار بنویس."],
+    "rubric": "Correct: except (ValueError, ZeroDivisionError): with a single print statement. Partial: correct tuple syntax but message duplicated or altered. Incorrect: keeps two separate except blocks, or uses invalid syntax for multiple exception types."
+  },
+  {
+    "key": "except-order",
+    "title": "کدوم except اجرا می‌شه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ntry:\n    result = 10 / 0\nexcept ValueError:\n    print(\"A\")\nexcept ZeroDivisionError:\n    print(\"B\")\n```\nچی چاپ می‌شه؟",
+    "expected_outcome": "B — چون 10/0 یه ZeroDivisionError صادر می‌کنه، و پایتون فقط بلوک except متناظر با همون نوع استثنا رو اجرا می‌کنه (نه بقیه رو).",
+    "hints": ["نوع استثنای صادرشده رو با نوع هر except مقایسه کن.", "10/0 چه نوع استثنایی می‌ده؟"],
+    "rubric": "Correct only if the answer is \"B\"."
+  }
+]

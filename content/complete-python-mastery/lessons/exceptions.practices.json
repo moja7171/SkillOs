@@ -1,0 +1,26 @@
+[
+  {
+    "key": "identify-exception-type",
+    "title": "این کد چه استثنایی صادر می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nnames = [\"Ali\", \"Sara\"]\nprint(names[5])\n```\nاین کد چه نوع استثنایی صادر می‌کنه؟",
+    "options": ["IndexError", "ValueError", "TypeError", "KeyError"],
+    "correct_option": 0,
+    "expected_outcome": "IndexError — چون names فقط دو عضو داره (ایندکس 0 و 1)، و داریم دنبال ایندکس 5 می‌گردیم که وجود نداره.",
+    "hints": ["این خطا مخصوص دسترسی به ایندکسی خارج از محدوده‌ی یه لیسته.", "names فقط دو عضو داره."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "programmer-vs-bad-data",
+    "title": "علتش چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nage = int(input(\"Age: \"))\n```\nاگه کاربر عدد ۲۵ وارد کنه، مشکلی پیش نمیاد. ولی اگه کلمه‌ی «hi» وارد کنه، ValueError می‌گیریم. این استثنا از اشتباه برنامه‌نویسه یا از دیتای بد؟ چرا؟",
+    "expected_outcome": "از دیتای بد (ورودی نامعتبر کاربر) — خود کد درسته، فقط کاربر یه چیزی وارد کرده که قابل‌تبدیل به عدد نیست. این با یه اشتباه برنامه‌نویسی (مثل دسترسی به ایندکس اشتباه) فرق داره.",
+    "hints": ["کد خودش مشکلی نداره.", "منبع مشکل از بیرون برنامه (ورودی کاربر) میاد."],
+    "rubric": "Correct if the answer identifies this as bad input data rather than a programmer mistake, since the code itself is correct."
+  }
+]

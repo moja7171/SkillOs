@@ -1,0 +1,37 @@
+[
+  {
+    "key": "try-except-trace",
+    "title": "با ورودی نامعتبر چی می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\ntry:\n    number = int(\"abc\")\nexcept ValueError:\n    print(\"invalid\")\nprint(\"done\")\n```\nچی چاپ می‌شه؟",
+    "options": ["invalid و بعدش done", "فقط invalid", "فقط done", "برنامه کرش می‌کنه"],
+    "correct_option": 0,
+    "expected_outcome": "invalid و بعدش done — int(\"abc\") استثنا صادر می‌کنه، except اون رو می‌گیره و invalid چاپ می‌شه، بعدش برنامه ادامه پیدا می‌کنه و done هم چاپ می‌شه.",
+    "hints": ["چون استثنا مدیریت شده، برنامه کرش نمی‌کنه.", "خط بعد از try/except همیشه اجرا می‌شه، مگه توی خود except یه return یا چیزی مانع بشه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "else-clause-trace",
+    "title": "بلوک else کِی اجرا می‌شه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\ntry:\n    number = int(\"42\")\nexcept ValueError:\n    print(\"invalid\")\nelse:\n    print(\"success\")\n```\nچی چاپ می‌شه؟",
+    "expected_outcome": "success — چون \"42\" با موفقیت به عدد تبدیل می‌شه (هیچ استثنایی رخ نمی‌ده)، بلوک else اجرا می‌شه، نه except.",
+    "hints": ["else فقط وقتی اجرا می‌شه که هیچ استثنایی رخ نده.", "\"42\" یه رشته‌ی عددی معتبره، پس int() بدون مشکل کار می‌کنه."],
+    "rubric": "Correct only if the answer is \"success\"."
+  },
+  {
+    "key": "write-try-except",
+    "title": "این کد رو محافظت کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این کد ممکنه با ورودی نامعتبر کرش کنه:\n```python\nquantity = int(input(\"Quantity: \"))\nprint(f\"You ordered {quantity} items\")\n```\nبا try/except محافظتش کن؛ اگه ورودی نامعتبر بود، پیام `\"Please enter a valid number\"` چاپ کن.",
+    "expected_outcome": "```python\ntry:\n    quantity = int(input(\"Quantity: \"))\n    print(f\"You ordered {quantity} items\")\nexcept ValueError:\n    print(\"Please enter a valid number\")\n```",
+    "hints": ["هر دو خط (گرفتن ورودی و چاپ) باید داخل try باشن.", "نوع استثنایی که int() با ورودی نامعتبر می‌ده، ValueError‌ه."],
+    "rubric": "Correct: wraps both lines in try, catches ValueError, prints the exact message. Partial: correct structure but wrong exception type or message wording. Incorrect: doesn't use try/except, or only wraps part of the logic."
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "key": "raise-basic",
+    "title": "یه اعتبارسنجی بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه تابع `withdraw(balance, amount)` بنویس که اگه `amount` از `balance` بیشتر بود، یه `ValueError` با پیام `\"Insufficient funds\"` صادر کنه؛ وگرنه `balance - amount` رو برگردونه.",
+    "expected_outcome": "```python\ndef withdraw(balance, amount):\n    if amount > balance:\n        raise ValueError(\"Insufficient funds\")\n    return balance - amount\n```",
+    "hints": ["با raise و نوع استثنا، بعدش پیام توی پرانتز.", "شرط باید قبل از انجام محاسبه چک بشه."],
+    "rubric": "Correct: raises ValueError(\"Insufficient funds\") when amount > balance, otherwise returns balance - amount. Partial: correct logic but wrong exception type or message. Incorrect: doesn't raise at all, or wrong comparison direction."
+  },
+  {
+    "key": "catch-raised-exception",
+    "title": "این تابع رو امن صدا بزن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این تابع ممکنه ValueError صادر کنه:\n```python\ndef calculate_x_factor(age):\n    if age <= 0:\n        raise ValueError(\"Age cannot be 0 or less\")\n    return 10 / age\n```\nاین تابع رو با آرگومان `0` صدا بزن، داخل یه try/except که اگه خطا داد، خود پیام خطا رو چاپ کنه (نه اینکه برنامه کرش کنه).",
+    "expected_outcome": "```python\ntry:\n    x_factor = calculate_x_factor(0)\nexcept ValueError as error:\n    print(error)\n```",
+    "hints": ["فراخوانی تابع باید داخل try باشه.", "با as error، خود متن پیام خطا رو می‌گیری."],
+    "rubric": "Correct: calls calculate_x_factor(0) inside try, catches ValueError with `as`, prints the caught error. Partial: correct structure but wrong exception type caught. Incorrect: doesn't wrap the call in try/except at all."
+  },
+  {
+    "key": "why-raise-is-not-free",
+    "title": "یه پیش‌بینی قبل از درس بعد",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "در ۱ تا ۲ جمله حدس بزن: چرا صادرکردن استثنا (raise) نسبت به یه if معمولی ممکنه هزینه‌ی اجرایی بیشتری داشته باشه؟",
+    "expected_outcome": "چون پایتون موقع صادرکردن یه استثنا، باید یه شیء استثنا بسازه و پشته‌ی فراخوانی (call stack) رو برای پیداکردن نزدیک‌ترین except بگرده — این کار از یه مقایسه‌ی ساده‌ی if سنگین‌تره. (جواب دقیقش رو توی درس بعد می‌بینیم.)",
+    "hints": ["به این فکر کن پشت صحنه، صادرکردن یه استثنا چه کارهای اضافه‌ای داره که یه if نداره.", "این یه سؤال حدسیه — جواب دقیقش توی درس بعد میاد."],
+    "rubric": "Correct if the answer reasonably suggests exceptions involve extra work (building an exception object, searching for a handler) compared to a plain condition check. Correct_with_hint if it just says \"exceptions are slower\" without any reasoning. Incorrect if it claims there's no difference."
+  }
+]

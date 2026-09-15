@@ -551,3 +551,13 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Flagged in the UI/UX review: empty states feel abandoned, with no next action; friends specifically called out as a place that should prompt an invite via the existing `REGISTRATION_CODE` mechanism.
 
 **Consequences.** Both empty states now depend on a "next action" route (`register`, `home`) already existing and being appropriate — if registration is ever closed off entirely (no code and registration disabled outright), the friends prompt would need a different message than "here's the register page," but that's not the current state of the app.
+
+---
+
+## 37. Sample course removed from the live catalog and excluded from `/_ops` auto-import (2026-09-15)
+
+**Decision.** `content/sample-course/` (the 3-lesson fixture used by `CourseImporterTest`/`DeployTest` and mentioned in README's local-setup snippet) had also ended up imported into the real course catalog — visible to actual users right next to the two real courses. Deleted the `Course` row (cascades to its lessons/activities via the existing FK constraints). To stop it from silently coming back on the next deploy: `OpsController::courseSlugs()` — the "every course under `content/`" sweep used by a bare `/_ops/import` (and shown by `/_ops/status`) — now excludes `sample-course` by name. It's still importable on purpose with an explicit slug (`/_ops/import?slug=sample-course`, or `php artisan content:import sample-course` locally), which is exactly how the tests and the README's demo step already use it.
+
+**Why.** The sample course is a fixture for exercising the importer/deploy pipeline, not real content — it shouldn't appear in the catalog a real user browses, and a full `/_ops/import` (which every deploy runs) would have kept re-adding it after every manual deletion.
+
+**Consequences.** Anyone relying on the old README step (`php artisan content:import sample-course # demo course`) for a from-scratch local setup still gets it, since that's an explicit slug, not the sweep — only the *implicit*, no-slug sweep changed. A future real course added under `content/` is picked up automatically as before; only this one specific fixture slug is special-cased.

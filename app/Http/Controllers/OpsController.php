@@ -91,12 +91,20 @@ class OpsController extends Controller
         return $out ?: ['nothing to import — no course folders under content/'];
     }
 
-    /** @return list<string> */
+    /**
+     * Courses swept into a bare `import`/`status` (no explicit `slug`). `sample-course`
+     * is deliberately excluded — it's a test/local-demo fixture (README "Local setup"),
+     * not something that should show up in the real catalog on every deploy; it's still
+     * importable by name (`/_ops/import?slug=sample-course`) if ever wanted locally.
+     *
+     * @return list<string>
+     */
     protected function courseSlugs(): array
     {
         return collect(File::directories(base_path('content')))
             ->filter(fn ($dir) => File::exists($dir.'/course.json'))
             ->map(fn ($dir) => basename($dir))
+            ->reject(fn ($slug) => $slug === 'sample-course')
             ->values()
             ->all();
     }

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "rewrite-as-ternary",
+    "title": "این if/else رو یه‌خطی کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این کد رو با عملگر شرطی سه‌گانه، توی یه خط بازنویسی کن:\n```python\nscore = 45\n\nif score >= 50:\n    result = \"Pass\"\nelse:\n    result = \"Fail\"\n```",
+    "expected_outcome": "```python\nscore = 45\n\nresult = \"Pass\" if score >= 50 else \"Fail\"\n```\nبا `score = 45`، نتیجه `\"Fail\"` می‌شه.",
+    "hints": ["ساختار کلیه: `متغیر = مقدار_اگه_True if شرط else مقدار_اگه_False`.", "همون شرط (`score >= 50`) و همون دو مقدار رو نگه دار، فقط ساختارش عوض می‌شه."],
+    "rubric": "Correct: uses the ternary form `result = \"Pass\" if score >= 50 else \"Fail\"` (or equivalent variable naming) as one expression, condition and both branch values unchanged. Partial: ternary structure correct but a value or condition altered without reason. Incorrect: still uses multi-line if/else, or logic reversed."
+  },
+  {
+    "key": "ternary-trace",
+    "title": "با سن ۱۲ چی می‌گیریم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nage = 12\nmessage = \"Eligible\" if age >= 18 else \"Not eligible\"\nprint(message)\n```\nچی چاپ می‌شه؟",
+    "options": ["Eligible", "Not eligible", "True", "12"],
+    "correct_option": 1,
+    "expected_outcome": "Not eligible — چون ۱۲ از ۱۸ کوچیک‌تره، شرط False می‌شه و مقدار بعد از else انتخاب می‌شه.",
+    "hints": ["اول شرط وسط رو چک کن: `age >= 18` با age=12 چیه؟", "اگه شرط False باشه، مقدار بعد از else انتخاب می‌شه."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

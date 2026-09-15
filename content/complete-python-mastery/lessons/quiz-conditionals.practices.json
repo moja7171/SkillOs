@@ -1,0 +1,35 @@
+[
+  {
+    "key": "quiz-full-trace",
+    "title": "حرف کدوم چاپ می‌شه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nif 10 == \"10\":\n    print(\"A\")\nelif \"bag\" > \"apple\" and \"bag\" > \"cat\":\n    print(\"B\")\nelse:\n    print(\"C\")\n```\nچی چاپ می‌شه؟",
+    "expected_outcome": "C — شرط اول به‌خاطر تفاوت نوع False‌ه؛ شرط دوم چون \"bag\" > \"cat\" کاذبه، کل and هم False می‌شه؛ پس کنترل می‌ره سراغ else.",
+    "hints": ["دو شرط رو جدا جدا بررسی کن، هر دو False می‌شن.", "وقتی هیچ‌کدوم از if/elif True نباشه، نوبت به else می‌رسه."],
+    "rubric": "Correct only if the answer is C (or explicitly states the else branch runs)."
+  },
+  {
+    "key": "quiz-ternary-recap",
+    "title": "و یه یادآوری از ternary",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nage = 16\nstatus = \"Adult\" if age >= 18 else \"Minor\"\nprint(status)\n```\nخروجی چیه؟",
+    "expected_outcome": "Minor — چون ۱۶ از ۱۸ کوچیک‌تره، شرط False می‌شه و مقدار بعد از else انتخاب می‌شه.",
+    "hints": ["شرط وسط رو چک کن: `age >= 18` با age=16 چیه؟", "اگه شرط False باشه، مقدار بعد از else میاد."],
+    "rubric": "Correct only if the answer is exactly \"Minor\"."
+  },
+  {
+    "key": "quiz-chaining-recap",
+    "title": "آخرین چک",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nprint(10 <= 5 < 20)\n```\nخروجی چیه؟",
+    "expected_outcome": "False — چون بخش اول زنجیره (`10 <= 5`) از قبل False‌ه، مهم نیست بخش دوم چیه.",
+    "hints": ["زنجیره یعنی هر دو بخش باید True باشن.", "آیا ۱۰ کوچیک‌تر یا مساوی ۵ هست؟"],
+    "rubric": "Correct only if the answer is False."
+  }
+]

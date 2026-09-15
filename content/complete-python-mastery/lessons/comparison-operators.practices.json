@@ -1,0 +1,39 @@
+[
+  {
+    "key": "type-mismatch-equality",
+    "title": "ده که ده‌ست، نه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nprint(10 == \"10\")\n```\nخروجی چیه؟",
+    "options": ["True", "False", "TypeError می‌ده", "10"],
+    "correct_option": 1,
+    "expected_outcome": "False — یکی عدده، یکی رشته. نوع‌ها فرق دارن، پس مساوی نیستن.",
+    "hints": ["اول ببین این دو مقدار از یه نوعن یا نه.", "عدد ۱۰ با رشته‌ی \"۱۰\" یه چیز نیستن، حتی اگه شبیه هم به‌نظر برسن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "string-comparison-case",
+    "title": "بزرگ و کوچیک، یه چیز نیستن",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nprint(\"bag\" == \"Bag\")\n```\nخروجی چیه؟",
+    "options": ["True", "False", "خطا می‌ده", "None"],
+    "correct_option": 1,
+    "expected_outcome": "False — هر کاراکتر یه نمایش عددی داره (`ord`)، و حرف کوچیک با حرف بزرگ عدد متفاوتی دارن. پس مقایسه‌ی رشته‌ها به بزرگی/کوچیکی حروف حساسه.",
+    "hints": ["فقط حرف اول فرق داره: یکی کوچیکه، یکی بزرگ.", "`ord(\"b\")` با `ord(\"B\")` یکی نیست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "string-comparison-order",
+    "title": "ترتیب الفبایی",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nprint(\"bag\" > \"cat\")\n```\nخروجی چیه؟",
+    "expected_outcome": "False — وقتی این دو کلمه رو مرتب کنی، bag قبل از cat میاد (حرف اول: b < c)، پس bag از cat بزرگ‌تر نیست.",
+    "hints": ["مقایسه‌ی رشته‌ها مثل مرتب‌کردن الفباییه.", "حرف اول رو مقایسه کن: b زودتر از c میاد یا دیرتر؟"],
+    "rubric": "Correct only if the answer is False (or an equivalent statement that the expression evaluates to false)."
+  }
+]

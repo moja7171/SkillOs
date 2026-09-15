@@ -91,3 +91,29 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 
 ### [x] S-35 Group Home's «امروز» list by course, section headers instead of a per-row tag (DECISIONS §29)
 Today's list is currently flat (every course's items interleaved, ordered by `Planner::orderForLearner`), with the only per-item course indicator a small gray tag that's `hidden` below the `sm` breakpoint — invisible on mobile. Owner confirmed the review *algorithm* itself (intervals, AI-fresh review content §18, retention stat §24) is solid and needs no change; this story is specifically about the list becoming hard to scan as more courses are added, especially on a phone. Plan: group items under a per-course section heading (course title always visible, mobile included) instead of the row-level tag; keep each course's internal ordering as-is (reviews first); leave the "ادامه‌ی یادگیری" primary CTA untouched — this only reshapes the full-list card below it. A global (cross-course) daily review cap was considered and explicitly deferred — not rejected — since `week()` already gives forward visibility into review load; revisit only if pileups turn out to be a real problem in practice.
+
+## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
+
+### [ ] S-36 Course catalog cards feel sparse on wide screens, no per-course visual identity
+`courses/index.blade.php`'s cards are small text-only blocks with a lot of unused space around them on desktop, and nothing (color, icon, image) distinguishes one course from another at a glance. Gets worse as more courses are added.
+
+### [ ] S-37 Empty states (friends with one user, weak-spots/zero) feel abandoned, no next action
+A lone card floating on a large dark page, with only a passive sentence. «دوستان» specifically should probably prompt inviting someone (the app already has `REGISTRATION_CODE`) rather than just showing the one existing user.
+
+### [ ] S-38 Home's streak/progress bar reads as an afterthought
+Meant to be the motivational centerpiece (DECISIONS §21) but is currently a thin, easy-to-miss line above the main card. Deserves more visual weight.
+
+### [ ] S-39 "فقط یه مرور سریع" button placement feels disconnected
+Floats alone above the primary "ادامه‌ی یادگیری" card instead of reading as part of the same flow.
+
+### [ ] S-40 Week view: day order flips between the two grid rows
+Row one (امروز→+۱→+۲) reads correctly right-to-left; row two wraps in the opposite order, breaking the chronological scan.
+
+### [ ] S-41 A course's lesson table is one long flat list — no collapsing, no jump-to-section
+With 100+ lessons (both real courses are already this size), scrolling the course page is a very long, undifferentiated scroll. Section headers exist in the table already but don't collapse or anchor-link. Judged the most valuable of this batch — affects daily use directly, not just first impressions.
+
+### [ ] S-42 Badge/pill overload
+Priority, level, practice form, review/learn/practice — each with its own color, stacking up next to each other, worst on mobile. Could use a more restrained, consistent color system.
+
+### [ ] S-43 (content, not UI) Source videos carry a third-party watermark
+Not fixable from the app side — the video files themselves (from the GIT.IR download) have a burned-in logo. Noted for awareness, not actionable here.

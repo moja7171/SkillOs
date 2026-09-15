@@ -7,7 +7,16 @@
         <p class="text-muted text-[13.5px] mb-5">درس‌هایی که مدام روشون غلط می‌زنی — جایی برای تمرکز مرور بعدی‌ت.</p>
 
         @if ($spots->isEmpty())
-            <div class="card p-6 text-center text-muted text-[13.5px]">هنوز جایی که مدام اشتباه کرده باشی پیدا نشده — همینطوری ادامه بده.</div>
+            <div class="card p-6 flex flex-col items-center text-center gap-3">
+                <span class="w-12 h-12 rounded-full grid place-items-center shrink-0" style="background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok);">
+                    <x-icon name="trophy" class="w-6 h-6" />
+                </span>
+                <div>
+                    <div class="font-semibold mb-1">فعلاً جای ضعفی پیدا نشده</div>
+                    <div class="text-muted text-[13.5px]">همینطوری ادامه بده — هر جا مدام روش غلط بزنی، همین‌جا نشونت می‌دیم.</div>
+                </div>
+                <a href="{{ route('home') }}" class="btn btn-sm mt-1"><x-icon name="play" class="w-3.5 h-3.5" /> ادامه‌ی یادگیری</a>
+            </div>
         @else
             <div class="card">
                 @foreach ($spots as $s)

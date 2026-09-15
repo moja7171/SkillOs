@@ -2,6 +2,25 @@
     <div class="page-narrow max-w-xl">
         <h1 class="m-0 text-[22px] font-bold mb-5">دوستان</h1>
 
+        @if ($users->count() <= 1)
+            <div class="card p-6 flex flex-col items-center text-center gap-3 mb-4">
+                <span class="w-12 h-12 rounded-full grid place-items-center shrink-0" style="background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent);">
+                    <x-icon name="sparkle" class="w-6 h-6" />
+                </span>
+                <div>
+                    <div class="font-semibold mb-1">فعلاً فقط خودتی این‌جا</div>
+                    <div class="text-muted text-[13.5px]">یکی از دوستاتو دعوت کن تا با هم پیش برید و انگیزه‌ی همدیگه رو بالا نگه دارید.</div>
+                </div>
+                @if ($registrationCode)
+                    <div class="flex flex-col items-center gap-1.5 mt-1">
+                        <span class="text-[12px] text-faint">کد دعوت</span>
+                        <span class="mono px-3 py-1.5 rounded-lg bg-surface2 border border-line2 text-[14px] font-semibold tracking-wider">{{ $registrationCode }}</span>
+                    </div>
+                @endif
+                <a href="{{ route('register') }}" class="btn btn-sm mt-1">صفحه‌ی ثبت‌نام</a>
+            </div>
+        @endif
+
         <div class="card">
             @foreach ($users as $row)
                 @php $u = $row['user']; @endphp

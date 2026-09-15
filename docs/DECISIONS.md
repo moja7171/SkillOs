@@ -538,3 +538,16 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Flagged in the UI/UX review: sparse cards, no per-course visual identity, gets worse as more courses are added — the monogram scales to any number of future courses without needing a color/icon assigned by hand each time.
 
 **Consequences.** The hue is derived purely from `id`, so it's stable for a given course's lifetime but has no relation to its topic/subject — purely a scan-ability aid, not a taxonomy. A future "course category" concept, if added, should replace this hash rather than layer on top of it.
+
+---
+
+## 36. Empty states get an icon, a reason, and a next action (S-37; 2026-09-15)
+
+**Decision.** Two empty states read as dead ends rather than a designed state:
+
+- `friends/index.blade.php` always lists at least one row (the user themself), so it never showed a true "empty" message at all — a 2-3 person install just quietly shows a list of one, no acknowledgement or next step. Now, when `$users->count() <= 1`, a card above the list explicitly names the situation ("فعلاً فقط خودتی این‌جا") and gives the one meaningful next action: a link to `/register`, plus the `REGISTRATION_CODE` itself (when the install has one configured — `config('app.registration_code')`, now passed from `FriendsController`) in a copyable-looking monospace chip, so inviting someone doesn't require the owner to go dig the code out of `.env` themselves.
+- `weak-spots/index.blade.php`'s empty state was one muted sentence in a plain card, no icon, no action — despite being *good* news (nothing to fix). Gave it the same treatment as the friends card: an icon (trophy, `--ok`-tinted) reframing it positively, and a button back to `/home` ("ادامه‌ی یادگیری") since continuing to learn is the actual next action, not a dead end.
+
+**Why.** Flagged in the UI/UX review: empty states feel abandoned, with no next action; friends specifically called out as a place that should prompt an invite via the existing `REGISTRATION_CODE` mechanism.
+
+**Consequences.** Both empty states now depend on a "next action" route (`register`, `home`) already existing and being appropriate — if registration is ever closed off entirely (no code and registration disabled outright), the friends prompt would need a different message than "here's the register page," but that's not the current state of the app.

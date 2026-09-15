@@ -18,6 +18,10 @@ class FriendsController extends Controller
         $users = User::orderByDesc('streak_count')->orderBy('name')->get()
             ->map(fn (User $u) => ['user' => $u, 'week' => $stats->since($u, now()->subDays(7))]);
 
-        return view('friends.index', ['users' => $users, 'me' => $request->user()]);
+        return view('friends.index', [
+            'users' => $users,
+            'me' => $request->user(),
+            'registrationCode' => config('app.registration_code'),
+        ]);
     }
 }

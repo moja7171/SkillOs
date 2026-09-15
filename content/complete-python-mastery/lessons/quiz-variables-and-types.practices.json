@@ -1,7 +1,7 @@
 [
   {
     "key": "quiz-primitive-types",
-    "title": "انواع اولیه رو نام ببر",
+    "title": "قبل بخش بعد، یه مرور سریع",
     "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
@@ -23,13 +23,13 @@
   },
   {
     "key": "quiz-modulus",
-    "title": "باقی‌مونده رو حساب کن",
+    "title": "و آخرین چک",
     "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
     "prompt": "```python\nprint(7 % 2)\n```\nخروجی چیه؟",
     "expected_outcome": "1",
-    "hints": ["% باقی‌مونده‌ی تقسیم رو میده.", "7 تقسیم بر 2 میشه 3 باقی‌مونده 1."],
+    "hints": ["% باقی‌مونده‌ی تقسیم رو می‌ده.", "7 تقسیم بر 2 می‌شه 3 باقی‌مونده 1."],
     "rubric": "Correct only if the answer is 1."
   }
 ]

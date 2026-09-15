@@ -1,24 +1,24 @@
 [
   {
-    "key": "valid-boolean",
-    "title": "کدوم بولی درسته؟",
+    "key": "admin-flag",
+    "title": "یه فیلد برای پروفایل کاربر",
     "form": "mcq",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "کدوم‌یکی از این‌ها یه مقدار بولی معتبر توی پایتونه؟",
-    "options": ["true", "True", "TRUE", "1"],
+    "prompt": "داری یه فیلد `is_admin` برای پروفایل کاربر یه اپ می‌سازی؛ می‌خوای مقدارش بگه این کاربر مدیر نیست. کدوم مقدار درسته؟",
+    "options": ["false", "False", "FALSE", "0"],
     "correct_option": 1,
     "expected_outcome": "پایتون به بزرگی/کوچکی حروف حساسه؛ مقدار بولی همیشه با حرف بزرگ شروع می‌شه: True یا False.",
-    "hints": ["به حرف اول دقت کن — پایتون Case-sensitive ـه.", "فقط دو مقدار True و False معتبرن، هیچ حالت دیگه‌ای قبول نمیشه."],
+    "hints": ["به حرف اول دقت کن — پایتون Case-sensitive ـه.", "فقط دو مقدار True و False معتبرن."],
     "rubric": "Correct only if option 1 is selected."
   },
   {
-    "key": "spot-the-type",
-    "title": "این چه نوعیه؟",
+    "key": "what-type-is-the-price",
+    "title": "این فیلد چه نوعیه؟",
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "`price = 19.99` — نوع (type) داده‌ی متغیر price چیه؟",
+    "prompt": "توی پروفایل یه محصول توی فروشگاه آنلاینت، این فیلد رو داری: `price = 19.99` — نوع (type) داده‌ی price چیه؟",
     "expected_outcome": "float",
     "hints": ["به اعشار توجه کن.", "int برای عدد صحیح، float برای عدد با اعشار."],
     "rubric": "Correct only if the answer is float."

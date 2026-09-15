@@ -1,24 +1,24 @@
 [
   {
-    "key": "predict-comparison",
-    "title": "نتیجه‌ی یک مقایسه",
+    "key": "try-it-yourself",
+    "title": "خودت امتحانش کن",
     "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "```python\n>>> 2 > 5\n```\nمفسر پایتون چه مقداری چاپ می‌کند؟",
+    "prompt": "مفسر پایتون رو باز کن (توی ترمینال بزن python یا python3) و تایپ کن:\n```python\n2 > 5\n```\nEnter که بزنی چی می‌بینی؟",
     "expected_outcome": "False",
-    "hints": ["نتیجه‌ی هر مقایسه در پایتون یک مقدار بولی است.", "۲ بزرگ‌تر از ۵ نیست."],
+    "hints": ["نتیجه‌ی هر مقایسه در پایتون یه مقدار بولیه.", "۲ بزرگ‌تر از ۵ نیست."],
     "rubric": "Correct only if the answer is exactly \"False\" (case matters; accept with or without quotes)."
   },
   {
-    "key": "what-is-syntax-error",
-    "title": "خطای نحوی چیست؟",
+    "key": "help-a-teammate",
+    "title": "به یه هم‌تیمی کمک کن",
     "form": "explanation",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "به زبان خودت در ۲ تا ۳ جمله توضیح بده syntax error چیست و چرا وقتی `2 >` را بدون ادامه تایپ می‌کنی، این خطا رخ می‌دهد.",
-    "expected_outcome": "Syntax error یعنی کد از نظر گرامری ناقص یا غلط است. `2 >` یک عبارت مقایسه‌ی ناقص است — عملگر `>` به یک مقدار دوم نیاز دارد که وجود ندارد، پس مفسر نمی‌تواند آن را بفهمد.",
-    "hints": ["Syntax یعنی گرامر یا دستور زبان کد.", "عملگر مقایسه به دو طرف نیاز دارد؛ اینجا طرف دومش غایب است."],
+    "prompt": "یه هم‌تیمی این خط رو توی مفسر پایتون زده:\n```python\n2 >\n```\nو این خطا رو گرفته: `SyntaxError`. برایش در ۲ تا ۳ جمله توضیح بده مشکل کجاست و چرا این اتفاق افتاده.",
+    "expected_outcome": "این یه عبارت مقایسه‌ی ناقصه — عملگر `>` به یه مقدار دوم نیاز داره که وجود نداره، پس مفسر نمی‌تونه بفهمدش. به این‌جور خطاها syntax error می‌گیم، یعنی گرامر کد غلط یا ناقصه.",
+    "hints": ["Syntax یعنی گرامر یا دستور زبون کد.", "عملگر مقایسه به دو طرف نیاز داره؛ اینجا طرف دومش غایبه."],
     "rubric": "Correct: mentions that syntax error means grammatically invalid/incomplete code AND connects it to the missing right-hand operand of `>`. Partial: only one of the two. Incorrect: neither, or an unrelated explanation."
   }
 ]

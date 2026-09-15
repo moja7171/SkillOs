@@ -5,7 +5,7 @@
     "form": "mcq",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "می‌خوای تعداد سفارش‌های یه فروشگاه رو ذخیره کنی. کدوم اسم متغیر بهترین انتخابه؟",
+    "prompt": "می‌خوای تعداد سفارش‌های یه کاربر رو توی پروفایلش ذخیره کنی. کدوم اسم متغیر بهترین انتخابه؟",
     "options": ["oc", "OrderCount", "order_count", "o_c"],
     "correct_option": 2,
     "expected_outcome": "order_count — حروف کوچیک، معنادار، با زیرخط جدا شده. طبق قواعد استاندارد پایتون.",
@@ -13,14 +13,14 @@
     "rubric": "Correct only if option 2 is selected."
   },
   {
-    "key": "fix-the-spacing",
-    "title": "این کد رو تمیز کن",
+    "key": "code-review-spacing",
+    "title": "داری کد یه هم‌تیمی رو ریویو می‌کنی",
     "form": "coding",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "این خط رو طبق قواعد PEP 8 درست بنویس:\n```python\nprice=100\n```",
-    "expected_outcome": "```python\nprice = 100\n```",
+    "prompt": "یه هم‌تیمی این خط رو توی پروفایل کاربر فرستاده:\n```python\nuser_age=25\n```\nطبق PEP 8 درستش کن.",
+    "expected_outcome": "```python\nuser_age = 25\n```",
     "hints": ["مشکل کجاست؟ به علامت مساوی نگاه کن.", "طبق PEP 8 دور = باید فاصله باشه."],
-    "rubric": "Correct: writes `price = 100` with a space on both sides of the equal sign. Partial: fixes spacing but changes the variable name or value. Incorrect: no spacing fix."
+    "rubric": "Correct: writes `user_age = 25` with a space on both sides of the equal sign. Partial: fixes spacing but changes the variable name or value. Incorrect: no spacing fix."
   }
 ]

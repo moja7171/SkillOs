@@ -1,24 +1,24 @@
 [
   {
-    "key": "print-hello",
-    "title": "چاپ یک پیام",
+    "key": "first-program-moment",
+    "title": "اولین برنامه‌ت",
     "form": "coding",
     "difficulty": "intro",
     "estimated_minutes": 3,
-    "prompt": "کدی بنویس که دقیقاً همین پیام را چاپ کند:\n```\nHello, World!\n```",
+    "prompt": "این لحظه‌ی مهمیه — اولین برنامه‌ی واقعی‌تو می‌نویسی. کدی بنویس که دقیقاً این پیام رو چاپ کنه:\n```\nHello, World!\n```",
     "expected_outcome": "```python\nprint(\"Hello, World!\")\n```",
-    "hints": ["از تابع درونی `print` استفاده کن.", "متن را داخل کوتیشن (تکی یا دوتایی) بگذار و فراموش نکن پرانتز باز و بسته کنی."],
+    "hints": ["از تابع درونی print استفاده کن.", "متن رو داخل کوتیشن بذار و پرانتز باز و بسته کن رو فراموش نکن."],
     "rubric": "Correct: uses print(...) with the exact text \"Hello, World!\" inside quotes. Partial: calls print but with wrong text or missing punctuation. Incorrect: doesn't call print, or wrong syntax (e.g. Python 2 style without parentheses)."
   },
   {
-    "key": "predict-star-multiplication",
-    "title": "ضرب یک رشته",
+    "key": "separator-line",
+    "title": "یه خط جداکننده بساز",
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "```python\nprint(\"*\" * 10)\n```\nاین کد چه چیزی روی صفحه چاپ می‌کند؟",
+    "prompt": "خیلی از برنامه‌نویس‌ها بین خروجی‌های ترمینال یه خط جداکننده می‌ذارن تا خوانده بشه. اگه بنویسی:\n```python\nprint(\"*\" * 10)\n```\nروی صفحه چی می‌بینی؟",
     "expected_outcome": "**********",
-    "hints": ["ضرب یک رشته در یک عدد، آن رشته را همان تعداد بار تکرار می‌کند.", "رشته یک کاراکتر `*` است؛ در ۱۰ ضرب می‌شود."],
+    "hints": ["ضرب یه رشته در یه عدد، همون رشته رو اون تعداد بار تکرار می‌کنه.", "رشته یه کاراکتر * هست؛ در ۱۰ ضرب می‌شه."],
     "rubric": "Correct only if the answer is exactly ten asterisk characters (**********)."
   }
 ]

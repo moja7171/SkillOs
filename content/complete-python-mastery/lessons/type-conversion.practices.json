@@ -1,26 +1,26 @@
 [
   {
-    "key": "why-input-plus-int-fails",
-    "title": "چرا input() + عدد خطا میده؟",
+    "key": "signup-form-age-bug",
+    "title": "فرم ثبت‌نام یه باگ داره",
     "form": "explanation",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "```python\nx = input(\"x: \")\ny = x + 1\n```\nچرا این کد خطا میده، و چطور درستش می‌کنیم؟",
-    "expected_outcome": "چون input همیشه یه رشته (str) برمی‌گردونه، حتی اگه کاربر عدد تایپ کرده باشه. پایتون نمی‌تونه یه رشته رو مستقیم با یه عدد جمع کنه. راه‌حل: اول با int(x) تبدیلش کنیم به عدد.",
+    "prompt": "توی فرم ثبت‌نام، سن کاربر رو با input می‌گیری و می‌خوای نشون بدی ۱۸ سال دیگه چند سالشه:\n```python\nage = input(\"age: \")\nfuture_age = age + 18\n```\nاین کد خطا می‌ده. چرا، و چطور درستش کنیم؟",
+    "expected_outcome": "چون input همیشه یه رشته (str) برمی‌گردونه، حتی اگه کاربر عدد تایپ کرده باشه. پایتون نمی‌تونه یه رشته رو مستقیم با یه عدد جمع کنه. راه‌حل: اول با int(age) تبدیلش کنیم به عدد.",
     "hints": ["input چه نوع داده‌ای برمی‌گردونه، همیشه؟", "قبل از جمع کردن باید نوعشو با int() عوض کنی."],
     "rubric": "Correct: explains that input() always returns a string, so adding an int to it fails, AND mentions converting with int() as the fix. Partial: mentions only one of the two (either the cause or the fix). Incorrect: neither."
   },
   {
-    "key": "truthy-or-falsy",
-    "title": "Truthy یا Falsy؟",
+    "key": "is-bio-empty",
+    "title": "چک کن کاربر بیوگرافی نوشته یا نه",
     "form": "mcq",
     "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "کدوم‌یکی از این‌ها وقتی به bool تبدیل بشه، `False` میده؟",
-    "options": ["\"0\"", "0", "\"False\"", "-1"],
+    "prompt": "می‌خوای یه پیام «بیوگرافی خودتو کامل کن» نشون بدی، فقط وقتی فیلد bio خالیه. برای کدوم مقدار bool(bio) برابر False می‌شه؟",
+    "options": ["bio = \"0\"", "bio = \"\"", "bio = \"None\"", "bio = \"  \""],
     "correct_option": 1,
-    "expected_outcome": "فقط عدد 0 (به‌عنوان int، نه رشته) به False تبدیل میشه. رشته‌ی \"0\" یه رشته‌ی غیرخالیه، پس truthy ـه — حتی رشته‌ی \"False\" هم چون خالی نیست، True حساب میشه.",
-    "hints": ["فقط 0 خالص (عدد)، رشته‌ی خالی و None فالسی‌ان.", "\"0\" یه رشته با یه کاراکتره — خالی نیست."],
+    "expected_outcome": "فقط رشته‌ی کاملاً خالی \"\" به False تبدیل می‌شه. \"0\" و \"None\" رشته‌های غیرخالی‌ان (حتی اگه معنیشون خالی به‌نظر بیاد)، و \"  \" هم دو تا فاصله داره یعنی خالی نیست.",
+    "hints": ["فقط 0 خالص (عدد)، رشته‌ی کاملاً خالی و None فالسی‌ان — نه رشته‌هایی که این کلمات رو دارن.", "یه رشته با فاصله هم غیرخالیه، چون حداقل یه کاراکتر توشه."],
     "rubric": "Correct only if option 1 is selected."
   }
 ]

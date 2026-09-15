@@ -1,24 +1,24 @@
 [
   {
-    "key": "use-math-ceil",
-    "title": "گرد به بالا کن",
+    "key": "round-up-the-price",
+    "title": "قیمت محصول رو گرد کن",
     "form": "coding",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "با استفاده از ماژول math، عدد `4.1` رو گرد به بالا کن و چاپش کن (نتیجه باید 5 باشه).",
+    "prompt": "قیمت یه محصول توی فروشگاهت `4.1` دلاره، ولی سیستم فروش فقط عدد صحیح قبول می‌کنه و برای اطمینان از سود، همیشه گرد به بالا می‌کنه. با ماژول math، قیمت رو گرد به بالا کن و چاپش کن.",
     "expected_outcome": "```python\nimport math\nprint(math.ceil(4.1))\n```",
     "hints": ["اول باید ماژول math رو import کنی.", "تابعی که دنبالشی همون چیزیه که توی درس دیدیم: ceil."],
     "rubric": "Correct: imports math and calls math.ceil(4.1), printing 5. Partial: uses round() instead of math.ceil (gives a different, wrong result for 4.1). Incorrect: doesn't import math, or uses an unrelated approach."
   },
   {
-    "key": "predict-round",
-    "title": "این گرد کردن چی میده؟",
+    "key": "round-the-final-score",
+    "title": "امتیاز نهایی بازیکن رو گرد کن",
     "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "```python\nprint(round(3.5))\n```\nخروجی چیه؟",
+    "prompt": "امتیاز یه بازیکن `3.5` شده و می‌خوای برای نمایش گردش کنی:\n```python\nprint(round(3.5))\n```\nروی صفحه چی می‌بینی؟",
     "expected_outcome": "4",
-    "hints": ["round نزدیک‌ترین عدد صحیح رو برمی‌گردونه.", "3.5 به کدوم عدد نزدیک‌تره، 3 یا 4؟"],
+    "hints": ["round نزدیک‌ترین عدد صحیح رو برمی‌گردونه.", "3.5 دقیقاً وسط 3 و 4 ـه؛ پایتون این حالت خاص رو به‌سمت عدد زوج گرد می‌کنه."],
     "rubric": "Correct only if the answer is 4."
   }
 ]

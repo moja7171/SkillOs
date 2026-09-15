@@ -1,24 +1,24 @@
 [
   {
-    "key": "slash-vs-double-slash",
-    "title": "/ و // فرقشون چیه؟",
+    "key": "splitting-chocolates",
+    "title": "تقسیم کردن شکلات بین بچه‌ها",
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "```python\nprint(7 / 2)\nprint(7 // 2)\n```\nهر خط چی چاپ می‌کنه؟",
-    "expected_outcome": "خط اول: 3.5 — خط دوم: 3",
-    "hints": ["/ همیشه float میده، حتی اگه بخش‌پذیر باشه.", "// فقط قسمت صحیح تقسیم رو نگه می‌داره، اعشار رو دور می‌ندازه."],
-    "rubric": "Correct: gives 3.5 for the first line and 3 for the second. Partial: gets one of the two right. Incorrect: neither."
+    "prompt": "۷ تا شکلات داری و می‌خوای بین ۲ تا بچه به‌طور مساوی و بدون خرد کردن پخش کنی.\n```python\nprint(7 // 2)\nprint(7 % 2)\n```\nخط اول چندتا شکلات به هر بچه می‌رسه رو نشون می‌ده، خط دوم چندتا شکلات اضافه می‌مونه. هرکدوم چیه؟",
+    "expected_outcome": "خط اول: 3 (هر بچه ۳ تا می‌گیره) — خط دوم: 1 (یکی اضافه می‌مونه)",
+    "hints": ["// فقط قسمت صحیح تقسیم رو نگه می‌داره.", "% باقی‌مونده‌ی تقسیمه."],
+    "rubric": "Correct: gives 3 for the first line and 1 for the second. Partial: gets one of the two right. Incorrect: neither."
   },
   {
-    "key": "augmented-assignment",
-    "title": "کوتاه‌ترش کن",
+    "key": "add-to-cart",
+    "title": "یه آیتم دیگه به سبد خرید اضافه کن",
     "form": "coding",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "این خط رو با عملگر انتساب ترکیبی کوتاه‌تر بنویس:\n```python\nx = x - 5\n```",
-    "expected_outcome": "```python\nx -= 5\n```",
-    "hints": ["برای هر عملگر ریاضی، یه نسخه‌ی کوتاه‌شده هم هست.", "همون‌جور که += برای جمع بود، این یکی برای تفریقه."],
-    "rubric": "Correct only if the answer is `x -= 5` (or equivalent spacing)."
+    "prompt": "کاربر دوباره روی «افزودن به سبد» زده. اگه `quantity = 2` باشه، این خط رو با عملگر انتساب ترکیبی کوتاه‌تر بنویس:\n```python\nquantity = quantity + 1\n```",
+    "expected_outcome": "```python\nquantity += 1\n```",
+    "hints": ["برای هر عملگر ریاضی، یه نسخه‌ی کوتاه‌شده هم هست.", "همون‌جور که += برای جمع بود."],
+    "rubric": "Correct only if the answer is `quantity += 1` (or equivalent spacing)."
   }
 ]

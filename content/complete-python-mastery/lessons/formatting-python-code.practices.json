@@ -1,24 +1,24 @@
 [
   {
-    "key": "pep8-spacing",
-    "title": "فاصله‌گذاری طبق PEP 8",
+    "key": "code-review",
+    "title": "داری کد یه نفر دیگه رو ریویو می‌کنی",
     "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "کدام یک از این دو خط با استانداردهای PEP 8 سازگار است؟\n```python\nx=1\n```\nیا\n```python\nx = 1\n```",
-    "expected_outcome": "x = 1",
-    "hints": ["به قانون فاصله‌گذاری دور عملگر انتساب که در متن درس آمد فکر کن.", "PEP 8 دور `=` فاصله می‌خواهد."],
-    "rubric": "Correct only if the answer identifies \"x = 1\" (with spaces around =) as PEP 8 compliant."
+    "prompt": "یه هم‌تیمی این خط رو توی پول ریکوئست فرستاده:\n```python\nprice=100\n```\nطبق PEP 8 باید چی بهش پیشنهاد بدی؟",
+    "expected_outcome": "price = 100",
+    "hints": ["به قانون فاصله‌گذاری دور عملگر انتساب که توی درس اومد فکر کن.", "PEP 8 دور = فاصله می‌خواد."],
+    "rubric": "Correct only if the answer identifies \"price = 100\" (with spaces around =) as the PEP 8 compliant fix."
   },
   {
-    "key": "what-is-pep8",
-    "title": "PEP 8 چیست؟",
+    "key": "explain-pep8-to-a-new-teammate",
+    "title": "یه هم‌تیمی تازه پیوسته",
     "form": "explanation",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "در ۲ تا ۳ جمله توضیح بده PEP 8 چیست و چرا رعایتش برای یک تیم برنامه‌نویسی اهمیت دارد.",
-    "expected_outcome": "PEP 8 راهنمای رسمی سبک نوشتن کد پایتون است. رعایتش باعث می‌شود کد افراد مختلف یک تیم یکدست و خواناتر باشد و خواندن کد یکدیگر راحت‌تر شود.",
-    "hints": ["PEP مخفف چیست؟ به سندهای رسمی زبان پایتون فکر کن.", "یکدستی کد بین اعضای تیم چه فایده‌ای دارد؟"],
+    "prompt": "یه هم‌تیمی تازه به تیمتون پیوسته و می‌پرسه: «چرا همه اینجا انقدر روی سبک نوشتن کد حساسن؟ PEP 8 دیگه چیه؟» در ۲ تا ۳ جمله جوابش بده.",
+    "expected_outcome": "PEP 8 راهنمای رسمی سبک نوشتن کد پایتونه. رعایتش باعث می‌شه کد افراد مختلف یه تیم یکدست و خواناتر باشه و خوندن کد همدیگه راحت‌تر بشه.",
+    "hints": ["PEP مخفف چیه؟ به سندهای رسمی زبان پایتون فکر کن.", "یکدستی کد بین اعضای تیم چه فایده‌ای داره؟"],
     "rubric": "Correct: identifies PEP 8 as Python's official style guide AND mentions consistency/readability across a team. Partial: only one of the two. Incorrect: neither."
   }
 ]

@@ -117,3 +117,20 @@ Priority, level, practice form, review/learn/practice — each with its own colo
 
 ### [ ] S-43 (content, not UI) Source videos carry a third-party watermark
 Not fixable from the app side — the video files themselves (from the GIT.IR download) have a burned-in logo. Noted for awareness, not actionable here.
+
+## M11 — Accessibility
+
+### [ ] S-44 Mobile sidebar close button has no accessible name
+`lessons/show.blade.php`'s `×` button closing the mobile curriculum drawer has no `title`/`aria-label`/text — a screen reader announces only "button".
+
+### [ ] S-45 Icon-only controls use `title`, not `aria-label`
+Every other icon-only button/link (search, theme, hamburger, edit, skip, session-exit) has a `title` attribute, which does work as a fallback accessible name but is weaker than `aria-label` (inconsistent screen-reader support, tooltip-only visible hint). Switch them over.
+
+### [ ] S-46 Search input has no label
+`search/index.blade.php`'s `<input name="q">` relies on `placeholder` alone, which isn't a reliable accessible name (disappears on input, not consistently exposed to assistive tech). Needs a real `<label>` (visually hidden is fine).
+
+### [ ] S-47 Dropdown menus (`x-dropdown`) aren't keyboard-dismissible and don't announce state
+Closes on an outside click but not on Escape; the trigger button has no `aria-expanded`/`aria-haspopup` telling assistive tech it opens a menu.
+
+### [ ] S-48 `text-faint` fails WCAG AA contrast
+Measured: 2.43:1 in light mode, 2.74-3.20:1 in dark mode (against `bg`/`surface`/`surface2`) — both well under the 4.5:1 minimum for normal text. Used for practice durations, hints, timestamps and more, so this is a real readability issue, not just a technicality.

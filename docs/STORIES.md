@@ -134,3 +134,6 @@ Closes on an outside click but not on Escape; the trigger button has no `aria-ex
 
 ### [ ] S-48 `text-faint` fails WCAG AA contrast
 Measured: 2.43:1 in light mode, 2.74-3.20:1 in dark mode (against `bg`/`surface`/`surface2`) — both well under the 4.5:1 minimum for normal text. Used for practice durations, hints, timestamps and more, so this is a real readability issue, not just a technicality.
+
+### [ ] S-49 Progress bars (`x-level-bar`) carry zero accessible information
+Purely decorative `<span style="width:N%">` segments — no `role="progressbar"`, `aria-valuenow`, or any text equivalent. Used on Home's course cards, the course page, and the lesson page's section-progress bar; a screen reader announces nothing about progress at all in any of these spots. Found on a second, more thorough pass (screenshots of every remaining page + a CDP console-error sweep across all main routes, which came back clean — no JS errors anywhere).

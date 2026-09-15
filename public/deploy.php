@@ -80,7 +80,10 @@ $commands = [
 ];
 
 foreach (glob($root.'/content/*', GLOB_ONLYDIR) as $dir) {
-    if (is_file($dir.'/course.json')) {
+    // sample-course is a test/local-demo fixture, not real content -- same exclusion as
+    // OpsController::courseSlugs() on main, duplicated here since this script runs
+    // standalone before routing exists and can't reuse that method directly.
+    if (is_file($dir.'/course.json') && basename($dir) !== 'sample-course') {
         $commands[] = ['content:import', ['slug' => basename($dir), '--prune' => true]];
     }
 }

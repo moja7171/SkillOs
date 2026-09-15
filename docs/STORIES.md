@@ -70,3 +70,14 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 ## M6 — Real use
 
 ### [ ] S-24 One week of daily use on the Python course; tune DECISIONS §3 numbers with dated notes.
+
+## M7 — Engagement (habit-formation, cross-course)
+
+### [x] S-25 Streak, daily-goal progress bar, short-gap nudge on Home (DECISIONS §21)
+### [ ] S-26 Weekly recap widget
+### [ ] S-27 Cross-course monthly stats
+### [ ] S-28 Level-up celebration polish
+### [ ] S-29 Review-retention stat on the lesson page
+### [ ] S-30 "5-minute mode" quick-review button on Home
+### [ ] S-31 Global search across lessons
+### [ ] S-32 Friends streak/stats view

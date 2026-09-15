@@ -6,6 +6,34 @@
                 <div class="alert alert-ok">{{ session('status') }}</div>
             @endif
 
+            {{-- Streak + today's progress --}}
+            @if ($streakCount > 0 || $plannedMinutes > 0)
+                <div class="flex items-center gap-4 flex-wrap">
+                    @if ($streakCount > 0)
+                        <div class="flex items-center gap-1.5 text-[13.5px] font-semibold text-warn shrink-0">
+                            <x-icon name="flame" class="w-[18px] h-[18px]" />
+                            {{ fa_num($streakCount) }} روز پشت‌سرهم
+                        </div>
+                    @endif
+                    @if ($plannedMinutes > 0)
+                        <div class="flex items-center gap-2 flex-1 min-w-[160px]">
+                            <div class="flex-1 h-2 rounded-full bg-surface2 overflow-hidden">
+                                <div class="h-full rounded-full" style="width: {{ min(100, round($doneMinutes / $plannedMinutes * 100)) }}%; background: var(--accent);"></div>
+                            </div>
+                            <span class="text-[12.5px] text-muted shrink-0">{{ fa_num($doneMinutes) }}/{{ fa_num($plannedMinutes) }} دقیقه‌ی امروز</span>
+                        </div>
+                    @endif
+                </div>
+            @endif
+
+            {{-- Gentle nudge after a short gap --}}
+            @if ($daysSinceLastActivity !== null && $daysSinceLastActivity >= 2 && $daysSinceLastActivity < 14)
+                <div class="card px-4 py-3 flex items-center gap-3" style="border-color: var(--line2);">
+                    <x-icon name="sparkle" class="w-[18px] h-[18px] text-muted shrink-0" />
+                    <span class="text-[13.5px]">{{ fa_num($daysSinceLastActivity) }} روزه نیومدی — یه مرور کوتاه امروز حالتو جا میاره.</span>
+                </div>
+            @endif
+
             {{-- Continue Learning --}}
             @if ($primary)
                 <div class="card" style="border-color: var(--line2);">

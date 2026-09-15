@@ -18,6 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            // Daily-activity streak (DECISIONS.md §21): bumped once per calendar day the
+            // first time any attempt finalizes, across every course.
+            $table->unsignedInteger('streak_count')->default(0);
+            $table->date('streak_last_date')->nullable();
             $table->timestamps();
         });
 

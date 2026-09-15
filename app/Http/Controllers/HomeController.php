@@ -22,6 +22,8 @@ class HomeController extends Controller
 
         $todayByEnrollment = $planner->orderForLearner($plan['items'])->groupBy('enrollment_id');
 
+        $daysSinceLastActivity = $user->streak_last_date ? $user->streak_last_date->diffInDays(today()) : null;
+
         return view('home', [
             'enrollments' => $enrollments,
             'primary' => $plan['primary'],
@@ -29,6 +31,8 @@ class HomeController extends Controller
             'todayByEnrollment' => $todayByEnrollment,
             'plannedMinutes' => $plan['items']->sum('duration_minutes'),
             'doneMinutes' => $plan['items']->where('status', 'completed')->sum('duration_minutes'),
+            'streakCount' => $user->streak_count,
+            'daysSinceLastActivity' => $daysSinceLastActivity,
         ]);
     }
 }

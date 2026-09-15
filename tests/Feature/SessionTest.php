@@ -63,6 +63,7 @@ class SessionTest extends TestCase
         $this->assertSame('completed', $attempt->result_status);
         $this->assertNotNull($attempt->completed_at);
         $this->assertNotNull(Enrollment::first()->last_activity_at);
+        $this->assertSame(1, $this->user->fresh()->streak_count);
 
         $this->actingAs($this->user)->get(route('session.show', $attempt))->assertOk()->assertSee('برو سراغ تمرین')->assertDontSee('آماده‌ام');
         $this->actingAs($this->user)->post(route('session.complete', $attempt))->assertStatus(422);

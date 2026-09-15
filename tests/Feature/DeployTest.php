@@ -27,7 +27,7 @@ class DeployTest extends TestCase
     {
         config(['app.ops_token' => 'secret']);
 
-        $this->get('/_ops/status?token=secret')->assertOk()->assertSee('courses on disk: python-deep-dive-1, sample-course');
+        $this->get('/_ops/status?token=secret')->assertOk()->assertSee('courses on disk: complete-python-mastery, python-deep-dive-1, sample-course');
         $this->get('/_ops/migrate?token=secret')->assertOk()->assertSee('artisan migrate → exit 0');
         $this->get('/_ops/import?token=secret&slug=sample-course')->assertOk()->assertSee('artisan content:import → exit 0');
         $this->assertDatabaseHas('courses', ['slug' => 'sample-course']);

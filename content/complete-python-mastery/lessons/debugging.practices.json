@@ -1,0 +1,26 @@
+[
+  {
+    "key": "step-over-vs-into",
+    "title": "کدوم کلید مناسبه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی حالت دیباگ، رسیدی به خطی که تابع `calculate_total()` رو صدا می‌زنه. می‌خوای دقیقاً ببینی داخل خود اون تابع چه اتفاقی می‌افته. کدوم کلید رو باید بزنی؟",
+    "options": ["F11 (Step Into)", "F10 (Step Over)", "F5 (Continue)", "Shift+F5 (Stop)"],
+    "correct_option": 0,
+    "expected_outcome": "F11 — برای رفتن داخل خود تابعی که صدا زده می‌شه و دیدن اجرای خط‌به‌خطش، از Step Into استفاده می‌کنیم. F10 بدون رفتن داخلش، از کل خط رد می‌شه.",
+    "hints": ["برای دیدن داخل یه تابع، باید واردش بشی، نه ازش رد بشی.", "F10 از خط رد می‌شه؛ F11 می‌ره داخلش."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "friend-review-trusted-function",
+    "title": "یه هم‌تیمی سؤال داره",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی داره یه تابع بزرگ رو دیباگ می‌کنه؛ توی وسط راه به یه تابع دیگه می‌رسه که مطمئنه قبلاً کامل تستش کرده و مشکلی نداره. می‌پرسه «باید با F10 خط‌به‌خط از توش رد بشم؟» در ۱ تا ۲ جمله بهش جواب بده.",
+    "expected_outcome": "نه لازم نیست. چون مطمئنه اون تابع درست کار می‌کنه، می‌تونه با F11 بره داخلش (یا اصلاً وارد نشه) و اگه اشتباهی وارد شد، با Shift+F11 (Step Out) بلافاصله ازش بیاد بیرون، بدون اینکه مجبور باشه خط‌به‌خط کل تابع رو طی کنه.",
+    "hints": ["یه کلید مخصوص «بیا بیرون از تابع فعلی» وجود داره.", "Shift+F11 دقیقاً برای همین سناریوهاست."],
+    "rubric": "Correct if the answer recommends using Shift+F11 (Step Out) to skip stepping through a trusted function line by line. Correct_with_hint if it says \"no need to step through\" without naming the shortcut. Incorrect if it says F10/F11 must be used for every line regardless."
+  }
+]

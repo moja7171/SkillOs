@@ -1,0 +1,24 @@
+[
+  {
+    "key": "help-friend-duplicate-line",
+    "title": "یه هم‌تیمی سؤال داره",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی می‌خواد یه خط کد رو دقیقاً همون‌جا تکثیر کنه (نه کات و پیست، مستقیم duplicate). روی ویندوزه. چه میان‌بری بهش پیشنهاد می‌دی؟",
+    "expected_outcome": "Shift + Alt + پایین (یا بالا) — خط انتخاب‌شده رو مستقیم تکثیر می‌کنه، بدون نیاز به کات و پیست.",
+    "hints": ["میان‌بر تکثیر خط شبیه میان‌بر جابه‌جاکردن خطه، فقط یه کلید بیشتر داره.", "به جدول میان‌برهای ویندوز/مک درس برگرد."],
+    "rubric": "Correct only if the answer names Shift+Alt+Down (or Up) as the Windows duplicate-line shortcut."
+  },
+  {
+    "key": "intellisense-abbreviation",
+    "title": "تایپ سریع‌تر",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی همیشه کل اسم `calculate_total` رو حرف‌به‌حرف تایپ می‌کنه. در ۱ تا ۲ جمله بهش بگو چطور می‌تونه سریع‌تر بنویسدش.",
+    "expected_outcome": "لازم نیست کل اسم رو تایپ کنه — می‌تونه چند حرف اول (مثلاً calc) رو بنویسه و از پیشنهاد IntelliSense انتخاب کنه، یا حتی حروفی از وسط اسم رو به ترتیب بنویسه (مثلاً ctt) تا IntelliSense پیداش کنه.",
+    "hints": ["IntelliSense فقط با حروف اول کار نمی‌کنه.", "می‌شه حروف پراکنده از وسط اسم رو هم به ترتیب تایپ کرد."],
+    "rubric": "Correct if the answer mentions typing a few starting letters (or scattered letters in order) and picking from IntelliSense's suggestions instead of typing the full name."
+  }
+]

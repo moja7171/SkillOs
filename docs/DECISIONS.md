@@ -598,3 +598,28 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Direct owner request: enroll from the catalog too, and always land on the schedule form right after so the course actually enters the plan instead of silently sitting unconfigured.
 
 **Consequences.** Any future "enroll" entry point (there are currently two: catalog, course show) should redirect through the same controller action rather than duplicating the "new vs already-enrolled" branch, so the landing behavior stays consistent by construction.
+
+---
+
+## 41. Video player seeks 5s instead of 10s (2026-09-15)
+
+**Decision.** `resources/js/player.js`'s Plyr instance had `seekTime: 10`; changed to `5`. This single option drives the rewind/fast-forward buttons and the ←/→ and J/L keyboard shortcuts uniformly (Plyr's own behavior, not something this app wires up separately) — updated the i18n comment documenting the keyboard shortcuts to match.
+
+**Why.** Direct owner request.
+
+**Consequences.** None beyond the seek granularity itself — no other code reads or depends on the seek amount.
+
+---
+
+## 42. Default database switched from SQLite to MySQL (2026-09-15)
+
+**Decision.** `DB_CONNECTION` defaults to `mysql` now (`.env.example`, `.env.production.example`), not `sqlite` — §12 originally picked SQLite specifically for the zero-dependency shared-hosting story, but the owner wants MySQL instead. Nothing in the schema or app code was SQLite-specific (checked: no raw SQL, no SQLite-only column types; `php artisan migrate:fresh` ran clean against MySQL 8 on the first try), so this was a config-only switch plus two small generalizations:
+
+- `OpsController::status()`/`migrate()` and `deploy.php` (deploy branch) hardcoded `config('database.connections.sqlite.database')` and touched a SQLite file into existence before migrating. Both now branch on `config('database.default')`: the SQLite file-creation path only runs when that's still the active connection; `status` reports a file path/size for SQLite or attempts a real `DB::connection()->getPdo()` connection and reports host/database/reachability for anything else.
+- README's local setup now leads with a one-line `docker run` for a local MySQL 8 container (the fastest zero-install path) and the shared-hosting deploy doc adds "create a database in cPanel's MySQL Databases tool first" as a step before creating `.env`.
+
+SQLite is **not removed** — every doc still documents it as a valid alternative (comment out the `DB_*` block, or a single request-param note in `.env.production.example`), and `OpsController`/`deploy.php` both still handle it correctly. Test suite still runs on an isolated SQLite `:memory:` database (`phpunit.xml`), unrelated to and unaffected by the app's runtime connection — kept as-is since it's faster and needs no server.
+
+**Why.** Direct owner request.
+
+**Consequences.** Local dev (and any future host) now needs a reachable MySQL/MariaDB server rather than "nothing, SQLite is just a file" — a real but small trade, and Docker makes the local side a one-liner. Anyone deploying fresh to shared hosting now has one extra one-time step (create the database in cPanel) before the usual `.env` + `/_ops/migrate` flow.

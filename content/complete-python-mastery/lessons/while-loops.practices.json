@@ -1,0 +1,26 @@
+[
+  {
+    "key": "while-trace",
+    "title": "چندبار تکرار می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nnumber = 1\nwhile number < 20:\n    print(number)\n    number *= 2\n```\nچندبار `print` اجرا می‌شه؟",
+    "options": ["4", "5", "6", "20"],
+    "correct_option": 1,
+    "expected_outcome": "5 — مقادیر number: 1, 2, 4, 8, 16 (هر بار قبل از دوبرابرشدن چاپ می‌شه). وقتی number به 32 برسه، دیگه از 20 کوچیک‌تر نیست و حلقه متوقف می‌شه.",
+    "hints": ["مقادیر number رو قدم‌به‌قدم دنبال کن: 1، 2، 4، 8، 16، بعدش؟", "شرط را قبل از هر تکرار چک می‌کنیم، نه بعدش."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "case-insensitive-comparison",
+    "title": "یه هم‌تیمی این خط رو نوشته",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی می‌خواد حلقه‌ش تا وقتی کاربر «yes» تایپ نکرده ادامه پیدا کنه، و این کد رو نوشته:\n```python\nanswer = \"\"\nwhile answer != \"yes\":\n    answer = input(\"> \")\n```\nمی‌گه وقتی کاربر `YES` یا `Yes` تایپ می‌کنه، حلقه متوقف نمی‌شه. چرا این اتفاق می‌افته و چطور درستش کنیم؟",
+    "expected_outcome": "چون مقایسه‌ی رشته‌ها به بزرگی/کوچیکی حروف حساسه؛ \"YES\" != \"yes\" هست. راه‌حل: قبل از مقایسه، ورودی رو با متد `lower()` یکدست کوچیک کنیم: `while answer.lower() != \"yes\":`.",
+    "hints": ["مقایسه‌ی رشته‌ای حساس به بزرگی/کوچیکی حروفه.", "یه متد روی رشته هست که همه‌چیزو کوچیک می‌کنه."],
+    "rubric": "Correct if the answer identifies case-sensitive string comparison as the cause AND proposes using .lower() (or equivalent normalization) on the comparison. Correct_with_hint if only the cause is identified. Incorrect otherwise."
+  }
+]

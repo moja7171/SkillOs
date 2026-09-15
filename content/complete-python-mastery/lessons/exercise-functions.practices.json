@@ -1,0 +1,26 @@
+[
+  {
+    "key": "fizzbuzz-trace",
+    "title": "با ۹ چی می‌گیریم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "با نسخه‌ی نهایی و درستِ `fizz_buzz` توی درس، `fizz_buzz(9)` چی برمی‌گردونه؟",
+    "options": ["Fizz", "Buzz", "FizzBuzz", "9"],
+    "correct_option": 0,
+    "expected_outcome": "Fizz — 9 بر 3 بخش‌پذیره ولی بر 5 نه، پس فقط شرط دوم (input % 3 == 0) برقراره.",
+    "hints": ["9 بر 3 بخش‌پذیره؟ بر 5 چی؟", "فقط یکی از دو شرط برقراره، نه هر دو."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "ordering-bug-in-new-function",
+    "title": "همون باگ، یه جای دیگه",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه هم‌تیمی می‌خواد سن یه نفر رو دسته‌بندی کنه: اگه بین ۰ تا ۱۲ سالشونه «کودک»، اگه بین ۱۳ تا ۱۹ سالشونه «نوجوان»، وگرنه «بزرگسال». این کد رو نوشته:\n```python\ndef classify(age):\n    if age >= 0:\n        return \"Child\"\n    if 13 <= age <= 19:\n        return \"Teenager\"\n    return \"Adult\"\n```\nبا `classify(15)` انتظار «Teenager» داره ولی «Child» می‌گیره. در ۲ تا ۳ جمله بگو چرا، و چطور درستش کنه.",
+    "expected_outcome": "شرط اول (`age >= 0`) برای هر سن غیرمنفی True‌ه، از جمله 15 — پس خیلی زود و همیشه برنده می‌شه و تابع هیچ‌وقت به شرط «نوجوان» نمی‌رسه. باید مثل FizzBuzz، شرط دقیق‌تر (نوجوان‌بودن) رو زودتر چک کنه، نه شرط عمومی‌تر (منفی‌نبودن).",
+    "hints": ["دقیقاً همون مشکل FizzBuzz رو داره: یه شرط عمومی زودتر از یه شرط دقیق‌تر چک می‌شه.", "age >= 0 برای همه‌ی سن‌های منطقی True‌ه، پس همیشه همون اول برمی‌گرده."],
+    "rubric": "Correct if the answer identifies that the general \"age >= 0\" condition matches first and always wins over the more specific teenager check, and proposes reordering to check the specific range first. Correct_with_hint if it identifies the symptom without the general-vs-specific ordering reasoning. Incorrect otherwise."
+  }
+]

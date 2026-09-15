@@ -1,6 +1,6 @@
 import Plyr from 'plyr';
 
-// Persian UI strings for the player. Keyboard: space/K play, ←/→ or J/L ±10s,
+// Persian UI strings for the player. Keyboard: space/K play, ←/→ or J/L ±5s,
 // ↑/↓ volume, M mute, F fullscreen, C captions, 0–9 jump to %.
 const i18n = {
     restart: 'از اول', rewind: '{seektime} ثانیه عقب', play: 'پخش', pause: 'توقف',
@@ -32,7 +32,7 @@ export function mountPlayers(root = document) {
                 'mute', 'volume', 'captions', 'settings', 'pip', 'fullscreen'],
             settings: ['captions', 'speed'],
             speed: { selected: parseFloat(read(SPEED_KEY)) || 1, options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2] },
-            seekTime: 10,
+            seekTime: 5,
             keyboard: { focused: true, global: true },
             tooltips: { controls: true, seek: true },
             captions: { active: true, language: el.dataset.captionsDefault || 'en', update: true },

@@ -1,0 +1,24 @@
+[
+  {
+    "key": "add-keyword-argument",
+    "title": "این خط رو خواناتر کن",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "این فراخوانی رو با آرگومان کلیدی بازنویسی کن تا معلوم باشه `5` دقیقاً چه نقشی داره:\n```python\ndef increment(number, by):\n    return number + by\n\n\nprint(increment(10, 5))\n```",
+    "expected_outcome": "```python\nprint(increment(10, by=5))\n```",
+    "hints": ["اسم پارامتر دوم رو جلوی مقدارش بذار.", "فقط آرگومان دوم نیاز به تغییره؛ اولی همون‌طور می‌مونه."],
+    "rubric": "Correct: rewrites the call as increment(10, by=5) (positional first argument unchanged, second argument named). Partial: uses the keyword but changes the values. Incorrect: doesn't use a keyword argument at all."
+  },
+  {
+    "key": "readability-explanation",
+    "title": "چرا این خط بهتره؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "این دو خط دقیقاً یه کار می‌کنن:\n```python\nschedule_meeting(\"Sara\", True)\nschedule_meeting(\"Sara\", urgent=True)\n```\nدومی از نظر خوانایی چه فرقی با اولی داره؟",
+    "expected_outcome": "توی خط دوم، اسم پارامتر (urgent) جلوی مقدارش نوشته شده، پس معلومه True دقیقاً برای چیه. توی خط اول، از دیدن فقط True نمی‌فهمی چه نقشی داره.",
+    "hints": ["به تفاوت بین دیدن فقط True و دیدن urgent=True فکر کن.", "یه مقدار بولی به‌تنهایی معمولاً گویا نیست."],
+    "rubric": "Correct if the answer notes that naming the parameter (urgent=True) makes clear what the value represents, while the bare True in the first call does not."
+  }
+]

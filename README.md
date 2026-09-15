@@ -6,15 +6,26 @@ Product docs live in `docs/` — `PRD.md`, `DESIGN.md`, `DECISIONS.md` (algorith
 
 ## Local setup
 
+Needs a MySQL (or MariaDB) server — the quickest way, if you have Docker:
+
+```sh
+docker run -d --name skillos-mysql -p 3306:3306 \
+  -e MYSQL_DATABASE=skillos -e MYSQL_USER=skillos -e MYSQL_PASSWORD=skillos -e MYSQL_ROOT_PASSWORD=root \
+  mysql:8
+```
+
+Then:
+
 ```sh
 composer install
-cp .env.example .env && php artisan key:generate
-touch database/database.sqlite
+cp .env.example .env && php artisan key:generate   # DB_* already points at the container above
 php artisan migrate
 php artisan content:import sample-course     # demo course
 npm install --registry=https://registry.npmjs.org/ && npm run build
 php artisan serve
 ```
+
+No server handy, or don't want one? SQLite still works — `touch database/database.sqlite`, set `DB_CONNECTION=sqlite` and `DB_DATABASE=database/database.sqlite` in `.env`, skip the `docker run` step, everything else is the same.
 
 Set `GEMINI_API_KEY` in `.env` (Google AI Studio, free tier). Gemini is used for one thing only: grading open practice answers. Without a key, MCQ practices still work and open answers show a retry message.
 
@@ -77,18 +88,19 @@ Then click **"Update from Remote"** (or **"Deploy HEAD Commit"**) in cPanel's Gi
 
 ### Manual zip upload (no git access to the host)
 
-The host only needs PHP 8.3+ with `pdo_sqlite`, `mbstring`, `openssl`, `fileinfo` and a file manager. No Node, no Composer, no cron, no queue worker on the host: the release zip is built on your machine and every deploy step runs over HTTP via `/_ops/…`.
+The host only needs PHP 8.3+ with `pdo_mysql` (or `pdo_sqlite` if you're using SQLite instead), `mbstring`, `openssl`, `fileinfo` and a file manager. No Node, no Composer, no cron, no queue worker on the host: the release zip is built on your machine and every deploy step runs over HTTP via `/_ops/…`.
 
 1. **Build the bundle** (from a committed tree): `tools/build-release.sh` → `release/skillos-<date>-<sha>.zip` containing `skillos/` (the app with `vendor/`) and `public_html/` (the web root).
 2. **Upload + extract** the zip in the host's file manager into your home directory, so you get `~/skillos/` next to `~/public_html/`. If the host gives you only `public_html`, extract there instead: `public_html/skillos/` is denied by its `.htaccess` and the front controller finds it.
-3. **Create `skillos/.env`** from `skillos/.env.production.example`: `APP_URL`, `APP_KEY` (run `php artisan key:generate --show` locally and paste), `GEMINI_API_KEY`, a long random `OPS_TOKEN`, optionally `REGISTRATION_CODE`, and `MEDIA_BASE_URL` (see below). Make sure `skillos/storage`, `skillos/bootstrap/cache` and `skillos/database` are writable (usually already, PHP runs as your user).
-4. In the browser, with `T` = your `OPS_TOKEN`:
-   - `https://your-domain/_ops/status?token=T` — sanity check (PHP version, writable dirs, courses found)
-   - `https://your-domain/_ops/migrate?token=T` — creates the SQLite file and runs migrations
+3. **Create a MySQL database + user** in cPanel's "MySQL Databases" tool (SQLite needs no such step — skip if using it instead).
+4. **Create `skillos/.env`** from `skillos/.env.production.example`: `APP_URL`, `APP_KEY` (run `php artisan key:generate --show` locally and paste), the `DB_*` values from the database you just created, `GEMINI_API_KEY`, a long random `OPS_TOKEN`, optionally `REGISTRATION_CODE`, and `MEDIA_BASE_URL` (see below). Make sure `skillos/storage` and `skillos/bootstrap/cache` are writable (usually already, PHP runs as your user; `skillos/database` only matters for SQLite).
+5. In the browser, with `T` = your `OPS_TOKEN`:
+   - `https://your-domain/_ops/status?token=T` — sanity check (PHP version, DB connection, writable dirs, courses found)
+   - `https://your-domain/_ops/migrate?token=T` — runs migrations (also creates the SQLite file first, if that's what you're using)
    - `https://your-domain/_ops/import?token=T` — imports every course under `content/` except `sample-course` (a test fixture, never auto-shipped); `&slug=x` for one course (any slug, including `sample-course`), `&prune=1` to delete removed lessons
    - `https://your-domain/_ops/delete-course?token=T&slug=x` — permanently removes a course and everything under it (there's no other way to remove a course on a host with no shell access; `slug` is required, no bulk form)
    - `https://your-domain/_ops/optimize?token=T` — caches config/routes/views
-5. Register the first account at `/register` (with the invite code if you set one).
+6. Register the first account at `/register` (with the invite code if you set one).
 
 Every later update: `tools/build-release.sh`, upload + extract over the previous release (the zip never contains `.env`, `database/` or `storage/`, so nothing is lost), then hit `/_ops/migrate`, `/_ops/import` and `/_ops/optimize` again; `/_ops/clear` drops the caches if something looks stale. Content-only updates can skip the zip: upload the changed `content/<course>/` files into `skillos/content/` and hit `/_ops/import`.
 

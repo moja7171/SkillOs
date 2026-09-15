@@ -1,0 +1,26 @@
+[
+  {
+    "key": "kwargs-type-trace",
+    "title": "و این‌بار چه نوعیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ndef save_user(**info):\n    print(type(info))\n\n\nsave_user(id=1, name=\"Sara\")\n```\nخروجی چیه؟",
+    "options": ["<class 'dict'>", "<class 'tuple'>", "<class 'list'>", "<class 'str'>"],
+    "correct_option": 0,
+    "expected_outcome": "<class 'dict'> — پارامتری که با ** تعریف می‌شه، آرگومان‌های کلیدی رو توی یه دیکشنری جمع می‌کنه.",
+    "hints": ["دو ستاره (**) یعنی جمع‌کردن آرگومان‌های کلیدی، نه معمولی.", "نتیجه‌ش یه ساختار کلید-مقداره."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "access-kwargs-value",
+    "title": "مقدار یه کلید رو بگیر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این تابع رو کامل کن تا مقدار کلید `\"email\"` رو از `info` چاپ کنه:\n```python\ndef save_user(**info):\n    # اینجا کامل کن\n\n\nsave_user(id=2, name=\"Ali\", email=\"ali@example.com\")\n```",
+    "expected_outcome": "```python\ndef save_user(**info):\n    print(info[\"email\"])\n```\nخروجی: `ali@example.com`",
+    "hints": ["با نماد کروشه به مقدار یه کلید دسترسی داری: info[\"...\"] .", "اسم دقیق کلید همونیه که موقع صدازدن تابع استفاده شده: email."],
+    "rubric": "Correct: prints info[\"email\"] (bracket access with the exact key name). Partial: correct idea but wrong key name or syntax. Incorrect: doesn't access the dictionary correctly, or prints the whole dict instead."
+  }
+]

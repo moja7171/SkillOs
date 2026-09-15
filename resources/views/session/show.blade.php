@@ -34,12 +34,12 @@
             </div>
             <div class="hidden sm:flex items-center gap-2">
                 @if ($isLearn)
-                    <span class="badge badge-l1">یادگیری</span>
+                    <span class="badge badge-ghost"><x-icon name="play" class="w-3 h-3" /> یادگیری</span>
                 @else
                     @if (($evidence['source'] ?? null) === 'review')
-                        <span class="badge badge-l2">مرور</span>
+                        <span class="badge badge-ghost"><x-icon name="refresh" class="w-3 h-3" /> مرور</span>
                     @endif
-                    <span class="badge badge-l3">تمرین</span>
+                    {{-- "تمرین" is implied by the form label below it (e.g. "چندگزینه‌ای"), so it isn't repeated here --}}
                     <span class="badge badge-ghost">{{ $activity->formLabel() }}</span>
                     <span @class(['badge', 'badge-ok' => ($payload['difficulty'] ?? '') === 'intro', 'badge-warn' => ($payload['difficulty'] ?? '') === 'core', 'badge-bad' => ($payload['difficulty'] ?? '') === 'stretch'])>{{ $activity->difficultyLabel() }}</span>
                 @endif

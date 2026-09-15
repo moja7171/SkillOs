@@ -512,3 +512,16 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Flagged in the UI/UX review and judged the most valuable finding of that batch since it affects daily use (returning to a long course) directly, not just first impressions.
 
 **Consequences.** The default-open section is now the "next lesson" section rather than always the first — correct for a learner resuming partway through a course, but means a brand-new user with no progress sees section 1 open (same as before) while a returning user on section 7 sees section 7 open on page load, not section 1. Any future per-section metadata (e.g. a "done" count in the header) should read from the same grouped `$sections` collection rather than re-deriving boundaries from the flat list.
+
+---
+
+## 34. Badge/pill color cleanup: kind badges go neutral, one palette per meaning (S-42; 2026-09-15)
+
+**Decision.** Found a real, confirmed collision, not just a subjective "too many colors": `x-plan-item-badge` (learn/review/practice "kind") reused the `badge-l0..l4` mastery-level palette (l1=blue for یادگیری, l2=green for مرور, l3=orange for تمرین) — the *same* palette `x-level-badge` uses for mastery. `week.blade.php`'s review list puts both in one row (`badge-l2` "مرور" next to a level badge that can *also* render `badge-l2` for "آشنا"), so two adjacent pills could show the identical green for two unrelated meanings. Fixed by:
+
+- `x-plan-item-badge` and the three raw `badge-l1/l2/l3` "kind" badges (`week.blade.php`, `session/show.blade.php`) now render as neutral `badge-ghost` + a small icon (▶ یادگیری, ⟳ مرور, 💡 تمرین) instead of a colored pill. `badge-l0..l4` is now used *only* by `x-level-badge`, so a colored pill from that palette unambiguously means mastery level anywhere in the app.
+- `session/show.blade.php`'s nav (the worst stacking case — up to 4 badges: kind + kind + form + difficulty) dropped the standalone "تمرین" pill entirely: `isLearn === false` already implies practice, and the form badge right next to it (e.g. "چندگزینه‌ای") says which kind of practice, so the plain "تمرین" label was pure repetition. Verified with a real attempt (practice, review-sourced, "intro" difficulty): nav now shows مرور (neutral) + چندگزینه‌ای (neutral) + مقدماتی (the one colored pill, badge-ok) — three badges, one of them carrying color, instead of four with three fighting for attention.
+
+**Why.** Flagged in the UI/UX review ("badge/pill overload... each with its own color, stacking up, worst on mobile"); the week-view color collision confirmed it wasn't just visual noise but an actual meaning conflict.
+
+**Consequences.** `ok`/`warn`/`bad` still colors difficulty and result badges (unchanged — those two scales don't co-occur with each other in a way that collides, and both genuinely benefit from standing out). Any new "kind" or "category" indicator added later should default to `badge-ghost` + icon rather than reaching for `l0-4`/`ok`/`warn`/`bad`, which are now reserved for mastery level and outcome-quality respectively.

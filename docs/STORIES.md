@@ -112,8 +112,8 @@ Originally flagged from eyeballing a screenshot. Re-checked with actual measured
 ### [x] S-41 A course's lesson table is one long flat list — no collapsing, no jump-to-section
 With 100+ lessons (both real courses are already this size), scrolling the course page is a very long, undifferentiated scroll. Section headers exist in the table already but don't collapse or anchor-link. Judged the most valuable of this batch — affects daily use directly, not just first impressions. Fixed in DECISIONS §33.
 
-### [ ] S-42 Badge/pill overload
-Priority, level, practice form, review/learn/practice — each with its own color, stacking up next to each other, worst on mobile. Could use a more restrained, consistent color system.
+### [x] S-42 Badge/pill overload
+Priority, level, practice form, review/learn/practice — each with its own color, stacking up next to each other, worst on mobile. Could use a more restrained, consistent color system. Fixed in DECISIONS §34.
 
 ### [ ] S-43 (content, not UI) Source videos carry a third-party watermark
 Not fixable from the app side — the video files themselves (from the GIT.IR download) have a burned-in logo. Noted for awareness, not actionable here.

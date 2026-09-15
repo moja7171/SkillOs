@@ -1,0 +1,37 @@
+[
+  {
+    "key": "and-short-circuit-trace",
+    "title": "کجا ارزیابی متوقف می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nhigh_income = False\ngood_credit = True\nprint(high_income and good_credit)\n```\nپایتون تا کجا رو واقعاً چک می‌کنه؟",
+    "options": ["فقط high_income رو", "فقط good_credit رو", "هر دوتا رو", "هیچ‌کدوم، چون از قبل معلومه"],
+    "correct_option": 0,
+    "expected_outcome": "فقط high_income — چون False بود، پایتون از قبل مطمئنه که نتیجه‌ی and هر چی باشه False می‌مونه، پس اصلاً سراغ good_credit نمی‌ره.",
+    "hints": ["با `and`، به محض رسیدن به یه False، نتیجه معلومه.", "پایتون از چپ شروع می‌کنه؛ اولین مقداری که چک می‌کنه high_income‌ه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "function-call-skipped",
+    "title": "این تابع اصلاً اجرا می‌شه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "```python\ndef check_database():\n    print(\"Checking database...\")\n    return True\n\nhigh_income = False\n\nif high_income and check_database():\n    print(\"Eligible\")\n```\nآیا پیام `\"Checking database...\"` چاپ می‌شه؟ در ۲ تا ۳ جمله دلیلش رو بگو.",
+    "expected_outcome": "نه، چاپ نمی‌شه. چون `high_income` قبل از `check_database()` توی `and` قرار داره و مقدارش False‌ه، پایتون از قبل می‌دونه نتیجه‌ی کل عبارت False می‌مونه — پس هیچ‌وقت سراغ فراخوانی `check_database()` نمی‌ره و بدنه‌ی تابع (شامل همون print) هیچ‌وقت اجرا نمی‌شه.",
+    "hints": ["ترتیب مهمه: high_income اول چک می‌شه.", "با and، به محض یه False، بقیه‌ی عبارت اصلاً اجرا نمی‌شه — نه فقط نادیده گرفته می‌شه."],
+    "rubric": "Correct if the answer says the message is NOT printed and explains that high_income is False so and short-circuits before check_database() is ever called. Correct_with_hint if it says \"not printed\" without the short-circuit reasoning. Incorrect if it says the message IS printed."
+  },
+  {
+    "key": "or-short-circuit-trace",
+    "title": "و حالا با or؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nhigh_income = True\ngood_credit = False\nprint(high_income or good_credit)\n```\nپایتون چه مقدار رو چک می‌کنه، و نتیجه چیه؟",
+    "expected_outcome": "فقط high_income رو چک می‌کنه (که True‌ه)، و همین که به True می‌رسه ارزیابی متوقف می‌شه — دیگه سراغ good_credit نمی‌ره. نتیجه: True.",
+    "hints": ["با or، به محض رسیدن به یه True، نتیجه معلومه.", "high_income اولین مقداریه که پایتون چک می‌کنه، و همون True‌ه."],
+    "rubric": "Correct only if the answer says only high_income is evaluated (not good_credit) and the result is True."
+  }
+]

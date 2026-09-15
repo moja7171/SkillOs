@@ -1,0 +1,26 @@
+[
+  {
+    "key": "rewrite-as-chain",
+    "title": "این شرط رو زنجیره کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "این شرط رو با زنجیره‌کردن عملگرهای مقایسه‌ای، کوتاه‌تر بنویس:\n```python\nscore = 72\n\nif score >= 60 and score < 90:\n    print(\"Pass\")\n```",
+    "expected_outcome": "```python\nscore = 72\n\nif 60 <= score < 90:\n    print(\"Pass\")\n```",
+    "hints": ["ترتیب رو مثل ریاضی بنویس: کوچیک‌ترین حد، بعد متغیر، بعد بزرگ‌ترین حد.", "`X >= A and X < B` می‌شه `A <= X < B`."],
+    "rubric": "Correct: rewrites the condition as `60 <= score < 90` (or equivalent chained form), same bounds and inclusivity preserved. Partial: chained form used but a bound or inclusivity (< vs <=) changed. Incorrect: still uses `and`, or bounds wrong."
+  },
+  {
+    "key": "chain-trace",
+    "title": "با سن ۶۵ چی می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nage = 65\nprint(18 <= age < 65)\n```\nچی چاپ می‌شه؟",
+    "options": ["True", "False", "65", "خطا می‌ده"],
+    "correct_option": 1,
+    "expected_outcome": "False — چون `age < 65` وقتی age دقیقاً ۶۵ باشه، False می‌شه (۶۵ از ۶۵ کوچیک‌تر نیست). این بازه شامل ۶۵ نمی‌شه.",
+    "hints": ["دو تا شرط داره: `18 <= age` و `age < 65`. هر دو باید True باشن.", "آیا ۶۵ از ۶۵ کوچیک‌تره؟"],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

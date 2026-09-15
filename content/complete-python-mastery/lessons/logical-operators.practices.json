@@ -1,0 +1,39 @@
+[
+  {
+    "key": "and-vs-or-trace",
+    "title": "با کدوم شرط واجد شرایطه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nhigh_income = False\ngood_credit = True\n\nprint(high_income and good_credit)\nprint(high_income or good_credit)\n```\nبه ترتیب چی چاپ می‌شه؟",
+    "options": ["False و False", "True و True", "False و True", "True و False"],
+    "correct_option": 2,
+    "expected_outcome": "False و True — با `and` هر دو طرف باید True باشن (یکی False بود، پس نتیجه False)؛ با `or` کافیه یکی True باشه (good_credit که True بود کافیه).",
+    "hints": ["`and` سخت‌گیره: هر دو طرف باید True باشن.", "`or` راحت‌تره: یکیشون کافیه True باشه."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "not-redundant-comparison",
+    "title": "یه هم‌تیمی این خط رو نوشته",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی به‌جای `if high_income:` نوشته:\n```python\nif high_income == True:\n    print(\"Eligible\")\n```\nدر ۲ تا ۳ جمله بهش بگو چرا این کار زائده و چی رو باید عوض کنه.",
+    "expected_outcome": "`high_income` خودش از قبل یه مقدار بولیه (True یا False)، پس مقایسه‌ش با True هیچ اطلاعات اضافه‌ای نمی‌ده — نتیجه‌ی `high_income == True` دقیقاً همون `high_income`ه. کافیه بنویسه `if high_income:`.",
+    "hints": ["`high_income` از قبل True یا False هست؛ چه نیازی به مقایسه با True؟", "به جاش مستقیم از خود متغیر توی شرط استفاده کن."],
+    "rubric": "Correct if the answer notes that high_income is already a boolean, so comparing it to True is redundant, and suggests writing `if high_income:` directly. Correct_with_hint if it identifies the redundancy but not the fix. Incorrect otherwise."
+  },
+  {
+    "key": "operator-precedence",
+    "title": "پرانتز کجا لازمه؟",
+    "form": "mcq",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "```python\nhigh_income = True\ngood_credit = False\nstudent = True\n\nprint(high_income or good_credit and not student)\n```\nپایتون این عبارت رو با کدوم گروه‌بندی می‌خونه؟",
+    "options": ["`(high_income or good_credit) and (not student)`", "`high_income or (good_credit and not student)`", "`(high_income or good_credit and not) student`", "از چپ به راست، بدون اولویت خاص"],
+    "correct_option": 1,
+    "expected_outcome": "`high_income or (good_credit and not student)` — پایتون `and` رو قبل از `or` حساب می‌کنه. برای اینکه `or` زودتر حساب بشه، باید دستی دورش پرانتز بذاری.",
+    "hints": ["بین `and` و `or`، کدوم زودتر محاسبه می‌شه؟", "همون قانونی که توی درس گفته شد: `and` قبل از `or`."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

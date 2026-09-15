@@ -1,0 +1,37 @@
+[
+  {
+    "key": "indentation-bug-review",
+    "title": "یه هم‌تیمی کدش رو نشونت داده",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی این کد رو نوشته و می‌گه «چرا وقتی دما پایینه هم `Drink water` چاپ می‌شه؟!»\n```python\ntemperature = 15\n\nif temperature > 30:\n    print(\"It's warm\")\nprint(\"Drink water\")\n```\nدر ۳ تا ۴ جمله بهش توضیح بده مشکل کجاست و چطور درستش کنه.",
+    "expected_outcome": "خط `print(\"Drink water\")` تورفتگی نداره، پس عضو بلوک `if` نیست و همیشه اجرا می‌شه — فرقی نداره شرط True باشه یا False. راه‌حل: یه تب/۴ فاصله جلوش بذاریم تا هم‌تراز با `print(\"It's warm\")` بشه و عضو همون بلوک بشه.",
+    "hints": ["به تورفتگی (فاصله‌ی ابتدای خط) هر دو `print` دقت کن.", "فقط خطی که زیر `if` تورفتگی داره عضو اون بلوکه."],
+    "rubric": "Correct if the answer identifies the missing indentation on the second print as the cause (it runs unconditionally, outside the if block) AND states the fix (indent it to match the first print). Correct_with_hint if only one of the two is present. Incorrect if it blames something else (e.g. the condition itself, temperature value)."
+  },
+  {
+    "key": "elif-chain-trace",
+    "title": "کدوم پیام چاپ می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ntemperature = 25\n\nif temperature > 30:\n    print(\"It's warm\")\nelif temperature > 20:\n    print(\"It's nice\")\nelse:\n    print(\"It's cold\")\n```\nچی چاپ می‌شه؟",
+    "options": ["It's warm", "It's nice", "It's cold", "هر سه تا"],
+    "correct_option": 1,
+    "expected_outcome": "It's nice — چون ۲۵ از ۳۰ بزرگ‌تر نیست (شرط اول False)، ولی از ۲۰ بزرگ‌تره (شرط دوم True). همین که یه شرط True بشه، بقیه‌ی elif/else نادیده گرفته می‌شن.",
+    "hints": ["شرط‌ها رو به ترتیب از بالا چک کن؛ اولین شرطی که True بشه برنده‌ست.", "۲۵ بزرگ‌تر از ۳۰ نیست، ولی بزرگ‌تر از ۲۰ هست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "missing-colon",
+    "title": "چرا اجرا نمی‌شه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "این خط با خطای `SyntaxError` روبه‌رو می‌شه:\n```python\nif temperature > 30\n    print(\"It's warm\")\n```\nچی رو باید اضافه کنیم تا درست بشه؟",
+    "expected_outcome": "یه دونقطه (`:`) بعد از شرط، آخر همون خط اول.",
+    "hints": ["بعد از هر `if`/`elif`/`else` یه علامت خاص لازمه.", "به آخر خط اول نگاه کن — چیزی جا افتاده."],
+    "rubric": "Correct only if the answer names a missing colon (:) at the end of the if line."
+  }
+]

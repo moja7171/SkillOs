@@ -1,0 +1,37 @@
+[
+  {
+    "key": "choice-vs-choices",
+    "title": "choice یا choices؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای از یه لیست، ۳ تا برنده‌ی تصادفی (با احتمال تکرار) انتخاب کنی. کدوم تابع درسته؟",
+    "options": ["random.choices(names, k=3)", "random.choice(names, k=3)", "random.randint(names, 3)", "random.shuffle(names, 3)"],
+    "correct_option": 0,
+    "expected_outcome": "random.choices(names, k=3) -- choices (با s) چند عضو تصادفی برمی‌گردونه؛ choice فقط یکی برمی‌گردونه و اصلاً آرگومان k نمی‌گیره.",
+    "hints": ["choice (بدون s) فقط یه عضو برمی‌گردونه.", "برای چند عضو، به دنبال نسخه‌ی جمع (با s) بگرد."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "shuffle-returns-none",
+    "title": "چرا None چاپ می‌شه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nimport random\n\nnumbers = [1, 2, 3]\nresult = random.shuffle(numbers)\nprint(result)\n```\nاین کد None چاپ می‌کنه، نه یه لیست به‌هم‌ریخته. چرا؟",
+    "expected_outcome": "چون shuffle برخلاف choice/choices، خودِ لیست numbers رو مستقیم جای‌به‌جا می‌کنه (in place) و هیچ مقداری برنمی‌گردونه -- برای دیدن نتیجه باید خود numbers رو چاپ کرد، نه مقدار برگشتی shuffle رو.",
+    "hints": ["shuffle لیست رو مستقیم تغییر می‌ده، نتیجه‌ی جدیدی برنمی‌گردونه.", "برای دیدن نتیجه باید خود numbers رو چاپ کنی، نه result."],
+    "rubric": "Correct if the answer explains shuffle mutates the list in place and returns None."
+  },
+  {
+    "key": "generate-password",
+    "title": "یه رمز عبور ۶ کاراکتری بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "با استفاده از ماژول‌های random و string، یه رمز عبور تصادفی ۶ کاراکتری از حروف و ارقام بساز (به‌شکل یه رشته‌ی واحد، نه لیست).",
+    "expected_outcome": "```python\nimport random\nimport string\n\nletters = string.ascii_letters + string.digits\npassword = \"\".join(random.choices(letters, k=6))\n```",
+    "hints": ["از string.ascii_letters و string.digits برای ساخت مجموعه‌ی کاراکترها استفاده کن.", "خروجی choices یه لیسته؛ با \"\".join(...) به رشته تبدیلش کن."],
+    "rubric": "Correct: combines ascii_letters+digits, uses random.choices with k=6, and joins into a single string with an empty separator. Partial: correct logic but forgets to join into a string, or uses a non-empty separator. Incorrect: doesn't use choices/join correctly."
+  }
+]

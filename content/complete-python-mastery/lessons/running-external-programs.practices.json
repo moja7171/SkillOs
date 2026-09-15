@@ -1,0 +1,37 @@
+[
+  {
+    "key": "capture-output-flags",
+    "title": "برای گرفتن خروجی به چی نیاز داری؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای خروجی دستور `ls` رو به‌جای چاپ مستقیم، به‌عنوان یه رشته توی متغیر بگیری. کدوم فراخوانی درسته؟",
+    "options": ["subprocess.run([\"ls\"], capture_output=True, text=True)", "subprocess.run([\"ls\"])", "subprocess.run([\"ls\"], capture_output=True)", "subprocess.run([\"ls\"], text=True)"],
+    "correct_option": 0,
+    "expected_outcome": "subprocess.run([\"ls\"], capture_output=True, text=True) -- capture_output خروجی رو به‌جای چاپ مستقیم توی stdout ذخیره می‌کنه، و text=True اون رو به‌شکل رشته (نه bytes) برمی‌گردونه.",
+    "hints": ["بدون capture_output، خروجی مستقیم توی ترمینال چاپ می‌شه، ضبط نمی‌شه.", "بدون text=True، نتیجه یه آبجکت bytes می‌شه، نه رشته."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "import-vs-subprocess",
+    "title": "چرا با import فرق داره؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا اجرای یه اسکریپت پایتونی دیگه با `subprocess.run([\"python3\", \"other.py\"])` با import کردنش کاملاً فرق داره؟",
+    "expected_outcome": "چون subprocess.run اون اسکریپت رو توی یه پردازش (process) کاملاً جدا و مستقل اجرا می‌کنه -- دو اسکریپت هیچ متغیری با هم به‌اشتراک نمی‌ذارن. در مقابل، import همون فایل رو داخل همون پردازش و فضای حافظه‌ی برنامه‌ی اصلی اجرا می‌کنه.",
+    "hints": ["فکر کن دو تا برنامه‌ی کاملاً جدا روی سیستم اجرا بشن.", "با import، هر دو اسکریپت توی یه پردازش مشترکن."],
+    "rubric": "Correct if the answer explains subprocess.run spawns a separate process with no shared memory/variables, unlike import."
+  },
+  {
+    "key": "handle-command-error",
+    "title": "خطای دستور رو مدیریت کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "کدی بنویس که دستور \"false\" رو با check=True اجرا کنه و اگه خطا داد (CalledProcessError)، پیام خطا رو چاپ کنه، بدون اینکه برنامه کرش کنه.",
+    "expected_outcome": "```python\nimport subprocess\n\ntry:\n    subprocess.run([\"false\"], check=True)\nexcept subprocess.CalledProcessError as e:\n    print(e)\n```",
+    "hints": ["check=True باعث می‌شه در صورت خطا، استثنا صادر بشه.", "استثنایی که باید بگیری subprocess.CalledProcessError‌ه."],
+    "rubric": "Correct: uses check=True and catches subprocess.CalledProcessError in a try/except, printing the error. Partial: checks returncode manually instead of using check=True (works but doesn't match what was asked). Incorrect: doesn't handle the error at all, or catches the wrong exception type."
+  }
+]

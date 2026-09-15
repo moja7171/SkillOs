@@ -3163,8 +3163,14 @@
           "subtitle": "124-generating-random-values.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`random.random()` عدد اعشاری بین ۰ و ۱ می‌ده؛ `random.randint(a, b)` عدد صحیح تصادفی توی یه بازه.",
+        "`random.choice(seq)` یه عضو تصادفی از یه دنباله می‌ده؛ `random.choices(seq, k=n)` چند تا عضو (با احتمال تکرار).",
+        "`random.shuffle(list)` برخلاف choice/choices، خودِ لیست رو مستقیم جای‌به‌جا می‌کنه (in place) و چیزی برنمی‌گردونه."
+      ],
+      "common_mistakes": [
+        "انتظار داشتن که `random.shuffle()` یه لیست جدید برگردونه، در حالی که فقط لیست ورودی رو مستقیم تغییر می‌ده."
+      ]
     },
     {
       "slug": "opening-the-browser",
@@ -3184,7 +3190,10 @@
           "subtitle": "125-opening-the-browser.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`webbrowser.open(url)` مرورگر پیش‌فرض سیستم رو باز می‌کنه و به آدرس داده‌شده می‌ره.",
+        "خصوصاً توی اسکریپت‌های خودکارسازی کاربردیه -- مثلاً باز کردن نتیجه در آخر یه فرآیند، بدون نیاز به تایپ دستی آدرس."
+      ],
       "common_mistakes": []
     },
     {
@@ -3205,8 +3214,14 @@
           "subtitle": "126-sending-emails.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`MIMEMultipart` برای ساخت پیام ایمیل و تنظیم هدرها (From/To/Subject)؛ بدنه با `message.attach(MIMEText(...))` اضافه می‌شه، نه با یه هدر.",
+        "ارسال واقعی با `smtplib.SMTP` انجام می‌شه؛ ترتیب همیشه: `ehlo()` → `starttls()` → `login()` → `send_message()`.",
+        "هیچ‌وقت ایمیل و رمز عبور واقعی رو مستقیم توی کد ننویس -- از متغیرهای محیطی یا App Password استفاده کن."
+      ],
+      "common_mistakes": [
+        "تلاش برای مقداردهی مستقیم بدنه‌ی پیام به‌عنوان یه هدر، به‌جای استفاده از `attach(MIMEText(...))`."
+      ]
     },
     {
       "slug": "templates",
@@ -3226,7 +3241,11 @@
           "subtitle": "127-templates.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "برای بدنه‌های طولانی (مثل ایمیل HTML)، بهتره متن رو توی یه فایل جدا (قالب) نگه داری، نه مستقیم توی کد پایتون.",
+        "کلاس `string.Template` پارامترهای `$name` رو توی یه رشته پیدا و جایگزین می‌کنه.",
+        "متد `substitute` یا یه دیکشنری می‌گیره یا آرگومان‌های کلیدی، و رشته‌ی نهایی رو برمی‌گردونه."
+      ],
       "common_mistakes": []
     },
     {
@@ -3247,8 +3266,14 @@
           "subtitle": "128-command-line-arguments.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`sys.argv` لیستی از آرگومان‌های خط فرمانه؛ عضو اول همیشه اسم فایل درحال‌اجراست.",
+        "حتی بدون هیچ آرگومان اضافه‌ای، `sys.argv` حداقل یه عضو داره -- پس `len(sys.argv) == 1` یعنی «بدون آرگومان».",
+        "همه‌ی مقادیر توی `sys.argv` به‌شکل رشته‌ان، حتی اگه ظاهراً عدد باشن."
+      ],
+      "common_mistakes": [
+        "فکرکردن `sys.argv[0]` اولین آرگومان واقعیه، در حالی که همیشه اسم فایله."
+      ]
     },
     {
       "slug": "running-external-programs",
@@ -3268,7 +3293,12 @@
           "subtitle": "129-running-external-programs.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`subprocess.run(command_list)` روش استاندارد اجرای یه دستور یا برنامه‌ی خارجی از داخل پایتون‌ه.",
+        "برای گرفتن خروجی به‌جای چاپ مستقیمش: `capture_output=True, text=True`.",
+        "اجرای یه اسکریپت با `subprocess.run` اون رو توی یه پردازش کاملاً جدا اجرا می‌کنه -- برخلاف import، هیچ متغیری بین دو اسکریپت مشترک نیست.",
+        "`check=True` باعث می‌شه در صورت خطا (returncode غیرصفر)، به‌جای برگردوندن یه مقدار، یه `subprocess.CalledProcessError` صادر بشه."
+      ],
       "common_mistakes": []
     },
     {

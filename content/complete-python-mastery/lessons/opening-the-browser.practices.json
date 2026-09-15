@@ -1,0 +1,24 @@
+[
+  {
+    "key": "open-a-url",
+    "title": "یه آدرس رو توی مرورگر باز کن",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدی بنویس که مرورگر پیش‌فرض سیستم رو باز کنه و بره به آدرس \"https://example.com\".",
+    "expected_outcome": "```python\nimport webbrowser\n\nwebbrowser.open(\"https://example.com\")\n```",
+    "hints": ["ماژول webbrowser رو import کن.", "تابعی که این ماژول برای باز کردن یه آدرس داره، اسمش open‌ه."],
+    "rubric": "Correct: imports webbrowser and calls webbrowser.open with the URL. Partial: correct import but wrong function name. Incorrect: doesn't use the webbrowser module."
+  },
+  {
+    "key": "when-useful",
+    "title": "این ماژول کِی به‌کار میاد؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه سناریوی واقعی بگو که استفاده از webbrowser.open توش منطقیه.",
+    "expected_outcome": "مثلاً یه اسکریپت خودکارسازی که بعد از اتمام یه فرآیند (مثل دیپلوی یه سایت، یا ساخت یه گزارش)، خودش نتیجه رو توی مرورگر باز کنه -- بدون نیاز به اینکه کاربر دستی آدرس رو تایپ کنه.",
+    "hints": ["فکر کن به یه اسکریپتی که در آخرِ کارش می‌خواد نتیجه رو نشونت بده.", "این برای اسکریپت‌های خودکارسازی (automation) طراحی شده."],
+    "rubric": "Correct if the answer describes an automation-style scenario where opening a browser at the end saves a manual step."
+  }
+]

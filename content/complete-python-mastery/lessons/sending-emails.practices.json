@@ -1,0 +1,37 @@
+[
+  {
+    "key": "smtp-steps-order",
+    "title": "ترتیب مراحل SMTP",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "ترتیب درست فراخوانی متدهای SMTP برای ارسال یه ایمیل کدومه؟",
+    "options": ["ehlo → starttls → login → send_message", "login → ehlo → starttls → send_message", "starttls → ehlo → send_message → login", "send_message → ehlo → starttls → login"],
+    "correct_option": 0,
+    "expected_outcome": "ehlo → starttls → login → send_message -- اول معرفی به سرور، بعد رمزنگاری ارتباط، بعد ورود با اطلاعات حساب، و در آخر ارسال پیام.",
+    "hints": ["باید قبل از وارد کردن رمز عبور، ارتباط رمزنگاری‌شده باشه.", "ارسال پیام همیشه آخرین قدمه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "why-not-hardcode-password",
+    "title": "چرا رمز رو توی کد ننویسیم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی می‌گه «برای تست سریع‌تره که رمز ایمیلم رو مستقیم توی کد بنویسم.» چرا این کار خطرناکه؟",
+    "expected_outcome": "چون اگه این کد جایی مثل یه مخزن گیت (حتی خصوصی) ذخیره یا به‌اشتراک گذاشته بشه، رمز واقعی حساب فاش می‌شه. به‌جاش باید از متغیرهای محیطی یا فایل تنظیمات جدا از کد (و ترجیحاً یه App Password مخصوص) استفاده کرد.",
+    "hints": ["فکر کن این فایل کد رو تصادفی جایی commit یا share کنی.", "رمز واقعی حساب نباید هیچ‌وقت توی متن کد باشه."],
+    "rubric": "Correct if the answer identifies the security risk of leaking real credentials via source code and proposes environment variables/config as the alternative."
+  },
+  {
+    "key": "build-and-send-message",
+    "title": "یه پیام ساده بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "کدی بنویس که یه MIMEMultipart بسازه با From=\"a@x.com\"، To=\"b@x.com\"، Subject=\"Hello\"، و بدنه‌ی متن ساده‌ی \"How are you?\" رو بهش attach کنه.",
+    "expected_outcome": "```python\nfrom email.mime.multipart import MIMEMultipart\nfrom email.mime.text import MIMEText\n\nmessage = MIMEMultipart()\nmessage[\"From\"] = \"a@x.com\"\nmessage[\"To\"] = \"b@x.com\"\nmessage[\"Subject\"] = \"Hello\"\nmessage.attach(MIMEText(\"How are you?\", \"plain\"))\n```",
+    "hints": ["هدرها با کروشه مقداردهی می‌شن.", "بدنه باید با MIMEText ساخته و attach بشه، نه مستقیم به یه هدر داده بشه."],
+    "rubric": "Correct: creates MIMEMultipart, sets From/To/Subject headers, and attaches a MIMEText with 'plain' type. Partial: correct structure but wrong MIMEText type argument or missing a header. Incorrect: tries to set the body as a header directly, or doesn't use MIMEText."
+  }
+]

@@ -585,3 +585,16 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Direct owner feedback on the live catalog page: the icon/title pairing looked broken, and the Home course list felt cramped with no separation.
 
 **Consequences.** `course_color()` is now the one place course-identity colors are defined — any future page showing a course badge/avatar should call it rather than re-deriving a color, to keep the "no orange, no semantic collision" guarantee in one place. The `text-right` override means a rare fully-Latin course title always right-aligns even though that reads slightly against a native LTR reader's instinct — acceptable since the app's layout (avatar position, RTL nav) already assumes right-anchored content throughout.
+
+---
+
+## 40. Enroll directly from the catalog page; every enrollment lands on the schedule form (2026-09-15)
+
+**Decision.** Two related gaps: enrolling in a course was only possible from the course's own show page (the catalog just linked to it), and a fresh enrollment redirected back to `courses.show` with a flash message *suggesting* the learner go set a priority/daily-time — easy to miss, and the course sits outside the daily plan until that's done (DESIGN §4).
+
+- `courses/index.blade.php`'s card is no longer one big `<a>`; the clickable title/description region is an inner `<a>`, and a footer row (sibling, not nested — a `<form>` can't legally sit inside an `<a>`) holds the stats plus a "برداشتن" button + form for courses the learner hasn't enrolled in yet, posting to the same `courses.enroll` route the show page already uses.
+- `EnrollmentController::store()` now redirects a **new** enrollment straight to `enrollments.edit` (the priority/daily-time/status form) instead of back to the course page — same landing spot regardless of whether "برداشتن" was clicked from the catalog or the course page. An **already-enrolled** click still redirects to `courses.show` with "قبلاً این دوره رو برداشتی." — no reason to force them back into the schedule form for a no-op.
+
+**Why.** Direct owner request: enroll from the catalog too, and always land on the schedule form right after so the course actually enters the plan instead of silently sitting unconfigured.
+
+**Consequences.** Any future "enroll" entry point (there are currently two: catalog, course show) should redirect through the same controller action rather than duplicating the "new vs already-enrolled" branch, so the landing behavior stays consistent by construction.

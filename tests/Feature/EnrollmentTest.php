@@ -17,14 +17,30 @@ class EnrollmentTest extends TestCase
         $user = User::factory()->create();
         $course = Course::factory()->create();
 
-        $this->actingAs($user)->post(route('courses.enroll', $course))
-            ->assertRedirect(route('courses.show', $course))->assertSessionHas('status');
-        $this->actingAs($user)->post(route('courses.enroll', $course))->assertRedirect(route('courses.show', $course));
+        $this->actingAs($user)->post(route('courses.enroll', $course))->assertSessionHas('status');
 
         $enrollment = Enrollment::where('user_id', $user->id)->where('course_id', $course->id)->sole();
         $this->assertSame('active', $enrollment->status);
         $this->assertSame(3, $enrollment->priority);
         $this->assertNull($enrollment->daily_time_minutes);
+
+        // Enrolling again is a no-op — still exactly one row, no error.
+        $this->actingAs($user)->post(route('courses.enroll', $course));
+        $this->assertSame(1, Enrollment::where('user_id', $user->id)->where('course_id', $course->id)->count());
+    }
+
+    public function test_enrolling_redirects_to_the_schedule_form_only_the_first_time(): void
+    {
+        $user = User::factory()->create();
+        $course = Course::factory()->create();
+
+        // A brand-new enrollment lands straight on the schedule form, not the course page —
+        // it isn't in the daily plan yet without a priority/daily time set.
+        $enrollResponse = $this->actingAs($user)->post(route('courses.enroll', $course));
+        $enrollment = Enrollment::where('user_id', $user->id)->where('course_id', $course->id)->sole();
+        $enrollResponse->assertRedirect(route('enrollments.edit', $enrollment));
+
+        $this->actingAs($user)->post(route('courses.enroll', $course))->assertRedirect(route('courses.show', $course));
     }
 
     public function test_owner_can_update_schedule_and_status(): void
@@ -79,5 +95,22 @@ class EnrollmentTest extends TestCase
         $html = $this->actingAs($me)->get(route('courses.index'))->assertOk()->getContent();
 
         $this->assertSame(1, substr_count($html, 'برداشته‌شده'));
+    }
+
+    public function test_catalog_page_can_enroll_directly(): void
+    {
+        $user = User::factory()->create();
+        $course = Course::factory()->create();
+
+        $this->actingAs($user)->get(route('courses.index'))->assertOk()
+            ->assertSee(route('courses.enroll', $course), false);
+
+        $enrollResponse = $this->actingAs($user)->post(route('courses.enroll', $course));
+        $enrollment = Enrollment::where('user_id', $user->id)->where('course_id', $course->id)->sole();
+        $enrollResponse->assertRedirect(route('enrollments.edit', $enrollment));
+
+        // Once enrolled, the catalog no longer offers the enroll form for that course.
+        $this->actingAs($user)->get(route('courses.index'))->assertOk()
+            ->assertDontSee(route('courses.enroll', $course), false);
     }
 }

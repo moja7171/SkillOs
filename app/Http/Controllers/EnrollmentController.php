@@ -18,8 +18,16 @@ class EnrollmentController extends Controller
             ['status' => 'active', 'priority' => 3],
         );
 
-        return redirect()->route('courses.show', $course)
-            ->with('status', $enrollment->wasRecentlyCreated ? 'به دوره‌های تو اضافه شد. حالا زمان روزانه‌ش رو تنظیم کن.' : 'قبلاً این دوره رو برداشتی.');
+        // A brand-new enrollment always needs a priority + daily time to actually enter
+        // the plan (DESIGN §4), so go straight to that form instead of just hinting at it
+        // in a flash message — same landing spot no matter where "برداشتن" was clicked
+        // from (catalog page or the course page itself).
+        if ($enrollment->wasRecentlyCreated) {
+            return redirect()->route('enrollments.edit', $enrollment)
+                ->with('status', 'به دوره‌های تو اضافه شد. حالا زمان روزانه‌ش رو تنظیم کن.');
+        }
+
+        return redirect()->route('courses.show', $course)->with('status', 'قبلاً این دوره رو برداشتی.');
     }
 
     public function edit(Enrollment $enrollment): View

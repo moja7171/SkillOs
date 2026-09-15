@@ -62,7 +62,14 @@
                                         @if ($locked)<span class="flex items-center gap-1">· <x-icon name="lock" class="w-3 h-3" /> نیاز به {{ $lesson->prerequisites->pluck('title')->join('، ') }}</span>@endif
                                     </div>
                                 </td>
-                                <td><x-level-badge :level="$levelOf($lesson)" /></td>
+                                <td>
+                                    <div class="flex items-center gap-1.5">
+                                        <x-level-badge :level="$levelOf($lesson)" />
+                                        @if ($seenLessonIds->contains($lesson->id))
+                                            <span class="text-faint" title="ویدیو/متن این درس رو دیدی"><x-icon name="check" class="w-3.5 h-3.5" /></span>
+                                        @endif
+                                    </div>
+                                </td>
                                 <td class="text-end"><a href="{{ $lesson->url() }}" class="btn btn-sm">باز کن</a></td>
                             </tr>
                         @endforeach

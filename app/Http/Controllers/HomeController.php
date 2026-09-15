@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Services\Engagement\ActivityStats;
+use App\Services\Insights\WeakSpots;
 use App\Services\Planning\Planner;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function __invoke(Request $request, Planner $planner, ActivityStats $stats): View
+    public function __invoke(Request $request, Planner $planner, ActivityStats $stats, WeakSpots $weakSpots): View
     {
         $user = $request->user();
         $plan = $planner->continueLearning($user);
@@ -43,6 +44,7 @@ class HomeController extends Controller
             'weeklyStats' => $stats->since($user, now()->subDays(7)),
             'monthlyStats' => $stats->since($user, now()->subDays(30)),
             'quickReview' => $quickReview,
+            'weakSpotCount' => $weakSpots->forUser($user)->count(),
         ]);
     }
 }

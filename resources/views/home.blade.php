@@ -145,6 +145,11 @@
                             <div class="text-[12.5px] text-muted mb-0.5">این ماه</div>
                             <div class="text-[15px] font-semibold">{{ fa_num($monthlyStats['count']) }} تمرین · {{ fa_num($monthlyStats['minutes']) }} دقیقه</div>
                         </div>
+                        @if ($weakSpotCount > 0)
+                            <a href="{{ route('weak-spots') }}" class="ms-auto text-[12.5px] text-bad font-semibold hover:opacity-80">
+                                {{ fa_num($weakSpotCount) }} نقطه‌ی ضعف ←
+                            </a>
+                        @endif
                     </div>
                 </div>
             @endif

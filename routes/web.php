@@ -9,6 +9,7 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\WeakSpotsController;
 use App\Models\Lesson;
 use App\Models\PlanItem;
 use Illuminate\Http\Request;
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::get('week', [PlanController::class, 'week'])->name('week');
     Route::get('search', SearchController::class)->name('search');
     Route::get('friends', FriendsController::class)->name('friends');
+    Route::get('weak-spots', WeakSpotsController::class)->name('weak-spots');
     Route::get('session/{attempt}', [SessionController::class, 'show'])->name('session.show');
     Route::post('session/{attempt}/complete', [SessionController::class, 'complete'])->name('session.complete');
     Route::post('session/{attempt}/submit', [SessionController::class, 'submit'])->name('session.submit');

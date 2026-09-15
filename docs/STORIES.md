@@ -80,3 +80,9 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 ### [x] S-30 "5-minute mode" quick-review button on Home (DECISIONS §25)
 ### [x] S-31 Global search across lessons (DECISIONS §26)
 ### [x] S-32 Friends streak/stats view (DECISIONS §27) — engagement batch (M7) complete
+
+## M8 — Learning-science pieces
+
+### [x] S-33 Weak spots page (recurring wrong lessons, cross-course)
+### [x] S-34 Seen-vs-mastered mark on the course lesson table
+(Both DECISIONS §28. Interleaving, confidence calibration, a concept map, and adaptive difficulty were considered and explicitly rejected for this app's scale — see §28 for why; pretesting wasn't asked for.)

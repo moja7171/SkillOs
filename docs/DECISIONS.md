@@ -372,3 +372,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The owner asked for a set of engagement/retention ideas across the whole system (not tied to one course) — a visible streak plus a same-page sense of "today's progress" and a low-pressure comeback nudge are the cheapest, highest-leverage first pieces: no new pages, reuses data already being computed, and the psychology (don't break the chain, visible partial progress, a reminder that isn't guilt-tripping) is well-established.
 
 **Consequences.** `recordActivityToday()` runs inside `AttemptSession::finalize()`'s existing DB transaction, so it's atomic with mastery/plan-item updates but adds a write to every single attempt finalize, learn or practice — negligible cost, but worth knowing if that method's hot-path cost ever matters. The nudge's 2–13 day window is deliberately exclusive of `Planner::REACTIVATION_GAP_DAYS` (14) to avoid the two systems talking about the same gap differently.
+
+---
+
+## 22. Weekly/monthly activity recap on Home (2026-09-15)
+
+**Decision.** `ActivityStats::since(User, Carbon)` is one query — `attempts` joined to `activities`, filtered to `completed_at >= $since`, aggregating `count(*)` and `sum(estimated_minutes)` — called twice by `HomeController` (7 and 30 days back) and rendered as one small "خلاصه‌ی فعالیت" card on Home, right under Today's list. Open attempts (`completed_at IS NULL`) are excluded, matching what "done" already means everywhere else in the app.
+
+**Why.** Originally scoped as two separate stories (S-26 weekly, S-27 monthly) but they're the same query at two different cutoffs — one card with two numbers is simpler than two near-identical cards, so they shipped together.
+
+**Consequences.** `ActivityStats` is intentionally cross-course (no course/enrollment filter) — it's meant to answer "how much have *I* been doing," not per-course reporting; a per-course breakdown would be a different query, not an extension of this one.

@@ -121,6 +121,23 @@
                     @endforeach
                 </div>
             @endif
+
+            {{-- Weekly/monthly recap --}}
+            @if ($weeklyStats['count'] > 0 || $monthlyStats['count'] > 0)
+                <div class="card">
+                    <div class="card-h"><h3>خلاصه‌ی فعالیت</h3></div>
+                    <div class="px-[18px] py-3.5 flex items-center gap-8 flex-wrap">
+                        <div>
+                            <div class="text-[12.5px] text-muted mb-0.5">این هفته</div>
+                            <div class="text-[15px] font-semibold">{{ fa_num($weeklyStats['count']) }} تمرین · {{ fa_num($weeklyStats['minutes']) }} دقیقه</div>
+                        </div>
+                        <div>
+                            <div class="text-[12.5px] text-muted mb-0.5">این ماه</div>
+                            <div class="text-[15px] font-semibold">{{ fa_num($monthlyStats['count']) }} تمرین · {{ fa_num($monthlyStats['minutes']) }} دقیقه</div>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
 
         {{-- My courses --}}

@@ -74,8 +74,7 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 ## M7 — Engagement (habit-formation, cross-course)
 
 ### [x] S-25 Streak, daily-goal progress bar, short-gap nudge on Home (DECISIONS §21)
-### [ ] S-26 Weekly recap widget
-### [ ] S-27 Cross-course monthly stats
+### [x] S-26 Weekly recap widget · [x] S-27 Cross-course monthly stats (shipped together as one card, DECISIONS §22)
 ### [ ] S-28 Level-up celebration polish
 ### [ ] S-29 Review-retention stat on the lesson page
 ### [ ] S-30 "5-minute mode" quick-review button on Home

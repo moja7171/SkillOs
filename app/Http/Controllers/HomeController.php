@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Engagement\ActivityStats;
 use App\Services\Planning\Planner;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function __invoke(Request $request, Planner $planner): View
+    public function __invoke(Request $request, Planner $planner, ActivityStats $stats): View
     {
         $user = $request->user();
         $plan = $planner->continueLearning($user);
@@ -33,6 +34,8 @@ class HomeController extends Controller
             'doneMinutes' => $plan['items']->where('status', 'completed')->sum('duration_minutes'),
             'streakCount' => $user->streak_count,
             'daysSinceLastActivity' => $daysSinceLastActivity,
+            'weeklyStats' => $stats->since($user, now()->subDays(7)),
+            'monthlyStats' => $stats->since($user, now()->subDays(30)),
         ]);
     }
 }

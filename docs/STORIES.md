@@ -109,8 +109,8 @@ Floats alone above the primary "ادامه‌ی یادگیری" card instead of 
 ### [-] S-40 Week view: day order flips between the two grid rows — false positive, not a real bug
 Originally flagged from eyeballing a screenshot. Re-checked with actual measured `getBoundingClientRect()` coordinates for each day card: row two reads جمعه(27)→شنبه(28)→یکشنبه(29)→دوشنبه(30) right-to-left, same ascending order as row one — correct. The earlier read of the screenshot was simply wrong. No code change made.
 
-### [ ] S-41 A course's lesson table is one long flat list — no collapsing, no jump-to-section
-With 100+ lessons (both real courses are already this size), scrolling the course page is a very long, undifferentiated scroll. Section headers exist in the table already but don't collapse or anchor-link. Judged the most valuable of this batch — affects daily use directly, not just first impressions.
+### [x] S-41 A course's lesson table is one long flat list — no collapsing, no jump-to-section
+With 100+ lessons (both real courses are already this size), scrolling the course page is a very long, undifferentiated scroll. Section headers exist in the table already but don't collapse or anchor-link. Judged the most valuable of this batch — affects daily use directly, not just first impressions. Fixed in DECISIONS §33.
 
 ### [ ] S-42 Badge/pill overload
 Priority, level, practice form, review/learn/practice — each with its own color, stacking up next to each other, worst on mobile. Could use a more restrained, consistent color system.

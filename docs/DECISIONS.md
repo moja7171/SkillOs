@@ -496,3 +496,19 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Both were flagged in the UI/UX review: the streak/progress row was meant to be the motivational centerpiece (§21) but read as an afterthought, and the quick-review button felt disconnected from the flow it's actually part of. Putting all three in one card fixes both at once since they're the same "today at a glance" concept.
 
 **Consequences.** The card is conditionally rendered only when at least one of the three has content (same as before, just OR'd across all three instead of two), so it still disappears cleanly for a user with no streak, no plan, and no due review. `sm:flex-wrap` was added so the row degrades gracefully if a future addition makes three items too wide for a mid-size viewport.
+
+---
+
+## 33. Course page: collapsible lesson sections + jump-to-section nav (S-41; 2026-09-15)
+
+**Decision.** `courses/show.blade.php`'s lesson table used to render every lesson flat, with a plain (non-interactive) divider row wherever `section` changed — for the two real courses (100+ lessons each) that's a very long undifferentiated scroll. Reworked to:
+
+- Group lessons by `section` in PHP (`groupBy`) instead of detecting boundaries mid-loop, one `<tbody>` per section.
+- Each section's header row is now clickable (`@click="open[i] = !open[i]"`) and its lesson rows carry `x-show="open[i]"`, mirroring the exact pattern `lessons/show.blade.php`'s curriculum drawer already uses for its own collapsible sections (chevron rotation via `::class`, same rotate-90/-rotate-90 convention) rather than inventing a new one.
+- A row of section-name badges above the table jumps to any section: clicking one forces that section open (`open[i] = true`) and scrolls its `<tbody>` (`x-ref="section-{i}"`) into view — so jumping to a currently-collapsed section always works, never lands on a hidden row.
+- Default state: the section containing the learner's next not-yet-familiar, unlocked lesson starts open (falls back to the first section if everything is done or nothing is enrolled); every other section starts collapsed. A course with only one (or zero) named sections skips both the badge row and the collapse affordance entirely — nothing to jump to.
+- Verified interactively, not just visually: a CDP script (login, click a section header, click a jump badge) confirmed section 1 toggled from 0/9 to 9/9 visible rows, the target jump section went from 0/10 to 10/10 visible, and `window.scrollY` moved from 0 to 1513 — actual Alpine reactivity and scroll behavior, not just a static screenshot.
+
+**Why.** Flagged in the UI/UX review and judged the most valuable finding of that batch since it affects daily use (returning to a long course) directly, not just first impressions.
+
+**Consequences.** The default-open section is now the "next lesson" section rather than always the first — correct for a learner resuming partway through a course, but means a brand-new user with no progress sees section 1 open (same as before) while a returning user on section 7 sees section 7 open on page load, not section 1. Any future per-section metadata (e.g. a "done" count in the header) should read from the same grouped `$sections` collection rather than re-deriving boundaries from the flat list.

@@ -11,12 +11,12 @@
             @foreach ($courses as $course)
                 @php $enrolled = $course->enrollments->isNotEmpty(); $color = course_color($course->id); @endphp
                 <a href="{{ route('courses.show', $course) }}" class="card p-[18px] flex flex-col gap-3 text-ink hover:text-ink hover:border-line2 transition">
-                    <div class="flex items-start gap-3">
+                    <div class="flex items-center gap-3">
                         <span class="w-11 h-11 rounded-xl grid place-items-center shrink-0 text-[17px] font-bold"
                               style="background: color-mix(in srgb, {{ $color }} 18%, transparent); color: {{ $color }};">
                             {{ mb_substr($course->title, 0, 1) }}
                         </span>
-                        <div class="flex-1 min-w-0 flex items-start justify-between gap-2">
+                        <div class="flex-1 min-w-0 flex items-center justify-between gap-2">
                             {{-- text-right: a title starting with a Latin word (dir="auto") would
                                  otherwise left-align and drift away from the avatar next to it. --}}
                             <div class="text-[16px] font-semibold leading-[1.4] text-right" dir="auto">{{ $course->title }}</div>

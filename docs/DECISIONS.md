@@ -571,3 +571,17 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** The deploy story is deliberately shell-free (README "Deploying to shared hosting" — no SSH, no cron, no queue worker; every maintenance action goes through `/_ops/…`). Without this, the only way to remove a wrongly-imported course from a live host would have been asking the owner to somehow run raw SQL or tinker, which shared hosting doesn't offer.
 
 **Consequences.** Like every other `/_ops` action, this is guarded only by `OPS_TOKEN` in the query string — same trust model as `import --prune` (which was already destructive). Keep the token long and treat it as a secret; rotate it if it ever leaks into a shared log or browser history.
+
+---
+
+## 39. Course avatars: curated hex palette instead of a generated hue, and a title alignment bug fixed (2026-09-15)
+
+**Decision.** Two follow-up fixes to the S-36 catalog cards, from the owner looking at the real deployed page:
+
+- The per-course monogram's `hsl($hue, 65%, 55%)` formula (§35) could land on a muddy or, worse, semantically-confusing color — course id 1 happened to hash to almost exactly `--accent`/`--warn`'s orange, making that course's avatar look like a highlighted/primary element for no reason. Replaced the formula with `course_color()` (`app/Support/helpers.php`), a small curated array of 8 hand-picked hex colors (no orange/amber in it, on purpose) cycled by `id % 8` — same determinism, no risk of collision with a token that already carries meaning. Reused on Home's "دوره‌های من" list too (previously text-only), which doubles as more visual separation between entries.
+- A course title starting with a Latin word (`dir="auto"`, e.g. "Python 3 Deep Dive — …") was computing its CSS `direction` as `ltr`, which also flips the browser's default `text-align: start` to the *left* — so the title text hugged the left edge of its box while the monogram avatar sat at the right edge (RTL flex order), leaving a large, awkward gap between them for every English-first title. Fixed with an explicit `text-right` (a physical value, not the logical `text-start`, which would still resolve left for an `ltr`-computed element) on both the catalog card and the Home list — `dir="auto"` still gets correct bidi *word* ordering, only the block's own alignment is pinned.
+- Home's enrolled-course rows were flat, hairline-separated text stacked tightly with little breathing room. Restyled each as its own `card bg-surface2` chip (the same nesting pattern the primary card's "یا به‌جاش" alternatives list already uses) with the course avatar, giving each entry a clear visual boundary instead of one dense list.
+
+**Why.** Direct owner feedback on the live catalog page: the icon/title pairing looked broken, and the Home course list felt cramped with no separation.
+
+**Consequences.** `course_color()` is now the one place course-identity colors are defined — any future page showing a course badge/avatar should call it rather than re-deriving a color, to keep the "no orange, no semantic collision" guarantee in one place. The `text-right` override means a rare fully-Latin course title always right-aligns even though that reads slightly against a native LTR reader's instinct — acceptable since the app's layout (avatar position, RTL nav) already assumes right-anchored content throughout.

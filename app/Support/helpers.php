@@ -47,3 +47,19 @@ if (! function_exists('media_url')) {
         return rtrim($base, '/').substr($url, strlen('/media'));
     }
 }
+
+if (! function_exists('course_color')) {
+    /**
+     * A stable, distinctive accent color for a course's monogram avatar (catalog cards,
+     * Home's "my courses" list). A curated palette rather than a generated hsl() — hand-
+     * picked so every hue stays vivid on the dark surface instead of risking a muddy one.
+     */
+    function course_color(int $id): string
+    {
+        // No orange/amber tone here on purpose -- that's --accent/--warn, already loaded
+        // with meaning (primary actions, streak) elsewhere in the app.
+        static $palette = ['#5b8def', '#2fbf8f', '#b58cff', '#ef5a6f', '#06b6d4', '#ec4899', '#84cc16', '#8b5cf6'];
+
+        return $palette[$id % count($palette)];
+    }
+}

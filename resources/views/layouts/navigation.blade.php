@@ -11,6 +11,8 @@
     </div>
 
     <div class="ms-auto flex items-center gap-3">
+        <a href="{{ route('search') }}" class="iconbtn" title="جست‌وجو"><x-icon name="search" class="w-4 h-4" /></a>
+
         <button type="button" class="iconbtn" title="تغییر تم" onclick="window.toggleTheme()">
             <x-icon name="sun" class="w-4 h-4 hidden dark:block" />
             <x-icon name="moon" class="w-4 h-4 dark:hidden" />

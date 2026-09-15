@@ -412,3 +412,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** `orderForLearner` already sorts due reviews first, so a due review is very often already `$primary` — the one case worth a dedicated shortcut is a *second* review (a different course, once >1 enrollment has something due) that's buried further down the Today list. Reusing the existing sorted list instead of a raw/unsorted lookup matters: the first scheduled review by `PlanItem` id does not reliably match `$primary`, since plan items are created in enrollment-iteration order, not priority order — picking the wrong one would occasionally offer a shortcut to a *different* review than the one already recommended, silently contradicting the main CTA. `HomeTest` covers exactly this ordering trap with two courses whose creation order is deliberately the reverse of their priority.
 
 **Consequences.** The button only ever appears when a second review is genuinely available; nothing new to maintain if none is.
+
+---
+
+## 26. Cross-course lesson search: a plain LIKE scan, no index (2026-09-15)
+
+**Decision.** `SearchController` (`GET /search?q=…`, a search icon in the nav) runs one query — `lessons.title|summary|content LIKE '%q%'`, `with('course')`, capped at 40 — across **every** course, not just the learner's own enrollments, because lesson content is already unrestricted by enrollment everywhere else in the app (`LessonController::show` never checks it). Each result shows the lesson's `summary` if it has one, else a ~140-character plain-text snippet cut from `content` around the first match (markdown syntax stripped with a regex, not a real parser). Query shorter than 2 characters shows a prompt instead of running.
+
+**Why.** Asked for as part of the engagement batch — with three courses (and growing) it's genuinely hard to remember which course covered a given topic. A real search index (SQLite FTS5, ranking, stemming) is meaningfully more infrastructure for a two-person app with a few hundred lessons total; a LIKE scan answers "which lesson was that in" fine at this scale and needs no new tooling, migration, or reindexing step to keep in sync with content edits.
+
+**Consequences.** Revisit if the catalog grows enough that LIKE gets slow or noisy (no relevance ranking — results are alphabetical by title) — SQLite FTS5 is the natural next step, not a rewrite, since it would replace the query inside `SearchController` without touching the route or view.

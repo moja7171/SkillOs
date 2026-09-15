@@ -40,6 +40,12 @@ class CourseController extends Controller
             ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('result_status', 'completed'))
             ->pluck('lesson_id');
 
-        return view('courses.show', compact('course', 'enrollment', 'seenLessonIds'));
+        // The explicit "انجام دادم" mark — sticky, independent of mastery level (DECISIONS.md).
+        $doneLessonIds = Activity::where('type', 'learn')
+            ->whereIn('lesson_id', $course->lessons->pluck('id'))
+            ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('evidence->source', 'lesson_done'))
+            ->pluck('lesson_id');
+
+        return view('courses.show', compact('course', 'enrollment', 'seenLessonIds', 'doneLessonIds'));
     }
 }

@@ -201,8 +201,11 @@
                                     <x-course-progress :lessons="$course->lessons" :user="$user" />
                                 </div>
                             </a>
-                            <div class="px-3.5 pb-3.5 pt-1 ps-[3.25rem]">
+                            <div class="px-3.5 pb-3.5 pt-1 ps-[3.25rem] flex items-center gap-2 flex-wrap">
                                 <a href="{{ route('courses.learn', $course) }}" class="btn btn-sm"><x-icon name="play" class="w-3.5 h-3.5" /> ادامه‌ی درس‌ها</a>
+                                @if ($enrollment->status === 'active' && ! $enrollment->daily_time_minutes)
+                                    <a href="{{ route('enrollments.edit', $enrollment) }}" class="btn btn-sm" style="color: var(--warn); border-color: color-mix(in srgb, var(--warn) 40%, transparent);"><x-icon name="gear" class="w-3.5 h-3.5" /> زمان‌بندیش کن تا توی پلن بیاد</a>
+                                @endif
                             </div>
                         </div>
                     @endforeach

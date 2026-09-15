@@ -63,6 +63,21 @@ class AttemptSession
     }
 
     /**
+     * The explicit "انجام دادم" action on the lesson page (DECISIONS.md): the learner
+     * confirms a lesson is done, once every one of its practices has been answered
+     * correctly. Recorded as its own attempt (evidence.source = 'lesson_done') so it can
+     * be told apart from a plan-driven "آماده‌ام" and stays a permanent record even if a
+     * later review knocks the numeric mastery back down.
+     */
+    public function markLessonDone(User $user, Activity $learnActivity): Attempt
+    {
+        $attempt = $this->start($user, $learnActivity, 'lesson_done');
+        $this->finalize($attempt, 'completed');
+
+        return $attempt;
+    }
+
+    /**
      * Evaluate a practice response and move the attempt to its next state.
      */
     public function submit(Attempt $attempt, string $response): Verdict

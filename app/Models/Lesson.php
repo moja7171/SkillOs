@@ -83,4 +83,42 @@ class Lesson extends Model
 
         return $record?->level ?? 'not_started';
     }
+
+    /**
+     * Gate for the "انجام دادم" button: every practice has at least one correct
+     * (or correct-with-hint) attempt from this user. A lesson with no practices has
+     * nothing to gate on.
+     */
+    public function allPracticesPassedBy(User $user): bool
+    {
+        $practices = $this->relationLoaded('practices') ? $this->practices : $this->practices()->get();
+        if ($practices->isEmpty()) {
+            return true;
+        }
+
+        $passedActivityIds = Attempt::where('user_id', $user->id)
+            ->whereIn('activity_id', $practices->pluck('id'))
+            ->whereIn('result_status', ['correct', 'correct_with_hint'])
+            ->pluck('activity_id')
+            ->unique();
+
+        return $practices->pluck('id')->diff($passedActivityIds)->isEmpty();
+    }
+
+    /**
+     * Marked done via the explicit "انجام دادم" action — sticky, independent of any
+     * later dip in numeric mastery from a failed review.
+     */
+    public function isMarkedDoneBy(User $user): bool
+    {
+        $learnActivityId = $this->relationLoaded('learnActivity') ? $this->learnActivity?->id : $this->learnActivity()->value('id');
+        if (! $learnActivityId) {
+            return false;
+        }
+
+        return Attempt::where('user_id', $user->id)
+            ->where('activity_id', $learnActivityId)
+            ->where('evidence->source', 'lesson_done')
+            ->exists();
+    }
 }

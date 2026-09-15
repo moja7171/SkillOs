@@ -137,3 +137,17 @@ Measured: 2.43:1 in light mode, 2.74-3.20:1 in dark mode (against `bg`/`surface`
 
 ### [x] S-49 Progress bars (`x-level-bar`) carry zero accessible information
 Purely decorative `<span style="width:N%">` segments — no `role="progressbar"`, `aria-valuenow`, or any text equivalent. Used on Home's course cards, the course page, and the lesson page's section-progress bar; a screen reader announces nothing about progress at all in any of these spots. Found on a second, more thorough pass (screenshots of every remaining page + a CDP console-error sweep across all main routes, which came back clean — no JS errors anywhere).
+
+## M12 — Real-use fixes (owner's own daily use of the platform, 2026-09-16)
+
+### [x] S-50 Persian caption switching silently reverted — root-caused, not guessed (DECISIONS §43)
+`storage: { enabled: false }` on the Plyr config broke `captions.setup()`'s language persistence, so every click on «زیرنویس فارسی» got reverted to English on the very next tick. Confirmed live via CDP before and after the fix (caption overlay text, not just the menu checkmark).
+
+### [x] S-51 Enrolling without a schedule felt like nothing happened
+Both Home's «دوره‌های من» card and the course page only had a passive, easy-to-miss line when `daily_time_minutes` was unset; both now carry a real CTA to `enrollments.edit`.
+
+### [x] S-52 «انجام دادم»: a sticky, learner-declared completion signal, separate from mastery level (DECISIONS §43)
+New button on the lesson page, gated on every practice being answered correctly at least once. Fills the sidebar circle / course-page checkmark / progress counter permanently, independent of any later dip in numeric mastery from a failed review — the mastery badge itself stays honest and untouched. No schema change (`evidence.source = 'lesson_done'` on the existing `attempts` table).
+
+### [x] S-53 `Planner::today()` only materialized once per enrollment per day
+`materialize()`/`candidatesFor()` were already safely re-callable; a stale `! $existing->contains(...)` guard prevented calling them again the same day even when a lesson had just become newly eligible. Removed — the plan's own «امروز» list now tops up same-day instead of waiting for tomorrow. Not the primary answer to "move at my own pace" (that's free lesson-page navigation, already unlocked, plus S-52) but a real bug worth fixing alongside it.

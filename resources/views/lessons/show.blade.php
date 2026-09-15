@@ -16,9 +16,12 @@
     $reviewCount = $reviewAttempts->count();
     $reviewSuccessCount = $reviewAttempts->whereIn('result_status', ['correct', 'correct_with_hint'])->count();
 
-    // Curriculum grouped by section, in course order.
+    // Curriculum grouped by section, in course order. The sidebar circle counts a lesson
+    // as done at either signal: real mastery (>= «آشنا»), or the sticky "انجام دادم" mark —
+    // the two are deliberately different things (DECISIONS.md), but both mean "filled dot" here.
     $sections = $course->lessons->groupBy(fn ($l) => $l->section ?? '');
-    $doneCount = $course->lessons->filter(fn ($l) => MasteryRecord::LEVEL_INDEX[$l->levelFor($user)] >= 2)->count();
+    $levelIndexOrDone = fn ($l) => max(MasteryRecord::LEVEL_INDEX[$l->levelFor($user)], $doneLessonIds->contains($l->id) ? 2 : 0);
+    $doneCount = $course->lessons->filter(fn ($l) => $levelIndexOrDone($l) >= 2)->count();
     $total = $course->lessons->count();
     $position = $course->lessons->search(fn ($l) => $l->id === $lesson->id) + 1;
 @endphp
@@ -82,6 +85,27 @@
                     @empty
                         <div class="px-[18px] py-3 text-[13px] text-faint">این درس هنوز تمرین نداره.</div>
                     @endforelse
+                </div>
+
+                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap" @if ($lessonDone) style="border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);" @endif>
+                    @if ($lessonDone)
+                        <div class="flex items-center gap-2.5 text-[13.5px]">
+                            <span class="w-7 h-7 rounded-full grid place-items-center shrink-0" style="background: var(--ok); color: #06261a;"><x-icon name="check" class="w-4 h-4" /></span>
+                            <span class="font-semibold">این درس رو انجام دادی.</span>
+                        </div>
+                    @else
+                        <div class="text-[13.5px] text-muted">
+                            @if ($practicesPassed)
+                                ویدیو/متن رو دیدی و تمرین‌ها رو درست جواب دادی؟ همینجا علامتش بزن.
+                            @else
+                                اول همه‌ی تمرین‌های بالا رو درست جواب بده، بعد می‌تونی این درس رو انجام‌شده علامت بزنی.
+                            @endif
+                        </div>
+                        <form method="POST" action="{{ route('lessons.mark-done', $lesson) }}">
+                            @csrf
+                            <button type="submit" class="btn btn-primary" @disabled(! $practicesPassed)><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
+                        </form>
+                    @endif
                 </div>
 
                 <div class="grid gap-5 md:grid-cols-3">
@@ -162,7 +186,7 @@
                 @foreach ($sections as $sectionTitle => $items)
                     @php
                         $isCurrentSection = $items->contains('id', $lesson->id);
-                        $sectionDone = $items->filter(fn ($l) => MasteryRecord::LEVEL_INDEX[$l->levelFor($user)] >= 2)->count();
+                        $sectionDone = $items->filter(fn ($l) => $levelIndexOrDone($l) >= 2)->count();
                         $sectionMinutes = $items->sum('estimated_minutes');
                     @endphp
                     <div x-data="{ open: {{ ($isCurrentSection || $sectionTitle === '') ? 'true' : 'false' }} }" class="border-b border-line">
@@ -177,7 +201,7 @@
                         @endif
                         <div x-show="open">
                             @foreach ($items as $item)
-                                @php $i = MasteryRecord::LEVEL_INDEX[$item->levelFor($user)]; $isCurrent = $item->id === $lesson->id; @endphp
+                                @php $i = $levelIndexOrDone($item); $isCurrent = $item->id === $lesson->id; @endphp
                                 <a href="{{ $item->url() }}" @if ($isCurrent) data-current aria-current="page" @endif
                                    class="flex items-start gap-2.5 px-4 py-2.5 text-[13px] leading-[1.5] border-s-2 {{ $isCurrent ? 'bg-surface2 border-accent text-ink' : 'border-transparent text-ink hover:bg-hover' }}">
                                     <span class="mt-[3px] w-4 h-4 rounded-full grid place-items-center shrink-0 text-[10px]"

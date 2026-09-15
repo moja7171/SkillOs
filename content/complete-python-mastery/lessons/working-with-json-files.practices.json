@@ -1,0 +1,37 @@
+[
+  {
+    "key": "dumps-vs-loads",
+    "title": "کدوم برای کدوم کاره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای یه رشته‌ی JSON که از یه فایل خوندی رو به یه دیکشنری پایتونی تبدیل کنی. کدوم تابع درسته؟",
+    "options": ["json.loads", "json.dumps", "json.load_dict", "json.parse"],
+    "correct_option": 0,
+    "expected_outcome": "json.loads -- این تابع یه رشته‌ی JSON رو می‌گیره و به ساختار پایتونی (دیکشنری/لیست) تبدیلش می‌کنه. json.dumps برعکسه: از پایتون به رشته‌ی JSON.",
+    "hints": ["loads یعنی «بارگذاری از رشته» -- از JSON به پایتون.", "dumps برعکسشه: از پایتون به رشته."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "write-and-read-json",
+    "title": "یه دیکشنری رو ذخیره و دوباره بخون",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کدی بنویس که یه دیکشنری `{\"name\": \"Ali\", \"age\": 25}` رو به فایل settings.json ذخیره کنه، بعد همون فایل رو بخونه و دوباره به یه دیکشنری پایتونی تبدیل کنه.",
+    "expected_outcome": "```python\nimport json\nfrom pathlib import Path\n\ndata = {\"name\": \"Ali\", \"age\": 25}\n\nPath(\"settings.json\").write_text(json.dumps(data))\n\nloaded = json.loads(Path(\"settings.json\").read_text())\n```",
+    "hints": ["برای نوشتن: اول json.dumps بعد write_text.", "برای خوندن: اول read_text بعد json.loads."],
+    "rubric": "Correct: writes with json.dumps + write_text, then reads with read_text + json.loads. Partial: one direction correct, the other missing or wrong order. Incorrect: doesn't use both dumps and loads correctly."
+  },
+  {
+    "key": "why-json-syntax-similar",
+    "title": "چرا خروجی شبیه سینتکس پایتونه؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا خروجی json.dumps روی یه لیست از دیکشنری‌ها، تقریباً عین همون سینتکس لیست/دیکشنری پایتون به‌نظر می‌رسه؟ آیا این همیشه اتفاق می‌افته؟",
+    "expected_outcome": "چون فرمت JSON از نظر ساختاری شباهت زیادی به سینتکس لیست/دیکشنری پایتون داره، ولی این یه تصادفه، نه یه قانون کلی -- زبان‌های دیگه ممکنه همین داده رو با سینتکس متفاوتی نمایش بدن.",
+    "hints": ["JSON یه فرمت مستقل از زبانه، نه مخصوص پایتون.", "این شباهت اتفاقیه؛ سایر زبان‌ها همین ساختار رو متفاوت می‌نویسن."],
+    "rubric": "Correct if the answer notes the resemblance is coincidental, since JSON is language-independent."
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "key": "operational-error-no-table",
+    "title": "چرا این خطا می‌گیریم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nwith sqlite3.connect(\"db.sqlite3\") as conn:\n    conn.execute(\"INSERT INTO users VALUES (?, ?)\", (1, \"Ali\"))\n```\nاین کد `sqlite3.OperationalError: no such table: users` می‌ده، با اینکه فایل db.sqlite3 وجود داره. چرا؟",
+    "expected_outcome": "چون sqlite3.connect فقط فایل پایگاه‌داده رو می‌سازه (اگه نبود)، نه هیچ جدولی داخلش. باید قبل از درج داده، با یه دستور CREATE TABLE جدول users رو بسازیم.",
+    "hints": ["connect فقط فایل رو می‌سازه، نه ساختار جدول‌ها.", "باید صریح یه دستور CREATE TABLE اجرا کنیم."],
+    "rubric": "Correct if the answer explains connect() only creates the database file, not tables, so a CREATE TABLE statement is needed first."
+  },
+  {
+    "key": "why-placeholders",
+    "title": "چرا از ? استفاده می‌کنیم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا به‌جای نوشتن مستقیم مقادیر توی رشته‌ی SQL (مثل f\"INSERT INTO movies VALUES ({id}, '{title}', {year})\")، از placeholder (?) و پاس‌دادن مقادیر جدا استفاده می‌کنیم؟",
+    "expected_outcome": "چون چسبوندن مستقیم مقادیر (خصوصاً ورودی‌های خارجی/کاربر) توی رشته‌ی SQL می‌تونه به SQL injection منجر بشه -- یه نوع حمله‌ی امنیتی. استفاده از placeholder باعث می‌شه مقادیر به‌شکل امن و جدا از دستور SQL پردازش بشن.",
+    "hints": ["فکر کن یکی از مقادیر شامل کوتیشن یا کاراکترهای خاص SQL باشه.", "این یه مسئله‌ی امنیتیه، نه فقط سبک نوشتن."],
+    "rubric": "Correct if the answer identifies SQL injection risk as the reason for using placeholders instead of string interpolation."
+  },
+  {
+    "key": "insert-and-read-rows",
+    "title": "یه جدول بساز، داده بریز، بخون",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 7,
+    "prompt": "کدی بنویس که به db.sqlite3 وصل بشه، یه جدول students با ستون‌های id (INTEGER PRIMARY KEY) و name (TEXT) بسازه (اگه از قبل نباشه)، یه دانش‌آموز با id=1 و name=\"Sara\" درج کنه، و بعد همه‌ی سطرهای جدول رو با یه حلقه چاپ کنه.",
+    "expected_outcome": "```python\nimport sqlite3\n\nwith sqlite3.connect(\"db.sqlite3\") as conn:\n    conn.execute(\"\"\"\n        CREATE TABLE IF NOT EXISTS students (\n            id INTEGER PRIMARY KEY,\n            name TEXT NOT NULL\n        )\n    \"\"\")\n\n    conn.execute(\"INSERT INTO students VALUES (?, ?)\", (1, \"Sara\"))\n    conn.commit()\n\n    cursor = conn.execute(\"SELECT * FROM students\")\n    for row in cursor:\n        print(row)\n```",
+    "hints": ["ترتیب درسته: اول CREATE TABLE IF NOT EXISTS، بعد INSERT با placeholder، بعد commit، بعد SELECT.", "commit فقط بعد از INSERT لازمه، نه بعد از SELECT."],
+    "rubric": "Correct: creates the table conditionally, inserts with placeholders, commits, then reads and prints rows via a cursor. Partial: missing commit() after insert, or missing IF NOT EXISTS. Incorrect: doesn't create the table, or uses raw string interpolation instead of placeholders."
+  }
+]

@@ -2879,7 +2879,10 @@
           "subtitle": "113-python-standard-library.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "پایتون با فلسفه‌ی «batteries included» میاد: بدون نصب هیچ پکیج اضافه‌ای، یه کتابخانه‌ی بزرگ و آماده از ماژول‌ها داره.",
+        "این بخش قراره بعداً هم به‌عنوان یه مرجع سریع استفاده بشه؛ هدف حفظ‌کردن نیست، بلکه دونستن اینه که چه امکاناتی کجا هست."
+      ],
       "common_mistakes": []
     },
     {
@@ -2900,8 +2903,14 @@
           "subtitle": "114-working-with-paths.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "کلاس `Path` (از `pathlib`) پایه‌ی کار با فایل و پوشه در پایتونه؛ یه راه مستقل از سیستم‌عامله برای نمایش مسیرها.",
+        "برای مسیرهای ویندوزی پر از بک‌اسلش، بهتره از raw string (پیشوند `r`) استفاده کرد تا بک‌اسلش escape نشه.",
+        "`p.name`, `p.stem`, `p.suffix`, `p.parent` اجزای مختلف یه مسیر رو استخراج می‌کنن؛ `with_name`/`with_suffix` فقط یه Path جدید می‌سازن، فایل واقعی رو تغییر نمی‌دن."
+      ],
+      "common_mistakes": [
+        "انتظار داشتن که `with_name` یا `with_suffix` فایل رو واقعاً روی دیسک تغییرنام بده، در حالی که فقط یه آبجکت Path جدید برمی‌گردونن."
+      ]
     },
     {
       "slug": "working-with-directories",
@@ -2921,7 +2930,11 @@
           "subtitle": "115-working-with-directories.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`iterdir()` یه جنراتور از همه‌ی اعضای یه پوشه برمی‌گردونه -- جنراتوره تا مصرف حافظه برای پوشه‌های خیلی بزرگ کم بمونه.",
+        "`glob(pattern)` فقط توی همون پوشه با یه الگو می‌گرده؛ `rglob(pattern)` همون کار رو به‌شکل بازگشتی توی زیرپوشه‌ها هم انجام می‌ده.",
+        "می‌شه با list comprehension، خروجی `iterdir()`/`glob()` رو به لیست تبدیل و فیلتر کرد (مثلاً فقط پوشه‌ها با `is_dir()`)."
+      ],
       "common_mistakes": []
     },
     {
@@ -2942,7 +2955,11 @@
           "subtitle": "116-working-with-files.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`p.read_text()`/`p.write_text()` (و نسخه‌ی bytes‌شون) باز و بسته‌کردن فایل رو خودشون مدیریت می‌کنن -- ساده‌تر از `open()` دستی.",
+        "`p.stat()` اطلاعاتی مثل `st_size` و `st_ctime` می‌ده؛ مقادیر زمانی به‌شکل ثانیه از epoch هستن و با `time.ctime()` قابل‌خوندن می‌شن.",
+        "برای کپی‌کردن فایل، ماژول `shutil` (نه Path) بهترین ابزاره: `shutil.copy(source, target)`."
+      ],
       "common_mistakes": []
     },
     {
@@ -2963,8 +2980,14 @@
           "subtitle": "117-working-with-zip-files.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "برای ساخت یه zip جدید، `ZipFile(name, \"w\")` رو با `with` باز می‌کنیم؛ برای خوندن، حالت پیش‌فرض (بدون آرگومان دوم) کافیه.",
+        "`zip.namelist()` لیست فایل‌های داخل zip رو می‌ده؛ `zip.getinfo(name)` اطلاعات (حجم اصلی و فشرده‌شده) یه فایل خاص رو می‌ده.",
+        "`zip.extractall(dir)` همه‌ی فایل‌ها رو از zip استخراج می‌کنه."
+      ],
+      "common_mistakes": [
+        "فراموش‌کردن `\"w\"` هنگام ساخت zip جدید و به‌طور ناخواسته باز کردن اون در حالت خوندن."
+      ]
     },
     {
       "slug": "working-with-csv-files",
@@ -2984,8 +3007,14 @@
           "subtitle": "118-working-with-csv-files.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "برای CSV باید از `open()` استفاده کرد، نه `Path` -- چون `csv.writer`/`csv.reader` یه آبجکت فایل می‌خوان.",
+        "`csv.reader` همه‌ی مقادیر رو به‌شکل رشته برمی‌گردونه، حتی اعداد -- برای محاسبات باید صریح تبدیلشون کنی.",
+        "یه آبجکت `reader` فقط یه‌بار قابل‌پیمایشه؛ بعد از `list(reader)`، دوباره پیمایش با `for` چیزی برنمی‌گردونه."
+      ],
+      "common_mistakes": [
+        "فرض‌کردن مقادیر خونده‌شده از CSV به‌طور خودکار عددی‌ان، بدون تبدیل صریح با int()/float()."
+      ]
     },
     {
       "slug": "working-with-json-files",
@@ -3005,7 +3034,11 @@
           "subtitle": "119-working-with-json-files.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`json.dumps(obj)` یه آبجکت پایتونی رو به رشته‌ی JSON تبدیل می‌کنه؛ `json.loads(text)` برعکسش عمل می‌کنه.",
+        "شباهت سینتکس JSON به لیست/دیکشنری پایتون تصادفیه، نه یه قانون کلی -- JSON یه فرمت مستقل از زبانه.",
+        "برای ذخیره/خوندن JSON از فایل، معمولاً `dumps`/`loads` با `Path.write_text`/`Path.read_text` ترکیب می‌شن."
+      ],
       "common_mistakes": []
     },
     {
@@ -3026,8 +3059,14 @@
           "subtitle": "120-working-with-a-sqlite-database.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`sqlite3.connect(name)` فایل پایگاه‌داده رو (اگه نبود) می‌سازه، ولی هیچ جدولی خودکار نمی‌سازه -- باید صریح CREATE TABLE اجرا بشه.",
+        "برای درج داده، به‌جای چسبوندن مستقیم مقادیر توی رشته‌ی SQL، از placeholder (`?`) استفاده کن تا از SQL injection جلوگیری بشه.",
+        "`conn.commit()` فقط برای عملیات نوشتن (INSERT/UPDATE/DELETE) لازمه، نه برای خوندن (SELECT)."
+      ],
+      "common_mistakes": [
+        "درج یا خوندن داده قبل از ساختن جدول موردنظر، که باعث `sqlite3.OperationalError: no such table` می‌شه."
+      ]
     },
     {
       "slug": "working-with-timestamps",
@@ -3047,7 +3086,11 @@
           "subtitle": "121-working-with-timestamps.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`time.time()` تعداد ثانیه از یه نقطه‌ی ثابت شروع (Unix Epoch، معمولاً اول ژانویه‌ی ۱۹۷۰) رو برمی‌گردونه.",
+        "این عدد خودش برای انسان قابل‌خوندن نیست، ولی برای محاسبات (مثل اندازه‌گیری مدت‌زمان اجرای یه تابع) کاربردیه.",
+        "ماژول `timeit` هم همین هدف (اندازه‌گیری زمان اجرا) رو با یه رویکرد دیگه پوشش می‌ده."
+      ],
       "common_mistakes": []
     },
     {
@@ -3068,7 +3111,11 @@
           "subtitle": "122-working-with-datetimes.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "کلاس `datetime` بهتره مستقیم از ماژول import بشه (`from datetime import datetime`) تا مجبور نشیم بنویسیم `datetime.datetime(...)`.",
+        "`strptime(text, format)` یه رشته رو به datetime تبدیل می‌کنه؛ `strftime(format)` برعکس عمل می‌کنه -- از datetime به رشته.",
+        "آبجکت‌های `datetime` مستقیم با `>`, `<`, `==` قابل‌مقایسه‌ان، چون هر کدوم یه نقطه‌ی مشخص روی خط زمانه."
+      ],
       "common_mistakes": []
     },
     {
@@ -3089,8 +3136,14 @@
           "subtitle": "123-working-with-time-deltas.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "کم‌کردن دو `datetime` از هم به‌طور خودکار یه `timedelta` (یعنی یه مدت‌زمان، نه یه نقطه‌ی خاص) برمی‌گردونه.",
+        "`timedelta` فقط `days`, `seconds`, `microseconds` داره -- نه ماه یا سال، چون طول اون واحدها ثابت نیست.",
+        "`duration.seconds` فقط ثانیه‌های باقی‌مونده‌ی داخل یه روزه؛ برای کل مدت‌زمان به ثانیه، از `total_seconds()` استفاده کن."
+      ],
+      "common_mistakes": [
+        "استفاده از آرگومان‌های بدون‌نام (positional) موقع ساخت timedelta، که برای خواننده‌ی کد معلوم نیست کدوم واحده -- باید از آرگومان‌های کلیدی مثل `days=1` استفاده کرد."
+      ]
     },
     {
       "slug": "generating-random-values",

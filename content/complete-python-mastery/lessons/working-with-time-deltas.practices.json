@@ -1,0 +1,37 @@
+[
+  {
+    "key": "no-month-or-year",
+    "title": "چرا timedelta ماه نداره؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا کلاس timedelta ویژگی‌هایی مثل months یا years نداره، با اینکه datetime این ویژگی‌ها رو داره؟",
+    "expected_outcome": "چون طول یه ماه یا سال ثابت نیست (ماه‌ها بین ۲۸ تا ۳۱ روزن، سال کبیسه ۳۶۶ روزه)؛ یه مدت‌زمان مثل «یک ماه» معنای دقیقی به تعداد روز نداره. برای همین timedelta فقط واحدهای همیشه‌ثابت (روز، ثانیه، میکروثانیه) رو پشتیبانی می‌کنه.",
+    "hints": ["طول ماه‌های مختلف با هم فرق داره.", "datetime یه نقطه‌ی مشخصه (پس month معنا داره)، timedelta یه مدت‌زمانه."],
+    "rubric": "Correct if the answer explains months/years have variable length, unlike the fixed units days/seconds/microseconds."
+  },
+  {
+    "key": "seconds-vs-total-seconds",
+    "title": "seconds یا total_seconds؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه timedelta معادل 2 روز و 3 ساعته. duration.seconds چی برمی‌گردونه؟",
+    "options": ["فقط ثانیه‌های معادل همون 3 ساعت (نه کل مدت به ثانیه)", "کل مدت‌زمان (2 روز + 3 ساعت) به ثانیه", "فقط عدد 2 (تعداد روزها)", "None، چون باید از total_seconds() استفاده کرد"],
+    "correct_option": 0,
+    "expected_outcome": "فقط ثانیه‌های باقی‌مونده‌ی داخل یه روز (معادل همون 3 ساعت) -- برای کل مدت‌زمان به ثانیه (شامل روزها هم)، باید از total_seconds() استفاده کرد.",
+    "hints": ["seconds فقط باقی‌مونده‌ی داخل یه روزه.", "برای کل مدت به ثانیه، متد دیگه‌ای لازمه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "add-timedelta-to-date",
+    "title": "یه تاریخ رو 10 روز جلو ببر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه datetime برای 1 ژانویه‌ی 2024 بساز و با استفاده از timedelta، یه datetime جدید که دقیقاً 10 روز جلوتره بساز.",
+    "expected_outcome": "```python\nfrom datetime import datetime, timedelta\n\ndt = datetime(2024, 1, 1)\nnew_dt = dt + timedelta(days=10)\n```",
+    "hints": ["از آرگومان کلیدی days=10 استفاده کن، نه یه عدد بی‌نام.", "جمع datetime + timedelta یه datetime جدید می‌ده."],
+    "rubric": "Correct: creates datetime(2024, 1, 1) and adds timedelta(days=10) using a keyword argument. Partial: correct logic but uses a positional argument instead of days=10. Incorrect: doesn't produce a new datetime, or uses wrong units."
+  }
+]

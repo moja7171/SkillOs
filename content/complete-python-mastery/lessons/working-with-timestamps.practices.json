@@ -1,0 +1,37 @@
+[
+  {
+    "key": "what-is-epoch",
+    "title": "تایم‌استمپ یعنی چی؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "عددی که time.time() برمی‌گردونه دقیقاً چی رو نشون می‌ده؟",
+    "expected_outcome": "تعداد ثانیه‌هایی که از یه نقطه‌ی ثابت شروع (epoch) گذشته -- روی سیستم‌های یونیکسی این نقطه اول ژانویه‌ی ۱۹۷۰ه.",
+    "hints": ["این عدد به یه نقطه‌ی مرجع ثابت وصله، نه به تاریخ امروز مستقیم.", "این مفهوم Unix Epoch Time نام داره."],
+    "rubric": "Correct if the answer describes seconds elapsed since a fixed epoch (e.g. Jan 1, 1970 on Unix)."
+  },
+  {
+    "key": "measure-duration",
+    "title": "مدت‌زمان اجرا رو اندازه بگیر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کدی بنویس که مدت‌زمان اجرای این تابع رو با time() اندازه بگیره و چاپ کنه:\n```python\ndef process_data():\n    total = 0\n    for i in range(1000000):\n        total += i\n    return total\n```",
+    "expected_outcome": "```python\nfrom time import time\n\nstart = time()\nprocess_data()\nend = time()\n\nduration = end - start\nprint(duration)\n```",
+    "hints": ["قبل و بعد از صدازدن تابع، time() رو بگیر.", "duration = end - start"],
+    "rubric": "Correct: captures time() before and after calling process_data(), computes and prints the difference. Partial: measures time but forgets to actually call process_data() between the two timestamps. Incorrect: doesn't use time module correctly, or measures something unrelated."
+  },
+  {
+    "key": "timestamp-not-readable",
+    "title": "چرا این عدد قابل‌خوندن نیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا خروجی time.time() (مثل 1700000000.12) برای یه انسان مستقیماً قابل‌خوندن نیست؟",
+    "options": ["چون فقط تعداد ثانیه از یه نقطه‌ی مرجع ثابته، نه یه تاریخ فرمت‌شده", "چون همیشه یه عدد منفیه", "چون فقط روی ویندوز کار می‌کنه", "چون گرد نشده و اعشار داره"],
+    "correct_option": 0,
+    "expected_outcome": "درسته: این عدد فقط تعداد ثانیه از epoch رو نشون می‌ده -- برای تبدیل به یه تاریخ خوانا، باید از ابزارهای دیگه‌ای مثل ماژول datetime استفاده کرد.",
+    "hints": ["این عدد یه شمارنده‌ی ساده از یه نقطه‌ی مرجعه.", "اعشار بودنش دلیل غیرخوانا بودنش نیست."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

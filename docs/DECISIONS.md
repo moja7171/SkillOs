@@ -598,3 +598,13 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Direct owner request: enroll from the catalog too, and always land on the schedule form right after so the course actually enters the plan instead of silently sitting unconfigured.
 
 **Consequences.** Any future "enroll" entry point (there are currently two: catalog, course show) should redirect through the same controller action rather than duplicating the "new vs already-enrolled" branch, so the landing behavior stays consistent by construction.
+
+---
+
+## 41. Video player seeks 5s instead of 10s (2026-09-15)
+
+**Decision.** `resources/js/player.js`'s Plyr instance had `seekTime: 10`; changed to `5`. This single option drives the rewind/fast-forward buttons and the ←/→ and J/L keyboard shortcuts uniformly (Plyr's own behavior, not something this app wires up separately) — updated the i18n comment documenting the keyboard shortcuts to match.
+
+**Why.** Direct owner request.
+
+**Consequences.** None beyond the seek granularity itself — no other code reads or depends on the seek amount.

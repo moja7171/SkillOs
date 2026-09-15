@@ -6,6 +6,7 @@ use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
@@ -53,28 +54,63 @@ class OpsController extends Controller
     /** @return list<string> */
     protected function status(): array
     {
-        $db = config('database.connections.sqlite.database');
+        $connection = (string) config('database.default');
 
         return [
             'app: '.config('app.name').' ('.config('app.env').')',
             'php: '.PHP_VERSION,
             'laravel: '.app()->version(),
-            'database: '.$db.' '.(File::exists($db) ? '('.Str::of((string) round(File::size($db) / 1024))->append(' KB').')' : '(missing)'),
+            'database: '.$this->databaseStatusLine($connection),
             'media base: '.(config('media.base_url') ?: '(same host)'),
             'gemini key: '.(config('services.gemini.api_key') ? 'set' : 'MISSING'),
-            'writable: storage='.(is_writable(storage_path()) ? 'yes' : 'NO').' bootstrap/cache='.(is_writable(base_path('bootstrap/cache')) ? 'yes' : 'NO').' database/='.(is_writable(dirname($db)) ? 'yes' : 'NO'),
+            'writable: '.$this->writableStatusLine($connection),
             'courses on disk: '.implode(', ', $this->courseSlugs()),
         ];
+    }
+
+    /** File-based (SQLite path/size) or server-based (connect + report host/db) status line. */
+    protected function databaseStatusLine(string $connection): string
+    {
+        if ($connection === 'sqlite') {
+            $db = config('database.connections.sqlite.database');
+
+            return $db.' '.(File::exists($db) ? '('.Str::of((string) round(File::size($db) / 1024))->append(' KB').')' : '(missing)');
+        }
+
+        $host = config("database.connections.{$connection}.host");
+        $name = config("database.connections.{$connection}.database");
+
+        try {
+            DB::connection()->getPdo();
+
+            return "{$connection} {$host}/{$name} (connected)";
+        } catch (\Throwable $e) {
+            return "{$connection} {$host}/{$name} (NOT REACHABLE: {$e->getMessage()})";
+        }
+    }
+
+    protected function writableStatusLine(string $connection): string
+    {
+        $line = 'storage='.(is_writable(storage_path()) ? 'yes' : 'NO').' bootstrap/cache='.(is_writable(base_path('bootstrap/cache')) ? 'yes' : 'NO');
+
+        if ($connection === 'sqlite') {
+            $dir = dirname((string) config('database.connections.sqlite.database'));
+            $line .= ' database/='.(is_writable($dir) ? 'yes' : 'NO');
+        }
+
+        return $line;
     }
 
     /** @return list<string> */
     protected function migrate(): array
     {
-        $db = config('database.connections.sqlite.database');
+        if (config('database.default') === 'sqlite') {
+            $db = config('database.connections.sqlite.database');
 
-        if (! File::exists($db)) {
-            File::ensureDirectoryExists(dirname($db));
-            File::put($db, '');
+            if (! File::exists($db)) {
+                File::ensureDirectoryExists(dirname($db));
+                File::put($db, '');
+            }
         }
 
         return $this->artisan(['migrate' => ['--force' => true]]);

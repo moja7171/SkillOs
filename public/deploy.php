@@ -66,12 +66,16 @@ $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 $kernel->bootstrap();
 
 // The SQLite file itself isn't in git (gitignored on every branch); create
-// it before migrate if this is the very first deploy.
-$db = config('database.connections.sqlite.database');
-if ($db && ! file_exists($db)) {
-    @mkdir(dirname($db), 0775, true);
-    touch($db);
-    echo "created empty SQLite database at $db\n\n";
+// it before migrate if this is the very first deploy. Only applies when
+// DB_CONNECTION=sqlite -- a MySQL/MariaDB database is provisioned ahead of
+// time on the host (e.g. cPanel's "MySQL Databases" tool), not created here.
+if (config('database.default') === 'sqlite') {
+    $db = config('database.connections.sqlite.database');
+    if ($db && ! file_exists($db)) {
+        @mkdir(dirname($db), 0775, true);
+        touch($db);
+        echo "created empty SQLite database at $db\n\n";
+    }
 }
 
 $commands = [

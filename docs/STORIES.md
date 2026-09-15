@@ -86,3 +86,8 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 ### [x] S-33 Weak spots page (recurring wrong lessons, cross-course)
 ### [x] S-34 Seen-vs-mastered mark on the course lesson table
 (Both DECISIONS §28. Interleaving, confidence calibration, a concept map, and adaptive difficulty were considered and explicitly rejected for this app's scale — see §28 for why; pretesting wasn't asked for.)
+
+## M9 — Review system at scale (multiple courses)
+
+### [ ] S-35 Group Home's «امروز» list by course, section headers instead of a per-row tag
+Today's list is currently flat (every course's items interleaved, ordered by `Planner::orderForLearner`), with the only per-item course indicator a small gray tag that's `hidden` below the `sm` breakpoint — invisible on mobile. Owner confirmed the review *algorithm* itself (intervals, AI-fresh review content §18, retention stat §24) is solid and needs no change; this story is specifically about the list becoming hard to scan as more courses are added, especially on a phone. Plan: group items under a per-course section heading (course title always visible, mobile included) instead of the row-level tag; keep each course's internal ordering as-is (reviews first); leave the "ادامه‌ی یادگیری" primary CTA untouched — this only reshapes the full-list card below it. A global (cross-course) daily review cap was considered and explicitly deferred — not rejected — since `week()` already gives forward visibility into review load; revisit only if pileups turn out to be a real problem in practice.

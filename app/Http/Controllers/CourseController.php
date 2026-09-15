@@ -12,6 +12,7 @@ class CourseController extends Controller
     public function index(Request $request): View
     {
         $courses = Course::withCount('lessons')
+            ->withSum('lessons as lessons_minutes_sum', 'estimated_minutes')
             ->with(['enrollments' => fn ($q) => $q->where('user_id', $request->user()->id)])
             ->orderBy('title')
             ->get();

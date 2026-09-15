@@ -94,8 +94,8 @@ Today's list is currently flat (every course's items interleaved, ordered by `Pl
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 
-### [ ] S-36 Course catalog cards feel sparse on wide screens, no per-course visual identity
-`courses/index.blade.php`'s cards are small text-only blocks with a lot of unused space around them on desktop, and nothing (color, icon, image) distinguishes one course from another at a glance. Gets worse as more courses are added.
+### [x] S-36 Course catalog cards feel sparse on wide screens, no per-course visual identity
+`courses/index.blade.php`'s cards are small text-only blocks with a lot of unused space around them on desktop, and nothing (color, icon, image) distinguishes one course from another at a glance. Gets worse as more courses are added. Fixed in DECISIONS §35.
 
 ### [ ] S-37 Empty states (friends with one user, weak-spots/zero) feel abandoned, no next action
 A lone card floating on a large dark page, with only a passive sentence. «دوستان» specifically should probably prompt inviting someone (the app already has `REGISTRATION_CODE`) rather than just showing the one existing user.

@@ -525,3 +525,16 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Flagged in the UI/UX review ("badge/pill overload... each with its own color, stacking up, worst on mobile"); the week-view color collision confirmed it wasn't just visual noise but an actual meaning conflict.
 
 **Consequences.** `ok`/`warn`/`bad` still colors difficulty and result badges (unchanged — those two scales don't co-occur with each other in a way that collides, and both genuinely benefit from standing out). Any new "kind" or "category" indicator added later should default to `badge-ghost` + icon rather than reaching for `l0-4`/`ok`/`warn`/`bad`, which are now reserved for mastery level and outcome-quality respectively.
+
+---
+
+## 35. Course catalog cards get a per-course identity and a footer stat row (S-36; 2026-09-15)
+
+**Decision.** `courses/index.blade.php`'s cards were title + description + a lonely lesson count, all plain text — nothing distinguished one course from another, and there was a lot of unused vertical space. Added, without new dependencies or per-course authoring:
+
+- A monogram avatar (first character of the title) in a rounded square, colored by a deterministic per-course hue (`(id * 137) % 360` — golden-angle spacing keeps adjacent course IDs visually distinct even though nothing is hand-picked per course).
+- A footer stat row (lesson count + total estimated hours, separated by a top border from the description) instead of one faint lesson-count line floating at the bottom. `CourseController@index` now also pulls `withSum('lessons as lessons_minutes_sum', 'estimated_minutes')` — one extra aggregate column, no N+1 (still no per-lesson data loaded on this page, unlike the course show page's fuller progress bar, which needs `lessons.masteryRecords` and is too expensive to duplicate here for a browse view).
+
+**Why.** Flagged in the UI/UX review: sparse cards, no per-course visual identity, gets worse as more courses are added — the monogram scales to any number of future courses without needing a color/icon assigned by hand each time.
+
+**Consequences.** The hue is derived purely from `id`, so it's stable for a given course's lifetime but has no relation to its topic/subject — purely a scan-ability aid, not a taxonomy. A future "course category" concept, if added, should replace this hash rather than layer on top of it.

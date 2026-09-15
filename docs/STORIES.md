@@ -77,6 +77,6 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 ### [x] S-26 Weekly recap widget · [x] S-27 Cross-course monthly stats (shipped together as one card, DECISIONS §22)
 ### [x] S-28 Level-up celebration polish (only past "learning", DECISIONS §23)
 ### [x] S-29 Review-retention stat on the lesson page (DECISIONS §24)
-### [ ] S-30 "5-minute mode" quick-review button on Home
+### [x] S-30 "5-minute mode" quick-review button on Home (DECISIONS §25)
 ### [ ] S-31 Global search across lessons
 ### [ ] S-32 Friends streak/stats view

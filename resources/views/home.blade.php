@@ -26,6 +26,16 @@
                 </div>
             @endif
 
+            {{-- Quick review shortcut, for low-motivation days --}}
+            @if ($quickReview)
+                <form method="POST" action="{{ route('session.start-planned', $quickReview) }}">
+                    @csrf
+                    <button type="submit" class="btn btn-sm">
+                        <x-icon name="refresh" class="w-3.5 h-3.5" /> فقط یه مرور سریع ({{ fa_num($quickReview->duration_minutes) }} دقیقه)
+                    </button>
+                </form>
+            @endif
+
             {{-- Gentle nudge after a short gap --}}
             @if ($daysSinceLastActivity !== null && $daysSinceLastActivity >= 2 && $daysSinceLastActivity < 14)
                 <div class="card px-4 py-3 flex items-center gap-3" style="border-color: var(--line2);">

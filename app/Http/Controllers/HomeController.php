@@ -25,6 +25,12 @@ class HomeController extends Controller
 
         $daysSinceLastActivity = $user->streak_last_date ? $user->streak_last_date->diffInDays(today()) : null;
 
+        // A due review already sitting in today's plan, offered as a low-friction
+        // shortcut on low-motivation days — same priority order as $primary, skipped
+        // when the review already *is* the main recommendation so it isn't shown twice.
+        $quickReview = $todayByEnrollment->flatten()
+            ->first(fn ($item) => $item->source === 'review' && $item->status === 'scheduled' && ! $plan['primary']?->is($item));
+
         return view('home', [
             'enrollments' => $enrollments,
             'primary' => $plan['primary'],
@@ -36,6 +42,7 @@ class HomeController extends Controller
             'daysSinceLastActivity' => $daysSinceLastActivity,
             'weeklyStats' => $stats->since($user, now()->subDays(7)),
             'monthlyStats' => $stats->since($user, now()->subDays(30)),
+            'quickReview' => $quickReview,
         ]);
     }
 }

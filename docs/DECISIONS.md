@@ -402,3 +402,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** Part of the engagement-ideas batch: seeing concrete evidence that spaced repetition is working ("you've reviewed this 3 times and still know it") is motivating in a way an abstract "next review: Tuesday" date isn't — it's the same instinct as §21's streak/nudge and §23's celebration banner, applied to the review loop specifically.
 
 **Consequences.** Computed inline in the Blade file (a plain `Attempt::where(...)` query), matching how `$level`/`$record` are already computed there rather than in `LessonController` — consistent with the existing pattern in that file, not a new one.
+
+---
+
+## 25. "5-minute mode": a shortcut to today's other due review (2026-09-15)
+
+**Decision.** No new data model — `HomeController` picks the first `source === 'review' && status === 'scheduled'` item from the same priority-ordered list `$todayByEnrollment` is built from (`Planner::orderForLearner`), skipping whichever item is already `$primary`. Shown as a small standalone button ("فقط یه مرور سریع") that posts straight to `session.start-planned`, same route the regular Today list and primary CTA already use.
+
+**Why.** `orderForLearner` already sorts due reviews first, so a due review is very often already `$primary` — the one case worth a dedicated shortcut is a *second* review (a different course, once >1 enrollment has something due) that's buried further down the Today list. Reusing the existing sorted list instead of a raw/unsorted lookup matters: the first scheduled review by `PlanItem` id does not reliably match `$primary`, since plan items are created in enrollment-iteration order, not priority order — picking the wrong one would occasionally offer a shortcut to a *different* review than the one already recommended, silently contradicting the main CTA. `HomeTest` covers exactly this ordering trap with two courses whose creation order is deliberately the reverse of their priority.
+
+**Consequences.** The button only ever appears when a second review is genuinely available; nothing new to maintain if none is.

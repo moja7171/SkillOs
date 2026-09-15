@@ -6,6 +6,16 @@
     $blockedBy = $lesson->prerequisites->filter(fn ($p) => MasteryRecord::LEVEL_INDEX[$p->levelFor($user)] < 2);
     $record = $lesson->masteryRecords->first();
 
+    // Review retention: how many spaced reviews of this lesson's practices the learner
+    // has actually sat, and how many they got right without needing the reveal.
+    $reviewAttempts = \App\Models\Attempt::where('user_id', $user->id)
+        ->whereIn('activity_id', $lesson->practices->pluck('id'))
+        ->where('evidence->source', 'review')
+        ->whereNotIn('result_status', ['started'])
+        ->get();
+    $reviewCount = $reviewAttempts->count();
+    $reviewSuccessCount = $reviewAttempts->whereIn('result_status', ['correct', 'correct_with_hint'])->count();
+
     // Curriculum grouped by section, in course order.
     $sections = $course->lessons->groupBy(fn ($l) => $l->section ?? '');
     $doneCount = $course->lessons->filter(fn ($l) => MasteryRecord::LEVEL_INDEX[$l->levelFor($user)] >= 2)->count();
@@ -80,6 +90,9 @@
                         <div class="px-[18px] py-1.5 text-[13.5px]">
                             <div class="flex justify-between items-center py-2 border-b border-line"><span class="text-muted">سطح</span><x-level-badge :level="$level" /></div>
                             <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">مرور بعدی</span><span class="font-semibold">{{ $record?->next_review_due_at ? fa_date($record->next_review_due_at, 'l j F') : '—' }}</span></div>
+                            @if ($reviewCount > 0)
+                                <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">نتیجه‌ی مرورها</span><span class="font-semibold">{{ fa_num($reviewSuccessCount) }} از {{ fa_num($reviewCount) }} بار بلد بودی</span></div>
+                            @endif
                             <div class="flex justify-between py-2"><span class="text-muted">آخرین فعالیت</span><span class="font-semibold">{{ $record?->last_evaluated_at ? fa_date($record->last_evaluated_at, 'j F') : '—' }}</span></div>
                         </div>
                     </div>

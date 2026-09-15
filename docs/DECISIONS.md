@@ -392,3 +392,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The owner's engagement-ideas batch asked for level-up moments to feel more like a celebration. Doing that for `not_started → learning` too would fire on literally every lesson in every course (100+ times per course) and cheapen it; reserving the banner for `learning → familiar` and beyond — which requires sustained correct answers, not just starting — keeps it meaning something.
 
 **Consequences.** The learn-activity completion panel (a separate, smaller spot earlier in the same file) still shows only the plain "to" badge — it's always a `not_started → learning` transition, so it was never a candidate for the banner treatment.
+
+---
+
+## 24. Review-retention row on the lesson page (2026-09-15)
+
+**Decision.** The «وضعیت من» card on `lessons/show.blade.php` gets a new row — "N از M بار بلد بودی" — counting the learner's finished (`result_status != 'started'`) attempts on this lesson's practices where `evidence.source === 'review'`, and how many of those were `correct`/`correct_with_hint`. Hidden entirely (`$reviewCount === 0`) until the first review has actually happened.
+
+**Why.** Part of the engagement-ideas batch: seeing concrete evidence that spaced repetition is working ("you've reviewed this 3 times and still know it") is motivating in a way an abstract "next review: Tuesday" date isn't — it's the same instinct as §21's streak/nudge and §23's celebration banner, applied to the review loop specifically.
+
+**Consequences.** Computed inline in the Blade file (a plain `Attempt::where(...)` query), matching how `$level`/`$record` are already computed there rather than in `LessonController` — consistent with the existing pattern in that file, not a new one.

@@ -34,6 +34,21 @@ class DeployTest extends TestCase
         $this->get('/_ops/clear?token=secret')->assertOk()->assertSee('artisan optimize:clear → exit 0');
     }
 
+    public function test_ops_delete_course_removes_a_course_and_refuses_without_a_slug(): void
+    {
+        config(['app.ops_token' => 'secret']);
+        $this->artisan('content:import', ['slug' => 'sample-course']);
+        $this->assertDatabaseHas('courses', ['slug' => 'sample-course']);
+
+        $this->get('/_ops/delete-course?token=secret')->assertOk()->assertSee('ERROR: pass ?slug=');
+        $this->assertDatabaseHas('courses', ['slug' => 'sample-course']);
+
+        $this->get('/_ops/delete-course?token=secret&slug=does-not-exist')->assertOk()->assertSee('nothing to delete');
+
+        $this->get('/_ops/delete-course?token=secret&slug=sample-course')->assertOk()->assertSee('deleted course');
+        $this->assertDatabaseMissing('courses', ['slug' => 'sample-course']);
+    }
+
     public function test_registration_requires_the_invite_code_when_configured(): void
     {
         config(['app.registration_code' => 'friends']);

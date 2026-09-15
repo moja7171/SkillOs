@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Artisan;
@@ -15,7 +16,7 @@ use Illuminate\Support\Str;
  */
 class OpsController extends Controller
 {
-    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear'];
+    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'delete-course'];
 
     public function __invoke(Request $request, string $action): Response
     {
@@ -38,6 +39,7 @@ class OpsController extends Controller
                 'import' => $out = $this->import($request->query('slug'), $request->boolean('prune')),
                 'optimize' => $out = $this->artisan('optimize:clear', 'config:cache', 'route:cache', 'view:cache'),
                 'clear' => $out = $this->artisan('optimize:clear'),
+                'delete-course' => $out = $this->deleteCourse($request->query('slug')),
             };
         } catch (\Throwable $e) {
             $out[] = 'ERROR: '.$e->getMessage();
@@ -89,6 +91,33 @@ class OpsController extends Controller
         }
 
         return $out ?: ['nothing to import — no course folders under content/'];
+    }
+
+    /**
+     * Permanently removes a course and everything under it (lessons, activities,
+     * mastery records, attempts, plan items — all cascade via FK constraints). Requires
+     * an explicit `slug`; there is no "delete everything" form. This is the only way to
+     * remove a course on a host with no shell access — `content:import` only adds/updates.
+     *
+     * @return list<string>
+     */
+    protected function deleteCourse(?string $slug): array
+    {
+        if (! $slug) {
+            return ['ERROR: pass ?slug=<course-slug> — refusing to delete without one'];
+        }
+
+        $course = Course::where('slug', $slug)->first();
+
+        if (! $course) {
+            return ["no course with slug \"{$slug}\" — nothing to delete"];
+        }
+
+        $title = $course->title;
+        $lessonCount = $course->lessons()->count();
+        $course->delete();
+
+        return ["deleted course \"{$title}\" (slug: {$slug}, {$lessonCount} lessons)"];
     }
 
     /**

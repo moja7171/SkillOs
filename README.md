@@ -85,7 +85,8 @@ The host only needs PHP 8.3+ with `pdo_sqlite`, `mbstring`, `openssl`, `fileinfo
 4. In the browser, with `T` = your `OPS_TOKEN`:
    - `https://your-domain/_ops/status?token=T` — sanity check (PHP version, writable dirs, courses found)
    - `https://your-domain/_ops/migrate?token=T` — creates the SQLite file and runs migrations
-   - `https://your-domain/_ops/import?token=T` — imports every course under `content/` (`&slug=x` for one, `&prune=1` to delete removed lessons)
+   - `https://your-domain/_ops/import?token=T` — imports every course under `content/` except `sample-course` (a test fixture, never auto-shipped); `&slug=x` for one course (any slug, including `sample-course`), `&prune=1` to delete removed lessons
+   - `https://your-domain/_ops/delete-course?token=T&slug=x` — permanently removes a course and everything under it (there's no other way to remove a course on a host with no shell access; `slug` is required, no bulk form)
    - `https://your-domain/_ops/optimize?token=T` — caches config/routes/views
 5. Register the first account at `/register` (with the invite code if you set one).
 

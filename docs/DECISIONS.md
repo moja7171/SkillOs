@@ -561,3 +561,13 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** The sample course is a fixture for exercising the importer/deploy pipeline, not real content — it shouldn't appear in the catalog a real user browses, and a full `/_ops/import` (which every deploy runs) would have kept re-adding it after every manual deletion.
 
 **Consequences.** Anyone relying on the old README step (`php artisan content:import sample-course # demo course`) for a from-scratch local setup still gets it, since that's an explicit slug, not the sweep — only the *implicit*, no-slug sweep changed. A future real course added under `content/` is picked up automatically as before; only this one specific fixture slug is special-cased.
+
+---
+
+## 38. `/_ops/delete-course` — the only way to remove a course without shell access (2026-09-15)
+
+**Decision.** §37 stopped `sample-course` from being *re*-imported, but a host that had already run a bare `/_ops/import` before that fix still has the old `Course` row sitting in its database forever — `content:import` only adds/updates, it never deletes a course wholesale (`--prune` only removes lessons/practices *within* a course still being imported). Added `/_ops/delete-course?token=…&slug=…` (`OpsController::deleteCourse`): deletes the `Course` row (cascades to lessons/activities/mastery records/attempts/plan items via the existing FK constraints, same as any other `Course::delete()`). `slug` is required — hitting it with no slug returns an error instead of doing anything; there is no "delete everything" form.
+
+**Why.** The deploy story is deliberately shell-free (README "Deploying to shared hosting" — no SSH, no cron, no queue worker; every maintenance action goes through `/_ops/…`). Without this, the only way to remove a wrongly-imported course from a live host would have been asking the owner to somehow run raw SQL or tinker, which shared hosting doesn't offer.
+
+**Consequences.** Like every other `/_ops` action, this is guarded only by `OPS_TOKEN` in the query string — same trust model as `import --prune` (which was already destructive). Keep the token long and treat it as a secret; rotate it if it ever leaks into a shared log or browser history.

@@ -17,7 +17,7 @@
                     @endif
                     @if ($plannedMinutes > 0)
                         <div class="flex items-center gap-2 flex-1 min-w-[160px]">
-                            <div class="flex-1 h-2 rounded-full bg-surface2 overflow-hidden">
+                            <div class="flex-1 h-2 rounded-full bg-surface2 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $plannedMinutes }}" aria-valuenow="{{ min($plannedMinutes, $doneMinutes) }}" aria-label="پیشرفت امروز">
                                 <div class="h-full rounded-full" style="width: {{ min(100, round($doneMinutes / $plannedMinutes * 100)) }}%; background: var(--accent);"></div>
                             </div>
                             <span class="text-[12.5px] text-muted shrink-0">{{ fa_num($doneMinutes) }}/{{ fa_num($plannedMinutes) }} دقیقه‌ی امروز</span>
@@ -123,7 +123,7 @@
                                 @if ($item->status === 'scheduled')
                                     <form method="POST" action="{{ route('plan-items.skip', $item) }}">
                                         @csrf
-                                        <button type="submit" class="iconbtn w-8 h-8" title="نه امروز"><x-icon name="x" class="w-3.5 h-3.5" /></button>
+                                        <button type="submit" class="iconbtn w-8 h-8" title="نه امروز" aria-label="نه امروز"><x-icon name="x" class="w-3.5 h-3.5" /></button>
                                     </form>
                                     <form method="POST" action="{{ route('session.start-planned', $item) }}">
                                         @csrf

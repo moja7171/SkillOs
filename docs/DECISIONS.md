@@ -470,3 +470,19 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Asked directly to make sure the mobile design holds up; reasoning about Tailwind classes without rendering them missed both bugs — the grid bug in particular wouldn't have been found by inspecting any single component in isolation, since no individual element was "wrong," only their interaction with the shared `.page` grid.
 
 **Consequences.** `.page > * { min-width: 0 }` applies globally to every current and future page built on `.page`'s grid — a good default, but means a future wide-content bug inside `.page` will now correctly *scroll within its own element* (if it opts into `overflow-x-auto` itself) instead of silently blowing out the whole page; it won't auto-fix new tables/wide content, just stops them from taking the page down with them. No screenshot tooling was added to the repo — this was verified ad hoc, so a future mobile change should get the same manual check, not an assumption that Tailwind classes alone guarantee correctness.
+
+---
+
+## 31. Accessibility pass (S-44..S-49): labels, keyboard, contrast, progress semantics (2026-09-15)
+
+**Decision.** Six fixes, found by actually grepping/computing rather than assuming:
+
+- Every icon-only `<button>`/`<a>` now carries `aria-label` alongside (not instead of) its existing `title` — `title` alone works as a fallback accessible name but is weaker (inconsistent screen-reader support, tooltip-only visible hint). One button (`lessons/show.blade.php`'s mobile sidebar-close `×`) had neither and is now the one place `title` was added fresh.
+- `x-dropdown` (used by the nav's hamburger and account menus) closes on `Escape` now (`@keydown.escape.window`, one line in the shared component covers every instance), and both trigger buttons carry `aria-haspopup="true"` + `:aria-expanded="open.toString()"`. The lesson-page mobile curriculum drawer got the same `Escape`-closes treatment since it's the same disclosure pattern.
+- `search/index.blade.php`'s query input has a real (visually-hidden) `<label>` instead of relying on `placeholder` alone.
+- `--faint` moved from `#98a0b0`/`#5c6474` (light/dark) to `#616c7a`/`#818999` — measured before and after with the actual WCAG relative-luminance formula (not eyeballed): every background it appears against (`bg`, `surface`, `surface2`, both themes) now clears 4.4:1+, up from as low as 2.43:1. `--muted` was already compliant and untouched.
+- `x-level-bar` (the stacked mastery-distribution bar) gets `role="img"` + a computed `aria-label` summarizing the segments in Persian ("۵ درس مسلط، ۳ درس آشنا، …") — a multi-segment bar has no single value, so a text summary is the correct equivalent, not `aria-valuenow`. The two genuinely single-value bars (lesson-page course-completion, Home's daily-minutes) got `role="progressbar"` + `aria-valuemin/max/now` instead.
+
+**Why.** Found on a UI/UX review the owner asked for, then a dedicated accessibility question. Every item was verified against the actual DOM/CSS (grep for `iconbtn`/`aria-label`, read the dropdown component, compute contrast ratios) rather than assumed, matching how §30's mobile bugs were found — reasoning about classes in isolation missed real issues there too.
+
+**Consequences.** `--faint` and `--muted` are now visually closer to each other than before (their contrast ratios differ by less than they used to) since compliance took priority over maximizing the three-tier ink/muted/faint visual hierarchy — still distinguishable, just less dramatically. Any new icon-only control should follow the same `title` + `aria-label` pairing; any new disclosure (dropdown/drawer) should reuse `x-dropdown` or replicate its `Escape` handling rather than inventing a new pattern without it.

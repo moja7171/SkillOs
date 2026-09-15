@@ -12,9 +12,9 @@
     </div>
 
     <div class="ms-auto flex items-center gap-3">
-        <a href="{{ route('search') }}" class="iconbtn hidden sm:flex" title="جست‌وجو"><x-icon name="search" class="w-4 h-4" /></a>
+        <a href="{{ route('search') }}" class="iconbtn hidden sm:flex" title="جست‌وجو" aria-label="جست‌وجو"><x-icon name="search" class="w-4 h-4" /></a>
 
-        <button type="button" class="iconbtn" title="تغییر تم" onclick="window.toggleTheme()">
+        <button type="button" class="iconbtn" title="تغییر تم" aria-label="تغییر تم" onclick="window.toggleTheme()">
             <x-icon name="sun" class="w-4 h-4 hidden dark:block" />
             <x-icon name="moon" class="w-4 h-4 dark:hidden" />
         </button>
@@ -24,7 +24,7 @@
         <div class="sm:hidden">
             <x-dropdown align="left" width="48">
                 <x-slot name="trigger">
-                    <button type="button" class="iconbtn" title="منو"><x-icon name="menu" class="w-4 h-4" /></button>
+                    <button type="button" class="iconbtn" title="منو" aria-label="منو" aria-haspopup="true" :aria-expanded="open.toString()"><x-icon name="menu" class="w-4 h-4" /></button>
                 </x-slot>
                 <x-slot name="content">
                     <x-dropdown-link :href="route('home')" @class(['bg-surface2' => request()->routeIs('home')])>خانه</x-dropdown-link>
@@ -38,7 +38,7 @@
 
         <x-dropdown align="left" width="48">
             <x-slot name="trigger">
-                <button type="button" class="w-8 h-8 rounded-full bg-surface2 border border-line2 grid place-items-center font-semibold text-[13px] text-ink">
+                <button type="button" class="w-8 h-8 rounded-full bg-surface2 border border-line2 grid place-items-center font-semibold text-[13px] text-ink" aria-label="منوی حساب کاربری" aria-haspopup="true" :aria-expanded="open.toString()">
                     {{ mb_substr(auth()->user()->name, 0, 1) }}
                 </button>
             </x-slot>

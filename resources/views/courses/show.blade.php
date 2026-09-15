@@ -94,7 +94,7 @@
                 <div class="card">
                     <div class="card-h">
                         <h3>زمان‌بندی</h3>
-                        <a href="{{ route('enrollments.edit', $enrollment) }}" class="iconbtn w-7 h-7" title="ویرایش"><x-icon name="gear" class="w-3.5 h-3.5" /></a>
+                        <a href="{{ route('enrollments.edit', $enrollment) }}" class="iconbtn w-7 h-7" title="ویرایش" aria-label="ویرایش زمان‌بندی"><x-icon name="gear" class="w-3.5 h-3.5" /></a>
                     </div>
                     <div class="px-[18px] py-1.5">
                         <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">اولویت</span><span class="font-semibold">{{ fa_num($enrollment->priority) }} از ۵</span></div>

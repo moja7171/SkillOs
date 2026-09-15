@@ -2,8 +2,9 @@
     <div class="page-narrow max-w-2xl">
         <form method="GET" action="{{ route('search') }}" class="flex items-center gap-2 mb-6">
             <div class="relative flex-1">
+                <label for="q" class="sr-only">جست‌وجو در درس‌ها</label>
                 <x-icon name="search" class="w-4 h-4 absolute top-1/2 -translate-y-1/2 start-3.5 text-faint" />
-                <input type="text" name="q" value="{{ $query }}" autofocus placeholder="اسم درس، دوره یا یه کلمه‌ی داخل متنش…" dir="auto" class="input ps-10">
+                <input id="q" type="text" name="q" value="{{ $query }}" autofocus placeholder="اسم درس، دوره یا یه کلمه‌ی داخل متنش…" dir="auto" class="input ps-10">
             </div>
             <button type="submit" class="btn btn-primary">جست‌وجو</button>
         </form>

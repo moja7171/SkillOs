@@ -6,14 +6,14 @@
 @layer base {
     :root {
         --bg: #f5f6f8; --surface: #ffffff; --surface2: #f0f2f5; --line: #e2e5ea; --line2: #d0d5dd;
-        --ink: #171a21; --muted: #5f6779; --faint: #98a0b0; --accent: #d98a0b; --accent-ink: #ffffff;
+        --ink: #171a21; --muted: #5f6779; --faint: #616c7a; --accent: #d98a0b; --accent-ink: #ffffff;
         --ok: #1a9f72; --warn: #d98a0b; --bad: #d9384f; --code: #f6f7f9; --hover: #f8f9fb;
         --l0: #a3aab8; --l1: #3b6fd6; --l2: #1a9f72; --l3: #d98a0b; --l4: #8a5cf5;
         color-scheme: light;
     }
     .dark {
         --bg: #0e1014; --surface: #151820; --surface2: #1c2029; --line: #262b36; --line2: #323847;
-        --ink: #e7e9ef; --muted: #8e96a8; --faint: #5c6474; --accent: #f0a020; --accent-ink: #1a1200;
+        --ink: #e7e9ef; --muted: #8e96a8; --faint: #818999; --accent: #f0a020; --accent-ink: #1a1200;
         --ok: #2fbf8f; --warn: #f0a020; --bad: #ef5a6f; --code: #0b0d11; --hover: #181c25;
         --l0: #4b5263; --l1: #5b8def; --l2: #2fbf8f; --l3: #f0a020; --l4: #b58cff;
         color-scheme: dark;

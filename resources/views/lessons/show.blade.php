@@ -23,12 +23,12 @@
     $position = $course->lessons->search(fn ($l) => $l->id === $lesson->id) + 1;
 @endphp
 <x-app-layout :title="$lesson->title">
-    <div x-data="{ sidebar: false }" class="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+    <div x-data="{ sidebar: false }" @keydown.escape.window="sidebar = false" class="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
 
         {{-- ================= Lesson (right side in RTL) ================= --}}
         <div class="min-w-0">
             <div class="px-4 sm:px-6 pt-4 pb-3 border-b border-line bg-surface flex items-center gap-3">
-                <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = true" title="فهرست درس‌ها"><x-icon name="text" class="w-4 h-4" /></button>
+                <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = true" title="فهرست درس‌ها" aria-label="باز کردن فهرست درس‌ها"><x-icon name="text" class="w-4 h-4" /></button>
                 <div class="min-w-0 flex-1 leading-[1.4]">
                     <div class="text-[12px] text-muted truncate">
                         <a href="{{ route('courses.show', $course) }}" class="text-muted hover:text-ink" dir="auto">{{ $course->title }}</a>
@@ -145,9 +145,9 @@
                 <div class="min-w-0 flex-1">
                     <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent truncate" dir="auto">{{ $course->title }}</a>
                     <div class="text-[12px] text-muted mt-0.5">{{ fa_num($doneCount) }} از {{ fa_num($total) }} درس حداقل «آشنا»</div>
-                    <div class="levelbar mt-2 !gap-0 bg-surface2"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);"></span></div>
+                    <div class="levelbar mt-2 !gap-0 bg-surface2" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $total }}" aria-valuenow="{{ $doneCount }}" aria-label="پیشرفت دوره"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);"></span></div>
                 </div>
-                <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = false"><x-icon name="x" class="w-4 h-4" /></button>
+                <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = false" title="بستن فهرست درس‌ها" aria-label="بستن فهرست درس‌ها"><x-icon name="x" class="w-4 h-4" /></button>
             </div>
 
             @unless ($enrollment)

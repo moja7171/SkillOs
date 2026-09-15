@@ -1,0 +1,37 @@
+[
+  {
+    "key": "missing-super-call",
+    "title": "چرا خطا می‌گیریم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\nclass Shape:\n    def __init__(self):\n        self.color = \"black\"\n\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        self.radius = radius\n\n\nc = Circle(5)\nprint(c.color)\n```\nاین کد `AttributeError` می‌ده. چرا، و چطور درستش کنیم؟",
+    "expected_outcome": "چون سازنده‌ی Circle، سازنده‌ی Shape رو بازنویسی (override) کرده و super().__init__() رو صدا نزده، پس color هیچ‌وقت مقداردهی نمی‌شه. راه‌حل: اول تابع __init__ کلاس Circle، super().__init__() رو صدا بزنیم.",
+    "hints": ["سازنده‌ی Circle، سازنده‌ی Shape رو کامل جایگزین کرده.", "برای اجرای هر دو سازنده، باید صریح super().__init__() رو صدا بزنی."],
+    "rubric": "Correct if the answer identifies the overridden constructor not calling super().__init__() as the cause, and proposes adding that call."
+  },
+  {
+    "key": "fix-with-super",
+    "title": "هر دو سازنده رو اجرا کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کلاس Circle رو طوری اصلاح کن که هم color از Shape مقداردهی بشه، هم radius خودش:\n```python\nclass Shape:\n    def __init__(self):\n        self.color = \"black\"\n\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        self.radius = radius\n```",
+    "expected_outcome": "```python\nclass Shape:\n    def __init__(self):\n        self.color = \"black\"\n\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        super().__init__()\n        self.radius = radius\n```",
+    "hints": ["از super() برای دسترسی به سازنده‌ی کلاس والد استفاده کن.", "super().__init__() رو قبل یا بعد از self.radius = radius می‌شه صدا زد؛ هر دو کار می‌کنن."],
+    "rubric": "Correct: Circle.__init__ calls super().__init__() and still sets self.radius. Partial: calls super().__init__() but loses radius assignment, or vice versa. Incorrect: doesn't call super().__init__() at all."
+  },
+  {
+    "key": "predict-execution-order",
+    "title": "کدوم پیام اول چاپ می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass A:\n    def __init__(self):\n        print(\"A\")\n\n\nclass B(A):\n    def __init__(self):\n        print(\"B start\")\n        super().__init__()\n        print(\"B end\")\n\n\nB()\n```\nترتیب چاپ چیه؟",
+    "options": ["B start / A / B end", "A / B start / B end", "B start / B end / A", "A / B end / B start"],
+    "correct_option": 0,
+    "expected_outcome": "B start / A / B end — چون super().__init__() دقیقاً همون‌جایی که نوشته شده اجرا می‌شه، بین دو خط print دیگه.",
+    "hints": ["super().__init__() دقیقاً همون‌جایی که نوشته شده اجرا می‌شه، نه لزوماً اول یا آخر.", "خط‌ها رو دقیقاً به ترتیب نوشته‌شدن دنبال کن."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

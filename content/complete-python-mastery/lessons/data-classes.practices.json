@@ -1,0 +1,37 @@
+[
+  {
+    "key": "namedtuple-equality",
+    "title": "این دو تا برابرن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfrom collections import namedtuple\n\nColor = namedtuple(\"Color\", [\"r\", \"g\", \"b\"])\n\nc1 = Color(r=255, g=0, b=0)\nc2 = Color(r=255, g=0, b=0)\n\nprint(c1 == c2)\n```\nخروجی چیه؟",
+    "options": ["True", "False", "TypeError می‌ده", "AttributeError می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "True -- namedtuple برخلاف کلاس معمولی، به‌طور خودکار آبجکت‌ها رو بر اساس مقادیرشون مقایسه می‌کنه، بدون اینکه خودمون __eq__ بنویسیم.",
+    "hints": ["namedtuple این مقایسه رو رایگان بهت می‌ده.", "برخلاف یه کلاس معمولی بدون __eq__، اینجا مقدار مهمه نه محل حافظه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "immutable-namedtuple-error",
+    "title": "چرا این خطا می‌ده؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nColor = namedtuple(\"Color\", [\"r\", \"g\", \"b\"])\nc = Color(r=255, g=0, b=0)\nc.r = 100\n```\nخط آخر AttributeError می‌ده. چرا، و اگه واقعاً بخوایم r رو عوض کنیم چیکار باید بکنیم؟",
+    "expected_outcome": "چون namedtuple یه tuple هست و tuple ها غیرقابل‌تغییرن (immutable) -- بعد از ساخته‌شدن نمی‌شه مقادیرشون رو عوض کرد. برای «تغییر» یه مقدار، باید یه نمونه‌ی کاملاً جدید بسازیم، مثلاً c = Color(r=100, g=0, b=0).",
+    "hints": ["namedtuple زیرمجموعه‌ی tuple هست.", "به‌جای تغییر، باید یه نمونه‌ی جدید بسازی."],
+    "rubric": "Correct if the answer identifies namedtuples as immutable tuples and proposes creating a new instance instead of mutating."
+  },
+  {
+    "key": "convert-class-to-namedtuple",
+    "title": "این کلاس رو به namedtuple تبدیل کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این کلاس فقط داده نگه می‌داره و هیچ رفتاری نداره. با استفاده از namedtuple، همون قابلیت رو با کد کمتر بازسازی کن (باید بشه با آرگومان‌های کلیدی name و price نمونه ساخت):\n```python\nclass Product:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n\n    def __eq__(self, other):\n        return self.name == other.name and self.price == other.price\n```",
+    "expected_outcome": "```python\nfrom collections import namedtuple\n\nProduct = namedtuple(\"Product\", [\"name\", \"price\"])\n```",
+    "hints": ["از collections.namedtuple استفاده کن.", "دیگه نیازی به نوشتن __eq__ نیست -- namedtuple خودش این مقایسه رو می‌ده."],
+    "rubric": "Correct: uses namedtuple with fields name and price, replacing the manual class and __eq__. Partial: uses namedtuple but with wrong field names or missing import. Incorrect: still writes a full class with manual __eq__."
+  }
+]

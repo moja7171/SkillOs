@@ -1,0 +1,37 @@
+[
+  {
+    "key": "mro-order-matters",
+    "title": "کدوم متد برنده می‌شه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\nclass A:\n    def speak(self):\n        print(\"A\")\n\n\nclass B:\n    def speak(self):\n        print(\"B\")\n\n\nclass C(B, A):\n    pass\n\n\nC().speak()\n```\nخروجی چیه؟",
+    "options": ["B", "A", "هردو چاپ می‌شن", "خطا می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "B -- پایتون از چپ به راست توی لیست کلاس‌های والد می‌گرده؛ چون B قبل از A نوشته شده، B.speak برنده می‌شه.",
+    "hints": ["پایتون به ترتیبی که کلاس‌های والد نوشته شدن می‌گرده.", "اولین کلاسی که speak رو داره، برنده‌ست."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "good-multiple-inheritance-example",
+    "title": "یه ترکیب بی‌خطر بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "دو کلاس کوچیک و بی‌ربط به اسم Walker (با متد walk) و Talker (با متد talk) بساز، و یه کلاس Robot که از هر دو ارث می‌بره و هر دو متد رو داره.",
+    "expected_outcome": "```python\nclass Walker:\n    def walk(self):\n        print(\"walk\")\n\n\nclass Talker:\n    def talk(self):\n        print(\"talk\")\n\n\nclass Robot(Walker, Talker):\n    pass\n```",
+    "hints": ["چون Walker و Talker هیچ متد مشترکی ندارن، ترتیب نوشتنشون توی پرانتز اهمیتی نداره.", "Robot نیازی به تعریف walk یا talk نداره، فقط از هر دو کلاس ارث می‌بره."],
+    "rubric": "Correct: two independent classes with distinct methods, and Robot inherits from both without redefining anything. Partial: classes have overlapping method names (not a clean example). Incorrect: Robot doesn't inherit from both, or methods missing."
+  },
+  {
+    "key": "why-dangerous",
+    "title": "چرا وراثت چندگانه با متدهای مشترک خطرناکه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا وقتی دو تا کلاس والد یه متد هم‌نام دارن، ترتیبشون توی `class Manager(Employee, Person):` مهمه؟ در ۱ تا ۲ جمله توضیح بده.",
+    "expected_outcome": "چون پایتون به ترتیب نوشته‌شدن کلاس‌های والد می‌گرده و اولین کلاسی که اون متد رو داره برنده می‌شه؛ اگه یه نفر بعداً ترتیب رو عوض کنه، بدون هیچ خطا یا هشداری، رفتار برنامه بی‌سروصدا عوض می‌شه.",
+    "hints": ["فکر کن یه نفر ترتیب دو تا اسم رو جابه‌جا کنه -- چه اتفاقی می‌افته؟", "هیچ خطایی داده نمی‌شه، فقط نتیجه فرق می‌کنه."],
+    "rubric": "Correct if the answer explains parent-class order determines which same-named method wins, silently changing behavior if reordered."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "text-still-has-str-methods",
+    "title": "این کد چی چاپ می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Text(str):\n    def duplicate(self):\n        return self + self\n\n\nt = Text(\"hi\")\nprint(t.upper())\nprint(t.duplicate())\n```\nخروجی چیه؟",
+    "options": ["HI و hihi", "hi و hihi", "HI و HIHI", "خطا می‌ده چون Text متد upper رو نداره"],
+    "correct_option": 0,
+    "expected_outcome": "HI و hihi -- چون Text از str ارث می‌بره، متد upper() آماده‌ی str رو داره (نتیجه HI)، و duplicate() خودمون هم self رو با خودش الحاق می‌کنه (نتیجه hihi، نه HIHI، چون duplicate از رشته‌ی اصلی استفاده می‌کنه نه نسخه‌ی بزرگ‌شده).",
+    "hints": ["Text از str ارث می‌بره، پس همه‌ی متدهای رشته رو داره.", "duplicate از self (رشته‌ی اصلی، \"hi\") استفاده می‌کنه، نه نتیجه‌ی upper()."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "extend-not-replace",
+    "title": "یه لیست ردیابی‌شونده بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه کلاس LoggingDict بساز که از dict ارث می‌بره. متد __setitem__ رو طوری بازنویسی کن که هر بار یه کلید مقداردهی می‌شه، پیام \"set called\" چاپ بشه، ولی رفتار اصلی dict هم انجام بشه (یعنی مقدار واقعاً ذخیره بشه).",
+    "expected_outcome": "```python\nclass LoggingDict(dict):\n    def __setitem__(self, key, value):\n        print(\"set called\")\n        super().__setitem__(key, value)\n```",
+    "hints": ["از super().__setitem__(key, value) استفاده کن تا رفتار اصلی dict هم اجرا بشه -- دقیقاً مثل الگوی TrackableList.append توی درس.", "اگه super() رو صدا نزنی، مقدار واقعاً ذخیره نمی‌شه."],
+    "rubric": "Correct: overrides __setitem__, prints a message, and calls super().__setitem__(key, value) to preserve original behavior. Partial: prints message but forgets to call super() (breaks storage). Incorrect: doesn't inherit from dict or doesn't override __setitem__."
+  },
+  {
+    "key": "why-call-super-here",
+    "title": "چرا super().append(item) لازمه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی TrackableList، اگه خط `super().append(item)` رو از متد append حذف کنیم، چه اتفاقی می‌افته؟",
+    "expected_outcome": "بدون اون خط، append فقط پیام لاگ رو چاپ می‌کنه ولی عضو واقعاً به لیست اضافه نمی‌شه -- چون داریم append اصلی list رو کاملاً بازنویسی و جایگزین می‌کنیم، نه گسترشش می‌دیم. برای حفظ رفتار اصلی، باید صریح super().append(item) رو صدا بزنیم.",
+    "hints": ["بدون super()، رفتار اصلی list.append اصلاً اجرا نمی‌شه.", "این دقیقاً همون مشکلیه که توی درس بازنویسی متد با سازنده‌ی Mammal دیدیم."],
+    "rubric": "Correct if the answer explains omitting super().append(item) would fully replace the base behavior, so items would never actually be added to the list."
+  }
+]

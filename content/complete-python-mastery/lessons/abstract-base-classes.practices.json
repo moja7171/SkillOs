@@ -1,0 +1,37 @@
+[
+  {
+    "key": "cannot-instantiate-abstract",
+    "title": "این کد اجرا می‌شه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfrom abc import ABC, abstractmethod\n\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\n\ns = Shape()\n```\nخط آخر چی اتفاق می‌افته؟",
+    "options": ["TypeError -- نمی‌شه از یه کلاس انتزاعی با متد انتزاعی پیاده‌نشده نمونه ساخت", "بدون خطا اجرا می‌شه", "NotImplementedError می‌ده", "AttributeError می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "TypeError -- چون Shape از ABC ارث می‌بره و متد area با @abstractmethod تزئین شده ولی پیاده‌سازی نشده، نمی‌شه مستقیم از Shape نمونه ساخت.",
+    "hints": ["Shape از ABC ارث می‌بره.", "area با @abstractmethod تزئین شده و فقط pass داره."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "implement-abstract-method",
+    "title": "این کلاس رو مشخص (concrete) کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این کلاس Rectangle از Shape (که یه متد انتزاعی area داره) ارث می‌بره ولی هنوز نمی‌شه ازش نمونه ساخت. متد area رو پیاده‌سازی کن تا مساحت مستطیل (width * height) رو برگردونه و کلاس مشخص بشه:\n```python\nfrom abc import ABC, abstractmethod\n\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\n\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n```",
+    "expected_outcome": "```python\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n```",
+    "hints": ["فقط باید متد area رو با همون اسمی که توی Shape انتزاعی تعریف شده، پیاده‌سازی کنی.", "بعد از پیاده‌سازی area، Rectangle دیگه انتزاعی نیست."],
+    "rubric": "Correct: adds area(self) returning self.width * self.height, making Rectangle instantiable. Partial: implements area with wrong formula or wrong method name (still abstract or incorrect). Incorrect: doesn't implement area at all."
+  },
+  {
+    "key": "why-abc-useful",
+    "title": "ABC چه مشکلی رو حل می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی می‌گه «همون‌قدر که همه‌ی زیرکلاس‌ها متد read رو با یه اسم بنویسن کافیه، لازم نیست از ABC استفاده کنیم.» در ۱ تا ۲ جمله بگو چرا این ریسکیه.",
+    "expected_outcome": "چون بدون ABC، این فقط یه قرارداد نانوشته‌ست -- هیچ‌چیزی جلوی این رو نمی‌گیره که یه نفر فراموش کنه متد رو پیاده‌سازی کنه یا اسمش رو اشتباه بذاره، و پایتون تا وقتی اون متد صدا زده نشه هیچ خطایی نمی‌ده. ABC این قرارداد رو در زمان تعریف کلاس اجباری می‌کنه.",
+    "hints": ["بدون ABC، اگه یه نفر اسم متد رو اشتباه بنویسه، پایتون کِی متوجه می‌شه؟", "ABC این چک رو زودتر (موقع نمونه‌سازی) انجام می‌ده."],
+    "rubric": "Correct if the answer explains ABC enforces the contract early (at instantiation) rather than relying on an unenforced naming convention."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "inherited-attribute",
+    "title": "این ویژگی از کجا میاد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Vehicle:\n    def __init__(self):\n        self.wheels = 4\n\n\nclass Car(Vehicle):\n    pass\n\n\nc = Car()\nprint(c.wheels)\n```\nاین کد چی چاپ می‌کنه؟",
+    "options": ["4", "AttributeError می‌ده", "None", "0"],
+    "correct_option": 0,
+    "expected_outcome": "4 — چون Car از Vehicle ارث می‌بره، با اینکه خودش __init__ نداره، ویژگی wheels رو از سازنده‌ی Vehicle به ارث می‌بره.",
+    "hints": ["Car هیچ __init__ خودش نداره؛ پس سازنده‌ی کدوم کلاس اجرا می‌شه؟", "وراثت فقط متد نیست، ویژگی‌های سازنده هم به ارث می‌رسن."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "remove-duplication-with-inheritance",
+    "title": "این تکرار رو با وراثت حذف کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این دو کلاس یه متد login مشترک دارن. با تعریف یه کلاس پایه‌ی مشترک به اسم User و وراثت، این تکرار رو حذف کن (هر دو کلاس باید همچنان متد login رو داشته باشن):\n```python\nclass Admin:\n    def login(self):\n        print(\"logged in\")\n\n\nclass Customer:\n    def login(self):\n        print(\"logged in\")\n```",
+    "expected_outcome": "```python\nclass User:\n    def login(self):\n        print(\"logged in\")\n\n\nclass Admin(User):\n    pass\n\n\nclass Customer(User):\n    pass\n```",
+    "hints": ["متد login رو فقط یه بار، توی کلاس والد تعریف کن.", "Admin و Customer دیگه نیازی به تعریف مجدد login ندارن."],
+    "rubric": "Correct: defines a shared base class (e.g. User) with login(), and both Admin and Customer inherit from it without redefining login. Partial: base class correct but one subclass still redefines login. Incorrect: no shared base class, or login still duplicated."
+  },
+  {
+    "key": "why-dry-matters",
+    "title": "چرا تکرار کد بده؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی می‌گه «کپی-پیست یه متد کوچیک توی چند کلاس که مشکلی نداره، سرعتم بیشتره.» در ۱ تا ۲ جمله بهش توضیح بده چرا این کار مشکل‌سازه.",
+    "expected_outcome": "اگه بعداً یه باگ توی اون متد پیدا بشه یا رفتارش نیاز به تغییر داشته باشه، باید همه‌ی کپی‌هاش رو پیدا کنی و تک‌تک اصلاح کنی — احتمال فراموش‌کردن یکی‌شون و ناسازگاری بین کلاس‌ها بالا می‌ره. وراثت این مشکل رو با نگه‌داشتن رفتار مشترک توی یه‌جا حل می‌کنه.",
+    "hints": ["فکر کن بعداً یه باگ توی اون متد پیدا بشه، چقدر جا برای اصلاح لازمه.", "این همون اصل DRY (Don't Repeat Yourself) ه."],
+    "rubric": "Correct if the answer identifies the maintenance cost of duplicated code (multiple places to fix/update) as the core problem."
+  }
+]

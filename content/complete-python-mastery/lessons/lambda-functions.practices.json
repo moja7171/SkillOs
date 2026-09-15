@@ -1,0 +1,35 @@
+[
+  {
+    "key": "lambda-trace",
+    "title": "این لامبدا چی برمی‌گردونه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nsquare = lambda x: x * x\nprint(square(5))\n```\nخروجی چیه؟",
+    "expected_outcome": "25 — لامبدا x رو می‌گیره و x*x رو برمی‌گردونه؛ با x=5 می‌شه 25.",
+    "hints": ["عبارت بعد از : همون چیزیه که برگردونده می‌شه.", "5 ضرب‌در 5."],
+    "rubric": "Correct only if the answer is 25."
+  },
+  {
+    "key": "rewrite-as-lambda",
+    "title": "این تابع رو به لامبدا تبدیل کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این تابع رو به یه تابع لامبدا هم‌ارز تبدیل کن:\n```python\ndef get_length(word):\n    return len(word)\n```",
+    "expected_outcome": "```python\nget_length = lambda word: len(word)\n```",
+    "hints": ["فقط یه پارامتر (word) و یه عبارت (len(word)) داری.", "نیازی به def، اسم تابع (به‌جز اختیاری)، یا return نیست."],
+    "rubric": "Correct: lambda word: len(word) (with or without assignment to a name). Partial: correct body but wrong parameter name mismatch with usage. Incorrect: still uses def, or wrong logic."
+  },
+  {
+    "key": "when-not-to-use-lambda",
+    "title": "این باید لامبدا باشه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی می‌خواد یه تابع ۱۰ خطی (با چند تا شرط و حلقه) رو به یه لامبدا تبدیل کنه تا «کد کوتاه‌تر بشه». در ۱ تا ۲ جمله بهش بگو این ایده‌ی خوبیه یا نه، و چرا.",
+    "expected_outcome": "نه، ایده‌ی خوبی نیست. لامبدا برای توابع کوچیک و یک‌بارمصرف مناسبه؛ یه تابع پیچیده با چند شرط و حلقه توی یه def معمولی با اسم مشخص، خیلی خواناتر و قابل‌نگهداری‌تره.",
+    "hints": ["لامبدا فقط یه عبارت تک‌خطی می‌تونه داشته باشه، نه چند شرط/حلقه.", "خوانایی و قابل‌نگهداری‌بودن رو در نظر بگیر."],
+    "rubric": "Correct if the answer says no, and explains lambdas are meant for small, single-expression, one-off functions, not complex multi-line logic."
+  }
+]

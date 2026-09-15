@@ -1,0 +1,35 @@
+[
+  {
+    "key": "basic-unpack",
+    "title": "باز کردن یه لیست سه‌تایی",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "این لیست رو با list unpacking توی سه متغیر `r`, `g`, `b` باز کن و هر سه رو چاپ کن:\n```python\ncolor = [255, 128, 0]\n```",
+    "expected_outcome": "```python\ncolor = [255, 128, 0]\n\nr, g, b = color\nprint(r, g, b)\n```",
+    "hints": ["تعداد متغیرها باید دقیقاً برابر تعداد اعضای لیست باشه.", "یه خط: r, g, b = color"],
+    "rubric": "Correct: unpacks color into r, g, b (matching order) and prints them. Partial: unpacks correctly but doesn't print, or prints in wrong order. Incorrect: uses indexing instead of unpacking, or wrong variable count."
+  },
+  {
+    "key": "star-unpack-middle",
+    "title": "اول و آخر رو بگیر",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nscores = [88, 45, 67, 92, 71]\nfirst, *rest, last = scores\nprint(first, last, rest)\n```\nخروجی چیه؟",
+    "expected_outcome": "88 71 [45, 67, 92] — first می‌گیره اولین عضو (88)، last آخرین (71)، و rest هرچی وسطشه توی یه لیست.",
+    "hints": ["first همیشه اولین عضوه، last همیشه آخرین.", "هرچی بین این دو باشه، توی rest جمع می‌شه."],
+    "rubric": "Correct only if the answer matches: first=88, last=71, rest=[45, 67, 92] (in that order)."
+  },
+  {
+    "key": "too-many-to-unpack",
+    "title": "این کد چرا خطا می‌ده؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\npoint = [3, 4, 5]\nx, y = point\n```\nاین کد با `ValueError: too many values to unpack` مواجه می‌شه. چرا، و چطور درستش کنیم؟",
+    "expected_outcome": "point سه عضو داره ولی فقط دو متغیر (x, y) برای باز کردنش گذاشتیم. باید یا یه متغیر سوم اضافه کنیم (x, y, z = point)، یا از * برای جمع‌کردن بقیه استفاده کنیم (x, y, *rest = point).",
+    "hints": ["تعداد متغیرها باید با تعداد اعضای لیست برابر باشه.", "point سه عضو داره، ولی فقط دو متغیر نوشته شده."],
+    "rubric": "Correct if the answer explains the count mismatch (3 items, 2 variables) and proposes either adding a third variable or using * to collect the rest."
+  }
+]

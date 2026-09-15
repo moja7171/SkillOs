@@ -1,0 +1,37 @@
+[
+  {
+    "key": "negative-index-trace",
+    "title": "با ایندکس منفی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nnames = [\"Ali\", \"Sara\", \"Reza\", \"Mina\"]\nprint(names[-2])\n```\nخروجی چیه؟",
+    "options": ["Reza", "Mina", "Sara", "Ali"],
+    "correct_option": 0,
+    "expected_outcome": "Reza — ایندکس -1 آخرین عضو (Mina)، پس -2 یکی قبلش (Reza).",
+    "hints": ["-1 آخرین عضوه؛ از اونجا به عقب بشمار.", "لیست چهار عضو داره: Ali, Sara, Reza, Mina."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "step-slice-trace",
+    "title": "با گام -1",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nnumbers = [10, 20, 30, 40, 50]\nprint(numbers[::-1])\n```\nخروجی چیه؟",
+    "expected_outcome": "[50, 40, 30, 20, 10] — گام -1 یعنی کل لیست رو از آخر به اول برگردون.",
+    "hints": ["گام منفی یعنی حرکت از آخر لیست به اول.", "کل لیست برمی‌گرده، فقط برعکس شده."],
+    "rubric": "Correct only if the answer is [50, 40, 30, 20, 10] (or an equivalent description of the reversed list)."
+  },
+  {
+    "key": "slice-does-not-mutate",
+    "title": "یه هم‌تیمی سؤال داره",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته و تعجب کرده که چرا `original` تغییر نکرده:\n```python\noriginal = [1, 2, 3, 4, 5]\nfirst_two = original[:2]\nfirst_two[0] = 99\nprint(original)\n```\nدر ۱ تا ۲ جمله بهش توضیح بده چرا `original` هنوز `[1, 2, 3, 4, 5]`ه.",
+    "expected_outcome": "چون برش (slice) یه لیست کاملاً جدید می‌سازه، نه یه اشاره‌گر به همون لیست اصلی. تغییردادن first_two هیچ ربطی به original نداره.",
+    "hints": ["برش یه کپی می‌سازه، نه یه اشاره‌گر به همون لیست.", "first_two و original از این به بعد دو تا لیست کاملاً جدا هستن."],
+    "rubric": "Correct if the answer explains that slicing creates a new, independent list, so mutating the slice doesn't affect the original."
+  }
+]

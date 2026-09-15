@@ -1,0 +1,24 @@
+[
+  {
+    "key": "index-vs-count-behavior",
+    "title": "کدوم خطا می‌ده، کدوم نه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nletters = [\"a\", \"b\", \"c\"]\nprint(letters.count(\"z\"))\nprint(letters.index(\"z\"))\n```\nخط اول چی چاپ می‌کنه، و خط دوم چه اتفاقی می‌افته؟",
+    "expected_outcome": "خط اول 0 چاپ می‌کنه (count هیچ‌وقت خطا نمی‌ده، فقط 0 برمی‌گردونه اگه پیدا نشه). خط دوم ValueError می‌ده، چون index وقتی مقدار پیدا نشه، خطا پرتاب می‌کنه.",
+    "hints": ["count همیشه یه عدد برمی‌گردونه، حتی اگه صفر باشه.", "index وقتی چیزی پیدا نکنه، رفتارش با count فرق داره."],
+    "rubric": "Correct if the answer says count returns 0 without error, and index raises a ValueError."
+  },
+  {
+    "key": "safe-index-lookup",
+    "title": "بدون خطا پیدا کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه تابع `safe_index(items, value)` بنویس که اگه `value` توی `items` بود، ایندکسش رو برگردونه، وگرنه `None` برگردونه — بدون اینکه هیچ‌وقت خطا بده.",
+    "expected_outcome": "```python\ndef safe_index(items, value):\n    if value in items:\n        return items.index(value)\n    return None\n```",
+    "hints": ["قبل از صدازدن index، با in چک کن که مقدار وجود داره یا نه.", "اگه وجود نداشت، None برگردون به‌جای صدازدن index."],
+    "rubric": "Correct: checks membership with `in` before calling index(), returns None when not found. Partial: uses try/except around index() instead (also valid but not what was taught) — accept as correct_with_hint equivalent. Incorrect: calls index() unconditionally, risking ValueError."
+  }
+]

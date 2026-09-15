@@ -1,0 +1,24 @@
+[
+  {
+    "key": "repeat-and-concat",
+    "title": "این لیست چیه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nrow = [\"-\"] * 3 + [\"x\"]\nprint(row)\n```\nخروجی چیه؟",
+    "expected_outcome": "['-', '-', '-', 'x'] — سه بار '-' تکرار می‌شه، بعد 'x' بهش وصل می‌شه.",
+    "hints": ["* یه لیست رو تکرار می‌کنه؛ + دو تا لیست رو به هم وصل می‌کنه.", "اول [\"-\"] * 3 رو حساب کن، بعد + [\"x\"] رو بهش اضافه کن."],
+    "rubric": "Correct only if the answer is ['-', '-', '-', 'x'] (order matters: three dashes then x)."
+  },
+  {
+    "key": "list-from-iterable",
+    "title": "یه لیست بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با استفاده از `list()` و `range()`، یه لیست از اعداد ۵ تا ۱۰ (شامل هر دو) بساز و توی یه متغیر به اسم `numbers` بذار.",
+    "expected_outcome": "```python\nnumbers = list(range(5, 11))\n```",
+    "hints": ["range با دو آرگومان: از اولی شروع، تا قبل از دومی.", "برای اینکه 10 هم جزو نتیجه باشه، آرگومان دوم باید 11 باشه."],
+    "rubric": "Correct: numbers = list(range(5, 11)), producing [5,6,7,8,9,10]. Partial: correct idea but off-by-one bound. Incorrect: doesn't use list()/range() together, or wrong values entirely."
+  }
+]

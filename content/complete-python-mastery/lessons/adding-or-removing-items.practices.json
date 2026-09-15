@@ -1,0 +1,26 @@
+[
+  {
+    "key": "pick-right-method",
+    "title": "کدوم متد رو صدا بزنیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه لیست از ایمیل‌های ثبت‌نام‌شده داری. می‌خوای یه ایمیل خاص رو حذف کنی، ولی ایندکسش رو نمی‌دونی، فقط خود مقدارش رو داری. کدوم متد مناسبه؟",
+    "options": ["remove(email)", "pop(email)", "del emails[email]", "clear()"],
+    "correct_option": 0,
+    "expected_outcome": "remove(email) — چون فقط خود مقدار رو داری، نه ایندکسش. remove اولین موردی که با این مقدار برابره رو پیدا و حذف می‌کنه.",
+    "hints": ["pop و del هر دو ایندکس می‌خوان، نه خود مقدار رو.", "کدوم متد مستقیم خود مقدار رو به‌عنوان ورودی می‌گیره؟"],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "remove-only-first",
+    "title": "یه هم‌تیمی گیج شده",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته تا همه‌ی «spam» ها رو از لیست حذف کنه:\n```python\ntags = [\"spam\", \"news\", \"spam\", \"promo\"]\ntags.remove(\"spam\")\nprint(tags)\n```\nمی‌گه انتظار داشته هر دو «spam» حذف بشن ولی یکیش هنوز مونده. چرا، و چطور هر دو تا رو حذف کنیم؟",
+    "expected_outcome": "remove فقط اولین موردی که پیدا می‌کنه رو حذف می‌کنه، نه همه‌ی موارد تکراری. برای حذف همه‌شون باید توی یه حلقه پیمایش کنیم و هربار remove رو صدا بزنیم تا هیچ‌کدوم نمونه (یا با list comprehension، فیلترشون کنیم).",
+    "hints": ["remove فقط یکی رو حذف می‌کنه، هر چند مورد باشه.", "برای حذف همه‌ی تکراری‌ها، یه راه تکرار زدن remove تا وقتی چیزی نمونده‌ست."],
+    "rubric": "Correct if the answer explains remove() only deletes the first match, and proposes looping (or filtering) to remove every occurrence."
+  }
+]

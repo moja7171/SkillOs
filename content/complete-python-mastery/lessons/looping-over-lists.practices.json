@@ -1,0 +1,26 @@
+[
+  {
+    "key": "enumerate-tuple-trace",
+    "title": "enumerate چی می‌ده؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nfor item in enumerate([\"x\", \"y\"]):\n    print(item)\n```\nاولین چیزی که چاپ می‌شه چیه؟",
+    "options": ["(0, 'x')", "'x'", "0", "['x', 0]"],
+    "correct_option": 0,
+    "expected_outcome": "(0, 'x') — enumerate توی هر تکرار یه تاپل (ایندکس، عضو) برمی‌گردونه.",
+    "hints": ["enumerate یه تاپل برمی‌گردونه، نه فقط عضو یا فقط ایندکس.", "اولین عضو تاپل ایندکسه، دومی خود مقدار."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "rewrite-with-enumerate",
+    "title": "این کد رو با enumerate تمیزتر کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این کد کار می‌کنه ولی زشته — با unpacking مستقیم توی enumerate بازنویسی‌ش کن:\n```python\nnames = [\"Ali\", \"Sara\", \"Reza\"]\n\nfor item in enumerate(names):\n    print(item[0], item[1])\n```",
+    "expected_outcome": "```python\nnames = [\"Ali\", \"Sara\", \"Reza\"]\n\nfor index, name in enumerate(names):\n    print(index, name)\n```",
+    "hints": ["به‌جای item، مستقیم دو تا متغیر توی for بذار.", "index, name = item دقیقاً همون کاریه که item[0]/item[1] می‌کرد."],
+    "rubric": "Correct: unpacks enumerate directly in the for statement (for index, name in enumerate(names)) and prints both. Partial: correct idea but variable naming/order swapped. Incorrect: still indexes into a tuple instead of unpacking."
+  }
+]

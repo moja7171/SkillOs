@@ -44,6 +44,24 @@ class HomeTest extends TestCase
             ->assertSee(route('session.start-planned', $lowItem));
     }
 
+    public function test_todays_list_is_grouped_by_course_with_a_visible_header_each(): void
+    {
+        $user = User::factory()->create();
+
+        $courseA = Course::factory()->create(['title' => 'دوره‌ی آ']);
+        Lesson::factory()->for($courseA)->withActivities()->create();
+        Enrollment::factory()->for($user)->for($courseA)->scheduled(30)->create();
+
+        $courseB = Course::factory()->create(['title' => 'دوره‌ی ب']);
+        Lesson::factory()->for($courseB)->withActivities()->create();
+        Enrollment::factory()->for($user)->for($courseB)->scheduled(30)->create();
+
+        $this->actingAs($user)->get(route('home'))->assertOk()
+            ->assertSee('دوره‌ی آ')
+            ->assertSee('دوره‌ی ب')
+            ->assertSee('۰ از ۲');
+    }
+
     public function test_no_shortcut_when_the_only_due_review_is_already_primary(): void
     {
         $user = User::factory()->create();

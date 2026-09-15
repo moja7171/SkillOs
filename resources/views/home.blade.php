@@ -103,6 +103,11 @@
                         <span class="text-[12.5px] text-muted">{{ fa_num($todayByEnrollment->flatten()->where('status', 'completed')->count()) }} از {{ fa_num($todayByEnrollment->flatten()->count()) }} انجام شده · {{ fa_num($doneMinutes) }} از {{ fa_num($plannedMinutes) }} دقیقه</span>
                     </div>
                     @foreach ($todayByEnrollment as $items)
+                        @php $courseTitle = $items->first()->activity->lesson->course->title; @endphp
+                        <div class="px-[18px] pt-3 pb-1.5 flex items-center gap-2 bg-surface2">
+                            <span class="text-[12.5px] font-semibold" dir="auto">{{ $courseTitle }}</span>
+                            <span class="text-faint text-[12px]">{{ fa_num($items->where('status', 'completed')->count()) }} از {{ fa_num($items->count()) }}</span>
+                        </div>
                         @foreach ($items as $item)
                             <div class="flex items-center gap-3.5 px-[18px] py-3 border-b border-line last:border-b-0 {{ $primary && $item->is($primary) ? 'bg-hover' : '' }}">
                                 @if ($item->status === 'completed')
@@ -114,7 +119,6 @@
                                 @endif
                                 <x-plan-item-badge :item="$item" />
                                 <span class="flex-1 min-w-0 truncate {{ $item->status === 'completed' ? 'text-muted line-through' : ($primary && $item->is($primary) ? 'font-semibold' : '') }}" dir="auto">{{ $item->activity->title }}</span>
-                                <span class="text-faint text-[12.5px] hidden sm:inline truncate max-w-[180px]" dir="auto">{{ $item->activity->lesson->course->title }}</span>
                                 <span class="num">{{ $item->duration_minutes }}m</span>
                                 @if ($item->status === 'scheduled')
                                     <form method="POST" action="{{ route('plan-items.skip', $item) }}">

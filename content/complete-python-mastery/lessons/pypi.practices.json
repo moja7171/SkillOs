@@ -1,0 +1,24 @@
+[
+  {
+    "key": "what-is-pypi",
+    "title": "PyPI یعنی چی؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "به زبون خودت بگو PyPI چیه و چه فرقی با کتابخانه‌ی استاندارد پایتون داره.",
+    "expected_outcome": "PyPI (Python Package Index) یه مخزن مرکزی از پکیج‌های شخص‌ثالثه که توسط برنامه‌نویس‌های مختلف نوشته و منتشر شدن -- برخلاف کتابخانه‌ی استاندارد که همراه خود پایتون نصب می‌شه، پکیج‌های PyPI رو باید جداگانه نصب کنی.",
+    "hints": ["کتابخانه‌ی استاندارد از قبل با پایتون میاد؛ PyPI نه.", "PyPI مخزن پکیج‌های نوشته‌شده توسط جامعه‌ست، نه خود تیم پایتون."],
+    "rubric": "Correct if the answer distinguishes PyPI (third-party, must be installed) from the standard library (built-in)."
+  },
+  {
+    "key": "choosing-a-package",
+    "title": "چطور یه پکیج خوب انتخاب کنیم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "وقتی برای یه قابلیت خاص، چند صد پکیج مختلف توی PyPI پیدا می‌کنی، چطور تشخیص می‌دی کدومش قابل‌اعتمادتره؟",
+    "expected_outcome": "می‌شه به سیگنال‌هایی مثل تعداد دانلود، تاریخ آخرین به‌روزرسانی، کیفیت مستندات، و نظر جامعه (مثلاً جست‌وجوی «بهترین پکیج پایتون برای X») نگاه کرد -- همه‌ی پکیج‌های ثبت‌شده لزوماً پایدار یا نگهداری‌شده نیستن.",
+    "hints": ["نه هر پکیجی توی PyPI باکیفیت یا فعاله.", "تعداد دانلود و تازه‌بودن به‌روزرسانی‌ها سرنخ خوبی‌ان."],
+    "rubric": "Correct if the answer mentions signals like download count, maintenance recency, or community opinion as ways to judge package quality."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "pipfile-vs-lock",
+    "title": "Pipfile یا Pipfile.lock؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای مطمئن بشی روی سرور production، دقیقاً همون نسخه‌ی پکیج‌هایی نصب می‌شه که روی سیستم توسعه تست کردی، نه صرفاً «آخرین نسخه‌ی سازگار». کدوم فایل این تضمین رو می‌ده؟",
+    "options": ["Pipfile.lock -- نسخه‌ی دقیق هر پکیج رو ثبت می‌کنه", "Pipfile -- چون همه‌ی پکیج‌ها رو لیست می‌کنه", "هردو فایل دقیقاً یه کار می‌کنن", "هیچ‌کدوم؛ این تضمین امکان‌پذیر نیست"],
+    "correct_option": 0,
+    "expected_outcome": "Pipfile.lock -- این فایل نسخه‌ی دقیق هر پکیج (و وابستگی‌های غیرمستقیمش) رو ثبت می‌کنه؛ Pipfile فقط محدودیت نسخه (مثل * یا یه پیشوند) رو نشون می‌ده، نه نسخه‌ی دقیق.",
+    "hints": ["Pipfile فقط محدودیت نسخه رو نشون می‌ده، نه نسخه‌ی دقیق.", "برای تکرارپذیری دقیق، فایل JSON با نسخه‌های قطعی لازمه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "why-star-is-risky",
+    "title": "چرا Pipfile با * ریسکیه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "اگه Pipfile بگه `requests = \"*\"`، و بعد از چند ماه پروژه رو روی یه سیستم جدید نصب کنی (با `pipenv install`، نه `--ignore-pipfile`)، چه ریسکی وجود داره؟",
+    "expected_outcome": "چون * یعنی «هر نسخه‌ای»، Pipenv آخرین نسخه‌ی موجود در همون لحظه رو نصب می‌کنه -- که ممکنه با نسخه‌ای که چند ماه پیش روی سیستم توسعه تست شده بود فرق داشته باشه و رفتار متفاوتی داشته باشه.",
+    "hints": ["* یعنی هیچ محدودیتی روی نسخه نیست.", "بین زمان توسعه و نصب مجدد، ممکنه نسخه‌ی جدیدتری منتشر شده باشه."],
+    "rubric": "Correct if the answer explains a wildcard version can resolve to a different (newer) version at a later install time, risking inconsistency."
+  },
+  {
+    "key": "install-from-lock",
+    "title": "دقیقاً طبق lock نصب کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "دستور Pipenv برای نصب دقیقاً طبق نسخه‌های ثبت‌شده توی Pipfile.lock (نه Pipfile) رو بنویس.",
+    "expected_outcome": "pipenv install --ignore-pipfile",
+    "hints": ["یه فلگ اضافه بعد از pipenv install لازمه.", "این فلگ می‌گه Pipfile رو نادیده بگیر."],
+    "rubric": "Correct if the answer is `pipenv install --ignore-pipfile`."
+  }
+]

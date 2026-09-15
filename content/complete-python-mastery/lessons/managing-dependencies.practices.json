@@ -1,0 +1,37 @@
+[
+  {
+    "key": "uninstall-leaves-indirect-deps",
+    "title": "چرا این پکیج هنوز نصبه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی `pipenv uninstall requests` رو اجرا کرده، ولی وقتی `pipenv graph` رو چک می‌کنه، هنوز وابستگی‌های requests (مثل certifi) نصب هستن. چرا؟",
+    "expected_outcome": "چون uninstall فقط خودِ requests رو از Pipfile و نصب حذف می‌کنه؛ وابستگی‌های غیرمستقیمش پاک نمی‌شن چون Pipenv نمی‌دونه جای دیگه‌ای هم استفاده می‌شن یا نه. اگه پروژه از صفر روی یه سیستم دیگه نصب بشه، چون دیگه توی Pipfile نیستن، اونجا نصب نمی‌شن.",
+    "hints": ["uninstall فقط پکیج مستقیم رو حذف می‌کنه، نه وابستگی‌های اون.", "روی سیستم دیگه، از صفر نصب‌شدن، این وابستگی‌ها دیگه نمیان."],
+    "rubric": "Correct if the answer explains uninstall removes only the direct package, leaving indirect dependencies installed on the current machine (though they won't reinstall elsewhere)."
+  },
+  {
+    "key": "setup-py-fields",
+    "title": "یه setup.py کامل کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "یه فایل setup.py برای یه پکیج به اسم \"textkit\" با نسخه‌ی \"2.0\" بنویس که از find_packages برای پیداکردن پکیج‌ها استفاده کنه و پوشه‌ی \"tests\" رو exclude کنه (long_description لازم نیست).",
+    "expected_outcome": "```python\nfrom setuptools import setup, find_packages\n\nsetup(\n    name=\"textkit\",\n    version=\"2.0\",\n    packages=find_packages(exclude=[\"tests\"]),\n)\n```",
+    "hints": ["name و version دو تا آرگومان کلیدی جدا هستن.", "find_packages یه آرگومان exclude با لیستی از پوشه‌ها می‌گیره."],
+    "rubric": "Correct: sets name and version correctly, and packages=find_packages(exclude=[\"tests\"]). Partial: correct structure but wrong exclude value or missing a field. Incorrect: doesn't use find_packages, or hardcodes package names manually."
+  },
+  {
+    "key": "publish-steps-order",
+    "title": "ترتیب انتشار یه پکیج",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "ترتیب درست مراحل انتشار یه پکیج روی PyPI کدومه؟",
+    "options": ["نوشتن setup.py → python setup.py sdist bdist_wheel → twine upload dist/*", "twine upload dist/* → python setup.py sdist bdist_wheel → نوشتن setup.py", "python setup.py sdist bdist_wheel → نوشتن setup.py → twine upload dist/*", "نوشتن setup.py → twine upload dist/* → python setup.py sdist bdist_wheel"],
+    "correct_option": 0,
+    "expected_outcome": "نوشتن setup.py → python setup.py sdist bdist_wheel → twine upload dist/* -- اول تنظیمات پکیج رو تعریف می‌کنیم، بعد فایل‌های توزیع رو می‌سازیم، در آخر آپلود می‌کنیم.",
+    "hints": ["نمی‌شه چیزی رو آپلود کرد که هنوز ساخته نشده.", "ساختن فایل‌های توزیع به تنظیمات setup.py نیاز داره."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

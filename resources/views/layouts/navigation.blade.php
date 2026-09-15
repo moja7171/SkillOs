@@ -8,6 +8,7 @@
         <x-nav-link :href="route('home')" :active="request()->routeIs('home')">خانه</x-nav-link>
         <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.*') || request()->routeIs('lessons.*') || request()->routeIs('enrollments.*')">همه‌ی دوره‌ها</x-nav-link>
         <x-nav-link :href="route('week')" :active="request()->routeIs('week')">هفته</x-nav-link>
+        <x-nav-link :href="route('friends')" :active="request()->routeIs('friends')">دوستان</x-nav-link>
     </div>
 
     <div class="ms-auto flex items-center gap-3">

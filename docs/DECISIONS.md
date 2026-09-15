@@ -422,3 +422,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** Asked for as part of the engagement batch — with three courses (and growing) it's genuinely hard to remember which course covered a given topic. A real search index (SQLite FTS5, ranking, stemming) is meaningfully more infrastructure for a two-person app with a few hundred lessons total; a LIKE scan answers "which lesson was that in" fine at this scale and needs no new tooling, migration, or reindexing step to keep in sync with content edits.
 
 **Consequences.** Revisit if the catalog grows enough that LIKE gets slow or noisy (no relevance ranking — results are alphabetical by title) — SQLite FTS5 is the natural next step, not a rewrite, since it would replace the query inside `SearchController` without touching the route or view.
+
+---
+
+## 27. «دوستان»: everyone on the install, no friend graph (2026-09-15)
+
+**Decision.** `GET /friends` lists every `User` (`orderByDesc('streak_count')`), each row showing name, streak (if any) and this week's practice count via the existing `ActivityStats` (§22). No follow/request model — §1 already scopes this whole app to its author plus one or two friends, so "everyone on the install" and "your friends" are the same small set; a real social graph would be pure overhead here.
+
+**Why.** Last of the engagement-ideas batch — light, low-pressure mutual visibility ("did my friend show up today") without building an actual social feature. Reuses `ActivityStats` rather than a new query.
+
+**Consequences.** This does not scale past a handful of users by design — it lists literally everyone with an account, with no privacy control beyond "who has a login." Revisit (add an actual friend/follow relation) only if the install ever grows past the couple of people it's built for (§1).

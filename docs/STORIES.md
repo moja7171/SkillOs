@@ -79,4 +79,4 @@ Owner provided `course/complete-python-mastery/` (Mosh's "Complete Python Course
 ### [x] S-29 Review-retention stat on the lesson page (DECISIONS §24)
 ### [x] S-30 "5-minute mode" quick-review button on Home (DECISIONS §25)
 ### [x] S-31 Global search across lessons (DECISIONS §26)
-### [ ] S-32 Friends streak/stats view
+### [x] S-32 Friends streak/stats view (DECISIONS §27) — engagement batch (M7) complete

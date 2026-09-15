@@ -97,6 +97,10 @@
     .levelbar span { @apply block h-full; }
 
     .page { @apply px-4 sm:px-8 py-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]; }
+    /* Grid items default to min-width:auto, so any wide-content descendant (a flex row
+       that doesn't wrap, an unbreakable label) can blow the whole page out horizontally
+       on narrow screens — this resets both columns to actually respect the grid track. */
+    .page > * { min-width: 0; }
     .border-inline-end { border-inline-end-width: 1px; }
     .page-narrow { @apply px-4 sm:px-8 py-7 max-w-2xl mx-auto; }
 

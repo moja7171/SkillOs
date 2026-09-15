@@ -455,3 +455,18 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** Confirmed with the owner: the spaced-repetition algorithm itself (§2-3, §18, §24) needs no change. The actual scaling problem as course count grows is that the list was flat with the only course indicator invisible on mobile — makes "which course was this again" a real question with 2+ courses, worse with more. A global cross-course daily review cap was discussed and *deferred, not rejected*: `Planner::week()` already gives forward visibility into review load, so it's not clearly needed yet.
 
 **Consequences.** `HomeTest` covers the grouping directly (two courses, both headers visible, per-course counts correct). If a course ever has zero items today it simply has no header — `$todayByEnrollment` only contains enrollments with something scheduled, so there's nothing to suppress.
+
+---
+
+## 30. Mobile pass: nav overflow and a page-wide horizontal-scroll bug (2026-09-15)
+
+**Decision.** Two real bugs found by actually screenshotting the app at phone width (390px, headless Chrome via CDP — no tool for this existed in the repo, so a throwaway script was written and discarded, not committed) rather than reasoning from Tailwind classes alone:
+
+1. **Nav overflow.** `layouts/navigation.blade.php`'s middle link row (خانه/همه‌ی دوره‌ها/هفته/دوستان) had no responsive handling at all and visibly collided with the search icon and avatar below `sm`. Fixed by hiding that row (`hidden sm:flex`) and the standalone search icon (`hidden sm:flex`) below `sm`, replaced by a hamburger button (new `menu` icon) opening the existing `x-dropdown` component with all five destinations (four links + search) as one list — same dropdown primitive the avatar menu already uses, not a new mechanism.
+2. **Page-wide horizontal scroll.** `.page`'s `grid` (used by Home, the course page, and others) let a wide-content descendant anywhere inside blow out the *entire page* horizontally, because CSS Grid items default to `min-width: auto` rather than shrinking to their track. Fixed with one rule, `.page > * { min-width: 0; }` — the standard fix for this well-known Grid/Flexbox interaction, and it resolved every instance found (Home's streak/progress row, the Continue-Learning alternatives list, Today's per-item rows) in one place rather than patching each separately.
+
+The course page's lesson table (fixed-width `سطح`/action columns that plainly don't fit 358px of real content) was left as a table, wrapped in `overflow-x-auto` — the sanctioned exception for tables (see artifact/responsive-design conventions) rather than a card-based mobile redesign, which wasn't asked for.
+
+**Why.** Asked directly to make sure the mobile design holds up; reasoning about Tailwind classes without rendering them missed both bugs — the grid bug in particular wouldn't have been found by inspecting any single component in isolation, since no individual element was "wrong," only their interaction with the shared `.page` grid.
+
+**Consequences.** `.page > * { min-width: 0 }` applies globally to every current and future page built on `.page`'s grid — a good default, but means a future wide-content bug inside `.page` will now correctly *scroll within its own element* (if it opts into `overflow-x-auto` itself) instead of silently blowing out the whole page; it won't auto-fix new tables/wide content, just stops them from taking the page down with them. No screenshot tooling was added to the repo — this was verified ad hoc, so a future mobile change should get the same manual check, not an assumption that Tailwind classes alone guarantee correctness.

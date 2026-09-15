@@ -39,6 +39,7 @@
                         <x-course-progress :lessons="$course->lessons" :user="$user" class="w-64 hidden sm:block" />
                     @endif
                 </div>
+                <div class="overflow-x-auto">
                 <table class="table">
                     <thead><tr><th class="w-11">#</th><th>درس</th><th class="w-44">سطح</th><th class="w-24"></th></tr></thead>
                     <tbody>
@@ -75,6 +76,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
 

@@ -1,0 +1,35 @@
+[
+  {
+    "key": "write-init",
+    "title": "یه سازنده بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه کلاس `Rectangle` بساز با یه سازنده که `width` و `height` می‌گیره و به‌عنوان ویژگی ذخیره می‌کنه، و یه متد `area(self)` که مساحت رو برمی‌گردونه.",
+    "expected_outcome": "```python\nclass Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n```",
+    "hints": ["اسم سازنده همیشه __init__ ه.", "برای دسترسی به width/height توی area، باید از self.width و self.height استفاده کنی، نه فقط width/height."],
+    "rubric": "Correct: __init__(self, width, height) storing both as self attributes, and area(self) returning self.width * self.height. Partial: correct constructor but area() references the parameters directly instead of self attributes (would still work due to closure in some cases, but conceptually wrong -- treat as partial). Incorrect: missing __init__, or area() computes something other than width*height."
+  },
+  {
+    "key": "self-not-passed-explicitly",
+    "title": "یه هم‌تیمی سؤال داره",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی تازه‌کار می‌پرسه: «چرا وقتی متد draw رو صدا می‌زنم فقط می‌نویسم point.draw()، ولی خود متد یه پارامتر self داره؟ مگه نباید یه چیزی بهش بدم؟» در ۱ تا ۲ جمله جوابش بده.",
+    "expected_outcome": "پایتون خودش، پشت‌صحنه، آبجکتی که متد روش صدا زده شده (اینجا point) رو به‌عنوان self پاس می‌ده — نیازی نیست دستی بدیش. فقط پارامترهای بعد از self هستن که باید خودت موقع صدازدن متد بدی.",
+    "hints": ["self همیشه خودکار پاس داده می‌شه.", "فقط پارامترهای بعد از self رو باید دستی بدی."],
+    "rubric": "Correct if the answer explains Python automatically passes the object as self when calling a method, so it's never supplied manually."
+  },
+  {
+    "key": "init-trace",
+    "title": "بعد از ساختن آبجکت",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nclass Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n\np = Point(5, 8)\nprint(p.y)\n```\nخروجی چیه؟",
+    "expected_outcome": "8 — سازنده مقدار دومی که موقع ساخت آبجکت داده شده (8) رو توی self.y ذخیره کرده.",
+    "hints": ["y پارامتر دومه؛ مقدار دومی که موقع Point(5, 8) دادیم چیه؟", "self.y = y یعنی مقدار پارامتر y رو روی آبجکت ذخیره کن."],
+    "rubric": "Correct only if the answer is 8."
+  }
+]

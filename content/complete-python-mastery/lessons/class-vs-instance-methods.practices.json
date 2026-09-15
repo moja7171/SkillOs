@@ -1,0 +1,37 @@
+[
+  {
+    "key": "classmethod-syntax",
+    "title": "کدوم درست تعریف شده؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "کدوم تعریف، یه متد کلاس صحیحه؟",
+    "options": ["`@classmethod` + `def zero(cls): return cls(0, 0)`", "`def zero(self): return self(0, 0)`", "`@classmethod` + `def zero(self): return self(0, 0)`", "`def zero(cls): return cls(0, 0)` (بدون دکوراتور)"],
+    "correct_option": 0,
+    "expected_outcome": "گزینه‌ی اول — متد کلاس هم به دکوراتور @classmethod نیاز داره هم پارامتر اولش باید cls باشه، نه self.",
+    "hints": ["متد کلاس هم دکوراتور لازم داره هم پارامتر اولش فرق داره.", "self برای متد نمونه‌ست، cls برای متد کلاس."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "write-factory-method",
+    "title": "یه متد کارخانه‌ای بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "به این کلاس یه متد کلاس به اسم `guest(cls)` اضافه کن که یه User با name برابر `\"Guest\"` و email برابر `None` برمی‌گردونه:\n```python\nclass User:\n    def __init__(self, name, email):\n        self.name = name\n        self.email = email\n```",
+    "expected_outcome": "```python\nclass User:\n    def __init__(self, name, email):\n        self.name = name\n        self.email = email\n\n    @classmethod\n    def guest(cls):\n        return cls(\"Guest\", None)\n```",
+    "hints": ["یادت نره @classmethod رو بالای متد بذاری.", "با cls(...) دقیقاً مثل User(...) یه آبجکت جدید می‌سازی."],
+    "rubric": "Correct: @classmethod decorator, guest(cls) returning cls(\"Guest\", None). Partial: correct logic but missing decorator or using self instead of cls. Incorrect: doesn't create a new User at all, or wrong values."
+  },
+  {
+    "key": "when-to-use-classmethod",
+    "title": "چرا متد کارخانه‌ای بهتره؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا داشتن یه متد کارخانه‌ای (مثل Point.zero())، وقتی ساختن یه آبجکت پیچیده‌ست، بهتر از تکرار همون مقادیر هرجایی که لازمه؟",
+    "expected_outcome": "چون پیچیدگی ساختن اون آبجکت (چه مقادیری، چه منطقی) فقط یه‌بار، داخل خود کلاس نوشته می‌شه؛ هرجای دیگه‌ی برنامه فقط کافیه متد کارخانه‌ای رو صدا بزنی، بدون تکرار مقادیر یا منطق. اگه بعداً نحوه‌ی ساختش عوض بشه، فقط یه جا رو باید تغییر بدی.",
+    "hints": ["به تکرار مقادیر/منطق در چندین جای برنامه فکر کن.", "اگه بعداً منطق ساخت عوض بشه، چند جا باید تغییر کنه؟"],
+    "rubric": "Correct if the answer explains that a factory method centralizes construction complexity in one place, avoiding repetition and easing future changes."
+  }
+]

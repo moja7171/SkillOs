@@ -1,0 +1,24 @@
+[
+  {
+    "key": "class-vs-object-definition",
+    "title": "کدوم کلاسه، کدوم آبجکت؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "فرض کن یه کلاس به اسم `Car` داری، و سه تا ماشین واقعی ازش ساختی: `my_car`, `your_car`, `taxi`. کدوم‌ها کلاسن، کدوم‌ها آبجکت؟",
+    "expected_outcome": "Car خودش کلاسه (نقشه/الگو). my_car, your_car, taxi هر سه آبجکتن — نمونه‌های واقعی که از روی همون یه کلاس ساخته شدن.",
+    "hints": ["کلاس یکیه، نقشه‌ست.", "آبجکت‌ها نمونه‌های واقعی و متعددی‌ان که از روی همون کلاس ساخته می‌شن."],
+    "rubric": "Correct if the answer identifies Car as the class and my_car/your_car/taxi as objects (instances) of it."
+  },
+  {
+    "key": "identify-builtin-class",
+    "title": "این چه کلاسیه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nnames = [\"Ali\", \"Sara\"]\nprint(type(names))\n```\nخروجی چیه، و این یعنی چی؟",
+    "expected_outcome": "<class 'list'> — یعنی names یه آبجکته که از کلاس آماده‌ی list ساخته شده.",
+    "hints": ["type() نوع (کلاس) هر آبجکتی رو نشون می‌ده.", "names با کروشه ساخته شده، پس..."],
+    "rubric": "Correct if the answer identifies the output as <class 'list'> and explains it means names is an instance built from Python's list class."
+  }
+]

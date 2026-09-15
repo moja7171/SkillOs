@@ -2094,7 +2094,11 @@
           "subtitle": "083-classes.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "کلاس یه نقشه (blueprint) برای ساخت آبجکته؛ خودِ کلاس داده نیست.",
+        "آبجکت (نمونه/instance) چیزیه که از روی کلاس ساخته می‌شه و داده‌ی واقعی رو نگه می‌داره.",
+        "با `type(x)` می‌شه فهمید یه مقدار از کدوم کلاس ساخته شده."
+      ],
       "common_mistakes": []
     },
     {
@@ -2115,8 +2119,14 @@
           "subtitle": "084-creating-classes.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "اسم کلاس‌ها معمولاً به سبک PascalCase نوشته می‌شه (نه snake_case).",
+        "برای ساخت نمونه، اسم کلاس رو مثل یه تابع صدا می‌زنیم: `Point()`.",
+        "`isinstance(x, ClassName)` چک می‌کنه یه مقدار از یه کلاس خاص ساخته شده یا نه."
+      ],
+      "common_mistakes": [
+        "نام‌گذاری کلاس با snake_case به‌جای PascalCase."
+      ]
     },
     {
       "slug": "constructors",
@@ -2136,8 +2146,14 @@
           "subtitle": "085-constructors.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`__init__` موقع ساخت هر نمونه‌ی جدید، خودکار اجرا می‌شه.",
+        "پارامتر اول همیشه `self`ه — پایتون خودش اونو موقع صدازدن پر می‌کنه.",
+        "`self.x = x` مقدار پاس‌داده‌شده رو روی همون نمونه‌ی خاص ذخیره می‌کنه."
+      ],
+      "common_mistakes": [
+        "فراموش‌کردن پارامتر `self` در تعریف متدهای کلاس."
+      ]
     },
     {
       "slug": "class-vs-instance-attributes",
@@ -2157,8 +2173,14 @@
           "subtitle": "086-class-vs-instance-attributes.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "ویژگی نمونه (instance attribute) مخصوص هر آبجکته و بین نمونه‌ها مشترک نیست.",
+        "ویژگی کلاس (class attribute) توی بدنه‌ی کلاس تعریف می‌شه و بین همه‌ی نمونه‌ها مشترکه.",
+        "می‌شه در حین اجرا هم به یه نمونه‌ی خاص ویژگی جدید اضافه کرد (مثل `point1.z = 10`)."
+      ],
+      "common_mistakes": [
+        "فکرکردن تغییر یه ویژگی کلاس از طریق یه نمونه، روی همه‌ی نمونه‌های دیگه هم اثر می‌ذاره."
+      ]
     },
     {
       "slug": "class-vs-instance-methods",
@@ -2178,8 +2200,14 @@
           "subtitle": "087-class-vs-instance-methods.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "متد نمونه (instance method) به `self` دسترسی داره و روی یه نمونه‌ی خاص کار می‌کنه.",
+        "متد کلاس با دکوراتور `@classmethod` مشخص می‌شه و پارامتر اولش `cls` (خود کلاس) هست، نه یه نمونه.",
+        "الگوی رایج: متد کلاس به‌عنوان factory method برای ساخت نمونه به روش دیگه‌ای استفاده می‌شه (مثل `Point.zero()`)."
+      ],
+      "common_mistakes": [
+        "استفاده از `self` به‌جای `cls` در متدی که با `@classmethod` تزئین شده."
+      ]
     },
     {
       "slug": "magic-methods",
@@ -2199,7 +2227,10 @@
           "subtitle": "088-magic-methods.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "متدهای جادویی (مثل `__init__` یا `__str__`) با دو زیرخط شروع و تموم می‌شن و خودکار توسط پایتون صدا زده می‌شن.",
+        "پیاده‌سازی `__str__` نحوه‌ی نمایش یه آبجکت رو موقع `print()` کردنش تعیین می‌کنه."
+      ],
       "common_mistakes": []
     },
     {
@@ -2220,7 +2251,11 @@
           "subtitle": "089-comparing-objects.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "`__eq__(self, other)` رفتار عملگر `==` رو برای یه کلاس سفارشی تعریف می‌کنه.",
+        "`__gt__` و `__lt__` رفتار `>` و `<` رو تعریف می‌کنن.",
+        "اگه فقط `__gt__` رو تعریف کنی، پایتون خودش `<` رو از روش (به‌شکل معکوس) استنتاج می‌کنه."
+      ],
       "common_mistakes": []
     },
     {
@@ -2241,8 +2276,13 @@
           "subtitle": "090-performing-arithmetic-operations.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`__add__(self, other)` رفتار عملگر `+` رو برای یه کلاس سفارشی تعریف می‌کنه.",
+        "متد باید یه نمونه‌ی جدید از همون کلاس برگردونه، نه اینکه نمونه‌ی فعلی رو تغییر بده."
+      ],
+      "common_mistakes": [
+        "استفاده از `+` روی دو نمونه‌ی یه کلاس سفارشی که `__add__` تعریف نکرده و گرفتن `TypeError`."
+      ]
     },
     {
       "slug": "making-custom-containers",
@@ -2262,8 +2302,14 @@
           "subtitle": "091-making-custom-containers.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "`__getitem__` دسترسی با کروشه برای خوندن رو تعریف می‌کنه (`obj[key]`).",
+        "`__setitem__` دسترسی با کروشه برای نوشتن رو تعریف می‌کنه (`obj[key] = value`).",
+        "`__len__` رفتار `len(obj)` رو تعریف می‌کنه؛ `__iter__` باید یه شیء تکرارگر برگردونه تا با `for` بشه روش پیمایش کرد."
+      ],
+      "common_mistakes": [
+        "برگردوندن یه پیمایش‌پذیر ساده (مثل `.items()`) از `__iter__` به‌جای یه تکرارگر واقعی — باید با `iter(...)` بپیچونیش."
+      ]
     },
     {
       "slug": "private-members",
@@ -2283,8 +2329,14 @@
           "subtitle": "092-private-members.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "شروع اسم یه ویژگی با دو زیرخط (`__attr`) اونو از بیرون کلاس غیرقابل‌دسترسی می‌کنه.",
+        "پایتون پشت‌صحنه اسم رو تغییر می‌ده (name mangling) و اسم کلاس رو جلوش اضافه می‌کنه، مثل `_ClassName__attr`.",
+        "این قرارداد امنیتی واقعی نیست — فقط یه هشدار برای کاربر کلاسه که این بخش پیاده‌سازی داخلیه."
+      ],
+      "common_mistakes": [
+        "تصور اینکه دو زیرخط، ویژگی رو کاملاً غیرقابل‌دسترسی می‌کنه، در حالی که با اسم mangled شده هنوز قابل‌دسترسیه."
+      ]
     },
     {
       "slug": "properties",
@@ -2304,8 +2356,14 @@
           "subtitle": "093-properties.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "دکوراتور `@property` یه متد رو تبدیل می‌کنه به چیزی که از بیرون مثل یه ویژگی معمولی خونده می‌شه.",
+        "دکوراتور `@name.setter` (با همون اسم متد getter) اجازه‌ی نوشتن روی property رو می‌ده، همراه با هر اعتبارسنجی لازم.",
+        "اگه فقط `@property` تعریف بشه و setter نباشه، property فقط-خواندنی می‌شه و نوشتن روش `AttributeError` می‌ده."
+      ],
+      "common_mistakes": [
+        "استفاده از متدهای صریح `get_x()`/`set_x()` وقتی که `@property` می‌تونست همون کار رو با نحو ساده‌تری انجام بده."
+      ]
     },
     {
       "slug": "inheritance",

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "getitem-vs-setitem",
+    "title": "کدوم متد صدا زده می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\ncloud[\"python\"] = 5\nprint(cloud[\"python\"])\n```\nخط اول کدوم متد جادویی رو صدا می‌زنه، و خط دوم کدوم رو؟",
+    "options": ["اول __setitem__، دوم __getitem__", "اول __getitem__، دوم __setitem__", "هر دو __getitem__", "هر دو __setitem__"],
+    "correct_option": 0,
+    "expected_outcome": "اول __setitem__ (چون داریم با کروشه یه مقدار می‌نویسیم)، دوم __getitem__ (چون داریم با کروشه یه مقدار می‌خونیم).",
+    "hints": ["نوشتن با کروشه (=) یه متد رو صدا می‌زنه، خوندن یکی دیگه رو.", "set برای نوشتن، get برای خوندن."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "iter-returns-iterator",
+    "title": "این خط چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی متد `__iter__` این خط رو داریم: `return iter(self.tags.items())`. چرا نمی‌تونیم به‌جاش فقط بنویسیم `return self.tags.items()`؟",
+    "expected_outcome": "چون __iter__ باید یه شیء تکرارگر (iterator) برگردونه، نه یه پیمایش‌پذیر ساده. self.tags.items() پیمایش‌پذیره ولی خودش تکرارگر نیست؛ تابع iter() اون رو به یه تکرارگر واقعی تبدیل می‌کنه که __iter__ باید برگردونه.",
+    "hints": ["__iter__ باید مشخصاً یه تکرارگر برگردونه، نه هر پیمایش‌پذیری.", "iter() یه پیمایش‌پذیر رو به تکرارگر تبدیل می‌کنه."],
+    "rubric": "Correct if the answer explains __iter__ must return an iterator specifically, and iter() converts the iterable items() into one."
+  },
+  {
+    "key": "add-getitem-method",
+    "title": "یه متد contains بساز",
+    "form": "coding",
+    "difficulty": "stretch",
+    "estimated_minutes": 6,
+    "prompt": "به کلاس TagCloud یه متد `__contains__(self, tag)` اضافه کن که با عملگر `in` کار کنه — یعنی `\"python\" in cloud` باید True برگردونه اگه تگ (بدون توجه به بزرگی/کوچیکی حروف) توی cloud باشه.",
+    "expected_outcome": "```python\ndef __contains__(self, tag):\n    return tag.lower() in self.tags\n```",
+    "hints": ["مثل بقیه‌ی متدها، اول tag رو lower() کن.", "خود عملگر in رو می‌تونی روی self.tags (دیکشنری) هم مستقیم استفاده کنی."],
+    "rubric": "Correct: __contains__(self, tag) checking tag.lower() in self.tags, returning a boolean. Partial: correct idea but forgets to lowercase the tag first. Incorrect: wrong method name (won't be triggered by `in`), or doesn't check membership correctly."
+  }
+]

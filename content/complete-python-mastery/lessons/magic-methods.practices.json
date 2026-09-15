@@ -1,0 +1,24 @@
+[
+  {
+    "key": "str-magic-method",
+    "title": "این کلاس رو چاپ‌پذیرتر کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "به این کلاس یه متد `__str__` اضافه کن که وقتی چاپ می‌شه، دقیقاً به‌شکل `\"Ali (25)\"` نشون بده:\n```python\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n```",
+    "expected_outcome": "```python\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __str__(self):\n        return f\"{self.name} ({self.age})\"\n```",
+    "hints": ["__str__ باید یه رشته برگردونه، نه چاپ کنه.", "با f-string می‌تونی name و age رو توی یه رشته ترکیب کنی."],
+    "rubric": "Correct: __str__(self) returns an f-string in the exact \"name (age)\" format. Partial: correct idea but wrong formatting (e.g. missing parentheses). Incorrect: uses print() inside __str__ instead of return, or wrong method name."
+  },
+  {
+    "key": "magic-method-auto-called",
+    "title": "چرا مستقیم __str__ رو صدا نمی‌زنیم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی می‌پرسه «چرا برای گرفتن نسخه‌ی متنی یه آبجکت می‌نویسیم print(obj)، به‌جای اینکه مستقیم obj.__str__() رو صدا بزنیم؟» در ۱ تا ۲ جمله جوابش بده.",
+    "expected_outcome": "متدهای جادویی (مثل __str__) قرار نیست مستقیم صدا زده بشن — پایتون خودش، بسته به اینکه چطور از آبجکت استفاده می‌کنی (اینجا print یا str())، پشت‌صحنه صداشون می‌زنه. این باعث می‌شه استفاده از آبجکت طبیعی و یکدست به‌نظر برسه.",
+    "hints": ["متد جادویی قرار نیست دستی صدا زده بشه.", "پایتون خودش تشخیص می‌ده کِی این متد رو صدا بزنه."],
+    "rubric": "Correct if the answer explains magic methods are called automatically by Python based on usage, not meant to be invoked directly."
+  }
+]

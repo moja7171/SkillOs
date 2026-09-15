@@ -100,11 +100,11 @@ Today's list is currently flat (every course's items interleaved, ordered by `Pl
 ### [ ] S-37 Empty states (friends with one user, weak-spots/zero) feel abandoned, no next action
 A lone card floating on a large dark page, with only a passive sentence. «دوستان» specifically should probably prompt inviting someone (the app already has `REGISTRATION_CODE`) rather than just showing the one existing user.
 
-### [ ] S-38 Home's streak/progress bar reads as an afterthought
-Meant to be the motivational centerpiece (DECISIONS §21) but is currently a thin, easy-to-miss line above the main card. Deserves more visual weight.
+### [x] S-38 Home's streak/progress bar reads as an afterthought
+Meant to be the motivational centerpiece (DECISIONS §21) but is currently a thin, easy-to-miss line above the main card. Deserves more visual weight. Fixed in DECISIONS §32.
 
-### [ ] S-39 "فقط یه مرور سریع" button placement feels disconnected
-Floats alone above the primary "ادامه‌ی یادگیری" card instead of reading as part of the same flow.
+### [x] S-39 "فقط یه مرور سریع" button placement feels disconnected
+Floats alone above the primary "ادامه‌ی یادگیری" card instead of reading as part of the same flow. Fixed in DECISIONS §32.
 
 ### [-] S-40 Week view: day order flips between the two grid rows — false positive, not a real bug
 Originally flagged from eyeballing a screenshot. Re-checked with actual measured `getBoundingClientRect()` coordinates for each day card: row two reads جمعه(27)→شنبه(28)→یکشنبه(29)→دوشنبه(30) right-to-left, same ascending order as row one — correct. The earlier read of the screenshot was simply wrong. No code change made.

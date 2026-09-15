@@ -6,34 +6,39 @@
                 <div class="alert alert-ok">{{ session('status') }}</div>
             @endif
 
-            {{-- Streak + today's progress --}}
-            @if ($streakCount > 0 || $plannedMinutes > 0)
-                <div class="flex items-center gap-4 flex-wrap">
+            {{-- Streak + today's progress: the motivational centerpiece (DECISIONS §21).
+                 The quick-review shortcut lives in the same card so it reads as part of
+                 this flow instead of floating alone above the "continue learning" card. --}}
+            @if ($streakCount > 0 || $plannedMinutes > 0 || $quickReview)
+                <div class="card px-5 py-4 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4">
                     @if ($streakCount > 0)
-                        <div class="flex items-center gap-1.5 text-[13.5px] font-semibold text-warn shrink-0">
-                            <x-icon name="flame" class="w-[18px] h-[18px]" />
-                            {{ fa_num($streakCount) }} روز پشت‌سرهم
+                        <div class="flex items-center gap-2.5 shrink-0">
+                            <span class="w-10 h-10 rounded-xl grid place-items-center shrink-0" style="background: color-mix(in srgb, var(--warn) 16%, transparent);">
+                                <x-icon name="flame" class="w-5 h-5 text-warn" />
+                            </span>
+                            <div class="leading-tight">
+                                <div class="text-[19px] font-bold text-warn">{{ fa_num($streakCount) }} روز</div>
+                                <div class="text-[11.5px] text-muted">پشت‌سرهم</div>
+                            </div>
                         </div>
                     @endif
                     @if ($plannedMinutes > 0)
-                        <div class="flex items-center gap-2 flex-1 min-w-[160px]">
-                            <div class="flex-1 h-2 rounded-full bg-surface2 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $plannedMinutes }}" aria-valuenow="{{ min($plannedMinutes, $doneMinutes) }}" aria-label="پیشرفت امروز">
+                        <div class="flex items-center gap-3 flex-1 min-w-[160px]">
+                            <div class="flex-1 h-2.5 rounded-full bg-surface2 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $plannedMinutes }}" aria-valuenow="{{ min($plannedMinutes, $doneMinutes) }}" aria-label="پیشرفت امروز">
                                 <div class="h-full rounded-full" style="width: {{ min(100, round($doneMinutes / $plannedMinutes * 100)) }}%; background: var(--accent);"></div>
                             </div>
                             <span class="text-[12.5px] text-muted shrink-0">{{ fa_num($doneMinutes) }}/{{ fa_num($plannedMinutes) }} دقیقه‌ی امروز</span>
                         </div>
                     @endif
+                    @if ($quickReview)
+                        <form method="POST" action="{{ route('session.start-planned', $quickReview) }}" class="shrink-0">
+                            @csrf
+                            <button type="submit" class="btn btn-sm">
+                                <x-icon name="refresh" class="w-3.5 h-3.5" /> فقط یه مرور سریع ({{ fa_num($quickReview->duration_minutes) }} دقیقه)
+                            </button>
+                        </form>
+                    @endif
                 </div>
-            @endif
-
-            {{-- Quick review shortcut, for low-motivation days --}}
-            @if ($quickReview)
-                <form method="POST" action="{{ route('session.start-planned', $quickReview) }}">
-                    @csrf
-                    <button type="submit" class="btn btn-sm">
-                        <x-icon name="refresh" class="w-3.5 h-3.5" /> فقط یه مرور سریع ({{ fa_num($quickReview->duration_minutes) }} دقیقه)
-                    </button>
-                </form>
             @endif
 
             {{-- Gentle nudge after a short gap --}}

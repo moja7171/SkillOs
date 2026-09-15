@@ -486,3 +486,13 @@ The course page's lesson table (fixed-width `سطح`/action columns that plainly
 **Why.** Found on a UI/UX review the owner asked for, then a dedicated accessibility question. Every item was verified against the actual DOM/CSS (grep for `iconbtn`/`aria-label`, read the dropdown component, compute contrast ratios) rather than assumed, matching how §30's mobile bugs were found — reasoning about classes in isolation missed real issues there too.
 
 **Consequences.** `--faint` and `--muted` are now visually closer to each other than before (their contrast ratios differ by less than they used to) since compliance took priority over maximizing the three-tier ink/muted/faint visual hierarchy — still distinguishable, just less dramatically. Any new icon-only control should follow the same `title` + `aria-label` pairing; any new disclosure (dropdown/drawer) should reuse `x-dropdown` or replicate its `Escape` handling rather than inventing a new pattern without it.
+
+---
+
+## 32. Home: streak/progress merged into one weighted card with the quick-review shortcut (S-38, S-39; 2026-09-15)
+
+**Decision.** `home.blade.php`'s streak count, today's-minutes progress bar, and the "فقط یه مرور سریع" button were three separate, thin, low-weight elements stacked above the main "ادامه‌ی یادگیری" card — a plain line of text plus an unrelated floating button. Merged into a single `.card`: the streak gets an icon badge (rounded warn-tinted square) and a bold two-line number/label instead of one small inline sentence; the progress bar is thicker (`h-2.5` vs `h-2`); and the quick-review button now sits inside the same card as a third flex item instead of floating alone in its own row. Verified with real screenshots (CDP, desktop 1440px and mobile 390px, using a temporary enrollment + streak set via tinker and removed afterward) rather than just reading the classes.
+
+**Why.** Both were flagged in the UI/UX review: the streak/progress row was meant to be the motivational centerpiece (§21) but read as an afterthought, and the quick-review button felt disconnected from the flow it's actually part of. Putting all three in one card fixes both at once since they're the same "today at a glance" concept.
+
+**Consequences.** The card is conditionally rendered only when at least one of the three has content (same as before, just OR'd across all three instead of two), so it still disappears cleanly for a user with no streak, no plan, and no due review. `sm:flex-wrap` was added so the row degrades gracefully if a future addition makes three items too wide for a mid-size viewport.

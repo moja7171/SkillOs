@@ -1,0 +1,37 @@
+[
+  {
+    "key": "correct-subpackage-import",
+    "title": "مسیر import درست کدومه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "این ساختار پوشه‌ها رو داریم:\n```\napp.py\nanalytics/\n  __init__.py\n  reports/\n    __init__.py\n    sales_report.py\n```\nکدوم دستور برای import کردن ماژول sales_report درسته؟",
+    "options": ["from analytics.reports import sales_report", "from reports import sales_report", "from analytics import sales_report", "import sales_report"],
+    "correct_option": 0,
+    "expected_outcome": "from analytics.reports import sales_report -- مسیر import باید دقیقاً ساختار پوشه‌ها رو با نقطه دنبال کنه: analytics بالای زنجیره، reports زیرپکیجش.",
+    "hints": ["مسیر import باید کل زنجیره‌ی پوشه‌ها رو از بالا دنبال کنه.", "analytics بالای زنجیره‌ست، reports زیرپکیج analytics‌ه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "missing-subpackage-init",
+    "title": "چرا هنوز import کار نمی‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه نفر پوشه‌ی analytics/reports/ رو ساخته و __init__.py رو فقط توی analytics/ گذاشته، نه توی reports/. وقتی می‌نویسه `from analytics.reports import sales_report`، خطا می‌گیره. چرا؟",
+    "expected_outcome": "چون reports هم باید خودش یه __init__.py داشته باشه تا پکیج حساب بشه -- داشتن __init__.py توی پکیج والد (analytics) کافی نیست، هر پوشه‌ای که می‌خوای قابل‌import باشه به __init__.py خودش نیاز داره.",
+    "hints": ["هر پوشه‌ای که قراره یه پکیج باشه، __init__.py خودش رو نیاز داره.", "__init__.py توی analytics فقط analytics رو پکیج می‌کنه، نه reports رو."],
+    "rubric": "Correct if the answer explains each directory in the chain needs its own __init__.py, not just the top-level one."
+  },
+  {
+    "key": "build-subpackage-structure",
+    "title": "این ساختار زیرپکیج رو بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه پکیج به اسم `store` داری که یه زیرپکیج `inventory` توش هست، و inventory یه ماژول `stock.py` با یه تابع `check_stock()` داره. کد بنویس که نشون بده چطور از app.py این تابع رو import و صدا می‌زنی.",
+    "expected_outcome": "```python\nfrom store.inventory.stock import check_stock\n\ncheck_stock()\n```",
+    "hints": ["مسیر import باید store -> inventory -> stock رو با نقطه دنبال کنه.", "هم store و هم inventory باید __init__.py داشته باشن (فرض کن دارن)."],
+    "rubric": "Correct: import path follows store.inventory.stock and calls check_stock(). Partial: import path correct but function not called. Incorrect: wrong import path or skips a level."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "fix-star-import",
+    "title": "چرا star import مشکل‌سازه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی نوشته `from sales import *` چون کوتاه‌تره. چرا این کار ریسکیه؟ در ۱ تا ۲ جمله توضیح بده.",
+    "expected_outcome": "چون این دستور همه‌ی اسم‌های ماژول sales رو بدون هشدار import می‌کنه؛ اگه یکی از این اسم‌ها تصادفاً هم‌نام با یه متغیر یا تابع موجود توی فایل فعلی باشه، بی‌سروصدا جایگزینش می‌کنه و باعث باگ می‌شه.",
+    "hints": ["فکر کن sales یه متغیر یا تابع دیگه هم داشته باشه که اسمش رو نمی‌دونی.", "star import هیچ کنترلی روی اینکه دقیقاً چی import می‌شه، نمی‌ده."],
+    "rubric": "Correct if the answer explains star imports can silently overwrite existing names with no warning."
+  },
+  {
+    "key": "split-into-module",
+    "title": "این توابع رو به یه ماژول جدا منتقل کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این دو تابع توی app.py نوشته شدن ولی به مفهوم «احراز هویت» مربوطن نه منطق اصلی برنامه. کدی بنویس که نشون بده این دو تابع رو باید توی یه فایل جدا به اسم auth.py منتقل کنی، و توی app.py چطور فقط login رو ازش import کنی و صداش بزنی:\n```python\ndef login(username, password):\n    pass\n\n\ndef logout():\n    pass\n```",
+    "expected_outcome": "```python\n# auth.py\ndef login(username, password):\n    pass\n\n\ndef logout():\n    pass\n\n\n# app.py\nfrom auth import login\n\nlogin(\"user\", \"pass\")\n```",
+    "hints": ["اسم فایل جدید باید حروف کوچیک و بدون فاصله باشه (auth.py).", "توی import، اسم فایل رو بدون پسوند .py می‌نویسی."],
+    "rubric": "Correct: both functions moved to auth.py, and app.py imports only login by name and calls it. Partial: functions moved but import uses `import *` or imports the whole module unnecessarily. Incorrect: functions not actually separated into a new file."
+  },
+  {
+    "key": "why-import-name-not-py",
+    "title": "چرا `.py` نمی‌نویسیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا `from sales import calculate_tax` درسته ولی `from sales.py import calculate_tax` غلطه؟",
+    "options": ["import با اسم ماژول کار می‌کنه، نه اسم فایل با پسوندش", "پسوند .py فقط برای اسکریپت‌های اجرایی لازمه، نه ماژول‌ها", "پایتون خودش پسوند رو نادیده می‌گیره پس فرقی نداره", "این فقط یه قرارداد سبک‌نویسیه، هر دو کار می‌کنن"],
+    "correct_option": 0,
+    "expected_outcome": "درسته: دستور import با اسم ماژول کار می‌کنه (یعنی اسم فایل بدون پسوند .py)، نه با اسم کامل فایل.",
+    "hints": ["ماژول یعنی اسم فایل، بدون پسوندش.", "sales.py یعنی «فایل sales با پسوند py»، ولی ماژول فقط sales‌ه."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

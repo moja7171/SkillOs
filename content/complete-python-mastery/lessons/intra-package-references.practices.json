@@ -1,0 +1,37 @@
+[
+  {
+    "key": "which-import-preferred",
+    "title": "PEP8 کدوم رو توصیه می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق PEP8، بین import مطلق و import نسبی، کدوم به‌عنوان روش پیش‌فرض توصیه می‌شه؟",
+    "options": ["import مطلق", "import نسبی", "هیچ‌کدوم، فرقی نداره", "هر دو با هم، همیشه"],
+    "correct_option": 0,
+    "expected_outcome": "import مطلق -- چون مسیر دقیق ماژول رو صریح نشون می‌ده و خواناتره. import نسبی فقط وقتی مسیر مطلق خیلی طولانی می‌شه، به‌عنوان جایگزین در نظر گرفته می‌شه.",
+    "hints": ["این درس صریح می‌گه PEP8 کدوم رو توصیه می‌کنه.", "import نسبی فقط برای مسیرهای خیلی طولانی مفیده."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "relative-import-dots",
+    "title": "این import چند سطح بالا می‌ره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfrom ...billing import invoices\n```\nاین import نسبی چند سطح بالای پکیج فعلی می‌ره، قبل از اینکه به billing برسه؟",
+    "expected_outcome": "دو سطح بالا می‌ره. یه نقطه یعنی همین پکیج فعلی؛ هر نقطه‌ی اضافه یه سطح بیشتر بالا می‌بره -- پس سه نقطه یعنی دو سطح بالاتر از پکیج فعلی.",
+    "hints": ["یه نقطه یعنی پکیج فعلی؛ هر نقطه‌ی بعدی یه سطح بالاتره.", "سه نقطه = یک نقطه (خود پکیج) + دو نقطه‌ی اضافه (دو سطح بالاتر)."],
+    "rubric": "Correct if the answer says two levels up (three dots = current package + two levels up)."
+  },
+  {
+    "key": "write-sibling-import",
+    "title": "به یه زیرپکیج خواهر ارجاع بده",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "ساختار زیر رو داری:\n```\nshop/\n  __init__.py\n  payments/\n    __init__.py\n    checkout.py\n  users/\n    __init__.py\n    profile.py\n```\nداخل checkout.py می‌خوای از ماژول profile.py (توی زیرپکیج خواهر users) یه تابع get_user() رو import کنی. هم نسخه‌ی import مطلق و هم نسخه‌ی import نسبی رو بنویس.",
+    "expected_outcome": "```python\n# absolute\nfrom shop.users.profile import get_user\n\n# relative\nfrom ..users.profile import get_user\n```",
+    "hints": ["مطلق: از shop شروع کن و کل مسیر رو بنویس.", "نسبی: checkout.py توی payments هست، پس .. تو رو به سطح shop می‌بره."],
+    "rubric": "Correct: provides both a correct absolute import (shop.users.profile) and relative import (..users.profile). Partial: only one form correct. Incorrect: wrong path in both."
+  }
+]

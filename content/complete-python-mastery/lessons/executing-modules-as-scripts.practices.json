@@ -1,0 +1,37 @@
+[
+  {
+    "key": "name-when-imported",
+    "title": "مقدار __name__ چیه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه ماژول به اسم helpers.py داری که از app.py با `import helpers` صدا زده می‌شه (نه اجرای مستقیم). داخل helpers.py، مقدار __name__ چیه؟",
+    "options": ["\"helpers\"", "\"__main__\"", "\"app\"", "None"],
+    "correct_option": 0,
+    "expected_outcome": "\"helpers\" -- چون این ماژول مستقیم اجرا نشده، بلکه import شده، پس __name__ اسم خودش (یا اسم فول‌کوالیفای‌شده اگه داخل یه پکیج باشه) می‌شه، نه \"__main__\".",
+    "hints": ["__name__ فقط وقتی \"__main__\" می‌شه که ماژول مستقیم از خط فرمان اجرا بشه.", "چون helpers اینجا import شده نه مستقیم اجرا، اسم خودش رو می‌گیره."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "add-main-guard",
+    "title": "این ماژول رو هم اسکریپت هم کتابخانه کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این ماژول یه تابع run_report() داره. کد رو طوری تغییر بده که اگه فایل مستقیم اجرا بشه، پیام \"Running report...\" چاپ بشه و run_report() صدا زده بشه؛ ولی اگه ماژول import بشه، هیچ‌کدوم از این‌ها خودکار اجرا نشه:\n```python\ndef run_report():\n    print(\"report generated\")\n```",
+    "expected_outcome": "```python\ndef run_report():\n    print(\"report generated\")\n\n\nif __name__ == \"__main__\":\n    print(\"Running report...\")\n    run_report()\n```",
+    "hints": ["از شرط `if __name__ == \"__main__\":` استفاده کن.", "این بلوک باید بعد از تعریف تابع بیاد، نه قبلش."],
+    "rubric": "Correct: wraps the print and run_report() call in `if __name__ == \"__main__\":`. Partial: correct guard but placed before the function definition or missing the print statement. Incorrect: no guard, code runs unconditionally on import."
+  },
+  {
+    "key": "why-code-runs-once",
+    "title": "چرا فقط یه بار اجرا می‌شه؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "اگه یه ماژول از سه جای مختلف برنامه import بشه، کدهای سطح‌بالای اون ماژول (مثل یه print خارج از تابع) چند بار اجرا می‌شن؟ چرا؟",
+    "expected_outcome": "فقط یه بار -- پایتون یه ماژول رو اولین باری که import می‌شه لود و اجرا می‌کنه، و بعدش نسخه‌ی لودشده رو کش می‌کنه. import‌های بعدی همون نسخه‌ی کش‌شده رو برمی‌گردونن، بدون اجرای دوباره‌ی کد سطح‌بالا.",
+    "hints": ["پایتون هر ماژول رو فقط یه بار لود می‌کنه، حتی اگه چند بار import بشه.", "import‌های بعدی از یه نسخه‌ی کش‌شده استفاده می‌کنن."],
+    "rubric": "Correct if the answer explains modules are loaded and their top-level code executed only once, with subsequent imports reusing the cached module."
+  }
+]

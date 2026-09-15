@@ -382,3 +382,13 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** Originally scoped as two separate stories (S-26 weekly, S-27 monthly) but they're the same query at two different cutoffs — one card with two numbers is simpler than two near-identical cards, so they shipped together.
 
 **Consequences.** `ActivityStats` is intentionally cross-course (no course/enrollment filter) — it's meant to answer "how much have *I* been doing," not per-course reporting; a per-course breakdown would be a different query, not an extension of this one.
+
+---
+
+## 23. Level-up celebration only past "learning" (2026-09-15)
+
+**Decision.** `session/show.blade.php`'s practice-result panel shows a bigger, highlighted banner ("آفرین، رفتی یه سطح بالاتر!") instead of the plain from→to badge row, but only when `evidence.level_change.from !== 'not_started'` and the level actually went up. The `not_started → learning` transition — which fires on every lesson's very first attempt, learn or practice — keeps the plain row.
+
+**Why.** The owner's engagement-ideas batch asked for level-up moments to feel more like a celebration. Doing that for `not_started → learning` too would fire on literally every lesson in every course (100+ times per course) and cheapen it; reserving the banner for `learning → familiar` and beyond — which requires sustained correct answers, not just starting — keeps it meaning something.
+
+**Consequences.** The learn-activity completion panel (a separate, smaller spot earlier in the same file) still shows only the plain "to" badge — it's always a `not_started → learning` transition, so it was never a candidate for the banner treatment.

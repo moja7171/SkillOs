@@ -146,13 +146,30 @@
                         </div>
 
                         @if (! empty($evidence['level_change']))
-                            @php $lc = $evidence['level_change']; @endphp
-                            <div class="flex items-center gap-2 text-[13.5px]">
-                                <span class="text-muted">سطح این درس:</span>
-                                <x-level-badge :level="$lc['from']" />
-                                <span class="text-faint">←</span>
-                                <x-level-badge :level="$lc['to']" />
-                            </div>
+                            @php
+                                $lc = $evidence['level_change'];
+                                // Starting a lesson (not_started -> learning) happens on every lesson's first
+                                // attempt; celebrate real, effortful progress past it instead.
+                                $leveledUp = $lc['from'] !== 'not_started' && \App\Models\MasteryRecord::LEVEL_INDEX[$lc['to']] > \App\Models\MasteryRecord::LEVEL_INDEX[$lc['from']];
+                            @endphp
+                            @if ($leveledUp)
+                                <div class="card p-4 flex items-center gap-3" style="border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);">
+                                    <x-icon name="sparkle" class="w-5 h-5 shrink-0" style="color: var(--ok);" />
+                                    <div class="text-[13.5px] flex items-center gap-2 flex-wrap">
+                                        <span class="font-semibold">آفرین، رفتی یه سطح بالاتر!</span>
+                                        <x-level-badge :level="$lc['from']" />
+                                        <span class="text-faint">←</span>
+                                        <x-level-badge :level="$lc['to']" />
+                                    </div>
+                                </div>
+                            @else
+                                <div class="flex items-center gap-2 text-[13.5px]">
+                                    <span class="text-muted">سطح این درس:</span>
+                                    <x-level-badge :level="$lc['from']" />
+                                    <span class="text-faint">←</span>
+                                    <x-level-badge :level="$lc['to']" />
+                                </div>
+                            @endif
                         @endif
 
                         @if ($revealed || in_array($attempt->result_status, ['correct', 'correct_with_hint']))

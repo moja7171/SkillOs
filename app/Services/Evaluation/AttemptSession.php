@@ -143,6 +143,8 @@ class AttemptSession
             $attempt->activity->lesson->course->enrollments()
                 ->where('user_id', $attempt->user_id)
                 ->update(['last_activity_at' => now()]);
+
+            $attempt->user->recordActivityToday();
         });
     }
 }

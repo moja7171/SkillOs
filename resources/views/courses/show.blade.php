@@ -32,42 +32,81 @@
                 <div class="alert alert-ok">{{ session('status') }}</div>
             @endif
 
-            <div class="card">
+            @php
+                // Group by section so long lesson tables can collapse per section and
+                // jump-to-section works; a course authored without sections stays one flat list.
+                $sections = $course->lessons->groupBy(fn ($lesson) => $lesson->section ?: '');
+                $currentLesson = $course->lessons->first(fn ($lesson) => ! ($enrollment && $isLocked($lesson)) && \App\Models\MasteryRecord::LEVEL_INDEX[$levelOf($lesson)] < 2);
+                $defaultOpenIndex = $currentLesson && $currentLesson->section
+                    ? $sections->keys()->values()->search($currentLesson->section)
+                    : 0;
+                $openMap = $sections->keys()->values()->mapWithKeys(fn ($title, $i) => [(string) $i => $title === '' || $i === $defaultOpenIndex]);
+            @endphp
+            <div class="card" x-data="{ open: {{ \Illuminate\Support\Js::from($openMap) }} }">
                 <div class="card-h">
                     <h3>درس‌ها <span class="text-faint font-normal">· {{ fa_num($course->lessons_count) }}</span></h3>
                     @if ($enrollment)
                         <x-course-progress :lessons="$course->lessons" :user="$user" class="w-64 hidden sm:block" />
                     @endif
                 </div>
+                @if ($sections->keys()->filter()->count() > 1)
+                    <div class="px-[18px] py-2.5 border-b border-line flex flex-wrap gap-1.5">
+                        @foreach ($sections as $title => $lessons)
+                            @continue($title === '')
+                            <button type="button" x-ref="jump-{{ $loop->index }}"
+                                    @click="open[{{ $loop->index }}] = true; $nextTick(() => $refs['section-{{ $loop->index }}'].scrollIntoView({ behavior: 'smooth', block: 'start' }))"
+                                    class="badge badge-ghost hover:border-faint">
+                                {{ $title }}
+                            </button>
+                        @endforeach
+                    </div>
+                @endif
+                <div class="overflow-x-auto">
                 <table class="table">
                     <thead><tr><th class="w-11">#</th><th>درس</th><th class="w-44">سطح</th><th class="w-24"></th></tr></thead>
-                    <tbody>
-                        @foreach ($course->lessons as $lesson)
-                            @php $locked = $enrollment && $isLocked($lesson); @endphp
-                            @if ($lesson->section && (! $loop->first) && $lesson->section !== $course->lessons[$loop->index - 1]->section)
-                                <tr><td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted">{{ $lesson->section }}</td></tr>
-                            @elseif ($lesson->section && $loop->first)
-                                <tr><td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted">{{ $lesson->section }}</td></tr>
+                    @foreach ($sections as $title => $lessons)
+                        <tbody x-ref="section-{{ $loop->index }}">
+                            @if ($title !== '')
+                                <tr class="cursor-pointer select-none" @click="open[{{ $loop->index }}] = !open[{{ $loop->index }}]">
+                                    <td colspan="4" class="!py-2 bg-surface2 text-[12px] font-semibold text-muted">
+                                        <span class="inline-flex items-center gap-1.5">
+                                            <x-icon name="chevron" class="w-3 h-3 transition-transform" ::class="open[{{ $loop->index }}] ? '-rotate-90' : 'rotate-90'" />
+                                            {{ $title }}
+                                            <span class="text-faint font-normal">· {{ fa_num($lessons->count()) }} درس</span>
+                                        </span>
+                                    </td>
+                                </tr>
                             @endif
-                            <tr>
-                                <td class="num">{{ $lesson->order + 1 }}</td>
-                                <td>
-                                    <a href="{{ $lesson->url() }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent">{{ $lesson->title }}</a>
-                                    @if ($lesson->summary)
-                                        <div class="text-[12.5px] text-muted">{{ $lesson->summary }}</div>
-                                    @endif
-                                    <div class="text-[12px] text-faint mt-0.5 flex items-center gap-2">
-                                        <span>{{ fa_num($lesson->estimated_minutes) }} دقیقه</span>
-                                        @if ($lesson->videos->isNotEmpty())<span>· <x-icon name="video" class="w-3 h-3 inline" /> ویدیو</span>@endif
-                                        @if ($locked)<span class="flex items-center gap-1">· <x-icon name="lock" class="w-3 h-3" /> نیاز به {{ $lesson->prerequisites->pluck('title')->join('، ') }}</span>@endif
-                                    </div>
-                                </td>
-                                <td><x-level-badge :level="$levelOf($lesson)" /></td>
-                                <td class="text-end"><a href="{{ $lesson->url() }}" class="btn btn-sm">باز کن</a></td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+                            @foreach ($lessons as $lesson)
+                                @php $locked = $enrollment && $isLocked($lesson); @endphp
+                                <tr x-show="open[{{ $loop->parent->index }}]">
+                                    <td class="num">{{ $lesson->order + 1 }}</td>
+                                    <td>
+                                        <a href="{{ $lesson->url() }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent">{{ $lesson->title }}</a>
+                                        @if ($lesson->summary)
+                                            <div class="text-[12.5px] text-muted">{{ $lesson->summary }}</div>
+                                        @endif
+                                        <div class="text-[12px] text-faint mt-0.5 flex items-center gap-2">
+                                            <span>{{ fa_num($lesson->estimated_minutes) }} دقیقه</span>
+                                            @if ($lesson->videos->isNotEmpty())<span>· <x-icon name="video" class="w-3 h-3 inline" /> ویدیو</span>@endif
+                                            @if ($locked)<span class="flex items-center gap-1">· <x-icon name="lock" class="w-3 h-3" /> نیاز به {{ $lesson->prerequisites->pluck('title')->join('، ') }}</span>@endif
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="flex items-center gap-1.5">
+                                            <x-level-badge :level="$levelOf($lesson)" />
+                                            @if ($seenLessonIds->contains($lesson->id))
+                                                <span class="text-faint" title="ویدیو/متن این درس رو دیدی"><x-icon name="check" class="w-3.5 h-3.5" /></span>
+                                            @endif
+                                        </div>
+                                    </td>
+                                    <td class="text-end"><a href="{{ $lesson->url() }}" class="btn btn-sm">باز کن</a></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    @endforeach
                 </table>
+                </div>
             </div>
         </div>
 
@@ -85,7 +124,7 @@
                 <div class="card">
                     <div class="card-h">
                         <h3>زمان‌بندی</h3>
-                        <a href="{{ route('enrollments.edit', $enrollment) }}" class="iconbtn w-7 h-7" title="ویرایش"><x-icon name="gear" class="w-3.5 h-3.5" /></a>
+                        <a href="{{ route('enrollments.edit', $enrollment) }}" class="iconbtn w-7 h-7" title="ویرایش" aria-label="ویرایش زمان‌بندی"><x-icon name="gear" class="w-3.5 h-3.5" /></a>
                     </div>
                     <div class="px-[18px] py-1.5">
                         <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">اولویت</span><span class="font-semibold">{{ fa_num($enrollment->priority) }} از ۵</span></div>

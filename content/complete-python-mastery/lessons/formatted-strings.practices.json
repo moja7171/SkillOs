@@ -1,0 +1,24 @@
+[
+  {
+    "key": "welcome-message",
+    "title": "پیام خوش‌آمدگویی بساز",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "بعد از لاگین، می‌خوای یه پیام خوش‌آمدگویی شخصی‌سازی‌شده نشون بدی. اگه `name = \"Mosh\"` باشه، با f-string کد بنویس که این رو چاپ کنه:\n```\nWelcome, Mosh!\n```",
+    "expected_outcome": "```python\nprint(f\"Welcome, {name}!\")\n```",
+    "hints": ["قبل از رشته یه f بذار.", "متغیری که می‌خوای وسط متن بیاد رو داخل آکولاد بذار."],
+    "rubric": "Correct: uses an f-string with {name} to build exactly \"Welcome, Mosh!\". Partial: correct logic but wrong punctuation/text. Incorrect: doesn't use an f-string, or wrong output."
+  },
+  {
+    "key": "username-length-check",
+    "title": "طول یوزرنیم رو نشون بده",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی فرم ثبت‌نام، می‌خوای همون لحظه به کاربر بگی یوزرنیمش چند کاراکتره — بدون اینکه طولشو از قبل جداگونه حساب کنی. اگه `username = \"mosh123\"` باشه، با f-string کد بنویس که این رو چاپ کنه:\n```\nYour username has 7 characters\n```",
+    "expected_outcome": "```python\nprint(f\"Your username has {len(username)} characters\")\n```",
+    "hints": ["داخل آکولاد فقط اسم متغیر نیست — هر عبارت معتبر پایتونی جواب می‌ده، حتی صدا زدن یه تابع.", "برای گرفتن طول یه رشته از len استفاده کن."],
+    "rubric": "Correct: the output is exactly \"Your username has 7 characters\", produced with an f-string (whether len(username) is called directly inside the braces or computed into a variable first). Incorrect: wrong output, or doesn't use an f-string at all."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "comment-filter",
+    "title": "فیلتر کردن کامنت‌های کاربر",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای فقط بفهمی آیا کلمه‌ی «spam» توی کامنت یه کاربر هست یا نه، تا فیلترش کنی. لازم نیست بدونی کجای متنه، فقط هست یا نیست. کدوم روش ساده‌تره؟",
+    "options": ["comment.find(\"spam\")", "\"spam\" in comment", "comment.replace(\"spam\", \"\")", "comment.upper()"],
+    "correct_option": 1,
+    "expected_outcome": "وقتی فقط می‌خوای بدونی «هست یا نیست»، عملگر in ساده‌ترین راهه — یه مقدار بولی (True/False) بهت می‌ده. find هم کار می‌کنه ولی ایندکس برمی‌گردونه که اینجا لازمش نداری.",
+    "hints": ["find ایندکس برمی‌گردونه، in فقط True/False.", "برای یه چک ساده‌ی «هست یا نیست»، کدوم مستقیم‌تره؟"],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "clean-up-signup-username",
+    "title": "یوزرنیم رو قبل از ذخیره تمیز کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی فرم ثبت‌نام، کاربر موقع تایپ یوزرنیمش چندتا فاصله‌ی اضافه‌ی اول و آخر گذاشته: `username = \"   mosh123   \"`. کد بنویس که قبل از ذخیره‌سازی، این فاصله‌های اضافه رو پاک کنه.",
+    "expected_outcome": "```python\nusername = username.strip()\n```",
+    "hints": ["strip فاصله‌های اول و آخر رشته رو حذف می‌کنه.", "این متد رشته‌ی جدید برمی‌گردونه؛ باید نتیجه رو دوباره توی username بریزی."],
+    "rubric": "Correct: calls username.strip() and assigns/prints the result as \"mosh123\" with no leading/trailing whitespace. Partial: uses strip() but doesn't save/use the result. Incorrect: unrelated approach or leaves whitespace."
+  }
+]

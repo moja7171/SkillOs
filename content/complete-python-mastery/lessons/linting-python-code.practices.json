@@ -1,26 +1,26 @@
 [
   {
-    "key": "why-print-errors-in-py3",
-    "title": "چرا print بدون پرانتز خطا می‌دهد؟",
+    "key": "migrated-from-python2",
+    "title": "یه کد قدیمی رو بازآوری کن",
     "form": "explanation",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "```python\nprint \"Hello, World!\"\n```\nدر پایتون ۳ چرا این خط باعث خطای لینتر می‌شود، در حالی‌که در پایتون ۲ معتبر بود؟",
-    "expected_outcome": "در پایتون ۳، print یک تابع است و هر فراخوانی تابع باید با پرانتز باشد: print(\"Hello, World!\"). در پایتون ۲، print یک statement بود نه تابع، پس بدون پرانتز هم کار می‌کرد.",
-    "hints": ["در پایتون ۳، print دیگر یک statement نیست.", "برای فراخوانی هر تابع در پایتون باید پرانتز بگذاری."],
+    "prompt": "یه هم‌تیمی یه پروژه‌ی قدیمی پایتون ۲ رو بهت داده که این خط توش قرمز شده:\n```python\nprint \"Hello, World!\"\n```\nبرایش توضیح بده چرا لینتر اینجا خطا می‌گیره و چطور درستش کنه.",
+    "expected_outcome": "در پایتون ۳، print یه تابعه و هر فراخوانی تابع باید با پرانتز باشه: print(\"Hello, World!\"). در پایتون ۲، print یه statement بود نه تابع، پس بدون پرانتز هم کار می‌کرد.",
+    "hints": ["توی پایتون ۳، print دیگه یه statement نیست.", "برای فراخوانی هر تابعی توی پایتون باید پرانتز بذاری."],
     "rubric": "Correct: explains that print is a function in Python 3 (requires parentheses to be called) unlike Python 2 where it was a statement. Partial: says parentheses are missing but doesn't explain the function/statement distinction. Incorrect: unrelated or wrong explanation."
   },
   {
-    "key": "what-does-linter-catch",
-    "title": "لینتر چه چیزی را پیدا می‌کند؟",
+    "key": "explain-linting-to-a-beginner",
+    "title": "یه دوست تازه‌کار می‌پرسه",
     "form": "mcq",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "لینتر معمولاً چه نوع مشکلی را پیش از اجرای برنامه پیدا می‌کند؟",
-    "options": ["کندی برنامه هنگام اجرا", "خطاهای نحوی و مشکلات احتمالی کد", "مصرف حافظه‌ی برنامه", "امنیت شبکه‌ی برنامه"],
+    "prompt": "یه دوست می‌پرسه: «اصلاً لینتر چه فایده‌ای داره؟» بهترین جوابت چیه؟",
+    "options": ["کندی برنامه هنگام اجرا رو کم می‌کنه", "پیش از اجرای برنامه، خطاهای نحوی و مشکلات احتمالی رو نشون می‌ده", "مصرف حافظه‌ی برنامه رو کم می‌کنه", "امنیت شبکه‌ی برنامه رو بالا می‌بره"],
     "correct_option": 1,
-    "expected_outcome": "لینتر کد را تحلیل می‌کند و خطاهای نحوی و مشکلات احتمالی را — بدون نیاز به اجرای برنامه — پیدا می‌کند.",
-    "hints": ["به تعریف linting در متن درس برگرد.", "لینتر قبل از اجرا کار می‌کند، نه حین اجرا."],
+    "expected_outcome": "لینتر کد رو تحلیل می‌کنه و خطاهای نحوی و مشکلات احتمالی رو — بدون نیاز به اجرای برنامه — پیدا می‌کنه.",
+    "hints": ["به تعریف linting توی درس برگرد.", "لینتر قبل از اجرا کار می‌کنه، نه حین اجرا."],
     "rubric": "Correct only if option 1 is selected."
   }
 ]

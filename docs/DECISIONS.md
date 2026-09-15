@@ -362,3 +362,192 @@ Also recorded: the Breeze tests for removed features (email verification, passwo
 **Why.** The zip-upload path (§16) exists because most shared hosts give *no* SSH and *no* git — every step has to go through a file manager and HTTP GETs to `/_ops/…`. Where git access *is* available, that whole manual dance collapses to "push, click a button in cPanel" — worth having as the primary path on any host that supports it, since it removes the recurring human steps (build zip, upload, extract, hit four URLs) down to one.
 
 **Consequences.** Two deploy paths now coexist and must both keep working: `OpsController`/`/_ops/…` (§16, still the only option on hosts without git) and this one. Both end up running the same artisan commands (migrate, content:import, the `*:cache` trio) but through separate code paths (`OpsController` vs `public/deploy.php`) since `deploy.php` bootstraps Laravel standalone rather than going through routing/middleware — a change to what "a deploy needs to run" (e.g., a new artisan step) has to be made in both places. `public/deploy.php` and `.cpanel.yml` live only on `deploy`, never `main` — they'd be meaningless (and the DEPLOYPATH would be wrong) anywhere else.
+
+---
+
+## 21. Habit-formation on Home: streak, daily-goal bar, gentle nudge (2026-09-15)
+
+**Decision.** `users.streak_count` / `users.streak_last_date` track a cross-course daily streak, bumped once per calendar day by `User::recordActivityToday()` — called from `AttemptSession::finalize()`, so it fires on every learn-completion or practice attempt across every enrollment, not per course. Same-day calls no-op; a gap of a day or more resets to 1; the day right after `streak_last_date` bumps by one. Home shows it as a small flame pill next to a visual progress bar for today's planned-vs-done minutes (both numbers already existed in `HomeController`, just weren't drawn as a bar before). A short absence (2–13 days since `streak_last_date`) shows a soft one-line nudge card on Home ("N روزه نیومدی…"); this is purely a Home-page notice, independent of `Planner::reactivate()` (§2), which is the heavier >14-day, enrollment-`next_review_due_at`-touching path triggered explicitly on reactivating a paused/archived enrollment.
+
+**Why.** The owner asked for a set of engagement/retention ideas across the whole system (not tied to one course) — a visible streak plus a same-page sense of "today's progress" and a low-pressure comeback nudge are the cheapest, highest-leverage first pieces: no new pages, reuses data already being computed, and the psychology (don't break the chain, visible partial progress, a reminder that isn't guilt-tripping) is well-established.
+
+**Consequences.** `recordActivityToday()` runs inside `AttemptSession::finalize()`'s existing DB transaction, so it's atomic with mastery/plan-item updates but adds a write to every single attempt finalize, learn or practice — negligible cost, but worth knowing if that method's hot-path cost ever matters. The nudge's 2–13 day window is deliberately exclusive of `Planner::REACTIVATION_GAP_DAYS` (14) to avoid the two systems talking about the same gap differently.
+
+---
+
+## 22. Weekly/monthly activity recap on Home (2026-09-15)
+
+**Decision.** `ActivityStats::since(User, Carbon)` is one query — `attempts` joined to `activities`, filtered to `completed_at >= $since`, aggregating `count(*)` and `sum(estimated_minutes)` — called twice by `HomeController` (7 and 30 days back) and rendered as one small "خلاصه‌ی فعالیت" card on Home, right under Today's list. Open attempts (`completed_at IS NULL`) are excluded, matching what "done" already means everywhere else in the app.
+
+**Why.** Originally scoped as two separate stories (S-26 weekly, S-27 monthly) but they're the same query at two different cutoffs — one card with two numbers is simpler than two near-identical cards, so they shipped together.
+
+**Consequences.** `ActivityStats` is intentionally cross-course (no course/enrollment filter) — it's meant to answer "how much have *I* been doing," not per-course reporting; a per-course breakdown would be a different query, not an extension of this one.
+
+---
+
+## 23. Level-up celebration only past "learning" (2026-09-15)
+
+**Decision.** `session/show.blade.php`'s practice-result panel shows a bigger, highlighted banner ("آفرین، رفتی یه سطح بالاتر!") instead of the plain from→to badge row, but only when `evidence.level_change.from !== 'not_started'` and the level actually went up. The `not_started → learning` transition — which fires on every lesson's very first attempt, learn or practice — keeps the plain row.
+
+**Why.** The owner's engagement-ideas batch asked for level-up moments to feel more like a celebration. Doing that for `not_started → learning` too would fire on literally every lesson in every course (100+ times per course) and cheapen it; reserving the banner for `learning → familiar` and beyond — which requires sustained correct answers, not just starting — keeps it meaning something.
+
+**Consequences.** The learn-activity completion panel (a separate, smaller spot earlier in the same file) still shows only the plain "to" badge — it's always a `not_started → learning` transition, so it was never a candidate for the banner treatment.
+
+---
+
+## 24. Review-retention row on the lesson page (2026-09-15)
+
+**Decision.** The «وضعیت من» card on `lessons/show.blade.php` gets a new row — "N از M بار بلد بودی" — counting the learner's finished (`result_status != 'started'`) attempts on this lesson's practices where `evidence.source === 'review'`, and how many of those were `correct`/`correct_with_hint`. Hidden entirely (`$reviewCount === 0`) until the first review has actually happened.
+
+**Why.** Part of the engagement-ideas batch: seeing concrete evidence that spaced repetition is working ("you've reviewed this 3 times and still know it") is motivating in a way an abstract "next review: Tuesday" date isn't — it's the same instinct as §21's streak/nudge and §23's celebration banner, applied to the review loop specifically.
+
+**Consequences.** Computed inline in the Blade file (a plain `Attempt::where(...)` query), matching how `$level`/`$record` are already computed there rather than in `LessonController` — consistent with the existing pattern in that file, not a new one.
+
+---
+
+## 25. "5-minute mode": a shortcut to today's other due review (2026-09-15)
+
+**Decision.** No new data model — `HomeController` picks the first `source === 'review' && status === 'scheduled'` item from the same priority-ordered list `$todayByEnrollment` is built from (`Planner::orderForLearner`), skipping whichever item is already `$primary`. Shown as a small standalone button ("فقط یه مرور سریع") that posts straight to `session.start-planned`, same route the regular Today list and primary CTA already use.
+
+**Why.** `orderForLearner` already sorts due reviews first, so a due review is very often already `$primary` — the one case worth a dedicated shortcut is a *second* review (a different course, once >1 enrollment has something due) that's buried further down the Today list. Reusing the existing sorted list instead of a raw/unsorted lookup matters: the first scheduled review by `PlanItem` id does not reliably match `$primary`, since plan items are created in enrollment-iteration order, not priority order — picking the wrong one would occasionally offer a shortcut to a *different* review than the one already recommended, silently contradicting the main CTA. `HomeTest` covers exactly this ordering trap with two courses whose creation order is deliberately the reverse of their priority.
+
+**Consequences.** The button only ever appears when a second review is genuinely available; nothing new to maintain if none is.
+
+---
+
+## 26. Cross-course lesson search: a plain LIKE scan, no index (2026-09-15)
+
+**Decision.** `SearchController` (`GET /search?q=…`, a search icon in the nav) runs one query — `lessons.title|summary|content LIKE '%q%'`, `with('course')`, capped at 40 — across **every** course, not just the learner's own enrollments, because lesson content is already unrestricted by enrollment everywhere else in the app (`LessonController::show` never checks it). Each result shows the lesson's `summary` if it has one, else a ~140-character plain-text snippet cut from `content` around the first match (markdown syntax stripped with a regex, not a real parser). Query shorter than 2 characters shows a prompt instead of running.
+
+**Why.** Asked for as part of the engagement batch — with three courses (and growing) it's genuinely hard to remember which course covered a given topic. A real search index (SQLite FTS5, ranking, stemming) is meaningfully more infrastructure for a two-person app with a few hundred lessons total; a LIKE scan answers "which lesson was that in" fine at this scale and needs no new tooling, migration, or reindexing step to keep in sync with content edits.
+
+**Consequences.** Revisit if the catalog grows enough that LIKE gets slow or noisy (no relevance ranking — results are alphabetical by title) — SQLite FTS5 is the natural next step, not a rewrite, since it would replace the query inside `SearchController` without touching the route or view.
+
+---
+
+## 27. «دوستان»: everyone on the install, no friend graph (2026-09-15)
+
+**Decision.** `GET /friends` lists every `User` (`orderByDesc('streak_count')`), each row showing name, streak (if any) and this week's practice count via the existing `ActivityStats` (§22). No follow/request model — §1 already scopes this whole app to its author plus one or two friends, so "everyone on the install" and "your friends" are the same small set; a real social graph would be pure overhead here.
+
+**Why.** Last of the engagement-ideas batch — light, low-pressure mutual visibility ("did my friend show up today") without building an actual social feature. Reuses `ActivityStats` rather than a new query.
+
+**Consequences.** This does not scale past a handful of users by design — it lists literally everyone with an account, with no privacy control beyond "who has a login." Revisit (add an actual friend/follow relation) only if the install ever grows past the couple of people it's built for (§1).
+
+---
+
+## 28. Weak spots + seen-vs-mastered: two pedagogy pieces, not the whole list (2026-09-15)
+
+**Decision.** Asked (as an educational-systems-analyst brainstorm) for further learning-science techniques beyond content and engagement, and offered seven; scoped down to the two judged genuinely worth it at this app's size (2-3 learners), the rest explicitly rejected as low value for that scale — not deferred, decided against:
+
+- **Weak spots** (`App\Services\Insights\WeakSpots`, `/weak-spots`): lessons with ≥2 incorrect *finished* attempts (`result_status != 'started'`), most-wrong-first, cross-course. A count links in from Home's activity-recap card when > 0.
+- **Seen vs. mastered** (`CourseController::show`'s `$seenLessonIds`, a small check mark next to the level badge in the course lesson table): a lesson's `learning` level currently conflates two different states — watched but never practiced, vs. practiced but not yet succeeding — because finishing the learn activity alone already creates a `MasteryRecord` at that level (§3's DELTAS gives `completed` a 0 delta, but `firstOrCreate` still sets the level). Rather than changing that mastery math (deliberately untouched pre-§9-revisit, pending S-24's real-use tuning), the mark is a separate signal computed straight from `Attempt`, shown regardless of level (a lesson can in principle reach `familiar`+ via free practice before its learn activity is ever finished, which is itself informative).
+
+**Why (the other five, rejected).** *Interleaving* — real research backing, but the benefit shows up in large-cohort studies; a solo learner working through one course mostly sequentially won't perceive it, and it touches `Planner`'s core selection logic for benefit that's hard to verify at n=1. *Confidence calibration* — adds a click to every practice for a statistic more suited to a large, long-running cohort than personal use. *Concept map* — the existing curriculum sidebar (level dots, current lesson highlighted) already does this job for course structures that are mostly linear (`prerequisites` defaults to "the previous lesson"). *Adaptive difficulty* — most lessons have only 2-3 authored practices total, too shallow a pool for an adaptation algorithm to have much to choose between; revisit if a lesson's pool depth grows a lot (e.g. from §18's AI-generated reviews accumulating over a long time). *Pretesting* — genuinely cheap (could reuse an existing practice as a pre-video guess) and not rejected on merit, just not asked for in this round.
+
+**Consequences.** `WeakSpots::MIN_INCORRECT = 2` is a guess, not tuned against real use — a single mistake is normal and shouldn't flag a lesson. Revisit alongside S-24. The seen-mark only appears on the course page's lesson table, not the lesson-page curriculum sidebar (§15) or anywhere else — that sidebar is already visually compact (dots, not badges) and adding it there would clutter it for comparatively little gain over the course-page table, which is the natural whole-course overview.
+
+---
+
+## 29. Home's «امروز» list grouped by course (2026-09-15)
+
+**Decision.** `home.blade.php`'s Today card now renders a small `bg-surface2` section header (course title + "N از M" for that course's items) above each course's items, replacing the old per-row course-name tag that was `hidden` below the `sm` breakpoint. Each course's internal item order is unchanged (`Planner::orderForLearner`'s reviews-first rule still applies within the group); `$primary`'s highlighting and the top "ادامه‌ی یادگیری" card are untouched — this only reshapes the full list underneath.
+
+**Why.** Confirmed with the owner: the spaced-repetition algorithm itself (§2-3, §18, §24) needs no change. The actual scaling problem as course count grows is that the list was flat with the only course indicator invisible on mobile — makes "which course was this again" a real question with 2+ courses, worse with more. A global cross-course daily review cap was discussed and *deferred, not rejected*: `Planner::week()` already gives forward visibility into review load, so it's not clearly needed yet.
+
+**Consequences.** `HomeTest` covers the grouping directly (two courses, both headers visible, per-course counts correct). If a course ever has zero items today it simply has no header — `$todayByEnrollment` only contains enrollments with something scheduled, so there's nothing to suppress.
+
+---
+
+## 30. Mobile pass: nav overflow and a page-wide horizontal-scroll bug (2026-09-15)
+
+**Decision.** Two real bugs found by actually screenshotting the app at phone width (390px, headless Chrome via CDP — no tool for this existed in the repo, so a throwaway script was written and discarded, not committed) rather than reasoning from Tailwind classes alone:
+
+1. **Nav overflow.** `layouts/navigation.blade.php`'s middle link row (خانه/همه‌ی دوره‌ها/هفته/دوستان) had no responsive handling at all and visibly collided with the search icon and avatar below `sm`. Fixed by hiding that row (`hidden sm:flex`) and the standalone search icon (`hidden sm:flex`) below `sm`, replaced by a hamburger button (new `menu` icon) opening the existing `x-dropdown` component with all five destinations (four links + search) as one list — same dropdown primitive the avatar menu already uses, not a new mechanism.
+2. **Page-wide horizontal scroll.** `.page`'s `grid` (used by Home, the course page, and others) let a wide-content descendant anywhere inside blow out the *entire page* horizontally, because CSS Grid items default to `min-width: auto` rather than shrinking to their track. Fixed with one rule, `.page > * { min-width: 0; }` — the standard fix for this well-known Grid/Flexbox interaction, and it resolved every instance found (Home's streak/progress row, the Continue-Learning alternatives list, Today's per-item rows) in one place rather than patching each separately.
+
+The course page's lesson table (fixed-width `سطح`/action columns that plainly don't fit 358px of real content) was left as a table, wrapped in `overflow-x-auto` — the sanctioned exception for tables (see artifact/responsive-design conventions) rather than a card-based mobile redesign, which wasn't asked for.
+
+**Why.** Asked directly to make sure the mobile design holds up; reasoning about Tailwind classes without rendering them missed both bugs — the grid bug in particular wouldn't have been found by inspecting any single component in isolation, since no individual element was "wrong," only their interaction with the shared `.page` grid.
+
+**Consequences.** `.page > * { min-width: 0 }` applies globally to every current and future page built on `.page`'s grid — a good default, but means a future wide-content bug inside `.page` will now correctly *scroll within its own element* (if it opts into `overflow-x-auto` itself) instead of silently blowing out the whole page; it won't auto-fix new tables/wide content, just stops them from taking the page down with them. No screenshot tooling was added to the repo — this was verified ad hoc, so a future mobile change should get the same manual check, not an assumption that Tailwind classes alone guarantee correctness.
+
+---
+
+## 31. Accessibility pass (S-44..S-49): labels, keyboard, contrast, progress semantics (2026-09-15)
+
+**Decision.** Six fixes, found by actually grepping/computing rather than assuming:
+
+- Every icon-only `<button>`/`<a>` now carries `aria-label` alongside (not instead of) its existing `title` — `title` alone works as a fallback accessible name but is weaker (inconsistent screen-reader support, tooltip-only visible hint). One button (`lessons/show.blade.php`'s mobile sidebar-close `×`) had neither and is now the one place `title` was added fresh.
+- `x-dropdown` (used by the nav's hamburger and account menus) closes on `Escape` now (`@keydown.escape.window`, one line in the shared component covers every instance), and both trigger buttons carry `aria-haspopup="true"` + `:aria-expanded="open.toString()"`. The lesson-page mobile curriculum drawer got the same `Escape`-closes treatment since it's the same disclosure pattern.
+- `search/index.blade.php`'s query input has a real (visually-hidden) `<label>` instead of relying on `placeholder` alone.
+- `--faint` moved from `#98a0b0`/`#5c6474` (light/dark) to `#616c7a`/`#818999` — measured before and after with the actual WCAG relative-luminance formula (not eyeballed): every background it appears against (`bg`, `surface`, `surface2`, both themes) now clears 4.4:1+, up from as low as 2.43:1. `--muted` was already compliant and untouched.
+- `x-level-bar` (the stacked mastery-distribution bar) gets `role="img"` + a computed `aria-label` summarizing the segments in Persian ("۵ درس مسلط، ۳ درس آشنا، …") — a multi-segment bar has no single value, so a text summary is the correct equivalent, not `aria-valuenow`. The two genuinely single-value bars (lesson-page course-completion, Home's daily-minutes) got `role="progressbar"` + `aria-valuemin/max/now` instead.
+
+**Why.** Found on a UI/UX review the owner asked for, then a dedicated accessibility question. Every item was verified against the actual DOM/CSS (grep for `iconbtn`/`aria-label`, read the dropdown component, compute contrast ratios) rather than assumed, matching how §30's mobile bugs were found — reasoning about classes in isolation missed real issues there too.
+
+**Consequences.** `--faint` and `--muted` are now visually closer to each other than before (their contrast ratios differ by less than they used to) since compliance took priority over maximizing the three-tier ink/muted/faint visual hierarchy — still distinguishable, just less dramatically. Any new icon-only control should follow the same `title` + `aria-label` pairing; any new disclosure (dropdown/drawer) should reuse `x-dropdown` or replicate its `Escape` handling rather than inventing a new pattern without it.
+
+---
+
+## 32. Home: streak/progress merged into one weighted card with the quick-review shortcut (S-38, S-39; 2026-09-15)
+
+**Decision.** `home.blade.php`'s streak count, today's-minutes progress bar, and the "فقط یه مرور سریع" button were three separate, thin, low-weight elements stacked above the main "ادامه‌ی یادگیری" card — a plain line of text plus an unrelated floating button. Merged into a single `.card`: the streak gets an icon badge (rounded warn-tinted square) and a bold two-line number/label instead of one small inline sentence; the progress bar is thicker (`h-2.5` vs `h-2`); and the quick-review button now sits inside the same card as a third flex item instead of floating alone in its own row. Verified with real screenshots (CDP, desktop 1440px and mobile 390px, using a temporary enrollment + streak set via tinker and removed afterward) rather than just reading the classes.
+
+**Why.** Both were flagged in the UI/UX review: the streak/progress row was meant to be the motivational centerpiece (§21) but read as an afterthought, and the quick-review button felt disconnected from the flow it's actually part of. Putting all three in one card fixes both at once since they're the same "today at a glance" concept.
+
+**Consequences.** The card is conditionally rendered only when at least one of the three has content (same as before, just OR'd across all three instead of two), so it still disappears cleanly for a user with no streak, no plan, and no due review. `sm:flex-wrap` was added so the row degrades gracefully if a future addition makes three items too wide for a mid-size viewport.
+
+---
+
+## 33. Course page: collapsible lesson sections + jump-to-section nav (S-41; 2026-09-15)
+
+**Decision.** `courses/show.blade.php`'s lesson table used to render every lesson flat, with a plain (non-interactive) divider row wherever `section` changed — for the two real courses (100+ lessons each) that's a very long undifferentiated scroll. Reworked to:
+
+- Group lessons by `section` in PHP (`groupBy`) instead of detecting boundaries mid-loop, one `<tbody>` per section.
+- Each section's header row is now clickable (`@click="open[i] = !open[i]"`) and its lesson rows carry `x-show="open[i]"`, mirroring the exact pattern `lessons/show.blade.php`'s curriculum drawer already uses for its own collapsible sections (chevron rotation via `::class`, same rotate-90/-rotate-90 convention) rather than inventing a new one.
+- A row of section-name badges above the table jumps to any section: clicking one forces that section open (`open[i] = true`) and scrolls its `<tbody>` (`x-ref="section-{i}"`) into view — so jumping to a currently-collapsed section always works, never lands on a hidden row.
+- Default state: the section containing the learner's next not-yet-familiar, unlocked lesson starts open (falls back to the first section if everything is done or nothing is enrolled); every other section starts collapsed. A course with only one (or zero) named sections skips both the badge row and the collapse affordance entirely — nothing to jump to.
+- Verified interactively, not just visually: a CDP script (login, click a section header, click a jump badge) confirmed section 1 toggled from 0/9 to 9/9 visible rows, the target jump section went from 0/10 to 10/10 visible, and `window.scrollY` moved from 0 to 1513 — actual Alpine reactivity and scroll behavior, not just a static screenshot.
+
+**Why.** Flagged in the UI/UX review and judged the most valuable finding of that batch since it affects daily use (returning to a long course) directly, not just first impressions.
+
+**Consequences.** The default-open section is now the "next lesson" section rather than always the first — correct for a learner resuming partway through a course, but means a brand-new user with no progress sees section 1 open (same as before) while a returning user on section 7 sees section 7 open on page load, not section 1. Any future per-section metadata (e.g. a "done" count in the header) should read from the same grouped `$sections` collection rather than re-deriving boundaries from the flat list.
+
+---
+
+## 34. Badge/pill color cleanup: kind badges go neutral, one palette per meaning (S-42; 2026-09-15)
+
+**Decision.** Found a real, confirmed collision, not just a subjective "too many colors": `x-plan-item-badge` (learn/review/practice "kind") reused the `badge-l0..l4` mastery-level palette (l1=blue for یادگیری, l2=green for مرور, l3=orange for تمرین) — the *same* palette `x-level-badge` uses for mastery. `week.blade.php`'s review list puts both in one row (`badge-l2` "مرور" next to a level badge that can *also* render `badge-l2` for "آشنا"), so two adjacent pills could show the identical green for two unrelated meanings. Fixed by:
+
+- `x-plan-item-badge` and the three raw `badge-l1/l2/l3` "kind" badges (`week.blade.php`, `session/show.blade.php`) now render as neutral `badge-ghost` + a small icon (▶ یادگیری, ⟳ مرور, 💡 تمرین) instead of a colored pill. `badge-l0..l4` is now used *only* by `x-level-badge`, so a colored pill from that palette unambiguously means mastery level anywhere in the app.
+- `session/show.blade.php`'s nav (the worst stacking case — up to 4 badges: kind + kind + form + difficulty) dropped the standalone "تمرین" pill entirely: `isLearn === false` already implies practice, and the form badge right next to it (e.g. "چندگزینه‌ای") says which kind of practice, so the plain "تمرین" label was pure repetition. Verified with a real attempt (practice, review-sourced, "intro" difficulty): nav now shows مرور (neutral) + چندگزینه‌ای (neutral) + مقدماتی (the one colored pill, badge-ok) — three badges, one of them carrying color, instead of four with three fighting for attention.
+
+**Why.** Flagged in the UI/UX review ("badge/pill overload... each with its own color, stacking up, worst on mobile"); the week-view color collision confirmed it wasn't just visual noise but an actual meaning conflict.
+
+**Consequences.** `ok`/`warn`/`bad` still colors difficulty and result badges (unchanged — those two scales don't co-occur with each other in a way that collides, and both genuinely benefit from standing out). Any new "kind" or "category" indicator added later should default to `badge-ghost` + icon rather than reaching for `l0-4`/`ok`/`warn`/`bad`, which are now reserved for mastery level and outcome-quality respectively.
+
+---
+
+## 35. Course catalog cards get a per-course identity and a footer stat row (S-36; 2026-09-15)
+
+**Decision.** `courses/index.blade.php`'s cards were title + description + a lonely lesson count, all plain text — nothing distinguished one course from another, and there was a lot of unused vertical space. Added, without new dependencies or per-course authoring:
+
+- A monogram avatar (first character of the title) in a rounded square, colored by a deterministic per-course hue (`(id * 137) % 360` — golden-angle spacing keeps adjacent course IDs visually distinct even though nothing is hand-picked per course).
+- A footer stat row (lesson count + total estimated hours, separated by a top border from the description) instead of one faint lesson-count line floating at the bottom. `CourseController@index` now also pulls `withSum('lessons as lessons_minutes_sum', 'estimated_minutes')` — one extra aggregate column, no N+1 (still no per-lesson data loaded on this page, unlike the course show page's fuller progress bar, which needs `lessons.masteryRecords` and is too expensive to duplicate here for a browse view).
+
+**Why.** Flagged in the UI/UX review: sparse cards, no per-course visual identity, gets worse as more courses are added — the monogram scales to any number of future courses without needing a color/icon assigned by hand each time.
+
+**Consequences.** The hue is derived purely from `id`, so it's stable for a given course's lifetime but has no relation to its topic/subject — purely a scan-ability aid, not a taxonomy. A future "course category" concept, if added, should replace this hash rather than layer on top of it.
+
+---
+
+## 36. Empty states get an icon, a reason, and a next action (S-37; 2026-09-15)
+
+**Decision.** Two empty states read as dead ends rather than a designed state:
+
+- `friends/index.blade.php` always lists at least one row (the user themself), so it never showed a true "empty" message at all — a 2-3 person install just quietly shows a list of one, no acknowledgement or next step. Now, when `$users->count() <= 1`, a card above the list explicitly names the situation ("فعلاً فقط خودتی این‌جا") and gives the one meaningful next action: a link to `/register`, plus the `REGISTRATION_CODE` itself (when the install has one configured — `config('app.registration_code')`, now passed from `FriendsController`) in a copyable-looking monospace chip, so inviting someone doesn't require the owner to go dig the code out of `.env` themselves.
+- `weak-spots/index.blade.php`'s empty state was one muted sentence in a plain card, no icon, no action — despite being *good* news (nothing to fix). Gave it the same treatment as the friends card: an icon (trophy, `--ok`-tinted) reframing it positively, and a button back to `/home` ("ادامه‌ی یادگیری") since continuing to learn is the actual next action, not a dead end.
+
+**Why.** Flagged in the UI/UX review: empty states feel abandoned, with no next action; friends specifically called out as a place that should prompt an invite via the existing `REGISTRATION_CODE` mechanism.
+
+**Consequences.** Both empty states now depend on a "next action" route (`register`, `home`) already existing and being appropriate — if registration is ever closed off entirely (no code and registration disabled outright), the friends prompt would need a different message than "here's the register page," but that's not the current state of the app.

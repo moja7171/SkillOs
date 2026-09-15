@@ -100,4 +100,22 @@ class MasteryServiceTest extends TestCase
         $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('مرور بعدی')->assertDontSee('150');
         $this->actingAs($user)->get(route('courses.show', $lesson->course))->assertOk()->assertSee('در حال یادگیری');
     }
+
+    public function test_a_real_level_up_past_learning_gets_the_celebration_banner(): void
+    {
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->withActivities()->create();
+        $practice = $lesson->practices()->first();
+        MasteryRecord::create(['user_id' => $user->id, 'lesson_id' => $lesson->id, 'numeric_mastery' => 200, 'level' => 'learning']);
+        $this->mock(GeminiClient::class)->shouldReceive('generateJson')->once()->andReturn(['verdict' => 'correct', 'feedback' => 'عالی']);
+
+        $this->actingAs($user)->post(route('session.start', $practice));
+        $attempt = Attempt::latest('id')->first();
+        $this->actingAs($user)->post(route('session.submit', $attempt), ['response' => 'x']);
+
+        $this->assertSame(['from' => 'learning', 'to' => 'familiar'], $attempt->fresh()->evidence['level_change']);
+
+        $this->actingAs($user)->get(route('session.show', $attempt))->assertOk()
+            ->assertSee('آفرین')->assertDontSee('سطح این درس:');
+    }
 }

@@ -1,0 +1,24 @@
+[
+  {
+    "key": "avatar-initial",
+    "title": "آواتار پیش‌فرض کاربر",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "خیلی از اپ‌ها وقتی کاربر عکس پروفایل نداره، به‌جاش حرف اول اسمشو نشون می‌دن. اگه `name = \"Mosh\"` باشه، کد بنویس که حرف اول اسم رو چاپ کنه.",
+    "expected_outcome": "```python\nprint(name[0])\n```",
+    "hints": ["ایندکس اولین کاراکتر توی پایتون صفره.", "با براکت مربعی به یه کاراکتر خاص دسترسی داری: name[0]."],
+    "rubric": "Correct: uses name[0] to print the first character. Partial: correct concept but wrong index. Incorrect: unrelated approach."
+  },
+  {
+    "key": "mask-national-id",
+    "title": "کد ملی رو مخفی نشون بده",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی صفحه‌ی پروفایل، به دلایل امنیتی نباید کل کد ملی کاربر نشون داده بشه — فقط ۴ رقم آخرش. اگه `national_id = \"0123456789\"` باشه، کد بنویس که فقط ۴ رقم آخرشو چاپ کنه.",
+    "expected_outcome": "```python\nprint(national_id[-4:])\n```",
+    "hints": ["ایندکس منفی از آخر رشته می‌شماره.", "با national_id[-4:] از چهارمین کاراکتر از آخر تا انتها رو برمی‌داری."],
+    "rubric": "Correct: uses national_id[-4:] (or equivalent slicing) to print exactly \"6789\". Partial: correct concept but wrong number of digits. Incorrect: unrelated approach or prints the full ID."
+  }
+]

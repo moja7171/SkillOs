@@ -1,0 +1,24 @@
+[
+  {
+    "key": "bio-with-a-quote",
+    "title": "بیوگرافی با یه نقل‌قول",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "کاربر توی بیوگرافی پروفایلش نوشته یه جمله با کوتیشن وسطش. کد بنویس که دقیقاً همین متن رو چاپ کنه:\n```\nHe said \"I love coding\"\n```",
+    "expected_outcome": "```python\nprint(\"He said \\\"I love coding\\\"\")\n```",
+    "hints": ["از بک‌اسلش برای escape کردن کوتیشن‌های داخلی استفاده کن.", "الگوش اینه: \\\" جای هر کوتیشن دوتایی‌ای که وسط رشته میاد."],
+    "rubric": "Correct: the code prints exactly `He said \"I love coding\"` — either by escaping the inner double quotes with a backslash, or by using single quotes for the outer string. Incorrect: invalid syntax, or the quotes are missing/wrong in the output."
+  },
+  {
+    "key": "address-on-two-lines",
+    "title": "آدرس رو دو خط نشون بده",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی پروفایل کاربر، می‌خوای آدرسشو روی دو خط جدا نشون بدی: خیابون توی یه خط، شهر توی خط بعد. کد بنویس که این رو چاپ کنه:\n```\nMain Street\nTehran\n```",
+    "expected_outcome": "```python\nprint(\"Main Street\\nTehran\")\n```",
+    "hints": ["\\n یعنی خط جدید (newline).", "همه‌چی رو توی یه رشته بنویس و بین دو خط \\n بذار."],
+    "rubric": "Correct: the output shows \"Main Street\" and \"Tehran\" on two separate lines — either via \\n inside one string, or via two separate print calls. Incorrect: doesn't produce two lines, or invalid syntax."
+  }
+]

@@ -4,21 +4,41 @@
         <span class="hidden sm:inline tracking-tight">Skill<span class="text-accent">OS</span></span>
     </a>
 
-    <div class="flex gap-1">
+    <div class="hidden sm:flex gap-1">
         <x-nav-link :href="route('home')" :active="request()->routeIs('home')">خانه</x-nav-link>
         <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.*') || request()->routeIs('lessons.*') || request()->routeIs('enrollments.*')">همه‌ی دوره‌ها</x-nav-link>
         <x-nav-link :href="route('week')" :active="request()->routeIs('week')">هفته</x-nav-link>
+        <x-nav-link :href="route('friends')" :active="request()->routeIs('friends')">دوستان</x-nav-link>
     </div>
 
     <div class="ms-auto flex items-center gap-3">
-        <button type="button" class="iconbtn" title="تغییر تم" onclick="window.toggleTheme()">
+        <a href="{{ route('search') }}" class="iconbtn hidden sm:flex" title="جست‌وجو" aria-label="جست‌وجو"><x-icon name="search" class="w-4 h-4" /></a>
+
+        <button type="button" class="iconbtn" title="تغییر تم" aria-label="تغییر تم" onclick="window.toggleTheme()">
             <x-icon name="sun" class="w-4 h-4 hidden dark:block" />
             <x-icon name="moon" class="w-4 h-4 dark:hidden" />
         </button>
 
+        {{-- Below sm: everything else (links + search) folds into this menu instead of
+             overflowing the bar — see DECISIONS.md §30. --}}
+        <div class="sm:hidden">
+            <x-dropdown align="left" width="48">
+                <x-slot name="trigger">
+                    <button type="button" class="iconbtn" title="منو" aria-label="منو" aria-haspopup="true" :aria-expanded="open.toString()"><x-icon name="menu" class="w-4 h-4" /></button>
+                </x-slot>
+                <x-slot name="content">
+                    <x-dropdown-link :href="route('home')" @class(['bg-surface2' => request()->routeIs('home')])>خانه</x-dropdown-link>
+                    <x-dropdown-link :href="route('courses.index')" @class(['bg-surface2' => request()->routeIs('courses.*') || request()->routeIs('lessons.*') || request()->routeIs('enrollments.*')])>همه‌ی دوره‌ها</x-dropdown-link>
+                    <x-dropdown-link :href="route('week')" @class(['bg-surface2' => request()->routeIs('week')])>هفته</x-dropdown-link>
+                    <x-dropdown-link :href="route('friends')" @class(['bg-surface2' => request()->routeIs('friends')])>دوستان</x-dropdown-link>
+                    <x-dropdown-link :href="route('search')" @class(['bg-surface2' => request()->routeIs('search')])>جست‌وجو</x-dropdown-link>
+                </x-slot>
+            </x-dropdown>
+        </div>
+
         <x-dropdown align="left" width="48">
             <x-slot name="trigger">
-                <button type="button" class="w-8 h-8 rounded-full bg-surface2 border border-line2 grid place-items-center font-semibold text-[13px] text-ink">
+                <button type="button" class="w-8 h-8 rounded-full bg-surface2 border border-line2 grid place-items-center font-semibold text-[13px] text-ink" aria-label="منوی حساب کاربری" aria-haspopup="true" :aria-expanded="open.toString()">
                     {{ mb_substr(auth()->user()->name, 0, 1) }}
                 </button>
             </x-slot>

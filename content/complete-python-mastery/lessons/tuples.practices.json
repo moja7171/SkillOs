@@ -1,0 +1,37 @@
+[
+  {
+    "key": "single-item-tuple",
+    "title": "این تاپله یا نه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nx = (5)\nprint(type(x))\n```\nخروجی چیه؟",
+    "options": ["<class 'int'>", "<class 'tuple'>", "<class 'float'>", "خطا می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "<class 'int'> — بدون کامای بعد از 5، پرانتز فقط گروه‌بندیه، نه تعریف تاپل. برای تاپل تک‌عضوی باید بنویسی (5,).",
+    "hints": ["برای تاپل تک‌عضوی، یه کامای اضافه بعد از مقدار لازمه.", "بدون کاما، پرانتز فقط برای گروه‌بندیه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "immutable-error",
+    "title": "یه هم‌تیمی خطا گرفته",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\ncoordinates = (10, 20)\ncoordinates[0] = 15\n```\nو با `TypeError: 'tuple' object does not support item assignment` مواجه شده. چرا، و راه‌حلش چیه؟",
+    "expected_outcome": "تاپل تغییرناپذیره — هیچ عضوش بعد از ساخته‌شدن قابل تغییر نیست. اگه واقعاً نیاز به تغییر داره، باید یا از یه لیست استفاده کنه (coordinates = [10, 20])، یا یه تاپل جدید بسازه.",
+    "hints": ["تاپل تغییرناپذیره — این ویژگیشه، نه باگ.", "اگه قراره تغییر کنه، از لیست استفاده کن."],
+    "rubric": "Correct if the answer explains tuples are immutable, and proposes using a list instead if mutation is genuinely needed."
+  },
+  {
+    "key": "tuple-vs-list-choice",
+    "title": "تاپل یا لیست؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "داری یه تابع می‌نویسی که مختصات جغرافیایی یه شهر (عرض و طول جغرافیایی) رو برمی‌گردونه — این مقدار هیچ‌وقت نباید بعداً تغییر کنه. تاپل مناسب‌تره یا لیست؟ چرا؟",
+    "expected_outcome": "تاپل — چون مختصات یه مقدار ثابته که نباید تصادفاً تغییر کنه. با تاپل، اگه یکی سهواً بخواد یه جزئش رو عوض کنه، پایتون همون لحظه خطا می‌ده و جلوی باگ رو می‌گیره.",
+    "hints": ["کدوم ساختار جلوی تغییر سهوی رو می‌گیره؟", "این مقدار قرار نیست هیچ‌وقت عوض بشه."],
+    "rubric": "Correct if the answer picks tuple and explains it prevents accidental mutation of a value that should stay fixed."
+  }
+]

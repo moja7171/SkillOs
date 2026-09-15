@@ -1,0 +1,35 @@
+[
+  {
+    "key": "get-with-default",
+    "title": "get با مقدار پیش‌فرض",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nsettings = {\"volume\": 80}\nprint(settings.get(\"brightness\", 50))\n```\nخروجی چیه؟",
+    "expected_outcome": "50 — چون کلید brightness توی دیکشنری نیست، get مقدار پیش‌فرضی که دادیم (50) رو برمی‌گردونه، نه خطا.",
+    "hints": ["get هیچ‌وقت خطا نمی‌ده.", "آرگومان دوم get، مقدار پیش‌فرضه برای وقتی کلید پیدا نشه."],
+    "rubric": "Correct only if the answer is 50."
+  },
+  {
+    "key": "loop-with-items",
+    "title": "قیمت‌ها رو چاپ کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با `items()` روی این دیکشنری پیمایش کن و هر خط رو به‌شکل `\"محصول: قیمت\"` چاپ کن:\n```python\nprices = {\"apple\": 3, \"milk\": 5, \"bread\": 2}\n```",
+    "expected_outcome": "```python\nfor product, price in prices.items():\n    print(f\"{product}: {price}\")\n```",
+    "hints": ["items() توی هر تکرار یه تاپل (کلید، مقدار) می‌ده که مستقیم توی for باز می‌شه.", "با f-string می‌تونی هر دو رو توی یه رشته بذاری."],
+    "rubric": "Correct: uses prices.items() with unpacking (product, price) and prints an f-string combining both. Partial: loops correctly but doesn't use items() (e.g. loops over keys and re-looks-up the value). Incorrect: wrong iteration entirely, or missing either key or value in output."
+  },
+  {
+    "key": "keyerror-fix",
+    "title": "یه هم‌تیمی خطا گرفته",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nuser = {\"name\": \"Sara\"}\nprint(user[\"email\"])\n```\nو با `KeyError: 'email'` مواجه شده. دو تا راه‌حل مختلف بهش پیشنهاد بده.",
+    "expected_outcome": "راه اول: قبل از دسترسی، چک کنه کلید وجود داره: `if \"email\" in user: print(user[\"email\"])`. راه دوم: از get() استفاده کنه که خطا نمی‌ده: `print(user.get(\"email\"))` یا با مقدار پیش‌فرض `user.get(\"email\", \"unknown\")`.",
+    "hints": ["یه راه: چک‌کردن وجود کلید قبل از دسترسی با in.", "راه دیگه: استفاده از متد get به‌جای کروشه."],
+    "rubric": "Correct if the answer proposes both: checking with `in` before accessing, AND using .get() as an alternative that never raises."
+  }
+]

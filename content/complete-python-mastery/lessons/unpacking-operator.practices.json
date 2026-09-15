@@ -1,0 +1,35 @@
+[
+  {
+    "key": "unpack-print",
+    "title": "با یا بدون ستاره",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nletters = [\"a\", \"b\", \"c\"]\nprint(letters)\nprint(*letters)\n```\nهر خط چی چاپ می‌کنه؟",
+    "expected_outcome": "['a', 'b', 'c']\na b c — خط اول خود لیست رو چاپ می‌کنه، خط دوم اعضاش رو جدا جدا، بدون کروشه و کاما.",
+    "hints": ["بدون ستاره: خود لیست چاپ می‌شه.", "با ستاره: اعضا جدا جدا به print پاس داده می‌شن."],
+    "rubric": "Correct if the answer distinguishes both lines: first prints the list with brackets, second prints the unpacked items separated by spaces."
+  },
+  {
+    "key": "merge-dicts",
+    "title": "دو تا دیکشنری رو ترکیب کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با عملگر `**`، این دو دیکشنری رو توی یه دیکشنری جدید به اسم `merged` ترکیب کن؛ اگه کلید تکراری بود، مقدار `overrides` باید برنده بشه:\n```python\ndefaults = {\"theme\": \"dark\", \"lang\": \"fa\"}\noverrides = {\"lang\": \"en\"}\n```",
+    "expected_outcome": "```python\nmerged = {**defaults, **overrides}\n```\nنتیجه: `{'theme': 'dark', 'lang': 'en'}`",
+    "hints": ["دیکشنری‌ای که بعداً باز می‌شه، مقادیر تکراری رو overwrite می‌کنه.", "پس overrides باید بعد از defaults بیاد."],
+    "rubric": "Correct: {**defaults, **overrides} with overrides listed second so it wins on key conflicts. Partial: reversed order (defaults wins instead of overrides). Incorrect: doesn't use ** unpacking, or manually merges incorrectly."
+  },
+  {
+    "key": "build-list-with-unpacking",
+    "title": "یه لیست ترکیبی بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با استفاده از `*`، یه لیست بساز که شامل همه‌ی اعداد `range(3)` باشه، بعدش عدد `99`، بعدش همه‌ی کاراکترهای رشته‌ی `\"ok\"`.",
+    "expected_outcome": "```python\nresult = [*range(3), 99, *\"ok\"]\n```\nنتیجه: `[0, 1, 2, 99, 'o', 'k']`",
+    "hints": ["هر پیمایش‌پذیری (range، رشته) رو می‌شه با * باز کرد.", "می‌تونی بین دوتا باز شده، یه مقدار تکی هم بذاری."],
+    "rubric": "Correct: [*range(3), 99, *\"ok\"] producing [0, 1, 2, 99, 'o', 'k'] in that order. Partial: correct idea but wrong order or missing one part. Incorrect: doesn't use unpacking at all (e.g. manual list concatenation)."
+  }
+]

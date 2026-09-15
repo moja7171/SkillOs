@@ -1,0 +1,35 @@
+[
+  {
+    "key": "set-removes-duplicates",
+    "title": "تبدیل به مجموعه",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ntags = [\"news\", \"tech\", \"news\", \"life\", \"tech\", \"tech\"]\nunique_tags = set(tags)\nprint(len(unique_tags))\n```\nخروجی چیه؟",
+    "expected_outcome": "3 — مجموعه فقط اعضای یکتا رو نگه می‌داره: news, tech, life.",
+    "hints": ["set تکراری‌ها رو حذف می‌کنه.", "چندتا برچسب متفاوت (نه تکراری) توی لیست هست؟"],
+    "rubric": "Correct only if the answer is 3."
+  },
+  {
+    "key": "set-operators-trace",
+    "title": "اشتراک و تفاضل",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\npython_devs = {\"Ali\", \"Sara\", \"Reza\"}\njs_devs = {\"Sara\", \"Mina\"}\n\nboth = python_devs & js_devs\nonly_python = python_devs - js_devs\n\nprint(both)\nprint(only_python)\n```\nخروجی هر خط چیه؟",
+    "expected_outcome": "{'Sara'}\n{'Ali', 'Reza'} — both اشتراکه (کسی که توی هر دو مجموعه‌ست: Sara). only_python تفاضله (کسایی که توی python_devs هستن ولی توی js_devs نیستن: Ali و Reza).",
+    "hints": ["& یعنی اشتراک: فقط اونایی که توی هر دو هستن.", "- یعنی تفاضل: اعضای اولی، منهای اونایی که توی دومی هم هستن."],
+    "rubric": "Correct if the answer identifies both = {'Sara'} and only_python = {'Ali', 'Reza'} (set order doesn't matter)."
+  },
+  {
+    "key": "set-no-index",
+    "title": "یه هم‌تیمی خطا گرفته",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\ncolors = {\"red\", \"green\", \"blue\"}\nprint(colors[0])\n```\nو با `TypeError: 'set' object is not subscriptable` مواجه شده. چرا، و اگه واقعاً به دسترسی با ایندکس نیاز داره چی‌کار کنه؟",
+    "expected_outcome": "مجموعه بدون ترتیبه، پس دسترسی با ایندکس معنی نداره. اگه واقعاً نیاز به ترتیب و ایندکس داره، باید از لیست استفاده کنه (یا مجموعه رو با list() به لیست تبدیل کنه).",
+    "hints": ["مجموعه اعضاش رو به ترتیب نگه نمی‌داره.", "برای دسترسی با ایندکس، یا از اول لیست استفاده کن، یا مجموعه رو به لیست تبدیل کن."],
+    "rubric": "Correct if the answer explains sets are unordered (so indexing doesn't apply) and suggests using a list instead when order/indexing is needed."
+  }
+]

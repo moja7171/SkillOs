@@ -1,0 +1,24 @@
+[
+  {
+    "key": "swap-trace",
+    "title": "بعد از جابه‌جایی",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\na = \"cat\"\nb = \"dog\"\na, b = b, a\nprint(a, b)\n```\nخروجی چیه؟",
+    "expected_outcome": "dog cat — a و b جابه‌جا شدن.",
+    "hints": ["سمت راست یه تاپل می‌سازه از مقادیر فعلی b و a.", "بعد این تاپل توی a, b باز می‌شه، به همون ترتیب."],
+    "rubric": "Correct only if the answer is \"dog cat\" (a=dog, b=cat)."
+  },
+  {
+    "key": "swap-without-temp",
+    "title": "بدون متغیر کمکی جابه‌جا کن",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "این کد از یه متغیر کمکی (temp) استفاده می‌کنه. با نحوه‌ی پایتونی (بدون متغیر کمکی) بازنویسی‌ش کن:\n```python\nfirst = \"Ali\"\nlast = \"Reza\"\n\ntemp = first\nfirst = last\nlast = temp\n```",
+    "expected_outcome": "```python\nfirst = \"Ali\"\nlast = \"Reza\"\n\nfirst, last = last, first\n```",
+    "hints": ["یه خط کافیه: first, last = last, first", "نیازی به تعریف متغیر جدا نیست."],
+    "rubric": "Correct: first, last = last, first (single line, no temp variable). Partial: swaps correctly but still uses a temp variable. Incorrect: swap logic is wrong (values not actually exchanged)."
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "key": "frequency-count-trace",
+    "title": "با یه کلمه‌ی دیگه",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با همون الگوی درس، اگه `sentence = \"mississippi\"` باشه، دیکشنری `char_frequency` برای کاراکتر `\"s\"` چه مقداری می‌گیره؟",
+    "expected_outcome": "4 — کلمه‌ی mississippi چهار تا s داره (m-i-s-s-i-s-s-i-p-p-i).",
+    "hints": ["کلمه رو حرف‌به‌حرف بشمار و ببین s چندبار میاد.", "m-i-s-s-i-s-s-i-p-p-i"],
+    "rubric": "Correct only if the answer is 4."
+  },
+  {
+    "key": "sort-ascending-vs-descending",
+    "title": "بدون reverse چی می‌شه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته تا **کم‌تکرارترین** کاراکتر رو پیدا کنه:\n```python\nsorted_chars = sorted(char_frequency.items(), key=lambda item: item[1])\nleast_common = sorted_chars[0]\n```\nاین کد درسته یا نه؟ چرا؟",
+    "expected_outcome": "درسته. بدون reverse=True، sorted صعودی مرتب می‌کنه — یعنی کمترین تعداد اول میاد. پس sorted_chars[0] دقیقاً کم‌تکرارترین کاراکتره؛ برای پرتکرارترین بود که باید reverse=True اضافه می‌شد.",
+    "hints": ["پیش‌فرض sorted صعودیه (کم به زیاد).", "برای برعکسش (زیاد به کم)، باید reverse=True اضافه کنی."],
+    "rubric": "Correct if the answer says this is correct, explaining that without reverse=True, sorted() ascends, so index 0 is the least frequent character."
+  },
+  {
+    "key": "full-frequency-solution",
+    "title": "خودت از اول بنویسش",
+    "form": "coding",
+    "difficulty": "stretch",
+    "estimated_minutes": 8,
+    "prompt": "یه تابع `most_common_char(text)` بنویس که پرتکرارترین کاراکتر یه رشته رو برمی‌گردونه (فقط خود کاراکتر، نه تعدادش). برای `\"banana\"` باید `\"a\"` برگردونه.",
+    "expected_outcome": "```python\ndef most_common_char(text):\n    frequency = {}\n    for char in text:\n        if char in frequency:\n            frequency[char] += 1\n        else:\n            frequency[char] = 1\n\n    sorted_chars = sorted(frequency.items(), key=lambda item: item[1], reverse=True)\n    return sorted_chars[0][0]\n```",
+    "hints": ["همون سه قدم درس: بشمار، مرتب کن (نزولی)، اولی رو بردار.", "یادت نره فقط کاراکتر رو برگردونی، نه کل تاپل (کاراکتر, تعداد)."],
+    "rubric": "Correct: builds a frequency dict, sorts items() by count descending, and returns only the character (sorted_chars[0][0], not the whole tuple). Partial: correct logic but returns the tuple instead of just the character, or forgets reverse=True. Incorrect: wrong counting logic, or doesn't handle the general case."
+  }
+]

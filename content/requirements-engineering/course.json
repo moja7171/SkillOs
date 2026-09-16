@@ -1,0 +1,1815 @@
+{
+  "title": "مهندسی نیازمندی‌ها",
+  "description": "دوره‌ای عملی درباره‌ی مهندسی نیازمندی‌ها بر پایه‌ی استانداردهای IREB و INCOSE؛ از استخراج و نوشتن نیازمندی تا مدل‌سازی، مذاکره و ردیابی آن‌ها.",
+  "outcome_statement": "در پایان این دوره می‌تونی نیازمندی‌های یک پروژه رو به‌درستی استخراج، بنویسی، اولویت‌بندی، مدل‌سازی و ردیابی کنی؛ و با ذی‌نفعان روی نیازمندی‌های متعارض مذاکره کنی.",
+  "source_note": "برگرفته از دوره‌ی «Requirements Engineering: Learn IREB and INCOSE standards»؛ متن دروس از روی زیرنویس انگلیسی نوشته شده، نه ترجمه‌ی ماشینی فارسی.",
+  "video_base_url": "/media/requirements-engineering/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "چیستی مهندسی نیازمندی‌ها",
+      "summary": "این دوره چی رو پوشش می‌ده و چرا نیازمندی‌ها این‌قدر مهم‌ان.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "001-course-introduction.mp4",
+          "subtitles": [
+            {
+              "file": "001-course-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-course-introduction.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "why-requirements",
+      "title": "چرا نیازمندی‌ها مهم‌اند",
+      "summary": "هزینه‌ی نادیده‌گرفتن نیازمندی‌ها و رابطه‌اش با شکست پروژه‌ها.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "002-why-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "002-why-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-why-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "examples-used-in-this-course",
+      "title": "مثال‌های این دوره",
+      "summary": "پروژه‌ی نمونه‌ای که در طول دوره برای مثال‌ها استفاده می‌شود.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "003-examples-used-in-this-course.mp4",
+          "subtitles": [
+            {
+              "file": "003-examples-used-in-this-course.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-examples-used-in-this-course.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "definitions-terms",
+      "title": "تعریف‌ها و اصطلاحات پایه",
+      "summary": "واژه‌های کلیدی مهندسی نیازمندی‌ها که در کل دوره تکرار می‌شوند.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "004-definitions-terms.mp4",
+          "subtitles": [
+            {
+              "file": "004-definitions-terms.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-definitions-terms.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-life-cycle-overview",
+      "title": "نگاهی به چرخه‌ی عمر محصول",
+      "summary": "مراحل چرخه‌ی عمر یک محصول و جای نیازمندی‌ها در آن.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 21,
+      "videos": [
+        {
+          "file": "005-product-life-cycle-overview.mp4",
+          "subtitles": [
+            {
+              "file": "005-product-life-cycle-overview.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-product-life-cycle-overview.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "users-stakeholders",
+      "title": "کاربران و ذی‌نفعان",
+      "summary": "تفاوت کاربر نهایی و ذی‌نفع، و چرا هر دو باید شنیده شوند.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "006-users-stakeholders.mp4",
+          "subtitles": [
+            {
+              "file": "006-users-stakeholders.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-users-stakeholders.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-rfp-development-contract",
+      "title": "RFP و قرارداد توسعه",
+      "summary": "درخواست پیشنهاد (RFP) و نقش نیازمندی‌ها در قرارداد توسعه.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "007-the-rfp-development-contract.mp4",
+          "subtitles": [
+            {
+              "file": "007-the-rfp-development-contract.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-the-rfp-development-contract.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-environment-context",
+      "title": "محیط و بستر سیستم",
+      "summary": "سیستم در چه محیطی کار می‌کند و مرزهای آن کجاست.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 21,
+      "videos": [
+        {
+          "file": "008-system-environment-context.mp4",
+          "subtitles": [
+            {
+              "file": "008-system-environment-context.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-system-environment-context.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-system-hierarchy",
+      "title": "سلسله‌مراتب سیستم",
+      "summary": "سیستم، زیرسیستم و مؤلفه؛ نیازمندی‌ها در کدام سطح نوشته می‌شوند.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "009-the-system-hierarchy.mp4",
+          "subtitles": [
+            {
+              "file": "009-the-system-hierarchy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-the-system-hierarchy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-requirements",
+      "title": "نیازمندی‌های سیستم",
+      "summary": "نیازمندی سطح سیستم چیست و چه تفاوتی با سطوح دیگر دارد.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "010-system-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "010-system-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-system-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "systems-engineering-overview",
+      "title": "نگاهی به مهندسی سیستم‌ها",
+      "summary": "مهندسی سیستم‌ها چیست و مهندسی نیازمندی‌ها چه جایگاهی در آن دارد.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 26,
+      "videos": [
+        {
+          "file": "011-systems-engineering-overview.mp4",
+          "subtitles": [
+            {
+              "file": "011-systems-engineering-overview.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-systems-engineering-overview.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirement-types-part-1",
+      "title": "انواع نیازمندی — بخش ۱",
+      "summary": "دسته‌بندی اول نیازمندی‌ها: کارکردی، غیرکارکردی و...",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "012-requirement-types-part-1.mp4",
+          "subtitles": [
+            {
+              "file": "012-requirement-types-part-1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-requirement-types-part-1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-origination",
+      "title": "خاستگاه نیازمندی‌ها",
+      "summary": "نیازمندی‌ها از کجا می‌آیند — کاربران، قوانین، محدودیت‌های فنی.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "013-requirements-origination.mp4",
+          "subtitles": [
+            {
+              "file": "013-requirements-origination.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-requirements-origination.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-requirements-engineer",
+      "title": "نقش مهندس نیازمندی‌ها",
+      "summary": "مهندس نیازمندی‌ها چه‌کاری انجام می‌دهد و چه مهارت‌هایی لازم دارد.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "014-the-requirements-engineer.mp4",
+          "subtitles": [
+            {
+              "file": "014-the-requirements-engineer.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-the-requirements-engineer.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-engineering",
+      "title": "مهندسی نیازمندی‌ها چیست",
+      "summary": "تعریف رسمی مهندسی نیازمندی‌ها و فعالیت‌های اصلی آن.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "015-requirements-engineering.mp4",
+          "subtitles": [
+            {
+              "file": "015-requirements-engineering.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-requirements-engineering.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-needs-goals",
+      "title": "نیازها و اهداف محصول",
+      "summary": "فرق نیاز (need) و هدف (goal) و چرا این فرق مهم است.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "016-product-needs-goals.mp4",
+          "subtitles": [
+            {
+              "file": "016-product-needs-goals.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-product-needs-goals.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-mission-need-statement-mns",
+      "title": "بیانیه‌ی نیاز مأموریت (MNS)",
+      "summary": "MNS چیست و در ابتدای یک پروژه چه نقشی دارد.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "017-the-mission-need-statement-mns.mp4",
+          "subtitles": [
+            {
+              "file": "017-the-mission-need-statement-mns.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-the-mission-need-statement-mns.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "identifying-project-constraints",
+      "title": "شناسایی محدودیت‌های پروژه",
+      "summary": "محدودیت‌های زمانی، بودجه‌ای و فنی که روی نیازمندی‌ها اثر می‌گذارند.",
+      "section": "مقدمه و مبانی",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "018-identifying-project-constraints.mp4",
+          "subtitles": [
+            {
+              "file": "018-identifying-project-constraints.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-identifying-project-constraints.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-scenarios",
+      "title": "مقدمه‌ای بر سناریوها",
+      "summary": "سناریو چیست و چرا برای فهم نیازمندی‌ها مفید است.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "019-introduction-to-scenarios.mp4",
+          "subtitles": [
+            {
+              "file": "019-introduction-to-scenarios.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-introduction-to-scenarios.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scenarios",
+      "title": "سناریوها",
+      "summary": "ساختار یک سناریوی خوب و اجزای آن.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "020-scenarios.mp4",
+          "subtitles": [
+            {
+              "file": "020-scenarios.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-scenarios.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scenario-types",
+      "title": "انواع سناریو",
+      "summary": "سناریوهای مختلف و کاربرد هرکدام.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "021-scenario-types.mp4",
+          "subtitles": [
+            {
+              "file": "021-scenario-types.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-scenario-types.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scenario-content",
+      "title": "محتوای سناریو",
+      "summary": "چه چیزی باید داخل یک سناریو نوشته شود.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "022-scenario-content.mp4",
+          "subtitles": [
+            {
+              "file": "022-scenario-content.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-scenario-content.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scenario-formatting",
+      "title": "قالب‌بندی سناریو",
+      "summary": "نحوه‌ی نوشتن و قالب‌بندی یک سناریوی قابل‌استفاده.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "023-scenario-formatting.mp4",
+          "subtitles": [
+            {
+              "file": "023-scenario-formatting.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-scenario-formatting.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scenario-templates",
+      "title": "قالب‌های آماده‌ی سناریو",
+      "summary": "چند قالب آماده برای نوشتن سریع‌تر سناریو.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "024-scenario-templates.mp4",
+          "subtitles": [
+            {
+              "file": "024-scenario-templates.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-scenario-templates.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "rules-of-thumb-for-scenario-creation",
+      "title": "نکات عملی برای نوشتن سناریو",
+      "summary": "چند قانون سرانگشتی برای سناریوهای بهتر.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "025-rules-of-thumb-for-scenario-creation.mp4",
+          "subtitles": [
+            {
+              "file": "025-rules-of-thumb-for-scenario-creation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-rules-of-thumb-for-scenario-creation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "user-stories",
+      "title": "User Storyها",
+      "summary": "User Story چیست و چه تفاوتی با سناریوی کلاسیک دارد.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "026-user-stories.mp4",
+          "subtitles": [
+            {
+              "file": "026-user-stories.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-user-stories.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "use-cases",
+      "title": "Use Caseها",
+      "summary": "Use Case چیست و کِی به‌جای سناریو یا User Story استفاده می‌شود.",
+      "section": "سناریو، User Story و Use Case",
+      "estimated_minutes": 30,
+      "videos": [
+        {
+          "file": "027-use-cases.mp4",
+          "subtitles": [
+            {
+              "file": "027-use-cases.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-use-cases.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-requirements-elicitation",
+      "title": "مقدمه‌ای بر استخراج نیازمندی‌ها",
+      "summary": "استخراج نیازمندی‌ها یعنی چه و چرا سخت‌ترین بخش کاره.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "028-introduction-to-requirements-elicitation.mp4",
+          "subtitles": [
+            {
+              "file": "028-introduction-to-requirements-elicitation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-introduction-to-requirements-elicitation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-preparation",
+      "title": "آماده‌شدن برای استخراج نیازمندی‌ها",
+      "summary": "قبل از جلسه‌ی استخراج نیازمندی چه کارهایی باید انجام شود.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "029-requirements-elicitation-preparation.mp4",
+          "subtitles": [
+            {
+              "file": "029-requirements-elicitation-preparation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-requirements-elicitation-preparation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-interviews",
+      "title": "تکنیک‌های استخراج — مصاحبه",
+      "summary": "مصاحبه به‌عنوان یکی از رایج‌ترین تکنیک‌های استخراج نیازمندی.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "030-requirements-elicitation-techniques-interviews.mp4",
+          "subtitles": [
+            {
+              "file": "030-requirements-elicitation-techniques-interviews.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-requirements-elicitation-techniques-interviews.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-workshops",
+      "title": "تکنیک‌های استخراج — کارگاه",
+      "summary": "برگزاری کارگاه برای جمع‌کردن ذی‌نفعان و استخراج نیازمندی.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "031-requirements-elicitation-techniques-workshops.mp4",
+          "subtitles": [
+            {
+              "file": "031-requirements-elicitation-techniques-workshops.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-requirements-elicitation-techniques-workshops.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-questionnaires",
+      "title": "تکنیک‌های استخراج — پرسش‌نامه",
+      "summary": "پرسش‌نامه کِی بهتر از مصاحبه یا کارگاه عمل می‌کند.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "032-requirements-elicitation-techniques-questionnaires.mp4",
+          "subtitles": [
+            {
+              "file": "032-requirements-elicitation-techniques-questionnaires.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-requirements-elicitation-techniques-questionnaires.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-document-analysis",
+      "title": "تکنیک‌های استخراج — تحلیل مستندات",
+      "summary": "استخراج نیازمندی از مستندات و سیستم‌های موجود.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "033-requirements-elicitation-techniques-document-analysis.mp4",
+          "subtitles": [
+            {
+              "file": "033-requirements-elicitation-techniques-document-analysis.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-requirements-elicitation-techniques-document-analysis.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-observation",
+      "title": "تکنیک‌های استخراج — مشاهده",
+      "summary": "مشاهده‌ی مستقیم کاربران حین کار به‌جای پرسیدن از آن‌ها.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "034-requirements-elicitation-techniques-observation.mp4",
+          "subtitles": [
+            {
+              "file": "034-requirements-elicitation-techniques-observation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-requirements-elicitation-techniques-observation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-working-groups",
+      "title": "تکنیک‌های استخراج — گروه‌های کاری",
+      "summary": "گروه‌های کاری کوچک برای بحث و استخراج نیازمندی.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "035-requirements-elicitation-techniques-working-groups.mp4",
+          "subtitles": [
+            {
+              "file": "035-requirements-elicitation-techniques-working-groups.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-requirements-elicitation-techniques-working-groups.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-techniques-workshops-ii",
+      "title": "تکنیک‌های استخراج — کارگاه (ادامه)",
+      "summary": "نکات تکمیلی درباره‌ی برگزاری کارگاه‌های استخراج نیازمندی.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "036-requirements-elicitation-techniques-workshops.mp4",
+          "subtitles": [
+            {
+              "file": "036-requirements-elicitation-techniques-workshops.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-requirements-elicitation-techniques-workshops.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-tools-brainstorming",
+      "title": "ابزارهای استخراج — بارش فکری",
+      "summary": "بارش فکری برای بیرون‌کشیدن ایده‌ها و نیازمندی‌های اولیه.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "037-requirements-elicitation-tools-brainstorming.mp4",
+          "subtitles": [
+            {
+              "file": "037-requirements-elicitation-tools-brainstorming.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-requirements-elicitation-tools-brainstorming.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-tools-the-kj-method",
+      "title": "ابزارهای استخراج — روش KJ",
+      "summary": "روش KJ برای دسته‌بندی و اولویت‌بندی ایده‌های زیاد.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "038-requirements-elicitation-tools-the-kj-method.mp4",
+          "subtitles": [
+            {
+              "file": "038-requirements-elicitation-tools-the-kj-method.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-requirements-elicitation-tools-the-kj-method.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-tools-mind-mapping",
+      "title": "ابزارهای استخراج — نقشه‌ی ذهنی",
+      "summary": "نقشه‌ی ذهنی به‌عنوان ابزاری برای سازمان‌دهی ایده‌ها.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "039-requirements-elicitation-tools-mind-mapping.mp4",
+          "subtitles": [
+            {
+              "file": "039-requirements-elicitation-tools-mind-mapping.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-requirements-elicitation-tools-mind-mapping.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-elicitation-tools-prototyping",
+      "title": "ابزارهای استخراج — نمونه‌ی اولیه",
+      "summary": "ساخت نمونه‌ی اولیه برای گرفتن بازخورد واقعی‌تر از ذی‌نفعان.",
+      "section": "استخراج نیازمندی‌ها (Elicitation)",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "040-requirements-elicitation-tools-prototyping.mp4",
+          "subtitles": [
+            {
+              "file": "040-requirements-elicitation-tools-prototyping.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-requirements-elicitation-tools-prototyping.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-writing-introduction",
+      "title": "مقدمه‌ای بر نوشتن نیازمندی‌ها",
+      "summary": "از ایده‌ی خام تا یک جمله‌ی نیازمندی قابل‌استفاده.",
+      "section": "نوشتن و فرایند نیازمندی‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "041-requirements-writing-introduction.mp4",
+          "subtitles": [
+            {
+              "file": "041-requirements-writing-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-requirements-writing-introduction.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-engineering-process",
+      "title": "فرایند مهندسی نیازمندی‌ها",
+      "summary": "مراحل کلی فرایند مهندسی نیازمندی‌ها از ابتدا تا انتها.",
+      "section": "نوشتن و فرایند نیازمندی‌ها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "042-requirements-engineering-process.mp4",
+          "subtitles": [
+            {
+              "file": "042-requirements-engineering-process.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-requirements-engineering-process.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirement-statements",
+      "title": "جمله‌های نیازمندی",
+      "summary": "ویژگی‌های یک جمله‌ی نیازمندی خوب و اشتباهات رایج.",
+      "section": "نوشتن و فرایند نیازمندی‌ها",
+      "estimated_minutes": 41,
+      "videos": [
+        {
+          "file": "043-requirement-statements.mp4",
+          "subtitles": [
+            {
+              "file": "043-requirement-statements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-requirement-statements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-derivation-decomposition-flow-down",
+      "title": "استخراج، تجزیه و ریزش نیازمندی‌ها",
+      "summary": "چطور یک نیازمندی سطح‌بالا به نیازمندی‌های جزئی‌تر تبدیل می‌شود.",
+      "section": "نوشتن و فرایند نیازمندی‌ها",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "044-requirements-derivation-decomposition-flow-down.mp4",
+          "subtitles": [
+            {
+              "file": "044-requirements-derivation-decomposition-flow-down.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-requirements-derivation-decomposition-flow-down.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "defining-measures-of-effectiveness-moes",
+      "title": "تعریف معیارهای اثربخشی (MOE)",
+      "summary": "MOE چیست و چطور موفقیت یک نیازمندی سنجیده می‌شود.",
+      "section": "نوشتن و فرایند نیازمندی‌ها",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "045-defining-measures-of-effectiveness-moes.mp4",
+          "subtitles": [
+            {
+              "file": "045-defining-measures-of-effectiveness-moes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "045-defining-measures-of-effectiveness-moes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirement-types-part-2",
+      "title": "انواع نیازمندی — بخش ۲",
+      "summary": "ادامه‌ی دسته‌بندی انواع نیازمندی.",
+      "section": "نوشتن و فرایند نیازمندی‌ها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "046-requirement-types-part-2.mp4",
+          "subtitles": [
+            {
+              "file": "046-requirement-types-part-2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-requirement-types-part-2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-requirements-introduction",
+      "title": "مقدمه‌ای بر نیازمندی‌های نرم‌افزار",
+      "summary": "تفاوت نیازمندی‌های نرم‌افزاری با نیازمندی‌های سیستم.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "047-software-requirements-introduction.mp4",
+          "subtitles": [
+            {
+              "file": "047-software-requirements-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-software-requirements-introduction.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-software-development-process",
+      "title": "فرایند توسعه‌ی نرم‌افزار",
+      "summary": "جایگاه نیازمندی‌ها در چرخه‌ی توسعه‌ی نرم‌افزار.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "048-the-software-development-process.mp4",
+          "subtitles": [
+            {
+              "file": "048-the-software-development-process.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-the-software-development-process.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "identifying-software-requirements",
+      "title": "شناسایی نیازمندی‌های نرم‌افزار",
+      "summary": "چطور نیازمندی‌های نرم‌افزاری از نیازمندی‌های سیستم استخراج می‌شوند.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "049-identifying-software-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "049-identifying-software-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "049-identifying-software-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "analyzing-software-requirements",
+      "title": "تحلیل نیازمندی‌های نرم‌افزار",
+      "summary": "بررسی سازگاری و کامل‌بودن نیازمندی‌های نرم‌افزار.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "050-analyzing-software-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "050-analyzing-software-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "050-analyzing-software-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "validating-software-requirements",
+      "title": "اعتبارسنجی نیازمندی‌های نرم‌افزار",
+      "summary": "اطمینان از اینکه نیازمندی نرم‌افزار همان چیزیه که واقعاً لازم است.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "051-validating-software-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "051-validating-software-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-validating-software-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-requirements-management",
+      "title": "مدیریت نیازمندی‌های نرم‌افزار",
+      "summary": "پیگیری و به‌روز نگه‌داشتن نیازمندی‌های نرم‌افزار در طول پروژه.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "052-software-requirements-management.mp4",
+          "subtitles": [
+            {
+              "file": "052-software-requirements-management.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "052-software-requirements-management.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-prioritization",
+      "title": "اولویت‌بندی نیازمندی‌ها",
+      "summary": "چه نیازمندی‌هایی اول ساخته شوند و بر چه اساسی.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "053-requirements-prioritization.mp4",
+          "subtitles": [
+            {
+              "file": "053-requirements-prioritization.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-requirements-prioritization.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "technical-performance-measures-tpms",
+      "title": "معیارهای عملکرد فنی (TPM)",
+      "summary": "TPM چیست و چطور عملکرد فنی یک سیستم را دنبال می‌کند.",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 35,
+      "videos": [
+        {
+          "file": "054-technical-performance-measures-tpms.mp4",
+          "subtitles": [
+            {
+              "file": "054-technical-performance-measures-tpms.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-technical-performance-measures-tpms.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-verification",
+      "title": "راستی‌آزمایی نیازمندی‌ها",
+      "summary": "آیا سیستم دقیقاً طبق نیازمندی نوشته‌شده ساخته شده؟",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 36,
+      "videos": [
+        {
+          "file": "055-requirements-verification.mp4",
+          "subtitles": [
+            {
+              "file": "055-requirements-verification.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-requirements-verification.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-validation",
+      "title": "اعتبارسنجی نیازمندی‌ها",
+      "summary": "آیا نیازمندی نوشته‌شده اصلاً همون چیزیه که باید باشه؟",
+      "section": "نیازمندی‌های نرم‌افزار",
+      "estimated_minutes": 34,
+      "videos": [
+        {
+          "file": "056-requirements-validation.mp4",
+          "subtitles": [
+            {
+              "file": "056-requirements-validation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-requirements-validation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-documentation-specifications-overview",
+      "title": "نگاهی به مستندسازی و مشخصات نیازمندی‌ها",
+      "summary": "چرا و چطور نیازمندی‌ها مستند می‌شوند.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "057-requirements-documentation-specifications-overview.mp4",
+          "subtitles": [
+            {
+              "file": "057-requirements-documentation-specifications-overview.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-requirements-documentation-specifications-overview.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-requirements-specification",
+      "title": "مشخصات نیازمندی‌ها (Spec)",
+      "summary": "سند مشخصات نیازمندی و اجزای اصلی آن.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 25,
+      "videos": [
+        {
+          "file": "058-the-requirements-specification.mp4",
+          "subtitles": [
+            {
+              "file": "058-the-requirements-specification.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-the-requirements-specification.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "specification-standards",
+      "title": "استانداردهای مشخصات",
+      "summary": "استانداردهای رایج برای نوشتن سند مشخصات نیازمندی.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "059-specification-standards.mp4",
+          "subtitles": [
+            {
+              "file": "059-specification-standards.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-specification-standards.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "specification-templates",
+      "title": "قالب‌های مشخصات",
+      "summary": "قالب‌های آماده برای نوشتن سریع‌تر سند مشخصات.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "060-specification-templates.mp4",
+          "subtitles": [
+            {
+              "file": "060-specification-templates.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-specification-templates.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-modeling-introduction",
+      "title": "مقدمه‌ای بر مدل‌سازی نیازمندی‌ها",
+      "summary": "چرا کنار متن، نیازمندی‌ها را مدل هم می‌کنیم.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "061-requirements-modeling-introduction.mp4",
+          "subtitles": [
+            {
+              "file": "061-requirements-modeling-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-requirements-modeling-introduction.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-modeling-tools",
+      "title": "ابزارهای مدل‌سازی نیازمندی‌ها",
+      "summary": "ابزارها و نمادهای رایج برای مدل‌سازی نیازمندی.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "062-requirements-modeling-tools.mp4",
+          "subtitles": [
+            {
+              "file": "062-requirements-modeling-tools.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-requirements-modeling-tools.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-entity-relationship-er-diagram",
+      "title": "دیاگرام ER",
+      "summary": "مدل‌سازی داده‌ها و رابطه‌شان با دیاگرام Entity-Relationship.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "063-the-entity-relationship-er-diagram.mp4",
+          "subtitles": [
+            {
+              "file": "063-the-entity-relationship-er-diagram.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-the-entity-relationship-er-diagram.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-class-diagram",
+      "title": "دیاگرام کلاس",
+      "summary": "مدل‌سازی ساختار سیستم با دیاگرام کلاس UML.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "064-the-class-diagram.mp4",
+          "subtitles": [
+            {
+              "file": "064-the-class-diagram.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-the-class-diagram.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-data-flow-diagram-dfd",
+      "title": "دیاگرام جریان داده (DFD)",
+      "summary": "نمایش جریان داده بین بخش‌های مختلف سیستم.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "065-the-data-flow-diagram-dfd.mp4",
+          "subtitles": [
+            {
+              "file": "065-the-data-flow-diagram-dfd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-the-data-flow-diagram-dfd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-activity-diagram-functional-flow",
+      "title": "دیاگرام فعالیت و جریان کارکردی",
+      "summary": "مدل‌سازی جریان فرایندها و فعالیت‌ها با دیاگرام Activity.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "066-the-activity-diagram-functional-flow.mp4",
+          "subtitles": [
+            {
+              "file": "066-the-activity-diagram-functional-flow.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-the-activity-diagram-functional-flow.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sequence-diagram",
+      "title": "دیاگرام توالی",
+      "summary": "نمایش ترتیب تعامل بین اجزای سیستم با دیاگرام Sequence.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "067-the-sequence-diagram.mp4",
+          "subtitles": [
+            {
+              "file": "067-the-sequence-diagram.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-the-sequence-diagram.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-state-machine-diagram",
+      "title": "دیاگرام ماشین حالت",
+      "summary": "مدل‌سازی حالت‌های مختلف یک سیستم و انتقال بین آن‌ها.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "068-the-state-machine-diagram.mp4",
+          "subtitles": [
+            {
+              "file": "068-the-state-machine-diagram.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-the-state-machine-diagram.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-block-definition-internal-block-diagram",
+      "title": "دیاگرام تعریف بلوک و بلوک داخلی",
+      "summary": "مدل‌سازی ساختار سیستم با دیاگرام‌های SysML.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "069-the-block-definition-internal-block-diagram.mp4",
+          "subtitles": [
+            {
+              "file": "069-the-block-definition-internal-block-diagram.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "069-the-block-definition-internal-block-diagram.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-requirements-diagram",
+      "title": "دیاگرام نیازمندی",
+      "summary": "نمایش گرافیکی روابط بین نیازمندی‌های مختلف.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "070-the-requirements-diagram.mp4",
+          "subtitles": [
+            {
+              "file": "070-the-requirements-diagram.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "070-the-requirements-diagram.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-statement-of-work-sow",
+      "title": "بیانیه‌ی کار (SOW)",
+      "summary": "SOW چیست و چه نقشی در قرارداد و پروژه دارد.",
+      "section": "مستندسازی و مدل‌سازی نیازمندی‌ها",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "071-the-statement-of-work-sow.mp4",
+          "subtitles": [
+            {
+              "file": "071-the-statement-of-work-sow.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "071-the-statement-of-work-sow.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "common-requirements-issues",
+      "title": "مشکلات رایج نیازمندی‌ها",
+      "summary": "خطاهای رایجی که در نوشتن و مدیریت نیازمندی‌ها پیش می‌آید.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "072-common-requirements-issues.mp4",
+          "subtitles": [
+            {
+              "file": "072-common-requirements-issues.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "072-common-requirements-issues.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-negotiation-overview",
+      "title": "نگاهی به مذاکره‌ی نیازمندی‌ها",
+      "summary": "چرا مذاکره بخش جدایی‌ناپذیر مهندسی نیازمندی‌هاست.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "073-requirements-negotiation-overview.mp4",
+          "subtitles": [
+            {
+              "file": "073-requirements-negotiation-overview.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "073-requirements-negotiation-overview.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-negotiation-strategies",
+      "title": "استراتژی‌های مذاکره‌ی نیازمندی‌ها",
+      "summary": "چند استراتژی برای حل اختلاف‌نظر روی نیازمندی‌ها.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "074-requirements-negotiation-strategies.mp4",
+          "subtitles": [
+            {
+              "file": "074-requirements-negotiation-strategies.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "074-requirements-negotiation-strategies.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-communication-documentation",
+      "title": "ارتباطات و مستندسازی نیازمندی‌ها",
+      "summary": "چطور نیازمندی‌ها را به‌درستی به تیم و ذی‌نفعان منتقل کنیم.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "075-requirements-communication-documentation.mp4",
+          "subtitles": [
+            {
+              "file": "075-requirements-communication-documentation.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "075-requirements-communication-documentation.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "documenting-changes",
+      "title": "مستندسازی تغییرات",
+      "summary": "پیگیری تغییرات نیازمندی‌ها در طول پروژه.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "076-documenting-changes.mp4",
+          "subtitles": [
+            {
+              "file": "076-documenting-changes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "076-documenting-changes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "managing-conflicts",
+      "title": "مدیریت تعارض‌ها",
+      "summary": "تعارض بین ذی‌نفعان روی نیازمندی‌ها را چطور مدیریت کنیم.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "077-managing-conflicts.mp4",
+          "subtitles": [
+            {
+              "file": "077-managing-conflicts.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "077-managing-conflicts.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "managing-difficult-stakeholders",
+      "title": "مدیریت ذی‌نفعان دشوار",
+      "summary": "برخورد با ذی‌نفعانی که همکاری‌شون سخته.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "078-managing-difficult-stakeholders.mp4",
+          "subtitles": [
+            {
+              "file": "078-managing-difficult-stakeholders.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "078-managing-difficult-stakeholders.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-negotiation-tips",
+      "title": "نکات مذاکره‌ی نیازمندی‌ها",
+      "summary": "چند نکته‌ی عملی برای مذاکره‌ی بهتر روی نیازمندی‌ها.",
+      "section": "مذاکره و مدیریت تعارض",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "079-requirements-negotiation-tips.mp4",
+          "subtitles": [
+            {
+              "file": "079-requirements-negotiation-tips.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "079-requirements-negotiation-tips.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-management-overview",
+      "title": "نگاهی به مدیریت نیازمندی‌ها",
+      "summary": "مدیریت نیازمندی‌ها یعنی چه و چرا یک فعالیت مستمر است.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "080-requirements-management-overview.mp4",
+          "subtitles": [
+            {
+              "file": "080-requirements-management-overview.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "080-requirements-management-overview.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "managing-requirements-artifacts",
+      "title": "مدیریت آرتیفکت‌های نیازمندی",
+      "summary": "نگه‌داری و سازمان‌دهی مستندات و آرتیفکت‌های نیازمندی.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "081-managing-requirements-artifacts.mp4",
+          "subtitles": [
+            {
+              "file": "081-managing-requirements-artifacts.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "081-managing-requirements-artifacts.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "managing-requirements-processes",
+      "title": "مدیریت فرایندهای نیازمندی",
+      "summary": "فرایندهایی که مدیریت نیازمندی را قابل‌تکرار می‌کنند.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "082-managing-requirements-processes.mp4",
+          "subtitles": [
+            {
+              "file": "082-managing-requirements-processes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "082-managing-requirements-processes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-develpment-technical-reviews",
+      "title": "بازبینی‌های فنی توسعه‌ی محصول",
+      "summary": "بازبینی‌های فنی رسمی در طول چرخه‌ی توسعه‌ی محصول.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "083-product-develpment-technical-reviews.mp4",
+          "subtitles": [
+            {
+              "file": "083-product-develpment-technical-reviews.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "083-product-develpment-technical-reviews.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-system-requirements-review-srr",
+      "title": "بازبینی نیازمندی‌های سیستم (SRR)",
+      "summary": "SRR چیست و در کجای پروژه انجام می‌شود.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 21,
+      "videos": [
+        {
+          "file": "084-the-system-requirements-review-srr.mp4",
+          "subtitles": [
+            {
+              "file": "084-the-system-requirements-review-srr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "084-the-system-requirements-review-srr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-traceability",
+      "title": "ردیابی نیازمندی‌ها (Traceability)",
+      "summary": "دنبال‌کردن یک نیازمندی از منشأ تا پیاده‌سازی و تست.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "085-requirements-traceability.mp4",
+          "subtitles": [
+            {
+              "file": "085-requirements-traceability.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "085-requirements-traceability.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "جمع‌بندی دوره",
+      "summary": "مرور کلی چیزهایی که در این دوره یاد گرفتیم.",
+      "section": "مدیریت، ردیابی و جمع‌بندی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "086-course-closeout.mp4",
+          "subtitles": [
+            {
+              "file": "086-course-closeout.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "086-course-closeout.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

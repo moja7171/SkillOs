@@ -1,7 +1,7 @@
 <x-app-layout title="زمان‌بندی">
     <div class="page-narrow max-w-xl">
         <div class="text-[12.5px] text-muted flex items-center gap-2 mb-2">
-            <a href="{{ route('courses.show', $enrollment->course) }}" class="text-muted" dir="auto">{{ $enrollment->course->title }}</a><span class="text-faint">/</span>
+            <a href="{{ route('courses.show', $enrollment->course) }}" class="text-muted">{{ $enrollment->course->title }}</a><span class="text-faint">/</span>
             <span>زمان‌بندی</span>
         </div>
         <h1 class="m-0 text-[22px] font-bold mb-5">زمان‌بندی و وضعیت</h1>

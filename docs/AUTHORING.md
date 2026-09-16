@@ -97,7 +97,8 @@ An array of 2–3 objects (the intro/overview lesson may have none):
     "correct_option": 1,                           // mcq only: 0–3
     "expected_outcome": "…",                       // Persian model answer shown after submit; for coding, include the reference code
     "hints": ["…", "…"],                           // EXACTLY two, progressively more revealing, never the answer itself
-    "rubric": "Correct only if option 1 is selected."   // English; graded by Gemini for open forms
+    "rubric": "Correct only if option 1 is selected.",  // English; graded by Gemini for open forms
+    "attachments": [{ "title": "قالب کار", "file": "files/077-template.pdf" }]  // optional; same shape as a lesson's attachments (§3.1), shown on the practice page
   }
 ]
 ```

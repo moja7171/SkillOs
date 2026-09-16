@@ -219,4 +219,67 @@ class SessionTest extends TestCase
         $this->actingAs($stranger)->post(route('session.give-up', $attempt))->assertForbidden();
         $this->assertSame('started', $attempt->fresh()->result_status);
     }
+
+    public function test_open_starts_fresh_the_first_time_then_resumes_or_shows_the_last_attempt(): void
+    {
+        $activity = $this->mcq();
+
+        // First visit: nothing exists yet, behaves like start().
+        $this->actingAs($this->user)->get(route('session.open', $activity))->assertRedirect();
+        $this->assertSame(1, Attempt::count());
+        $first = Attempt::latest('id')->first();
+        $this->assertSame('started', $first->result_status);
+
+        // Still open: re-opening resumes the same attempt instead of creating another.
+        $this->actingAs($this->user)->get(route('session.open', $activity))->assertRedirect(route('session.show', $first));
+        $this->assertSame(1, Attempt::count());
+
+        // Finish it, then opening again shows that finished attempt (with its result and
+        // a retry option) rather than silently starting a blank new one.
+        $this->actingAs($this->user)->post(route('session.submit', $first), ['response' => '2']);
+        $this->actingAs($this->user)->get(route('session.open', $activity))->assertRedirect(route('session.show', $first));
+        $this->assertSame(1, Attempt::count());
+    }
+
+    public function test_cancel_deletes_an_open_attempt_without_penalty(): void
+    {
+        $attempt = $this->startAttempt($this->mcq());
+
+        $this->actingAs($this->user)->delete(route('session.cancel', $attempt))->assertRedirect($this->lesson->url());
+
+        $this->assertDatabaseMissing('attempts', ['id' => $attempt->id]);
+    }
+
+    public function test_cancel_refuses_a_finished_attempt(): void
+    {
+        $attempt = $this->startAttempt($this->mcq());
+        $this->actingAs($this->user)->post(route('session.give-up', $attempt));
+
+        $this->actingAs($this->user)->delete(route('session.cancel', $attempt))->assertStatus(422);
+        $this->assertDatabaseHas('attempts', ['id' => $attempt->id]);
+    }
+
+    public function test_another_user_cannot_cancel_someones_attempt(): void
+    {
+        $attempt = $this->startAttempt($this->mcq());
+        $stranger = User::factory()->create();
+
+        $this->actingAs($stranger)->delete(route('session.cancel', $attempt))->assertForbidden();
+        $this->assertDatabaseHas('attempts', ['id' => $attempt->id]);
+    }
+
+    public function test_session_show_lists_earlier_attempts_at_the_same_practice(): void
+    {
+        $first = $this->startAttempt($this->mcq());
+        $this->actingAs($this->user)->post(route('session.submit', $first), ['response' => '0']); // wrong, uses a hint
+        $this->actingAs($this->user)->post(route('session.give-up', $first));
+
+        $second = $this->startAttempt($this->mcq());
+        $this->actingAs($this->user)->post(route('session.submit', $second), ['response' => '2']);
+
+        $this->actingAs($this->user)->get(route('session.show', $second))
+            ->assertOk()
+            ->assertSee('تلاش‌های قبلی من')
+            ->assertSee('غلط');
+    }
 }

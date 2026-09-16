@@ -6,17 +6,17 @@
 <x-app-layout :title="$course->title">
     <div class="px-4 sm:px-8 pt-6">
         <div class="text-[12.5px] text-muted flex items-center gap-2">
-            <a href="{{ route('courses.index') }}" class="text-muted">همه‌ی دوره‌ها</a><span class="text-faint">/</span><span dir="auto">{{ $course->title }}</span>
+            <a href="{{ route('courses.index') }}" class="text-muted">همه‌ی دوره‌ها</a><span class="text-faint">/</span><span>{{ $course->title }}</span>
         </div>
         <div class="flex flex-col gap-2 mt-2">
             <div class="flex items-center gap-3 flex-wrap">
-                <h1 class="m-0 text-[26px] font-bold" dir="auto">{{ $course->title }}</h1>
+                <h1 class="m-0 text-[26px] font-bold">{{ $course->title }}</h1>
                 @if ($enrollment)
                     <span class="badge {{ $enrollment->status === 'active' ? 'badge-ok' : 'badge-ghost' }}"><span class="dot"></span>{{ $enrollment->statusLabel() }}</span>
                 @endif
             </div>
             @if ($course->outcome_statement)
-                <div class="max-w-3xl text-muted leading-[1.8]" dir="auto">
+                <div class="max-w-3xl text-muted leading-[1.8]">
                     <span class="text-[12.5px] font-semibold text-faint">هدف نهایی · </span>{{ $course->outcome_statement }}
                 </div>
             @endif
@@ -145,7 +145,7 @@
             @if ($course->source_note)
                 <div class="card">
                     <div class="card-h"><h3>منابع</h3></div>
-                    <div class="px-[18px] py-3 text-[13px] text-muted" dir="auto">{{ $course->source_note }}</div>
+                    <div class="px-[18px] py-3 text-[13px] text-muted">{{ $course->source_note }}</div>
                 </div>
             @endif
         </div>

@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('lessons/{lesson}', fn (Lesson $lesson) => redirect()->route('lessons.show', [$lesson->course, $lesson], 301));
 
     Route::post('activities/{activity}/start', [SessionController::class, 'start'])->name('session.start');
+    Route::get('activities/{activity}', [SessionController::class, 'open'])->name('session.open');
     Route::post('plan-items/{planItem}/start', [SessionController::class, 'startPlanned'])->name('session.start-planned');
     Route::get('activities/{activity}/start', [SessionController::class, 'resumeOrHome']);
     Route::get('plan-items/{planItem}/start', fn (PlanItem $planItem, Request $request) => app(SessionController::class)->resumeOrHome($request, $planItem->activity));
@@ -44,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::post('session/{attempt}/complete', [SessionController::class, 'complete'])->name('session.complete');
     Route::post('session/{attempt}/submit', [SessionController::class, 'submit'])->name('session.submit');
     Route::post('session/{attempt}/give-up', [SessionController::class, 'giveUp'])->name('session.give-up');
+    Route::delete('session/{attempt}', [SessionController::class, 'cancel'])->name('session.cancel');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

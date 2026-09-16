@@ -13,6 +13,22 @@
 // curl's own success is ever hard to confirm otherwise (no SSH/Terminal on
 // this host). Read straight out of .env with a raw parse since this all
 // happens before Laravel (and its env() helper) boots.
+//
+// Every invocation — rejected or not — also appends its output to
+// storage/logs/deploy-hook.log, readable via /_ops/deploy-log. This is the
+// only independent way to tell whether the .cpanel.yml curl step actually
+// reached this file: that curl's own exit code says nothing about what
+// happened on this end, and a network-level failure (wrong loopback port,
+// TLS/SNI mismatch, etc.) would otherwise be completely invisible on a host
+// with no SSH/Terminal (this bit the owner once already: a migration and a
+// content re-import both silently never ran on deploy).
+$logPath = dirname(__DIR__).'/storage/logs/deploy-hook.log';
+
+function deploy_log(string $path, string $text): void
+{
+    @file_put_contents($path, $text, FILE_APPEND | LOCK_EX);
+}
+
 $deployToken = null;
 $envPath = dirname(__DIR__).'/.env';
 if (is_file($envPath)) {
@@ -28,6 +44,7 @@ $isLocal = ($_SERVER['REMOTE_ADDR'] ?? '') === '127.0.0.1';
 $hasValidToken = $deployToken && hash_equals($deployToken, $_GET['token'] ?? '');
 
 if (! $isLocal && ! $hasValidToken) {
+    deploy_log($logPath, '['.date('Y-m-d H:i:s').'] REJECTED — remote_addr='.($_SERVER['REMOTE_ADDR'] ?? '?')." has_token=".($hasValidToken ? 'yes' : 'no')."\n");
     http_response_code(403);
     exit('Forbidden');
 }
@@ -35,6 +52,18 @@ if (! $isLocal && ! $hasValidToken) {
 set_time_limit(0);
 ini_set('max_execution_time', '0');
 ini_set('memory_limit', '512M');
+
+ob_start();
+echo '[source: '.($isLocal ? 'loopback' : 'token')."]\n";
+
+// Covers a fatal error mid-script too (e.g. vendor/ missing after a bad copy) — without
+// this, such a failure would skip the log write below entirely, which is exactly the
+// case this log exists to catch.
+register_shutdown_function(function () use ($logPath) {
+    if (ob_get_level() > 0) {
+        deploy_log($logPath, ob_get_clean());
+    }
+});
 
 function chmodRecursive(string $path, int $perm): void
 {
@@ -110,3 +139,7 @@ foreach ($commands as [$name, $params]) {
 }
 
 echo "=== done ===\n";
+
+$output = ob_get_clean();
+echo $output;
+deploy_log($logPath, $output);

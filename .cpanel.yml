@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/growwi/skillos.growwise.ir/
     - /bin/cp -R * $DEPLOYPATH
-    - curl -sk --connect-to skillos.growwise.ir:443:127.0.0.1:443 https://skillos.growwise.ir/deploy.php || true
+    - curl -kfsS --connect-to skillos.growwise.ir:443:127.0.0.1:443 https://skillos.growwise.ir/deploy.php

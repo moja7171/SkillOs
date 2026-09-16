@@ -54,6 +54,7 @@ class CourseImporter
                     'section' => $ld['section'] ?? null,
                     'summary' => $ld['summary'] ?? null,
                     'content' => $ld['content'],
+                    'content_en' => $ld['content_en'],
                     'key_points' => $ld['key_points'] ?? [],
                     'common_mistakes' => $ld['common_mistakes'] ?? [],
                     'attachments' => $this->attachments($data, $ld),
@@ -164,6 +165,12 @@ class CourseImporter
                 throw new ImportException("$where: missing lesson text $mdFile");
             }
             $ld['content'] = trim(File::get($mdFile));
+
+            // Optional English text alongside the Persian one, same slug + ".en.md" — mirrors
+            // the video subtitle convention (<slug>.en.vtt / <slug>.fa.vtt). Not every course
+            // has this; the lesson page only shows a language toggle when it's present.
+            $mdFileEn = "$dir/lessons/{$ld['slug']}.en.md";
+            $ld['content_en'] = File::exists($mdFileEn) ? trim(File::get($mdFileEn)) : null;
 
             foreach ($ld['prerequisites'] ?? [] as $pre) {
                 if (! in_array($pre, $slugs, true)) {

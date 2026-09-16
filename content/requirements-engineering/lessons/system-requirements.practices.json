@@ -1,0 +1,51 @@
+[
+  {
+    "key": "what-makes-a-spec",
+    "title": "مشخصات یعنی چی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی مهندسی نیازمندی‌ها، «مشخصات (specification)» دقیقاً چیه؟",
+    "options": [
+      "هر فهرستی از ویژگی‌های یه محصول که برای تبلیغات نوشته شده",
+      "یه توافق‌نامه‌ی رسمی و معمولاً الزام‌آور قراردادی که نیازمندی‌های ضروری سیستم رو در بر می‌گیره",
+      "یه سند غیررسمی که فقط تیم طراحی می‌بینتش",
+      "خلاصه‌ای از نظرات کاربران درباره‌ی محصول"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "مشخصات، برخلاف معنای روزمره‌ش، یه سند رسمی و معمولاً الزام‌آور قراردادیه که نیازمندی‌های ضروری سیستم رو ثبت می‌کنه — نه صرفاً یه بروشور تبلیغاتی یا یادداشت داخلی.",
+    "hints": [
+      "این درس صریح گفت معنای «مشخصات» توی مهندسی نیازمندی‌ها با معنای روزمره‌ش فرق داره.",
+      "کلمه‌ی «الزام‌آور قراردادی» رو توی متن درس پیدا کن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "avoid-subjective-language",
+    "title": "چرا مشخصات نباید ذهنی باشه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه مشخصات ATM می‌گه: «دستگاه باید به‌سرعت معقولی به کاربر پاسخ بده.» در ۳ تا ۴ جمله بگو چرا این جمله مشکل داره، و این مشکل چه ربطی به بحث «نیازمندی‌ها پایه‌ی قرارداد هستن» (درس قبلی) داره.",
+    "expected_outcome": "«سرعت معقول» ذهنی و قابل‌تفسیره — یه نفر ممکنه ۲ ثانیه رو معقول بدونه، یکی دیگه ۱۰ ثانیه. چون مشخصات پایه‌ی یه توافق‌نامه‌ی قراردادیه، این ابهام دقیقاً همون‌جاییه که اختلاف‌نظر و دعوای حقوقی شکل می‌گیره — چون هیچ‌کس نمی‌تونه عینی ثابت کنه نیازمندی برآورده شده یا نه.",
+    "hints": [
+      "این درس گفت مشخصات باید از عبارت‌های ذهنی/تفسیرپذیر پرهیز کنه — چرا دقیقاً؟",
+      "به درس «چرا نیازمندی‌ها مهمند» برگرد — نیازمندی‌ها پایه‌ی چه چیزی بودن؟"
+    ],
+    "rubric": "Correct if response identifies the phrase as subjective/unverifiable and connects it to the risk of contractual disputes when compliance can't be objectively proven. Correct_with_hint if only the subjectivity issue is named without the contract-dispute connection. Incorrect if no real reasoning given."
+  },
+  {
+    "key": "single-authority-ownership",
+    "title": "چرا مشخصات باید یه مالک واحد داشته باشه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "این درس گفت مشخصات باید توسط یه مرجع واحد (معمولاً مهندس ارشد سیستم) مدیریت بشه. در ۲ تا ۳ جمله بگو اگه چند نفر بدون هماهنگی بتونن مستقیم مشخصات رو ویرایش کنن، چه مشکلی پیش میاد.",
+    "expected_outcome": "بدون یه مرجع واحد، کنترل نسخه (configuration control) از دست می‌ره — ممکنه دو نفر هم‌زمان نسخه‌های متفاوت و متناقضی از یه نیازمندی رو ویرایش کنن، بدون اینکه کسی متوجه ابهام یا تناقض بشه. مرجع واحد هم مسئول تفسیر رسمی مشخصات در صورت ابهامه.",
+    "hints": [
+      "«از دست دادن کنترل نسخه‌های مختلف مشخصات» دقیقاً همون خطریه که این درس بهش اشاره کرد.",
+      "اگه دو نفر بدون اطلاع از هم یه بخش رو تغییر بدن، کدوم نسخه معتبره؟"
+    ],
+    "rubric": "Correct if response explains the risk of losing configuration control / conflicting uncoordinated edits, and the role of a single authority as the official interpreter. Correct_with_hint if only one of these two points is present. Incorrect if no real reasoning given."
+  }
+]

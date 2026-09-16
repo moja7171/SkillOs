@@ -1,0 +1,51 @@
+[
+  {
+    "key": "mns-avoids-solutions",
+    "title": "این بیانیه‌ی نیاز مشکل داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم جمله می‌تونه بخشی از یه بیانیه‌ی نیاز (MNS) خوب باشه؟",
+    "options": [
+      "نیاز به کوادکوپترهای کوچک چهارپروانه‌ای داریم که بذر درخت را در مناطق سوخته می‌ریزند",
+      "نیاز به سیستمی است که بتواند در مناطق دورافتاده و صعب‌العبور، به‌سرعت و کارآمد درخت بکارد",
+      "نیاز داریم چون تیم منابع انسانی کافی برای اعزام به مناطق جنگلی ندارد",
+      "نیاز به یک اپلیکیشن موبایل برای مدیریت عملیات بازجنگل‌کاری داریم"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "فقط گزینه‌ی دوم implementation-free هست — قابلیت مورد نیاز (کاشت سریع و کارآمد در مناطق صعب‌العبور) رو می‌گه، بدون فرض کردن کوادکوپتر، اپ موبایل یا هر راه‌حل دیگه. گزینه‌ی سوم هم رد می‌شه چون یه نیاز فردی/کمبود منابعه، نه نیاز واقعی مهندسی.",
+    "hints": [
+      "به دنبال جمله‌ای بگرد که هیچ اسمی از یه راه‌حل فیزیکی یا نرم‌افزاری خاص نیاورده.",
+      "«کمبود نیروی انسانی» جزو چیزهاییه که این درس گفت نیاز واقعی حساب نمی‌شه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "write-current-impact-need",
+    "title": "سه جمله برای یه نیاز واقعی",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "برای ATM (فرض کن هنوز اختراع نشده)، سه جمله‌ی «وضعیت فعلی»، «تأثیر»، و «نیاز» رو طبق ساختار این درس بنویس. یادت باشه: implementation-free، بدون صفت اضافه، بدون پس‌زمینه.",
+    "expected_outcome": "نمونه: وضعیت فعلی: برای برداشت پول نقد، مشتریان باید در ساعات کاری بانک حضوری مراجعه کنند و با یک تحویل‌دار تعامل داشته باشند. تأثیر: این فرایند برای مشتریان زمان‌بر است و خارج از ساعات کاری بانک، دسترسی به پول نقد ممکن نیست. نیاز: نیاز به سیستمی است که به مشتریان اجازه دهد در هر ساعت از شبانه‌روز و بدون تعامل با یک کارمند بانک، پول نقد برداشت کنند.",
+    "hints": [
+      "هر سه جمله رو مثل مثال پهپاد بذرپاش این درس بساز — وضعیت فعلی، تأثیرش، بعد نیاز.",
+      "مراقب باش کلمه‌ای مثل «دستگاه»، «ماشین» یا هر اشاره‌ی فیزیکی به یه راه‌حل خاص وارد نکنی."
+    ],
+    "rubric": "Correct if response provides three distinct sentences (current state, impact, need) that are implementation-free (no mention of a specific physical/software solution) and relevant to cash withdrawal without a teller. Correct_with_hint if the structure is right but one sentence leaks a solution or is missing. Incorrect if solution-locked or missing the three-part structure entirely."
+  },
+  {
+    "key": "why-quantify-need",
+    "title": "چرا نیاز باید کمّی باشه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "این درس گفت باید تا حد امکان بیانیه‌ی نیاز رو کمّی کنیم (مثلاً «چقدر بد» وضعیت فعلیه). در ۲ تا ۳ جمله بگو این عدد دقیقاً بعداً کجای فرایند دوباره سر و کله‌ش پیدا می‌شه، و چرا این ارتباط مهمه.",
+    "expected_outcome": "این اعداد بعداً به نیازمندی‌های عملیاتی تبدیل می‌شن، و در تست سطح سیستم، محصول نهایی دقیقاً در برابر همین اعداد سنجیده می‌شه. یعنی کمّی‌کردن نیاز از همون ابتدا، معیار موفقیت رو برای کل پروژه (تا مرحله‌ی تست) از قبل مشخص می‌کنه — بدون این عدد، هیچ‌وقت نمی‌شه عینی گفت راه‌حل واقعاً نیاز رو برطرف کرده یا نه.",
+    "hints": [
+      "درس گفت «این اعداد بعداً در طول تست سیستم دوباره سراغشون میایم» — دقیقاً کجای فرایند؟",
+      "بدون عدد، چطور می‌شه ثابت کرد یه راه‌حل «به‌اندازه‌ی کافی خوب» بوده؟"
+    ],
+    "rubric": "Correct if response explains the quantified need traces forward into operational requirements and gets tested against at system-level verification, and explains why this traceability matters (objective success criteria). Correct_with_hint if only one of these two points is present. Incorrect if no real reasoning given."
+  }
+]

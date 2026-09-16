@@ -28,13 +28,21 @@
                     <span class="w-8 h-8 rounded-full bg-surface2 border border-line2 grid place-items-center font-semibold text-[13px] shrink-0">
                         {{ mb_substr($u->name, 0, 1) }}
                     </span>
-                    <span class="flex-1 min-w-0 truncate font-semibold" dir="auto">{{ $u->name }}{{ $u->is($me) ? ' (خودت)' : '' }}</span>
-                    @if ($u->streak_count > 0)
-                        <span class="flex items-center gap-1 text-[13px] font-semibold text-warn shrink-0">
-                            <x-icon name="flame" class="w-4 h-4" /> {{ fa_num($u->streak_count) }}
-                        </span>
-                    @endif
-                    <span class="text-[12.5px] text-muted shrink-0">{{ fa_num($row['week']['count']) }} تمرین این هفته</span>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2">
+                            <span class="min-w-0 truncate font-semibold" dir="auto">{{ $u->name }}{{ $u->is($me) ? ' (خودت)' : '' }}</span>
+                            @if ($u->streak_count > 0)
+                                <span class="flex items-center gap-1 text-[13px] font-semibold text-warn shrink-0">
+                                    <x-icon name="flame" class="w-4 h-4" /> {{ fa_num($u->streak_count) }}
+                                </span>
+                            @endif
+                        </div>
+                        <div class="text-[12.5px] text-muted mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5">
+                            <span>{{ fa_num($row['allTime']['minutes']) }} دقیقه صرف‌شده</span>
+                            <span>· {{ fa_num($row['lessonsDone']) }} درس انجام‌داده</span>
+                            <span>· {{ fa_num($row['practicesSolved']) }} تمرین حل‌شده</span>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>

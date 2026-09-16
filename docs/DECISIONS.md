@@ -645,3 +645,19 @@ The shipped design is a single button, "انجام دادم", on the lesson page
 **Why.** Direct owner request, refined over a short back-and-forth: the owner explicitly rejected gating forward progress on a daily lesson-count or time budget ("مبنا نباید روز باشه"), and explicitly wanted one unified action rather than a separate "self-report you already know this" fast path.
 
 **Consequences.** `mastery_records`/`attempts` schemas unchanged. `evidence.source` gains a fourth meaningful value (`lesson_done`, alongside `free`/`plan`/`review`). The «انجام دادم» gate is strict — a lesson with several practices requires all of them individually correct at least once, not just "attempted" — matching the owner's explicit answer over an initially-offered looser alternative.
+
+---
+
+## 44. «دوستان» becomes an admin-only progress dashboard; first `is_admin` flag on the install (2026-09-16)
+
+**Decision.** Added `users.is_admin` (boolean, default `false`) via a migration that also sets it `true` for `moja@skillos.local` in the same `up()` — so the flag is correct immediately after `migrate --force` on any environment (local or production) without a separate manual step. `FriendsController` now does `abort_unless($request->user()->is_admin, 403)`, and both the desktop nav and the mobile dropdown menu (`layouts/navigation.blade.php`) hide the «دوستان» link entirely for non-admins.
+
+The page itself changed from a lightweight "streak + this week's practice count" list (§27) to a per-user **all-time** progress dashboard, per the owner's explicit answer over "just this week" or "everyone gets this, not just me": three new numbers per learner, computed in `ActivityStats`:
+
+- **زمان صرف‌شده**: `allTime()` — same shape as the existing `since()` used on Home, just without the date floor (sum of `estimated_minutes` across every finalized attempt ever, learn + practice alike — an approximation via authored durations, not tracked wall-clock time, consistent with how Home already reports time).
+- **درس‌های انجام‌داده**: `lessonsDoneCount()` — distinct lessons at "آشنا"+ mastery **or** with a `lesson_done` attempt (§43's OR logic), reused here as a cross-user count rather than a per-lesson boolean.
+- **تمرین‌های حل‌شده**: `practicesSolvedCount()` — distinct practice *activities* ever answered `correct`/`correct_with_hint`, not a count of attempts, so a practice reviewed and re-solved five times still counts once.
+
+**Why.** Direct owner request: create an admin account (the owner's own — no separate account needed) and restrict cross-learner progress visibility to it.
+
+**Consequences.** This is the first permission distinction on the install (previously every authenticated user could do everything). No admin UI to manage the flag yet — toggling anyone else's `is_admin` is a manual DB update, acceptable at this install's scale (owner + 1-2 friends). `FriendsTest` updated: the happy-path test now acts as an admin, plus two new tests for the 403 and the hidden nav link.

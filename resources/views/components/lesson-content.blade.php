@@ -1,7 +1,7 @@
 {{-- Video/text tabs + key points for a lesson. Used by the lesson page and the session pane. --}}
 @props(['lesson', 'compact' => false])
-@php $hasVideo = $lesson->videos->isNotEmpty(); @endphp
-<div x-data="{ tab: '{{ $hasVideo ? 'video' : 'text' }}' }" {{ $attributes }}>
+@php $hasVideo = $lesson->videos->isNotEmpty(); $hasEnglish = filled($lesson->content_en); @endphp
+<div x-data="{ tab: '{{ $hasVideo ? 'video' : 'text' }}', textLang: 'fa' }" {{ $attributes }}>
     <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-line">
         @if ($hasVideo)
             <button type="button" class="btn btn-sm" :class="tab === 'video' ? '' : 'btn-ghost'" @click="tab = 'video'">
@@ -12,6 +12,12 @@
             <x-icon name="text" class="w-3.5 h-3.5" /> متن
             @unless ($hasVideo)<span class="badge badge-warn ms-1">پیشنهادی</span>@endunless
         </button>
+        @if ($hasEnglish)
+            <div x-show="tab === 'text'" x-cloak class="flex items-center gap-1 bg-surface2 rounded-lg p-0.5 text-[12px]">
+                <button type="button" class="px-2 py-1 rounded-md" :class="textLang === 'fa' ? 'bg-surface text-ink' : 'text-muted'" @click="textLang = 'fa'">فارسی</button>
+                <button type="button" class="px-2 py-1 rounded-md" :class="textLang === 'en' ? 'bg-surface text-ink' : 'text-muted'" @click="textLang = 'en'">English</button>
+            </div>
+        @endif
         <span class="ms-auto text-[12.5px] text-faint flex items-center gap-1.5"><x-icon name="clock" class="w-3.5 h-3.5" /> حدود {{ fa_num($lesson->estimated_minutes) }} دقیقه</span>
     </div>
 
@@ -63,9 +69,14 @@
         </div>
     @endif
 
-    <div x-show="tab === 'text'" x-cloak class="{{ $compact ? 'px-5 py-3' : 'px-6 py-4' }} prose-fa">
+    <div x-show="tab === 'text' && textLang === 'fa'" x-cloak class="{{ $compact ? 'px-5 py-3' : 'px-6 py-4' }} prose-fa">
         {!! Str::markdown($lesson->content ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}
     </div>
+    @if ($hasEnglish)
+        <div x-show="tab === 'text' && textLang === 'en'" x-cloak dir="ltr" class="{{ $compact ? 'px-5 py-3' : 'px-6 py-4' }} prose-fa">
+            {!! Str::markdown($lesson->content_en, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}
+        </div>
+    @endif
 
     @if (! empty($lesson->key_points) || ! empty($lesson->common_mistakes))
         <div class="mx-4 mb-4 rounded-lg bg-surface2 px-4 py-3">

@@ -29,6 +29,7 @@ course/<slug>/                       owner's media (git-ignored, ~GBs) — symli
 content/<slug>/
   course.json                        course meta + lessons[] (order = array order)
   lessons/<lesson-slug>.md           lesson text (Markdown)
+  lessons/<lesson-slug>.en.md        optional English text — same lesson, see §3.1a
   lessons/<lesson-slug>.practices.json
 
 tools/authoring/                     vtt2txt.py, srt2vtt.py, nbdump.py, validate.py (see §4)
@@ -79,6 +80,15 @@ Lesson slugs are kebab-case English topic names (`parameter-defaults-beware`), n
 ### 3.2 `lessons/<slug>.md`
 
 Plain Markdown (GitHub flavored: tables, fenced code, blockquotes). The page shows it in the «متن» tab, and `key_points` / `common_mistakes` are appended automatically — don't repeat them at the end of the text. Rules and style in §5.
+
+#### Optional English text (`<slug>.en.md`)
+
+As of C-03 (2026-09-16, owner request), courses may carry an English version of the lesson body alongside the Persian one. It's per-course, not per-lesson: C-01 and C-02 stay Persian-only (owner explicitly said not to backfill them); every lesson of C-03 onward (the «مسیر رهبری فنی» bundle) gets both.
+
+- File: `lessons/<lesson-slug>.en.md`, same Markdown rules as the Persian file. Imported into `Lesson.content_en` (nullable — importer skips it silently when the file doesn't exist).
+- The lesson page only shows a فارسی/English toggle next to the «متن» tab when `content_en` is present; nothing changes for lessons/courses without it.
+- **Write the English version from the transcript directly, not as a translation of the Persian.** The structural decisions (headings, which examples to use, what to defer to a later lesson) are already made once you've written the Persian version — reuse them — but render the prose in natural English, not a literal translation. This is meaningfully cheaper than authoring both from scratch, and avoids "translationese."
+- `key_points`, `common_mistakes` and practices stay Persian-only for now — this only covers the lesson body (`content`/`content_en`). Revisit if that ever needs to change.
 
 ### 3.3 `lessons/<slug>.practices.json`
 

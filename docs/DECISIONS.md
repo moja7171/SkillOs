@@ -762,3 +762,35 @@ A fifth, smaller item bundled in: **practice-level attachments.** `attachments` 
 **Why.** Direct owner bug report from real use of the platform, fixed as a prerequisite before starting C-03's authoring (the owner's explicit condition).
 
 **Consequences.** New routes: `GET activities/{activity}` (`session.open`) and `DELETE session/{attempt}` (`session.cancel`); `POST activities/{activity}/start` (`session.start`) keeps its exact old behavior for the "try again" case. 7 new tests across `SessionTest`, `LessonPageTest`, `CourseImporterTest` cover the new open/resume/cancel/history/attachments behavior; full suite at 120/120. Verified live via CDP end-to-end: badges on the lesson page, the styled cancel and give-up modals, an actual attempt getting deleted on cancel, and a real two-attempt history rendering correctly.
+
+---
+
+## 52. Optional English lesson text, per-course from C-03 onward (2026-09-16)
+
+**Decision.** Owner wants an English version of the lesson body available starting with C-03 («مسیر رهبری فنی») — C-01/C-02 stay Persian-only, not backfilled. Added `lessons.content_en` (nullable `longText`), a parallel optional `<slug>.en.md` file next to `<slug>.md` (mirrors the existing `.en.vtt`/`.fa.vtt` subtitle-pair convention), and a فارسی/English toggle in `<x-lesson-content>` next to the ویدیو/متن tabs — shown only when `content_en` is present, so every existing course/lesson is completely unaffected. The English pane renders with `dir="ltr"` (everything else in the app assumes `dir="rtl"` from `<html>`, per §50).
+
+Authoring workflow: write the English version **from the transcript**, not as a translation of the already-written Persian — the structural choices (headings, which examples, what to defer to a later lesson) are already settled once the Persian exists, so reuse them, but write natural English prose rather than translating literally. `key_points`/`common_mistakes`/practices stay Persian-only for now; only the lesson body is bilingual.
+
+Retroactive scope, confirmed via `AskUserQuestion`: the 18 lessons of C-03's «مقدمه و مبانی» section (already authored Persian-only before this request) get English text added too, not just lessons written from this point forward — the course itself is the boundary, not the point in time.
+
+**Why.** Direct owner request, alongside an explicit cost/effort tradeoff conversation: producing English text roughly doubles the writing volume per lesson, which cuts against the same conversation's ask to reduce token burn — flagged this directly rather than silently absorbing the cost. The "write English from transcript, not translate from Persian" workflow keeps the incremental cost closer to +30–50% than +100%, since the hard part (structure, example selection, scope boundaries with neighboring lessons) is already decided.
+
+**Consequences.** `CourseImporter` reads `<slug>.en.md` when present (silently skipped otherwise, `content_en` stays `null`) — no `validate.py` requirement added, since this is optional per-course, not a house rule for every course. 2 new tests (`CourseImporterTest`, `LessonPageTest`) cover the import and the toggle's visibility. `php artisan test --compact` at 122/122.
+
+---
+
+## 53. Video streaming from other devices — a permanent Cloudflare Tunnel, replacing `MEDIA_BASE_URL=http://localhost:8765` (2026-09-16, in progress)
+
+**Problem.** Owner reported videos don't play at all from a phone or a second laptop. Root cause: production's `MEDIA_BASE_URL` is `http://localhost:8765` (§25's "media stays on the owner's machine" design, via `tools/media-server.py`) — `localhost` is a deliberate browser-security trick (an `https://` page is allowed to load `http://localhost` media without a mixed-content block), but it only resolves to *the viewer's own device*. On the owner's daily machine (where `media-server.py` actually runs) this works by coincidence; on any other device, `localhost:8765` points at nothing.
+
+**Decision.** Expose `media-server.py` through a **named, permanent Cloudflare Tunnel** at `https://media.growwise.ir`, replacing the `localhost` URL. Two alternatives considered and rejected: Tailscale (private VPN — rejected because the owner wants this reachable from arbitrary devices without installing an app on each one first) and a Cloudflare *quick* tunnel (`trycloudflare.com` — rejected because its URL changes on every restart, and updating `MEDIA_BASE_URL` requires a manual cPanel edit each time, so instability there is a recurring chore, not a one-off). DNS approach: **delegate only the `media` subdomain** to Cloudflare via an NS record at Parspack (the registrar/DNS host for `growwise.ir`) — not moving the whole domain's nameservers — so email and the rest of the domain stay completely untouched.
+
+**Status as of 2026-09-16, mid-setup — resume here:**
+- [x] `cloudflared` already installed at `/home/moja/bin/cloudflared` (v2026.8.3), nothing configured yet (`~/.cloudflared/` doesn't exist).
+- [x] Confirmed quick tunnels (`cloudflared tunnel --url ...`, needs `api.trycloudflare.com`) are **blocked from Claude's own Bash tool** by a sandbox network policy (general internet works fine — `google.com`/`1.1.1.1` succeed — only `trycloudflare.com` is refused). Unknown yet whether `api.cloudflare.com` (needed for the real, named-tunnel flow below) is also blocked — untested. If it also fails when attempted, the remaining steps need to be run in the owner's own terminal, not through Claude's Bash tool.
+- [ ] **Owner's steps** (given to them, not yet confirmed done): (1) add `media.growwise.ir` as its own Site/zone in Cloudflare (not the apex domain) — Cloudflare issues 2 dedicated nameservers for just that zone; (2) at Parspack, add an NS record delegating `media` to those 2 nameservers; (3) wait for that NS delegation to propagate, then run `cloudflared tunnel login` in a real terminal on the machine that runs `media-server.py`, authorizing against the `media.growwise.ir` zone (produces `~/.cloudflared/cert.pem`).
+- [ ] **Once the owner confirms the above:** `cloudflared tunnel create skillos-media` → `cloudflared tunnel route dns skillos-media media.growwise.ir` → a `~/.cloudflared/config.yml` mapping `media.growwise.ir` → `http://localhost:8765` → `cloudflared service install` (runs it as a systemd service, survives reboot/logout — this is the "permanent" part) → update production `skillos/.env`'s `MEDIA_BASE_URL` to `https://media.growwise.ir` (owner does this in cPanel; not automatable — `.env` is gitignored and untouched by deploys, see §… the git-based deploy section of the README) → `/_ops/optimize?token=...` to refresh the config cache.
+
+**Why.** Direct owner report; permanent (not quick-tunnel) requested explicitly once the quick-tunnel's instability was explained.
+
+**Consequences.** Once live, `media-server.py` must keep running on the owner's machine (unchanged from the original design) — the tunnel only fixes *reachability*, not the "media lives on the owner's own machine" architecture itself. No app code changes; this is pure ops/DNS/service setup, nothing to test with `php artisan test`.

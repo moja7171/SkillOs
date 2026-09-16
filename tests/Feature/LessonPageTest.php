@@ -48,4 +48,17 @@ class LessonPageTest extends TestCase
         Attempt::create(['activity_id' => $practice->id, 'user_id' => $user->id, 'result_status' => 'correct', 'evidence' => ['source' => 'free']]);
         $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('حل‌شده');
     }
+
+    public function test_english_language_toggle_only_shows_up_when_english_text_exists(): void
+    {
+        $user = User::factory()->create();
+
+        $withoutEnglish = Lesson::factory()->withActivities()->create();
+        $this->actingAs($user)->get($withoutEnglish->url())->assertOk()->assertDontSee('English');
+
+        $withEnglish = Lesson::factory()->withActivities()->create(['content_en' => 'English lesson text.']);
+        $this->actingAs($user)->get($withEnglish->url())->assertOk()
+            ->assertSee('English')
+            ->assertSee('English lesson text.');
+    }
 }

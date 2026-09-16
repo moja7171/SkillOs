@@ -97,6 +97,19 @@ class CourseImporterTest extends TestCase
         $this->assertSame([['title' => 'قالب', 'url' => '/media/demo/files/template.pdf']], $practice->payload['attachments']);
     }
 
+    public function test_optional_english_text_is_imported_alongside_persian_and_is_null_when_absent(): void
+    {
+        $withEnglish = $this->lesson('a');
+        $withEnglish['content_en'] = 'English text.';
+        $withoutEnglish = $this->lesson('b');
+        $this->writeCourse(['lessons' => [$withEnglish, $withoutEnglish]]);
+
+        app(CourseImporter::class)->import('t', root: $this->root);
+
+        $this->assertSame('English text.', Lesson::where('slug', 'a')->sole()->content_en);
+        $this->assertNull(Lesson::where('slug', 'b')->sole()->content_en);
+    }
+
     public function test_reimport_updates_content_and_keeps_learner_data(): void
     {
         $this->writeCourse(['lessons' => [$this->lesson('intro', title: 'قدیمی')]]);
@@ -206,8 +219,11 @@ class CourseImporterTest extends TestCase
         $lessons = $overrides['lessons'];
         foreach ($lessons as &$l) {
             File::put("$dir/lessons/{$l['slug']}.md", $l['content'] ?? "متن {$l['slug']}");
+            if (isset($l['content_en'])) {
+                File::put("$dir/lessons/{$l['slug']}.en.md", $l['content_en']);
+            }
             File::put("$dir/lessons/{$l['slug']}.practices.json", json_encode($l['practices'], JSON_UNESCAPED_UNICODE));
-            unset($l['content'], $l['practices']);
+            unset($l['content'], $l['content_en'], $l['practices']);
         }
         unset($l);
 

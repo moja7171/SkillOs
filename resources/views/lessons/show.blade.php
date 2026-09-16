@@ -34,7 +34,7 @@
                 <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = true" title="فهرست درس‌ها" aria-label="باز کردن فهرست درس‌ها"><x-icon name="text" class="w-4 h-4" /></button>
                 <div class="min-w-0 flex-1 leading-[1.4]">
                     <div class="text-[12px] text-muted truncate">
-                        <a href="{{ route('courses.show', $course) }}" class="text-muted hover:text-ink" dir="auto">{{ $course->title }}</a>
+                        <a href="{{ route('courses.show', $course) }}" class="text-muted hover:text-ink">{{ $course->title }}</a>
                         <span class="text-faint mx-1">/</span>
                         <span>{{ $lesson->section }}</span>
                         <span class="text-faint mx-1">·</span>
@@ -64,7 +64,7 @@
                 @endif
 
                 @if ($lesson->summary)
-                    <div class="text-muted leading-[1.8] max-w-3xl" dir="auto">{{ $lesson->summary }}</div>
+                    <div class="text-muted leading-[1.8] max-w-3xl">{{ $lesson->summary }}</div>
                 @endif
 
                 <x-lesson-content :lesson="$lesson" class="card" />
@@ -127,7 +127,7 @@
                             @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); @endphp
                             <a href="{{ media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-3 px-[18px] py-2.5 border-b border-line last:border-b-0 text-ink hover:bg-hover">
                                 <span class="badge badge-ghost uppercase">{{ $ext ?: 'file' }}</span>
-                                <span class="text-[13px] flex-1 min-w-0 truncate" dir="auto">{{ $file['title'] }}</span>
+                                <span class="text-[13px] flex-1 min-w-0 truncate">{{ $file['title'] }}</span>
                             </a>
                         @empty
                             <div class="px-[18px] py-3 text-[13px] text-faint">فایلی برای این درس نیست.</div>
@@ -167,7 +167,7 @@
                x-init="$nextTick(() => { const cur = $el.querySelector('[data-current]'); const box = $refs.list; if (cur && box) { box.scrollTop = Math.max(0, cur.offsetTop - box.clientHeight / 2); } })">
             <div class="px-4 py-3.5 border-b border-line flex items-start gap-3">
                 <div class="min-w-0 flex-1">
-                    <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent truncate" dir="auto">{{ $course->title }}</a>
+                    <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent truncate">{{ $course->title }}</a>
                     <div class="text-[12px] text-muted mt-0.5">{{ fa_num($doneCount) }} از {{ fa_num($total) }} درس حداقل «آشنا»</div>
                     <div class="levelbar mt-2 !gap-0 bg-surface2" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $total }}" aria-valuenow="{{ $doneCount }}" aria-label="پیشرفت دوره"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);"></span></div>
                 </div>

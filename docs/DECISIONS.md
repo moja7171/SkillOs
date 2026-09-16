@@ -731,3 +731,17 @@ Depth: same full authoring bar as C-01/C-02 (practices+rubrics, key_points, comm
 **Why.** Direct owner request, resolved via `AskUserQuestion` before any content work started (structure, name, depth, and whether to include an unrelated `course/scrum course/` folder — set aside, not part of the 10).
 
 **Consequences.** Course count on the catalog page will grow from 2 to potentially 12; no catalog-page changes needed for this (it already lists an arbitrary number of courses). If a genuine cross-course "path" UI is ever wanted later (progress across all 10, a suggested order enforced by the app rather than just narrative framing), that's new scope requiring its own decision — not assumed here.
+
+---
+
+## 50. Fixed Persian text visually scrambling whenever it starts with an English word (2026-09-16)
+
+**Decision.** Owner reported RTL text "falling apart" around English words across quizzes, practices, answers and key points. Root-caused with a live before/after screenshot rather than guessed: `dir="auto"` was applied on ~37 elements holding *authored Persian prose* (key_points, common_mistakes, mcq options, practice prompts/feedback/hints, expected answers, titles, summaries). `dir="auto"` picks an element's base direction from its *first strong-directional character* — so any key point/sentence that happens to start with an English term (`bool زیرکلاس int است؛ True == 1 و...`) got its **entire line** flipped to an LTR base direction, not just that one word. That put the bullet marker on the left, reversed the whole line's flow, and left the embedded Persian segments as the ones being visually reordered — the opposite of what `dir="auto"` was presumably added for. One spot (`courses/index.blade.php`) had already band-aided the symptom with a `text-right` override and a comment describing the exact mechanism, without fixing the cause.
+
+Since every learner-visible string in this app is Persian prose by house rule (English only as embedded technical jargon — never English-first), `dir="auto"`'s "guess the language" heuristic was never the right tool here; the base direction is always known statically. Removed `dir="auto"` from all 37 authored-content spots (they now correctly inherit `dir="rtl"` from `<html>`), removed the `text-right` band-aid alongside it, and kept `dir="auto"` on the 4 spots where the content genuinely isn't authored/known-language — the search box, the practice-answer textarea, the "my last answer" display, and a person's own name.
+
+Separately, embedded English terms (inline `` `code` `` spans, acronyms) still need to render as a stable left-to-right *unit* inside a correctly-RTL-based paragraph, or reordering can still happen at the run level even with the right base direction. `.prose-fa code` already had `unicode-bidi: isolate` for this, but the global `code, pre, .mono` rule (used by key_points/common_mistakes and other non-`.prose-fa` spots) only had `direction: ltr` — insufficient on its own. Added `unicode-bidi: isolate` there too.
+
+**Why.** Owner bug report, reproduced and root-caused via a live CDP screenshot of a real key point (`booleans.practices.json`'s `bool زیرکلاس int است...`) before touching anything, then re-verified after the fix on the same content.
+
+**Consequences.** Purely a markup/CSS fix — `php artisan test --compact` unaffected (113/113). Any future Blade view showing authored Persian text should not reach for `dir="auto"`; only use it for genuinely user-supplied or language-uncertain content (matching the 4 spots kept here).

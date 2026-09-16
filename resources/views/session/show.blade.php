@@ -29,8 +29,8 @@
         <nav class="h-14 border-b border-line bg-surface flex items-center px-4 sm:px-6 gap-4">
             <a href="{{ $lesson->url() }}" class="iconbtn" title="خروج از جلسه" aria-label="خروج از جلسه"><x-icon name="arrow" class="w-4 h-4" /></a>
             <div class="min-w-0 leading-[1.4]">
-                <div class="text-[12px] text-muted truncate" dir="auto">{{ $course->title }} <span class="text-faint">/</span> {{ $lesson->title }}</div>
-                <div class="font-bold text-[15px] truncate" dir="auto">{{ $isLearn ? 'یادگیری: ' : 'تمرین: ' }}{{ $activity->title }}</div>
+                <div class="text-[12px] text-muted truncate">{{ $course->title }} <span class="text-faint">/</span> {{ $lesson->title }}</div>
+                <div class="font-bold text-[15px] truncate">{{ $isLearn ? 'یادگیری: ' : 'تمرین: ' }}{{ $activity->title }}</div>
             </div>
             <div class="hidden sm:flex items-center gap-2">
                 @if ($isLearn)
@@ -90,7 +90,7 @@
             <div class="flex flex-col bg-surface lg:max-h-[calc(100vh-56px)] overflow-y-auto">
                 <div class="px-6 pt-5 pb-4 border-b border-line">
                     <div class="text-[12.5px] font-semibold text-muted mb-1">صورت تمرین</div>
-                    <div class="prose-fa" dir="auto">{!! Str::markdown($payload['prompt'] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</div>
+                    <div class="prose-fa">{!! Str::markdown($payload['prompt'] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</div>
                 </div>
 
                 <div class="flex-1 px-6 py-4 flex flex-col gap-4">
@@ -101,14 +101,14 @@
                     @if ($feedback && ! $done)
                         <div class="alert {{ $lastVerdict === 'partial' ? 'alert-warn' : 'alert-bad' }} flex items-start gap-2.5">
                             <x-icon :name="$lastVerdict === 'partial' ? 'bulb' : 'x'" class="w-4 h-4 mt-1 shrink-0" />
-                            <div class="text-[13.5px]" dir="auto"><span class="font-semibold">{{ $lastVerdict === 'partial' ? 'نزدیکه، ولی کامل نیست.' : 'هنوز درست نیست.' }}</span> <span class="opacity-90">{!! Str::inlineMarkdown($feedback, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span></div>
+                            <div class="text-[13.5px]"><span class="font-semibold">{{ $lastVerdict === 'partial' ? 'نزدیکه، ولی کامل نیست.' : 'هنوز درست نیست.' }}</span> <span class="opacity-90">{!! Str::inlineMarkdown($feedback, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span></div>
                         </div>
                     @endif
 
                     @for ($i = 0; $i < $hintsShown; $i++)
                         <div class="rounded-lg px-4 py-3 flex items-start gap-2.5 text-[13.5px]" style="background: color-mix(in srgb, var(--accent) 10%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);">
                             <x-icon name="bulb" class="w-4 h-4 mt-1 shrink-0 text-accent" />
-                            <div dir="auto"><span class="font-semibold text-accent">راهنمایی {{ fa_num($i + 1) }} از ۲ · </span><span class="text-muted">{!! Str::inlineMarkdown($payload['hints'][$i] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span></div>
+                            <div><span class="font-semibold text-accent">راهنمایی {{ fa_num($i + 1) }} از ۲ · </span><span class="text-muted">{!! Str::inlineMarkdown($payload['hints'][$i] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span></div>
                         </div>
                     @endfor
 
@@ -120,7 +120,7 @@
                                     @foreach ($payload['options'] as $i => $option)
                                         <label class="flex items-center gap-3 rounded-lg border border-line2 bg-surface2 px-4 py-3 cursor-pointer hover:border-faint has-[:checked]:border-accent">
                                             <input type="radio" name="response" value="{{ $i }}" class="form-radio text-accent focus:ring-accent bg-surface border-line2" @checked(old('response', $evidence['response'] ?? null) == (string) $i) required>
-                                            <span class="text-[14px]" dir="auto">{!! Str::inlineMarkdown($option, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span>
+                                            <span class="text-[14px]">{!! Str::inlineMarkdown($option, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span>
                                         </label>
                                     @endforeach
                                 </div>
@@ -139,7 +139,7 @@
                     @if ($done)
                         <div class="alert {{ in_array($attempt->result_status, ['correct', 'correct_with_hint']) ? 'alert-ok' : 'alert-bad' }} flex items-start gap-2.5">
                             <x-icon :name="in_array($attempt->result_status, ['correct', 'correct_with_hint']) ? 'check' : 'x'" class="w-4 h-4 mt-1 shrink-0" />
-                            <div class="text-[13.5px]" dir="auto">
+                            <div class="text-[13.5px]">
                                 <span class="font-semibold">{{ $resultLabel }}.</span>
                                 @if ($feedback)<span class="opacity-90">{!! Str::inlineMarkdown($feedback, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span>@endif
                             </div>
@@ -175,7 +175,7 @@
                         @if ($revealed || in_array($attempt->result_status, ['correct', 'correct_with_hint']))
                             <div class="card p-4">
                                 <div class="text-[12.5px] font-semibold text-muted mb-2">{{ $revealed ? 'پاسخ و توضیح' : 'برای مقایسه: پاسخ مرجع' }}</div>
-                                <div class="prose-fa" dir="auto">{!! Str::markdown($payload['expected_outcome'] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</div>
+                                <div class="prose-fa">{!! Str::markdown($payload['expected_outcome'] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</div>
                             </div>
                         @endif
 

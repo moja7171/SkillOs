@@ -22,10 +22,10 @@
                 @foreach ($spots as $s)
                     <a href="{{ $s['lesson']->url() }}" class="block px-[18px] py-3 border-b border-line last:border-b-0 text-ink hover:bg-hover">
                         <div class="flex items-center justify-between gap-3">
-                            <span class="font-semibold truncate" dir="auto">{{ $s['lesson']->title }}</span>
+                            <span class="font-semibold truncate">{{ $s['lesson']->title }}</span>
                             <span class="text-bad text-[12.5px] font-semibold shrink-0">{{ fa_num($s['incorrect']) }} از {{ fa_num($s['total']) }} غلط</span>
                         </div>
-                        <span class="text-faint text-[12.5px]" dir="auto">{{ $s['lesson']->course->title }}</span>
+                        <span class="text-faint text-[12.5px]">{{ $s['lesson']->course->title }}</span>
                     </a>
                 @endforeach
             </div>

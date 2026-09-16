@@ -21,7 +21,7 @@
     html { @apply bg-bg text-ink antialiased; }
     [x-cloak] { display: none !important; }
     body { @apply font-sans text-[14px] leading-[1.7]; }
-    code, pre, .mono { @apply font-mono text-[12.5px]; direction: ltr; text-align: left; }
+    code, pre, .mono { @apply font-mono text-[12.5px]; direction: ltr; text-align: left; unicode-bidi: isolate; }
     a { @apply text-accent; }
     a:hover { @apply text-ink; }
 }

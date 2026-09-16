@@ -18,15 +18,13 @@
                                 {{ mb_substr($course->title, 0, 1) }}
                             </span>
                             <div class="flex-1 min-w-0 flex items-center justify-between gap-2">
-                                {{-- text-right: a title starting with a Latin word (dir="auto") would
-                                     otherwise left-align and drift away from the avatar next to it. --}}
-                                <div class="text-[16px] font-semibold leading-[1.4] text-right" dir="auto">{{ $course->title }}</div>
+                                <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
                                 @if ($enrolled)
                                     <span class="badge badge-ok shrink-0"><span class="dot"></span>برداشته‌شده</span>
                                 @endif
                             </div>
                         </div>
-                        <div class="text-[13px] text-muted line-clamp-3" dir="auto">{{ $course->description ?? $course->outcome_statement }}</div>
+                        <div class="text-[13px] text-muted line-clamp-3">{{ $course->description ?? $course->outcome_statement }}</div>
                     </a>
                     <div class="flex items-center justify-between gap-3 pt-2.5 border-t border-line">
                         <div class="flex items-center gap-3 text-[12.5px] text-faint">

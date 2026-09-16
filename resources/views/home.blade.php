@@ -59,8 +59,8 @@
                                 <x-plan-item-badge :item="$primary" />
                                 @unless ($primary->activity->isLearn())<span class="badge badge-ghost">{{ $primary->activity->formLabel() }}</span>@endunless
                             </div>
-                            <div class="text-[22px] font-bold leading-[1.4]" dir="auto">{{ $primary->activity->title }}</div>
-                            <div class="text-muted" dir="auto">{{ $primary->activity->lesson->course->title }} &nbsp;·&nbsp; {{ $primary->activity->lesson->title }} &nbsp;·&nbsp; <span class="text-faint">دلیل:</span> {{ $primary->reason }}</div>
+                            <div class="text-[22px] font-bold leading-[1.4]">{{ $primary->activity->title }}</div>
+                            <div class="text-muted">{{ $primary->activity->lesson->course->title }} &nbsp;·&nbsp; {{ $primary->activity->lesson->title }} &nbsp;·&nbsp; <span class="text-faint">دلیل:</span> {{ $primary->reason }}</div>
                             <div class="flex items-center gap-4 mt-1.5">
                                 <form method="POST" action="{{ route('session.start-planned', $primary) }}">
                                     @csrf
@@ -79,7 +79,7 @@
                                         @csrf
                                         <button type="submit" class="w-full card bg-surface2 px-3.5 py-2.5 flex items-center gap-2.5 text-start text-ink hover:border-line2">
                                             @if ($isItem)<x-plan-item-badge :item="$alt" />@else<span class="badge badge-ghost">آزاد</span>@endif
-                                            <span class="flex-1 min-w-0 truncate" dir="auto">{{ $act->title }} <span class="text-faint">· {{ $act->lesson->course->title }}</span></span>
+                                            <span class="flex-1 min-w-0 truncate">{{ $act->title }} <span class="text-faint">· {{ $act->lesson->course->title }}</span></span>
                                             <span class="text-faint text-[12.5px] shrink-0">{{ fa_num($act->estimated_minutes) }} دقیقه</span>
                                         </button>
                                     </form>
@@ -110,7 +110,7 @@
                     @foreach ($todayByEnrollment as $items)
                         @php $courseTitle = $items->first()->activity->lesson->course->title; @endphp
                         <div class="px-[18px] pt-3 pb-1.5 flex items-center gap-2 bg-surface2">
-                            <span class="text-[12.5px] font-semibold" dir="auto">{{ $courseTitle }}</span>
+                            <span class="text-[12.5px] font-semibold">{{ $courseTitle }}</span>
                             <span class="text-faint text-[12px]">{{ fa_num($items->where('status', 'completed')->count()) }} از {{ fa_num($items->count()) }}</span>
                         </div>
                         @foreach ($items as $item)
@@ -123,7 +123,7 @@
                                     <span class="w-5 h-5 rounded-md border-[1.5px] shrink-0 {{ $primary && $item->is($primary) ? 'border-accent' : 'border-line2' }}"></span>
                                 @endif
                                 <x-plan-item-badge :item="$item" />
-                                <span class="flex-1 min-w-0 truncate {{ $item->status === 'completed' ? 'text-muted line-through' : ($primary && $item->is($primary) ? 'font-semibold' : '') }}" dir="auto">{{ $item->activity->title }}</span>
+                                <span class="flex-1 min-w-0 truncate {{ $item->status === 'completed' ? 'text-muted line-through' : ($primary && $item->is($primary) ? 'font-semibold' : '') }}">{{ $item->activity->title }}</span>
                                 <span class="num">{{ $item->duration_minutes }}m</span>
                                 @if ($item->status === 'scheduled')
                                     <form method="POST" action="{{ route('plan-items.skip', $item) }}">
@@ -188,7 +188,7 @@
                                 </span>
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center justify-between gap-2">
-                                        <span class="font-semibold truncate text-right {{ $enrollment->status !== 'active' ? 'text-muted' : '' }}" dir="auto">{{ $course->title }}</span>
+                                        <span class="font-semibold truncate {{ $enrollment->status !== 'active' ? 'text-muted' : '' }}">{{ $course->title }}</span>
                                         @if ($enrollment->status !== 'active')
                                             <span class="badge badge-ghost shrink-0">{{ $enrollment->statusLabel() }}</span>
                                         @else

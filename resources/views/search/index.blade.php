@@ -19,11 +19,11 @@
                 @foreach ($results as $r)
                     <a href="{{ $r['lesson']->url() }}" class="block px-[18px] py-3 border-b border-line last:border-b-0 text-ink hover:bg-hover">
                         <div class="flex items-center gap-2 flex-wrap">
-                            <span class="font-semibold" dir="auto">{{ $r['lesson']->title }}</span>
-                            <span class="text-faint text-[12.5px]" dir="auto">· {{ $r['lesson']->course->title }}</span>
+                            <span class="font-semibold">{{ $r['lesson']->title }}</span>
+                            <span class="text-faint text-[12.5px]">· {{ $r['lesson']->course->title }}</span>
                         </div>
                         @if ($r['snippet'])
-                            <div class="text-[12.5px] text-muted mt-1 truncate" dir="auto">{{ $r['snippet'] }}</div>
+                            <div class="text-[12.5px] text-muted mt-1 truncate">{{ $r['snippet'] }}</div>
                         @endif
                     </a>
                 @endforeach

@@ -8,7 +8,9 @@
         <x-nav-link :href="route('home')" :active="request()->routeIs('home')">خانه</x-nav-link>
         <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses.*') || request()->routeIs('lessons.*') || request()->routeIs('enrollments.*')">همه‌ی دوره‌ها</x-nav-link>
         <x-nav-link :href="route('week')" :active="request()->routeIs('week')">هفته</x-nav-link>
-        <x-nav-link :href="route('friends')" :active="request()->routeIs('friends')">دوستان</x-nav-link>
+        @if (auth()->user()->is_admin)
+            <x-nav-link :href="route('friends')" :active="request()->routeIs('friends')">دوستان</x-nav-link>
+        @endif
     </div>
 
     <div class="ms-auto flex items-center gap-3">
@@ -30,7 +32,9 @@
                     <x-dropdown-link :href="route('home')" @class(['bg-surface2' => request()->routeIs('home')])>خانه</x-dropdown-link>
                     <x-dropdown-link :href="route('courses.index')" @class(['bg-surface2' => request()->routeIs('courses.*') || request()->routeIs('lessons.*') || request()->routeIs('enrollments.*')])>همه‌ی دوره‌ها</x-dropdown-link>
                     <x-dropdown-link :href="route('week')" @class(['bg-surface2' => request()->routeIs('week')])>هفته</x-dropdown-link>
-                    <x-dropdown-link :href="route('friends')" @class(['bg-surface2' => request()->routeIs('friends')])>دوستان</x-dropdown-link>
+                    @if (auth()->user()->is_admin)
+                        <x-dropdown-link :href="route('friends')" @class(['bg-surface2' => request()->routeIs('friends')])>دوستان</x-dropdown-link>
+                    @endif
                     <x-dropdown-link :href="route('search')" @class(['bg-surface2' => request()->routeIs('search')])>جست‌وجو</x-dropdown-link>
                 </x-slot>
             </x-dropdown>

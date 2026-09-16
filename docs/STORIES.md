@@ -151,3 +151,6 @@ New button on the lesson page, gated on every practice being answered correctly 
 
 ### [x] S-53 `Planner::today()` only materialized once per enrollment per day
 `materialize()`/`candidatesFor()` were already safely re-callable; a stale `! $existing->contains(...)` guard prevented calling them again the same day even when a lesson had just become newly eligible. Removed — the plan's own «امروز» list now tops up same-day instead of waiting for tomorrow. Not the primary answer to "move at my own pace" (that's free lesson-page navigation, already unlocked, plus S-52) but a real bug worth fixing alongside it.
+
+### [x] S-54 «دوستان» is now an admin-only, all-time progress dashboard (DECISIONS.md §44)
+First `is_admin` flag on the install (migration sets it for the owner's own account). `FriendsController` 403s non-admins; both nav menus hide the link entirely for them. Per-user numbers switched from "this week's practice count" to three all-time totals — minutes spent, distinct lessons done (mastery-or-mark-done, reusing S-52's OR logic), distinct practices ever solved.

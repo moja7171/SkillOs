@@ -27,9 +27,9 @@
 
 ```python
 import sys
-sys.getsizeof(0)        # 24  ← سربار خود شیء
-sys.getsizeof(1)        # 28  ← ۴ بایت برای خود عدد
-sys.getsizeof(2**1000)  # 160 ← (160-24)*8 = 1088 بیت
+sys.getsizeof(0)        # 24  ← the object's own overhead
+sys.getsizeof(1)        # 28  ← 4 bytes for the number itself
+sys.getsizeof(2**1000)  # 160 ← (160-24)*8 = 1088 bits
 ```
 
 و سرعت: جمع دو عدد ۳۲/۶۴ بیتی یک عمل CPU است؛ اعداد بزرگ‌تر باید تکه‌تکه پردازش شوند. benchmark مدرس (۱۰ میلیون بار `n * 2`): با `10` ≈ ۰٫۵ ثانیه، با `2**100` ≈ ۰٫۹ ثانیه، با `2**10000` ≈ ۶٫۷ ثانیه.

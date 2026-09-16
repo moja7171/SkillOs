@@ -11,7 +11,7 @@ total = (first_value
 
 names = [
     "Ali",
-    "Sara",   # کامنت هم مجاز است
+    "Sara",   # a comment is allowed here too
     "Reza",
 ]
 ```

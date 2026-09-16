@@ -14,8 +14,8 @@
 | کلاس خودت، اگر `__bool__` False یا `__len__` صفر برگرداند | |
 
 ```python
-bool(10), bool(1.5), bool(Fraction(3, 4)), bool(Decimal('10.5'))   # همه True
-bool(0), bool(0.0), bool(Fraction(0, 1)), bool(Decimal('0')), bool(0j)  # همه False
+bool(10), bool(1.5), bool(Fraction(3, 4)), bool(Decimal('10.5'))   # all True
+bool(0), bool(0.0), bool(Fraction(0, 1)), bool(Decimal('0')), bool(0j)  # all False
 bool([1, 2, 3]), bool('abc'), bool({'a': 1})     # True
 bool([]), bool(''), bool({}), bool(set())        # False
 bool(None)                                       # False
@@ -57,10 +57,10 @@ if my_list is not None and len(my_list) > 0:
 ```python
 a = ''
 if a is not None:
-    print(a[0])          # IndexError — رشته‌ی خالی None نیست
+    print(a[0])          # IndexError — an empty string isn't None
 
 a = None
-if len(a) > 0:           # TypeError — None طول ندارد
+if len(a) > 0:           # TypeError — None has no length
     print(a[0])
 ```
 

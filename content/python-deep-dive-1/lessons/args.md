@@ -6,7 +6,7 @@
 a, b, c = 10, 20, 30            # unpacking
 
 def func1(a, b, c): ...
-func1(10, 20, 30)                # همان چیز: (10, 20, 30) در (a, b, c) باز می‌شود
+func1(10, 20, 30)                # same thing: (10, 20, 30) unpacks into (a, b, c)
 ```
 
 پس تعجبی ندارد که `*` هم اینجا کار کند:
@@ -30,7 +30,7 @@ func1(10, 20, 1, 2, 3)           # c = (1, 2, 3)
 ```python
 def func1(a, b, *args, d):
     ...
-func1(10, 20, 'a', 'b', 100)     # TypeError — 100 به args می‌رود، d خالی می‌ماند
+func1(10, 20, 'a', 'b', 100)     # TypeError — 100 goes into args, d stays empty
 ```
 
 تعریف مجاز است، ولی `d` دیگر نمی‌تواند موقعیتی پر شود — بعد از `*args` چیز دیگری داریم: keyword-only (درس بعد).
@@ -50,15 +50,15 @@ avg()               # ZeroDivisionError
 سه راه برای حالت خالی:
 
 ```python
-# 1. صریح
+# 1. explicit
     if count == 0:
         return 0
     return total / count
 
-# 2. short-circuit (درس boolها): count == 0 falsy است و خودش برمی‌گردد
+# 2. short-circuit (the bools lesson): count == 0 is falsy and returns itself
     return count and total / count
 
-# 3. حداقل یک آرگومان را اجباری کن — خطای بهتر (TypeError: missing a) به‌جای تقسیم بر صفر
+# 3. make at least one argument required — a better error (TypeError: missing a) instead of divide-by-zero
 def avg(a, *args):
     count = len(args) + 1
     total = a + sum(args)
@@ -71,9 +71,9 @@ def avg(a, *args):
 def func1(a, b, c): print(a, b, c)
 l = [10, 20, 30]
 
-func1(l)        # TypeError: یک آرگومان دادی، سه تا لازم است — لیست خودش یک شیء است
-func1(*l)       # 10 20 30 — اول باز کن، بعد پاس بده
-func1(*[10, 20, 30, 40])   # TypeError: چهار تا؛ سه پارامتر
+func1(l)        # TypeError: you gave one argument, three are needed — the list itself is one object
+func1(*l)       # 10 20 30 — unpack first, then pass
+func1(*[10, 20, 30, 40])   # TypeError: four of them; three parameters
 
 def func1(a, b, c, *args): ...
 func1(*[10, 20, 30, 40, 50])    # args = (40, 50)

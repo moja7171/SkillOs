@@ -17,23 +17,23 @@
 ```python
 a = 10
 b = a
-a is b     # True  (ارجاع مشترک)
+a is b     # True  (shared reference)
 a == b     # True
 
 a = "hello"
 b = "hello"
-a is b     # True  — ولی روی این حساب نکن (interning)
+a is b     # True  — but don't rely on this (interning)
 a == b     # True
 
 a = [1, 2, 3]
 b = [1, 2, 3]
-a is b     # False (دو شیء جدا)
-a == b     # True  (محتوا یکی است؛ == درون لیست‌های تودرتو هم می‌رود)
+a is b     # False (two separate objects)
+a == b     # True  (content is the same; == recurses into nested lists too)
 
 a = 10
 b = 10.0
-a is b     # False (int و float نمی‌توانند یک شیء باشند)
-a == b     # True  (به‌عنوان عدد برابرند)
+a is b     # False (int and float can't be the same object)
+a == b     # True  (equal as numbers)
 
 a = 10 + 0j
 b = 10.0
@@ -50,7 +50,7 @@ a == b     # True
 a = None
 b = None
 c = None
-a is b, a is c, a is None    # همه True
+a is b, a is c, a is None    # all True
 
 x = 10
 x is None        # False

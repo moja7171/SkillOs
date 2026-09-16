@@ -8,7 +8,7 @@
 
 ```python
 int(10.9)      # 10
-int(-10.9)     # -10   ← truncation، نه floor
+int(-10.9)     # -10   ← truncation, not floor
 int(True)      # 1
 int(False)     # 0
 int()          # 0
@@ -23,7 +23,7 @@ int(Fraction(22, 7))    # 3
 int("1010", base=2)   # 10
 int("101", 2)         # 5
 int("FF", base=16)    # 255
-int("ff", base=16)    # 255   — حروف حساس به بزرگی نیستند
+int("ff", base=16)    # 255   — letters aren't case-sensitive
 int("534", base=8)    # 348
 int("A", base=11)     # 10
 int("B", base=11)     # ValueError: invalid literal for int() with base 11: 'B'
@@ -48,7 +48,7 @@ hex(255)    # '0xff'
 ```python
 a = 0b1010   # 10
 b = 0o12     # 10
-c = 0xA      # 10   (0xa هم همان است)
+c = 0xA      # 10   (0xa is the same)
 ```
 
 ## الگوریتم تغییر مبنا با div و mod
@@ -56,10 +56,10 @@ c = 0xA      # 10   (0xa هم همان است)
 برای مبناهای دیگر باید خودت بنویسی — و این تمرین خوبی برای `//` و `%` است. ایده: از همان معادله‌ی همیشگی، هر بار `n % b` **رقم بعدی از راست** را می‌دهد و `n // b` عددی است که باید ادامه بدهی. مثال مدرس، `232` در مبنای ۵:
 
 ```
-232 = 46·5 + 2        → رقم آخر: 2
- 46 =  9·5 + 1        → رقم بعدی: 1
+232 = 46·5 + 2        → last digit: 2
+ 46 =  9·5 + 1        → next digit: 1
   9 =  1·5 + 4        → 4
-  1 =  0·5 + 1        → 1، و div شد صفر: توقف
+  1 =  0·5 + 1        → 1, and div becomes zero: stop
 ```
 
 نتیجه: `1412₅`. الگوریتم:
@@ -74,8 +74,8 @@ def from_base10(n, b):
         return [0]
     digits = []
     while n > 0:
-        n, m = divmod(n, b)     # n //= b ; m = n % b — با ترتیب درست
-        digits.insert(0, m)     # از راست به چپ می‌سازیم
+        n, m = divmod(n, b)     # n //= b ; m = n % b — in the right order
+        digits.insert(0, m)     # we build it right to left
     return digits
 
 from_base10(10, 2)      # [1, 0, 1, 0]
@@ -107,7 +107,7 @@ def rebase_from_base10(number, base):
     if base < 2 or base > 36:
         raise ValueError("invalid base: 2 <= base <= 36")
     sign = -1 if number < 0 else 1
-    number *= sign                     # قدر مطلق
+    number *= sign                     # absolute value
     digits = from_base10(number, base)
     encoding = encode(digits, digit_map)
     if sign == -1:
@@ -115,6 +115,6 @@ def rebase_from_base10(number, base):
     return encoding
 
 e = rebase_from_base10(-314, 2)   # '-100111010'
-int(e, base=2)                    # -314  ← رفت و برگشت
+int(e, base=2)                    # -314  ← round trip
 rebase_from_base10(3451, 16)      # 'D7B'
 ```

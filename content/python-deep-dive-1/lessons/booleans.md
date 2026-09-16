@@ -13,7 +13,7 @@ isinstance(True, int)          # True
 `True` فقط یک نام است برای شیئی از نوع `bool` با مقدار درونی `1`؛ `False` همین با `0`. **singleton** هستند — در کل عمر برنامه یک شیء، یک آدرس. نتیجه: برای مقایسه با آن‌ها `is` و `==` هم‌ارزند:
 
 ```python
-id(True), id(3 < 4)       # یکسان — نتیجه‌ی مقایسه همان شیء True است
+id(True), id(3 < 4)       # the same — the comparison's result is that same True object
 (3 < 4) == True           # True
 (3 < 4) is True           # True
 ```
@@ -22,8 +22,8 @@ id(True), id(3 < 4)       # یکسان — نتیجه‌ی مقایسه همان
 
 ```python
 int(True), int(False)     # (1, 0)
-True == 1                 # True   — مقدار
-True is 1                 # False  — شیء متفاوت، نوع متفاوت
+True == 1                 # True   — value
+True is 1                 # False  — different object, different type
 id(True) == id(1)         # False
 ```
 
@@ -34,7 +34,7 @@ id(True) == id(1)         # False
 ```python
 True > False              # True   (1 > 0)
 (1 == 2) == False         # True
-(1 == 2) == 0             # True   — False همان 0
+(1 == 2) == 0             # True   — False is the same as 0
 True + True + True        # 3
 (True + True + True) % 2  # 1
 -True                     # -1
@@ -51,7 +51,7 @@ True + True + True        # 3
 bool(0)        # False
 bool(1)        # True
 bool(100)      # True
-bool(-1)       # True   ← در پایتون −1 «غلط» نیست، برخلاف بعضی زبان‌ها
+bool(-1)       # True   ← in Python, -1 isn't "false", unlike some other languages
 ```
 
 `bool(0)` «تبدیل int به bool» نیست؛ پرسیدن ارزش درستی ۰ است. سازوکارش در درس بعد.

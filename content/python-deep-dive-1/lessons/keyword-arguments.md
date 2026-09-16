@@ -13,9 +13,9 @@ def func1(a, b, *args, d):
 func1(1, 2, 'x', 'y', d=100)    # 1 2 ('x', 'y') 100
 func1(1, 2, d=100)              # 1 2 () 100
 func1(1, 2)                     # TypeError: missing keyword-only argument 'd'
-func1(1, 2, 'x', 'y', 100)      # TypeError — 100 به args رفت
+func1(1, 2, 'x', 'y', 100)      # TypeError — 100 went into args
 
-def func(*args, d): ...         # هیچ موقعیتی اجباری نیست؛ d اجباری با نام
+def func(*args, d): ...         # no positional is required; d is required by keyword
 func(1, 2, 3, d=100); func(d=100)
 ```
 
@@ -57,7 +57,7 @@ def func(a, b=1, *,     d, e=True): ...
 قانون «بعد از اولین پیش‌فرض همه پیش‌فرض» فقط برای **موقعیتی‌ها**ست. keyword-onlyها با نام پاس می‌شوند، پس ابهامی نیست:
 
 ```python
-def func(a, b=2, *args, d=0, e):     # d پیش‌فرض دارد، e بعدش ندارد — مجاز
+def func(a, b=2, *args, d=0, e):     # d has a default, e after it doesn't — allowed
     ...
 func(5, 4, 3, 2, 1, e='all engines running')   # d = 0
 func(0, 600, d='good morning', e='python')     # args = ()

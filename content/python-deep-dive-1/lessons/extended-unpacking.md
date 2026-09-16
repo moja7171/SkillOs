@@ -7,20 +7,20 @@
 ```python
 l = [1, 2, 3, 4, 5, 6]
 
-a = l[0]; b = l[1:]          # با slicing
-a, b = l[0], l[1:]           # همان، یک خط
+a = l[0]; b = l[1:]          # with slicing
+a, b = l[0], l[1:]           # same, one line
 a, *b = l                    # a=1, b=[2, 3, 4, 5, 6]
 ```
 
 دو مزیت نسبت به slicing: تمیزتر است، و **روی هر iterable** کار می‌کند — نه فقط sequenceهای ایندکس‌پذیر (set و dict slice نمی‌شوند).
 
 ```python
-a, *b = (-10, 5, 2, 100)     # b = [5, 2, 100]   ← همیشه list، حتی از tuple
+a, *b = (-10, 5, 2, 100)     # b = [5, 2, 100]   ← always a list, even from a tuple
 a, *b = 'XYZ'                # b = ['Y', 'Z']
 a, b, *c = 1, 2, 3, 4, 5     # c = [3, 4, 5]
 a, b, *c, d = 1, 2, 3, 4, 5  # c = [3, 4], d = 5
 a, *b, c, d = 'python'       # b = ['y', 't', 'h'], c='o', d='n'
-a, b, *c = ...               # فقط یک * در هر سطح: a, *b, *c خطاست
+a, b, *c = ...               # only one * per level: a, *b, *c is an error
 ```
 
 سمت چپ می‌تواند list هم باشد (`[a, b, c] = 'XYZ'`)، فرقی نمی‌کند.
@@ -31,16 +31,16 @@ a, b, *c = ...               # فقط یک * در هر سطح: a, *b, *c خطا�
 l1 = [1, 2, 3]; l2 = [4, 5, 6]
 [*l1, *l2]                   # [1, 2, 3, 4, 5, 6]
 [*l1, *'XYZ']                # [1, 2, 3, 'X', 'Y', 'Z']
-{*l1, *{3, 4, 5}}            # set: ادغام بدون تکرار
-{*s1, *s2, *s3, *s4}         # به‌جای s1.union(s2, s3, s4)
-*c, = 'python'               # ترفند: رشته → لیست کاراکترها (یا list('python'))
+{*l1, *{3, 4, 5}}            # set: merge without duplicates
+{*s1, *s2, *s3, *s4}         # instead of s1.union(s2, s3, s4)
+*c, = 'python'               # a trick: string → list of characters (or list('python'))
 ```
 
 ## set و dict: مجاز، ولی بی‌ترتیب
 
 ```python
 s = {10, -99, 3, 'd'}
-a, *b, c = s                 # کار می‌کند؛ ولی «اول» و «آخر» بی‌معنی‌اند
+a, *b, c = s                 # works; but "first" and "last" are meaningless
 ```
 
 سمت راست مفیدتر است: `[*d1, *d2, *d3]` **کلیدها** را (با تکرار) در یک لیست می‌ریزد؛ `{*d1, *d2, *d3}` بدون تکرار.

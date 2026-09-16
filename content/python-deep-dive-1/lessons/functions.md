@@ -13,7 +13,7 @@ math.sqrt(16)      # 4.0
 def func_1():
     print("running func_1")
 
-func_1()           # صدا زدن: نام + پرانتز
+func_1()           # calling it: name + parentheses
 ```
 
 نکته‌ی مهم: `func_1` (بدون پرانتز) **خود تابع** است — یک شیء. `func_1()` صدا زدن آن است. این تفاوت کل بخش «توابع درجه‌یک» را می‌سازد:
@@ -21,7 +21,7 @@ func_1()           # صدا زدن: نام + پرانتز
 ```python
 >>> func_1
 <function func_1 at 0x7f...>
->>> f = func_1     # تابع را به نام دیگری دادیم
+>>> f = func_1     # we gave the function another name
 >>> f()
 running func_1
 ```
@@ -33,7 +33,7 @@ def func_2(a: int, b: int) -> int:
     return a * b
 
 func_2(3, 4)        # 12
-func_2("a", 3)      # 'aaa'  — annotation فقط مستندسازی است، چیزی را چک نمی‌کند
+func_2("a", 3)      # 'aaa'  — annotations are just documentation, they check nothing
 ```
 
 پایتون نوع را **اجبار نمی‌کند**؛ `a: int` صرفاً به خواننده (و ابزارهایی مثل mypy) می‌گوید انتظار چیست.

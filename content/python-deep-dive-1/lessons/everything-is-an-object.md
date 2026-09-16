@@ -14,14 +14,14 @@
 >>> a = 10
 >>> type(a)
 <class 'int'>
->>> b = int(10)          # ساختن instance با فراخوانی کلاس
+>>> b = int(10)          # creating an instance by calling the class
 >>> b, type(b)
 (10, <class 'int'>)
->>> int()                # مقدار پیش‌فرض
+>>> int()                # the default value
 0
->>> int("101", base=2)   # از رشته در مبنای ۲
+>>> int("101", base=2)   # from a string in base 2
 5
->>> help(int)            # مستندات داخلی کلاس
+>>> help(int)            # the class's built-in docs
 ```
 
 ## توابع شیء هستند
@@ -31,7 +31,7 @@ def square(a):
     return a ** 2
 
 type(square)      # <class 'function'>
-f = square        # انتساب تابع به نام دیگر — بدون پرانتز!
+f = square        # assigning the function to another name — no parentheses!
 id(f) == id(square), f is square    # True
 square(2), f(2)   # (4, 4)
 ```
@@ -58,7 +58,7 @@ f = select_function(2)
 f is cube         # True
 f(2)              # 8
 
-select_function(2)(3)     # 27 — اول تابع را می‌گیرد، بعد صدایش می‌زند
+select_function(2)(3)     # 27 — first gets the function, then calls it
 ```
 
 ## …و به تابع پاس داده شود

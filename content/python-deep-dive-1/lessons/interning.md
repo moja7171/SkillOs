@@ -13,7 +13,7 @@ a = -5;   b = -5;   a is b     # True
 a = -6;   b = -6;   a is b     # False
 
 a = 10; b = int(10); c = int("10"); d = int("1010", base=2)
-id(a) == id(b) == id(c) == id(d)    # True — مهم نیست چطور ساخته شد
+id(a) == id(b) == id(c) == id(d)    # True — doesn't matter how it was created
 ```
 
 ## ۲. Interning رشته‌ها
@@ -22,10 +22,10 @@ id(a) == id(b) == id(c) == id(d)    # True — مهم نیست چطور ساخت
 
 ```python
 a = "hello";        b = "hello";        a is b   # True
-a = "hello world";  b = "hello world";  a is b   # False (فاصله دارد)
+a = "hello world";  b = "hello world";  a is b   # False (it has a space)
 a = "this_is_a_long_string_that_could_be_an_identifier"
 b = "this_is_a_long_string_that_could_be_an_identifier"
-a is b   # True — طول مهم نیست، شکل مهم است
+a is b   # True — length doesn't matter, shape does
 ```
 
 چرا؟ پایتون مدام باید نام‌ها را در دیکشنری‌ها جست‌وجو کند — یعنی مقایسه‌ی رشته. مقایسه‌ی دو رشته‌ی intern‌شده با `is` فقط مقایسه‌ی دو عدد (آدرس) است؛ خیلی سریع‌تر از مقایسه‌ی کاراکتر‌به‌کاراکتر با `==`.
@@ -38,7 +38,7 @@ a = sys.intern("hello world")
 b = sys.intern("hello world")
 c = "hello world"
 a is b     # True
-a is c     # False — c intern نشده؛ باید *همه‌ی* نمونه‌ها را intern کنی
+a is c     # False — c wasn't interned; you have to intern *every* instance
 ```
 
 کِی؟ وقتی تعداد **خیلی** زیادی مقایسه‌ی رشته داری (مثلاً tokenize کردن یک پیکره‌ی متنی بزرگ با تکرار زیاد — NLP). مدرس با یک benchmark ساده (۱۰ میلیون مقایسه) نشان می‌دهد `==` روی رشته‌ی بلند حدود ۴ ثانیه و `is` روی نسخه‌ی intern‌شده حدود ۰٫۴ ثانیه طول می‌کشد. ولی خود intern کردن هزینه دارد؛ برای چند مقایسه ارزش ندارد. **تا لازم نشده بهینه نکن.**
@@ -54,8 +54,8 @@ def my_func():
     a = 24 * 60
     b = (1, 2) * 5
     c = "abc" * 3
-    d = "ab" * 11          # ۲۲ کاراکتر — نه
-    e = ["a", "b"] * 3     # لیست — نه
+    d = "ab" * 11          # 22 characters — no
+    e = ["a", "b"] * 3     # a list — no
 
 my_func.__code__.co_consts
 # (None, 1440, (1, 2, 1, 2, 1, 2, 1, 2, 1, 2), 'abcabcabc', 'ab', 11, 'a', 'b', 3)

@@ -687,3 +687,13 @@ The page itself changed from a lightweight "streak + this week's practice count"
 **Why.** Owner bug report with a screenshot; root-caused by inspecting computed styles and generated CSS rather than adjusting sizes by trial and error.
 
 **Consequences.** Every icon in the app now renders at the exact size its call site requests, which very slightly shrinks or grows icons that had been silently stuck at 18px their whole lifetime (search: 18→16, theme toggle: 18→16, sidebar check: 18→10, etc.) — a visual-only change, no test added (`php artisan test --compact` unaffected: 112/112 still pass). If any future `<x-icon>` call site is added *without* a `class`, it now correctly falls back to the 18px default instead of always being overridden by nothing.
+
+---
+
+## 47. Swept `python-deep-dive-1`'s remaining Persian-in-code-fence warnings (2026-09-16)
+
+**Decision.** `docs/AUTHORING.md`'s house rule (code comments in English, established partway through C-02's authoring after `validate.py` started flagging it) had never been retroactively applied to C-01 (`python-deep-dive-1`), which was authored earlier (2026-09-14) and finished before the rule existed. `python3 tools/authoring/validate.py python-deep-dive-1` reported 41 lessons with at least one Persian-language inline comment inside a fenced code block. Extracted every flagged line across all 41 lessons (187 lines total) and translated each Persian comment to English in place — code itself untouched, only the comment text — verifying each line's surrounding context first for the handful that were ambiguous out of context (e.g. `integers-constructors-and-bases`'s `number *= sign  # قدر مطلق` really is computing an absolute value, confirmed by reading the surrounding `rebase_from_base10` function).
+
+**Why.** Direct continuation of content-authoring work ("ادامه بده ساخت محتوا رو"); this was genuinely unfinished quality debt, not new scope — the same fix had already been applied reactively many times during C-02 (see the `C-02` entry in `docs/STORIES.md` for the running count), just never swept retroactively over C-01.
+
+**Consequences.** `validate.py python-deep-dive-1` now reports 0 warnings (same as `complete-python-mastery`). Re-imported via `php artisan content:import python-deep-dive-1` to confirm the edited `.md` files still parse cleanly — same counts as before (106 lessons, 258 practices). No code/schema changes, so no new tests; `php artisan test --compact` still 112/112.

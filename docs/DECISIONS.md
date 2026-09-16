@@ -715,3 +715,19 @@ Immediately re-ran the two missing steps by hand via `/_ops/migrate` and `/_ops/
 **Why.** Direct owner report ("انگار مقدار دهی رو هاست انجام نشده") followed by an explicit ask to make future deploys reliably update the database, not just the files.
 
 **Consequences.** README's git-based deploy section updated to match (curl flags, the log, and a new "always check `/_ops/deploy-log` afterward" step). This doesn't *prove* the loopback curl trick itself is reliable now — that still can't be verified without a real deploy-and-check cycle — but it guarantees the next failure (if any) is visible instead of silent, which is the actual gap that let two real bugs go unnoticed until the owner caught them from the outside. New test (`DeployTest::test_ops_deploy_log_reports_missing_or_tails_the_file`) covers the missing-file and tail-the-file cases of the new action; `php artisan test --compact` at 113/113.
+
+---
+
+## 49. A 10-course bundle becomes 10 separate `Course` rows, not one course with 10 sections (2026-09-16)
+
+**Decision.** Owner dropped `course/Management course/` — 10 independent Udemy-style courses (559 lectures, 36G total) spanning requirements engineering, software architecture, product management, scrum, engineering management, and org/AI-era leadership — asking for a better name than the placeholder "Management course" and a discussion of how to structure it before any authoring started.
+
+Recommended, and the owner confirmed, **10 separate `Course` rows** over one mega-course with 10 sections: enrollment, `daily_time_minutes` pacing, streak, the planner's candidate selection, and mastery/review are all scoped *per course* and implicitly assume one coherent subject learned at one pace. These 10 are unrelated professional topics (architecture ≠ product management ≠ people leadership) that the owner should be able to start/pace independently — exactly like the two existing Python courses today. This needed zero schema changes either way; the choice was purely about fitting the existing per-course semantics rather than stretching them.
+
+The name **«مسیر رهبری فنی»** (owner's pick from three offered options) is a *conceptual* grouping only — how the 10 courses get introduced/talked about — not a new database entity. No "track"/"program" layer exists in the data model and none was requested; each of the 10 is cataloged as an ordinary standalone course with its own real Persian title (see `docs/STORIES.md` C-03 for the full list and slugs).
+
+Depth: same full authoring bar as C-01/C-02 (practices+rubrics, key_points, common_mistakes, scenario-threading) for all 10 — owner's explicit choice over a lighter format, prioritizing consistent quality over faster throughput across ~559 lessons.
+
+**Why.** Direct owner request, resolved via `AskUserQuestion` before any content work started (structure, name, depth, and whether to include an unrelated `course/scrum course/` folder — set aside, not part of the 10).
+
+**Consequences.** Course count on the catalog page will grow from 2 to potentially 12; no catalog-page changes needed for this (it already lists an arbitrary number of courses). If a genuine cross-course "path" UI is ever wanted later (progress across all 10, a suggested order enforced by the app rather than just narrative framing), that's new scope requiring its own decision — not assumed here.

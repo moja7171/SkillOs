@@ -697,3 +697,21 @@ The page itself changed from a lightweight "streak + this week's practice count"
 **Why.** Direct continuation of content-authoring work ("ادامه بده ساخت محتوا رو"); this was genuinely unfinished quality debt, not new scope — the same fix had already been applied reactively many times during C-02 (see the `C-02` entry in `docs/STORIES.md` for the running count), just never swept retroactively over C-01.
 
 **Consequences.** `validate.py python-deep-dive-1` now reports 0 warnings (same as `complete-python-mastery`). Re-imported via `php artisan content:import python-deep-dive-1` to confirm the edited `.md` files still parse cleanly — same counts as before (106 lessons, 258 practices). No code/schema changes, so no new tests; `php artisan test --compact` still 112/112.
+
+---
+
+## 48. The auto-deploy hook was silently failing; made its failures visible instead of guessing why (2026-09-16)
+
+**Decision.** The production DB was checked after a deploy and both the newly-authored course content and the just-imported one from S-56/§47's fix were missing — `/_ops/status` showed `courses on disk: complete-python-mastery, python-deep-dive-1` (the files were there, copied by the deploy), but the database had none of it. This is the second time a step that `deploy.php` is supposed to run automatically on every deploy (§45's pending `is_admin` migration was the first) turned out to have silently never run.
+
+Root cause wasn't fully provable without host shell access, but the mechanism that made it *unprovable* was clearly wrong and is now fixed: `.cpanel.yml`'s post-pull task was `curl -sk ... || true`, and `deploy.php` printed its output only to the HTTP response — nothing persisted anywhere else. If the loopback curl failed for any reason (wrong port, TLS/SNI mismatch on that specific host, etc.), `|| true` swallowed the non-zero exit so cPanel's own deployment log showed success regardless, and there was no independent way to check whether `deploy.php` itself had ever actually run.
+
+Fixed on the `deploy` branch (not `main` — `.cpanel.yml`/`deploy.php` only exist there):
+- `.cpanel.yml`: dropped `|| true`, added `-f` to curl so a real HTTP-level failure now returns non-zero and shows up as a failed task in cPanel's own log instead of being hidden.
+- `deploy.php`: every invocation — rejected (403) or not, and even a fatal error mid-script via a `register_shutdown_function` safety net — now appends its full output to `storage/logs/deploy-hook.log`, independent of whether the triggering curl itself succeeded or cPanel's log shows anything. Added `OpsController::deployLog()` / `/_ops/deploy-log` (main branch, shared code) to read the tail of that file without SSH.
+
+Immediately re-ran the two missing steps by hand via `/_ops/migrate` and `/_ops/import` (both courses) to unblock production right away, independent of this fix.
+
+**Why.** Direct owner report ("انگار مقدار دهی رو هاست انجام نشده") followed by an explicit ask to make future deploys reliably update the database, not just the files.
+
+**Consequences.** README's git-based deploy section updated to match (curl flags, the log, and a new "always check `/_ops/deploy-log` afterward" step). This doesn't *prove* the loopback curl trick itself is reliable now — that still can't be verified without a real deploy-and-check cycle — but it guarantees the next failure (if any) is visible instead of silent, which is the actual gap that let two real bugs go unnoticed until the owner caught them from the outside. New test (`DeployTest::test_ops_deploy_log_reports_missing_or_tails_the_file`) covers the missing-file and tail-the-file cases of the new action; `php artisan test --compact` at 113/113.

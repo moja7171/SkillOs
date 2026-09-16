@@ -72,9 +72,10 @@ git push -u origin deploy
     tasks:
       - export DEPLOYPATH=/home/USER/skillos.your-domain.tld/
       - /bin/cp -R * $DEPLOYPATH
-      - curl -sk --connect-to skillos.your-domain.tld:443:127.0.0.1:443 https://skillos.your-domain.tld/deploy.php || true
+      - curl -kfsS --connect-to skillos.your-domain.tld:443:127.0.0.1:443 https://skillos.your-domain.tld/deploy.php
   ```
-- **`public/deploy.php`** (deploy branch only) is the file that curl hits: it bootstraps Laravel directly (no routing/CSRF involved) and runs `migrate --force`, `storage:link`, `content:import --prune` for every course under `content/`, then `config:cache`/`route:cache`/`view:cache`. Guarded so it only runs for the internal `127.0.0.1` curl above, or with `?token=` matching `DEPLOY_TOKEN` in `.env` (a manual fallback if the internal trigger ever needs checking by hand).
+  No `|| true` here on purpose — a real failure (wrong loopback port, TLS/SNI mismatch, …) should show up as a failed task in cPanel's own deployment log instead of being silently swallowed. `-f` makes curl return non-zero on an HTTP error status so that failure is actually visible.
+- **`public/deploy.php`** (deploy branch only) is the file that curl hits: it bootstraps Laravel directly (no routing/CSRF involved) and runs `migrate --force`, `storage:link`, `content:import --prune` for every course under `content/`, then `config:cache`/`route:cache`/`view:cache`. Guarded so it only runs for the internal `127.0.0.1` curl above, or with `?token=` matching `DEPLOY_TOKEN` in `.env` (a manual fallback if the internal trigger ever needs checking by hand). Every invocation — rejected or not — also appends its full output to `storage/logs/deploy-hook.log`, independent of whether the triggering curl itself succeeded; read it with `/_ops/deploy-log?token=T` to confirm a deploy's migrate/import step actually ran, without needing SSH.
 
 On the cPanel side (once): **Git Version Control** → clone `https://github.com/…/SkillOs.git`, branch `deploy`, repository path `/home/USER/skillos.your-domain.tld` (same as `DEPLOYPATH` above). Create the subdomain first with **Document Root** = `.../skillos.your-domain.tld/public` (standard Laravel-on-shared-hosting layout — the app itself lives one level above the document root). Create `skillos.your-domain.tld/.env` by hand the first time (from `.env.production.example`; `database/`, `storage/` and `.env` are gitignored on every branch, so they're never touched by a pull).
 
@@ -84,7 +85,7 @@ Every later update:
 tools/deploy-push.sh              # merges main into the deploy worktree, refreshes vendor/, pushes
 ```
 
-Then click **"Update from Remote"** (or **"Deploy HEAD Commit"**) in cPanel's Git Version Control screen for this repo — that's the whole update path; `deploy.php` re-runs the migrate/import/cache steps automatically via `.cpanel.yml`.
+Then click **"Update from Remote"** (or **"Deploy HEAD Commit"**) in cPanel's Git Version Control screen for this repo — that's the whole update path; `deploy.php` re-runs the migrate/import/cache steps automatically via `.cpanel.yml`. **Always check `/_ops/deploy-log?token=T` afterward** to confirm it actually ran (the hook failed silently at least once before the fix above) — if it's stale or missing, fall back to hitting `/_ops/migrate` and `/_ops/import` by hand.
 
 ### Manual zip upload (no git access to the host)
 
@@ -100,6 +101,7 @@ The host only needs PHP 8.3+ with `pdo_mysql` (or `pdo_sqlite` if you're using S
    - `https://your-domain/_ops/import?token=T` — imports every course under `content/` except `sample-course` (a test fixture, never auto-shipped); `&slug=x` for one course (any slug, including `sample-course`), `&prune=1` to delete removed lessons
    - `https://your-domain/_ops/delete-course?token=T&slug=x` — permanently removes a course and everything under it (there's no other way to remove a course on a host with no shell access; `slug` is required, no bulk form)
    - `https://your-domain/_ops/optimize?token=T` — caches config/routes/views
+   - `https://your-domain/_ops/deploy-log?token=T` — tail of `storage/logs/deploy-hook.log` (only relevant on the git-based path above; nothing writes it here)
 6. Register the first account at `/register` (with the invite code if you set one).
 
 Every later update: `tools/build-release.sh`, upload + extract over the previous release (the zip never contains `.env`, `database/` or `storage/`, so nothing is lost), then hit `/_ops/migrate`, `/_ops/import` and `/_ops/optimize` again; `/_ops/clear` drops the caches if something looks stale. Content-only updates can skip the zip: upload the changed `content/<course>/` files into `skillos/content/` and hit `/_ops/import`.

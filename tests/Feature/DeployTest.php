@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\File;
 use Tests\TestCase;
 
 class DeployTest extends TestCase
@@ -47,6 +48,20 @@ class DeployTest extends TestCase
 
         $this->get('/_ops/delete-course?token=secret&slug=sample-course')->assertOk()->assertSee('deleted course');
         $this->assertDatabaseMissing('courses', ['slug' => 'sample-course']);
+    }
+
+    public function test_ops_deploy_log_reports_missing_or_tails_the_file(): void
+    {
+        config(['app.ops_token' => 'secret']);
+        $path = storage_path('logs/deploy-hook.log');
+        File::delete($path);
+
+        $this->get('/_ops/deploy-log?token=secret')->assertOk()->assertSee('never run');
+
+        File::put($path, "line one\nline two\n");
+        $this->get('/_ops/deploy-log?token=secret')->assertOk()->assertSee('line one')->assertSee('line two');
+
+        File::delete($path);
     }
 
     public function test_registration_requires_the_invite_code_when_configured(): void

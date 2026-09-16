@@ -4,11 +4,11 @@
 
 ```python
 a = (1, 2, 3)
-a = 1, 2, 3        # همان tuple — پرانتز فقط برای وضوح است
-type((1))          # int — پرانتز دور یک عدد، فقط پرانتز است
-a = (1,)           # tuple تک‌عنصری
-a = 1,             # همان
-a = ()             # تنها استثنا: tuple خالی با پرانتز (یا tuple())
+a = 1, 2, 3        # the same tuple — parentheses are just for clarity
+type((1))          # int — parentheses around a number are just parentheses
+a = (1,)           # a single-element tuple
+a = 1,             # same
+a = ()             # the only exception: an empty tuple needs parentheses (or tuple())
 ```
 
 ## مقدار «بسته‌بندی‌شده» و باز کردن
@@ -18,9 +18,9 @@ a = ()             # تنها استثنا: tuple خالی با پرانتز (ی
 ```python
 a, b, c = [1, 2, 3]          # a=1, b=2, c=3
 a, b, c = 10, 20, 'hello'    # tuple → tuple
-a, b, c = 'XYZ'              # رشته: a='X', b='Y', c='Z'
-a, b = 10, 20                # مقداردهی چند متغیر در یک خط (به‌جای دو خط)
-a, b, c = 10, {1, 2}, ['a', 'b']   # نوع‌ها لازم نیست یکی باشند
+a, b, c = 'XYZ'              # a string: a='X', b='Y', c='Z'
+a, b = 10, 20                # assigning multiple variables in one line (instead of two)
+a, b, c = 10, {1, 2}, ['a', 'b']   # the types don't need to match
 ```
 
 سمت چپ یک tuple (یا list) از نام‌هاست. آشنا نیست؟ **دقیقاً همان چیزی است که موقع فراخوانی تابع اتفاق می‌افتد**: آرگومان‌ها در پارامترها باز می‌شوند. برای فهم ترتیب، به `for` فکر کن: `for e in 10, 20, 'hello'` همان ترتیب را می‌دهد.
@@ -39,7 +39,7 @@ a, b = b, a
 
 ```python
 d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-d, a, b, c = d        # سمت راست (دیکشنری) اول گرفته شد؛ بعد d به 'a' اشاره می‌کند
+d, a, b, c = d        # the right side (dict) is captured first; then d refers to 'a'
 ```
 
 ## set و dict: باز می‌شوند، ولی بی‌ترتیب
@@ -48,14 +48,14 @@ set و dict **ترتیب ندارند** (نمی‌شود `s[0]` گرفت). با�
 
 ```python
 s = {'p', 'y', 't', 'h', 'o', 'n'}
-print(s)                    # {'h', 'p', 't', ...}  — هر ترتیبی
-a, b, c, d, e, f = s        # به همان ترتیب پیمایش، هر چه باشد
+print(s)                    # {'h', 'p', 't', ...}  — any order
+a, b, c, d, e, f = s        # in whatever iteration order that is
 
 d = {'key1': 1, 'key2': 2, 'key3': 3}
-for e in d: print(e)        # کلیدها
-a, b, c = d                 # فقط کلیدها، بی‌ترتیب
-a, b, c = d.values()        # مقدارها
-for k, v in d.items():      # جفت‌ها — همین unpacking داخل for
+for e in d: print(e)        # the keys
+a, b, c = d                 # keys only, unordered
+a, b, c = d.values()        # the values
+for k, v in d.items():      # pairs — this same unpacking, inside a for
     ...
 ```
 

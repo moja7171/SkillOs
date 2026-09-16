@@ -12,7 +12,7 @@ a == b            # True
 a.real            # 1.0   ← float!
 a.imag            # 2.0
 type(a.real)      # <class 'float'>
-a.conjugate()     # (1-2j)  — متد، نه property
+a.conjugate()     # (1-2j)  — a method, not a property
 ```
 
 بخش حقیقی و موهومی **float** ذخیره می‌شوند — با همه‌ی مشکلات float، حالا در دو بُعد.
@@ -48,13 +48,13 @@ a + a + a == 0.3j            # False
 import cmath, math
 
 a = 1 + 1j
-cmath.phase(a)      # 0.7853981633974483  ≈ π/4 — زاویه در (−π, π]
-abs(a)              # 1.4142135623730951  ≈ √2 — طول (abs معمولی، polymorphic)
+cmath.phase(a)      # 0.7853981633974483  ≈ π/4 — the angle, in (−π, π]
+abs(a)              # 1.4142135623730951  ≈ √2 — the magnitude (plain abs, polymorphic)
 
 cmath.phase(-1 + 0j)     # π
 cmath.phase(-1j)         # −π/2
 
-cmath.rect(math.sqrt(2), math.pi / 4)    # (1.0000000000000002+1j)  ← تقریبی
+cmath.rect(math.sqrt(2), math.pi / 4)    # (1.0000000000000002+1j)  ← approximate
 ```
 
 در `rect` از `math.sqrt` استفاده کن نه `cmath.sqrt` — دومی complex برمی‌گرداند و `rect` برای `r` عدد حقیقی می‌خواهد.
@@ -65,8 +65,8 @@ cmath.rect(math.sqrt(2), math.pi / 4)    # (1.0000000000000002+1j)  ← تقری
 
 ```python
 rhs = cmath.exp(cmath.pi * 1j) + 1
-rhs                             # 1.2246467991473532e-16j  ← نه دقیقاً صفر
-cmath.isclose(rhs, 0)           # False! — abs_tol پیش‌فرض صفر است
+rhs                             # 1.2246467991473532e-16j  ← not exactly zero
+cmath.isclose(rhs, 0)           # False! — the default abs_tol is zero
 cmath.isclose(rhs, 0, abs_tol=0.0001)   # True
 ```
 

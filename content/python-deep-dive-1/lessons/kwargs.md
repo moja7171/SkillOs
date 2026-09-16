@@ -27,8 +27,8 @@ def func(a, b, **kwargs): ...
 func(1, 2, x=100, y=200)          # a=1 b=2 kwargs={'x': 100, 'y': 200}
 
 def func(a, b, *, **kwargs): ...   # SyntaxError: named arguments must follow bare *
-def func(a, b, *, d, **kwargs): ...   # OK — * فقط وقتی معنی دارد که keyword-only نام‌دار بعدش باشد
-func(1, 2, x=100, d=20, y=200)     # d=20, kwargs={'x': 100, 'y': 200} — ترتیب نام‌دارها مهم نیست
+def func(a, b, *, d, **kwargs): ...   # OK — * only makes sense when a keyword-only name follows it
+func(1, 2, x=100, d=20, y=200)     # d=20, kwargs={'x': 100, 'y': 200} — the order of keyword arguments doesn't matter
 ```
 
 و در فراخوانی همان قانون همیشگی: اول موقعیتی‌ها، بعد نام‌دارها؛ برگشت به موقعیتی ممنوع (`func(1, 2, x=100, 3)` → SyntaxError).

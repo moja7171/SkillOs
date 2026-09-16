@@ -7,10 +7,10 @@ import decimal
 from decimal import Decimal
 
 Decimal()                 # Decimal('0')
-Decimal(10)               # از int
-Decimal('0.1')            # از رشته — دقیقاً 0.1
+Decimal(10)               # from an int
+Decimal('0.1')            # from a string — exactly 0.1
 Decimal('-3.1415')
-Decimal(Decimal('1.5'))   # از Decimal دیگر
+Decimal(Decimal('1.5'))   # from another Decimal
 ```
 
 **از float نه.** مجاز است ولی بی‌فایده: `Decimal(0.1)` همان تقریب دودویی float را *دقیقاً* ذخیره می‌کند:
@@ -19,7 +19,7 @@ Decimal(Decimal('1.5'))   # از Decimal دیگر
 Decimal(0.1)
 # Decimal('0.1000000000000000055511151231257827021181583404541015625')
 Decimal(0.1) == Decimal('0.1')     # False
-Decimal(10) == Decimal('10')       # True — int دقیق است
+Decimal(10) == Decimal('10')       # True — int is exact
 ```
 
 پس برای literal، **رشته**؛ برای مقادیر تولیدشده در کد، **tuple**.
@@ -48,8 +48,8 @@ decimal.getcontext().prec = 2
 
 a = Decimal('0.12345')
 b = Decimal('0.12345')
-a, b          # هر دو با همه‌ی ارقام ذخیره شده‌اند
-a + b         # Decimal('0.25')  ← جمع واقعی 0.24690؛ با دقت ۲ گرد شد
+a, b          # both stored with all their digits
+a + b         # Decimal('0.25')  ← real sum is 0.24690; rounded to precision 2
 ```
 
 ## نتیجه‌ی محاسبه در context محلی، بعد از خروج «برنمی‌گردد»
@@ -64,7 +64,7 @@ with decimal.localcontext() as ctx:
     c = a + b
     print(c)                     # 0.25
 
-print(c)                         # 0.25 — همچنان
+print(c)                         # 0.25 — still
 ```
 
 `c` با دقت ۲ *ساخته شده* و همان است؛ بیرون آمدن از `with` جادویی ندارد. precision سازوکار محاسبه است، نه نمایش.

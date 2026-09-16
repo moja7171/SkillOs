@@ -52,7 +52,7 @@ class Rectangle:
 ```python
 class Rectangle:
     def __init__(self, width, height):
-        self._width = width          # زیرخط: «به این مستقیم دست نزن»
+        self._width = width          # underscore: "don't touch this directly"
         self._height = height
 
     @property

@@ -33,7 +33,7 @@ while i < len(numbers):
         break
     i += 1
 else:
-    numbers.append(value)     # فقط اگر پیدا نشد
+    numbers.append(value)     # only if not found
 
 print(numbers)   # [1, 2, 3, 10]
 ```

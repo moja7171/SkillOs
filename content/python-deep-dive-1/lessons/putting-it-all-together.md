@@ -6,7 +6,7 @@
 
 ```
 def f(a, b, c=10,   *args | *,   kw1, kw2=100,   **kwargs)
-      └─ موقعیتی ─┘  └ تمام ┘   └ keyword-only ┘  └ بقیه‌ی نام‌دارها ┘
+      └─ positional ─┘  └ all ┘   └ keyword-only ┘  └ rest of keywords ┘
 ```
 
 | بخش | قاعده |
@@ -51,7 +51,7 @@ print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 
 ```python
 print(1, 2, 3, sep='-')                 # 1-2-3
-print(1, 2, 3, sep='-', end=' *** ')    # بدون خط جدید
+print(1, 2, 3, sep='-', end=' *** ')    # no newline
 ```
 
 **الگو:** موقعیتی‌ها کار اصلی را می‌کنند؛ keyword-onlyها رفتار را تغییر می‌دهند.
@@ -60,15 +60,15 @@ print(1, 2, 3, sep='-', end=' *** ')    # بدون خط جدید
 
 ```python
 def calc_hi_lo_avg(*args, log_to_console=False):
-    hi = int(bool(args)) and max(args)      # args خالی → 0، وگرنه max
-    lo = min(args) if len(args) > 0 else 0  # همان با ternary
+    hi = int(bool(args)) and max(args)      # empty args → 0, otherwise max
+    lo = min(args) if len(args) > 0 else 0  # same, with a ternary
     avg = (hi + lo) / 2
     if log_to_console:
         print(f"high={hi}, low={lo}, avg={avg}")
     return avg
 
 calc_hi_lo_avg(1, 2, 3, 4, 5)                        # 3.0
-calc_hi_lo_avg(1, 2, 3, 4, 5, log_to_console=True)   # چاپ + 3.0
+calc_hi_lo_avg(1, 2, 3, 4, 5, log_to_console=True)   # prints + 3.0
 ```
 
 `int(bool(args)) and max(args)`: tuple خالی falsy است → `0`؛ وگرنه `max`. همان short-circuit درس boolها. اگر تابعی ۶–۷ پارامتر دارد و ترتیبشان را کسی یادش نمی‌ماند، شاید بهتر است بعد از یکی‌دو پارامتر اصلی، `*` بگذاری و بقیه را keyword-only کنی.

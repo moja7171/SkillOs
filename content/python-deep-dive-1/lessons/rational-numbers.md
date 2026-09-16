@@ -11,9 +11,9 @@ from fractions import Fraction
 
 Fraction(3, 4)        # Fraction(3, 4)
 Fraction(22, 7)
-Fraction(6, 10)       # Fraction(3, 5)  ← خودکار ساده می‌شود
-Fraction(1, -4)       # Fraction(-1, 4) ← علامت همیشه به صورت می‌رود
-Fraction(numerator=1, denominator=2)   # با نام؛ ترتیب مهم نیست
+Fraction(6, 10)       # Fraction(3, 5)  ← automatically simplified
+Fraction(1, -4)       # Fraction(-1, 4) ← the sign always moves to the numerator
+Fraction(numerator=1, denominator=2)   # by keyword; order doesn't matter
 ```
 
 سازنده‌ها: `Fraction(num, den)` (صورت پیش‌فرض ۰، مخرج پیش‌فرض ۱)، از یک Fraction دیگر، از float، از Decimal، یا **از رشته** — حتی به شکل کسری:
@@ -33,7 +33,7 @@ x = Fraction(2, 3); y = Fraction(3, 4)
 x + y       # Fraction(17, 12)
 x * y       # Fraction(1, 2)
 x / y       # Fraction(8, 9)
-x.numerator, x.denominator    # (2, 3) — هر دو int
+x.numerator, x.denominator    # (2, 3) — both int
 ```
 
 ## float → Fraction: جایی که چیزهای عجیب دیده می‌شود
@@ -63,5 +63,5 @@ Fraction(0.3).limit_denominator(10)    # Fraction(3, 10)
 x = Fraction(math.pi)
 x.limit_denominator(10)        # Fraction(22, 7)      → 3.142857
 x.limit_denominator(100)       # Fraction(311, 99)    → 3.141414
-x.limit_denominator(500)       # Fraction(355, 113)   → 3.1415929 (شش رقم درست)
+x.limit_denominator(500)       # Fraction(355, 113)   → 3.1415929 (six correct digits)
 ```

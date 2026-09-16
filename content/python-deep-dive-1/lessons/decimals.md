@@ -10,7 +10,7 @@
 
 ```python
 import decimal
-from decimal import Decimal    # تا هر بار decimal.Decimal ننویسیم
+from decimal import Decimal    # so we don't write decimal.Decimal every time
 ```
 
 ## Context: precision و rounding
@@ -26,8 +26,8 @@ decimal.getcontext()
 
 g_ctx = decimal.getcontext()
 g_ctx.prec = 6
-g_ctx.rounding = decimal.ROUND_HALF_UP     # یا رشته‌ی 'ROUND_HALF_UP' — ثابت‌ها همان رشته‌اند
-g_ctx.prec = 28; g_ctx.rounding = decimal.ROUND_HALF_EVEN   # بازگشت
+g_ctx.rounding = decimal.ROUND_HALF_UP     # or the string 'ROUND_HALF_UP' — the constants are just those strings
+g_ctx.prec = 28; g_ctx.rounding = decimal.ROUND_HALF_EVEN   # reverting
 ```
 
 ## context سراسری در برابر محلی
@@ -38,13 +38,13 @@ g_ctx.prec = 28; g_ctx.rounding = decimal.ROUND_HALF_EVEN   # بازگشت
 x = Decimal('1.25')
 y = Decimal('1.35')
 
-with decimal.localcontext() as ctx:        # کپی از context فعلی
+with decimal.localcontext() as ctx:        # a copy of the current context
     ctx.prec = 6
     ctx.rounding = decimal.ROUND_HALF_UP
-    print(round(x, 1), round(y, 1))        # 1.3 1.4  ← دور از صفر
-    print(decimal.getcontext() is ctx)     # True: داخل with، «فعلی» همین است
+    print(round(x, 1), round(y, 1))        # 1.3 1.4  ← away from zero
+    print(decimal.getcontext() is ctx)     # True: inside the with, "current" is this one
 
-print(round(x, 1), round(y, 1))            # 1.2 1.4  ← سراسری: banker's
+print(round(x, 1), round(y, 1))            # 1.2 1.4  ← global: banker's
 ```
 
 `decimal.localcontext()` بدون آرگومان کپی context فعلی را می‌دهد؛ می‌شود context دیگری هم به آن داد. context managerها بعداً مفصل می‌آیند (همان الگوی `with open(...)` که فایل را خودش می‌بندد).

@@ -9,7 +9,7 @@ Decimal دقت می‌دهد، ولی مجانی نیست:
 ```python
 import sys
 sys.getsizeof(3.1415)              # 24 bytes
-sys.getsizeof(Decimal('3.1415'))   # 104 bytes  ← بیش از ۴ برابر
+sys.getsizeof(Decimal('3.1415'))   # 104 bytes  ← more than 4x
 ```
 
 4. **سرعت** — benchmark مدرس (۱۰ میلیون تکرار):

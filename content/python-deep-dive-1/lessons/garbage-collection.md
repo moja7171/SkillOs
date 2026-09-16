@@ -42,7 +42,7 @@ class A:
 
 class B:
     def __init__(self, a):
-        self.a = a                  # B → A  (چرخه)
+        self.a = a                  # B → A  (a cycle)
         print(f"B: self: {hex(id(self))}, a: {hex(id(self.a))}")
 
 gc.disable()
@@ -51,15 +51,15 @@ a_id = id(my_var)
 b_id = id(my_var.b)
 
 ref_count(a_id), ref_count(b_id)    # (2, 1)
-object_by_id(a_id), object_by_id(b_id)   # هر دو "Object exists"
+object_by_id(a_id), object_by_id(b_id)   # both "Object exists"
 
 my_var = None
-ref_count(a_id), ref_count(b_id)    # (1, 1)  ← هنوز زنده‌اند
+ref_count(a_id), ref_count(b_id)    # (1, 1)  ← still alive
 object_by_id(a_id)                  # "Object exists"
 
 gc.collect()
 object_by_id(a_id), object_by_id(b_id)   # "Not found", "Not found"
-ref_count(a_id)                     # عددی بی‌معنی — آدرس آزاد شده و بازاستفاده شده
+ref_count(a_id)                     # a meaningless number — the address was freed and reused
 ```
 
 بعد از `gc.collect()` هر دو شیء نابود شده‌اند. عدد عجیبی که `ref_count(a_id)` می‌دهد همان هشدار درس قبل است: آن آدرس دیگر متعلق به A نیست.

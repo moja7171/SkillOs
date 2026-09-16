@@ -28,7 +28,7 @@
 5. `or`
 
 ```python
-True or True and False          # True   ← and اول: True or (True and False)
+True or True and False          # True   ← and first: True or (True and False)
 (True or True) and False        # False
 ```
 
@@ -53,8 +53,8 @@ if symbol in watch_list and price(symbol) > threshold:
 a, b = 10, 0
 if a / b > 2: ...                 # ZeroDivisionError
 
-if b > 0 and a / b > 2: ...       # امن: با b == 0 سمت راست ارزیابی نمی‌شود
-if b and a / b > 2: ...           # همان — b == 0 falsy است؛ با b = None هم امن (بدون TypeError)
+if b > 0 and a / b > 2: ...       # safe: with b == 0 the right side isn't evaluated
+if b and a / b > 2: ...           # same — b == 0 is falsy; also safe with b = None (no TypeError)
 ```
 
 مثال دوم مدرس: `name` از یک فیلد nullable دیتابیس می‌آید — ممکن است `None`، `''` یا `'abc'` باشد — و می‌خواهیم اگر با رقم شروع می‌شود هشدار بدهیم:
@@ -62,10 +62,10 @@ if b and a / b > 2: ...           # همان — b == 0 falsy است؛ با b = 
 ```python
 import string
 
-if name[0] in string.digits:                         # با '' → IndexError، با None → TypeError
-if len(name) > 0 and name[0] in string.digits:       # با None → TypeError
-if name is not None and len(name) > 0 and name[0] in string.digits:   # درست ولی طولانی
-if name and name[0] in string.digits:                # همان، کوتاه
+if name[0] in string.digits:                         # with '' → IndexError, with None → TypeError
+if len(name) > 0 and name[0] in string.digits:       # with None → TypeError
+if name is not None and len(name) > 0 and name[0] in string.digits:   # correct but long
+if name and name[0] in string.digits:                # same, shorter
 ```
 
 `name` به‌تنهایی هم `None` را رد می‌کند هم رشته‌ی خالی را (falsy)؛ و به لطف short-circuit، `name[0]` فقط وقتی ارزیابی می‌شود که `name` truthy باشد.

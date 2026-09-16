@@ -8,9 +8,9 @@ i = 0
 while i < 10:
     i += 1
     if i % 2 == 0:
-        continue      # زوج‌ها را رد کن
+        continue      # skip the even ones
     if i > 7:
-        break         # بعد از 7 تمام
+        break         # stop after 7
     print(i)          # 1 3 5 7
 ```
 
@@ -48,9 +48,9 @@ while a < 4:
     except ZeroDivisionError:
         print(f"{a}, {b} - division by 0")
         res = 0
-        continue          # ← پرش به دور بعد
+        continue          # ← jump to the next iteration
     finally:
-        print(f"{a}, {b} - always executes")   # ← ولی این اول اجرا می‌شود
+        print(f"{a}, {b} - always executes")   # ← but this runs first
     print(f"{a}, {b} - main loop")
 ```
 

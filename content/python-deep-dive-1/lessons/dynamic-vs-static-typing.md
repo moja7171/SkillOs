@@ -7,8 +7,8 @@ String myVar = "hello";
 سه چیز اینجا هست: نام متغیر، **نوع داده‌ای که به نام چسبیده** (`String`)، و مقدار. شیء `"hello"` در حافظه ساخته می‌شود و `myVar` به آن اشاره می‌کند — تا اینجا مثل پایتون. تفاوت این است که **نوع به خود متغیر** تعلق دارد:
 
 ```java
-myVar = 10;      // خطا: myVar از نوع String است
-myVar = "abc";   // درست
+myVar = 10;      // error: myVar is of type String
+myVar = "abc";   // correct
 ```
 
 ## نوع‌دهی پویا (dynamic): پایتون

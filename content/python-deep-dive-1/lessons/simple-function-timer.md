@@ -21,7 +21,7 @@ def time_it(fn, *args, **kwargs):
     fn(args, kwargs)
 
 time_it(print, 1, 2, 3, sep=' - ')
-# (1, 2, 3) {'sep': ' - '}   <- print دو شیء (یک tuple و یک dict) را چاپ کرد
+# (1, 2, 3) {'sep': ' - '}   <- print printed two objects (a tuple and a dict)
 ```
 
 `args` یک tuple است و `kwargs` یک dict؛ پاس دادنشان همان‌طور یعنی *دو آرگومان موقعیتی*. باید **باز** شوند — همان unpacking سمت راست:

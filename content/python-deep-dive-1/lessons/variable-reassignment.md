@@ -23,10 +23,10 @@ my_var = my_var + 5
 '0x...af0'
 >>> a = 15
 >>> hex(id(a))
-'0x...b90'     # شیء دیگر
+'0x...b90'     # a different object
 >>> a = a + 1
 >>> hex(id(a))
-'0x...eb0'     # باز هم شیء دیگر
+'0x...eb0'     # yet another object
 ```
 
 ## چیزی که غافلگیرت می‌کند

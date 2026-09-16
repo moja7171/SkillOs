@@ -34,15 +34,15 @@ a.ln(), a.exp(), a.sqrt()
 ```python
 import math
 x = 0.01
-x_dec = Decimal('0.01')          # نه Decimal(0.01)!
+x_dec = Decimal('0.01')          # not Decimal(0.01)!
 
 root_float = math.sqrt(x)        # 0.1000000000000000055511151231257827
-root_mixed = math.sqrt(x_dec)    # همان — تبدیل به float شد
-root_dec = x_dec.sqrt()          # Decimal('0.1')  ← دقیق
+root_mixed = math.sqrt(x_dec)    # same — converted to float
+root_dec = x_dec.sqrt()          # Decimal('0.1')  ← exact
 
 root_float * root_float          # 0.010000000000000002
-root_mixed * root_mixed          # همان
-root_dec * root_dec              # Decimal('0.01')  ← برمی‌گردد
+root_mixed * root_mixed          # same
+root_dec * root_dec              # Decimal('0.01')  ← comes back exact
 ```
 
 قاعده: با Decimal، متدهای خود Decimal؛ `math` را فقط وقتی به کار ببر که معادل Decimal وجود ندارد (و بدان که آنجا با float کار می‌کنی).

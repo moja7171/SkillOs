@@ -31,7 +31,7 @@ def my_func(a, b=5, c=10):
 my_func(1)         # 1, 5, 10
 my_func(1, 2)      # 1, 2, 10
 my_func(1, 2, 3)   # 1, 2, 3
-my_func()          # TypeError — a پیش‌فرض ندارد
+my_func()          # TypeError — a has no default
 ```
 
 ## آرگومان کلیدواژه‌ای (named)
@@ -40,8 +40,8 @@ my_func()          # TypeError — a پیش‌فرض ندارد
 
 ```python
 my_func(a=1, c=2)     # 1, 5, 2
-my_func(1, c=2)       # 1, 5, 2   — مخلوط: موقعیتی بعد نام‌دار
-my_func(c=30, b=20, a=10)   # ترتیب نام‌دارها مهم نیست
+my_func(1, c=2)       # 1, 5, 2   — mixed: positional then keyword
+my_func(c=30, b=20, a=10)   # the order of keyword arguments doesn't matter
 ```
 
 نام باید دقیقاً نام پارامتر باشد. و این فقط برای پارامترهای پیش‌فرض‌دار نیست — حتی وقتی هیچ پیش‌فرضی نداری، نام‌دار مجاز است و **ترتیب را آزاد می‌کند** یا برای خوانایی به کار می‌رود:

@@ -24,7 +24,7 @@
         {{-- Below sm: everything else (links + search) folds into this menu instead of
              overflowing the bar — see DECISIONS.md §30. --}}
         <div class="sm:hidden">
-            <x-dropdown align="left" width="48">
+            <x-dropdown align="right" width="48">
                 <x-slot name="trigger">
                     <button type="button" class="iconbtn" title="منو" aria-label="منو" aria-haspopup="true" :aria-expanded="open.toString()"><x-icon name="menu" class="w-4 h-4" /></button>
                 </x-slot>
@@ -40,7 +40,7 @@
             </x-dropdown>
         </div>
 
-        <x-dropdown align="left" width="48">
+        <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button type="button" class="w-8 h-8 rounded-full bg-surface2 border border-line2 grid place-items-center font-semibold text-[13px] text-ink" aria-label="منوی حساب کاربری" aria-haspopup="true" :aria-expanded="open.toString()">
                     {{ mb_substr(auth()->user()->name, 0, 1) }}

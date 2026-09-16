@@ -1,0 +1,37 @@
+[
+  {
+    "key": "dir-purpose",
+    "title": "dir() چه کاری می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تابع dir(obj) چی رو برمی‌گردونه؟",
+    "options": ["لیست همه‌ی ویژگی‌ها و متدهای obj", "مقدار فعلی obj", "نوع (type) دقیق obj", "مسیر فایلی که obj توش تعریف شده"],
+    "correct_option": 0,
+    "expected_outcome": "لیست همه‌ی ویژگی‌ها و متدهای obj -- شامل هم چیزهایی که خودت تعریف کردی، هم ویژگی‌های جادویی خودکار پایتون.",
+    "hints": ["dir برای کاوش محتوای یه آبجکته، نه گرفتن مقدارش.", "خروجیش یه لیست از اسم‌هاست، نه یه مقدار یا نوع."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "module-name-with-package",
+    "title": "این چی چاپ می‌شه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "فرض کن ماژول tracker.py داخل پکیج shipping (که خودش یه پکیج مستقله، نه زیرپکیج چیز دیگه‌ای) قرار داره. اگه از یه فایل دیگه import shipping.tracker کنیم و بعد print(shipping.tracker.__name__) رو اجرا کنیم، چی چاپ می‌شه؟",
+    "expected_outcome": "shipping.tracker -- چون __name__ اسم کامل و فول‌کوالیفای‌شده‌ی ماژول رو نشون می‌ده، شامل پکیجش.",
+    "hints": ["__name__ فقط اسم فایل نیست، مسیر پکیجی هم توش هست.", "پکیج و ماژول با نقطه به هم وصل می‌شن، دقیقاً مثل مسیر import."],
+    "rubric": "Correct if the answer is 'shipping.tracker' (fully qualified name including the package)."
+  },
+  {
+    "key": "use-dir-for-debugging",
+    "title": "با dir() یه مشکل رو پیدا کن",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی مطمئنه ماژول utils یه تابع به اسم format_currency داره ولی وقتی صداش می‌زنه AttributeError می‌گیره. چطور می‌شه با dir() سریع فهمید مشکل چیه؟",
+    "expected_outcome": "با اجرای print(dir(utils)) می‌شه لیست کامل اسم‌های واقعی تعریف‌شده توی اون ماژول رو دید و چک کرد آیا واقعاً تابعی با همین اسم دقیق وجود داره یا نه (شاید اسمش چیز دیگه‌ای باشه یا اصلاً تعریف نشده باشه).",
+    "hints": ["dir(utils) لیست دقیق همه‌ی اسم‌های موجود توی اون ماژول رو نشون می‌ده.", "شاید اسم تابع کمی فرق داره یا اصلاً وجود نداره."],
+    "rubric": "Correct if the answer proposes calling dir(utils) to inspect the actual available names and compare against the expected function name."
+  }
+]

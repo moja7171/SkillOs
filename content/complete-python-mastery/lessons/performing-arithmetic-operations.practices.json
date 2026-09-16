@@ -1,0 +1,24 @@
+[
+  {
+    "key": "implement-add",
+    "title": "دو تا سبد خرید رو ترکیب کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "به این کلاس `__add__` اضافه کن تا با `+`، دو تا Money با همون واحد پول، جمع بشن و یه Money جدید با amount جمع‌شده برگردونن:\n```python\nclass Money:\n    def __init__(self, amount, currency):\n        self.amount = amount\n        self.currency = currency\n```",
+    "expected_outcome": "```python\nclass Money:\n    def __init__(self, amount, currency):\n        self.amount = amount\n        self.currency = currency\n\n    def __add__(self, other):\n        return Money(self.amount + other.amount, self.currency)\n```",
+    "hints": ["__add__ دو پارامتر می‌گیره: self و other.", "باید یه Money جدید برگردونی، نه فقط یه عدد."],
+    "rubric": "Correct: __add__(self, other) returns a new Money with amount = self.amount + other.amount (currency kept). Partial: correct addition logic but returns a raw number instead of a new Money object. Incorrect: doesn't define __add__, or mutates self instead of returning a new object."
+  },
+  {
+    "key": "no-add-error",
+    "title": "چرا خطا می‌گیریم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nclass Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\nresult = v1 + v2\n```\nو با `TypeError: unsupported operand type(s) for +` مواجه شده. چرا، و چطور درستش کنه؟",
+    "expected_outcome": "چون کلاس Vector متد جادویی __add__ رو تعریف نکرده، پایتون نمی‌دونه جمع‌زدن دو تا Vector یعنی چی. باید __add__(self, other) رو تعریف کنه که یه Vector جدید با مختصات جمع‌شده برگردونه.",
+    "hints": ["پایتون از قبل نمی‌دونه چطور یه کلاس سفارشی رو با + جمع بزنه.", "متد جادویی مربوط به + رو باید خودت تعریف کنی."],
+    "rubric": "Correct if the answer identifies the missing __add__ method as the cause and proposes implementing it."
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "key": "set-comprehension-trace",
+    "title": "این کروشه‌ها آکولاد شدن",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nresult = {x % 3 for x in range(6)}\nprint(result)\n```\nخروجی چیه؟",
+    "expected_outcome": "{0, 1, 2} — باقی‌مونده‌ی تقسیم بر 3 برای 0..5 می‌شه 0,1,2,0,1,2؛ چون مجموعه تکراری قبول نمی‌کنه، فقط سه مقدار یکتا می‌مونه.",
+    "hints": ["x % 3 برای هر x بین 0 تا 5 رو حساب کن.", "مجموعه تکراری‌ها رو خودکار حذف می‌کنه."],
+    "rubric": "Correct only if the answer is {0, 1, 2} (order doesn't matter for a set)."
+  },
+  {
+    "key": "build-dict-comprehension",
+    "title": "این حلقه رو یک‌خطی کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این کد یه دیکشنری از اسم به طول اسم می‌سازه. با یه dictionary comprehension بازنویسی‌ش کن:\n```python\nnames = [\"Ali\", \"Sara\", \"Mohammad\"]\n\nlengths = {}\nfor name in names:\n    lengths[name] = len(name)\n```",
+    "expected_outcome": "```python\nlengths = {name: len(name) for name in names}\n```",
+    "hints": ["آکولاد به‌جای کروشه، و یه : بین کلید و مقدار.", "کلید همون name، مقدار len(name)."],
+    "rubric": "Correct: {name: len(name) for name in names} (or equivalent), producing the same dict. Partial: correct structure but wrong key/value expression. Incorrect: still uses square brackets (list comprehension) or a manual loop."
+  }
+]

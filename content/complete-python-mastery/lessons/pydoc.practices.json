@@ -1,0 +1,26 @@
+[
+  {
+    "key": "pydoc-source-of-content",
+    "title": "pydoc اطلاعاتش رو از کجا می‌گیره؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "اگه یه ماژول هیچ docstring‌ای نداشته باشه، خروجی pydoc روش چه شکلی می‌شه؟",
+    "expected_outcome": "تقریباً خالی یا خیلی کم‌محتوا -- چون pydoc هیچ اطلاعات جدیدی تولید نمی‌کنه، فقط docstringهایی که خودمون نوشتیم رو به‌شکل خوانا نمایش می‌ده. بدون docstring، چیزی برای نمایش نداره.",
+    "hints": ["pydoc چیزی رو خودش تولید نمی‌کنه، فقط نمایش می‌ده.", "منبع محتوای pydoc دقیقاً همون docstringهای درس قبله."],
+    "rubric": "Correct if the answer explains pydoc's output is only as good as the docstrings present, with none available if none are written."
+  },
+  {
+    "key": "pydoc-flags",
+    "title": "کدوم سوییچ چیکار می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای مستندات پروژه‌ت رو به‌شکل یه سایت محلی با لینک‌های قابل‌کلیک بین ماژول‌ها ببینی. کدوم دستور درسته؟",
+    "options": ["pydoc3 -p 1234", "pydoc3 -w myproject", "pydoc3 myproject", "pydoc3 --html myproject"],
+    "correct_option": 0,
+    "expected_outcome": "pydoc3 -p 1234 -- این یه سرور وب محلی روی پورت 1234 بالا میاره که مستندات پروژه و کتابخانه‌ی استاندارد رو با لینک‌های قابل‌کلیک نشون می‌ده. -w فقط یه فایل HTML تکی می‌سازه، بدون سرور و بدون ناوبری بین ماژول‌ها.",
+    "hints": ["-w فقط یه فایل تکی می‌سازه، نه یه سایت کامل با ناوبری.", "برای یه سرور واقعی با پورت، به دنبال یه سوییچ مرتبط با شبکه بگرد."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

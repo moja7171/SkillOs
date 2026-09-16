@@ -1,0 +1,37 @@
+[
+  {
+    "key": "first-argv-is-filename",
+    "title": "اولین عضو sys.argv چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "دستور `python3 tool.py report` رو اجرا کردی. sys.argv[0] چیه؟",
+    "options": ["\"tool.py\"", "\"report\"", "خالیه (فقط argv[1] پر می‌شه)", "\"python3\""],
+    "correct_option": 0,
+    "expected_outcome": "\"tool.py\" -- اولین عضو sys.argv همیشه اسم فایل درحال‌اجراست، نه دستور python3 و نه اولین آرگومان واقعی.",
+    "hints": ["اولین عضو، مخصوص خود آرگومان‌های واقعی نیست.", "این اسم فایل درحال‌اجراست."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "check-argument-count",
+    "title": "چرا len(sys.argv) == 1 یعنی بدون آرگومان؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا برای چک‌کردن «آیا کاربر هیچ آرگومانی نداده»، شرط `len(sys.argv) == 1` رو می‌نویسیم، نه `len(sys.argv) == 0`؟",
+    "expected_outcome": "چون sys.argv همیشه حداقل یه عضو داره -- اسم فایل درحال‌اجرا -- حتی وقتی کاربر هیچ آرگومان اضافه‌ای نداده. پس طول ۱ یعنی فقط همون اسم فایل هست و هیچ آرگومان واقعی‌ای داده نشده.",
+    "hints": ["sys.argv هیچ‌وقت کاملاً خالی نیست.", "طول ۱ یعنی فقط اسم فایل توش هست."],
+    "rubric": "Correct if the answer explains sys.argv always has at least the filename, so length 1 means no real arguments were passed."
+  },
+  {
+    "key": "read-two-arguments",
+    "title": "دو تا آرگومان رو بخون",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کدی بنویس که اگه برنامه با دقیقاً دو آرگومان (یعنی sys.argv سه عضو دارد) اجرا شد، اون دو آرگومان رو به اسم username و email چاپ کنه؛ وگرنه پیام \"usage: python3 app.py <username> <email>\" رو چاپ کنه.",
+    "expected_outcome": "```python\nimport sys\n\nif len(sys.argv) != 3:\n    print(\"usage: python3 app.py <username> <email>\")\nelse:\n    username = sys.argv[1]\n    email = sys.argv[2]\n    print(username, email)\n```",
+    "hints": ["دو آرگومان واقعی یعنی sys.argv باید سه عضو داشته باشه (اسم فایل + دو آرگومان).", "آرگومان‌های واقعی از ایندکس ۱ شروع می‌شن."],
+    "rubric": "Correct: checks len(sys.argv) == 3 (or != 3 for the usage branch), reads sys.argv[1] and sys.argv[2] correctly. Partial: off-by-one in the length check or wrong indices. Incorrect: doesn't use sys.argv correctly."
+  }
+]

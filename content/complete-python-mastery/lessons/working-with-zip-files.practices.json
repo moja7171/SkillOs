@@ -1,0 +1,37 @@
+[
+  {
+    "key": "zip-write-mode",
+    "title": "کدوم حالت برای ساخت zip لازمه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "برای ساختن یه فایل zip جدید و نوشتن فایل‌ها توش، کدوم حالت رو باید به ZipFile بدی؟",
+    "options": ["\"w\"", "\"r\" (پیش‌فرض)", "\"a\"", "هیچی، نیازی به مشخص‌کردن نیست"],
+    "correct_option": 0,
+    "expected_outcome": "\"w\" -- مخفف write، برای ساخت یه zip جدید و نوشتن فایل‌ها توش. حالت پیش‌فرض (بدون مشخص‌کردن) خوندنه، نه نوشتن.",
+    "hints": ["حرف اول write چیه؟", "پیش‌فرض ZipFile برای خوندنه، نه نوشتن."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "zip-a-folder",
+    "title": "یه پوشه رو فشرده کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "کدی بنویس که همه‌ی فایل‌های پوشه‌ی \"logs\" و زیرپوشه‌هاش رو (به‌شکل بازگشتی) توی یه فایل zip به اسم \"logs.zip\" بریزه.",
+    "expected_outcome": "```python\nfrom pathlib import Path\nfrom zipfile import ZipFile\n\nsource = Path(\"logs\")\n\nwith ZipFile(\"logs.zip\", \"w\") as zip:\n    for path in source.rglob(\"*\"):\n        zip.write(path)\n```",
+    "hints": ["برای پیمایش بازگشتی همه‌ی فایل‌ها، از rglob(\"*\") استفاده کن.", "ZipFile رو با حالت \"w\" باز کن و از with استفاده کن."],
+    "rubric": "Correct: uses Path(\"logs\").rglob(\"*\") to iterate and ZipFile(\"logs.zip\", \"w\") with zip.write(path) for each file, wrapped in `with`. Partial: correct logic but missing `with` or wrong mode. Incorrect: doesn't iterate recursively, or writes the folder itself instead of iterating files."
+  },
+  {
+    "key": "why-with-statement-zip",
+    "title": "چرا با with باز کردیم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا برای کار با ZipFile از `with ZipFile(...) as zip:` استفاده می‌کنیم به‌جای اینکه دستی close() رو صدا بزنیم؟",
+    "expected_outcome": "چون with تضمین می‌کنه فایل zip حتی اگه وسط کار خطایی رخ بده، به‌درستی بسته بشه -- بدون نیاز به نوشتن دستی یه بلوک try/finally.",
+    "hints": ["فکر کن وسط نوشتن فایل‌ها یه خطا رخ بده -- close() صدا زده می‌شه؟", "with این تضمین رو خودکار می‌ده."],
+    "rubric": "Correct if the answer explains `with` guarantees the file is closed even if an error occurs mid-operation."
+  }
+]

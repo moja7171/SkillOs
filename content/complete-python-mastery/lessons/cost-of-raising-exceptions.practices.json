@@ -1,0 +1,35 @@
+[
+  {
+    "key": "pass-statement-purpose",
+    "title": "این pass چرا لازمه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\ntry:\n    risky_call()\nexcept ValueError:\n    pass\n```\n`pass` توی این کد چه نقشی داره؟",
+    "expected_outcome": "pass یعنی «هیچ کاری نکن» — چون پایتون بلوک except خالی رو قبول نمی‌کنه، pass به‌عنوان یه جانگهدار (placeholder) لازمه تا بلوک از نظر نحوی معتبر باشه.",
+    "hints": ["پایتون بلوک‌های خالی رو قبول نمی‌کنه.", "pass دقیقاً یعنی هیچ کاری نکن."],
+    "rubric": "Correct if the answer explains pass is a no-op placeholder required because Python doesn't allow an empty block."
+  },
+  {
+    "key": "when-raise-cost-matters",
+    "title": "الان این نگرانی مهمه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی می‌گه «توی همه‌ی توابعمون به‌جای raise باید از return None استفاده کنیم، چون raise آهسته‌تره.» این تابع فقط توی یه فرم ثبت‌نام، هر بار یه کاربر که فرم می‌فرسته، یه‌بار صدا زده می‌شه. نظرت چیه؟",
+    "expected_outcome": "برای این مورد، این نگرانی زیادی سخت‌گیرانه‌ست. تفاوت کارایی raise فقط وقتی محسوسه که تابع هزاران بار پشت‌سرهم اجرا بشه؛ یه تابع که هر بار فقط یه‌بار (به ازای هر کاربر) صدا زده می‌شه، هیچ مشکل کارایی‌ای نداره — raise این‌جا کاملاً قابل‌قبوله، و پیام خطای واضحی هم می‌ده.",
+    "hints": ["تفاوت کارایی raise فقط توی اجرای هزاران‌باره محسوسه.", "این تابع فقط به ازای هر کاربر، یه‌بار صدا زده می‌شه."],
+    "rubric": "Correct if the answer says the concern is overblown here, since the performance difference only matters at scale (thousands of calls), not a single call per user submission."
+  },
+  {
+    "key": "raise-vs-if-tradeoff",
+    "title": "جمع‌بندی: کِی raise، کِی if؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "در یه جمله بگو: قاعده‌ی کلی برای انتخاب بین raise کردن یه استثنا و مدیریت‌کردن یه موقعیت با if معمولی چیه؟",
+    "expected_outcome": "اگه می‌شه موقعیت رو با یه if ساده مدیریت کرد، همون بهتره (هم تمیزتره هم در مقیاس بزرگ سریع‌تر)؛ raise رو فقط برای موقعیت‌هایی نگه دار که واقعاً غیرمنتظره یا استثنایی‌ان.",
+    "hints": ["اگه if کافیه، از raise استفاده نکن.", "raise رو برای موقعیت‌های واقعاً استثنایی نگه دار."],
+    "rubric": "Correct if the answer captures the rule: prefer a plain if when it's sufficient, reserve raise for genuinely exceptional situations."
+  }
+]

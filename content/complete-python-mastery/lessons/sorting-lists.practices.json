@@ -1,0 +1,37 @@
+[
+  {
+    "key": "sort-vs-sorted",
+    "title": "کدوم لیست اصلی رو دست نمی‌زنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nnumbers = [3, 1, 2]\nresult = sorted(numbers)\n```\nبعد از این خط، `numbers` چیه؟",
+    "options": ["[3, 1, 2] -- دست‌نخورده", "[1, 2, 3] -- مرتب‌شده", "None", "خطا می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "[3, 1, 2] — sorted() یه لیست جدید برمی‌گردونه (توی result)، اصلاً به numbers دست نمی‌زنه. فقط sort() (متد) لیست اصلی رو تغییر می‌ده.",
+    "hints": ["sorted() یه تابعه که یه لیست جدید برمی‌گردونه؛ sort() یه متده که خود لیست رو عوض می‌کنه.", "اینجا از sorted() استفاده شده، نه numbers.sort()."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "sort-by-key",
+    "title": "بر اساس طول اسم مرتب کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این لیست از اسم‌ها رو بر اساس **طولشون** (کوتاه‌ترین اول) مرتب کن، با استفاده از `sort()` و پارامتر `key`:\n```python\nnames = [\"Reza\", \"Al\", \"Mohammad\", \"Sara\"]\n```",
+    "expected_outcome": "```python\ndef by_length(name):\n    return len(name)\n\n\nnames.sort(key=by_length)\n```\nنتیجه: `['Al', 'Sara', 'Reza', 'Mohammad']`",
+    "hints": ["تابع key باید یه عضو بگیره و یه عدد برای مقایسه برگردونه.", "طول یه رشته رو با len() می‌گیری."],
+    "rubric": "Correct: defines a key function returning len(name) (or equivalent) and calls names.sort(key=...) with it, as a reference (not called). Partial: correct idea but calls the function (e.g. key=by_length()) instead of passing a reference. Incorrect: sorts without a key function, or sorts by something other than length."
+  },
+  {
+    "key": "sort-needs-keyword",
+    "title": "یه هم‌تیمی خطا گرفته",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nnumbers.sort(lambda x: -x)\n```\nو با `TypeError: sort() takes no positional arguments` مواجه شده. مشکل چیه؟",
+    "expected_outcome": "sort() پارامترهاش (مثل key) رو فقط به‌صورت آرگومان کلیدی قبول می‌کنه، نه موقعیتی. باید بنویسه: `numbers.sort(key=lambda x: -x)`.",
+    "hints": ["sort() فقط آرگومان کلیدی قبول می‌کنه، نه موقعیتی.", "باید اسم پارامتر (key) رو صریح جلوی مقدار بنویسی."],
+    "rubric": "Correct if the answer explains that sort()'s parameters must be passed as keyword arguments, and proposes key=lambda x: -x as the fix."
+  }
+]

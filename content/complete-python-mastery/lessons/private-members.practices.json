@@ -1,0 +1,37 @@
+[
+  {
+    "key": "double-underscore-private",
+    "title": "این ویژگی از بیرون در دسترسه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nclass Wallet:\n    def __init__(self, balance):\n        self.__balance = balance\n\n\nw = Wallet(100)\nprint(w.__balance)\n```\nچی اتفاق می‌افته؟",
+    "options": ["AttributeError می‌ده", "100 چاپ می‌شه", "None چاپ می‌شه", "0 چاپ می‌شه"],
+    "correct_option": 0,
+    "expected_outcome": "AttributeError — چون __balance با دو زیرخط شروع شده، خصوصیه و از بیرون کلاس با همین اسم قابل‌دسترسی نیست.",
+    "hints": ["دو زیرخط اول اسم یعنی خصوصیه.", "از بیرون کلاس، دیگه با اسم اصلی قابل‌دسترسی نیست."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "name-mangling-explanation",
+    "title": "پس چطور واقعاً محافظت نمی‌شه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی می‌گه «پس با دو زیرخط، این ویژگی کاملاً امنه و هیچ‌کس از بیرون بهش دسترسی نداره، درسته؟» در ۱ تا ۲ جمله جوابش بده.",
+    "expected_outcome": "نه دقیقاً. پایتون اسم ویژگی رو تغییر می‌ده (name mangling) و جلوش اسم کلاس رو اضافه می‌کنه (مثلاً _Wallet__balance)، ولی هنوز از نظر فنی با همون اسم جدید قابل‌دسترسیه. دو زیرخط بیشتر یه هشدار قراردادیه، نه یه مکانیزم امنیتی واقعی.",
+    "hints": ["پایتون مفهوم واقعی «خصوصی» مثل جاوا یا C# رو نداره.", "اسم واقعی ویژگی توی حافظه، با name mangling عوض می‌شه، نه غیرقابل‌دسترسی."],
+    "rubric": "Correct if the answer explains this is a convention (name mangling), not true security -- the attribute is still technically accessible under a mangled name."
+  },
+  {
+    "key": "make-attribute-private",
+    "title": "این ویژگی رو خصوصی کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این کلاس یه ویژگی داخلی داره که کاربرهای کلاس نباید مستقیم بهش دست بزنن. با تغییر اسمش، خصوصیش کن (همه‌ی جاهایی که استفاده شده رو هم اصلاح کن):\n```python\nclass Account:\n    def __init__(self):\n        self.pin = \"0000\"\n\n    def check_pin(self, value):\n        return self.pin == value\n```",
+    "expected_outcome": "```python\nclass Account:\n    def __init__(self):\n        self.__pin = \"0000\"\n\n    def check_pin(self, value):\n        return self.__pin == value\n```",
+    "hints": ["اسمش رو با دو زیرخط شروع کن.", "همه‌ی جاهایی که pin استفاده شده (توی __init__ و check_pin) باید هماهنگ عوض بشن."],
+    "rubric": "Correct: renames pin to __pin consistently in both __init__ and check_pin. Partial: renamed in only one of the two places (breaks the class). Incorrect: doesn't use double underscore, or breaks functionality."
+  }
+]

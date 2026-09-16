@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('courses/{course}/learn', [LessonController::class, 'continue'])->name('courses.learn');
     Route::get('courses/{course}/lessons/{lesson:slug}', [LessonController::class, 'show'])->scopeBindings()->name('lessons.show');
+    Route::post('lessons/{lesson}/mark-done', [LessonController::class, 'markDone'])->name('lessons.mark-done');
     // Old bookmark form; lesson pages now live under their course.
     Route::get('lessons/{lesson}', fn (Lesson $lesson) => redirect()->route('lessons.show', [$lesson->course, $lesson], 301));
 

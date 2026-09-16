@@ -1,0 +1,37 @@
+[
+  {
+    "key": "sys-path-first-entry",
+    "title": "اولین عضو sys.path چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "وقتی `print(sys.path)` رو اجرا می‌کنی، اولین مسیر توی این لیست معمولاً چیه؟",
+    "options": ["پوشه‌ی فعلی (جایی که فایل درحال‌اجرا توشه)", "پوشه‌ی نصب پایتون", "پوشه‌ی خانگی کاربر (home)", "آخرین پوشه‌ای که یه ماژول ازش import شده"],
+    "correct_option": 0,
+    "expected_outcome": "پوشه‌ی فعلی -- پایتون همیشه اول پوشه‌ی همون فایلی که درحال اجراست رو می‌گرده، بعد می‌ره سراغ پوشه‌های نصب.",
+    "hints": ["پایتون همیشه نزدیک‌ترین جا رو اول می‌گرده.", "این پوشه‌ی خود فایل درحال‌اجراست، نه پوشه‌ی نصب پایتون."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "module-not-found-reason",
+    "title": "چرا پایتون این ماژول رو پیدا نمی‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی فایل helpers.py رو توی یه پوشه‌ی کاملاً متفاوت (مثلاً Desktop) گذاشته و از پوشه‌ی پروژه سعی می‌کنه `import helpers` کنه، ولی ModuleNotFoundError می‌گیره. چرا؟",
+    "expected_outcome": "چون sys.path فقط پوشه‌ی فعلی (پوشه‌ی پروژه) و پوشه‌های نصب پایتون رو شامل می‌شه -- پوشه‌ی Desktop توی این لیست نیست، پس پایتون فایل helpers.py رو پیدا نمی‌کنه.",
+    "hints": ["به لیست sys.path فکر کن: کدوم پوشه‌ها توش هستن؟", "پایتون فقط توی پوشه‌ی فعلی و پوشه‌های نصب می‌گرده، نه هرجایی روی سیستم."],
+    "rubric": "Correct if the answer explains sys.path doesn't include arbitrary directories like Desktop, only the current directory and Python's installation paths."
+  },
+  {
+    "key": "print-sys-path",
+    "title": "لیست مسیرهای جست‌وجو رو چاپ کن",
+    "form": "coding",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدی بنویس که ماژول sys رو import کنه و لیست مسیرهایی که پایتون برای پیدا کردن ماژول‌ها می‌گرده رو چاپ کنه.",
+    "expected_outcome": "```python\nimport sys\n\nprint(sys.path)\n```",
+    "hints": ["اول باید ماژول sys رو import کنی.", "متغیری که این لیست رو نگه می‌داره sys.path‌ه."],
+    "rubric": "Correct: imports sys and prints sys.path. Partial: imports sys but prints the wrong attribute. Incorrect: doesn't import sys, or uses an unrelated function."
+  }
+]

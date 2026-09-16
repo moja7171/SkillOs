@@ -1,0 +1,37 @@
+[
+  {
+    "key": "why-virtual-environments",
+    "title": "چرا محیط مجازی لازمه؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "چرا نمی‌شه دو تا پروژه‌ی مختلف، هرکدوم به یه نسخه‌ی متفاوت از یه پکیج نیاز داشته باشن، بدون استفاده از محیط مجازی؟",
+    "expected_outcome": "چون بدون محیط مجازی، پکیج‌ها به‌شکل سراسری روی سیستم نصب می‌شن و فقط یه نسخه از هر پکیج می‌تونه هم‌زمان وجود داشته باشه -- محیط مجازی هر پروژه رو ایزوله می‌کنه تا نسخه‌ی خودش رو داشته باشه، بدون تداخل با پروژه‌های دیگه.",
+    "hints": ["بدون ایزوله‌سازی، فقط یه نسخه از هر پکیج روی کل سیستم می‌مونه.", "محیط مجازی یعنی هر پروژه پوشه‌ی نصب پکیج‌های مخصوص خودش رو داره."],
+    "rubric": "Correct if the answer explains global installs only allow one version at a time, and virtual environments isolate per-project package installs."
+  },
+  {
+    "key": "activate-order",
+    "title": "ترتیب درست کار با محیط مجازی",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای یه پکیج رو فقط داخل محیط مجازی یه پروژه نصب کنی، نه سراسری. ترتیب درست کدومه؟",
+    "options": ["ساخت محیط مجازی → فعال‌سازی (activate) → pip install", "pip install → ساخت محیط مجازی → فعال‌سازی", "فعال‌سازی → ساخت محیط مجازی → pip install", "فرقی نداره، هر ترتیبی جواب می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "ساخت محیط مجازی → فعال‌سازی → pip install -- تا وقتی محیط مجازی فعال نشده، pip install به‌شکل سراسری روی سیستم نصب می‌کنه، نه داخل محیط مجازی.",
+    "hints": ["باید اول محیط مجازی وجود داشته باشه، بعد فعالش کنی.", "pip install فقط بعد از فعال‌سازی، داخل محیط مجازی نصب می‌کنه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "create-and-activate",
+    "title": "یه محیط مجازی بساز",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "دستور ساخت یه محیط مجازی به اسم venv (نه env) رو بنویس.",
+    "expected_outcome": "python3 -m venv venv",
+    "hints": ["الگوی کلی: python3 -m venv <اسم پوشه>.", "اسم پوشه رو venv بذار به‌جای env."],
+    "rubric": "Correct if the answer is `python3 -m venv venv` (or `python -m venv venv`)."
+  }
+]

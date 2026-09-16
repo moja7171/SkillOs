@@ -1,0 +1,37 @@
+[
+  {
+    "key": "why-generator-not-list",
+    "title": "چرا iterdir یه جنراتور برمی‌گردونه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا p.iterdir() یه جنراتور برمی‌گردونه به‌جای یه لیست آماده از همون اول؟",
+    "expected_outcome": "چون یه پوشه ممکنه میلیون‌ها فایل داشته باشه؛ اگه همه‌شون یه‌باره توی حافظه بارگذاری بشن، این کار پرهزینه و ناکارآمده. جنراتور هر بار فقط یه مقدار جدید تولید می‌کنه، پس حافظه‌ی کمتری مصرف می‌شه.",
+    "hints": ["فکر کن یه پوشه با یه میلیون فایل داری.", "جنراتور همه‌چیز رو یه‌جا توی حافظه نگه نمی‌داره."],
+    "rubric": "Correct if the answer explains memory efficiency with potentially huge directories as the reason for using a generator."
+  },
+  {
+    "key": "glob-vs-rglob",
+    "title": "glob یا rglob؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای همه‌ی فایل‌های با پسوند .json رو توی یه پوشه و همه‌ی زیرپوشه‌هاش پیدا کنی. کدوم متد درسته؟",
+    "options": ["p.rglob(\"*.json\")", "p.glob(\"*.json\")", "p.iterdir(\"*.json\")", "p.glob(\"*.json\", recursive=True)"],
+    "correct_option": 0,
+    "expected_outcome": "p.rglob(\"*.json\") -- چون rglob (recursive glob) علاوه بر پوشه‌ی فعلی، زیرپوشه‌ها رو هم می‌گرده. glob فقط توی همون پوشه می‌گرده، نه بازگشتی.",
+    "hints": ["glob فقط توی همون پوشه‌ست، نه زیرپوشه‌ها.", "برای جست‌وجوی بازگشتی، پیشوند r اضافه می‌شه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "list-only-files",
+    "title": "فقط فایل‌ها رو لیست کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کدی بنویس که با استفاده از iterdir و یه list comprehension، فقط فایل‌ها (نه پوشه‌ها) رو از مسیر \"reports\" توی یه لیست جمع کنه.",
+    "expected_outcome": "```python\nfrom pathlib import Path\n\np = Path(\"reports\")\nfiles = [item for item in p.iterdir() if item.is_file()]\n```",
+    "hints": ["از list comprehension با یه شرط استفاده کن.", "برای چک‌کردن اینکه یه آیتم فایله، از is_file() استفاده کن."],
+    "rubric": "Correct: uses a list comprehension over p.iterdir() filtering with item.is_file(). Partial: correct logic but uses is_dir() by mistake or forgets the filter. Incorrect: doesn't filter at all, or uses glob instead of iterdir without justification."
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "key": "finally-always-runs",
+    "title": "finally با و بدون خطا",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\ntry:\n    print(\"A\")\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"B\")\nfinally:\n    print(\"C\")\n```\nبه ترتیب چی چاپ می‌شه؟",
+    "expected_outcome": "A\nB\nC — ابتدا A چاپ می‌شه، بعد 10/0 استثنا می‌ده و except اجرا می‌شه (B)، و در نهایت finally همیشه اجرا می‌شه (C) — چه استثنا رخ بده چه نده.",
+    "hints": ["finally همیشه اجرا می‌شه، صرف‌نظر از اینکه except اجرا شده باشه یا نه.", "ترتیب: اول try، بعد except (اگه خطا بود)، بعد finally."],
+    "rubric": "Correct only if the answer matches A, then B, then C (in that order)."
+  },
+  {
+    "key": "why-finally-not-after",
+    "title": "چرا finally بهتر از گذاشتن بعد از کل بلوکه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی می‌پرسه «چرا کد بستن فایل رو توی finally می‌ذاریم؟ چرا نمی‌ذاریمش بعد از کل try/except؟» در ۲ تا ۳ جمله جوابش بده.",
+    "expected_outcome": "چون اگه try با استثنا مواجه بشه (مثلاً همون خط باز کردن فایل شکست بخوره)، متغیری که باید بسته بشه اصلاً ساخته نشده، پس کد بعد از try/except با NameError مواجه می‌شه. finally تنها جاییه که هم بعد از موفقیت هم بعد از شکست، تضمینی اجرا می‌شه.",
+    "hints": ["اگه خود باز-کردن فایل شکست بخوره، متغیر فایل اصلاً وجود نداره.", "finally تضمین می‌کنه که این کد همیشه اجرا بشه، صرف‌نظر از موفقیت یا شکست."],
+    "rubric": "Correct if the answer explains that code after try/except can fail with NameError if the resource was never created, while finally always runs regardless of success or failure."
+  }
+]

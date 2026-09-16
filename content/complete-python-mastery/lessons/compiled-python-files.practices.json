@@ -1,0 +1,37 @@
+[
+  {
+    "key": "why-not-app-cached",
+    "title": "چرا app.py توی pycache نیست؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی پوشه‌ای که app.py و sales.py هست، بعد از اجرای `python app.py`، فقط نسخه‌ی کامپایل‌شده‌ی sales توی __pycache__ ظاهر می‌شه، نه app. چرا؟",
+    "expected_outcome": "چون app.py همون فایلیه که مستقیماً به‌عنوان نقطه‌ی ورود اجرا شده (python app.py)؛ پایتون همیشه ماژولی که مستقیم اجرا می‌شه رو از نو کامپایل می‌کنه و کشش نمی‌کنه، ولی ماژول‌هایی که import می‌شن (مثل sales) رو کش می‌کنه.",
+    "hints": ["به تفاوت بین «اجرا کردن مستقیم یه فایل» و «import کردنش» فکر کن.", "فقط ماژول‌های import‌شده کش می‌شن."],
+    "rubric": "Correct if the answer explains only imported modules are cached, not the directly-executed entry-point script."
+  },
+  {
+    "key": "when-recompiled",
+    "title": "کِی دوباره کامپایل می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "پایتون از کجا می‌فهمه باید نسخه‌ی کامپایل‌شده‌ی یه ماژول رو دوباره بسازه؟",
+    "options": ["تاریخ-زمان فایل سورس رو با فایل کامپایل‌شده مقایسه می‌کنه", "هر بار که برنامه اجرا می‌شه، همیشه دوباره کامپایل می‌کنه", "فقط وقتی خودت پوشه‌ی pycache رو پاک کنی", "محتوای فایل رو با یه checksum مقایسه می‌کنه، نه تاریخ"],
+    "correct_option": 0,
+    "expected_outcome": "درسته: پایتون timestamp فایل سورس رو با فایل کامپایل‌شده مقایسه می‌کنه؛ اگه سورس جدیدتر باشه، دوباره کامپایل می‌شه.",
+    "hints": ["این یه مقایسه‌ی ساده‌ی تاریخ‌زمانه، نه چک‌سام محتوا.", "اگه فایل سورس بعد از آخرین کامپایل تغییر کرده باشه، دوباره کامپایل می‌شه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "pycache-purpose",
+    "title": "pycache چه چیزی رو سریع‌تر می‌کنه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "پوشه‌ی __pycache__ دقیقاً چی رو سریع‌تر می‌کنه -- اجرای منطق برنامه رو، یا چیز دیگه‌ای؟",
+    "expected_outcome": "فقط لودشدن (loading) ماژول‌ها رو سریع‌تر می‌کنه -- یعنی مرحله‌ی تبدیل کد سورس به بایت‌کد رو رد می‌کنه. هیچ تأثیری روی سرعت واقعی اجرای منطق برنامه نداره.",
+    "hints": ["به تفاوت بین «لودشدن یه ماژول» و «اجرای منطق داخلش» فکر کن.", "این فقط مرحله‌ی کامپایل رو رد می‌کنه، نه اجرای واقعی کد."],
+    "rubric": "Correct if the answer specifies module loading speed, not overall program execution speed."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "queue-vs-stack",
+    "title": "این خروجی برای کدوم ساختاره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه ساختار داده سه تا آیتم `1, 2, 3` رو به همین ترتیب می‌گیره. بعد یه عملیات «برداشتن» صدا زده می‌شه و `1` برمی‌گرده. این ساختار کدومه؟",
+    "options": ["صف (queue) — چون اولین ورودی، اولین خروجیه", "پشته (stack) — چون اولین ورودی، اولین خروجیه", "هر دو می‌تونن باشن، فرقی نداره", "هیچ‌کدوم — این رفتار ممکن نیست"],
+    "correct_option": 0,
+    "expected_outcome": "صف — چون اولین آیتمی که اضافه شده (1)، اولین آیتمیه که برداشته شده. این دقیقاً رفتار FIFOه. پشته برعکس این عمل می‌کرد (آخرین اضافه‌شده رو اول برمی‌گردوند، یعنی 3).",
+    "hints": ["FIFO یعنی اولین ورودی، اولین خروجی.", "اگه پشته بود، اول 3 برمی‌گشت نه 1."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "deque-basic",
+    "title": "یه صف از کارها",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "با `deque`، یه صف از کارهای در انتظار بساز: سه تا کار `\"task1\"`, `\"task2\"`, `\"task3\"` رو به همین ترتیب اضافه کن، بعد اولین کاری که باید انجام بشه رو با `popleft()` بردار و چاپ کن.",
+    "expected_outcome": "```python\nfrom collections import deque\n\ntasks = deque()\ntasks.append(\"task1\")\ntasks.append(\"task2\")\ntasks.append(\"task3\")\n\nnext_task = tasks.popleft()\nprint(next_task)\n# task1\n```",
+    "hints": ["اول باید deque رو از collections ایمپورت کنی.", "append برای اضافه‌کردن، popleft برای برداشتن از ابتدا."],
+    "rubric": "Correct: imports deque, appends in order, pops with popleft() (not pop()), prints \"task1\". Partial: correct structure but uses pop() instead of popleft() (removes from the wrong end). Incorrect: uses a plain list with pop(0), missing the point of the lesson, or wrong order."
+  },
+  {
+    "key": "why-deque-over-list",
+    "title": "چرا deque به‌جای لیست؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "یه هم‌تیمی می‌گه «چه فرقی می‌کنه از لیست با pop(0) استفاده کنم یا از deque با popleft()؟ هر دو یه کارو می‌کنن.» در ۲ تا ۳ جمله بهش توضیح بده کجا این فرق واقعاً مهمه.",
+    "expected_outcome": "از نظر نتیجه یکی‌ان، ولی از نظر کارایی فرق دارن: حذف از ابتدای یه لیست بزرگ باعث می‌شه پایتون همه‌ی اعضای بعدی رو جابه‌جا کنه (کند، مخصوصاً با صف‌های بزرگ)؛ popleft() روی deque این کار رو بدون جابه‌جایی بقیه انجام می‌ده، پس همیشه سریعه — این فرق فقط توی صف‌های بزرگ محسوسه.",
+    "hints": ["حذف از ابتدای لیست یعنی جابه‌جاکردن همه‌ی اعضای بعدی.", "این فرق فقط وقتی محسوسه که صف خیلی بزرگ باشه."],
+    "rubric": "Correct if the answer explains that list.pop(0) requires shifting all remaining items (slow for large lists) while deque.popleft() doesn't, and notes this matters mainly at scale."
+  }
+]

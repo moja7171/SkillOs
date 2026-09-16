@@ -1,0 +1,37 @@
+[
+  {
+    "key": "instance-attrs-independent",
+    "title": "تغییردادن یکی، اون یکی رو عوض می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Point:\n    def __init__(self, x):\n        self.x = x\n\n\np1 = Point(1)\np2 = Point(2)\np1.x = 100\nprint(p2.x)\n```\nخروجی چیه؟",
+    "options": ["2", "100", "1", "None"],
+    "correct_option": 0,
+    "expected_outcome": "2 — x یه ویژگی نمونه‌ست؛ تغییردادن p1.x هیچ ربطی به p2 نداره، چون هرکدوم مقدار مستقل خودشون رو دارن.",
+    "hints": ["ویژگی نمونه بین آبجکت‌های مختلف مستقله.", "p1 و p2 دو تا آبجکت کاملاً جدان."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "class-attr-shared",
+    "title": "ویژگی کلاس رو عوض کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Robot:\n    version = 1\n\n\nr1 = Robot()\nr2 = Robot()\nRobot.version = 2\nprint(r1.version, r2.version)\n```\nخروجی چیه؟",
+    "expected_outcome": "2 2 — version یه ویژگی کلاسه، پس تغییردادنش از طریق خود کلاس (Robot.version)، روی همه‌ی آبجکت‌ها (چه قدیمی چه جدید) اثر می‌ذاره.",
+    "hints": ["version توی بدنه‌ی کلاس تعریف شده، نه توی __init__ — پس ویژگی کلاسه.", "ویژگی کلاس بین همه‌ی نمونه‌ها مشترکه."],
+    "rubric": "Correct only if the answer is \"2 2\" (both instances reflect the class-level change)."
+  },
+  {
+    "key": "choose-attribute-kind",
+    "title": "ویژگی نمونه یا کلاس؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "داری یه کلاس `Employee` می‌نویسی. دو تا ویژگی لازم داری: `name` (اسم هر کارمند) و `company_name` (اسم شرکت، که برای همه‌ی کارمندها یکیه). کدوم باید ویژگی نمونه باشه، کدوم کلاس؟ چرا؟",
+    "expected_outcome": "name باید ویژگی نمونه باشه، چون هر کارمند اسم متفاوتی داره. company_name باید ویژگی کلاس باشه، چون بین همه‌ی کارمندها مشترکه و یکسانه.",
+    "hints": ["چیزی که بین هر نمونه فرق می‌کنه، ویژگی نمونه‌ست.", "چیزی که برای همه یکسانه، ویژگی کلاسه."],
+    "rubric": "Correct if the answer assigns name as instance attribute (varies per employee) and company_name as class attribute (shared across all)."
+  }
+]

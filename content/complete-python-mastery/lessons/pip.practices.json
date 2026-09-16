@@ -1,0 +1,37 @@
+[
+  {
+    "key": "semantic-versioning-parts",
+    "title": "کدوم بخش نسخه یعنی چی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی نسخه‌ی `3.5.2`، عدد وسط (۵) نشون‌دهنده‌ی چیه؟",
+    "options": ["نسخه‌ی فرعی (minor) -- قابلیت جدید، سازگار با نسخه‌های قبلی", "نسخه‌ی اصلی (major) -- تغییرات ناسازگار", "پچ (patch) -- فقط رفع باگ", "شماره‌ی build داخلی، بدون معنای خاص"],
+    "correct_option": 0,
+    "expected_outcome": "نسخه‌ی فرعی (minor) -- عدد وسط توی نسخه‌بندی معنایی، قابلیت جدید ولی سازگار با نسخه‌های قبلی رو نشون می‌ده.",
+    "hints": ["سه بخش نسخه به ترتیب: اصلی، فرعی، پچ.", "عدد وسط، فرعیه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "install-specific-version",
+    "title": "یه نسخه‌ی مشخص نصب کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "دستور pip برای نصب دقیقاً نسخه‌ی 1.4.0 پکیج django رو بنویس.",
+    "expected_outcome": "pip install django==1.4.0",
+    "hints": ["از == برای نسخه‌ی دقیق استفاده کن.", "بین اسم پکیج و نسخه، دو تا علامت مساوی می‌ذاری."],
+    "rubric": "Correct if the answer is `pip install django==1.4.0` (or equivalent with ~=1.4.0 for the same exact version)."
+  },
+  {
+    "key": "wildcard-version-meaning",
+    "title": "این دستور چه نسخه‌ای نصب می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "دستور `pip install requests==2.9.*` رو اجرا می‌کنی. اگه نسخه‌های 2.9.0، 2.9.1 و 2.9.2 موجود باشن، کدومش نصب می‌شه و چرا؟",
+    "expected_outcome": "2.9.2 (آخرین نسخه‌ی موجود که با پیشوند 2.9 مطابقت داره) -- علامت ستاره یعنی «آخرین نسخه‌ی سازگار با این پیشوند»، نه دقیقاً 2.9.0.",
+    "hints": ["ستاره یعنی «هرچی با این پیشوند مطابقت داره»، نه یه نسخه‌ی دقیق.", "بین گزینه‌های مطابق، آخرین (جدیدترین) انتخاب می‌شه."],
+    "rubric": "Correct if the answer identifies 2.9.2 as the latest matching patch version, explaining the wildcard's meaning."
+  }
+]

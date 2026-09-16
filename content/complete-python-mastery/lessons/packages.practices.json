@@ -1,0 +1,35 @@
+[
+  {
+    "key": "missing-init-file",
+    "title": "چرا پایتون این ماژول رو پیدا نمی‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه پوشه‌ی billing با یه فایل invoices.py توش ساخته شده، ولی هیچ __init__.py توش نیست. وقتی از app.py می‌نویسیم `from billing import invoices`، خطا می‌گیریم. چرا، و چطور درستش کنیم؟",
+    "expected_outcome": "چون بدون __init__.py، پایتون پوشه‌ی billing رو یه پکیج قابل‌import نمی‌شناسه. راه‌حل: یه فایل خالی __init__.py داخل پوشه‌ی billing بسازیم.",
+    "hints": ["فقط وجود یه پوشه کافی نیست؛ باید علامت‌گذاری بشه که این یه پکیجه.", "اون فایل خالی که پوشه رو به پکیج تبدیل می‌کنه چه اسمی داره؟"],
+    "rubric": "Correct if the answer identifies the missing __init__.py as the cause and proposes adding it."
+  },
+  {
+    "key": "three-import-styles",
+    "title": "سه روش import از یه پکیج",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "فرض کن یه پکیج به اسم `shipping` با یه ماژول `tracker.py` داری که یه تابع `track_package()` داره. کد بنویس که نشون بده چطور می‌شه با هر سه روشی که این درس نشون داد (مسیر کامل، import اسم مشخص، import خود ماژول) این تابع رو صدا زد.",
+    "expected_outcome": "```python\nimport shipping.tracker\nshipping.tracker.track_package()\n\nfrom shipping.tracker import track_package\ntrack_package()\n\nfrom shipping import tracker\ntracker.track_package()\n```",
+    "hints": ["روش اول: import کامل با نقطه.", "روش دوم و سوم: from ... import با اسم تابع یا اسم ماژول."],
+    "rubric": "Correct: demonstrates all three import styles correctly calling track_package(). Partial: only 1-2 styles shown correctly. Incorrect: import paths don't match the shipping.tracker structure."
+  },
+  {
+    "key": "package-vs-module",
+    "title": "پکیج و ماژول چه فرقی دارن؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "در ۱ جمله بگو پکیج (package) با ماژول (module) توی سیستم فایل چه فرقی داره.",
+    "expected_outcome": "ماژول معادل یه فایل پایتونیه (مثل sales.py)، پکیج معادل یه پوشه‌ست که یه __init__.py داره و می‌تونه یک یا چند ماژول رو توی خودش نگه داره.",
+    "hints": ["یکی فایله، یکی پوشه.", "پکیج ظرف چند تا ماژول (یا حتی زیرپکیج) می‌تونه باشه."],
+    "rubric": "Correct if the answer maps module to a file and package to a directory (with __init__.py)."
+  }
+]

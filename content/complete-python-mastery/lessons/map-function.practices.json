@@ -1,0 +1,24 @@
+[
+  {
+    "key": "map-basic",
+    "title": "طول هر اسم رو بگیر",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با `map` و یه لامبدا، یه لیست از طول هر اسم بساز:\n```python\nnames = [\"Ali\", \"Sara\", \"Mohammad\"]\n```\nنتیجه باید `[3, 4, 8]` باشه.",
+    "expected_outcome": "```python\nlengths = list(map(lambda name: len(name), names))\n```",
+    "hints": ["map(تابع, پیمایش‌پذیر) رو با list() ببند تا لیست واقعی بگیری.", "لامبدات باید len(name) رو برگردونه."],
+    "rubric": "Correct: list(map(lambda name: len(name), names)) or equivalent, producing [3, 4, 8]. Partial: correct map() call but forgets list() (still a map object). Incorrect: uses a manual loop instead of map, or wrong logic."
+  },
+  {
+    "key": "map-returns-iterable",
+    "title": "چرا هیچی چاپ نشد؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو زده و می‌گه «print که خروجی عجیبی داد، نه یه لیست»:\n```python\nresult = map(lambda x: x * 2, [1, 2, 3])\nprint(result)\n```\nدر ۱ تا ۲ جمله بهش بگو چرا، و چطور یه لیست واقعی بگیره.",
+    "expected_outcome": "map یه شیء map برمی‌گردونه (چیزی شبیه <map object at ...>)، نه مستقیم یه لیست. برای گرفتن لیست واقعی باید نتیجه رو با list() ببندی: list(map(...)).",
+    "hints": ["map خودش پیمایش‌پذیره، ولی از نوع list نیست.", "list(...) دور کل عبارت map(...) رو بگیر."],
+    "rubric": "Correct if the answer explains map() returns a map object (not a list directly) and that wrapping with list() gives the actual list."
+  }
+]

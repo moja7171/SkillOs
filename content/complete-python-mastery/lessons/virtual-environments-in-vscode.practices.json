@@ -1,0 +1,24 @@
+[
+  {
+    "key": "why-module-not-found-in-editor",
+    "title": "چرا این خطا می‌گیریم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی با pipenv install requests این پکیج رو نصب کرده و توی ترمینال با pipenv shell درست کار می‌کنه، ولی وقتی از داخل ویرایشگرش برنامه رو اجرا می‌کنه، ModuleNotFoundError می‌گیره. چرا؟",
+    "expected_outcome": "چون ویرایشگر به‌طور پیش‌فرض از مفسر پایتونِ سراسری سیستم استفاده می‌کنه، نه از مفسر مخصوص محیط مجازی پروژه -- باید صریح مفسر داخل محیط مجازی رو به ویرایشگر معرفی کنه.",
+    "hints": ["ویرایشگر و ترمینال لزوماً از یه مفسر پایتون استفاده نمی‌کنن.", "باید مفسر درست رو صریح توی ویرایشگر انتخاب کرد."],
+    "rubric": "Correct if the answer explains the editor defaults to the global interpreter, not the project's virtual-environment interpreter, until told otherwise."
+  },
+  {
+    "key": "find-venv-path",
+    "title": "مسیر محیط مجازی رو پیدا کن",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "دستور Pipenv برای پیداکردن مسیر محیط مجازیِ پروژه‌ی فعلی رو بنویس.",
+    "expected_outcome": "pipenv --venv",
+    "hints": ["همون دستوری که توی درس Pipenv برای پیداکردن مسیر محیط مجازی دیدیم.", "با یه فلگ (--venv) بعد از خود pipenv."],
+    "rubric": "Correct if the answer is `pipenv --venv`."
+  }
+]

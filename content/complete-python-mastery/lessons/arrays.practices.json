@@ -1,0 +1,24 @@
+[
+  {
+    "key": "when-to-use-array",
+    "title": "الان وقتشه از آرایه استفاده کنیم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی برنامه‌ای می‌نویسه که یه لیست ۲۰ تایی از قیمت‌های محصولات رو نگه می‌داره و می‌گه «بذار همین الان به‌جای لیست از array استفاده کنم، سریع‌تره». در ۱ تا ۲ جمله بهش بگو این کار الان لازمه یا نه.",
+    "expected_outcome": "نه، لازم نیست. تفاوت کارایی array و list فقط توی دنباله‌های خیلی بزرگ (چندهزارتایی به بالا) محسوسه؛ برای ۲۰ تا عدد، لیست کاملاً کافیه و نیازی به این بهینه‌سازی زودهنگام نیست.",
+    "hints": ["تفاوت کارایی فقط برای دنباله‌های خیلی بزرگ محسوسه.", "۲۰ تا عدد اصلاً به این مقیاس نمی‌رسه."],
+    "rubric": "Correct if the answer says no, explaining that array's performance benefit only matters at large scale and 20 items doesn't warrant it."
+  },
+  {
+    "key": "array-type-error",
+    "title": "چرا این خطا رو می‌گیریم؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfrom array import array\nnumbers = array(\"i\", [1, 2, 3])\nnumbers.append(\"4\")\n```\nاین کد چه خطایی می‌ده و چرا؟",
+    "expected_outcome": "TypeError — چون آرایه فقط یه نوع مشخص (اینجا integer، به‌خاطر type code \"i\") قبول می‌کنه، و \"4\" یه رشته‌ست، نه عدد صحیح.",
+    "hints": ["type code \"i\" یعنی فقط عدد صحیح مجازه.", "\"4\" با کوتیشن، یعنی رشته‌ست، نه عدد."],
+    "rubric": "Correct if the answer identifies a TypeError caused by adding a string to an integer-typed array."
+  }
+]

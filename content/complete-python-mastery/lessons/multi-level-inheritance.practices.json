@@ -1,0 +1,37 @@
+[
+  {
+    "key": "spot-inheritance-abuse",
+    "title": "این وراثت مشکل داره؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "```python\nclass Vehicle:\n    def refuel(self):\n        print(\"refuel\")\n\n\nclass Bicycle(Vehicle):\n    pass\n```\nیه هم‌تیمی این کد رو نوشته. چرا این یه نمونه از سوءاستفاده از وراثته؟",
+    "expected_outcome": "چون دوچرخه سوخت‌گیری نمی‌شه؛ Bicycle الان متد refuel رو به ارث برده که براش بی‌معنیه -- درست مثل مرغی که به‌خاطر ارث‌بری از Bird می‌تونه fly رو صدا بزنه با اینکه نمی‌تونه پرواز کنه.",
+    "hints": ["یه دوچرخه چطور می‌تونه refuel بشه؟", "همون مشکل مرغی که fly رو به ارث می‌بره."],
+    "rubric": "Correct if the answer identifies that Bicycle inherits a method (refuel) that doesn't make sense for it."
+  },
+  {
+    "key": "count-inheritance-levels",
+    "title": "چند سطح وراثته؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nclass Thing:\n    pass\n\n\nclass Creature(Thing):\n    pass\n\n\nclass Person(Creature):\n    pass\n\n\nclass Employee(Person):\n    pass\n```\nاین زنجیره چند سطح وراثت داره، و طبق قاعده‌ی این درس، مشکلش چیه؟",
+    "expected_outcome": "سه سطح (Thing -> Creature -> Person -> Employee). این نمونه‌ی کلاسیک وراثت چندسطحیه که فقط پیچیدگی اضافه می‌کنه بدون اینکه به مسئله‌ی واقعی کسب‌وکار (یعنی چیزی که Employee باید انجام بده) ربطی داشته باشه.",
+    "hints": ["هر فلش وراثت یه سطحه؛ از پایین به بالا بشمار.", "این دقیقاً همون مثال «کارمند-شخص-موجود زنده-چیز» توی درسه."],
+    "rubric": "Correct if the answer counts 3 levels and explains this is unnecessary multi-level inheritance modeling real-world philosophy rather than business needs."
+  },
+  {
+    "key": "general-rule",
+    "title": "قاعده‌ی کلی چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، بهترین قاعده برای عمق زنجیره‌ی وراثت چیه؟",
+    "options": ["وراثت رو به یکی-دو سطح محدود کن", "هرچقدر زنجیره‌ی وراثت عمیق‌تر باشه، کد تمیزتره", "همیشه از یه کلاس پایه‌ی مشترک برای همه‌چیز (مثل Thing) شروع کن", "وراثت رو کلاً کنار بذار و فقط composition استفاده کن"],
+    "correct_option": 0,
+    "expected_outcome": "درسته: وراثت رو به یکی-دو سطح محدود کن. زنجیره‌های عمیق‌تر فقط پیچیدگی اضافه می‌کنن و فهم رابطه‌ی بین کلاس‌ها رو سخت‌تر می‌کنن.",
+    "hints": ["به مثال «کارمند-شخص-موجود زنده-چیز» فکر کن.", "قاعده درباره‌ی محدودکردنه، نه حذف‌کردن وراثت."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

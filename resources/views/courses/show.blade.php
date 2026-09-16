@@ -95,7 +95,9 @@
                                     <td>
                                         <div class="flex items-center gap-1.5">
                                             <x-level-badge :level="$levelOf($lesson)" />
-                                            @if ($seenLessonIds->contains($lesson->id))
+                                            @if ($doneLessonIds->contains($lesson->id))
+                                                <span style="color: var(--ok);" title="این درس رو انجام دادی"><x-icon name="check" class="w-3.5 h-3.5" /></span>
+                                            @elseif ($seenLessonIds->contains($lesson->id))
                                                 <span class="text-faint" title="ویدیو/متن این درس رو دیدی"><x-icon name="check" class="w-3.5 h-3.5" /></span>
                                             @endif
                                         </div>
@@ -132,7 +134,10 @@
                         <div class="flex justify-between py-2"><span class="text-muted">ساعت ترجیحی</span><span class="font-semibold">{{ $enrollment->preferred_time ? fa_num(substr($enrollment->preferred_time, 0, 5)) : '—' }}</span></div>
                     </div>
                     @unless ($enrollment->daily_time_minutes)
-                        <div class="px-[18px] pb-3 text-[12.5px] text-warn">بدون زمان روزانه، این دوره توی پلن نمیاد.</div>
+                        <div class="mx-[18px] mb-3 alert alert-warn flex items-center gap-2">
+                            <x-icon name="clock" class="w-4 h-4 shrink-0" />
+                            <span>بدون زمان روزانه، این دوره توی پلن نمیاد — انگار هنوز شروع نشده. <a href="{{ route('enrollments.edit', $enrollment) }}" class="font-semibold underline">همین الان زمان‌بندیش کن</a>.</span>
+                        </div>
                     @endunless
                 </div>
             @endif

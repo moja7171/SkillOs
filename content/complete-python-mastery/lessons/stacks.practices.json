@@ -1,0 +1,35 @@
+[
+  {
+    "key": "stack-trace",
+    "title": "بعد از این سه تا append و یه pop",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nstack = []\nstack.append(\"a\")\nstack.append(\"b\")\nstack.append(\"c\")\nremoved = stack.pop()\nprint(removed, stack)\n```\nخروجی چیه؟",
+    "expected_outcome": "c ['a', 'b'] — pop() آخرین عضو اضافه‌شده رو برمی‌گردونه و حذف می‌کنه (LIFO).",
+    "hints": ["آخرین چیزی که append شده، اولین چیزیه که pop می‌شه.", "بعد از حذف c، فقط a و b توی پشته می‌مونن."],
+    "rubric": "Correct only if the answer matches removed=c and the remaining stack is ['a', 'b']."
+  },
+  {
+    "key": "undo-stack",
+    "title": "یه پشته‌ی Undo بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "یه پشته (لیست خالی) به اسم `actions` بساز. سه تا عمل `\"type\"`, `\"bold\"`, `\"delete\"` رو بهش اضافه کن (به همین ترتیب). بعدش آخرین عمل رو با pop برگردون و توی یه پیام چاپ کن: `\"undo: delete\"`.",
+    "expected_outcome": "```python\nactions = []\nactions.append(\"type\")\nactions.append(\"bold\")\nactions.append(\"delete\")\n\nlast_action = actions.pop()\nprint(f\"undo: {last_action}\")\n```",
+    "hints": ["append برای اضافه‌کردن، pop() برای گرفتن و حذف آخرین عمل.", "f-string برای ساختن پیام undo."],
+    "rubric": "Correct: appends the three actions in order, pops the last one, and prints an f-string including it (\"undo: delete\"). Partial: correct logic but wrong message format. Incorrect: wrong order, or uses pop(0) instead of pop()."
+  },
+  {
+    "key": "empty-stack-check",
+    "title": "یه هم‌تیمی خطا گرفته",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی این کد رو نوشته و با `IndexError: pop from empty list` مواجه شده:\n```python\nhistory = []\nlast = history.pop()\n```\nچرا این اتفاق افتاده، و چطور جلوش رو بگیریم؟",
+    "expected_outcome": "history خالیه، پس هیچ عضوی برای pop کردن نیست. قبل از صدازدن pop()، باید چک کنیم پشته خالی نیست: `if history: last = history.pop()` یا `if not history: ...`.",
+    "hints": ["یه لیست خالی هیچ عضوی برای pop نداره.", "قبل از pop، با not یا یه شرط ساده چک کن پشته خالی نیست."],
+    "rubric": "Correct if the answer explains the stack is empty and proposes checking emptiness (e.g. `if history:` or `if not history:`) before calling pop()."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "property-vs-get-set",
+    "title": "چرا property بهتر از get/set هست؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمی می‌پرسه «چرا به‌جای اینکه مستقیم از get_price() و set_price() استفاده کنیم، بریم سراغ property؟ که هر دو یه کار رو انجام می‌دن.» در ۱ تا ۲ جمله جوابش بده.",
+    "expected_outcome": "با property می‌شه از بیرون کلاس، ویژگی رو دقیقاً مثل یه ویژگی معمولی خوند و نوشت (مثلاً product.price)، بدون اینکه کد استفاده‌کننده مجبور باشه هر بار متد صدا بزنه؛ اعتبارسنجی یا منطق اضافه، پشت‌صحنه و شفاف از دید کاربر کلاس اجرا می‌شه.",
+    "hints": ["property باعث می‌شه فراخوانی متد، شبیه دسترسی ساده به یه ویژگی به نظر بیاد.", "از دید کد استفاده‌کننده، هیچ فرقی با یه ویژگی معمولی نداره."],
+    "rubric": "Correct if the answer explains property lets external code use plain attribute syntax while validation/logic still runs behind the scenes."
+  },
+  {
+    "key": "add-validation-property",
+    "title": "یه property با اعتبارسنجی بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "این کلاس `Account` یه ویژگی `age` داره که هیچ محدودیتی نداره. با `@property` و `@age.setter`، یه property بساز که اجازه نده age منفی یا بیشتر از 120 بشه (در این صورت باید ValueError بده):\n```python\nclass Account:\n    def __init__(self, age):\n        self.age = age\n```",
+    "expected_outcome": "```python\nclass Account:\n    def __init__(self, age):\n        self.age = age\n\n    @property\n    def age(self):\n        return self._age\n\n    @age.setter\n    def age(self, value):\n        if value < 0 or value > 120:\n            raise ValueError(\"Age must be between 0 and 120\")\n        self._age = value\n```",
+    "hints": ["مقدار واقعی رو توی یه ویژگی داخلی مثل self._age نگه دار.", "دکوراتور setter باید دقیقاً همون اسم متد getter رو داشته باشه."],
+    "rubric": "Correct: defines @property getter returning self._age and @age.setter validating 0-120 range raising ValueError, storing into self._age. Partial: validation logic correct but missing decorators or wrong attribute name. Incorrect: no validation, or setter/getter not properly paired."
+  },
+  {
+    "key": "readonly-property-error",
+    "title": "چرا این خطا می‌ده؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    @property\n    def area(self):\n        return 3.14 * self.radius ** 2\n\n\nc = Circle(2)\nc.area = 100\n```\nخط آخر چه خطایی می‌ده؟",
+    "options": ["AttributeError چون area فقط-خواندنیه (setter نداره)", "TypeError چون area یه عدده", "کار می‌کنه و c.area می‌شه 100", "ValueError چون 100 عدد نامعتبریه"],
+    "correct_option": 0,
+    "expected_outcome": "AttributeError — چون فقط @property تعریف شده و @area.setter وجود نداره، area یه property فقط-خواندنیه و هر تلاشی برای مقداردهی بهش خطا می‌ده.",
+    "hints": ["برای نوشتن روی یه property، حتماً باید setter تعریف شده باشه.", "این کلاس فقط getter رو تعریف کرده."],
+    "rubric": "Correct only if option 0 is selected."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "predict-polymorphic-output",
+    "title": "خروجی این کد چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Cat:\n    def speak(self):\n        print(\"Meow\")\n\n\nclass Dog:\n    def speak(self):\n        print(\"Woof\")\n\n\ndef make_them_speak(animals):\n    for animal in animals:\n        animal.speak()\n\n\nmake_them_speak([Dog(), Cat()])\n```\nخروجی چیه؟",
+    "options": ["Woof / Meow", "Meow / Woof", "Woof / Woof", "خطا می‌ده"],
+    "correct_option": 0,
+    "expected_outcome": "Woof / Meow -- تابع make_them_speak فقط speak() رو روی هر آبجکت صدا می‌زنه؛ رفتار واقعی بسته به نوع آبجکت (Dog یا Cat) در زمان اجرا تعیین می‌شه -- این چندریختیه.",
+    "hints": ["تابع به ترتیب لیست پیمایش می‌کنه: اول Dog، بعد Cat.", "هر آبجکت نسخه‌ی speak خودش رو اجرا می‌کنه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "add-polymorphic-class",
+    "title": "یه کنترل جدید اضافه کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "با استفاده از همون UIControl (که یه متد انتزاعی draw داره)، یه کلاس CheckBox بساز که از UIControl ارث می‌بره و draw خودش رو داره که \"CheckBox\" رو چاپ می‌کنه. سپس یه نمونه ازش بساز و توی لیستی از کنترل‌ها به همراه یه TextBox قرار بده و همه رو با تابع draw(controls) رسم کن.",
+    "expected_outcome": "```python\nclass CheckBox(UIControl):\n    def draw(self):\n        print(\"CheckBox\")\n\n\ncontrols = [TextBox(), CheckBox()]\ndraw(controls)\n```",
+    "hints": ["CheckBox باید از UIControl ارث ببره و draw رو پیاده‌سازی کنه.", "برای رسم چندتایی، همون تابع draw(controls) قبلی که پیمایش می‌کنه رو دوباره استفاده کن."],
+    "rubric": "Correct: CheckBox(UIControl) implements draw() printing \"CheckBox\", and is used alongside another control in a list passed to draw(). Partial: class defined correctly but not demonstrated in a list. Incorrect: doesn't inherit from UIControl or doesn't implement draw."
+  },
+  {
+    "key": "what-is-polymorphism",
+    "title": "چندریختی یعنی چی؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "به زبون خودت، در ۱ تا ۲ جمله توضیح بده چندریختی (polymorphism) یعنی چی و چرا تابع draw(controls) نمونه‌ی خوبی ازشه.",
+    "expected_outcome": "چندریختی یعنی یه متد مشترک (مثل draw) بسته به نوع واقعی آبجکتی که روش صدا زده می‌شه، رفتار متفاوتی نشون بده. تابع draw(controls) نمونه‌ی خوبیه چون نمی‌دونه هر کنترل دقیقاً چیه، فقط draw() رو صدا می‌زنه و پایتون در زمان اجرا تصمیم می‌گیره کدوم نسخه اجرا بشه.",
+    "hints": ["poly یعنی چند، morph یعنی شکل -- «چند شکل».", "تابع draw هیچ‌وقت نوع دقیق کنترل رو چک نمی‌کنه."],
+    "rubric": "Correct if the answer captures that the same method call behaves differently depending on the actual object's type, determined at runtime."
+  }
+]

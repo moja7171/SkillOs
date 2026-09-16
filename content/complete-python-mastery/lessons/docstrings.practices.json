@@ -1,0 +1,37 @@
+[
+  {
+    "key": "docstring-vs-comment",
+    "title": "docstring یا کامنت؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم جمله بهتر توضیح می‌ده docstring با کامنت چه فرقی داره؟",
+    "options": ["docstring توضیح می‌ده کد چیکار می‌کنه؛ کامنت توضیح می‌ده چرا به این شکل نوشته شده", "docstring فقط برای کلاس‌هاست؛ کامنت فقط برای توابع", "هیچ فرقی ندارن، فقط نحوشون فرق داره", "docstring فقط با # نوشته می‌شه؛ کامنت با کوتیشن"],
+    "correct_option": 0,
+    "expected_outcome": "docstring توضیح می‌ده کد چیکار می‌کنه (برای کسی که ازش استفاده می‌کنه)؛ کامنت توضیح می‌ده چرا به این شکل خاص نوشته شده (برای کسی که کد رو می‌خونه).",
+    "hints": ["یکی درباره‌ی «چیستی»ه، یکی درباره‌ی «چرایی».", "docstring برای استفاده‌کننده‌ست، کامنت برای خواننده‌ی کد."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "write-multiline-docstring",
+    "title": "یه docstring چندخطی بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "برای این تابع یه docstring چندخطی بنویس که بگه: خلاصه‌ی کوتاه \"Calculate the area of a rectangle.\"، پارامتر width و height هر دو از نوع float، و مقدار بازگشتی از نوع float که مساحت رو نشون می‌ده.\n```python\ndef area(width, height):\n    return width * height\n```",
+    "expected_outcome": "```python\ndef area(width, height):\n    \"\"\"Calculate the area of a rectangle.\n\n    Parameters:\n        width (float): The width of the rectangle.\n        height (float): The height of the rectangle.\n\n    Returns:\n        float: The area of the rectangle.\n    \"\"\"\n    return width * height\n```",
+    "hints": ["الگو: خلاصه‌ی کوتاه، خط خالی، Parameters، خط خالی، Returns.", "docstring دقیقاً بعد از خط def میاد، قبل از بدنه‌ی تابع."],
+    "rubric": "Correct: follows the summary/blank-line/Parameters/blank-line/Returns structure with both parameters and the return type documented. Partial: has a docstring but missing Parameters or Returns section. Incorrect: uses a regular comment instead of a triple-quoted docstring, or places it in the wrong position."
+  },
+  {
+    "key": "document-full-module",
+    "title": "کجای این کد جای docstring خالیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Parser:\n    def parse(self, text):\n        return text.split()\n```\nطبق قرارداد مستندسازی کامل، این کد به چند تا docstring نیاز داره و هرکدوم کجا باید قرار بگیرن؟",
+    "expected_outcome": "سه تا: یکی بالای ماژول (قبل از تعریف کلاس)، یکی بلافاصله بعد از `class Parser:` برای خود کلاس، و یکی بلافاصله بعد از `def parse(self, text):` برای توضیح خود متد.",
+    "hints": ["یه ماژول کامل مستندشده، هم خودش هم هر کلاس هم هر تابع/متدش رو مستند می‌کنه.", "docstring کلاس دقیقاً جایی میاد که docstring تابع می‌اومد -- بلافاصله بعد از خط تعریف."],
+    "rubric": "Correct if the answer identifies three docstrings needed: module-level, class-level, and method-level, each right after its respective declaration."
+  }
+]

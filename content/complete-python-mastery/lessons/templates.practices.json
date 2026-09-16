@@ -1,0 +1,37 @@
+[
+  {
+    "key": "substitute-fills-params",
+    "title": "خروجی substitute چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nfrom string import Template\n\nt = Template(\"Hello $name, you are $age years old.\")\nresult = t.substitute(name=\"Sara\", age=20)\nprint(result)\n```\nخروجی چیه؟",
+    "options": ["Hello Sara, you are 20 years old.", "Hello $name, you are $age years old.", "Hello {name}, you are {age} years old.", "خطا می‌ده چون age باید رشته باشه"],
+    "correct_option": 0,
+    "expected_outcome": "Hello Sara, you are 20 years old. -- substitute هر $پارامتر رو با مقدار متناظرش (از آرگومان‌های کلیدی یا دیکشنری) جایگزین می‌کنه؛ عدد هم بدون مشکل به رشته تبدیل و جایگزین می‌شه.",
+    "hints": ["substitute هر $name رو با مقدار متناظرش عوض می‌کنه.", "آرگومان عددی age هم بدون خطا جایگزین می‌شه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "why-separate-template-file",
+    "title": "چرا بدنه رو توی فایل جدا می‌ذاریم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "چرا بدنه‌ی طولانی یه ایمیل رو توی یه فایل HTML جدا (قالب) نگه می‌داریم، به‌جای اینکه مستقیم توی رشته‌ی پایتون بنویسیمش؟",
+    "expected_outcome": "چون بدنه‌ی ایمیل معمولاً چندین خط HTML‌ه؛ نگه‌داشتنش توی کد پایتون، هم خوندن کد سخت می‌شه هم تغییردادن محتوا -- با فایل جدا، محتوای هر سناریو (خوش‌آمدگویی، بازنشانی رمز و غیره) مستقل و قابل‌ویرایش می‌مونه.",
+    "hints": ["فکر کن بدنه‌ی ایمیل ۵۰ خط HTML باشه.", "جداکردن محتوا از منطق کد، خوانایی و نگهداری رو راحت‌تر می‌کنه."],
+    "rubric": "Correct if the answer explains separating long HTML content from Python logic improves readability and maintainability."
+  },
+  {
+    "key": "fill-and-attach-template",
+    "title": "قالب رو پر کن و به ایمیل وصل کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "فرض کن فایل welcome.html محتوای \"<h1>Welcome $username</h1>\" رو داره. کدی بنویس که این فایل رو بخونه، پارامتر username رو با \"sara\" پر کنه، و نتیجه رو به‌عنوان بدنه‌ی HTML به یه پیام message (که از قبل ساخته شده) attach کنه.",
+    "expected_outcome": "```python\nfrom pathlib import Path\nfrom string import Template\nfrom email.mime.text import MIMEText\n\ntemplate = Template(Path(\"welcome.html\").read_text())\nbody = template.substitute(username=\"sara\")\nmessage.attach(MIMEText(body, \"html\"))\n```",
+    "hints": ["اول با Path(...).read_text() محتوای فایل رو بخون.", "برای اینکه HTML واقعی رندر بشه، نوع MIMEText باید \"html\" باشه، نه \"plain\"."],
+    "rubric": "Correct: reads the file, builds a Template, calls substitute with username, and attaches as MIMEText with type 'html'. Partial: correct logic but uses 'plain' instead of 'html', or wrong parameter name. Incorrect: doesn't use Template/substitute correctly."
+  }
+]

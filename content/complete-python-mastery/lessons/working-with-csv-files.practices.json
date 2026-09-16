@@ -1,0 +1,35 @@
+[
+  {
+    "key": "csv-values-are-strings",
+    "title": "چرا این جمع اشتباهه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nwith open(\"data.csv\") as file:\n    reader = csv.reader(file)\n    rows = list(reader)\n\ntotal = rows[1][2] + rows[2][2]\n```\nاگه ستون سوم قیمته (مثلاً 5 و 8)، این کد به‌جای 13 چیزی مثل \"58\" می‌ده. چرا؟",
+    "expected_outcome": "چون csv.reader همه‌ی مقادیر رو به‌شکل رشته برمی‌گردونه، حتی اگه توی فایل عدد به‌نظر برسن. پس rows[1][2] و rows[2][2] رشته‌های \"5\" و \"8\" هستن، و + روی رشته‌ها یعنی الحاق (concatenation)، نه جمع عددی. باید اول با int() یا float() تبدیلشون کنیم.",
+    "hints": ["csv.reader مقادیر رو همیشه به‌شکل رشته برمی‌گردونه.", "+ روی دو رشته یعنی به‌هم‌چسبوندن، نه جمع عددی."],
+    "rubric": "Correct if the answer identifies CSV values as strings requiring explicit conversion (int/float) before arithmetic."
+  },
+  {
+    "key": "reader-exhausted",
+    "title": "چرا حلقه چیزی چاپ نمی‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nwith open(\"data.csv\") as file:\n    reader = csv.reader(file)\n    rows = list(reader)\n    for row in reader:\n        print(row)\n```\nحلقه‌ی for هیچی چاپ نمی‌کنه. چرا؟",
+    "expected_outcome": "چون list(reader) خودش reader رو تا انتهای فایل پیمایش می‌کنه و موقعیتش رو به آخر فایل می‌بره؛ وقتی حلقه‌ی for دوباره روی همون reader اجرا می‌شه، دیگه چیزی برای خوندن باقی نمونده.",
+    "hints": ["reader یه موقعیت داخلی داره که فقط یه بار می‌شه از اول تا آخرش پیمایش کرد.", "list(reader) خودش یه پیمایش کامله."],
+    "rubric": "Correct if the answer explains the reader's position is exhausted after list(reader), so the subsequent loop finds nothing left."
+  },
+  {
+    "key": "write-csv-rows",
+    "title": "یه فایل CSV بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "کدی بنویس که یه فایل \"students.csv\" بسازه با یه ردیف هدر (name, grade) و دو ردیف داده: (\"Ali\", 18) و (\"Sara\", 20).",
+    "expected_outcome": "```python\nimport csv\n\nwith open(\"students.csv\", \"w\") as file:\n    writer = csv.writer(file)\n    writer.writerow([\"name\", \"grade\"])\n    writer.writerow([\"Ali\", 18])\n    writer.writerow([\"Sara\", 20])\n```",
+    "hints": ["فایل رو با حالت \"w\" باز کن.", "هر ردیف (هدر یا داده) با یه فراخوانی جدا از writerow نوشته می‌شه."],
+    "rubric": "Correct: opens the file in write mode, creates a csv.writer, and writes the header row plus both data rows. Partial: writes rows but in wrong order or missing header. Incorrect: doesn't use csv.writer, or writes everything in a single writerow call."
+  }
+]

@@ -25,6 +25,21 @@ export function mountPlayers(root = document) {
         if (el.dataset.mounted) return;
         el.dataset.mounted = '1';
 
+        // Browsers only eagerly fetch the *default* <track>; a non-default caption
+        // track's cues stay unloaded until something toggles its mode, and Plyr's own
+        // language-switch handler silently does nothing for a track it finds already
+        // sitting at 'hidden' with no cues. Fix: flip every non-default track to
+        // 'hidden' to force the browser to fetch+parse its cues, then — once loaded —
+        // put it back to 'disabled' so Plyr still sees the single-active-track shape
+        // it expects (and so has a real mode transition to perform later, instead of
+        // finding the track already 'hidden' and no-op'ing). Cues stay cached once
+        // fetched, so restoring 'disabled' doesn't lose them.
+        el.querySelectorAll('track').forEach((t) => {
+            if (t.default) return;
+            t.track.mode = 'hidden';
+            t.addEventListener('load', () => { t.track.mode = 'disabled'; }, { once: true });
+        });
+
         const player = new Plyr(el, {
             iconUrl: '/plyr.svg',
             i18n,
@@ -37,7 +52,11 @@ export function mountPlayers(root = document) {
             tooltips: { controls: true, seek: true },
             captions: { active: true, language: el.dataset.captionsDefault || 'en', update: true },
             invertTime: false,
-            storage: { enabled: false }, // we persist speed ourselves; volume via Plyr default is fine
+            // Plyr must be allowed to persist the chosen caption language (and volume) to its
+            // own localStorage key ('plyr', separate from ours below) — with storage disabled,
+            // every language switch gets silently reverted: Plyr re-reads captions.setup() after
+            // each switch, which falls back to the configured default language whenever it can't
+            // read back what it just tried to save.
         });
 
         // Resume where the learner stopped (skip if near the start or the end).

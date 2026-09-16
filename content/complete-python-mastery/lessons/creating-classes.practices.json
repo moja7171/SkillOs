@@ -1,0 +1,37 @@
+[
+  {
+    "key": "pascal-case-naming",
+    "title": "کدوم اسم درسته؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق قرارداد نام‌گذاری پایتون، کدوم اسم برای یه کلاس مناسبه؟",
+    "options": ["ShoppingCart", "shopping_cart", "shoppingCart", "SHOPPING_CART"],
+    "correct_option": 0,
+    "expected_outcome": "ShoppingCart — قرارداد کلاس‌ها Pascal case‌ه: حرف اول هر کلمه بزرگ، بدون زیرخط.",
+    "hints": ["کلاس‌ها از snake_case استفاده نمی‌کنن.", "حرف اول هر کلمه باید بزرگ باشه، بدون _."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "create-simple-class",
+    "title": "یه کلاس ساده بساز",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه کلاس `Robot` بساز با یه متد `greet(self)` که وقتی صدا زده بشه، `\"Beep boop\"` چاپ کنه. بعدش یه آبجکت ازش بساز و متدش رو صدا بزن.",
+    "expected_outcome": "```python\nclass Robot:\n    def greet(self):\n        print(\"Beep boop\")\n\n\nrobot = Robot()\nrobot.greet()\n```",
+    "hints": ["اسم کلاس با حرف بزرگ شروع می‌شه، Pascal case.", "هر متد کلاس حداقل یه پارامتر (self) لازم داره."],
+    "rubric": "Correct: defines Robot with a greet method printing exactly \"Beep boop\", then creates an instance and calls greet(). Partial: correct class but forgets to instantiate/call, or wrong message. Incorrect: missing self parameter, or wrong class naming convention entirely breaking the syntax."
+  },
+  {
+    "key": "isinstance-check",
+    "title": "isinstance چی برمی‌گردونه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Dog:\n    pass\n\n\nmy_dog = Dog()\nprint(isinstance(my_dog, Dog))\nprint(isinstance(my_dog, str))\n```\nهر خط چی چاپ می‌کنه؟",
+    "expected_outcome": "True\nFalse — my_dog واقعاً از کلاس Dog ساخته شده (True)، ولی از کلاس str نیست (False).",
+    "hints": ["isinstance چک می‌کنه آبجکت از یه کلاس خاص ساخته شده یا نه.", "my_dog با Dog() ساخته شده، نه با str()."],
+    "rubric": "Correct only if the answer is True then False, in that order."
+  }
+]

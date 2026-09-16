@@ -1,0 +1,37 @@
+[
+  {
+    "key": "pipenv-vs-pip-venv",
+    "title": "Pipenv چه مشکلی رو حل می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "در ۱ تا ۲ جمله بگو Pipenv چه مزیتی نسبت به استفاده‌ی جدا از pip و venv داره.",
+    "expected_outcome": "Pipenv این دو ابزار رو توی یه ابزار واحد ترکیب می‌کنه -- با یه دستور (pipenv install)، هم محیط مجازی (در صورت نیاز) ساخته می‌شه، هم پکیج نصب می‌شه، بدون اینکه لازم باشه خودت جدا venv بسازی و جدا pip رو صدا بزنی.",
+    "hints": ["به یاد بیار قبلاً برای همین کار چند تا دستور جدا لازم بود.", "Pipenv این چند مرحله رو با یه دستور انجام می‌ده."],
+    "rubric": "Correct if the answer explains Pipenv combines venv creation and pip installation into one tool/command."
+  },
+  {
+    "key": "venv-location-difference",
+    "title": "محیط مجازی Pipenv کجاست؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "برخلاف venv که پوشه‌ی محیط مجازی رو مستقیم داخل پروژه می‌سازه، Pipenv کجا نگهش می‌داره؟",
+    "options": ["بیرون از پوشه‌ی پروژه -- تا حجم زیاد پکیج‌ها جزو پروژه حساب نشه", "داخل پوشه‌ی پروژه، دقیقاً مثل venv", "روی یه سرور ابری، خارج از سیستم کاربر", "هیچ‌جا -- Pipenv اصلاً محیط مجازی نمی‌سازه"],
+    "correct_option": 0,
+    "expected_outcome": "بیرون از پوشه‌ی پروژه -- این یه تصمیم عمدیه تا حجم زیاد فایل‌های نصب‌شده، بخشی از پروژه حساب نشه.",
+    "hints": ["این یه تصمیم عمدی طراحیه، نه یه محدودیت.", "دلیلش کنترل حجم پروژه‌ست."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "install-and-activate",
+    "title": "با Pipenv یه پکیج نصب و فعال کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "دو دستور Pipenv برای (۱) نصب پکیج flask و (۲) فعال‌کردن محیط مجازی پروژه رو بنویس.",
+    "expected_outcome": "pipenv install flask\npipenv shell",
+    "hints": ["برای نصب، از الگوی pipenv install <package> استفاده کن.", "برای فعال‌سازی، دستور دیگه‌ای غیر از install لازمه -- همون‌که جای source .../activate رو می‌گیره."],
+    "rubric": "Correct if both commands are given: `pipenv install flask` and `pipenv shell`."
+  }
+]

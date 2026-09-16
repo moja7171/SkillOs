@@ -1,0 +1,26 @@
+[
+  {
+    "key": "with-vs-finally",
+    "title": "این دو تا معادلن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "این دو تیکه کد از نظر رفتار (بستن فایل بعد از تموم‌شدن کار) معادلن؟\n```python\n# version 1\ntry:\n    file = open(\"data.txt\")\n    print(file)\nfinally:\n    file.close()\n\n# version 2\nwith open(\"data.txt\") as file:\n    print(file)\n```",
+    "options": ["بله، هر دو در نهایت فایل رو می‌بندن", "نه، فقط نسخه‌ی اول فایل رو می‌بنده", "نه، فقط نسخه‌ی دوم فایل رو می‌بنده", "هیچ‌کدوم فایل رو نمی‌بندن"],
+    "correct_option": 0,
+    "expected_outcome": "بله — with دقیقاً همون کاری رو می‌کنه که finally با close() دستی می‌کرد، فقط خودکار و کوتاه‌تر.",
+    "hints": ["with درسش رو از context management protocol می‌گیره؛ دقیقاً معادل try/finally با close دستیه.", "هر دو تضمین می‌کنن فایل بسته می‌شه، چه خطا رخ بده چه نده."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "rewrite-with-with",
+    "title": "این try/finally رو با with بازنویسی کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این کد رو با عبارت `with` بازنویسی کن (بدون finally):\n```python\ntry:\n    log = open(\"log.txt\")\n    print(log)\nfinally:\n    log.close()\n```",
+    "expected_outcome": "```python\nwith open(\"log.txt\") as log:\n    print(log)\n```",
+    "hints": ["with open(...) as متغیر: بدنه.", "دیگه نیازی به try/finally یا close دستی نیست."],
+    "rubric": "Correct: with open(\"log.txt\") as log: print(log) -- no try/finally, no manual close(). Partial: correct with statement but keeps unnecessary try/finally around it. Incorrect: doesn't use with, or still calls .close() manually."
+  }
+]

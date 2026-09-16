@@ -1,0 +1,24 @@
+[
+  {
+    "key": "filter-basic",
+    "title": "فقط اسم‌های بلند رو نگه دار",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با `filter` و یه لامبدا، فقط اسم‌هایی که طولشون بیشتر از ۳ حرفه رو نگه دار:\n```python\nnames = [\"Al\", \"Sara\", \"Reza\", \"Ana\"]\n```\nنتیجه باید `['Sara', 'Reza']` باشه.",
+    "expected_outcome": "```python\nlong_names = list(filter(lambda name: len(name) > 3, names))\n```",
+    "hints": ["لامبدای filter باید True/False برگردونه.", "len(name) > 3 دقیقاً همون شرطیه که لازم داری."],
+    "rubric": "Correct: list(filter(lambda name: len(name) > 3, names)) producing ['Sara', 'Reza']. Partial: correct filter() call but forgets list(). Incorrect: uses map instead of filter, or wrong condition."
+  },
+  {
+    "key": "map-vs-filter",
+    "title": "map یا filter؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای از یه لیست قیمت‌ها، فقط اونایی که زیر ۵۰ هزار تومنن رو نگه داری (بقیه رو کلاً حذف کنی، نه تبدیل). کدوم تابع مناسبه، map یا filter؟ چرا؟",
+    "expected_outcome": "filter — چون هدف کم‌کردن تعداد اعضاست (حذف بعضی‌ها)، نه تبدیل شکل هرکدوم. map برای وقتیه که تعداد اعضا ثابت می‌مونه ولی شکلشون عوض می‌شه.",
+    "hints": ["map تعداد اعضا رو ثابت نگه می‌داره، فقط شکلشون رو عوض می‌کنه.", "filter بعضی اعضا رو کلاً حذف می‌کنه."],
+    "rubric": "Correct if the answer says filter, with reasoning that the goal is removing items, not transforming each one's shape."
+  }
+]

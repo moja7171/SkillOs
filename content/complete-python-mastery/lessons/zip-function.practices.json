@@ -1,0 +1,24 @@
+[
+  {
+    "key": "zip-trace",
+    "title": "این zip چی می‌سازه؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nnames = [\"Ali\", \"Sara\"]\nscores = [85, 92]\nresult = list(zip(names, scores))\nprint(result)\n```\nخروجی چیه؟",
+    "expected_outcome": "[('Ali', 85), ('Sara', 92)] — zip عضو هم‌ردیف دو لیست رو با هم جفت می‌کنه.",
+    "hints": ["اولین عضو هر لیست با هم جفت می‌شن، دومی‌ها هم با هم.", "نتیجه یه لیست از تاپل‌های دوتایی‌ه."],
+    "rubric": "Correct only if the answer is [('Ali', 85), ('Sara', 92)] (order and pairing must match)."
+  },
+  {
+    "key": "zip-to-build-dict-like-pairs",
+    "title": "دو لیست رو باهم جفت کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "دو تا لیست داری — اسم‌ها و سن‌ها. با `zip` یه لیست از تاپل‌های `(اسم, سن)` بساز:\n```python\nnames = [\"Reza\", \"Mina\", \"Ali\"]\nages = [25, 30, 22]\n```",
+    "expected_outcome": "```python\npaired = list(zip(names, ages))\n```\nنتیجه: `[('Reza', 25), ('Mina', 30), ('Ali', 22)]`",
+    "hints": ["zip(names, ages) هر دو لیست رو باهم می‌گیره.", "برای لیست واقعی، دور zip یه list() بذار."],
+    "rubric": "Correct: list(zip(names, ages)) producing the three paired tuples in order. Partial: correct idea but forgets list() or swaps argument order. Incorrect: uses map/manual indexing instead of zip."
+  }
+]

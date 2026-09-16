@@ -1,0 +1,35 @@
+[
+  {
+    "key": "default-equality-trace",
+    "title": "چرا False می‌گیریم؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Item:\n    def __init__(self, name):\n        self.name = name\n\n\ni1 = Item(\"book\")\ni2 = Item(\"book\")\nprint(i1 == i2)\n```\nخروجی چیه، و چرا؟",
+    "expected_outcome": "False — چون کلاس Item متد __eq__ رو بازنویسی نکرده، == به‌طور پیش‌فرض آدرس حافظه‌ی دو آبجکت رو مقایسه می‌کنه، نه محتواشون؛ i1 و i2 دو آبجکت جدان.",
+    "hints": ["بدون __eq__ سفارشی، == آدرس حافظه رو مقایسه می‌کنه، نه محتوا.", "با اینکه هر دو name=\"book\" دارن، دو تا آبجکت جدان."],
+    "rubric": "Correct if the answer is False, explaining default equality compares memory identity, not content, without a custom __eq__."
+  },
+  {
+    "key": "implement-eq",
+    "title": "این کلاس رو قابل‌مقایسه کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "به این کلاس `__eq__` اضافه کن تا دو تا Money با همون amount و currency، برابر حساب بشن:\n```python\nclass Money:\n    def __init__(self, amount, currency):\n        self.amount = amount\n        self.currency = currency\n```",
+    "expected_outcome": "```python\nclass Money:\n    def __init__(self, amount, currency):\n        self.amount = amount\n        self.currency = currency\n\n    def __eq__(self, other):\n        return self.amount == other.amount and self.currency == other.currency\n```",
+    "hints": ["__eq__ دو پارامتر می‌گیره: self و other.", "باید هر دو ویژگی (amount و currency) برابر باشن تا True برگردونی."],
+    "rubric": "Correct: __eq__(self, other) checks both self.amount == other.amount AND self.currency == other.currency. Partial: checks only one of the two fields. Incorrect: doesn't define __eq__, or wrong parameter usage."
+  },
+  {
+    "key": "gt-implies-lt",
+    "title": "چرا < هم کار می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "یه کلاس فقط `__gt__` رو تعریف کرده، ولی وقتی `p1 < p2` رو می‌نویسیم بازم درست کار می‌کنه. در ۱ تا ۲ جمله بگو چرا.",
+    "expected_outcome": "چون پایتون به‌طور خودکار p1 < p2 رو معادل p2 > p1 در نظر می‌گیره و از همون متد __gt__ (با ترتیب برعکس آبجکت‌ها) استفاده می‌کنه — نیازی به تعریف جدای __lt__ نیست.",
+    "hints": ["پایتون بین عملگرهای < و > یه رابطه‌ی خودکار برقرار می‌کنه.", "p1 < p2 معادل چیه اگه جای دو طرف رو عوض کنیم؟"],
+    "rubric": "Correct if the answer explains Python automatically treats p1 < p2 as equivalent to p2 > p1, reusing the defined __gt__."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "comprehension-trace",
+    "title": "این خط چی می‌سازه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nresult = [n * n for n in [1, 2, 3, 4]]\n```\n`result` چیه؟",
+    "options": ["[1, 4, 9, 16]", "[1, 2, 3, 4]", "16", "[2, 4, 6, 8]"],
+    "correct_option": 0,
+    "expected_outcome": "[1, 4, 9, 16] — هر عضو (n) به توان دوم می‌رسه: 1*1، 2*2، 3*3، 4*4.",
+    "hints": ["عبارت n*n روی هر عضو اعمال می‌شه.", "1²=1, 2²=4, 3²=9, 4²=16"],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "rewrite-map-filter-as-comprehension",
+    "title": "این map/filter رو با comprehension بازنویسی کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این کد از map استفاده کرده تا قیمت‌ها رو با ۱۰٪ تخفیف حساب کنه و فقط اونایی که بعد از تخفیف هنوز بالای ۵ باقی می‌مونن رو نگه داره:\n```python\nprices = [4, 8, 12, 3, 20]\ndiscounted = list(map(lambda p: p * 0.9, prices))\nresult = list(filter(lambda p: p > 5, discounted))\n```\nهمین کارو با یه list comprehension تک‌خطی بنویس (هم تبدیل، هم فیلتر).",
+    "expected_outcome": "```python\nresult = [p * 0.9 for p in prices if p * 0.9 > 5]\n```\nنکته‌ی مهم: فیلتر باید روی مقدار **بعد از تخفیف** باشه (همون چیزی که کد اصلی هم با فیلترکردن discounted انجام می‌داد) — یعنی شرط باید `p * 0.9 > 5` باشه، نه `p > 5` (که رو قیمت اصلی چک می‌کنه و معنای متفاوتی داره).",
+    "hints": ["توی کد اصلی، filter روی discounted (مقدار بعد از تخفیف) اعمال شده، نه روی prices خام.", "شرطت باید همون عبارت تبدیل‌شده (p * 0.9) رو چک کنه، نه خود p."],
+    "rubric": "Correct: [p * 0.9 for p in prices if p * 0.9 > 5] (filters on the discounted value, matching the original code's semantics). Partial: [p * 0.9 for p in prices if p > 5] -- filters on the original price instead of the discounted one, a subtly different condition even though it happens to match on this input. Incorrect: still uses map/filter, or missing either the transform or the filter."
+  }
+]

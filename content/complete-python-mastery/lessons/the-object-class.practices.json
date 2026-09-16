@@ -1,0 +1,37 @@
+[
+  {
+    "key": "isinstance-chain",
+    "title": "کدوم‌ها True می‌شن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\nclass Vehicle:\n    pass\n\n\nclass Car(Vehicle):\n    pass\n\n\nc = Car()\nprint(isinstance(c, Vehicle), isinstance(c, object))\n```\nخروجی چیه؟",
+    "options": ["True True", "True False", "False True", "False False"],
+    "correct_option": 0,
+    "expected_outcome": "True True — چون Car از Vehicle ارث می‌بره (پس c یه Vehicle هم هست)، و Vehicle هم مثل هر کلاس دیگه‌ای در نهایت از object ارث می‌بره.",
+    "hints": ["isinstance فقط کلاس مستقیم رو چک نمی‌کنه، کل زنجیره‌ی وراثت رو در نظر می‌گیره.", "همه‌ی کلاس‌ها در نهایت از object ارث می‌برن."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "issubclass-vs-isinstance",
+    "title": "isinstance یا issubclass؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی نمی‌دونه کِی از isinstance استفاده کنه و کِی از issubclass. در ۱ تا ۲ جمله فرقشون رو توضیح بده.",
+    "expected_outcome": "isinstance(obj, Class) یه آبجکت رو با یه کلاس مقایسه می‌کنه (آیا این نمونه‌ی این کلاسه؟)؛ issubclass(ClassA, ClassB) دو تا کلاس رو با هم مقایسه می‌کنه (آیا ClassA از ClassB ارث می‌بره؟) — اولی پارامتر اولش یه آبجکته، دومی هر دو پارامترش کلاسن.",
+    "hints": ["به نوع پارامتر اول هر تابع نگاه کن: یکی آبجکت می‌گیره، یکی کلاس.", "isinstance درباره‌ی یه شیء خاصه، issubclass درباره‌ی خود کلاس‌هاست."],
+    "rubric": "Correct if the answer distinguishes isinstance (object vs class) from issubclass (class vs class)."
+  },
+  {
+    "key": "predict-object-base",
+    "title": "این کلاس از چی ارث می‌بره؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "```python\nclass Logger:\n    pass\n```\nبا اینکه هیچ کلاسی جلوی Logger توی پرانتز ننوشتیم، این کلاس در نهایت از کدوم کلاس ارث می‌بره؟",
+    "expected_outcome": "از کلاس object. هر کلاسی در پایتون که به‌طور صریح از کلاس دیگه‌ای ارث نبره، به‌طور خودکار از object ارث می‌بره.",
+    "hints": ["پایتون هیچ کلاسی رو کاملاً بی‌والد نمی‌ذاره.", "این همون کلاس پایه‌ی همه‌ی کلاس‌های پایتونه."],
+    "rubric": "Correct if the answer is 'object' (or explains every class implicitly inherits from object)."
+  }
+]

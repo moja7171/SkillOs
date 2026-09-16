@@ -31,8 +31,12 @@ class Planner
     public function __construct(protected ReviewPracticeGenerator $reviewPracticeGenerator) {}
 
     /**
-     * Today's plan items for the user, computing them for any scheduled enrollment
-     * that has none yet (first visit of the day, or a course scheduled later today).
+     * Today's plan items for the user, topping up every scheduled enrollment's list each
+     * time this is called (first visit of the day, a later visit after finishing earlier
+     * items, etc). materialize() is safe to call repeatedly: it computes remaining budget
+     * from what's already scheduled/completed today and excludes activities already
+     * planned, so a lesson finished mid-day makes its successor available on the very next
+     * call instead of waiting until tomorrow — there is no fixed "one lesson per day" cap.
      *
      * @return Collection<int, PlanItem>
      */
@@ -42,7 +46,7 @@ class Planner
         $existing = $this->todayItems($user);
 
         foreach ($enrollments as $enrollment) {
-            if ($enrollment->isScheduled() && ! $existing->contains('enrollment_id', $enrollment->id)) {
+            if ($enrollment->isScheduled()) {
                 $this->materialize($user, $enrollment, $existing);
                 $existing = $this->todayItems($user);
             }

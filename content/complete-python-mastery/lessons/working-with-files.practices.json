@@ -1,0 +1,35 @@
+[
+  {
+    "key": "read-text-vs-open",
+    "title": "چرا read_text راحت‌تره؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا `Path(\"file.txt\").read_text()` معمولاً به `open(\"file.txt\")` و مدیریت دستی بازوبسته‌کردن فایل ترجیح داده می‌شه؟",
+    "expected_outcome": "چون read_text خودش باز و بسته‌کردن فایل رو پشت‌صحنه مدیریت می‌کنه، پس نیازی به نوشتن with open(...) و نگرانی درباره‌ی بسته‌شدن فایل نیست -- کد کوتاه‌تر و کم‌خطاتر می‌شه.",
+    "hints": ["با open باید صریح فایل رو باز و بسته کنی (یا از with استفاده کنی).", "read_text این مدیریت رو خودش انجام می‌ده."],
+    "rubric": "Correct if the answer explains read_text handles opening/closing internally, simplifying the code."
+  },
+  {
+    "key": "copy-with-shutil",
+    "title": "یه فایل رو کپی کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "با استفاده از shutil، فایل \"report.csv\" رو به \"report_backup.csv\" کپی کن.",
+    "expected_outcome": "```python\nimport shutil\n\nshutil.copy(\"report.csv\", \"report_backup.csv\")\n```",
+    "hints": ["از تابع shutil.copy استفاده کن.", "دو آرگومان می‌گیره: مسیر مبدأ و مسیر مقصد."],
+    "rubric": "Correct: imports shutil and calls shutil.copy with source and destination. Partial: correct approach but wrong argument order. Incorrect: manually reads/writes instead of using shutil, or doesn't import shutil."
+  },
+  {
+    "key": "human-readable-time",
+    "title": "چرا این عدد قابل‌خوندن نیست؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "```python\ninfo = Path(\"data.txt\").stat()\nprint(info.st_ctime)\n```\nاین یه عدد بزرگ و بی‌معنی چاپ می‌کنه، نه یه تاریخ قابل‌خوندن. چرا، و چطور می‌شه به فرمت قابل‌خوندن تبدیلش کرد؟",
+    "expected_outcome": "چون st_ctime تعداد ثانیه از epoch (نقطه‌ی شروع زمان روی سیستم‌عامل، مثلاً اول ژانویه ۱۹۷۰ روی یونیکس) رو برمی‌گردونه، نه یه تاریخ آماده. برای تبدیلش، از time.ctime(info.st_ctime) استفاده می‌کنیم.",
+    "hints": ["این عدد، ثانیه از یه نقطه‌ی ثابت شروع زمان روی سیستم‌عامله.", "تابع ctime از ماژول time این عدد رو به یه رشته‌ی خوانا تبدیل می‌کنه."],
+    "rubric": "Correct if the answer identifies st_ctime as epoch seconds and proposes time.ctime() for conversion."
+  }
+]

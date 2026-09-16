@@ -72,6 +72,35 @@ class PlannerTest extends TestCase
         $this->assertSame($items->pluck('id')->all(), app(Planner::class)->today($this->user)->pluck('id')->all());
     }
 
+    public function test_finishing_a_lesson_mid_day_tops_up_todays_plan_with_the_next_one(): void
+    {
+        // A generous daily budget: two lessons' worth (learn 8m + practice 8m each) plus room to spare.
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(40)->create();
+
+        $first = app(Planner::class)->today($this->user);
+        $this->assertSame(
+            [$this->lessons[0]->learnActivity->id, $this->lessons[0]->practices()->first()->id],
+            $first->pluck('activity_id')->all(),
+            'only lesson 0 is eligible before it reaches familiar',
+        );
+
+        // Finish lesson 0 for real: the planner only moves its "current lesson" pointer
+        // on past proficient (numeric >= 500), not merely familiar — four correct
+        // practice attempts (150 each) comfortably clears that.
+        $this->completedLearn($this->lessons[0]);
+        $practice = $this->lessons[0]->practices()->first();
+        foreach (range(1, 4) as $_) {
+            $attempt = Attempt::create(['activity_id' => $practice->id, 'user_id' => $this->user->id, 'result_status' => 'correct', 'completed_at' => now()]);
+            app(MasteryService::class)->applyAttempt($attempt);
+        }
+
+        // No day has passed — this is the same "today" — but lesson 1 should already be
+        // available on the very next call, without waiting for tomorrow's plan.
+        $second = app(Planner::class)->today($this->user);
+        $this->assertTrue($second->contains('activity_id', $this->lessons[1]->learnActivity->id), 'lesson 1 shows up the same day, not just the next one');
+        $this->assertTrue($second->contains('activity_id', $this->lessons[1]->practices()->first()->id));
+    }
+
     public function test_budget_is_filled_in_order_without_splitting_activities(): void
     {
         Enrollment::factory()->for($this->user)->for($this->course)->scheduled(5)->create();

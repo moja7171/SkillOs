@@ -1,0 +1,37 @@
+[
+  {
+    "key": "strptime-vs-strftime",
+    "title": "strptime یا strftime؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای یه رشته‌ی تاریخ که از یه فرم گرفتی (مثلاً \"2023-05-10\") رو به یه آبجکت datetime تبدیل کنی. کدوم متد درسته؟",
+    "options": ["datetime.strptime(text, format)", "datetime.strftime(text, format)", "datetime.parse(text)", "datetime.fromtimestamp(text)"],
+    "correct_option": 0,
+    "expected_outcome": "datetime.strptime -- برای تبدیل یه رشته به datetime. strftime برعکسشه: از datetime به رشته.",
+    "hints": ["p در strptime یعنی parse -- از رشته به آبجکت.", "strftime برعکس این کار رو می‌کنه."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "why-import-class-not-module",
+    "title": "چرا datetime.datetime زشته؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "چرا این درس توصیه می‌کنه به‌جای `import datetime` و نوشتن `datetime.datetime(...)`، مستقیم کلاس رو با `from datetime import datetime` وارد کنیم؟",
+    "expected_outcome": "چون ماژول و کلاس هر دو اسمشون datetime‌ه؛ اگه فقط ماژول رو import کنیم، هر بار باید بنویسیم datetime.datetime(...) که تکراری و بدقواره‌ست. با import مستقیم کلاس، می‌شه ساده‌تر نوشت datetime(...).",
+    "hints": ["ماژول datetime یه کلاس هم‌نام به اسم datetime داره.", "import کردن مستقیم کلاس، از تکرار اسم جلوگیری می‌کنه."],
+    "rubric": "Correct if the answer explains the module and class share the name datetime, so importing the class directly avoids the awkward datetime.datetime repetition."
+  },
+  {
+    "key": "parse-and-format",
+    "title": "یه تاریخ رو parse و دوباره فرمت کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "رشته‌ی \"2024/03/15\" رو (با فرمت %Y/%m/%d) به یه آبجکت datetime تبدیل کن، و بعد همون آبجکت رو با فرمت \"%d-%m-%Y\" به یه رشته‌ی جدید تبدیل کن.",
+    "expected_outcome": "```python\nfrom datetime import datetime\n\ndt = datetime.strptime(\"2024/03/15\", \"%Y/%m/%d\")\nformatted = dt.strftime(\"%d-%m-%Y\")\nprint(formatted)  # 15-03-2024\n```",
+    "hints": ["اول با strptime رشته رو parse کن.", "بعد با strftime و فرمت جدید، دوباره به رشته تبدیلش کن."],
+    "rubric": "Correct: uses strptime with the correct format to parse, then strftime with the new format to convert back. Partial: parses correctly but formats with wrong directives. Incorrect: doesn't use strptime/strftime pair correctly."
+  }
+]

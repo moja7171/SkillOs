@@ -1,0 +1,51 @@
+[
+  {
+    "key": "atm-owner-classification",
+    "title": "مالک ATM چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "مالک یه ATM از کارمزد تراکنش‌ها سود می‌بره، ولی خودش هیچ‌وقت از دستگاه پول برنمی‌داره. مالک ATM چیه؟",
+    "options": [
+      "فقط کاربر، نه ذی‌نفع",
+      "فقط ذی‌نفع، نه کاربر نهایی",
+      "هم کاربر نهایی هم ذی‌نفع",
+      "نه کاربره نه ذی‌نفع، چون هیچ تعاملی با دستگاه نداره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "مالک ATM یه ذی‌نفعه (چون از کارمزدها سود می‌بره)، ولی کاربر نهایی نیست چون خودش از دستگاه پول برنمی‌داره. همه‌ی کاربرها ذی‌نفع‌ان، ولی همه‌ی ذی‌نفعان کاربر نیستن.",
+    "hints": [
+      "کاربر نهایی کسیه که مستقیم مأموریت اصلی سیستم رو تجربه می‌کنه — مالک این کار رو نمی‌کنه.",
+      "ذی‌نفع فقط باید سود یا سهمی داشته باشه، نه لزوماً استفاده‌ی مستقیم."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "active-vs-passive-stakeholder",
+    "title": "فعال یا منفعل؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "دو نفر رو در نظر بگیر: (۱) یه کشاورز که زمینش کنار منطقه‌ای‌ست که پهپاد بذرپاش داره بذر می‌ریزه، و نگرانه بذرها روی زمین کشاورزیش هم بریزه؛ (۲) شرکتی که پهپاد رو ساخته و از فروشش سود می‌بره. در ۳ تا ۴ جمله بگو هرکدوم ذی‌نفع فعالن یا منفعل، و چرا.",
+    "expected_outcome": "شرکت‌سازنده ذی‌نفع فعاله — علاقه‌ی مستقیم و آگاهانه (سود مالی) به سیستم داره. کشاورز ذی‌نفع منفعله — کاری به پهپاد و مأموریتش نداره و نمی‌خوادش، ولی چون پهپاد ممکنه روی زندگیش (زمینش) اثر بذاره، باید در طراحی سیستم (مثلاً دقت بذرپاشی) در نظر گرفته بشه.",
+    "hints": [
+      "ذی‌نفع فعال کسیه که آگاهانه و مستقیم علاقه/سهم داره؛ ذی‌نفع منفعل کسیه که سیستم روش اثر می‌ذاره بدون اینکه خودش بخوادش.",
+      "به مثال عابرین کنار خیابون توی این درس فکر کن — کشاورز خیلی شبیه اون‌هاست."
+    ],
+    "rubric": "Correct if response classifies the company as an active stakeholder and the farmer as a passive stakeholder, with reasoning matching the active/passive definitions. Correct_with_hint if classification is right but reasoning is thin. Incorrect if reversed or unexplained."
+  },
+  {
+    "key": "user-subset-of-stakeholder",
+    "title": "چرا هر کاربری ذی‌نفعه، ولی نه برعکس",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "این درس گفت «همه‌ی کاربرها ذی‌نفع‌ان، ولی همه‌ی ذی‌نفعان کاربر نیستن». با یه مثال از پهپاد بذرپاش (نه ATM) در ۲ تا ۳ جمله این جمله رو توضیح بده.",
+    "expected_outcome": "مثلاً اپراتوری که پهپاد رو کنترل می‌کنه هم کاربره هم ذی‌نفع (چون هم مستقیم باهاش کار می‌کنه هم منفعتی — مثلاً حقوقش — از موفقیت مأموریت داره). ولی یه سازمان محیط‌زیستی که فقط از نتیجه‌ی بازجنگل‌کاری سود می‌بره، بدون اینکه خودش پهپاد رو کنترل کنه یا باهاش تعامل مستقیم داشته باشه، ذی‌نفعه ولی کاربر نیست.",
+    "hints": [
+      "کاربر یعنی تعامل مستقیم یا سود مستقیم از *استفاده*ی سیستم. ذی‌نفع فقط یعنی سهم یا منفعت داشتن — لازم نیست تعامل مستقیم باشه.",
+      "یه نهاد یا سازمان که فقط از نتیجه‌ی کار سیستم خوشحال می‌شه، ولی هیچ‌وقت خودش باهاش کار نمی‌کنه، مثال خوبیه."
+    ],
+    "rubric": "Correct if response gives a drone-related example distinguishing someone who both interacts with/benefits directly from the system (user+stakeholder) from someone who only benefits without direct interaction (stakeholder only). Correct_with_hint if the example is vague but the direction is right. Incorrect if it reverses the logic or gives no real example."
+  }
+]

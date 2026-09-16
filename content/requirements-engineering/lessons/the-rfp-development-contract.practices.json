@@ -1,0 +1,51 @@
+[
+  {
+    "key": "spec-vs-sow",
+    "title": "مشخصات یا بیانیه‌ی کار؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه بند از RFP می‌گه: «پیمانکار باید ماهانه گزارش وضعیت پروژه تحویل بده و نقشه‌های طراحی رو مستند کنه.» این بند بخشی از کدوم سنده؟",
+    "options": [
+      "مشخصات نیازمندی‌های سیستم (System Requirements Specification) — چون درباره‌ی محصول نهایی‌ست",
+      "بیانیه‌ی کار (Statement of Work) — چون درباره‌ی کارها و خدماتیه که باید انجام بشه",
+      "قرارداد مذاکره‌شده — چون فقط بعد از امضا مشخص می‌شه",
+      "هیچ‌کدوم؛ این نوع بند اصلاً داخل RFP نمیاد"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "گزارش وضعیت و مستندسازی، کار/خدمته، نه ویژگی محصول نهایی — پس جاش توی بیانیه‌ی کار (SOW) هست، نه مشخصات نیازمندی‌های سیستم که فقط محصول نهایی رو توصیف می‌کنه.",
+    "hints": [
+      "مشخصات، محصول نهایی رو توصیف می‌کنه؛ SOW، کارها و خدمات لازم برای رسیدن به اون محصول رو.",
+      "«گزارش وضعیت ماهانه» یه فعالیته، نه یه ویژگی فیزیکی یا کارکردی محصول."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "cost-of-early-mistakes",
+    "title": "اشتباه کوچیک، هزینه‌ی بزرگ",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این درس گفت اشتباهات مرحله‌ی مشخصات/قرارداد می‌تونن بعداً هزینه‌ی زمانی و مالی بزرگی بسازن. فرض کن مشخصات نیازمندی‌های سیستمِ ATM یه ابهام داره (مثلاً مشخص نکرده ATM باید چند نوع ارز پشتیبانی کنه). در ۳ تا ۴ جمله بگو این ابهام چه تأثیری روی مراحل بعدی (طراحی، یکپارچه‌سازی، تست) می‌ذاره.",
+    "expected_outcome": "پیمانکار احتمالاً بر اساس یه فرض (مثلاً فقط یه ارز) طراحی و می‌سازه. اگه فرضش با نیاز واقعی مشتری فرق کنه، باید بعد از طراحی/ساخت برگرده و دوباره‌کاری کنه — که خیلی گرون‌تر و کندتر از اصلاح یه جمله توی مرحله‌ی مشخصات‌نویسیه. ممکنه حتی نیاز به تغییر قرارداد و مذاکره‌ی دوباره هم پیش بیاد.",
+    "hints": [
+      "هرچی جلوتر توی چرخه‌ی عمر می‌ریم، هزینه‌ی اصلاح یه اشتباه بیشتر می‌شه — چرا؟",
+      "اگه پیمانکار قبلاً طراحی و ساخته، اصلاح یعنی برگشتن و دوباره‌کاری، نه فقط ویرایش یه سند."
+    ],
+    "rubric": "Correct if response explains that an ambiguous spec leads to a wrong assumption during design/build, and that fixing it later (after design/integration) is far more costly/slower than catching it at the spec stage. Correct_with_hint if only the general idea (costs rise later) is stated without the mechanism. Incorrect if no real reasoning or claims it has no real impact."
+  },
+  {
+    "key": "sole-source-tradeoff",
+    "title": "چرا گاهی قرارداد تک‌منبعی؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "معمولاً RFP باید در دسترس عموم باشه تا رقابت شکل بگیره، ولی گاهی سازمان‌ها مستقیم با یه تأمین‌کننده‌ی خاص (بدون رقابت) قرارداد می‌بندن — قرارداد تک‌منبعی. در ۲ تا ۳ جمله حدس بزن چه شرایطی این تصمیم رو توجیه می‌کنه.",
+    "expected_outcome": "معمولاً وقتی می‌شه نشون داد هیچ تأمین‌کننده‌ی دیگه‌ای نمی‌تونه همون سیستم رو با همون قیمت، زمان‌بندی و سطح ریسک بسازه — مثلاً چون فقط یه شرکت اون تخصص یا فناوری خاص رو داره. رقابت مصنوعی توی این حالت فقط پروژه رو کند می‌کنه بدون سود واقعی.",
+    "hints": [
+      "به این فکر کن که رقابت چه فایده‌ای داره — قیمت بهتر، ریسک کمتر. اگه فقط یه گزینه‌ی واقعی وجود داشته باشه چی؟",
+      "درس اشاره کرد به این‌که این تصمیم باید توجیه و مجوز رسمی داشته باشه — یعنی یه استثنای قابل‌دفاع، نه یه میان‌بر دلبخواهی."
+    ],
+    "rubric": "Correct if response identifies that sole-source contracts are justified when no other supplier can realistically match the price/schedule/risk profile (e.g. unique expertise). Correct_with_hint if it gestures at 'special cases' without the reasoning. Incorrect if it claims sole-source is just about saving time with no justification needed."
+  }
+]

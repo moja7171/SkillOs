@@ -1,0 +1,51 @@
+[
+  {
+    "key": "classify-requirement-type",
+    "title": "این نیازمندی از کدوم نوعه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "این نیازمندی رو در نظر بگیر: «ATM باید طبق مقررات ضدپول‌شویی، تراکنش‌های بالای ۱۰ میلیون تومان رو به بانک مرکزی گزارش بده.» این نیازمندی از کدوم نوعه؟",
+    "options": [
+      "کارکردی — چون یه رفتار سیستمه",
+      "کیفیتی — چون یه معیار عددی داره",
+      "محدودیتی — چون از یه سازمان بیرونی (قانون‌گذار) تحمیل شده",
+      "هیچ‌کدوم؛ این اصلاً نیازمندی نیست"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "این محدودیتیه — یه قانون خارجی (مقررات ضدپول‌شویی) داره روی سیستم تحمیل می‌شه، و ATM نمی‌تونه دربارش مذاکره کنه یا نادیده‌ش بگیره.",
+    "hints": [
+      "چه چیزی این نیازمندی رو به‌وجود آورده — یه رفتار داخلی سیستم، یا یه قانون بیرونی؟",
+      "محدودیت‌ها از سازمان‌ها یا قوانین بیرونی میان و قابل‌مذاکره نیستن."
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "deriving-quality-from-functional",
+    "title": "از کارکردی به کیفیتی، بدون پاک کردن",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "نیازمندی کارکردی داریم: «پهپاد بذرپاش باید بذر رو روی منطقه‌ی هدف بریزد.» بعد از تحلیل، می‌خوایم یه نیازمندی کیفیتی هم اضافه کنیم درباره‌ی دقت ریختن بذر. طبق این درس، درست‌ترین کار کدومه؟ در ۳ تا ۴ جمله توضیح بده.",
+    "expected_outcome": "نیازمندی کارکردی رو نباید پاک کرد؛ باید یه نیازمندی کیفیتی جدید (مثلاً «دقت ریختن بذر باید در شعاع ۲ متری نقطه‌ی هدف باشد») به‌عنوان مشتق از همون نیازمندی کارکردی اضافه کرد. این‌جوری ردیابی‌پذیری حفظ می‌شه — همیشه می‌شه دید نیازمندی کیفیتی از کدوم نیازمندی کارکردی اومده.",
+    "hints": [
+      "قاعده‌ی این درس چی بود: «نیازمندی کارکردی رو نگه دار و کیفیتی رو ازش مشتق کن» — نه پاک‌کردن و جایگزینی.",
+      "چرا حفظ نیازمندی اصلی مهمه؟ به واژه‌ی «ردیابی‌پذیری (traceability)» فکر کن."
+    ],
+    "rubric": "Correct if response says to keep the functional requirement and derive/add a new quality requirement from it (not delete/replace), and explains this preserves traceability. Correct_with_hint if it says to derive without explaining the traceability reason. Incorrect if it suggests deleting/replacing the functional requirement."
+  },
+  {
+    "key": "conflicting-quality-requirements",
+    "title": "تعارض بین نیازمندی‌های کیفیتی پهپاد",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "برای پهپاد بذرپاش، دو تا نیازمندی کیفیتی پیشنهاد شده: (۱) پهپاد باید حداقل ۵ کیلوگرم بذر حمل کنه، (۲) پهپاد باید حداقل ۴۵ دقیقه بدون شارژ پرواز کنه. در ۲ تا ۳ جمله بگو این دو نیازمندی چرا ممکنه با هم تعارض داشته باشن، و مثل مثال سرعت/وزن ماشین توی این درس توضیح بده.",
+    "expected_outcome": "هرچی بذر بیشتری حمل بشه، وزن پهپاد بیشتر می‌شه و باتری سریع‌تر مصرف می‌شه — یعنی افزایش ظرفیت بذر (نیازمندی ۱) مستقیماً با افزایش مدت پرواز (نیازمندی ۲) تعارض داره، دقیقاً مثل تعارض سرعت و وزن ماشین.",
+    "hints": [
+      "به مثال سرعت/وزن ماشین توی این درس برگرد — همون منطق رو با وزن بذر/باتری پیاده کن.",
+      "وزن بیشتر معمولاً یعنی مصرف انرژی بیشتر برای همون کار."
+    ],
+    "rubric": "Correct if response identifies the weight/battery-life tradeoff and explicitly parallels it to the speed/weight car example from the lesson. Correct_with_hint if the tradeoff is identified without the parallel. Incorrect if no real conflict is identified."
+  }
+]

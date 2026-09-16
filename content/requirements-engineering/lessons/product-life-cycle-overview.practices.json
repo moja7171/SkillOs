@@ -1,0 +1,51 @@
+[
+  {
+    "key": "re-role-across-stages",
+    "title": "کِی مهندس نیازمندی‌ها بیشترین نقش رو داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی کدوم مرحله از چرخه‌ی عمر، تقاضا برای مهندسی نیازمندی‌ها معمولاً بیشترینه؟",
+    "options": [
+      "بازنشستگی (retirement)",
+      "مفهوم و توسعه‌ی اولیه (concept)",
+      "تولید انبوه (production)",
+      "بهره‌برداری طولانی‌مدت (utilization)"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "مهندس نیازمندی‌ها بیشترین حجم کار رو توی مراحل ابتدایی (مفهوم و توسعه‌ی اولیه) داره — همون‌جایی که باید نیازها شناسایی، استخراج و به مشخصات تبدیل بشن. هرچی جلوتر می‌ریم، تقاضا برای تخصص‌های دیگه بیشتر می‌شه.",
+    "hints": [
+      "به جدول نقش مهندس نیازمندی‌ها در هر مرحله برگرد — کدوم مرحله بیشترین فعالیت‌های «تعریف و ترجمه» رو داره؟",
+      "درس صریح گفت تقاضا برای مهندسی نیازمندی‌ها هرچی جلوتر می‌ریم، کم می‌شه (نه صفر می‌شه)."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "skipping-decision-gates",
+    "title": "رد شدن از دروازه‌های تصمیم",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه تیم توسعه‌ی پهپاد بذرپاش، برای صرفه‌جویی در زمان، از مرحله‌ی «مفهوم» و بازبینی‌های دروازه‌ی تصمیمش رد می‌شه و مستقیم می‌ره سراغ ساخت پروتوتایپ. در ۳ تا ۴ جمله بگو این کار چه ریسکی داره.",
+    "expected_outcome": "بدون مرحله‌ی مفهوم، نیازها و ذی‌نفعان به‌درستی شناسایی نشدن و فناوری‌های ممکن بررسی نشدن — یعنی تیم داره روی فرضیات ناتأیید می‌سازه. دروازه‌ی تصمیم هم جایی بود که همه چک می‌کردن آماده‌ی رفتن به مرحله‌ی بعدن؛ حذفش یعنی ریسک شکست محصول (چیزی که کاربر نمی‌خواد، یا پول و زمان زیادی که هدر می‌ره) به‌شدت بالا می‌ره.",
+    "hints": [
+      "مرحله‌ی مفهوم دقیقاً برای چی بود؟ چه چیزی رو تأیید می‌کرد؟",
+      "درس گفت حذف یا رد شدن از مرحله‌ها، ریسک شکست پروژه رو «به‌شدت» بالا می‌بره — چرا؟"
+    ],
+    "rubric": "Correct if response explains that skipping concept means building on unvalidated needs/stakeholders/technology choices, and connects this to increased risk of a failed or unwanted product. Correct_with_hint if only the risk is stated without explaining why concept matters. Incorrect if it claims skipping is fine or gives no reasoning."
+  },
+  {
+    "key": "need-vs-technological-opportunity",
+    "title": "نیاز محصول یا فرصت فناورانه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "یه شرکت باتری‌سازی یه فناوری جدید کشف می‌کنه که باتری رو خیلی سریع‌تر شارژ می‌کنه، بدون اینکه از قبل بدونه کدوم بازار دقیقاً بهش نیاز داره. طبق این درس، این شروعِ چرخه‌ی عمر از کدوم مسیر بوده — «نیاز محصول» یا «فرصت فناورانه»؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "این نمونه‌ی فرصت فناورانه‌ست: فناوری اول کشف شده و بعد دنبال بازار/کاربرد مناسب می‌گرده، برخلاف نیاز محصول که از یه مشکل مشخص شروع می‌شه و بعد دنبال راه‌حل می‌گرده.",
+    "hints": [
+      "نیاز محصول از یه مشکل مشخص شروع می‌شه؛ فرصت فناورانه از یه فناوری جدید که هنوز کاربردش معلوم نیست.",
+      "به مثال سطح‌های لمسی حساس به گرما (که بعداً شد گوشی‌های تاچ‌اسکرین) توی همین درس فکر کن."
+    ],
+    "rubric": "Correct if response identifies this as a technological opportunity and explains the distinction (tech discovered first, market found later) vs. product need (problem first, solution later). Correct_with_hint if the classification is right but reasoning is thin. Incorrect if classified as product need or unexplained."
+  }
+]

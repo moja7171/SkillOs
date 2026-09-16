@@ -1,0 +1,51 @@
+[
+  {
+    "key": "re-subset-of-se",
+    "title": "کدوم زیرمجموعه‌ی کدومه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "رابطه‌ی درست بین مهندسی نیازمندی‌ها (RE) و مهندسی سیستم‌ها (SE) کدومه؟",
+    "options": [
+      "SE زیرمجموعه‌ی RE‌ه؛ هر جا RE هست باید SE هم باشه",
+      "RE زیرمجموعه‌ی SE‌ه؛ SE همیشه به RE نیاز داره، ولی RE همیشه به کل SE نیاز نداره",
+      "این دو کاملاً مستقل از هم‌ان و هیچ همپوشانی ندارن",
+      "RE و SE دقیقاً یه چیز هستن با دو اسم متفاوت"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "مهندسی نیازمندی‌ها یکی از ۴ فعالیت اصلی مهندسی سیستم‌هاست — پس SE همیشه به RE نیاز داره. ولی RE می‌تونه بدون کل جعبه‌ابزار SE هم انجام بشه، مخصوصاً برای سیستم‌های نسبتاً ساده.",
+    "hints": [
+      "این درس صریح گفت «مهندسی نیازمندی‌ها زیرمجموعه‌ی مهندسی سیستم‌هاست، نه برعکس».",
+      "به مثال شبکه‌ی IT ساده در مقابل جنگنده‌ی استلث فکر کن — کدوم‌شون واقعاً به کل SE نیاز داره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "when-se-is-overkill",
+    "title": "برای یه اپ ساده، SE لازمه؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه تیم کوچیک می‌خواد یه اپلیکیشن ساده‌ی یادداشت‌برداری بسازه — بدون سخت‌افزار خاص، بدون تیم چندرشته‌ای، فقط چند تا برنامه‌نویس. آیا این تیم باید کل جعبه‌ابزار مهندسی سیستم‌ها (۸ فرایند مدیریت فنی، ۴ فعالیت اصلی و غیره) رو به کار ببره؟ در ۳ تا ۴ جمله توضیح بده.",
+    "expected_outcome": "نه، احتمالاً لازم نیست. مهندسی سیستم‌ها برای مدیریت پیچیدگی سیستم‌های چندرشته‌ای طراحی شده؛ یه اپ ساده‌ی یادداشت‌برداری این پیچیدگی رو نداره. با این حال، تیم همچنان باید نیازمندی‌های خوب بنویسه (مهندسی نیازمندی‌ها) — چون RE برخلاف SE، همیشه لازمه، فقط اجرای کاملش زیر چتر SE نیست.",
+    "hints": [
+      "به قاعده‌ی «کِی متوقف بشیم» توی این درس برگرد — معیارش چی بود؟",
+      "فراموش نکن که حتی وقتی SE لازم نیست، RE هنوز لازمه."
+    ],
+    "rubric": "Correct if response says full SE is likely unnecessary for a simple single-discipline app but requirements engineering itself is still needed. Correct_with_hint if only one of these two points is present. Incorrect if it claims either that SE is always required or that no requirements discipline is needed at all."
+  },
+  {
+    "key": "recursive-subsystem-engineering",
+    "title": "مهندس زیرسیستم پیشرانه چیکار می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "این درس گفت هر عنصر پیچیده‌ی سلسله‌مراتب می‌تونه خودش یه «سیستم» مستقل حساب بشه و همون ۴ فعالیت مهندسی سیستم‌ها روش اجرا بشه. برای زیرسیستم پیشرانه‌ی یه ماشین، این یعنی چی؟ در ۲ تا ۳ جمله با اشاره به حداقل ۲ تا از ۴ فعالیت توضیح بده.",
+    "expected_outcome": "مهندس زیرسیستم پیشرانه، پیشرانه رو مثل یه سیستم مستقل در نظر می‌گیره: نیازمندی‌های خودِ پیشرانه رو توسعه می‌ده (مثلاً حداقل قدرت خروجی)، مأموریت‌ها و کارکردهای پیشرانه رو تعریف می‌کنه (مثلاً تبدیل سوخت به چرخش)، و کارکردها رو به قطعات فیزیکی پیشرانه (پیستون، میل‌لنگ) تخصیص می‌ده — دقیقاً همون فرایندی که در سطح کل ماشین اجرا شده بود، فقط این‌بار در مقیاس زیرسیستم.",
+    "hints": [
+      "چهار فعالیت اصلی چی بودن؟ توسعه‌ی نیازمندی، توسعه‌ی کارکرد/مأموریت، تعریف فیزیکی، راستی‌آزمایی.",
+      "همون کاری که در سطح «ماشین» انجام شد، این‌بار در سطح «پیشرانه» تکرار می‌شه."
+    ],
+    "rubric": "Correct if response applies at least two of the four SE activities specifically to the propulsion subsystem (not just repeating the car-level example). Correct_with_hint if only one activity is applied or the explanation is generic. Incorrect if it doesn't connect to the recursive/per-level application idea."
+  }
+]

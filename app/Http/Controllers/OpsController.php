@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
  */
 class OpsController extends Controller
 {
-    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'delete-course'];
+    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'delete-course', 'deploy-log'];
 
     public function __invoke(Request $request, string $action): Response
     {
@@ -41,6 +41,7 @@ class OpsController extends Controller
                 'optimize' => $out = $this->artisan('optimize:clear', 'config:cache', 'route:cache', 'view:cache'),
                 'clear' => $out = $this->artisan('optimize:clear'),
                 'delete-course' => $out = $this->deleteCourse($request->query('slug')),
+                'deploy-log' => $out = $this->deployLog(),
             };
         } catch (\Throwable $e) {
             $out[] = 'ERROR: '.$e->getMessage();
@@ -154,6 +155,24 @@ class OpsController extends Controller
         $course->delete();
 
         return ["deleted course \"{$title}\" (slug: {$slug}, {$lessonCount} lessons)"];
+    }
+
+    /**
+     * Tail of `storage/logs/deploy-hook.log`, written by `public/deploy.php` (the deploy
+     * branch's `.cpanel.yml` post-pull hook) on every invocation, success or failure —
+     * the only way to see whether that hook actually ran on a host with no SSH/Terminal.
+     *
+     * @return list<string>
+     */
+    protected function deployLog(): array
+    {
+        $path = storage_path('logs/deploy-hook.log');
+
+        if (! File::exists($path)) {
+            return ["no {$path} yet — the auto-deploy hook (.cpanel.yml → deploy.php) has never run, or storage/logs isn't writable"];
+        }
+
+        return [collect(explode("\n", File::get($path)))->slice(-200)->implode("\n")];
     }
 
     /**

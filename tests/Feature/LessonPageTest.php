@@ -29,4 +29,23 @@ class LessonPageTest extends TestCase
             ->assertSee('نتیجه‌ی مرورها')
             ->assertSee('۱ از ۲ بار بلد بودی');
     }
+
+    public function test_practice_list_shows_each_practices_own_latest_status(): void
+    {
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->withActivities()->create();
+        $practice = $lesson->practices()->first();
+
+        $this->actingAs($user)->get($lesson->url())->assertOk()
+            ->assertDontSee('حل‌شده')->assertDontSee('تلاش ناموفق')->assertDontSee('در حال انجام');
+
+        $open = Attempt::create(['activity_id' => $practice->id, 'user_id' => $user->id, 'result_status' => 'started', 'evidence' => ['source' => 'free']]);
+        $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('در حال انجام');
+
+        $open->update(['result_status' => 'incorrect']);
+        $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('تلاش ناموفق');
+
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $user->id, 'result_status' => 'correct', 'evidence' => ['source' => 'free']]);
+        $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('حل‌شده');
+    }
 }

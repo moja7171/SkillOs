@@ -85,6 +85,18 @@ class CourseImporterTest extends TestCase
         $this->assertSame([], $videos[1]->subtitles);
     }
 
+    public function test_practice_attachments_resolve_like_lesson_attachments(): void
+    {
+        $lesson = $this->lesson('a');
+        $lesson['practices'][0]['attachments'] = [['title' => 'قالب', 'file' => 'files/template.pdf']];
+        $this->writeCourse(['video_base_url' => '/media/demo/', 'lessons' => [$lesson]]);
+
+        app(CourseImporter::class)->import('t', root: $this->root);
+
+        $practice = Lesson::where('slug', 'a')->sole()->activities()->where('key', 'p1')->sole();
+        $this->assertSame([['title' => 'قالب', 'url' => '/media/demo/files/template.pdf']], $practice->payload['attachments']);
+    }
+
     public function test_reimport_updates_content_and_keeps_learner_data(): void
     {
         $this->writeCourse(['lessons' => [$this->lesson('intro', title: 'قدیمی')]]);

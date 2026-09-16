@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Attempt;
 use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\MasteryRecord;
@@ -47,7 +48,21 @@ class LessonController extends Controller
             ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('evidence->source', 'lesson_done'))
             ->pluck('lesson_id');
 
-        return view('lessons.show', compact('lesson', 'course', 'enrollment', 'previous', 'next', 'lessonDone', 'practicesPassed', 'doneLessonIds'));
+        // Per-practice status for the practice list below: each practice's *latest* attempt
+        // decides whether it shows solved / needs another try / in progress / untouched —
+        // this is the signal the lesson-level "انجام دادم" card doesn't give per-row.
+        $practiceStatus = Attempt::where('user_id', $user->id)
+            ->whereIn('activity_id', $lesson->practices->pluck('id'))
+            ->orderByDesc('id')
+            ->get()
+            ->groupBy('activity_id')
+            ->map(fn ($attempts) => match (true) {
+                $attempts->first()->result_status === 'started' => 'in_progress',
+                in_array($attempts->first()->result_status, ['correct', 'correct_with_hint']) => 'solved',
+                default => 'unsolved',
+            });
+
+        return view('lessons.show', compact('lesson', 'course', 'enrollment', 'previous', 'next', 'lessonDone', 'practicesPassed', 'doneLessonIds', 'practiceStatus'));
     }
 
     /**

@@ -72,15 +72,23 @@
                 <div class="card">
                     <div class="card-h"><h3>تمرین‌ها <span class="text-faint font-normal">· {{ fa_num($lesson->practices->count()) }}</span></h3></div>
                     @forelse ($lesson->practices as $practice)
+                        @php $status = $practiceStatus[$practice->id] ?? null; @endphp
                         <div class="flex items-center gap-3 px-[18px] py-3 border-b border-line last:border-b-0">
                             <span class="badge badge-ghost">{{ $practice->formLabel() }}</span>
                             <span @class(['badge', 'badge-ok' => $practice->payload['difficulty'] === 'intro', 'badge-warn' => $practice->payload['difficulty'] === 'core', 'badge-bad' => $practice->payload['difficulty'] === 'stretch'])>{{ $practice->difficultyLabel() }}</span>
                             <span class="flex-1 min-w-0 truncate font-medium">{{ $practice->title }}</span>
+                            @if ($status === 'solved')
+                                <span class="badge badge-ok"><x-icon name="check" class="w-3 h-3" /> حل‌شده</span>
+                            @elseif ($status === 'in_progress')
+                                <span class="badge badge-warn">در حال انجام</span>
+                            @elseif ($status === 'unsolved')
+                                <span class="badge badge-bad">تلاش ناموفق</span>
+                            @endif
                             <span class="num">{{ $practice->estimated_minutes }}m</span>
-                            <form method="POST" action="{{ route('session.start', $practice) }}">
-                                @csrf
-                                <button type="submit" class="btn btn-sm"><x-icon name="play" class="w-3.5 h-3.5" /> شروع</button>
-                            </form>
+                            <a href="{{ route('session.open', $practice) }}" class="btn btn-sm">
+                                <x-icon :name="$status === 'in_progress' ? 'play' : ($status ? 'refresh' : 'play')" class="w-3.5 h-3.5" />
+                                {{ $status === 'in_progress' ? 'ادامه بده' : ($status ? 'مشاهده' : 'شروع') }}
+                            </a>
                         </div>
                     @empty
                         <div class="px-[18px] py-3 text-[13px] text-faint">این درس هنوز تمرین نداره.</div>

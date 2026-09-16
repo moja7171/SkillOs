@@ -94,6 +94,9 @@ class CourseImporter
                         $payload['options'] = $p['options'];
                         $payload['correct_option'] = (int) $p['correct_option'];
                     }
+                    if (! empty($p['attachments'])) {
+                        $payload['attachments'] = $this->attachments($data, $p);
+                    }
                     Activity::updateOrCreate(['lesson_id' => $lesson->id, 'key' => $p['key']], [
                         'type' => 'practice',
                         'title' => $p['title'],
@@ -277,19 +280,20 @@ class CourseImporter
     }
 
     /**
-     * Downloadable lesson files: "attachments": [{title, file|url}] resolved like videos.
+     * Downloadable files: "attachments": [{title, file|url}] resolved like videos. Used by
+     * both lessons (course.json) and individual practices (a lesson's *.practices.json).
      *
      * @param  array<string, mixed>  $course
-     * @param  array<string, mixed>  $lesson
+     * @param  array<string, mixed>  $owner  a lesson or a practice — anything with an "attachments" key
      * @return array<int, array{title: string, url: string}>
      */
-    protected function attachments(array $course, array $lesson): array
+    protected function attachments(array $course, array $owner): array
     {
         return array_values(array_filter(array_map(function (array $a) use ($course) {
             $url = $this->mediaUrl($course, $a, 'url', 'file');
 
             return $url ? ['title' => $a['title'] ?? basename($url), 'url' => $url] : null;
-        }, $lesson['attachments'] ?? [])));
+        }, $owner['attachments'] ?? [])));
     }
 
     /**

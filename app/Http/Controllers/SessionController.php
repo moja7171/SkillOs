@@ -23,6 +23,29 @@ class SessionController extends Controller
         return redirect()->route('session.show', $attempt);
     }
 
+    /**
+     * Smart entry point for a free (non-plan) activity: resumes an open attempt, or shows
+     * the most recent finished one (with its result and the full history below it) instead
+     * of silently starting a blank new attempt over an already-answered practice. Starting
+     * genuinely fresh is a deliberate separate action — the "دوباره همین تمرین" button on a
+     * finished attempt, which still calls `start()`.
+     */
+    public function open(Request $request, Activity $activity): RedirectResponse
+    {
+        $latest = $request->user()->attempts()
+            ->where('activity_id', $activity->id)
+            ->latest('id')
+            ->first();
+
+        if ($latest) {
+            return redirect()->route('session.show', $latest);
+        }
+
+        $attempt = $this->session->start($request->user(), $activity);
+
+        return redirect()->route('session.show', $attempt);
+    }
+
     public function startPlanned(Request $request, PlanItem $planItem): RedirectResponse
     {
         abort_unless($planItem->user_id === $request->user()->id, 403);
@@ -71,6 +94,15 @@ class SessionController extends Controller
             }
         }
 
+        // Every other attempt at this same activity, finished or still open, newest first —
+        // so a learner re-opening a practice they've already tried sees they've been here
+        // before instead of it looking like a fresh, unattempted exercise.
+        $history = $attempt->user->attempts()
+            ->where('activity_id', $attempt->activity_id)
+            ->where('id', '!=', $attempt->id)
+            ->latest('id')
+            ->get();
+
         return view('session.show', [
             'attempt' => $attempt,
             'activity' => $attempt->activity,
@@ -78,6 +110,7 @@ class SessionController extends Controller
             'open' => $open,
             'nextPlanItem' => $nextPlanItem,
             'next' => $nextActivity,
+            'history' => $history,
         ]);
     }
 
@@ -121,6 +154,22 @@ class SessionController extends Controller
         $this->session->giveUp($attempt);
 
         return redirect()->route('session.show', $attempt);
+    }
+
+    /**
+     * A true, no-penalty exit: unlike `giveUp` (finalizes as incorrect and reveals the
+     * answer), this discards the open attempt entirely — nothing is recorded, mastery is
+     * untouched, and it's as if the learner never clicked "شروع".
+     */
+    public function cancel(Attempt $attempt): RedirectResponse
+    {
+        $this->authorizeOwner($attempt);
+        abort_unless($this->session->isOpen($attempt), 422);
+
+        $lesson = $attempt->activity->lesson;
+        $attempt->delete();
+
+        return redirect($lesson->url());
     }
 
     protected function authorizeOwner(Attempt $attempt): void

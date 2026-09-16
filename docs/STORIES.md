@@ -154,3 +154,6 @@ New button on the lesson page, gated on every practice being answered correctly 
 
 ### [x] S-54 «دوستان» is now an admin-only, all-time progress dashboard (DECISIONS.md §44)
 First `is_admin` flag on the install (migration sets it for the owner's own account). `FriendsController` 403s non-admins; both nav menus hide the link entirely for them. Per-user numbers switched from "this week's practice count" to three all-time totals — minutes spent, distinct lessons done (mastery-or-mark-done, reusing S-52's OR logic), distinct practices ever solved.
+
+### [x] S-55 Production 500 on lesson pages (pending migration) + both nav dropdowns opened off-screen (DECISIONS.md §45)
+The `is_admin` migration from S-54 hadn't been run on production yet — `/_ops/migrate` fixed it, `/_ops/optimize` refreshed caches too, owner asked to confirm. Separately, and unrelated to any recent change: the account-menu and mobile-hamburger dropdowns both used `align="left"`, which in this RTL app anchors rightward and expands *off the left edge* of the viewport — measured at `left: -128px` (1400px viewport) and `left: -10px` (390px viewport) via CDP before the fix. Both switched to `align="right"` (anchors leftward, expands into the page); re-measured fully on-screen after.

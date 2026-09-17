@@ -161,6 +161,8 @@ Both source folders had a real gotcha: every `.srt` file (not just the video fil
 
 **«نیازمندی‌ها از دید معمار» section complete 2026-09-17 (6 lessons, text-only pass).** `introduction-to-requirements`, `the-two-types-of-requirements`, `architects-functional-requirements`, `non-functional-requirements`, `who-defines-non-functional-requirements`, `conclusion-requirements`. `non-functional-requirements` (033) is this section's heaviest lesson (~125-line transcript) — full walkthrough of performance (latency vs. throughput, with worked numbers), load vs. throughput, data volume, concurrent users (the 10x-of-concurrent-requests rule of thumb), and SLA (kept the "3 data centers with dual power and automatic failover" anecdote as-is). `validate.py` clean of stubs for these 6; `content:import` loads 113/0; `CourseImporterTest` 10/10. 12 sections / 78 lessons remain for the text pass.
 
+**«انواع اپلیکیشن» section complete 2026-09-17 (8 lessons, text-only pass).** `introduction-to-application-types`, `web-apps`, `web-api`, `mobile`, `console`, `service`, `desktop`, `summary-application-types` — the six mainstream types (web app, web API/REST, mobile, console/CLI, service, desktop) with each lesson's own "best for" checklist kept as the video structured it. `validate.py` clean of stubs; `content:import` loads 113/0; `CourseImporterTest` 10/10. 38/113 lessons done, 11 sections / 75 lessons remain.
+
 **Course `requirements-engineering` is now 100% authored: 8 sections, 85 lessons, 244 practices.** No further sections remain for this course.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)

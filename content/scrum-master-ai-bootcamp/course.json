@@ -1,0 +1,683 @@
+{
+  "title": "بوت‌کمپ هوش مصنوعی برای اسکرام مستر",
+  "description": "چطور از ابزارهای هوش مصنوعی مولد (ChatGPT، Claude، Copilot و…) به‌عنوان دستیار روزمره‌ی یه اسکرام مستر یا PO استفاده کنیم.",
+  "outcome_statement": "در پایان این دوره می‌تونی از ابزارهای هوش مصنوعی برای نوشتن یوزر استوری، اولویت‌بندی بک‌لاگ، برنامه‌ریزی اسپرینت، پایش پیشرفت و خودکارسازی کارهای روزمره‌ی اسکرام استفاده کنی.",
+  "source_note": "برگرفته از دوره‌ی «Scrum Master's AI Bootcamp: Generative AI as Agile Co-Pilot»؛ متن دروس (در فاز محتوا) از روی زیرنویس انگلیسی نوشته می‌شه، نه ترجمه‌ی ماشینی فارسی.",
+  "video_base_url": "/media/scrum-master-ai-bootcamp/",
+  "category": "اسکرام و اجایل",
+  "category_order": 2,
+  "lessons": [
+    {
+      "slug": "introduction-to-generative-ai-and-business-dmt6",
+      "title": "مقدمه‌ای بر هوش مصنوعی مولد و تأثیرش روی کسب‌وکار",
+      "summary": "چرا این فناوری برای اسکرام مسترها مهمه.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "001-introduction-to-generative-ai-and-business-dmt6.mp4",
+          "subtitles": [
+            {
+              "file": "001-introduction-to-generative-ai-and-business-dmt6.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-introduction-to-generative-ai-and-business-dmt6.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "getting-started-with-various-ai-tools-qkty",
+      "title": "آشنایی با ابزارهای هوش مصنوعی (ChatGPT، Claude، Gemini، Perplexity)",
+      "summary": "معرفی چند ابزار پرکاربرد.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "002-getting-started-with-various-ai-tools-qkty.mp4",
+          "subtitles": [
+            {
+              "file": "002-getting-started-with-various-ai-tools-qkty.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-getting-started-with-various-ai-tools-qkty.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "conversational-and-persistent-memory-tokens-and-3rqj",
+      "title": "حافظه‌ی مکالمه، توکن و پنجره‌ی زمینه (Context Window)",
+      "summary": "مفاهیم پایه‌ی کار با مدل‌های زبانی.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "003-conversational-and-persistent-memory-tokens-and-3rqj.mp4",
+          "subtitles": [
+            {
+              "file": "003-conversational-and-persistent-memory-tokens-and-3rqj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-conversational-and-persistent-memory-tokens-and-3rqj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "knowledge-cut-off-web-search-and-fwtp",
+      "title": "تاریخ برش دانش، جست‌وجوی وب و تحقیق عمیق",
+      "summary": "محدودیت‌ها و قابلیت‌های جدید مدل‌ها.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "004-knowledge-cut-off-web-search-and-fwtp.mp4",
+          "subtitles": [
+            {
+              "file": "004-knowledge-cut-off-web-search-and-fwtp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-knowledge-cut-off-web-search-and-fwtp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "custom-gpts-building-your-very-own-ctjf",
+      "title": "ساخت GPT اختصاصی بدون کدنویسی",
+      "summary": "چطور یه چت‌بات شخصی‌سازی‌شده بسازیم.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "005-custom-gpts-building-your-very-own-ctjf.mp4",
+          "subtitles": [
+            {
+              "file": "005-custom-gpts-building-your-very-own-ctjf.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-custom-gpts-building-your-very-own-ctjf.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understanding-prompt-architectures-bet0",
+      "title": "درک معماری پرامپت‌ها",
+      "summary": "ساختار یه پرامپت خوب.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 29,
+      "videos": [
+        {
+          "file": "006-understanding-prompt-architectures-bet0.mp4",
+          "subtitles": [
+            {
+              "file": "006-understanding-prompt-architectures-bet0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-understanding-prompt-architectures-bet0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "comparing-prompt-frameworks-costar-rise-and-dekm",
+      "title": "مقایسه‌ی فریم‌ورک‌های پرامپت‌نویسی (COSTAR، RISE، RTF)",
+      "summary": "چند الگوی آماده برای نوشتن پرامپت.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "007-comparing-prompt-frameworks-costar-rise-and-dekm.mp4",
+          "subtitles": [
+            {
+              "file": "007-comparing-prompt-frameworks-costar-rise-and-dekm.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-comparing-prompt-frameworks-costar-rise-and-dekm.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "practice-prompts-on-common-agile-processes-bxdr",
+      "title": "تمرین پرامپت‌نویسی روی فرایندهای رایج اجایل",
+      "summary": "تمرین عملی روی سناریوهای واقعی.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "008-practice-prompts-on-common-agile-processes-bxdr.mp4",
+          "subtitles": [
+            {
+              "file": "008-practice-prompts-on-common-agile-processes-bxdr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-practice-prompts-on-common-agile-processes-bxdr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "prompt-chaining-meta-prompting-and-chain-l56v",
+      "title": "زنجیره‌ی پرامپت، متاپرامپت و زنجیره‌ی تفکر (Chain of Thought)",
+      "summary": "تکنیک‌های پیشرفته‌ی پرامپت‌نویسی.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "009-prompt-chaining-meta-prompting-and-chain-l56v.mp4",
+          "subtitles": [
+            {
+              "file": "009-prompt-chaining-meta-prompting-and-chain-l56v.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-prompt-chaining-meta-prompting-and-chain-l56v.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-ai-quality-assurance-framework-qqyt",
+      "title": "چارچوب کنترل کیفیت خروجی هوش مصنوعی",
+      "summary": "چطور خروجی مدل رو بسنجیم و بهش اعتماد کنیم.",
+      "section": "مبانی هوش مصنوعی مولد و پرامپت‌نویسی",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "010-the-ai-quality-assurance-framework-qqyt.mp4",
+          "subtitles": [
+            {
+              "file": "010-the-ai-quality-assurance-framework-qqyt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-the-ai-quality-assurance-framework-qqyt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "module-case-study-introduction-and-goal-jc0u",
+      "title": "مطالعه‌ی موردی ماژول — مقدمه و تعیین هدف",
+      "summary": "معرفی سناریوی عملی این بخش.",
+      "section": "بک‌لاگ و نیازمندی‌ها با کمک هوش مصنوعی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "011-module-case-study-introduction-and-goal-jc0u.mp4",
+          "subtitles": [
+            {
+              "file": "011-module-case-study-introduction-and-goal-jc0u.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-module-case-study-introduction-and-goal-jc0u.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-backlog-and-user-stories-hands-s4kc",
+      "title": "کار عملی روی بک‌لاگ محصول و یوزر استوری‌ها",
+      "summary": "ساخت بک‌لاگ با کمک هوش مصنوعی.",
+      "section": "بک‌لاگ و نیازمندی‌ها با کمک هوش مصنوعی",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "012-product-backlog-and-user-stories-hands-s4kc.mp4",
+          "subtitles": [
+            {
+              "file": "012-product-backlog-and-user-stories-hands-s4kc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-product-backlog-and-user-stories-hands-s4kc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exhaustive-user-stories-creation-for-your-x558",
+      "title": "تولید کامل یوزر استوری‌ها برای یه اپیک",
+      "summary": "چطور از هوش مصنوعی برای پوشش کامل استفاده کنیم.",
+      "section": "بک‌لاگ و نیازمندی‌ها با کمک هوش مصنوعی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "013-exhaustive-user-stories-creation-for-your-x558.mp4",
+          "subtitles": [
+            {
+              "file": "013-exhaustive-user-stories-creation-for-your-x558.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-exhaustive-user-stories-creation-for-your-x558.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "generating-definitions-of-done-and-definition-fvqj",
+      "title": "تولید DoD و DoR با هوش مصنوعی",
+      "summary": "کمک گرفتن از AI برای این دو تعریف.",
+      "section": "بک‌لاگ و نیازمندی‌ها با کمک هوش مصنوعی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "014-generating-definitions-of-done-and-definition-fvqj.mp4",
+          "subtitles": [
+            {
+              "file": "014-generating-definitions-of-done-and-definition-fvqj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-generating-definitions-of-done-and-definition-fvqj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "applying-ai-within-jira-and-integrating-dppv",
+      "title": "استفاده از هوش مصنوعی توی جیرا و یکپارچه‌سازی با Claude",
+      "summary": "اتصال ابزارهای AI به جیرا.",
+      "section": "بک‌لاگ و نیازمندی‌ها با کمک هوش مصنوعی",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "015-applying-ai-within-jira-and-integrating-dppv.mp4",
+          "subtitles": [
+            {
+              "file": "015-applying-ai-within-jira-and-integrating-dppv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-applying-ai-within-jira-and-integrating-dppv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "generating-acceptance-test-cases-9vk9",
+      "title": "تولید سناریوهای تست پذیرش",
+      "summary": "کمک هوش مصنوعی برای نوشتن تست‌های پذیرش.",
+      "section": "بک‌لاگ و نیازمندی‌ها با کمک هوش مصنوعی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "016-generating-acceptance-test-cases-9vk9.mp4",
+          "subtitles": [
+            {
+              "file": "016-generating-acceptance-test-cases-9vk9.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-generating-acceptance-test-cases-9vk9.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "module-case-study-introduction-and-goal-nlpu",
+      "title": "مطالعه‌ی موردی ماژول دوم — مقدمه و تعیین هدف",
+      "summary": "معرفی سناریوی این بخش.",
+      "section": "اجرای اسپرینت با کمک هوش مصنوعی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "017-module-case-study-introduction-and-goal-nlpu.mp4",
+          "subtitles": [
+            {
+              "file": "017-module-case-study-introduction-and-goal-nlpu.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-module-case-study-introduction-and-goal-nlpu.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "ai-assisted-prioritization-and-estimation-hands-8kgx",
+      "title": "اولویت‌بندی و تخمین با کمک هوش مصنوعی",
+      "summary": "کار عملی روی اولویت‌بندی بک‌لاگ.",
+      "section": "اجرای اسپرینت با کمک هوش مصنوعی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "018-ai-assisted-prioritization-and-estimation-hands-8kgx.mp4",
+          "subtitles": [
+            {
+              "file": "018-ai-assisted-prioritization-and-estimation-hands-8kgx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-ai-assisted-prioritization-and-estimation-hands-8kgx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sprint-planning-hands-on-o14j",
+      "title": "کار عملی روی برنامه‌ریزی اسپرینت",
+      "summary": "استفاده از AI برای برنامه‌ریزی اسپرینت.",
+      "section": "اجرای اسپرینت با کمک هوش مصنوعی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "019-sprint-planning-hands-on-o14j.mp4",
+          "subtitles": [
+            {
+              "file": "019-sprint-planning-hands-on-o14j.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-sprint-planning-hands-on-o14j.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "identifying-and-mitigating-impediments-zewr",
+      "title": "شناسایی و رفع موانع",
+      "summary": "کمک هوش مصنوعی برای پیدا کردن و حل موانع.",
+      "section": "اجرای اسپرینت با کمک هوش مصنوعی",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "020-identifying-and-mitigating-impediments-zewr.mp4",
+          "subtitles": [
+            {
+              "file": "020-identifying-and-mitigating-impediments-zewr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-identifying-and-mitigating-impediments-zewr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "burndown-planning-and-tracking-with-ai-3uog",
+      "title": "برنامه‌ریزی و پایش برن‌داون با داشبورد هوش مصنوعی (Claude)",
+      "summary": "ساخت داشبورد پیشرفت با کمک AI.",
+      "section": "اجرای اسپرینت با کمک هوش مصنوعی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "021-burndown-planning-and-tracking-with-ai-3uog.mp4",
+          "subtitles": [
+            {
+              "file": "021-burndown-planning-and-tracking-with-ai-3uog.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-burndown-planning-and-tracking-with-ai-3uog.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "daily-standups-automating-summaries-and-insights-xgky",
+      "title": "خودکارسازی خلاصه‌ی جلسات روزانه و اپ Gamma برای ارائه‌ها",
+      "summary": "استفاده از AI برای گزارش‌گیری روزانه.",
+      "section": "اجرای اسپرینت با کمک هوش مصنوعی",
+      "estimated_minutes": 26,
+      "videos": [
+        {
+          "file": "022-daily-standups-automating-summaries-and-insights-xgky.mp4",
+          "subtitles": [
+            {
+              "file": "022-daily-standups-automating-summaries-and-insights-xgky.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-daily-standups-automating-summaries-and-insights-xgky.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-chatgpt-agent-mode-rc7o",
+      "title": "کار با حالت Agent در ChatGPT",
+      "summary": "چطور از عامل‌های هوشمند استفاده کنیم.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "023-working-with-chatgpt-agent-mode-rc7o.mp4",
+          "subtitles": [
+            {
+              "file": "023-working-with-chatgpt-agent-mode-rc7o.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-working-with-chatgpt-agent-mode-rc7o.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "integrate-chatgpt-with-google-calendar-and-stuj",
+      "title": "یکپارچه‌سازی ChatGPT با گوگل‌کلندر و Canva",
+      "summary": "اتصال AI به ابزارهای روزمره.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "024-integrate-chatgpt-with-google-calendar-and-stuj.mp4",
+          "subtitles": [
+            {
+              "file": "024-integrate-chatgpt-with-google-calendar-and-stuj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-integrate-chatgpt-with-google-calendar-and-stuj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exploring-microsoft-copilot-with-word-documents-250u",
+      "title": "کار با Copilot مایکروسافت روی اسناد Word",
+      "summary": "استفاده از AI در نوشتن اسناد.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "025-exploring-microsoft-copilot-with-word-documents-250u.mp4",
+          "subtitles": [
+            {
+              "file": "025-exploring-microsoft-copilot-with-word-documents-250u.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-exploring-microsoft-copilot-with-word-documents-250u.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exploring-microsoft-copilot-with-excel-sheets-5wrl",
+      "title": "کار با Copilot مایکروسافت روی اکسل",
+      "summary": "استفاده از AI در تحلیل داده.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "026-exploring-microsoft-copilot-with-excel-sheets-5wrl.mp4",
+          "subtitles": [
+            {
+              "file": "026-exploring-microsoft-copilot-with-excel-sheets-5wrl.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-exploring-microsoft-copilot-with-excel-sheets-5wrl.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exploring-microsoft-copilot-with-powerpoint-presentations-tayc",
+      "title": "کار با Copilot مایکروسافت روی پاورپوینت",
+      "summary": "ساخت ارائه با کمک AI.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "027-exploring-microsoft-copilot-with-powerpoint-presentations-tayc.mp4",
+          "subtitles": [
+            {
+              "file": "027-exploring-microsoft-copilot-with-powerpoint-presentations-tayc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-exploring-microsoft-copilot-with-powerpoint-presentations-tayc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exploring-microsoft-copilot-with-outlook-mail-xzzs",
+      "title": "کار با Copilot مایکروسافت روی ایمیل Outlook",
+      "summary": "مدیریت ایمیل با کمک AI.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "028-exploring-microsoft-copilot-with-outlook-mail-xzzs.mp4",
+          "subtitles": [
+            {
+              "file": "028-exploring-microsoft-copilot-with-outlook-mail-xzzs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-exploring-microsoft-copilot-with-outlook-mail-xzzs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "creating-and-managing-projects-with-chatgpt-9n4l",
+      "title": "ساخت و مدیریت پروژه با قابلیت Projects در ChatGPT",
+      "summary": "سازمان‌دهی کار با این قابلیت.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "029-creating-and-managing-projects-with-chatgpt-9n4l.mp4",
+          "subtitles": [
+            {
+              "file": "029-creating-and-managing-projects-with-chatgpt-9n4l.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-creating-and-managing-projects-with-chatgpt-9n4l.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "automating-project-diagram-creation-mermaid-script-dwj0",
+      "title": "خودکارسازی ساخت دیاگرام پروژه با اسکریپت Mermaid",
+      "summary": "تولید دیاگرام با کمک AI.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "030-automating-project-diagram-creation-mermaid-script-dwj0.mp4",
+          "subtitles": [
+            {
+              "file": "030-automating-project-diagram-creation-mermaid-script-dwj0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-automating-project-diagram-creation-mermaid-script-dwj0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "automating-meeting-scribing-with-otter-ai-zkfj",
+      "title": "خودکارسازی صورت‌جلسه با Otter AI",
+      "summary": "ابزار AI برای ثبت جلسات.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "031-automating-meeting-scribing-with-otter-ai-zkfj.mp4",
+          "subtitles": [
+            {
+              "file": "031-automating-meeting-scribing-with-otter-ai-zkfj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-automating-meeting-scribing-with-otter-ai-zkfj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "claude-ai-for-data-analysis-and-8swz",
+      "title": "Claude برای تحلیل داده و Gamma برای ساخت ارائه‌ی حرفه‌ای",
+      "summary": "دو ابزار کاربردی برای جمع‌بندی دوره.",
+      "section": "ابزارهای هوش مصنوعی در کار روزمره",
+      "estimated_minutes": 28,
+      "videos": [
+        {
+          "file": "032-claude-ai-for-data-analysis-and-8swz.mp4",
+          "subtitles": [
+            {
+              "file": "032-claude-ai-for-data-analysis-and-8swz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-claude-ai-for-data-analysis-and-8swz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

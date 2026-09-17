@@ -1,0 +1,2216 @@
+{
+  "title": "اجایل و اسکرام برای اسکرام مستر و مالک محصول",
+  "description": "دوره‌ای کامل درباره‌ی اجایل و اسکرام، از مبانی چارچوب تا مسیر شغلی اسکرام مستری و مالک محصول.",
+  "outcome_statement": "در پایان این دوره می‌تونی چارچوب اسکرام رو کامل توضیح بدی، نقش‌ها و رویدادها و آرتیفکت‌هاش رو در عمل به‌کار ببری، و مسیر شغلی اسکرام مستری یا مالک محصول رو با آگاهی بیشتری دنبال کنی.",
+  "source_note": "برگرفته از دوره‌ی «Agile and Scrum Course for Scrum Master and Product Owner»؛ متن دروس (در فاز محتوا) از روی زیرنویس انگلیسی نوشته می‌شه، نه ترجمه‌ی ماشینی فارسی.",
+  "video_base_url": "/media/agile-scrum-master-product-owner/",
+  "category": "اسکرام و اجایل",
+  "category_order": 1,
+  "lessons": [
+    {
+      "slug": "getting-the-most-from-this-course-9vfk",
+      "title": "چطور بیشترین بهره رو از این دوره ببری",
+      "summary": "نکاتی برای استفاده‌ی بهتر از دوره.",
+      "section": "مقدمه و چرا اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "001-getting-the-most-from-this-course-9vfk.mp4",
+          "subtitles": [
+            {
+              "file": "001-getting-the-most-from-this-course-9vfk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-getting-the-most-from-this-course-9vfk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "before-we-start-this-lecture-is-01oq",
+      "title": "قبل از شروع، این درس رو از دست نده",
+      "summary": "چند نکته‌ی مهم پیش از ورود به دوره.",
+      "section": "مقدمه و چرا اسکرام",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "002-before-we-start-this-lecture-is-01oq.mp4",
+          "subtitles": [
+            {
+              "file": "002-before-we-start-this-lecture-is-01oq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-before-we-start-this-lecture-is-01oq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-introduction-thzi",
+      "title": "معرفی دوره",
+      "summary": "دوره چی رو پوشش می‌ده و برای کیه.",
+      "section": "مقدمه و چرا اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "003-course-introduction-thzi.mp4",
+          "subtitles": [
+            {
+              "file": "003-course-introduction-thzi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-course-introduction-thzi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "why-scrum-why-now-why-you-yef7",
+      "title": "چرا اسکرام؟ چرا الان؟",
+      "summary": "دلیل محبوبیت و ارزش یادگیری اسکرام.",
+      "section": "مقدمه و چرا اسکرام",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "004-why-scrum-why-now-why-you-yef7.mp4",
+          "subtitles": [
+            {
+              "file": "004-why-scrum-why-now-why-you-yef7.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-why-scrum-why-now-why-you-yef7.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-guide-2020-what-has-gwie",
+      "title": "راهنمای اسکرام ۲۰۲۰ — چی تغییر کرده",
+      "summary": "مرور تغییرات نسخه‌ی ۲۰۲۰ راهنمای اسکرام.",
+      "section": "مقدمه و چرا اسکرام",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "005-the-scrum-guide-2020-what-has-gwie.mp4",
+          "subtitles": [
+            {
+              "file": "005-the-scrum-guide-2020-what-has-gwie.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-the-scrum-guide-2020-what-has-gwie.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-book-recommendation-0znd",
+      "title": "چند کتاب پیشنهادی درباره‌ی اسکرام",
+      "summary": "منابع مکتوب برای یادگیری عمیق‌تر.",
+      "section": "مقدمه و چرا اسکرام",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "006-scrum-book-recommendation-0znd.mp4",
+          "subtitles": [
+            {
+              "file": "006-scrum-book-recommendation-0znd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-scrum-book-recommendation-0znd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-agile-and-why-agile-ws4f",
+      "title": "مقدمه‌ای بر اجایل و چرایی‌اش",
+      "summary": "اجایل چیه و چرا این‌قدر مهمه.",
+      "section": "مبانی اجایل",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "007-introduction-to-agile-and-why-agile-ws4f.mp4",
+          "subtitles": [
+            {
+              "file": "007-introduction-to-agile-and-why-agile-ws4f.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-introduction-to-agile-and-why-agile-ws4f.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-values-and-principles-of-the-s7yo",
+      "title": "ارزش‌ها و اصول مانیفست اجایل",
+      "summary": "چهار ارزش و دوازده اصل بیانیه‌ی اجایل.",
+      "section": "مبانی اجایل",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "008-the-values-and-principles-of-the-s7yo.mp4",
+          "subtitles": [
+            {
+              "file": "008-the-values-and-principles-of-the-s7yo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-the-values-and-principles-of-the-s7yo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-difference-between-agile-and-scrum-rvx1",
+      "title": "تفاوت اجایل و اسکرام",
+      "summary": "چرا اسکرام یکی از چارچوب‌های اجایله، نه خودش اجایل.",
+      "section": "مبانی اجایل",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "009-the-difference-between-agile-and-scrum-rvx1.mp4",
+          "subtitles": [
+            {
+              "file": "009-the-difference-between-agile-and-scrum-rvx1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-the-difference-between-agile-and-scrum-rvx1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "why-agile-rocks-why-agile-is-lsav",
+      "title": "چرا اجایل بهتر از آبشاریه",
+      "summary": "مقایسه‌ی اجایل و مدل آبشاری.",
+      "section": "مبانی اجایل",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "010-why-agile-rocks-why-agile-is-lsav.mp4",
+          "subtitles": [
+            {
+              "file": "010-why-agile-rocks-why-agile-is-lsav.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-why-agile-rocks-why-agile-is-lsav.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "agile-mythbusters-xj4n",
+      "title": "باورهای غلط رایج درباره‌ی اجایل",
+      "summary": "چند تصور اشتباه رایج و اصلاحشون.",
+      "section": "مبانی اجایل",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "011-agile-mythbusters-xj4n.mp4",
+          "subtitles": [
+            {
+              "file": "011-agile-mythbusters-xj4n.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-agile-mythbusters-xj4n.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "new-the-scrum-guide-2020-what-ucif",
+      "title": "دوباره: تغییرات راهنمای اسکرام ۲۰۲۰",
+      "summary": "نسخه‌ی به‌روزشده‌ی همون مرور تغییرات.",
+      "section": "مبانی اجایل",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "013-new-the-scrum-guide-2020-what-ucif.mp4",
+          "subtitles": [
+            {
+              "file": "013-new-the-scrum-guide-2020-what-ucif.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-new-the-scrum-guide-2020-what-ucif.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-introduction-ebu0",
+      "title": "مقدمه‌ای بر محصول",
+      "summary": "محصول یعنی چی و چرا محور کار تیمه.",
+      "section": "محصول: چشم‌انداز تا نقشه‌راه",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "014-product-introduction-ebu0.mp4",
+          "subtitles": [
+            {
+              "file": "014-product-introduction-ebu0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-product-introduction-ebu0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-goal-introduction-0z99",
+      "title": "هدف محصول چیه",
+      "summary": "مفهوم Product Goal و جایگاهش.",
+      "section": "محصول: چشم‌انداز تا نقشه‌راه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "015-product-goal-introduction-0z99.mp4",
+          "subtitles": [
+            {
+              "file": "015-product-goal-introduction-0z99.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-product-goal-introduction-0z99.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-vision-g8wp",
+      "title": "چشم‌انداز محصول",
+      "summary": "چرا هر محصول به یه چشم‌انداز روشن نیاز داره.",
+      "section": "محصول: چشم‌انداز تا نقشه‌راه",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "016-product-vision-g8wp.mp4",
+          "subtitles": [
+            {
+              "file": "016-product-vision-g8wp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-product-vision-g8wp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-strategy-ygmh",
+      "title": "استراتژی محصول",
+      "summary": "مسیر رسیدن از چشم‌انداز به نتیجه.",
+      "section": "محصول: چشم‌انداز تا نقشه‌راه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "017-product-strategy-ygmh.mp4",
+          "subtitles": [
+            {
+              "file": "017-product-strategy-ygmh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-product-strategy-ygmh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-roadmap-qsnt",
+      "title": "نقشه‌راه محصول",
+      "summary": "برنامه‌ی کلان تحویل محصول در طول زمان.",
+      "section": "محصول: چشم‌انداز تا نقشه‌راه",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "018-product-roadmap-qsnt.mp4",
+          "subtitles": [
+            {
+              "file": "018-product-roadmap-qsnt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-product-roadmap-qsnt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-the-three-pillars-of-unhi",
+      "title": "سه ستون تجربه‌گرایی (Empiricism)",
+      "summary": "شفافیت، بازرسی و تطبیق.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "020-introduction-to-the-three-pillars-of-unhi.mp4",
+          "subtitles": [
+            {
+              "file": "020-introduction-to-the-three-pillars-of-unhi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-introduction-to-the-three-pillars-of-unhi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "challenges-and-examples-of-empiricism-dnoq",
+      "title": "چالش‌ها و مثال‌های تجربه‌گرایی",
+      "summary": "این سه اصل توی عمل چه شکلیه.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "021-challenges-and-examples-of-empiricism-dnoq.mp4",
+          "subtitles": [
+            {
+              "file": "021-challenges-and-examples-of-empiricism-dnoq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-challenges-and-examples-of-empiricism-dnoq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-scrum-framework-g488",
+      "title": "مقدمه‌ای بر چارچوب اسکرام",
+      "summary": "نمای‌کلی اجزای اسکرام.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "022-introduction-to-scrum-framework-g488.mp4",
+          "subtitles": [
+            {
+              "file": "022-introduction-to-scrum-framework-g488.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-introduction-to-scrum-framework-g488.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-team-kzdq",
+      "title": "تیم اسکرام",
+      "summary": "ترکیب و ویژگی‌های تیم اسکرام.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "023-scrum-team-kzdq.mp4",
+          "subtitles": [
+            {
+              "file": "023-scrum-team-kzdq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-scrum-team-kzdq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-product-owner-4sgb",
+      "title": "مالک محصول (Product Owner)",
+      "summary": "نقش و مسئولیت‌های PO.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "024-the-product-owner-4sgb.mp4",
+          "subtitles": [
+            {
+              "file": "024-the-product-owner-4sgb.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-the-product-owner-4sgb.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-tpwc",
+      "title": "اسکرام مستر",
+      "summary": "نقش و مسئولیت‌های SM.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "025-the-scrum-master-tpwc.mp4",
+          "subtitles": [
+            {
+              "file": "025-the-scrum-master-tpwc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-the-scrum-master-tpwc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "changes-for-the-scrum-masters-in-q2qv",
+      "title": "تغییرات نقش اسکرام مستر در راهنمای ۲۰۲۰",
+      "summary": "چی برای SM عوض شده.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "026-changes-for-the-scrum-masters-in-q2qv.mp4",
+          "subtitles": [
+            {
+              "file": "026-changes-for-the-scrum-masters-in-q2qv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-changes-for-the-scrum-masters-in-q2qv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "developers-in-scrum-gp6e",
+      "title": "توسعه‌دهندگان در اسکرام",
+      "summary": "نقش اعضای تیم توسعه.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "027-developers-in-scrum-gp6e.mp4",
+          "subtitles": [
+            {
+              "file": "027-developers-in-scrum-gp6e.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-developers-in-scrum-gp6e.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "stakeholders-w3d7",
+      "title": "ذی‌نفعان",
+      "summary": "کی بیرون تیم اسکرام روی محصول اثر می‌ذاره.",
+      "section": "تجربه‌گرایی و چارچوب اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "028-stakeholders-w3d7.mp4",
+          "subtitles": [
+            {
+              "file": "028-stakeholders-w3d7.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-stakeholders-w3d7.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-timeboxing-and-scrum-events-introduction-zypy",
+      "title": "تایم‌باکسینگ و مقدمه‌ای بر رویدادهای اسکرام",
+      "summary": "چرا رویدادها زمان محدود دارن.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "030-scrum-timeboxing-and-scrum-events-introduction-zypy.mp4",
+          "subtitles": [
+            {
+              "file": "030-scrum-timeboxing-and-scrum-events-introduction-zypy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-scrum-timeboxing-and-scrum-events-introduction-zypy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-yghz",
+      "title": "اسپرینت",
+      "summary": "قلب تپنده‌ی چرخه‌ی کاری اسکرام.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "031-the-sprint-yghz.mp4",
+          "subtitles": [
+            {
+              "file": "031-the-sprint-yghz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-the-sprint-yghz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-goal-bnc6",
+      "title": "هدف اسپرینت",
+      "summary": "چرا هر اسپرینت به یه هدف واحد نیاز داره.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "032-the-sprint-goal-bnc6.mp4",
+          "subtitles": [
+            {
+              "file": "032-the-sprint-goal-bnc6.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-the-sprint-goal-bnc6.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "first-scrum-event-sprint-planning-jlhb",
+      "title": "اولین رویداد: برنامه‌ریزی اسپرینت",
+      "summary": "شروع هر اسپرینت.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "033-first-scrum-event-sprint-planning-jlhb.mp4",
+          "subtitles": [
+            {
+              "file": "033-first-scrum-event-sprint-planning-jlhb.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-first-scrum-event-sprint-planning-jlhb.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "second-scrum-event-daily-scrum-d9qf",
+      "title": "دومین رویداد: اسکرام روزانه",
+      "summary": "هماهنگی روزانه‌ی تیم.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "034-second-scrum-event-daily-scrum-d9qf.mp4",
+          "subtitles": [
+            {
+              "file": "034-second-scrum-event-daily-scrum-d9qf.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-second-scrum-event-daily-scrum-d9qf.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "third-scrum-event-sprint-review-lwss",
+      "title": "سومین رویداد: مرور اسپرینت",
+      "summary": "نمایش نتیجه‌ی کار به ذی‌نفعان.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "035-third-scrum-event-sprint-review-lwss.mp4",
+          "subtitles": [
+            {
+              "file": "035-third-scrum-event-sprint-review-lwss.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-third-scrum-event-sprint-review-lwss.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "fourth-scrum-event-sprint-retrospective-or-swmz",
+      "title": "چهارمین رویداد: بازنگری اسپرینت (رتروسپکتیو)",
+      "summary": "بهبود مستمر فرایند تیم.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "036-fourth-scrum-event-sprint-retrospective-or-swmz.mp4",
+          "subtitles": [
+            {
+              "file": "036-fourth-scrum-event-sprint-retrospective-or-swmz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-fourth-scrum-event-sprint-retrospective-or-swmz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-backlog-refinement-nqdu",
+      "title": "پالایش بک‌لاگ محصول",
+      "summary": "آماده‌سازی مداوم آیتم‌های بک‌لاگ.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "037-product-backlog-refinement-nqdu.mp4",
+          "subtitles": [
+            {
+              "file": "037-product-backlog-refinement-nqdu.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-product-backlog-refinement-nqdu.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-release-planning-wufz",
+      "title": "مقدمه‌ای بر برنامه‌ریزی انتشار",
+      "summary": "چطور تحویل‌های بزرگ‌تر رو برنامه‌ریزی کنیم.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "038-introduction-to-release-planning-wufz.mp4",
+          "subtitles": [
+            {
+              "file": "038-introduction-to-release-planning-wufz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-introduction-to-release-planning-wufz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-the-theme-epics-user-ysj4",
+      "title": "مقدمه‌ای بر تم، اپیک، یوزر استوری و تسک",
+      "summary": "سلسله‌مراتب کار توی بک‌لاگ.",
+      "section": "تم، اپیک و یوزر استوری",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "040-introduction-to-the-theme-epics-user-ysj4.mp4",
+          "subtitles": [
+            {
+              "file": "040-introduction-to-the-theme-epics-user-ysj4.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-introduction-to-the-theme-epics-user-ysj4.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "themes-mpda",
+      "title": "تم‌ها (Themes)",
+      "summary": "دسته‌بندی‌های بزرگ کار.",
+      "section": "تم، اپیک و یوزر استوری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "041-themes-mpda.mp4",
+          "subtitles": [
+            {
+              "file": "041-themes-mpda.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-themes-mpda.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "epics-3eyl",
+      "title": "اپیک‌ها (Epics)",
+      "summary": "کارهای بزرگی که به بخش‌های کوچیک‌تر می‌شکنن.",
+      "section": "تم، اپیک و یوزر استوری",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "042-epics-3eyl.mp4",
+          "subtitles": [
+            {
+              "file": "042-epics-3eyl.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-epics-3eyl.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "user-stories-ghgw",
+      "title": "یوزر استوری‌ها",
+      "summary": "نوشتن نیاز از دید کاربر.",
+      "section": "تم، اپیک و یوزر استوری",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "043-user-stories-ghgw.mp4",
+          "subtitles": [
+            {
+              "file": "043-user-stories-ghgw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-user-stories-ghgw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "user-story-mapping-puls",
+      "title": "نقشه‌ی یوزر استوری (Story Mapping)",
+      "summary": "دیدن کل مسیر کاربر روی نقشه.",
+      "section": "تم، اپیک و یوزر استوری",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "044-user-story-mapping-puls.mp4",
+          "subtitles": [
+            {
+              "file": "044-user-story-mapping-puls.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-user-story-mapping-puls.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tasks-in-scrum-szbj",
+      "title": "تسک‌ها در اسکرام",
+      "summary": "کوچیک‌ترین واحد قابل‌اجرای کار.",
+      "section": "تم، اپیک و یوزر استوری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "045-tasks-in-scrum-szbj.mp4",
+          "subtitles": [
+            {
+              "file": "045-tasks-in-scrum-szbj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "045-tasks-in-scrum-szbj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-scrum-artifacts-sw6e",
+      "title": "مقدمه‌ای بر آرتیفکت‌های اسکرام",
+      "summary": "نمای‌کلی سه آرتیفکت اصلی.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "046-introduction-to-scrum-artifacts-sw6e.mp4",
+          "subtitles": [
+            {
+              "file": "046-introduction-to-scrum-artifacts-sw6e.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-introduction-to-scrum-artifacts-sw6e.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-backlog-omwt",
+      "title": "بک‌لاگ محصول",
+      "summary": "لیست اولویت‌بندی‌شده‌ی کارهای باقی‌مونده.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "047-product-backlog-omwt.mp4",
+          "subtitles": [
+            {
+              "file": "047-product-backlog-omwt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-product-backlog-omwt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sprint-backlog-c6b3",
+      "title": "بک‌لاگ اسپرینت",
+      "summary": "برنامه‌ی کار همون اسپرینت.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "048-sprint-backlog-c6b3.mp4",
+          "subtitles": [
+            {
+              "file": "048-sprint-backlog-c6b3.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-sprint-backlog-c6b3.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-board-with-demo-ypum",
+      "title": "برد اسکرام (با دمو)",
+      "summary": "دیدن پیشرفت کار روی برد.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "049-scrum-board-with-demo-ypum.mp4",
+          "subtitles": [
+            {
+              "file": "049-scrum-board-with-demo-ypum.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "049-scrum-board-with-demo-ypum.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-increment-wtsh",
+      "title": "افزایش (Increment)",
+      "summary": "خروجی قابل‌ارائه‌ی هر اسپرینت.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "050-the-increment-wtsh.mp4",
+          "subtitles": [
+            {
+              "file": "050-the-increment-wtsh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "050-the-increment-wtsh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-burndown-chart-in-scrum-pegp",
+      "title": "نمودار برن‌داون چیه",
+      "summary": "ابزار پایش پیشرفت اسپرینت.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "051-what-is-burndown-chart-in-scrum-pegp.mp4",
+          "subtitles": [
+            {
+              "file": "051-what-is-burndown-chart-in-scrum-pegp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-what-is-burndown-chart-in-scrum-pegp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "definition-of-ready-dor-g41l",
+      "title": "تعریف آماده (DoR)",
+      "summary": "کِی یه آیتم بک‌لاگ آماده‌ی کاره.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "053-definition-of-ready-dor-g41l.mp4",
+          "subtitles": [
+            {
+              "file": "053-definition-of-ready-dor-g41l.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-definition-of-ready-dor-g41l.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "definition-of-done-dod-eeup",
+      "title": "تعریف انجام‌شده (DoD)",
+      "summary": "معیار تکمیل واقعی کار.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "054-definition-of-done-dod-eeup.mp4",
+          "subtitles": [
+            {
+              "file": "054-definition-of-done-dod-eeup.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-definition-of-done-dod-eeup.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "acceptance-criteria-19q2",
+      "title": "معیارهای پذیرش",
+      "summary": "شرط‌های قبول‌شدن یه یوزر استوری.",
+      "section": "آرتیفکت‌های اسکرام",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "055-acceptance-criteria-19q2.mp4",
+          "subtitles": [
+            {
+              "file": "055-acceptance-criteria-19q2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-acceptance-criteria-19q2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-evidence-based-management-ebm-vikj",
+      "title": "مقدمه‌ای بر مدیریت مبتنی‌بر شواهد (EBM)",
+      "summary": "نسخه‌ی ۲۰۲۰ چارچوب EBM.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "057-introduction-to-evidence-based-management-ebm-vikj.mp4",
+          "subtitles": [
+            {
+              "file": "057-introduction-to-evidence-based-management-ebm-vikj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-introduction-to-evidence-based-management-ebm-vikj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-benefits-of-evidence-based-management-b01i",
+      "title": "مزایای مدیریت مبتنی‌بر شواهد",
+      "summary": "چرا EBM به تصمیم‌گیری بهتر کمک می‌کنه.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "058-the-benefits-of-evidence-based-management-b01i.mp4",
+          "subtitles": [
+            {
+              "file": "058-the-benefits-of-evidence-based-management-b01i.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-the-benefits-of-evidence-based-management-b01i.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-scrum-certification-h9cj",
+      "title": "مقدمه‌ای بر گواهی‌نامه‌های اسکرام",
+      "summary": "چرا و چطور گواهی‌نامه بگیریم.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "059-introduction-to-scrum-certification-h9cj.mp4",
+          "subtitles": [
+            {
+              "file": "059-introduction-to-scrum-certification-h9cj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-introduction-to-scrum-certification-h9cj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-org-certification-gkcg",
+      "title": "گواهی‌نامه‌های Scrum.org",
+      "summary": "مسیر گواهی‌نامه‌ی این نهاد.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "060-scrum-org-certification-gkcg.mp4",
+          "subtitles": [
+            {
+              "file": "060-scrum-org-certification-gkcg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-scrum-org-certification-gkcg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tips-and-learning-path-for-self-edsi",
+      "title": "نکات و مسیر یادگیری برای آماده‌شدن",
+      "summary": "چطور خودت رو برای آزمون آماده کنی.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "061-tips-and-learning-path-for-self-edsi.mp4",
+          "subtitles": [
+            {
+              "file": "061-tips-and-learning-path-for-self-edsi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-tips-and-learning-path-for-self-edsi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "general-details-about-scrum-alliance-certifications-tyzh",
+      "title": "جزئیات کلی گواهی‌نامه‌های Scrum Alliance",
+      "summary": "مسیر گواهی‌نامه‌ی این نهاد.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "062-general-details-about-scrum-alliance-certifications-tyzh.mp4",
+          "subtitles": [
+            {
+              "file": "062-general-details-about-scrum-alliance-certifications-tyzh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-general-details-about-scrum-alliance-certifications-tyzh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "which-scrum-certification-body-should-you-rhct",
+      "title": "کدوم نهاد گواهی‌نامه رو انتخاب کنیم",
+      "summary": "مقایسه‌ی نهادهای گواهی‌دهنده.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "063-which-scrum-certification-body-should-you-rhct.mp4",
+          "subtitles": [
+            {
+              "file": "063-which-scrum-certification-body-should-you-rhct.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-which-scrum-certification-body-should-you-rhct.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "100-exam-preparation-questions-with-answers-eply",
+      "title": "۱۰۰ سوال آمادگی آزمون با پاسخ",
+      "summary": "تمرین برای آزمون‌های اسکرام.",
+      "section": "EBM و گواهی‌نامه‌های اسکرام",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "064-100-exam-preparation-questions-with-answers-eply.mp4",
+          "subtitles": [
+            {
+              "file": "064-100-exam-preparation-questions-with-answers-eply.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-100-exam-preparation-questions-with-answers-eply.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-get-your-first-scrum-ja5q",
+      "title": "چطور اولین شغل اسکرام مستری رو بگیریم",
+      "summary": "مقدمه‌ای بر مسیر ورود به این شغل.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "065-how-to-get-your-first-scrum-ja5q.mp4",
+          "subtitles": [
+            {
+              "file": "065-how-to-get-your-first-scrum-ja5q.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-how-to-get-your-first-scrum-ja5q.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-would-make-your-scrum-master-fib8",
+      "title": "چی یه شغل اسکرام مستری رو عالی می‌کنه",
+      "summary": "ویژگی‌های یه موقعیت شغلی خوب.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "066-what-would-make-your-scrum-master-fib8.mp4",
+          "subtitles": [
+            {
+              "file": "066-what-would-make-your-scrum-master-fib8.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-what-would-make-your-scrum-master-fib8.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "can-scrum-master-also-be-a-kekv",
+      "title": "آیا اسکرام مستر می‌تونه توسعه‌دهنده هم باشه",
+      "summary": "بررسی این سؤال رایج.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "067-can-scrum-master-also-be-a-kekv.mp4",
+          "subtitles": [
+            {
+              "file": "067-can-scrum-master-also-be-a-kekv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-can-scrum-master-also-be-a-kekv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "myths-about-scrum-masters-wtcf",
+      "title": "باورهای غلط درباره‌ی اسکرام مسترها",
+      "summary": "چند تصور اشتباه رایج.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "068-myths-about-scrum-masters-wtcf.mp4",
+          "subtitles": [
+            {
+              "file": "068-myths-about-scrum-masters-wtcf.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-myths-about-scrum-masters-wtcf.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-does-it-mean-to-be-bfwl",
+      "title": "اسکرام مستر بودن یعنی چی",
+      "summary": "نگاهی واقعی‌تر به این نقش.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "069-what-does-it-mean-to-be-bfwl.mp4",
+          "subtitles": [
+            {
+              "file": "069-what-does-it-mean-to-be-bfwl.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "069-what-does-it-mean-to-be-bfwl.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "demand-for-scrum-master-jobs-market-hv4f",
+      "title": "روند بازار کار اسکرام مستری",
+      "summary": "میزان تقاضا برای این شغل.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "070-demand-for-scrum-master-jobs-market-hv4f.mp4",
+          "subtitles": [
+            {
+              "file": "070-demand-for-scrum-master-jobs-market-hv4f.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "070-demand-for-scrum-master-jobs-market-hv4f.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-master-salaries-around-the-world-a4dg",
+      "title": "حقوق اسکرام مسترها در دنیا",
+      "summary": "مقایسه‌ی حقوق‌ها در کشورهای مختلف.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "071-scrum-master-salaries-around-the-world-a4dg.mp4",
+          "subtitles": [
+            {
+              "file": "071-scrum-master-salaries-around-the-world-a4dg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "071-scrum-master-salaries-around-the-world-a4dg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-master-job-description-template-fgxw",
+      "title": "نمونه‌ی شرح‌شغل اسکرام مستر",
+      "summary": "چی معمولاً توی آگهی‌های استخدامی میاد.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "072-scrum-master-job-description-template-fgxw.mp4",
+          "subtitles": [
+            {
+              "file": "072-scrum-master-job-description-template-fgxw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "072-scrum-master-job-description-template-fgxw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-master-job-opportunities-bylz",
+      "title": "فرصت‌های شغلی اسکرام مستری",
+      "summary": "کجاها دنبال این فرصت‌ها بگردیم.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "073-scrum-master-job-opportunities-bylz.mp4",
+          "subtitles": [
+            {
+              "file": "073-scrum-master-job-opportunities-bylz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "073-scrum-master-job-opportunities-bylz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-master-career-path-vucz",
+      "title": "مسیر رشد شغلی اسکرام مستر",
+      "summary": "از کجا شروع و به کجا می‌رسه.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "074-scrum-master-career-path-vucz.mp4",
+          "subtitles": [
+            {
+              "file": "074-scrum-master-career-path-vucz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "074-scrum-master-career-path-vucz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "is-it-possible-to-be-a-08gq",
+      "title": "میشه بدون تجربه اسکرام مستر شد؟",
+      "summary": "بررسی واقع‌بینانه‌ی این امکان.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "075-is-it-possible-to-be-a-08gq.mp4",
+          "subtitles": [
+            {
+              "file": "075-is-it-possible-to-be-a-08gq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "075-is-it-possible-to-be-a-08gq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "finding-your-first-job-as-a-5xob",
+      "title": "پیدا کردن اولین شغل اسکرام مستری",
+      "summary": "قدم‌های عملی برای شروع.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "076-finding-your-first-job-as-a-5xob.mp4",
+          "subtitles": [
+            {
+              "file": "076-finding-your-first-job-as-a-5xob.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "076-finding-your-first-job-as-a-5xob.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "industries-that-have-lots-of-scrum-omzh",
+      "title": "صنایعی که زیاد اسکرام مستر استخدام می‌کنن",
+      "summary": "کجاها فرصت بیشتره.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "077-industries-that-have-lots-of-scrum-omzh.mp4",
+          "subtitles": [
+            {
+              "file": "077-industries-that-have-lots-of-scrum-omzh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "077-industries-that-have-lots-of-scrum-omzh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tips-for-preparing-for-scrum-master-s4nc",
+      "title": "نکاتی برای آماده‌شدن برای مصاحبه‌ی اسکرام مستری",
+      "summary": "چطور برای مصاحبه آماده بشیم.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "078-tips-for-preparing-for-scrum-master-s4nc.mp4",
+          "subtitles": [
+            {
+              "file": "078-tips-for-preparing-for-scrum-master-s4nc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "078-tips-for-preparing-for-scrum-master-s4nc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-do-i-get-a-job-2foy",
+      "title": "چطور بدون سابقه‌ی اسکرام مستری استخدام بشیم",
+      "summary": "راهکارهای عملی برای این چالش.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "079-how-do-i-get-a-job-2foy.mp4",
+          "subtitles": [
+            {
+              "file": "079-how-do-i-get-a-job-2foy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "079-how-do-i-get-a-job-2foy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "additional-tips-to-land-your-first-8xec",
+      "title": "نکات تکمیلی برای گرفتن اولین شغل",
+      "summary": "چند توصیه‌ی اضافه.",
+      "section": "مسیر شغلی اسکرام مستری",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "080-additional-tips-to-land-your-first-8xec.mp4",
+          "subtitles": [
+            {
+              "file": "080-additional-tips-to-land-your-first-8xec.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "080-additional-tips-to-land-your-first-8xec.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-scrum-master-certification-qhma",
+      "title": "مقدمه‌ای بر گواهی‌نامه‌ی اسکرام مستری",
+      "summary": "چرا این گواهی‌نامه ارزش داره.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "081-introduction-to-scrum-master-certification-qhma.mp4",
+          "subtitles": [
+            {
+              "file": "081-introduction-to-scrum-master-certification-qhma.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "081-introduction-to-scrum-master-certification-qhma.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-transition-from-project-manager-kril",
+      "title": "از مدیر پروژه به اسکرام مستر",
+      "summary": "چطور این تغییر مسیر رو انجام بدیم.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "082-how-to-transition-from-project-manager-kril.mp4",
+          "subtitles": [
+            {
+              "file": "082-how-to-transition-from-project-manager-kril.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "082-how-to-transition-from-project-manager-kril.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tips-for-project-managers-to-succeed-uwbd",
+      "title": "نکاتی برای موفقیت مدیران پروژه در نقش اسکرام مستری",
+      "summary": "چالش‌های این انتقال و راه‌حلشون.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "083-tips-for-project-managers-to-succeed-uwbd.mp4",
+          "subtitles": [
+            {
+              "file": "083-tips-for-project-managers-to-succeed-uwbd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "083-tips-for-project-managers-to-succeed-uwbd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-toolkit-a-guide-a91g",
+      "title": "جعبه‌ابزار اسکرام مستر تازه‌کار",
+      "summary": "چند ابزار و منبع کاربردی.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "084-the-scrum-master-toolkit-a-guide-a91g.mp4",
+          "subtitles": [
+            {
+              "file": "084-the-scrum-master-toolkit-a-guide-a91g.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "084-the-scrum-master-toolkit-a-guide-a91g.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "hiring-a-professional-scrum-master-znok",
+      "title": "استخدام یه اسکرام مستر حرفه‌ای",
+      "summary": "چی باید توی استخدام دنبال کرد.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "085-hiring-a-professional-scrum-master-znok.mp4",
+          "subtitles": [
+            {
+              "file": "085-hiring-a-professional-scrum-master-znok.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "085-hiring-a-professional-scrum-master-znok.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "a-day-in-the-life-of-mvp6",
+      "title": "یه روز از زندگی یه اسکرام مستر",
+      "summary": "چه کارهایی توی روز انجام میدن.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "086-a-day-in-the-life-of-mvp6.mp4",
+          "subtitles": [
+            {
+              "file": "086-a-day-in-the-life-of-mvp6.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "086-a-day-in-the-life-of-mvp6.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "examples-of-daily-activities-of-scrum-8ffc",
+      "title": "نمونه‌ی فعالیت‌های روزانه‌ی اسکرام مستر در محیط IT",
+      "summary": "مثال‌های واقعی از کارهای روزمره.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "087-examples-of-daily-activities-of-scrum-8ffc.mp4",
+          "subtitles": [
+            {
+              "file": "087-examples-of-daily-activities-of-scrum-8ffc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "087-examples-of-daily-activities-of-scrum-8ffc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-master-career-path-amha",
+      "title": "مسیر شغلی اسکرام مستر",
+      "summary": "نگاهی دیگه به مسیر رشد این نقش.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "088-scrum-master-career-path-amha.mp4",
+          "subtitles": [
+            {
+              "file": "088-scrum-master-career-path-amha.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "088-scrum-master-career-path-amha.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-master-challenges-psyl",
+      "title": "چالش‌های اسکرام مستر",
+      "summary": "دشواری‌های رایج این نقش.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "089-scrum-master-challenges-psyl.mp4",
+          "subtitles": [
+            {
+              "file": "089-scrum-master-challenges-psyl.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "089-scrum-master-challenges-psyl.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dealing-with-members-who-are-resisting-fae6",
+      "title": "برخورد با اعضایی که مقابل تغییر مقاومت می‌کنن",
+      "summary": "چطور این مقاومت رو مدیریت کنیم.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "090-dealing-with-members-who-are-resisting-fae6.mp4",
+          "subtitles": [
+            {
+              "file": "090-dealing-with-members-who-are-resisting-fae6.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "090-dealing-with-members-who-are-resisting-fae6.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-does-scrum-master-help-the-y4w1",
+      "title": "اسکرام مستر چطور به PO در سازمان‌دهی بک‌لاگ کمک می‌کنه",
+      "summary": "همکاری SM و PO روی بک‌لاگ.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "091-how-does-scrum-master-help-the-y4w1.mp4",
+          "subtitles": [
+            {
+              "file": "091-how-does-scrum-master-help-the-y4w1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "091-how-does-scrum-master-help-the-y4w1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "16-tips-for-scrum-master-newbies-bkqn",
+      "title": "۱۶ نکته برای اسکرام مسترهای تازه‌کار",
+      "summary": "توصیه‌های عملی برای شروع.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "092-16-tips-for-scrum-master-newbies-bkqn.mp4",
+          "subtitles": [
+            {
+              "file": "092-16-tips-for-scrum-master-newbies-bkqn.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "092-16-tips-for-scrum-master-newbies-bkqn.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "last-words-about-how-to-get-8ltw",
+      "title": "چند حرف آخر درباره‌ی گرفتن شغل بدون تجربه",
+      "summary": "جمع‌بندی این بخش.",
+      "section": "روزمرگی و چالش‌های اسکرام مستر",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "093-last-words-about-how-to-get-8ltw.mp4",
+          "subtitles": [
+            {
+              "file": "093-last-words-about-how-to-get-8ltw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "093-last-words-about-how-to-get-8ltw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "you-get-your-first-job-as-z6yg",
+      "title": "اولین شغلت به‌عنوان PO — از کجا شروع کنیم",
+      "summary": "مقدمه‌ای بر شروع این نقش.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "094-you-get-your-first-job-as-z6yg.mp4",
+          "subtitles": [
+            {
+              "file": "094-you-get-your-first-job-as-z6yg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "094-you-get-your-first-job-as-z6yg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "where-to-start-building-an-existing-pzt3",
+      "title": "از کجا شروع کنیم وقتی محصول از قبل وجود داره",
+      "summary": "قدم اول روی یه محصول موجود.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "095-where-to-start-building-an-existing-pzt3.mp4",
+          "subtitles": [
+            {
+              "file": "095-where-to-start-building-an-existing-pzt3.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "095-where-to-start-building-an-existing-pzt3.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "where-to-start-if-you-are-zj4p",
+      "title": "از کجا شروع کنیم وقتی محصول از صفر می‌سازیم",
+      "summary": "قدم اول روی یه محصول جدید.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "096-where-to-start-if-you-are-zj4p.mp4",
+          "subtitles": [
+            {
+              "file": "096-where-to-start-if-you-are-zj4p.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "096-where-to-start-if-you-are-zj4p.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-explain-scrum-to-your-fwhi",
+      "title": "چطور اسکرام رو توی یه جمله به مدیرت توضیح بدی",
+      "summary": "یه توضیح کوتاه و کاربردی.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "097-how-to-explain-scrum-to-your-fwhi.mp4",
+          "subtitles": [
+            {
+              "file": "097-how-to-explain-scrum-to-your-fwhi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "097-how-to-explain-scrum-to-your-fwhi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "your-first-scrum-job-where-to-cybj",
+      "title": "اولین شغل اسکرامیت — از کجا شروع کنیم",
+      "summary": "نکات عملی برای روزهای اول.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "098-your-first-scrum-job-where-to-cybj.mp4",
+          "subtitles": [
+            {
+              "file": "098-your-first-scrum-job-where-to-cybj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "098-your-first-scrum-job-where-to-cybj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "why-adding-people-to-the-project-edc0",
+      "title": "چرا اضافه‌کردن نیرو به پروژه، تکمیلش رو دیرتر می‌کنه",
+      "summary": "قانون بروکس (Brooks's Law) به زبان ساده.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "099-why-adding-people-to-the-project-edc0.mp4",
+          "subtitles": [
+            {
+              "file": "099-why-adding-people-to-the-project-edc0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "099-why-adding-people-to-the-project-edc0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-the-result-of-doing-t03p",
+      "title": "نتیجه‌ی انجام هم‌زمان چند کار چیه",
+      "summary": "هزینه‌ی پنهان مالتی‌تسکینگ.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "100-what-is-the-result-of-doing-t03p.mp4",
+          "subtitles": [
+            {
+              "file": "100-what-is-the-result-of-doing-t03p.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "100-what-is-the-result-of-doing-t03p.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "when-is-the-best-time-to-xvzv",
+      "title": "بهترین زمان رفع باگ‌ها کِیه",
+      "summary": "چرا زودتر رفع کردن باگ ارزون‌تره.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "101-when-is-the-best-time-to-xvzv.mp4",
+          "subtitles": [
+            {
+              "file": "101-when-is-the-best-time-to-xvzv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "101-when-is-the-best-time-to-xvzv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "remove-these-4-types-of-waste-lvdt",
+      "title": "این ۴ نوع اتلاف رو حذف کن تا بهره‌ورتر بشی",
+      "summary": "شناسایی و حذف اتلاف‌های رایج.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "102-remove-these-4-types-of-waste-lvdt.mp4",
+          "subtitles": [
+            {
+              "file": "102-remove-these-4-types-of-waste-lvdt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "102-remove-these-4-types-of-waste-lvdt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "concrete-steps-for-transparency-in-scrum-8inw",
+      "title": "قدم‌های عملی برای شفافیت در اسکرام",
+      "summary": "چطور شفافیت واقعی رو بسازیم.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "103-concrete-steps-for-transparency-in-scrum-8inw.mp4",
+          "subtitles": [
+            {
+              "file": "103-concrete-steps-for-transparency-in-scrum-8inw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "103-concrete-steps-for-transparency-in-scrum-8inw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-build-psychological-safety-within-1jun",
+      "title": "چطور امنیت روانی رو توی تیم اسکرام بسازیم",
+      "summary": "چرا تیم‌ها به امنیت روانی نیاز دارن.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "104-how-to-build-psychological-safety-within-1jun.mp4",
+          "subtitles": [
+            {
+              "file": "104-how-to-build-psychological-safety-within-1jun.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "104-how-to-build-psychological-safety-within-1jun.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "can-you-really-ignore-jira-and-nocx",
+      "title": "میشه بدون جیرا هم موفق بود؟",
+      "summary": "ابزار مهمه یا نحوه‌ی استفاده ازش.",
+      "section": "شروع کار به‌عنوان PO یا اسکرام مستر",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "105-can-you-really-ignore-jira-and-nocx.mp4",
+          "subtitles": [
+            {
+              "file": "105-can-you-really-ignore-jira-and-nocx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "105-can-you-really-ignore-jira-and-nocx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "short-animated-presentation-egpc",
+      "title": "یه ارائه‌ی انیمیشنی کوتاه",
+      "summary": "جمع‌بندی بصری مفاهیم دوره.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "106-short-animated-presentation-egpc.mp4",
+          "subtitles": [
+            {
+              "file": "106-short-animated-presentation-egpc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "106-short-animated-presentation-egpc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "class-project-now-it-is-your-1ev4",
+      "title": "پروژه‌ی کلاسی — نوبت توئه",
+      "summary": "تمرین عملی برای جمع‌بندی یادگیری.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "107-class-project-now-it-is-your-1ev4.mp4",
+          "subtitles": [
+            {
+              "file": "107-class-project-now-it-is-your-1ev4.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "107-class-project-now-it-is-your-1ev4.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-are-the-most-asymmetrical-problems-gyso",
+      "title": "سخت‌ترین چالش‌های یه اسکرام مستر تازه‌کار",
+      "summary": "مشکلاتی که حل‌کردنشون سخت‌تره.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "108-what-are-the-most-asymmetrical-problems-gyso.mp4",
+          "subtitles": [
+            {
+              "file": "108-what-are-the-most-asymmetrical-problems-gyso.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "108-what-are-the-most-asymmetrical-problems-gyso.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "12-super-tips-from-someone-with-ih15",
+      "title": "۱۲ نکته‌ی طلایی از کسی با ۲۰ سال تجربه",
+      "summary": "تجربه‌های یه نفر با سابقه‌ی طولانی.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "109-12-super-tips-from-someone-with-ih15.mp4",
+          "subtitles": [
+            {
+              "file": "109-12-super-tips-from-someone-with-ih15.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "109-12-super-tips-from-someone-with-ih15.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-secret-to-an-open-workplace-lljs",
+      "title": "رازی برای ساختن فرهنگ کاری باز",
+      "summary": "چطور یه محیط کار شفاف‌تر بسازیم.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "110-the-secret-to-an-open-workplace-lljs.mp4",
+          "subtitles": [
+            {
+              "file": "110-the-secret-to-an-open-workplace-lljs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "110-the-secret-to-an-open-workplace-lljs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "all-right-we-ve-reached-the-olms",
+      "title": "به پایان دوره رسیدیم",
+      "summary": "جمع‌بندی نهایی و قدم بعدی.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "111-all-right-we-ve-reached-the-olms.mp4",
+          "subtitles": [
+            {
+              "file": "111-all-right-we-ve-reached-the-olms.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "111-all-right-we-ve-reached-the-olms.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

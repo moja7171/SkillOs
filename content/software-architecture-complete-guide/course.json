@@ -4,6 +4,8 @@
   "outcome_statement": "یاد می‌گیری چطور مثل یه معمار نرم‌افزار فکر کنی، نیازمندی‌ها رو تحلیل کنی، پشته‌ی فناوری و الگوهای طراحی مناسب رو انتخاب کنی، و یه سند معماری بنویسی.",
   "source_note": "برگرفته از دوره‌ی «The Complete Guide to Becoming a Software Architect».",
   "video_base_url": "/media/software-architecture-complete-guide/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 2,
   "lessons": [
     {
       "slug": "course-overview",

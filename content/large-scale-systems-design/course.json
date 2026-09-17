@@ -4,6 +4,8 @@
   "outcome_statement": "درک عمیقی از محرک‌های معماری، زیرساخت‌های ارتباطی، پایگاه‌داده‌های توزیع‌شده و الگوهای رویدادمحور پیدا می‌کنی و می‌تونی سیستم‌های مقیاس‌بزرگ واقعی رو طراحی کنی.",
   "source_note": "برگرفته از دوره‌ی «Software Architecture & Design of Modern Large Scale Systems».",
   "video_base_url": "/media/large-scale-systems-design/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 4,
   "lessons": [
     {
       "slug": "course-overview",

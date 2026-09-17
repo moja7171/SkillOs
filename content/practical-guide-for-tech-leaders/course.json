@@ -4,6 +4,8 @@
   "outcome_statement": "به‌عنوان یه رهبر فنی، مهارت‌های نرم و دانش کسب‌وکاری لازم برای هدایت تیم و پروژه‌های فنی رو پیدا می‌کنی.",
   "source_note": "برگرفته از دوره‌ی «Practical Guide for Leaders in Tech».",
   "video_base_url": "/media/practical-guide-for-tech-leaders/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 7,
   "lessons": [
     {
       "slug": "course-overview",

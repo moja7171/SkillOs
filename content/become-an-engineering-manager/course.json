@@ -4,6 +4,8 @@
   "outcome_statement": "مهارت‌های عملی مدیریت یه تیم مهندسی رو یاد می‌گیری: از تصمیم‌های فنی و برنامه‌ریزی تا استخدام، ارزیابی عملکرد و حل تعارض.",
   "source_note": "برگرفته از دوره‌ی «Become an Engineering Manager».",
   "video_base_url": "/media/become-an-engineering-manager/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 8,
   "lessons": [
     {
       "slug": "course-overview",

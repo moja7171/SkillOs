@@ -4,6 +4,8 @@
   "outcome_statement": "مهارت‌های عملی مدیریت محصول رو یاد می‌گیری: کشف نیاز کاربر، طراحی و آزمایش MVP، تعریف متریک، نوشتن Epic/User Story، و آماده‌شدن برای مصاحبه‌ی شغلی PM.",
   "source_note": "برگرفته از دوره‌ی «Becoming a Product Manager».",
   "video_base_url": "/media/becoming-a-product-manager/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 5,
   "lessons": [
     {
       "slug": "course-overview",

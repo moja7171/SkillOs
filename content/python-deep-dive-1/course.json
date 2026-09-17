@@ -4,6 +4,8 @@
   "outcome_statement": "بتونی توضیح بدی پایتون با متغیرها، اعداد و توابع دقیقاً چه می‌کند — نه فقط اینکه چه می‌نویسی — و کدی بنویسی که از این سازوکار (unpacking، *args/**kwargs، lambda، map/filter/reduce، partial، scope) درست استفاده کند.",
   "source_note": "ویدیوهای دوره‌ی «Python 3: Deep Dive (Part 1 – Functional)» از Fred Baptiste، ۹۵ ویدیو (تا پایان بخش دامنه‌ها). متن درس‌ها بازنویسی و خلاصه‌ی موضوع هر ویدیو است، با مراجعه به docs.python.org در صورت نیاز.",
   "video_base_url": "/media/python-deep-dive-1/",
+  "category": "برنامه‌نویسی",
+  "category_order": 2,
   "lessons": [
     {
       "slug": "course-overview",

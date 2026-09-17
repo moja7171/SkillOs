@@ -14,10 +14,19 @@ class CourseController extends Controller
         $courses = Course::withCount('lessons')
             ->withSum('lessons as lessons_minutes_sum', 'estimated_minutes')
             ->with(['enrollments' => fn ($q) => $q->where('user_id', $request->user()->id)])
+            ->orderByRaw('category_order is null')
+            ->orderBy('category_order')
             ->orderBy('title')
             ->get();
 
-        return view('courses.index', compact('courses'));
+        // Display-only grouping (DECISIONS.md §58) — just makes the catalog page easier to
+        // scan, no effect on enrollment/planner/streak. Category section order is fixed here;
+        // uncategorized courses (a local fixture, say) fall into a trailing group with no label.
+        $categoryOrder = array_flip(['مسیر رهبری فنی', 'اسکرام و اجایل', 'برنامه‌نویسی']);
+        $coursesByCategory = $courses->groupBy(fn ($c) => $c->category ?? '')
+            ->sortBy(fn ($group, $category) => $categoryOrder[$category] ?? count($categoryOrder));
+
+        return view('courses.index', compact('courses', 'coursesByCategory'));
     }
 
     public function show(Request $request, Course $course): View

@@ -1,0 +1,51 @@
+[
+  {
+    "key": "spot-leading-question",
+    "title": "این سؤال هدایت‌کننده‌ست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم سؤال زیر یه سؤال هدایت‌کننده (leading) محسوب می‌شه؟",
+    "options": [
+      "«آیا فکر می‌کنی خودپرداز باید از سیستم امنیتی پیشرفته‌ای مثل رمزنگاری نظامی استفاده کنه تا امن‌تر باشه؟»",
+      "«چه چیزی رو دوست داری درباره‌ی این خودپرداز بهتر بشه؟»",
+      "«چند وقته از خودپردازها استفاده می‌کنی؟»",
+      "«آیا تا حالا مشکلی با برداشت پول از خودپرداز داشتی؟»"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "گزینه‌ی اول هدایت‌کننده‌ست — مصاحبه‌شونده رو به سمت یه جواب خاص (تأیید رمزنگاری نظامی) می‌کشونه، دقیقاً مثل مثال «آیا پهپاد باید با انرژی پاک کار کنه؟» توی درس.",
+    "hints": [
+      "به مثال «انرژی پاک» توی درس برگرد — چه ویژگی این سؤال رو هدایت‌کننده می‌کرد؟",
+      "کدوم سؤال از قبل یه جواب یا راه‌حل خاص رو توی خودش پیشنهاد می‌ده؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "choose-interview-type-and-mode",
+    "title": "کدوم نوع مصاحبه و چه شکلی؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تیم می‌خواد از ۲۰ نگهبان جنگل که به‌تازگی از پهپاد بذرپاش استفاده کردن، بازخورد بگیره — هدفشون کشف مشکلات و بهبودهای احتمالی محصول، نه صرفاً تأیید یه لیست سؤال ثابت. طبق این درس، کدوم نوع مصاحبه (سؤال آماده / محاوره‌ای / بدون سؤال آماده) و کدوم شکل (فردی / گروهی) مناسب‌تره؟ استدلالت رو بنویس.",
+    "expected_outcome": "چون هدف کشف مشکلات و بهبودهای ناشناخته‌ست (نه تأیید یه لیست ثابت)، مصاحبه‌ی محاوره‌ای یا بدون سؤال از پیش آماده مناسب‌تره — به مصاحبه‌شونده اجازه می‌ده روی چیزی که براش مهمه تمرکز کنه. برای شکل، مصاحبه‌ی فردی بهتره چون بازخورد کمتر مغرضانه‌ست و خطر تفکر گروهی (کسی که با یه فیچر مشکل داره ولی جلوی گروه موافقت می‌کنه) رو نداره — هرچند وقت و منابع بیشتری می‌بره.",
+    "hints": [
+      "کدوم نوع مصاحبه برای کشف چیزهای ناشناخته (نه تأیید فرضیه‌ی از پیش) بهتره؟",
+      "تفکر گروهی (groupthink) چه خطری برای این هدف خاص داره؟"
+    ],
+    "rubric": "Correct if response recommends the conversational or no-prepared-questions interview type (for open discovery) and individual interviews (to avoid groupthink bias), with reasoning for both. Correct_with_hint if only one of the two choices is justified correctly. Incorrect if the structured/prepared-questions type or group format is recommended without addressing the tradeoffs."
+  },
+  {
+    "key": "average-vs-expert-interviewee",
+    "title": "کاربر متوسط یا متخصص؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا برای انتخاب مصاحبه‌شونده‌های «کاربر» باید سراغ نماینده‌ی متوسط بریم، ولی برای «کارشناس حوزه» باید سراغ متخصص‌ترین افراد بریم؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "کاربران متوسط نماینده‌ی بازار اصلی محصول‌ان — تمرکز روی اون‌ها باعث می‌شه محصول برای اکثریت بازار موفق بشه، نه فقط برای موارد استثنایی. اما برای کارشناسان حوزه، نمایندگان متوسط عمق تخصص لازم برای شناسایی اطلاعات مهمی که روی طراحی سیستم اثر می‌ذاره رو ندارن — باید متخصص‌ترین و باتجربه‌ترین افراد رو انتخاب کرد تا نیازمندی‌های حیاتی از قلم نیفتن.",
+    "hints": [
+      "برای کاربران، درس گفت هدف «بازار وسیع‌تر» بود — چرا کاربر متوسط این رو بهتر نشون می‌ده؟",
+      "برای کارشناسان، درس گفت نماینده‌ی متوسط «عمق تخصص لازم» رو نداره — این عمق برای چی لازمه؟"
+    ],
+    "rubric": "Correct if response explains that average users represent the broader market for product success, while average representatives of expert groups lack the depth needed to surface critical design-affecting information, so experts must be chosen for those roles. Correct_with_hint if only one side of the distinction is explained. Incorrect otherwise."
+  }
+]

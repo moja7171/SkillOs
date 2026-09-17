@@ -1,0 +1,51 @@
+[
+  {
+    "key": "identify-user-story-parts",
+    "title": "چه کسی، چه چیزی، چرا؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "user story زیر رو در نظر بگیر: «به‌عنوان نگه‌دار پهپاد، می‌خوام گزارش سلامت باتری بعد از هر پرواز نمایش داده بشه، تا بتونم قبل از خرابی، باتری‌های ضعیف رو تعویض کنم.» بخش «تا بتونم قبل از خرابی، باتری‌های ضعیف رو تعویض کنم» کدوم بخش user storyه؟",
+    "options": [
+      "چرا (دلیل/توجیه)",
+      "چه کسی (نقش)",
+      "چه چیزی (فیچر)",
+      "پیش‌شرط"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این بخش «چرا»ست — دلیل و توجیهی که نشون می‌ده این فیچر چه ارزشی برای نقش موردنظر داره.",
+    "hints": [
+      "به ساختار «چه کسی، چه چیزی، چرا» فکر کن — این بخش با «تا بتونم» شروع می‌شه.",
+      "«چه چیزی» همون گزارش سلامت باتریه؛ این جمله چیز دیگه‌ایه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "invest-violations",
+    "title": "کدوم اصل INVEST نقض شده؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این user story برای اپ خودپرداز نوشته شده: «به‌عنوان کاربر خودپرداز، می‌خوام رابط کاربری زیبا و لذت‌بخشی داشته باشم، تا از استفاده لذت ببرم.» کدوم یکی یا چند تا از اصول INVEST رو نقض کرده، و چرا؟ چطور می‌شه بازنویسیش کرد که اون اصل رعایت بشه؟",
+    "expected_outcome": "این user story اصل «قابل‌تست (Testable)» رو نقض می‌کنه — «زیبا و لذت‌بخش» معیار عینی و قابل‌تأیید نیست و برای هرکس معنی متفاوتی داره. بازنویسی درست باید یه معیار مشخص و قابل‌سنجش بذاره، مثل: «به‌عنوان کاربر خودپرداز، می‌خوام رابط کاربری با استاندارد دسترس‌پذیری XYZ سازگار باشه، تا بتونم به‌راحتی و بدون سردرگمی ازش استفاده کنم.»",
+    "hints": [
+      "کدوم اصل INVEST دقیقاً درباره‌ی قابل‌تأیید بودن معیارهاست؟ به مثال «رابط کاربری خوب» درس فکر کن.",
+      "برای درستش کردن، یه استاندارد یا معیار عینی جایگزین صفت‌های ذهنی («زیبا»، «لذت‌بخش») کن."
+    ],
+    "rubric": "Correct if response identifies the Testable violation, explains why 'beautiful/enjoyable' is subjective and unverifiable, and rewrites the story with a concrete, verifiable standard. Correct_with_hint if the violation is identified but the rewrite is still vague. Incorrect if a different, unsupported principle is claimed as violated without justification."
+  },
+  {
+    "key": "split-large-user-story",
+    "title": "این user story خیلی بزرگه، تجزیه‌اش کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این user story داده شده: «به‌عنوان کاربر خودپرداز، می‌خوام بتونم پول نقد برداشت کنم، موجودی حساب رو چک کنم، بین حساب‌ها انتقال بدم و سپرده واریز کنم، تا همه‌ی کارهای بانکی‌ام رو یک‌جا انجام بدم.» طبق قانون INVEST، این user story کدوم اصل رو نقض می‌کنه؟ اون رو به چند user story مستقل و کوچیک‌تر تجزیه کن.",
+    "expected_outcome": "این user story اصل «کوچک (Small)» رو نقض می‌کنه — چند حرف ربط («و») چند فیچر جدا رو به هم وصل کرده که هرکدوم به‌تنهایی یه اسپرینت می‌طلبن. تجزیه‌ی درست:\n- به‌عنوان کاربر خودپرداز، می‌خوام پول نقد برداشت کنم، تا نیازهای نقدی‌ام رو برآورده کنم.\n- به‌عنوان کاربر خودپرداز، می‌خوام موجودی حسابم رو چک کنم، تا از وضعیت مالی‌ام مطلع باشم.\n- به‌عنوان کاربر خودپرداز، می‌خوام بین حساب‌هام انتقال وجه انجام بدم، تا پولم رو مدیریت کنم.\n- به‌عنوان کاربر خودپرداز، می‌خوام سپرده واریز کنم، تا پولم رو به حسابم اضافه کنم.",
+    "hints": [
+      "به تعداد فعل‌ها و حرف‌های ربط («و») توی جمله دقت کن — هر فعل مستقل احتمالاً یه فیچر جداست.",
+      "قانون درس دقیقاً همین مثال ATM رو زد — چهار فیچر جدا باید بشه چهار user story."
+    ],
+    "rubric": "Correct if response identifies the Small principle as violated and splits the story into four independent user stories (withdraw, check balance, transfer, deposit), each with its own who/what/why. Correct_with_hint if the split is done but the violated principle isn't correctly named, or only 2-3 of the 4 features are split out. Incorrect if the story isn't meaningfully split."
+  }
+]

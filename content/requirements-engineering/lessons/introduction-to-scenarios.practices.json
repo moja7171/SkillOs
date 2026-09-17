@@ -1,0 +1,51 @@
+[
+  {
+    "key": "why-mission-domain-needed",
+    "title": "چرا مستقیم از هدف نمی‌ریم سراغ نیازمندی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، دلیل اصلی اینکه نمی‌شه مستقیم از بیانیه‌ی نیاز و اهداف به نیازمندی‌ها رسید چیه؟",
+    "options": [
+      "بیانیه‌ی نیاز و اهداف به‌اندازه‌ی کافی جزئیات ندارن تا بشه از روشون نیازمندی استخراج کرد",
+      "بیانیه‌ی نیاز همیشه اشتباه نوشته می‌شه و باید بازنویسی بشه",
+      "ذی‌نفعان اجازه‌ی خوندن بیانیه‌ی نیاز رو ندارن",
+      "نیازمندی‌ها باید قبل از اهداف نوشته بشن"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "بیانیه‌ی نیاز و اهداف و زیراهداف به‌تنهایی برای استخراج، اشتقاق یا تجزیه‌ی نیازمندی‌ها اطلاعات کافی ندارن؛ حوزه‌ی مأموریت (سناریو، توصیف مأموریت، use case، user story) این جزئیات رو اضافه می‌کنه.",
+    "hints": [
+      "به بخش «چرا نمی‌شه مستقیم از هدف به نیازمندی رسید» درس برگرد.",
+      "موضوع سطح جزئیاته، نه درستی یا غلطی بیانیه‌ی نیاز."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "curse-of-knowledge-scenario",
+    "title": "نفرین دانش سر یه ذی‌نفع",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "توی یه جلسه‌ی استخراج نیازمندی برای پهپاد بذرپاش، مهندس مأموریت می‌گه: «سیستم باید از طریق لینک RF یه heartbeat به GCS بفرسته تا failsafe فعال نشه.» ذی‌نفع (یه کشاورز) سرش رو تکون می‌ده و می‌گه «باشه، خوبه»، ولی وقتی ازش می‌پرسی، معلوم می‌شه اصلاً نفهمیده منظور چیه. این چه پدیده‌ایه، و طبق این درس چطور باید از اول جلوش رو گرفت؟",
+    "expected_outcome": "این نمونه‌ی نفرین دانشه — مهندس فرض کرده ذی‌نفع همون سطح دانش فنی و واژگان تخصصی رو داره، ولی ذی‌نفع فقط برای اینکه خجالت نکشه موافقت کرده بدون اینکه بفهمه. راه‌حل این درس اینه که به‌جای زبان فنی، از حوزه‌ی مأموریت (سناریو با زبان ساده‌ی ذی‌نفع، مثلاً «پهپاد باید مرتب به کشاورز نشون بده هنوز زنده و در ارتباطه») استفاده کنیم تا ذی‌نفع واقعاً بفهمه و بتونه نظر بده.",
+    "hints": [
+      "اسم این پدیده رو خود درس آورد — دقیقاً همون موقعی که مهندس فرض می‌کنه ذی‌نفع زبان فنی رو می‌فهمه.",
+      "راه‌حل درس، جایگزینی زبان فنی با زبان لایه‌ی مأموریت (سناریو/user story) با کلمات ذی‌نفعه، نه صرفاً «واضح‌تر حرف بزن»."
+    ],
+    "rubric": "Correct if response names the curse of knowledge and explains that the fix is expressing things in the stakeholder's own layman terms via the mission domain (scenario/mission description), not just speaking more clearly in technical terms. Correct_with_hint if the phenomenon is named but the fix is vague or generic. Incorrect if the phenomenon isn't identified."
+  },
+  {
+    "key": "mission-domain-components",
+    "title": "اجزای حوزه‌ی مأموریت",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، حوزه‌ی مأموریت از چه سه چیزی تشکیل شده، و توسعه‌دهنده‌های نرم‌افزار معمولاً از کدوم ابزار مشابه دیگه استفاده می‌کنن؟",
+    "expected_outcome": "توصیف مأموریت (mission description)، سناریو (scenario)، و use case؛ توسعه‌دهنده‌های نرم‌افزار هم از user story استفاده می‌کنن.",
+    "hints": [
+      "این سه‌تا رو خود درس توی بخش «حوزه‌ی مأموریت چیه» اسم برد.",
+      "ابزار چهارم مخصوص توسعه‌ی نرم‌افزار چابکه (Agile)."
+    ],
+    "rubric": "Correct if response names mission description, scenario, and use case as the three components, and user story as the software-development tool. Correct_with_hint if two of the four are named. Incorrect otherwise."
+  }
+]

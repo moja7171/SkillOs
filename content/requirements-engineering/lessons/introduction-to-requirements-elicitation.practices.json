@@ -1,0 +1,51 @@
+[
+  {
+    "key": "elicitation-mining-analogy",
+    "title": "استعاره‌ی معدن‌کاری چی می‌گه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق استعاره‌ی معدن‌کاری این درس، «مواد معدنی باارزش» توی استخراج نیازمندی معادل چیه؟",
+    "options": [
+      "نیازها، انتظارات و خواسته‌های ذی‌نفعان که قبل از استخراج فقط توی ذهن و دلشون بودن",
+      "اسناد و مشخصات فنی که از قبل نوشته شدن",
+      "ابزارها و تکنیک‌های استخراج خودشون",
+      "گزارش نهایی مهندس نیازمندی به مدیر پروژه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "درست مثل مواد معدنی که قبل از استخراج زیر خاک پنهانن، نیازها و انتظارات و خواسته‌های ذی‌نفعان هم قبل از استخراج فقط توی ذهن و دلشون هستن — کار مهندس نیازمندی اینه که با تکنیک درست، اون‌ها رو بیرون بکشه.",
+    "hints": [
+      "به جمله‌ی اول درس برگرد — «نیازها، انتظارات و خواسته‌های ذی‌نفعان» دقیقاً با چه استعاره‌ای مقایسه شدن؟",
+      "مواد معدنی قبل از معدن‌کاری کجا هستن؟ نیازمندی‌ها هم قبل از استخراج کجان؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "elicitation-at-which-levels",
+    "title": "استخراج نیازمندی فقط توی سطح سیستم اتفاق می‌افته؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه همکار می‌گه «استخراج نیازمندی فقط اول پروژه و فقط توی سطح کل سیستم انجام می‌شه؛ برای زیرسیستم‌ها و اجزا لازم نیست.» طبق این درس، این حرف درسته؟ چرا، با یه مثال از درس.",
+    "expected_outcome": "نه، درست نیست. استخراج نیازمندی می‌تونه توی هر سطح از سلسله‌مراتب سیستم (سیستم، زیرسیستم، جزء) و هر نقطه‌ای از چرخه‌ی عمر اتفاق بیفته. مثال درس: برای یه خودرو، هم از کاربران سیستم برای نیازمندی‌های سطح زیرسیستم (موتور، کابین سرنشین) نیازمندی می‌گیریم، هم توی سطح جزء (مدار مجتمع، نرم‌افزار سطح جزء) با کارشناسان و مهندسان طراح کار می‌کنیم.",
+    "hints": [
+      "درس صریحاً گفت استخراج نیازمندی توی «هر سطح از سلسله‌مراتب سیستم و هر نقطه‌ای از چرخه‌ی عمر» اتفاق می‌افته.",
+      "به مثال خودرو (موتور، کابین سرنشین، مدار مجتمع) برگرد."
+    ],
+    "rubric": "Correct if response says the claim is false and explains that elicitation happens at any system hierarchy level (system, subsystem, component) and any life-cycle point, citing the car example. Correct_with_hint if it says false but without a concrete example or level distinction. Incorrect if it agrees with the claim."
+  },
+  {
+    "key": "acceptance-criteria-purpose",
+    "title": "چرا فقط جمع‌آوری نیازمندی برای مشخصات کافی نیست؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا جمع‌آوری نیازمندی فقط برای نوشتن مشخصاتی که مهندسان طراح استفاده می‌کنن کافی نیست؟ در ۲ تا ۳ جمله بگو چه چیز دیگه‌ای باید ازش بیرون بکشیم و چرا.",
+    "expected_outcome": "علاوه بر مشخصات فنی، باید معیارهای پذیرش (acceptance criteria) رو هم از استخراج نیازمندی بیرون بکشیم — یعنی معیارهایی که بعداً باهاشون می‌سنجیم آیا انتظارات ذی‌نفعان رو برآورده کردیم یا نه. دلیلش اینه که نمی‌شه ۱۰۰٪ به مهندسان طراح اعتماد کرد و صرفاً امیدوار بود کاربران از نتیجه راضی می‌شن؛ باید مداوم با ذی‌نفعان درگیر باشیم تا مطمئن بشیم چیزی که می‌سازیم واقعاً همونیه که اون‌ها در ذهن داشتن.",
+    "hints": [
+      "درس یه اصطلاح مشخص برای این «چیز دیگه» به کار برد — دنبالش بگرد.",
+      "چرا فقط اعتماد به مهندسان طراح کافی نیست؟ درس یه جمله‌ی صریح درباره‌ش داشت."
+    ],
+    "rubric": "Correct if response names acceptance criteria as the additional thing to capture and explains why relying solely on design engineers isn't enough (continuous stakeholder engagement is needed to confirm the build matches intent). Correct_with_hint if acceptance criteria is named without the reasoning. Incorrect otherwise."
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "key": "when-questionnaire-fits",
+    "title": "کِی پرسش‌نامه مناسب‌ترین ابزاره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تیمی داره یه سیستم کاملاً بی‌سابقه (unprecedented) طراحی می‌کنه که هیچ نمونه‌ی مشابهی توی بازار نداره. طبق این درس، پرسش‌نامه چرا برای این وضعیت گزینه‌ی مناسبی نیست؟",
+    "options": [
+      "چون اکثر ذی‌نفعان با فضای یه سیستم بی‌سابقه آشنا نیستن و نمی‌تونن نظر معناداری بدن؛ تکنیک‌هایی مثل کارگاه و گروه کاری اطلاعات بهتری می‌دن",
+      "چون پرسش‌نامه همیشه گران‌تر از مصاحبه‌ست",
+      "چون پرسش‌نامه فقط برای سیستم‌های نظامی کاربرد داره",
+      "چون پرسش‌نامه نمی‌تونه به شکل آنلاین اجرا بشه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "پرسش‌نامه برای بهبود سیستم‌های ازپیش‌موجود مناسب‌ترینه؛ برای سیستم بی‌سابقه، ذی‌نفعان چیزی برای مقایسه یا تصور ندارن، پس تکنیک‌هایی مثل کارگاه یا گروه کاری که امکان گفت‌وگو و کاوش عمیق‌تر می‌دن، بهتر جواب می‌دن.",
+    "hints": [
+      "درس دقیقاً یه دلیل برای این محدودیت پرسش‌نامه گفت — به آشنایی ذی‌نفعان با فضای سیستم فکر کن.",
+      "کدوم دو تکنیک رو درس به‌عنوان جایگزین بهتر برای سیستم بی‌سابقه معرفی کرد؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "fix-leading-survey-question",
+    "title": "این سؤال پرسش‌نامه رو بی‌طرف کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این سؤال توی پرسش‌نامه‌ی پهپاد بذرپاش نوشته شده: «نظرت درباره‌ی پهپادی که بذرها رو مستقیم توی خاک شلیک می‌کنه چیه؟» طبق این درس، این سؤال چه مشکلی داره، و چطور می‌شه بازنویسیش کرد تا کلی و بی‌طرف بشه (بدون پیشنهاد یه راه‌حل خاص)؟",
+    "expected_outcome": "مشکل: سؤال یه راه‌حل خاص (شلیک بذر توی خاک) رو از قبل توی خودش پیشنهاد داده، در حالی که طبق روش مهندسی سیستم معمولاً از قبل نمی‌دونیم راه‌حل نهایی چیه. بازنویسی درست باید کلی و باز باشه، مثلاً: «چطور می‌شه فرایند کاشت بذر توی مناطق جنگل‌زدایی‌شده رو بهتر کرد؟» یا «چه ویژگی‌هایی برات توی یه روش کاشت بذر مهم‌ان؟» — بدون اشاره به مکانیزم خاص.",
+    "hints": [
+      "مثال درس دقیقاً همین سؤال رو زد — «آیا پهپاد باید توی خاک شلیک کنه» در برابر «چطور می‌شه فرایند فعلی رو بهتر کرد؟».",
+      "سؤال بی‌طرف نباید مکانیزم یا راه‌حل خاصی رو توی خودش داشته باشه."
+    ],
+    "rubric": "Correct if response identifies that the question suggests a specific solution (seed-shooting mechanism) rather than staying open, and rewrites it as a broad, solution-free question about improving the seeding process. Correct_with_hint if the problem is identified but the rewrite still implies a mechanism. Incorrect if the problem isn't correctly identified."
+  },
+  {
+    "key": "google-forms-tradeoff",
+    "title": "«رایگان» یعنی واقعاً رایگان؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، وقتی از یه سرویس «رایگان» مثل Google Forms برای پرسش‌نامه استفاده می‌کنیم، چه هزینه‌ی پنهانی وجود داره؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "این سرویس‌ها واقعاً رایگان نیستن — کاربر با داده‌های شخصی خودش (ایمیل، تاریخچه‌ی مرورگر، عادت‌های خرید، آدرس) بهاشون رو می‌ده. سازمانی که از این سرویس‌ها استفاده می‌کنه باید این تبادل داده رو در نظر بگیره، مخصوصاً وقتی داده‌های ذی‌نفعانش رو هم از این طریق جمع می‌کنه.",
+    "hints": [
+      "درس دقیقاً گفت «رایگان» یعنی چی — با چی داریم پرداخت می‌کنیم؟",
+      "چهار نوع داده‌ی شخصی که درس اسم برد رو به یاد بیار."
+    ],
+    "rubric": "Correct if response explains that 'free' services are paid for with personal data (email, browsing history, shopping habits, addresses) rather than money, and that this is a real cost to weigh. Correct_with_hint if it says there's a hidden cost but doesn't specify the data-as-payment mechanism. Incorrect otherwise."
+  }
+]

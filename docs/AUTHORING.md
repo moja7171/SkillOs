@@ -81,14 +81,14 @@ Lesson slugs are kebab-case English topic names (`parameter-defaults-beware`), n
 
 Plain Markdown (GitHub flavored: tables, fenced code, blockquotes). The page shows it in the «متن» tab, and `key_points` / `common_mistakes` are appended automatically — don't repeat them at the end of the text. Rules and style in §5.
 
-#### Optional English text (`<slug>.en.md`)
+#### Optional English text (`<slug>.en.md`) — retired, historical only
 
-As of C-03 (2026-09-16, owner request), courses may carry an English version of the lesson body alongside the Persian one. It's per-course, not per-lesson: C-01 and C-02 stay Persian-only (owner explicitly said not to backfill them); every lesson of C-03 onward (the «مسیر رهبری فنی» bundle) gets both.
+Briefly, as of C-03 (2026-09-16, owner request), two sections of `requirements-engineering` were written with an English version of the lesson body alongside the Persian one: «مقدمه و مبانی» (18 lessons) and «سناریو، User Story و Use Case» (9 lessons). Owner ended the experiment the next day (2026-09-17, DECISIONS.md §54) — **do not write `<slug>.en.md` for any lesson authored from here on**, for this course or any other. C-01, C-02, and every C-03 section past those two stay Persian-only, same as before §52 ever existed.
 
+The mechanism itself is untouched and still works for the two sections that have it:
 - File: `lessons/<lesson-slug>.en.md`, same Markdown rules as the Persian file. Imported into `Lesson.content_en` (nullable — importer skips it silently when the file doesn't exist).
 - The lesson page only shows a فارسی/English toggle next to the «متن» tab when `content_en` is present; nothing changes for lessons/courses without it.
-- **Write the English version from the transcript directly, not as a translation of the Persian.** The structural decisions (headings, which examples to use, what to defer to a later lesson) are already made once you've written the Persian version — reuse them — but render the prose in natural English, not a literal translation. This is meaningfully cheaper than authoring both from scratch, and avoids "translationese."
-- `key_points`, `common_mistakes` and practices stay Persian-only for now — this only covers the lesson body (`content`/`content_en`). Revisit if that ever needs to change.
+- `key_points`, `common_mistakes` and practices stayed Persian-only even in the bilingual sections — only the lesson body (`content`/`content_en`) was ever bilingual.
 
 ### 3.3 `lessons/<slug>.practices.json`
 

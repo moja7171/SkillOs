@@ -1,0 +1,51 @@
+[
+  {
+    "key": "prototype-detail-level",
+    "title": "سطح جزئیات پروتوتایپ به چی بستگی داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، سطح جزئیات یه پروتوتایپ (از یه طرح ساده تا یه ماکت تعاملی جزئی) به چه عواملی بستگی داره؟",
+    "options": [
+      "نیازمندی‌های پروژه، زمان‌بندی، بودجه، محدودیت فنی و منابع در دسترس",
+      "فقط سلیقه‌ی شخصی طراح پروتوتایپ",
+      "فقط اینکه پروتوتایپ برای بانکداری باشه یا جنگل‌داری",
+      "فقط تعداد ذی‌نفعانی که قراره پروتوتایپ رو ببینن"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "درس صریحاً گفت سطح جزئیات پروتوتایپ به نیازمندی‌های پروژه، و همچنین زمان‌بندی، بودجه، محدودیت فنی و منابع در دسترس بستگی داره — نه صرفاً سلیقه یا صنعت.",
+    "hints": [
+      "درس یه جمله‌ی مشخص با پنج عامل برای این تصمیم آورد.",
+      "به بخش «پروتوتایپ چیه» برگرد."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "prototyping-loop",
+    "title": "چرا فرایند پروتوتایپ‌سازی تکرارشونده‌ست؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تیم یه پروتوتایپ اولیه از اپ بانکداری موبایل ساخته و بعد از تست کاربری، فهمیده که کاربران نمی‌تونن دکمه‌ی انتقال وجه رو پیدا کنن. طبق فرایند این درس، از این نقطه به بعد تیم دقیقاً چه گام‌هایی رو باید طی کنه تا این بازخورد به یه نیازمندی به‌روزشده و اعتبارسنجی‌شده تبدیل بشه؟ گام‌ها رو به ترتیب بنویس.",
+    "expected_outcome": "طبق فرایند درس: ابتدا پالایش پروتوتایپ (اصلاح طراحی بر اساس بازخورد کاربر)، سپس تحلیل بازخورد (شناسایی اینکه کدوم نیازمندی باید ثبت یا پالایش بشه — مثلاً نیازمندی وضوح بصری دکمه‌ی انتقال وجه)، بعد به‌روزرسانی سند نیازمندی یا مدل معماری بر اساس این تحلیل، سپس اعتبارسنجی نیازمندی‌های به‌روزشده با ذی‌نفعان (نشون‌دادن پروتوتایپ اصلاح‌شده)، و در نهایت تکرار این چرخه تا همه‌ی نیازمندی‌ها ثبت بشن.",
+    "hints": [
+      "این درس شش گام مشخص برای فرایند استخراج نیازمندی از پروتوتایپ داد — از پالایش تا تکرار.",
+      "بعد از پالایش پروتوتایپ، بازخورد باید تحلیل بشه تا معلوم بشه کدوم نیازمندی رو باید تغییر داد."
+    ],
+    "rubric": "Correct if response lists the steps in roughly the right order: refine prototype based on feedback, analyze feedback to identify the requirement, update the requirements document/model, validate updated requirements with stakeholders, and iterate. Correct_with_hint if most steps are present but out of order or one is missing. Incorrect if the response doesn't follow the lesson's iterative process."
+  },
+  {
+    "key": "prototype-vs-other-techniques",
+    "title": "چرا پروتوتایپ چیزی می‌ده که بارش فکری یا مصاحبه نمی‌ده؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، پروتوتایپ‌سازی چه چیز منحصربه‌فردی به فرایند استخراج نیازمندی اضافه می‌کنه که تکنیک‌هایی مثل مصاحبه یا بارش فکری (که فقط با حرف و توصیف کار می‌کنن) نمی‌تونن بدن؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "پروتوتایپ یه «تجربه‌ی مستقیم» و ملموس از سیستم می‌ده — ذی‌نفعان می‌تونن واقعاً با یه نسخه‌ی کاری تعامل کنن، نه فقط درباره‌ش حرف بزنن. این باعث می‌شه فیچرهای مبهم، ناهماهنگی یا نیازمندی‌های نادیده‌گرفته‌شده‌ای که با توصیف کلامی کشف نمی‌شدن، از طریق تعامل واقعی آشکار بشن — و درک دقیق‌تر و ملموس‌تری از قابلیت‌ها و محدودیت‌های سیستم بده.",
+    "hints": [
+      "درس یه عبارت مشخص برای این «تجربه‌ی مستقیم» به کار برد — همون اول درس.",
+      "چرا دیدن و لمس‌کردن یه چیز، چیزی بیشتر از توصیفش می‌ده؟"
+    ],
+    "rubric": "Correct if response explains that prototyping provides direct, tangible experience/interaction with a working version, which surfaces unclear features, mismatches, or overlooked requirements that pure verbal description can't. Correct_with_hint if it says prototyping is 'more concrete' without explaining what that surfaces. Incorrect otherwise."
+  }
+]

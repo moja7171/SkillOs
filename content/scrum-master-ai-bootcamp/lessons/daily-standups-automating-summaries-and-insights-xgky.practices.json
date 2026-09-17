@@ -1,0 +1,35 @@
+[
+  {
+    "key": "three-sources-retro",
+    "title": "سه منبع تحلیل رتروسپکتیو",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "برای تحلیل عمیق رتروسپکتیو، سه منبع داده‌ی متفاوت با هم ترکیب شدن. این سه‌تا رو نام ببر و بگو چرا سه‌تا لازم بود، نه فقط یکی.",
+    "expected_outcome": "فیدبک رتروسپکتیو تیم، نتایج نظرسنجی ناشناس، و تحلیل احساسات پیام‌های Slack. سه‌تا لازم بود چون هر منبع یه لایه‌ی متفاوت از واقعیت رو نشون می‌ده — رتروسپکتیو علنیه و ممکنه محتاطانه باشه، نظرسنجی ناشناس چیزهایی رو آشکار می‌کنه که آدم‌ها علناً نمی‌گن، و Slack یه ردپای زمانی از احساسات واقعی روزانه‌ست.",
+    "hints": ["یکیش علنیه، یکیش ناشناس، یکیش از پیام‌های روزمره میاد.", "درس صراحتاً گفت بین این سه، یه «شکاف» پیدا می‌شه — چرا این شکاف مهمه؟"],
+    "rubric": "Correct: names all three sources and explains the value of combining them (surfacing gaps between public and private/anonymous feedback). Partial: names 2-3 sources without explaining why combining matters. Incorrect: fewer than 2 sources."
+  },
+  {
+    "key": "5-whys",
+    "title": "روش ۵-چرا رو تمرین کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "مشکل: «تست‌های خودکار (automated tests) این اسپرینت سه بار fail شدن و باعث تأخیر در ریلیز شدن.» با روش ۵-چرا (5 Whys)، این مشکل رو تا یه علت ریشه‌ای منطقی دنبال کن — هر «چرا» باید از جواب قبلی نتیجه بگیره.",
+    "expected_outcome": "نمونه‌ی منطقی (پاسخ‌های دیگه هم اگه زنجیره‌وار و منطقی باشن قابل‌قبولن):\n1) چرا تست‌ها fail شدن؟ → چون دیتای تست با ساختار جدید دیتابیس هماهنگ نبود.\n2) چرا هماهنگ نبود؟ → چون دیتای تست به‌روزرسانی نشده بود بعد از تغییر schema.\n3) چرا به‌روزرسانی نشده بود؟ → چون فرایند مشخصی برای اطلاع‌رسانی تغییرات schema به تیم QA وجود نداشت.\n4) چرا این فرایند وجود نداشت؟ → چون تغییرات schema معمولاً کوچیک بودن و کسی روی این ریسک تمرکز نکرده بود.\n5) چرا کسی تمرکز نکرده بود؟ → چون هیچ چک‌لیستی برای تغییرات schema، بررسی اثرش روی تست‌ها رو الزامی نکرده بود. (علت ریشه‌ای: نبود یه فرایند/چک‌لیست رسمی برای هماهنگی تغییرات schema با تیم QA.)",
+    "hints": ["هر «چرا» باید مستقیماً از جواب قبلی نتیجه بگیره، نه یه موضوع جدید و بی‌ربط.", "علت ریشه‌ای نهایی معمولاً یه مشکل فرایندی/سیستمیه، نه یه اشتباه فردی."],
+    "rubric": "Correct: a coherent chain of 5 whys where each step follows logically from the previous, ending in a systemic/process root cause (not blaming an individual). Correct_with_hint: chain has 3-4 logical steps or the final root cause is vague. Incorrect: whys are disconnected or the final cause is not process-level."
+  },
+  {
+    "key": "gamma-workflow",
+    "title": "از خروجی متنی به اسلاید واقعی",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "بعد از گرفتن محتوای اسلاید (متن و ساختار) از ChatGPT، چه گزینه‌ای توی Gamma.app انتخاب شد تا محتوا عیناً حفظ بشه و Gamma فقط طراحی/فرمت اضافه کنه، نه محتوای جدید؟",
+    "expected_outcome": "گزینه‌ی «حفظ همین متن دقیق» (preserve the exact text) انتخاب شد، برخلاف گزینه‌ی «تولید از یادداشت‌ها/خلاصه‌سازی» که محتوا رو تغییر می‌داد.",
+    "hints": ["Gamma دو گزینه داشت: خلاصه‌سازی/تولید از نو، یا حفظ دقیق متن.", "چون محتوا از قبل با دقت (COSTAR) ساخته شده بود، نمی‌خواستیم Gamma عوضش کنه."],
+    "rubric": "Correct: mentions choosing 'preserve exact text' rather than letting Gamma summarize/regenerate content. Partial: says 'kept the content' without naming the specific option. Incorrect: unrelated or wrong."
+  }
+]

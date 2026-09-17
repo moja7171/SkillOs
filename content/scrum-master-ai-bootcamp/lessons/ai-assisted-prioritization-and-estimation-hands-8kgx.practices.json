@@ -1,0 +1,42 @@
+[
+  {
+    "key": "why-extended-thinking",
+    "title": "چرا تفکر گسترده رو روشن کردیم؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "قبل از تخمین امتیاز داستان، حالت «تفکر گسترده» (extended thinking) روی Claude روشن شد. چرا این کار برای این تسک منطقی بود؟",
+    "expected_outcome": "چون تخمین امتیاز و اولویت‌بندی یه کار تحلیلی چندمرحله‌ایه (مقایسه با استوری‌های مرجع، در نظر گرفتن وابستگی و ارزش کسب‌وکار) که به استدلال عمیق‌تر نیاز داره — دقیقاً همون چیزی که حالت تفکر گسترده براش طراحی شده.",
+    "hints": ["به تفاوت کارهای ساده و کارهای تحلیلی چندمرحله‌ای فکر کن.", "این با درس قبلی‌تر درباره‌ی حالت thinking مدل‌ها مرتبطه."],
+    "rubric": "Correct: connects extended thinking to the multi-step analytical nature of estimation/prioritization (comparing against references, weighing dependencies). Partial: says 'it's a complex task' without the specific reasoning. Incorrect: unrelated or missing reasoning."
+  },
+  {
+    "key": "reference-stories-role",
+    "title": "استوری‌های مرجع چه نقشی دارن؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "چرا برای تخمین امتیاز داستان‌های جدید، یه سند «استوری‌های مرجع» (قبلاً تخمین‌زده‌شده) هم به AI داده شد؟",
+    "options": [
+      "فقط برای این‌که ورودی بیشتری داشته باشیم",
+      "چون تخمین نسبی (مقایسه با نمونه‌های شناخته‌شده) دقیق‌تر از تخمین مطلق و بدون‌مرجعه",
+      "چون بدون این سند، AI اصلاً نمی‌تونه عدد تولید کنه",
+      "چون فقط برای شمارش تعداد استوری‌ها لازمه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "استوری‌های مرجع معیار مقایسه هستن — دقیقاً مثل تخمین نسبی در planning poker واقعی که تیم‌ها استوری جدید رو با یه استوری شناخته‌شده مقایسه می‌کنن، نه این‌که از صفر عدد حدس بزنن.",
+    "hints": ["به این فکر کن چطور تیم‌های واقعی توی planning poker تخمین می‌زنن — مطلق یا نسبی؟", "مقایسه با یه نمونه‌ی شناخته‌شده، معمولاً دقیق‌تر از حدس‌زدن از صفره."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "refinement-flags",
+    "title": "چه چیزهایی باعث پرچم‌گذاری یه استوری می‌شن؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "قدم دوم این درس، چهار نوع مشکل رو توی بک‌لاگ شناسایی می‌کنه که باعث می‌شن یه استوری قبل از اسپرینت نیاز به ریفاینمنت داشته باشه. این چهار نوع رو نام ببر.",
+    "expected_outcome": "۱) امتیاز خیلی بالا (نیاز به شکستن). ۲) نیازمندی یا معیار پذیرش مبهم. ۳) وابستگی پرریسک. ۴) ناسازگاری تخمین نسبت به استوری‌های مشابه.",
+    "hints": ["درس دقیقاً چهار نوع مشکل رو اسم برد.", "یکیش درباره‌ی اندازه‌ی استوری بود، یکی درباره‌ی وضوح."],
+    "rubric": "Correct: names all four (oversized stories, unclear requirements/AC, high-risk dependencies, estimation inconsistency). Partial: names 2-3. Incorrect: fewer than 2."
+  }
+]

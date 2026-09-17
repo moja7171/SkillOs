@@ -1,0 +1,42 @@
+[
+  {
+    "key": "ideal-vs-actual",
+    "title": "برن‌داون ایده‌آل در مقابل واقعی",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تفاوت «برن‌داون ایده‌آل» و «برن‌داون واقعی» چیه، و چرا هر دو رو با هم توی یه نمودار می‌ذاریم؟",
+    "expected_outcome": "برن‌داون ایده‌آل یعنی روند فرضی و خطی که اگه همه‌چی طبق برنامه پیش بره باید داشته باشیم؛ برن‌داون واقعی یعنی پیشرفت واقعی تیم. این دو رو با هم می‌ذاریم تا انحراف (variance) بین برنامه و واقعیت رو زود ببینیم، نه فقط در آخر اسپرینت.",
+    "hints": ["ایده‌آل یعنی «طبق برنامه»، واقعی یعنی «چیزی که واقعاً اتفاق افتاده».", "هدف از مقایسه، دیدن زودهنگام انحرافه، نه صرفاً گزارش‌دهی."],
+    "rubric": "Correct: explains ideal = planned linear trajectory, actual = real progress, compared to surface deviation early. Partial: defines one but not the comparison purpose. Incorrect: unrelated or missing the early-warning purpose."
+  },
+  {
+    "key": "interpret-the-numbers",
+    "title": "این اعداد چی می‌گن؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق مثال درس: «۱۰٪ از امتیازها تموم شده، ولی ۶۰٪ از زمان اسپرینت گذشته؛ نرخ سوزش ایده‌آل ۵.۲۱ امتیاز در روز بود، واقعی ۰.۸۸.» این وضعیت چه معنایی داره و اسکرام مستر باید چه واکنشی نشون بده؟",
+    "expected_outcome": "تیم به‌شدت عقب‌تر از برنامه‌ست — با ۶۰٪ زمان سپری‌شده باید حدود ۶۰٪ کار تموم شده باشه، ولی فقط ۱۰٪ تموم شده. این یه «انحراف بحرانی»ه. اسکرام مستر باید فوری علت عقب‌ماندگی رو بررسی کنه (مثلاً موانع بررسی‌نشده)، با تیم و PO درباره‌ی واقع‌بینانه‌بودن هدف اسپرینت صحبت کنه، و احتمالاً دامنه‌ی کار رو بازبینی کنه — نه این‌که فقط منتظر پایان اسپرینت بمونه.",
+    "hints": ["مقایسه کن: ۶۰٪ زمان گذشته یعنی باید حدود ۶۰٪ کار هم تموم شده باشه؛ الان کجاییم؟", "به نقش هشدار زودهنگام در این درس فکر کن — این عدد یعنی چی برای تصمیم‌گیری؟"],
+    "rubric": "Correct: identifies the severe lag (10% done vs 60% time elapsed) as critical deviation and proposes proactive action (investigate blockers, discuss scope/goal realism) rather than waiting. Partial: notes the lag but no proposed action. Incorrect: misreads the numbers or gives an unrelated response."
+  },
+  {
+    "key": "visualization-shortcut",
+    "title": "ساخت نمودار بدون ابزار جداگانه",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "بعد از گرفتن جدول مقایسه‌ی برن‌داون، سریع‌ترین راه برای تبدیلش به یه نمودار تعاملی و قابل‌اشتراک چیه؟",
+    "options": [
+      "دستی توی Excel نمودار بسازی",
+      "از همون ابزار AI بخوای مستقیم از روی جدول یه نمودار روند بسازه",
+      "داده‌ها رو به یه طراح گرافیک بفرستی",
+      "امکان نداره؛ باید حتماً از ابزار جدا استفاده کرد"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "کافیه از همون ابزار (Claude) بخوای جدول رو به نمودار روند تبدیل کنه — یه نمودار تعاملی با خط ایده‌آل، واقعی و پیش‌بینی می‌سازه که قابل publish و اشتراک‌گذاریه.",
+    "hints": ["درس نشون داد این کار با یه پرامپت ساده انجام شد، نه ابزار جداگانه.", "همون ابزاری که جدول رو ساخته بود، می‌تونه از همون داده نمودار هم بسازه."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "key": "four-inputs",
+    "title": "چهار سند ورودی برنامه‌ریزی اسپرینت",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "برای محاسبه‌ی ظرفیت و پیشنهاد بک‌لاگ اسپرینت، چه چهار سند/منبع اطلاعاتی لازم بودن؟",
+    "expected_outcome": "در دسترس‌بودن تیم، سرعت تاریخی (historical velocity)، بک‌لاگ اولویت‌بندی‌شده (از حافظه‌ی thread)، و پارامترهای اسپرینت (تنظیمات ثابت مثل طول و تاریخ).",
+    "hints": ["یکیش از قدم قبلی همین بخش میاد و نیازی به پیوست دوباره نداره.", "یکیش درباره‌ی زمان و مرخصی اعضای تیمه."],
+    "rubric": "Correct: names all four (team availability, historical velocity, prioritized backlog, sprint parameters). Partial: names 2-3. Incorrect: fewer than 2."
+  },
+  {
+    "key": "why-10-percent-buffer",
+    "title": "چرا ۱۰٪ بافر؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "پرامپت این درس صریحاً خواست ۱۰٪ بافر برای کارهای پیش‌بینی‌نشده کنار گذاشته بشه. چرا این کار مهمه و اگه بافر نباشه چه ریسکی داره؟",
+    "expected_outcome": "بدون بافر، تیم دقیقاً روی مرز ظرفیتش تعهد می‌ده و هر اتفاق کوچیک پیش‌بینی‌نشده (باگ فوری، غیبت ناگهانی، یه کار جانبی) باعث می‌شه اسپرینت شکست بخوره. بافر یه حاشیه‌ی امن ایجاد می‌کنه تا تعهد اسپرینت واقع‌بینانه‌تر و قابل‌دستیابی‌تر باشه.",
+    "hints": ["به این فکر کن اگه تیم دقیقاً ۱۰۰٪ ظرفیتش رو متعهد بشه، چه اتفاقی با اولین مشکل غیرمنتظره میفته.", "بافر همیشه یه حاشیه‌ی امنه، نه اتلاف وقت."],
+    "rubric": "Correct: explains buffer protects against unexpected work/absences so commitment stays realistic and achievable. Partial: says 'it's safer' without explaining the risk of no buffer. Incorrect: unrelated or missing the risk explanation."
+  },
+  {
+    "key": "why-reorder-by-dependency",
+    "title": "چرا ترتیب اجرا رو دوباره مرتب کردیم؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "بعد از داشتن بک‌لاگ اسپرینت (یه لیست تخت از استوری‌ها با اولویت)، چرا یه قدم اضافه برای «ترتیب اجرا بر اساس وابستگی» لازم بود؟",
+    "options": [
+      "چون اولویت MoSCoW اشتباه محاسبه شده بود",
+      "چون یه لیست تخت بر اساس اولویت، لزوماً ترتیب درست اجرا (با در نظر گرفتن وابستگی بین استوری‌ها) رو نشون نمی‌ده",
+      "چون Jira بدون این ترتیب کار نمی‌کنه",
+      "این قدم فقط برای زیباسازی گزارش بود، اثر عملی نداشت"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "اولویت (چی مهم‌تره) با ترتیب اجرا (چی باید اول انجام بشه چون بقیه بهش وابسته‌ان) فرق داره. یه استوری با اولویت پایین‌تر ممکنه باید زودتر انجام بشه چون استوری‌های دیگه بهش وابسته‌ان — این همون چیزیه که تحلیل وابستگی و مسیر بحرانی مشخص می‌کنه.",
+    "hints": ["به فرق بین «چی مهم‌تره» و «چی باید اول انجام بشه» فکر کن.", "درس این ترتیب رو با مفهوم «مسیر بحرانی» (critical path) مرتبط کرد."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

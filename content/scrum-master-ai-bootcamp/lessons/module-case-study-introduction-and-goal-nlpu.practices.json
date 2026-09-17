@@ -1,0 +1,26 @@
+[
+  {
+    "key": "four-steps-order",
+    "title": "چهار قدم این بخش رو مرتب کن",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "چهار مرحله‌ی این بخش رو به ترتیب بنویس.",
+    "expected_outcome": "۱) اولویت‌بندی و تخمین (MoSCoW + story point). ۲) برنامه‌ریزی اسپرینت (ظرفیت تیم + بک‌لاگ اسپرینت). ۳) شناسایی و رفع موانع (از روی یادداشت دیلی). ۴) پیش‌بینی و پایش برن‌داون.",
+    "hints": ["اول باید بدونیم چی و چقدر انجام می‌شه (اولویت/تخمین)، بعد برنامه‌ریزی می‌کنیم.", "پایش پیشرفت (برن‌داون) طبیعتاً آخرین قدمه، چون به اجرای واقعی اسپرینت نیاز داره."],
+    "rubric": "Correct: all four steps in the right order. Partial: right steps, wrong order or 3 of 4. Incorrect: fewer than 3 correct."
+  },
+  {
+    "key": "main-tool-this-section",
+    "title": "ابزار اصلی این بخش کدومه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "این بخش عمدتاً از کدوم ابزار استفاده می‌کنه؟",
+    "options": ["Perplexity", "Claude", "Gamma.app", "Jira"],
+    "correct_option": 1,
+    "expected_outcome": "Claude ابزار اصلی این بخشه، به‌خاطر توانایی خوبش در تحلیل و استدلال چندمرحله‌ای که برای برنامه‌ریزی اسپرینت و تحلیل موانع لازمه.",
+    "hints": ["به همون ابزاری فکر کن که برای تحلیل پیچیده و استدلال چندمرحله‌ای معرفی شده بود.", "همون ابزاری که پشت خیلی از کدنویسی‌های خودکار هم هست."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

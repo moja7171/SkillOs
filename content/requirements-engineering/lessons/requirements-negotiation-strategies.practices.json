@@ -1,0 +1,30 @@
+[
+  {
+    "key": "common-goals-strategy-benefit",
+    "title": "چرا اهداف مشترک مذاکره رو ساده می‌کنه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق درس، پیداکردن اهداف و علایق مشترک بین ذی‌نفعان دقیقاً چطور فرایند مذاکره رو کارآمدتر می‌کنه؟",
+    "expected_outcome": "شناسایی اهداف مشترک اجازه می‌ده روی نیازمندی‌هایی که پشتیبانی گسترده دارن تمرکز کنیم و ازشون راحت عبور کنیم، به‌جای صرف وقت روی نیازمندی‌هایی که شاید اصلاً پشتیبانی کافی نداشته باشن یا عملی نباشن. همچنین اعتماد و همکاری بین ذی‌نفعان رو می‌سازه.",
+    "hints": [
+      "به بخش «استراتژی ۱: یافتن اهداف مشترک» برگرد.",
+      "این استراتژی چه چیزی رو صرفه‌جویی می‌کنه؟"
+    ],
+    "rubric": "Full credit explains that shared goals let the team quickly agree on broadly-supported requirements and save time/resources otherwise spent on unsupported or infeasible ones, and build trust."
+  },
+  {
+    "key": "balance-conflicting-stakeholders-drone",
+    "title": "توازن نیازمندی‌های متضاد در پروژه‌ی پهپاد",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "توی پروژه‌ی پهپاد کاشت بذر درخت، تیم فنی می‌خواد باتری بزرگ‌تری بذاره تا برد پرواز بیشتر بشه، ولی تیم مالی نگران وزن و هزینه‌ی اضافه‌ست. با استفاده از استراتژی‌های این درس، توضیح بده چطور می‌شه به یه نتیجه‌ی متوازن رسید.",
+    "expected_outcome": "پاسخ خوب از ترکیب اولویت‌بندی (بررسی اینکه برد پرواز چقدر برای موفقیت پروژه حیاتیه) و ارتباط باز (فهمیدن نگرانی واقعی هر طرف: پوشش مسیر در برابر هزینه/وزن) استفاده می‌کنه تا به یه راه‌حل میانه (مثلاً باتری با ظرفیت متوسط) برسه — مشابه مثال‌های خود درس درباره‌ی توازن نیازمندی‌های متضاد.",
+    "hints": [
+      "کدوم دو استراتژی از درس مستقیماً به این نوع تعارض کمک می‌کنن؟",
+      "هدف نهایی توازن، رسیدن به یه راه‌حل میانه‌ست که نیازهای اصلی هر دو طرف رو برآورده کنه، نه برد کامل یکی."
+    ],
+    "rubric": "Full credit combines prioritization and open communication to reach a balanced middle-ground outcome addressing both stakeholders' core concerns."
+  }
+]

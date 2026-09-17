@@ -1,0 +1,30 @@
+[
+  {
+    "key": "pick-visual-aid-for-need",
+    "title": "کدوم وسیله‌ی بصری مناسبه؟",
+    "form": "scenario",
+    "difficulty": "intro",
+    "estimated_minutes": 5,
+    "prompt": "می‌خوای به ذی‌نفعان نشون بدی صفحه‌ی اپلیکیشن موبایل کنترل پهپاد کاشت بذر بعد از توسعه چه شکلی می‌شه و چطور کار می‌کنه. کدوم نوع وسیله‌ی کمک بصری از درس مناسب‌تره و چرا؟",
+    "expected_outcome": "ماکت یا پروتوتایپ، چون به‌طور خاص برای نیازمندی‌های مرتبط با رابط کاربری و تجربه‌ی کاربری توصیه شده — به ذی‌نفعان نشون می‌ده محصول نهایی چطور به‌نظر می‌رسه و چطور کار می‌کنه.",
+    "hints": [
+      "درس چهار نوع وسیله‌ی بصری معرفی کرد: طرح/دیاگرام، ماکت/پروتوتایپ، فلوچارت، نمودار.",
+      "کدوم‌شون مخصوص رابط کاربری/تجربه‌ی کاربریه؟"
+    ],
+    "rubric": "Full credit selects mockups/prototypes and explains they show the final look and function of a UI, matching the lesson's UX-specific recommendation."
+  },
+  {
+    "key": "active-listening-vs-clear-language",
+    "title": "گوش‌دادن فعال در برابر زبان شفاف",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "گوش‌دادن فعال و استفاده از زبان شفاف و مختصر، هر دو تکنیک ارتباطی این درس‌ان ولی هدف متفاوتی دارن. تفاوت نقششون رو توی مذاکره‌ی نیازمندی توضیح بده.",
+    "expected_outcome": "گوش‌دادن فعال روی دریافت درست پیام از ذی‌نفع تمرکز داره (فهمیدن نگرانی و دیدگاه طرف مقابل، از طریق توجه به کلام و زبان بدن)، در حالی که زبان شفاف و مختصر روی ارسال درست پیام از سمت ما تمرکز داره (جلوگیری از ابهام و سوءتفاهم وقتی خودمون نیازمندی رو بیان می‌کنیم). هر دو با هم ارتباط دوطرفه‌ی سالم رو می‌سازن.",
+    "hints": [
+      "یکی مربوط به شنیدنه، یکی مربوط به گفتن.",
+      "کدوم‌یکی به لحن صدا و زبان بدن توجه می‌کنه؟"
+    ],
+    "rubric": "Full credit distinguishes active listening (receiving/understanding others) from clear language (transmitting one's own message unambiguously) as complementary halves of communication."
+  }
+]

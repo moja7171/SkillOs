@@ -1,0 +1,366 @@
+{
+  "title": "ورود هوش مصنوعی مولد به سازمان",
+  "description": "راهنمای مدیریتی ورود هوش مصنوعی مولد به سازمان — از جلب حمایت مدیران تا فرهنگ، همسویی بین‌بخشی و ملاحظات امنیتی/اخلاقی.",
+  "outcome_statement": "می‌دونی چطور یه سازمان رو برای پذیرش هوش مصنوعی مولد آماده کنی — از جلب حمایت مدیران ارشد تا ساختن ائتلاف بین‌بخشی و رعایت ملاحظات امنیتی و اخلاقی.",
+  "source_note": "برگرفته از دوره‌ی «Introducing Generative AI into Your Organization».",
+  "video_base_url": "/media/generative-ai-in-organizations/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "معرفی هوش مصنوعی مولد به سازمانت",
+      "summary": "نمای‌کلی ورود AI مولد به سازمان.",
+      "section": "مقدمه و ارزش‌پیشنهادی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "001-introducing-generative-ai-to-your-organization-cded.mp4",
+          "subtitles": [
+            {
+              "file": "001-introducing-generative-ai-to-your-organization-cded.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-introducing-generative-ai-to-your-organization-cded.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-enterprise-ai-value-proposition-hufu",
+      "title": "ارزش‌پیشنهادی هوش مصنوعی برای سازمان",
+      "summary": "چرا AI برای سازمان ارزش داره.",
+      "section": "مقدمه و ارزش‌پیشنهادی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "002-the-enterprise-ai-value-proposition-hufu.mp4",
+          "subtitles": [
+            {
+              "file": "002-the-enterprise-ai-value-proposition-hufu.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-the-enterprise-ai-value-proposition-hufu.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "getting-executive-buy-in-ccpq",
+      "title": "جلب حمایت مدیران ارشد",
+      "summary": "چطور مدیران ارشد رو همراه کنیم.",
+      "section": "مقدمه و ارزش‌پیشنهادی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "003-getting-executive-buy-in-ccpq.mp4",
+          "subtitles": [
+            {
+              "file": "003-getting-executive-buy-in-ccpq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-getting-executive-buy-in-ccpq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "creating-an-ai-ready-organization-9ndw",
+      "title": "ساختن سازمانی آماده‌ی هوش مصنوعی",
+      "summary": "آماده‌سازی سازمان برای پذیرش AI.",
+      "section": "مقدمه و ارزش‌پیشنهادی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "004-creating-an-ai-ready-organization-9ndw.mp4",
+          "subtitles": [
+            {
+              "file": "004-creating-an-ai-ready-organization-9ndw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-creating-an-ai-ready-organization-9ndw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "modern-ai-development-frameworks-gs1z",
+      "title": "چارچوب‌های مدرن توسعه‌ی هوش مصنوعی",
+      "summary": "نمای‌کلی ابزار و چارچوب‌های روز.",
+      "section": "فرهنگ و استعداد",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "005-modern-ai-development-frameworks-gs1z.mp4",
+          "subtitles": [
+            {
+              "file": "005-modern-ai-development-frameworks-gs1z.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-modern-ai-development-frameworks-gs1z.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "fostering-innovation-culture-lvwm",
+      "title": "پرورش فرهنگ نوآوری",
+      "summary": "ساختن فرهنگی که نوآوری رو تشویق می‌کنه.",
+      "section": "فرهنگ و استعداد",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "006-fostering-innovation-culture-lvwm.mp4",
+          "subtitles": [
+            {
+              "file": "006-fostering-innovation-culture-lvwm.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-fostering-innovation-culture-lvwm.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "talent-strategy-for-ai-teams-anco",
+      "title": "استراتژی استعداد برای تیم‌های هوش مصنوعی",
+      "summary": "جذب و نگه‌داشت نیروی متخصص AI.",
+      "section": "فرهنگ و استعداد",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "007-talent-strategy-for-ai-teams-anco.mp4",
+          "subtitles": [
+            {
+              "file": "007-talent-strategy-for-ai-teams-anco.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-talent-strategy-for-ai-teams-anco.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "finance-partnership-strategies-g32b",
+      "title": "استراتژی همکاری با تیم مالی",
+      "summary": "همراه‌کردن واحد مالی با پروژه‌ی AI.",
+      "section": "همسویی بین‌بخشی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "008-finance-partnership-strategies-g32b.mp4",
+          "subtitles": [
+            {
+              "file": "008-finance-partnership-strategies-g32b.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-finance-partnership-strategies-g32b.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "marketing-and-customer-experience-alignment-w3fn",
+      "title": "همسویی با بازاریابی و تجربه‌ی مشتری",
+      "summary": "هم‌راستایی AI با بازاریابی و CX.",
+      "section": "همسویی بین‌بخشی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "009-marketing-and-customer-experience-alignment-w3fn.mp4",
+          "subtitles": [
+            {
+              "file": "009-marketing-and-customer-experience-alignment-w3fn.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-marketing-and-customer-experience-alignment-w3fn.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "operations-and-process-enhancement-eoe5",
+      "title": "بهبود عملیات و فرایندها",
+      "summary": "استفاده از AI برای بهبود عملیات.",
+      "section": "همسویی بین‌بخشی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "010-operations-and-process-enhancement-eoe5.mp4",
+          "subtitles": [
+            {
+              "file": "010-operations-and-process-enhancement-eoe5.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-operations-and-process-enhancement-eoe5.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "current-ai-trends-and-enterprise-impact-glrx",
+      "title": "روندهای روز هوش مصنوعی و اثرش روی سازمان",
+      "summary": "نمای‌کلی روندهای فعلی AI.",
+      "section": "روندها و ائتلاف‌سازی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "011-current-ai-trends-and-enterprise-impact-glrx.mp4",
+          "subtitles": [
+            {
+              "file": "011-current-ai-trends-and-enterprise-impact-glrx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-current-ai-trends-and-enterprise-impact-glrx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "building-cross-functional-coalitions-kjfi",
+      "title": "ساختن ائتلاف‌های بین‌بخشی",
+      "summary": "همکاری بخش‌های مختلف روی پروژه‌ی AI.",
+      "section": "روندها و ائتلاف‌سازی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "012-building-cross-functional-coalitions-kjfi.mp4",
+          "subtitles": [
+            {
+              "file": "012-building-cross-functional-coalitions-kjfi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-building-cross-functional-coalitions-kjfi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "executive-influence-strategies-39lx",
+      "title": "استراتژی‌های نفوذ روی مدیران ارشد",
+      "summary": "چطور روی تصمیم مدیران ارشد اثر بذاریم.",
+      "section": "روندها و ائتلاف‌سازی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "013-executive-influence-strategies-39lx.mp4",
+          "subtitles": [
+            {
+              "file": "013-executive-influence-strategies-39lx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-executive-influence-strategies-39lx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "ai-security-framework-fixw",
+      "title": "چارچوب امنیت هوش مصنوعی",
+      "summary": "ملاحظات امنیتی استقرار AI.",
+      "section": "امنیت، اخلاق و انطباق",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "014-ai-security-framework-fixw.mp4",
+          "subtitles": [
+            {
+              "file": "014-ai-security-framework-fixw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-ai-security-framework-fixw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "ethical-ai-guidelines-pzf7",
+      "title": "دستورالعمل‌های اخلاقی هوش مصنوعی",
+      "summary": "اصول اخلاقی استفاده از AI.",
+      "section": "امنیت، اخلاق و انطباق",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "015-ethical-ai-guidelines-pzf7.mp4",
+          "subtitles": [
+            {
+              "file": "015-ethical-ai-guidelines-pzf7.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-ethical-ai-guidelines-pzf7.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "compliance-and-regulatory-navigation-dtyv",
+      "title": "انطباق و مسیریابی مقرراتی",
+      "summary": "هدایت سازمان بین مقررات AI.",
+      "section": "امنیت، اخلاق و انطباق",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "016-compliance-and-regulatory-navigation-dtyv.mp4",
+          "subtitles": [
+            {
+              "file": "016-compliance-and-regulatory-navigation-dtyv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-compliance-and-regulatory-navigation-dtyv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "قدم بعدی چیه؟",
+      "summary": "جمع‌بندی و نقشه‌راه ادامه.",
+      "section": "امنیت، اخلاق و انطباق",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "017-what-s-next-wzla.mp4",
+          "subtitles": [
+            {
+              "file": "017-what-s-next-wzla.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-what-s-next-wzla.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

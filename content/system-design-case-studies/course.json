@@ -1,0 +1,408 @@
+{
+  "title": "مطالعات موردی طراحی معماری و سیستم",
+  "description": "طراحی گام‌به‌گام معماری چند سیستم واقعی و پرکاربرد — از پلتفرم اشتراک تصویر تا رایدشیر.",
+  "outcome_statement": "با دیدن طراحی کامل چند سیستم واقعی، توانایی خودت رو برای طراحی سیستم‌های مقیاس‌پذیر و مصاحبه‌ی System Design تقویت می‌کنی.",
+  "source_note": "برگرفته از دوره‌ی «Software Architecture & System Design: Practical Case Studies».",
+  "video_base_url": "/media/system-design-case-studies/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی مطالعات موردی این دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "001-introduction-to-software-architecture-system-design-case-studies-pw8d.mp4",
+          "subtitles": [
+            {
+              "file": "001-introduction-to-software-architecture-system-design-case-studies-pw8d.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-introduction-to-software-architecture-system-design-case-studies-pw8d.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-design-of-a-highly-scalable-image-sharing-platform-part-1-15u0",
+      "title": "طراحی سیستم پلتفرم اشتراک تصویر مقیاس‌پذیر — بخش ۱",
+      "summary": "شروع طراحی یه پلتفرم شبیه اینستاگرام.",
+      "section": "مطالعه‌ی موردی: پلتفرم اشتراک تصویر",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "003-system-design-of-a-highly-scalable-image-sharing-platform-part-1-15u0.mp4",
+          "subtitles": [
+            {
+              "file": "003-system-design-of-a-highly-scalable-image-sharing-platform-part-1-15u0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-system-design-of-a-highly-scalable-image-sharing-platform-part-1-15u0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-design-of-a-highly-scalable-image-sharing-platform-part-2-9ztv",
+      "title": "طراحی سیستم پلتفرم اشتراک تصویر مقیاس‌پذیر — بخش ۲",
+      "summary": "ادامه‌ی طراحی پلتفرم اشتراک تصویر.",
+      "section": "مطالعه‌ی موردی: پلتفرم اشتراک تصویر",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "004-system-design-of-a-highly-scalable-image-sharing-platform-part-2-9ztv.mp4",
+          "subtitles": [
+            {
+              "file": "004-system-design-of-a-highly-scalable-image-sharing-platform-part-2-9ztv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-system-design-of-a-highly-scalable-image-sharing-platform-part-2-9ztv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-design-of-a-highly-scalable-image-sharing-platform-part-3-pfpa",
+      "title": "طراحی سیستم پلتفرم اشتراک تصویر مقیاس‌پذیر — بخش ۳",
+      "summary": "جمع‌بندی طراحی پلتفرم اشتراک تصویر.",
+      "section": "مطالعه‌ی موردی: پلتفرم اشتراک تصویر",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "005-system-design-of-a-highly-scalable-image-sharing-platform-part-3-pfpa.mp4",
+          "subtitles": [
+            {
+              "file": "005-system-design-of-a-highly-scalable-image-sharing-platform-part-3-pfpa.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-system-design-of-a-highly-scalable-image-sharing-platform-part-3-pfpa.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-system-design-of-a-vod-streaming-service-part-1-t9yr",
+      "title": "طراحی سیستم سرویس استریم ویدیوی درخواستی (VOD) — بخش ۱",
+      "summary": "شروع طراحی یه سرویس شبیه نتفلیکس.",
+      "section": "مطالعه‌ی موردی: سرویس استریم ویدیو",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "008-software-architecture-system-design-of-a-vod-streaming-service-part-1-t9yr.mp4",
+          "subtitles": [
+            {
+              "file": "008-software-architecture-system-design-of-a-vod-streaming-service-part-1-t9yr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-software-architecture-system-design-of-a-vod-streaming-service-part-1-t9yr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-system-design-of-a-vod-streaming-service-part-2-eare",
+      "title": "طراحی سیستم سرویس استریم ویدیوی درخواستی (VOD) — بخش ۲",
+      "summary": "ادامه‌ی طراحی سرویس استریم ویدیو.",
+      "section": "مطالعه‌ی موردی: سرویس استریم ویدیو",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "009-software-architecture-system-design-of-a-vod-streaming-service-part-2-eare.mp4",
+          "subtitles": [
+            {
+              "file": "009-software-architecture-system-design-of-a-vod-streaming-service-part-2-eare.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-software-architecture-system-design-of-a-vod-streaming-service-part-2-eare.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-system-design-of-a-vod-streaming-service-part-3-n95e",
+      "title": "طراحی سیستم سرویس استریم ویدیوی درخواستی (VOD) — بخش ۳",
+      "summary": "جمع‌بندی طراحی سرویس استریم ویدیو.",
+      "section": "مطالعه‌ی موردی: سرویس استریم ویدیو",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "010-software-architecture-system-design-of-a-vod-streaming-service-part-3-n95e.mp4",
+          "subtitles": [
+            {
+              "file": "010-software-architecture-system-design-of-a-vod-streaming-service-part-3-n95e.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-software-architecture-system-design-of-a-vod-streaming-service-part-3-n95e.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-system-design-of-a-real-time-instant-messaging-part-1-jzea",
+      "title": "طراحی سیستم پیام‌رسان آنیِ بلادرنگ — بخش ۱",
+      "summary": "شروع طراحی یه پیام‌رسان شبیه واتس‌اپ.",
+      "section": "مطالعه‌ی موردی: پیام‌رسان آنی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "013-software-architecture-system-design-of-a-real-time-instant-messaging-part-1-jzea.mp4",
+          "subtitles": [
+            {
+              "file": "013-software-architecture-system-design-of-a-real-time-instant-messaging-part-1-jzea.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-software-architecture-system-design-of-a-real-time-instant-messaging-part-1-jzea.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-system-design-of-a-real-time-instant-messaging-part-2-wymi",
+      "title": "طراحی سیستم پیام‌رسان آنیِ بلادرنگ — بخش ۲",
+      "summary": "ادامه‌ی طراحی پیام‌رسان آنی.",
+      "section": "مطالعه‌ی موردی: پیام‌رسان آنی",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "014-software-architecture-system-design-of-a-real-time-instant-messaging-part-2-wymi.mp4",
+          "subtitles": [
+            {
+              "file": "014-software-architecture-system-design-of-a-real-time-instant-messaging-part-2-wymi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-software-architecture-system-design-of-a-real-time-instant-messaging-part-2-wymi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-system-design-of-a-real-time-instant-messaging-part-3-x5sy",
+      "title": "طراحی سیستم پیام‌رسان آنیِ بلادرنگ — بخش ۳",
+      "summary": "جمع‌بندی طراحی پیام‌رسان آنی.",
+      "section": "مطالعه‌ی موردی: پیام‌رسان آنی",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "015-software-architecture-system-design-of-a-real-time-instant-messaging-part-3-x5sy.mp4",
+          "subtitles": [
+            {
+              "file": "015-software-architecture-system-design-of-a-real-time-instant-messaging-part-3-x5sy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-software-architecture-system-design-of-a-real-time-instant-messaging-part-3-x5sy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-1-xe0p",
+      "title": "طراحی سیستم سرویس تایپ‌اِهد برای موتور جست‌وجو — بخش ۱",
+      "summary": "شروع طراحی پیشنهاد جست‌وجوی زنده.",
+      "section": "مطالعه‌ی موردی: سرویس تایپ‌اِهد",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "018-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-1-xe0p.mp4",
+          "subtitles": [
+            {
+              "file": "018-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-1-xe0p.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-1-xe0p.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-2-2ppr",
+      "title": "طراحی سیستم سرویس تایپ‌اِهد برای موتور جست‌وجو — بخش ۲",
+      "summary": "ادامه‌ی طراحی سرویس تایپ‌اِهد.",
+      "section": "مطالعه‌ی موردی: سرویس تایپ‌اِهد",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "019-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-2-2ppr.mp4",
+          "subtitles": [
+            {
+              "file": "019-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-2-2ppr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-2-2ppr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-3-g6da",
+      "title": "طراحی سیستم سرویس تایپ‌اِهد برای موتور جست‌وجو — بخش ۳",
+      "summary": "جمع‌بندی طراحی سرویس تایپ‌اِهد.",
+      "section": "مطالعه‌ی موردی: سرویس تایپ‌اِهد",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "020-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-3-g6da.mp4",
+          "subtitles": [
+            {
+              "file": "020-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-3-g6da.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-system-design-a-highly-scalable-typeahead-service-for-a-search-engine-part-3-g6da.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-design-of-a-scalable-rideshare-service-part-1-ug6m",
+      "title": "طراحی سیستم سرویس رایدشیر مقیاس‌پذیر — بخش ۱",
+      "summary": "شروع طراحی یه سرویس شبیه اسنپ.",
+      "section": "مطالعه‌ی موردی: سرویس رایدشیر",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "023-software-architecture-design-of-a-scalable-rideshare-service-part-1-ug6m.mp4",
+          "subtitles": [
+            {
+              "file": "023-software-architecture-design-of-a-scalable-rideshare-service-part-1-ug6m.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-software-architecture-design-of-a-scalable-rideshare-service-part-1-ug6m.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-design-of-a-scalable-rideshare-service-part-2-t88i",
+      "title": "طراحی سیستم سرویس رایدشیر مقیاس‌پذیر — بخش ۲",
+      "summary": "ادامه‌ی طراحی سرویس رایدشیر.",
+      "section": "مطالعه‌ی موردی: سرویس رایدشیر",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "024-software-architecture-design-of-a-scalable-rideshare-service-part-2-t88i.mp4",
+          "subtitles": [
+            {
+              "file": "024-software-architecture-design-of-a-scalable-rideshare-service-part-2-t88i.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-software-architecture-design-of-a-scalable-rideshare-service-part-2-t88i.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-design-of-a-scalable-rideshare-service-part-3-zbtz",
+      "title": "طراحی سیستم سرویس رایدشیر مقیاس‌پذیر — بخش ۳",
+      "summary": "ادامه‌ی طراحی سرویس رایدشیر.",
+      "section": "مطالعه‌ی موردی: سرویس رایدشیر",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "025-software-architecture-design-of-a-scalable-rideshare-service-part-3-zbtz.mp4",
+          "subtitles": [
+            {
+              "file": "025-software-architecture-design-of-a-scalable-rideshare-service-part-3-zbtz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-software-architecture-design-of-a-scalable-rideshare-service-part-3-zbtz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-design-of-a-scalable-rideshare-service-part-4-3imj",
+      "title": "طراحی سیستم سرویس رایدشیر مقیاس‌پذیر — بخش ۴",
+      "summary": "ادامه‌ی طراحی سرویس رایدشیر.",
+      "section": "مطالعه‌ی موردی: سرویس رایدشیر",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "026-software-architecture-design-of-a-scalable-rideshare-service-part-4-3imj.mp4",
+          "subtitles": [
+            {
+              "file": "026-software-architecture-design-of-a-scalable-rideshare-service-part-4-3imj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-software-architecture-design-of-a-scalable-rideshare-service-part-4-3imj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "software-architecture-design-of-a-scalable-rideshare-service-part-5-du4k",
+      "title": "طراحی سیستم سرویس رایدشیر مقیاس‌پذیر — بخش ۵",
+      "summary": "جمع‌بندی طراحی سرویس رایدشیر.",
+      "section": "مطالعه‌ی موردی: سرویس رایدشیر",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "027-software-architecture-design-of-a-scalable-rideshare-service-part-5-du4k.mp4",
+          "subtitles": [
+            {
+              "file": "027-software-architecture-design-of-a-scalable-rideshare-service-part-5-du4k.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-software-architecture-design-of-a-scalable-rideshare-service-part-5-du4k.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "نکات پایانی برای مصاحبه‌ی طراحی سیستم",
+      "summary": "جمع‌بندی و توصیه برای مصاحبه‌های System Design.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "030-final-tips-for-system-design-interview-wufg.mp4",
+          "subtitles": [
+            {
+              "file": "030-final-tips-for-system-design-interview-wufg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-final-tips-for-system-design-interview-wufg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

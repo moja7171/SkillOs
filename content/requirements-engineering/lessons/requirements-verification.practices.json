@@ -1,0 +1,65 @@
+[
+  {
+    "key": "verification-core-question",
+    "title": "راستی‌آزمایی دقیقاً به چه سؤالی جواب می‌ده؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، راستی‌آزمایی (verification) اساساً به کدوم سؤال جواب می‌ده؟",
+    "options": [
+      "آیا سیستم رو طبق مشخصات ساختیم و نیازمندی‌ها رو برآورده کردیم؟",
+      "آیا سیستم واقعاً همون چیزیه که ذی‌نفعان از اول تصورش می‌کردن؟",
+      "آیا سیستم توی بازار موفق می‌شه؟",
+      "آیا هزینه‌ی سیستم از بودجه‌ی تعیین‌شده کمتره؟"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "راستی‌آزمایی می‌پرسه «آیا سیستم رو طبق مشخصات ساختیم و نیازمندی‌ها رو برآورده کردیم؟» — این با اعتبارسنجی (که می‌پرسه آیا سیستم درست رو ساختیم که نیاز واقعی رو برآورده کنه) فرق داره؛ اعتبارسنجی موضوع درس بعدیه.",
+    "hints": [
+      "درس این سؤال رو دقیقاً با همین عبارت مطرح کرد.",
+      "گزینه‌ی دوم مربوط به اعتبارسنجیه، نه راستی‌آزمایی — این دو تفاوت مهمیه که درس بعدی بیشتر بازش می‌کنه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "four-verification-methods-match",
+    "title": "کدوم روش راستی‌آزمایی مناسب‌تره؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "سه فعالیت برای راستی‌آزمایی پهپاد بذرپاش داریم: (۱) بررسی چشمی پره‌های روتور برای اطمینان از نصب درست و اندازه‌ی مشخص‌شده. (۲) استفاده از شبیه‌سازی کامپیوتری برای پیش‌بینی زمان پرواز بر اساس وزن و منبع تغذیه. (۳) انجام یه پرواز واقعی برای نشون‌دادن اینکه پهپاد می‌تونه بذر رو با تراکم موردنظر بکاره. هرکدوم از این‌ها از کدوم یک از چهار روش راستی‌آزمایی (تحلیل، بازرسی، دمو، تست) هستن؟",
+    "expected_outcome": "(۱) بازرسی (inspection) — بررسی چشمی برای اطمینان از سازگاری با مشخصات. (۲) تحلیل (analysis) — شکستن سیستم و بررسی با مدل‌سازی/شبیه‌سازی به‌جای تست فیزیکی مستقیم. (۳) دمو (demonstration) — نشون‌دادن قابلیت با استفاده‌ی واقعی توی یه سناریوی دنیای واقعی.",
+    "hints": [
+      "درس دقیقاً همین سه مثال (پره‌ی روتور، شبیه‌سازی زمان پرواز، پرواز کاشت بذر) رو برای این سه روش زد.",
+      "دمو یعنی نشون‌دادن با استفاده‌ی واقعی؛ بازرسی یعنی نگاه چشمی؛ تحلیل یعنی مدل‌سازی/شبیه‌سازی بدون لزوماً اجرای فیزیکی کامل."
+    ],
+    "rubric": "Correct if response correctly maps (1) inspection, (2) analysis, (3) demonstration with brief reasoning for each. Correct_with_hint if 2 of 3 are correct. Incorrect if fewer than 2 match."
+  },
+  {
+    "key": "black-box-vs-white-box",
+    "title": "جعبه‌سیاه یا جعبه‌سفید؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، تفاوت اصلی بین تست جعبه‌سیاه و جعبه‌سفید چیه؟ برای هرکدوم یه مزیت و یه عیب مشخص از درس بیار.",
+    "expected_outcome": "جعبه‌سیاه روی عملکرد بیرونی (ورودی/خروجی) تمرکز می‌کنه بدون دیدن ساختار داخلی — مزیتش ارزیابی جامع از دید کاربره، عیبش سخت‌بودن پیدا کردن ریشه‌ی خطا. جعبه‌سفید ساختار داخلی (کد و منطق) رو بررسی می‌کنه — مزیتش کشف نقص‌های ظریف و ناکارآمدیه، عیبش نیاز به تخصص فنی قوی و زمان‌بر بودنه.",
+    "hints": [
+      "جعبه‌سیاه یعنی سیستم رو از بیرون می‌بینیم؛ جعبه‌سفید یعنی از داخل (کد و منطق) نگاه می‌کنیم.",
+      "درس برای هرکدوم دقیقاً یه مزیت و یه عیب مشخص آورد."
+    ],
+    "rubric": "Correct if response explains the black-box (external, input/output only) vs white-box (internal code/logic) distinction and gives one correct advantage and one correct disadvantage for each. Correct_with_hint if the distinction is right but advantages/disadvantages are missing or vague. Incorrect if the distinction is confused."
+  },
+  {
+    "key": "system-test-common-mistake",
+    "title": "رایج‌ترین اشتباه توی تست سطح سیستم",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، رایج‌ترین اشتباهی که تیم‌ها حین تست سطح سیستم مرتکب می‌شن چیه، و چرا این اشتباه به نتایج غیرمنتظره منجر می‌شه؟",
+    "expected_outcome": "رایج‌ترین اشتباه، تست‌نکردن سیستم توی همون محیطی که واقعاً قراره استفاده بشه‌ست. این باعث نتایج غیرمنتظره می‌شه چون شرایط محیط تست با شرایط واقعی عملیاتی فرق می‌کنه — رفتاری که توی محیط تست درست به‌نظر می‌رسه، ممکنه توی محیط واقعی (مثلاً جنگل یا زمین کشاورزی واقعی، با آب‌وهوا و زمین واقعی) شکست بخوره.",
+    "hints": [
+      "درس این رو به‌عنوان «یه اشتباه رایج» با تأکید خاص معرفی کرد.",
+      "چرا تست توی یه محیط متفاوت از محیط واقعی می‌تونه نتیجه‌ی گمراه‌کننده بده؟"
+    ],
+    "rubric": "Correct if response identifies not testing in the actual intended-use environment as the common mistake, and explains this leads to unexpected results because test conditions don't match real operational conditions. Correct_with_hint if the mistake is named without the reasoning. Incorrect otherwise."
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "key": "entity-relationship-attribute-classify",
+    "title": "موجودیت، رابطه یا ویژگی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی مدل ER پهپاد بذرپاش، «بذر درخت» چیزیه که باید ذخیره و بعداً پردازش/رها بشه — یه ماده که بین موجودیت‌ها (مخزن بذر، مکانیزم توزیع) جابه‌جا می‌شه. طبق این درس، این دقیقاً کدوم دسته است؟",
+    "options": [
+      "رابطه (relationship) — چون نوعی ماده‌ست که باید بین موجودیت‌ها پردازش یا ذخیره بشه",
+      "موجودیت (entity) — چون هر چیز فیزیکی همیشه موجودیته",
+      "ویژگی (attribute) — چون فقط یه خاصیته",
+      "هیچ‌کدوم؛ بذر درخت توی مدل ER جایی نداره"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "درس معیار مشخصی داد: اگه چیزی «نیرو، انرژی، داده، سیگنال یا ماده‌ای‌ست که باید پردازش یا ذخیره بشه»، رابطه است. بذر درخت دقیقاً همین نقش رو داره — ماده‌ای که بین موجودیت‌ها (مخزن، مکانیزم توزیع) رد و بدل می‌شه.",
+    "hints": [
+      "درس سه معیار مشخص برای تشخیص موجودیت/رابطه/ویژگی داد — کدومش به «ماده‌ای که پردازش یا ذخیره می‌شه» اشاره داره؟",
+      "موجودیت باید داده بفرسته/بگیره/ذخیره کنه؛ این با «بذر» که خودش ماده‌ست فرق داره."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "composition-vs-aggregation",
+    "title": "ترکیب یا تجمیع؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "دو رابطه برای پهپاد بذرپاش داریم: (۱) پهپاد از یه مخزن بذر تشکیل شده که فقط برای همون یه پهپاد ساخته شده و اگه پهپاد از بین بره، مخزن هم بی‌فایده و بی‌معنی می‌شه. (۲) پهپاد با یه اپراتور مرتبطه که موقع استفاده «بخشی از» عملیات پهپاده، ولی همون اپراتور ممکنه پهپادهای دیگه‌ای رو هم کنترل کنه و بدون این پهپاد خاص هم وجود داره. طبق این درس، کدوم رابطه ترکیب (composition) و کدوم تجمیع (aggregation) است؟",
+    "expected_outcome": "(۱) ترکیب (composition، لوزی سیاه) — مخزن بذر فقط یه مالک (همون پهپاد) داره و با نابودی پهپاد بی‌معنی می‌شه. (۲) تجمیع (aggregation، لوزی توخالی) — اپراتور حتی بدون این پهپاد خاص هم به‌عنوان یه موجودیت مستقل باقی می‌مونه، دقیقاً مثل مثال کاربر خودپرداز توی درس.",
+    "hints": [
+      "درس گفت لوزی سیاه (ترکیب) یعنی جزء فقط یه مالک داره؛ لوزی توخالی (تجمیع) یعنی جزء حتی بدون والد هم باقی می‌مونه.",
+      "درس دقیقاً یه مثال مشابه (کاربر خودپرداز که همیشه فقط مال یه خودپرداز نیست) برای تجمیع زد."
+    ],
+    "rubric": "Correct if response correctly classifies (1) as composition and (2) as aggregation, with reasoning matching the lesson's single-owner vs. survives-without-parent distinction. Correct_with_hint if the classification is right but reasoning is weak. Incorrect if classifications are swapped."
+  },
+  {
+    "key": "generalization-inheritance",
+    "title": "چرا حساب پس‌انداز از حساب عمومی ارث می‌بره؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق مثال این درس، «حساب جاری» و «حساب پس‌انداز» چطور با رابطه‌ی تعمیم/تخصیص به «حساب» عمومی وصل می‌شن؟ توضیح بده هرکدوم چه ویژگی‌ای از والد ارث می‌برن و چه ویژگی تازه‌ای اضافه می‌کنن.",
+    "expected_outcome": "حساب یه موجودیت کلی با ویژگی‌هایی مثل شماره‌حساب، صاحب حساب، بانک، و مقدار پوله. حساب جاری نوعی از حسابه — همه‌ی این ویژگی‌ها رو ارث می‌بره و یه ویژگی تازه (مبلغ قابل‌برداشت) اضافه می‌کنه. حساب پس‌انداز هم نوعی از حسابه — همون ویژگی‌های عمومی رو ارث می‌بره و یه ویژگی تازه (نرخ سود) اضافه می‌کنه.",
+    "hints": [
+      "درس دقیقاً این دو نوع حساب رو مثال زد — هرکدوم چه ویژگی‌ی یکتایی داشتن؟",
+      "رابطه‌ی نوع یعنی فرزند همه‌ی ویژگی‌های والد رو ارث می‌بره و چیزی جدید هم اضافه می‌کنه."
+    ],
+    "rubric": "Correct if response explains both checking and savings accounts inherit the general account attributes (number, owner, bank, balance) and adds the specific new attribute each type has (withdrawal limit for checking, interest rate for savings). Correct_with_hint if only one account type is explained correctly. Incorrect otherwise."
+  }
+]

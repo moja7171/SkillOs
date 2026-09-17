@@ -1,0 +1,870 @@
+{
+  "title": "معماری و طراحی سیستم‌های مدرن مقیاس‌بزرگ",
+  "description": "اصول عمیق طراحی سیستم‌های توزیع‌شده‌ی مقیاس‌بزرگ — از ویژگی‌های کیفی تا پایگاه‌داده، پردازش جریان و داده‌ی عظیم.",
+  "outcome_statement": "درک عمیقی از محرک‌های معماری، زیرساخت‌های ارتباطی، پایگاه‌داده‌های توزیع‌شده و الگوهای رویدادمحور پیدا می‌کنی و می‌تونی سیستم‌های مقیاس‌بزرگ واقعی رو طراحی کنی.",
+  "source_note": "برگرفته از دوره‌ی «Software Architecture & Design of Modern Large Scale Systems».",
+  "video_base_url": "/media/large-scale-systems-design/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "مقدمه‌ای بر معماری نرم‌افزار",
+      "summary": "نمای‌کلی این دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "001-introduction-to-software-architecture-43eg.mp4",
+          "subtitles": [
+            {
+              "file": "001-introduction-to-software-architecture-43eg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-introduction-to-software-architecture-43eg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "download-the-course-workbook-qu3i",
+      "title": "دانلود کتابچه‌ی کار دوره",
+      "summary": "فایل‌های تمرینی همراه دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "002-download-the-course-workbook-qu3i.mp4",
+          "subtitles": [
+            {
+              "file": "002-download-the-course-workbook-qu3i.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-download-the-course-workbook-qu3i.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-system-design-architectural-drivers-5yfw",
+      "title": "مقدمه‌ای بر محرک‌های معماری در طراحی سیستم",
+      "summary": "عواملی که تصمیم‌های معماری رو شکل می‌دن.",
+      "section": "مقدمه",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "003-introduction-to-system-design-architectural-drivers-5yfw.mp4",
+          "subtitles": [
+            {
+              "file": "003-introduction-to-system-design-architectural-drivers-5yfw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-introduction-to-system-design-architectural-drivers-5yfw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "feature-requirements-step-by-step-process-f3vv",
+      "title": "فرایند گام‌به‌گام نیازمندی‌های کارکردی",
+      "summary": "چطور نیازمندی کارکردی رو گام‌به‌گام استخراج کنیم.",
+      "section": "نیازمندی‌ها و ویژگی‌های کیفی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "005-feature-requirements-step-by-step-process-f3vv.mp4",
+          "subtitles": [
+            {
+              "file": "005-feature-requirements-step-by-step-process-f3vv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-feature-requirements-step-by-step-process-f3vv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-quality-attributes-requirements-8bph",
+      "title": "نیازمندی‌های ویژگی‌های کیفی سیستم",
+      "summary": "ویژگی‌های غیرکارکردی مثل کارایی و دسترس‌پذیری.",
+      "section": "نیازمندی‌ها و ویژگی‌های کیفی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "007-system-quality-attributes-requirements-8bph.mp4",
+          "subtitles": [
+            {
+              "file": "007-system-quality-attributes-requirements-8bph.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-system-quality-attributes-requirements-8bph.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "system-constraints-in-software-architecture-oteq",
+      "title": "محدودیت‌های سیستم در معماری نرم‌افزار",
+      "summary": "محدودیت‌هایی که روی فضای طراحی اثر می‌ذارن.",
+      "section": "نیازمندی‌ها و ویژگی‌های کیفی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "009-system-constraints-in-software-architecture-oteq.mp4",
+          "subtitles": [
+            {
+              "file": "009-system-constraints-in-software-architecture-oteq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-system-constraints-in-software-architecture-oteq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "performance-gzlp",
+      "title": "کارایی (Performance)",
+      "summary": "سنجش و بهبود کارایی سیستم.",
+      "section": "کارایی، مقیاس‌پذیری و دسترس‌پذیری",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "012-performance-gzlp.mp4",
+          "subtitles": [
+            {
+              "file": "012-performance-gzlp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-performance-gzlp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scalability-tldd",
+      "title": "مقیاس‌پذیری (Scalability)",
+      "summary": "توانایی سیستم برای رشد با بار بیشتر.",
+      "section": "کارایی، مقیاس‌پذیری و دسترس‌پذیری",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "014-scalability-tldd.mp4",
+          "subtitles": [
+            {
+              "file": "014-scalability-tldd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-scalability-tldd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "availability-introduction-measurement-owmu",
+      "title": "دسترس‌پذیری — مقدمه و سنجش",
+      "summary": "تعریف و اندازه‌گیری دسترس‌پذیری سیستم.",
+      "section": "کارایی، مقیاس‌پذیری و دسترس‌پذیری",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "016-availability-introduction-measurement-owmu.mp4",
+          "subtitles": [
+            {
+              "file": "016-availability-introduction-measurement-owmu.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-availability-introduction-measurement-owmu.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "fault-tolerance-high-availability-ntgf",
+      "title": "تحمل خطا و دسترس‌پذیری بالا",
+      "summary": "طراحی سیستم برای دووم در برابر خرابی.",
+      "section": "کارایی، مقیاس‌پذیری و دسترس‌پذیری",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "018-fault-tolerance-high-availability-ntgf.mp4",
+          "subtitles": [
+            {
+              "file": "018-fault-tolerance-high-availability-ntgf.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-fault-tolerance-high-availability-ntgf.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sla-slo-sli-t9ds",
+      "title": "SLA، SLO و SLI",
+      "summary": "معیارهای توافق و سنجش سطح سرویس.",
+      "section": "کارایی، مقیاس‌پذیری و دسترس‌پذیری",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "019-sla-slo-sli-t9ds.mp4",
+          "subtitles": [
+            {
+              "file": "019-sla-slo-sli-t9ds.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-sla-slo-sli-t9ds.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-api-design-for-software-architects-kaid",
+      "title": "مقدمه‌ای بر طراحی API برای معماران",
+      "summary": "اصول کلی طراحی API خوب.",
+      "section": "طراحی API",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "021-introduction-to-api-design-for-software-architects-kaid.mp4",
+          "subtitles": [
+            {
+              "file": "021-introduction-to-api-design-for-software-architects-kaid.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-introduction-to-api-design-for-software-architects-kaid.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "rpc-mfta",
+      "title": "RPC (فراخوانی روال از راه دور)",
+      "summary": "سبک ارتباطی RPC بین سرویس‌ها.",
+      "section": "طراحی API",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "023-rpc-mfta.mp4",
+          "subtitles": [
+            {
+              "file": "023-rpc-mfta.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-rpc-mfta.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "rest-api-w3ny",
+      "title": "REST API",
+      "summary": "سبک معماری REST برای طراحی API.",
+      "section": "طراحی API",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "025-rest-api-w3ny.mp4",
+          "subtitles": [
+            {
+              "file": "025-rest-api-w3ny.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-rest-api-w3ny.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dns-load-balancing-gslb-1o8i",
+      "title": "DNS و توزیع بار سراسری (GSLB)",
+      "summary": "نقش DNS و GSLB در مسیریابی ترافیک.",
+      "section": "زیرساخت ارتباطی",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "027-dns-load-balancing-gslb-1o8i.mp4",
+          "subtitles": [
+            {
+              "file": "027-dns-load-balancing-gslb-1o8i.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-dns-load-balancing-gslb-1o8i.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "message-brokers-kc1b",
+      "title": "کارگزارهای پیام (Message Brokers)",
+      "summary": "ارتباط ناهمگام بین سرویس‌ها با صف پیام.",
+      "section": "زیرساخت ارتباطی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "029-message-brokers-kc1b.mp4",
+          "subtitles": [
+            {
+              "file": "029-message-brokers-kc1b.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-message-brokers-kc1b.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "api-gateway-fvi1",
+      "title": "دروازه‌ی API (API Gateway)",
+      "summary": "نقطه‌ی ورود مشترک برای سرویس‌ها.",
+      "section": "زیرساخت ارتباطی",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "031-api-gateway-fvi1.mp4",
+          "subtitles": [
+            {
+              "file": "031-api-gateway-fvi1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-api-gateway-fvi1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "content-delivery-network-cdn-osiz",
+      "title": "شبکه‌ی توزیع محتوا (CDN)",
+      "summary": "تحویل سریع‌تر محتوای استاتیک به کاربر.",
+      "section": "زیرساخت ارتباطی",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "033-content-delivery-network-cdn-osiz.mp4",
+          "subtitles": [
+            {
+              "file": "033-content-delivery-network-cdn-osiz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-content-delivery-network-cdn-osiz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "relational-databases-acid-transactions-yo6w",
+      "title": "پایگاه‌داده‌ی رابطه‌ای و تراکنش‌های ACID",
+      "summary": "تضمین‌های تراکنشی پایگاه‌داده‌ی رابطه‌ای.",
+      "section": "پایگاه‌داده",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "036-relational-databases-acid-transactions-yo6w.mp4",
+          "subtitles": [
+            {
+              "file": "036-relational-databases-acid-transactions-yo6w.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-relational-databases-acid-transactions-yo6w.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "non-relational-databases-7ktv",
+      "title": "پایگاه‌داده‌ی غیررابطه‌ای",
+      "summary": "انواع NoSQL و کاربردشون.",
+      "section": "پایگاه‌داده",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "038-non-relational-databases-7ktv.mp4",
+          "subtitles": [
+            {
+              "file": "038-non-relational-databases-7ktv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-non-relational-databases-7ktv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "techniques-to-improve-performance-availability-scalability-of-databases-s4vs",
+      "title": "تکنیک‌های بهبود کارایی، دسترس‌پذیری و مقیاس‌پذیری پایگاه‌داده",
+      "summary": "شاردینگ، ریپلیکیشن و تکنیک‌های دیگه.",
+      "section": "پایگاه‌داده",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "040-techniques-to-improve-performance-availability-scalability-of-databases-s4vs.mp4",
+          "subtitles": [
+            {
+              "file": "040-techniques-to-improve-performance-availability-scalability-of-databases-s4vs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-techniques-to-improve-performance-availability-scalability-of-databases-s4vs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "brewers-cap-theorem-qnuv",
+      "title": "قضیه‌ی CAP",
+      "summary": "معامله‌ی بین سازگاری، دسترس‌پذیری و تحمل افراز.",
+      "section": "پایگاه‌داده",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "042-brewers-cap-theorem-qnuv.mp4",
+          "subtitles": [
+            {
+              "file": "042-brewers-cap-theorem-qnuv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-brewers-cap-theorem-qnuv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scalable-unstructured-data-storage-eidn",
+      "title": "ذخیره‌سازی مقیاس‌پذیر داده‌ی بدون‌ساختار",
+      "summary": "ذخیره‌ی فایل و داده‌ی حجیم.",
+      "section": "پایگاه‌داده",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "044-scalable-unstructured-data-storage-eidn.mp4",
+          "subtitles": [
+            {
+              "file": "044-scalable-unstructured-data-storage-eidn.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-scalable-unstructured-data-storage-eidn.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-software-architecture-patterns-styles-ve09",
+      "title": "مقدمه‌ای بر الگوها و سبک‌های معماری نرم‌افزار",
+      "summary": "دسته‌بندی کلی سبک‌های معماری.",
+      "section": "سبک‌ها و الگوهای معماری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "046-introduction-to-software-architecture-patterns-styles-ve09.mp4",
+          "subtitles": [
+            {
+              "file": "046-introduction-to-software-architecture-patterns-styles-ve09.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-introduction-to-software-architecture-patterns-styles-ve09.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "multi-tier-architecture-pv6l",
+      "title": "معماری چندلایه (Multi-Tier)",
+      "summary": "تقسیم سیستم به لایه‌های ارائه، منطق و داده.",
+      "section": "سبک‌ها و الگوهای معماری",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "047-multi-tier-architecture-pv6l.mp4",
+          "subtitles": [
+            {
+              "file": "047-multi-tier-architecture-pv6l.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-multi-tier-architecture-pv6l.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "microservices-architecture-csoi",
+      "title": "معماری میکروسرویس",
+      "summary": "تقسیم سیستم به سرویس‌های کوچیک و مستقل.",
+      "section": "سبک‌ها و الگوهای معماری",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "049-microservices-architecture-csoi.mp4",
+          "subtitles": [
+            {
+              "file": "049-microservices-architecture-csoi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "049-microservices-architecture-csoi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "event-driven-architecture-4rsj",
+      "title": "معماری رویدادمحور",
+      "summary": "ارتباط اجزا از طریق رویداد.",
+      "section": "سبک‌ها و الگوهای معماری",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "051-event-driven-architecture-4rsj.mp4",
+          "subtitles": [
+            {
+              "file": "051-event-driven-architecture-4rsj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-event-driven-architecture-4rsj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-event-stream-processing-and-tumbling-window-strategy-hdxs",
+      "title": "مقدمه‌ای بر پردازش جریان رویداد و استراتژی پنجره‌ی چرخشی",
+      "summary": "مفهوم پردازش جریان و پنجره‌ی Tumbling.",
+      "section": "پردازش جریان رویداد",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "053-introduction-to-event-stream-processing-and-tumbling-window-strategy-hdxs.mp4",
+          "subtitles": [
+            {
+              "file": "053-introduction-to-event-stream-processing-and-tumbling-window-strategy-hdxs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-introduction-to-event-stream-processing-and-tumbling-window-strategy-hdxs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "hopping-window-event-stream-processing-strategy-y8zd",
+      "title": "استراتژی پنجره‌ی جهشی (Hopping Window)",
+      "summary": "پنجره‌های هم‌پوشان در پردازش جریان.",
+      "section": "پردازش جریان رویداد",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "054-hopping-window-event-stream-processing-strategy-y8zd.mp4",
+          "subtitles": [
+            {
+              "file": "054-hopping-window-event-stream-processing-strategy-y8zd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-hopping-window-event-stream-processing-strategy-y8zd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sliding-window-event-stream-processing-strategy-zjiw",
+      "title": "استراتژی پنجره‌ی لغزان (Sliding Window)",
+      "summary": "پنجره‌ی پیوسته در پردازش جریان.",
+      "section": "پردازش جریان رویداد",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "055-sliding-window-event-stream-processing-strategy-zjiw.mp4",
+          "subtitles": [
+            {
+              "file": "055-sliding-window-event-stream-processing-strategy-zjiw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-sliding-window-event-stream-processing-strategy-zjiw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "session-window-event-stream-processing-strategy-emmk",
+      "title": "استراتژی پنجره‌ی نشست (Session Window)",
+      "summary": "پنجره‌بندی بر پایه‌ی فعالیت کاربر.",
+      "section": "پردازش جریان رویداد",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "056-session-window-event-stream-processing-strategy-emmk.mp4",
+          "subtitles": [
+            {
+              "file": "056-session-window-event-stream-processing-strategy-emmk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-session-window-event-stream-processing-strategy-emmk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "time-in-stream-processing-and-handling-late-arrival-of-events-bnrh",
+      "title": "زمان در پردازش جریان و مدیریت رویدادهای دیرآمده",
+      "summary": "تفاوت زمان رویداد و زمان پردازش.",
+      "section": "پردازش جریان رویداد",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "057-time-in-stream-processing-and-handling-late-arrival-of-events-bnrh.mp4",
+          "subtitles": [
+            {
+              "file": "057-time-in-stream-processing-and-handling-late-arrival-of-events-bnrh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-time-in-stream-processing-and-handling-late-arrival-of-events-bnrh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-big-data-oyen",
+      "title": "مقدمه‌ای بر داده‌ی عظیم (Big Data)",
+      "summary": "ویژگی‌های داده‌ی عظیم.",
+      "section": "داده‌ی عظیم (Big Data)",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "060-introduction-to-big-data-oyen.mp4",
+          "subtitles": [
+            {
+              "file": "060-introduction-to-big-data-oyen.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-introduction-to-big-data-oyen.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "big-data-processing-strategies-gbjz",
+      "title": "استراتژی‌های پردازش داده‌ی عظیم",
+      "summary": "پردازش دسته‌ای در برابر جریانی.",
+      "section": "داده‌ی عظیم (Big Data)",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "061-big-data-processing-strategies-gbjz.mp4",
+          "subtitles": [
+            {
+              "file": "061-big-data-processing-strategies-gbjz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-big-data-processing-strategies-gbjz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "lambda-architecture-c5a0",
+      "title": "معماری لامبدا",
+      "summary": "ترکیب پردازش دسته‌ای و بلادرنگ.",
+      "section": "داده‌ی عظیم (Big Data)",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "062-lambda-architecture-c5a0.mp4",
+          "subtitles": [
+            {
+              "file": "062-lambda-architecture-c5a0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-lambda-architecture-c5a0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "design-a-highly-scalable-discussion-forum-1-requirements-api-bs49",
+      "title": "طراحی انجمن گفتگوی مقیاس‌پذیر — بخش ۱: نیازمندی و API",
+      "summary": "شروع طراحی یه فروم بحث مقیاس‌پذیر.",
+      "section": "مطالعه‌ی موردی: انجمن گفتگو",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "063-design-a-highly-scalable-discussion-forum-1-requirements-api-bs49.mp4",
+          "subtitles": [
+            {
+              "file": "063-design-a-highly-scalable-discussion-forum-1-requirements-api-bs49.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-design-a-highly-scalable-discussion-forum-1-requirements-api-bs49.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "design-a-highly-scalable-discussion-forum-2-functional-architecture-diagram-zpak",
+      "title": "طراحی انجمن گفتگوی مقیاس‌پذیر — بخش ۲: دیاگرام معماری کارکردی",
+      "summary": "ترسیم معماری کارکردی فروم.",
+      "section": "مطالعه‌ی موردی: انجمن گفتگو",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "064-design-a-highly-scalable-discussion-forum-2-functional-architecture-diagram-zpak.mp4",
+          "subtitles": [
+            {
+              "file": "064-design-a-highly-scalable-discussion-forum-2-functional-architecture-diagram-zpak.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-design-a-highly-scalable-discussion-forum-2-functional-architecture-diagram-zpak.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "design-a-highly-scalable-discussion-forum-3-final-software-architecture-7ogr",
+      "title": "طراحی انجمن گفتگوی مقیاس‌پذیر — بخش ۳: معماری نهایی",
+      "summary": "جمع‌بندی معماری نهایی فروم.",
+      "section": "مطالعه‌ی موردی: انجمن گفتگو",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "065-design-a-highly-scalable-discussion-forum-3-final-software-architecture-7ogr.mp4",
+          "subtitles": [
+            {
+              "file": "065-design-a-highly-scalable-discussion-forum-3-final-software-architecture-7ogr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-design-a-highly-scalable-discussion-forum-3-final-software-architecture-7ogr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "design-an-e-commerce-marketplace-platform-1-requirements-sequence-diagram-lb80",
+      "title": "طراحی پلتفرم مارکت‌پلیس ای‌کامرس — بخش ۱: نیازمندی و دیاگرام توالی",
+      "summary": "شروع طراحی یه مارکت‌پلیس آنلاین.",
+      "section": "مطالعه‌ی موردی: مارکت‌پلیس ای‌کامرس",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "066-design-an-e-commerce-marketplace-platform-1-requirements-sequence-diagram-lb80.mp4",
+          "subtitles": [
+            {
+              "file": "066-design-an-e-commerce-marketplace-platform-1-requirements-sequence-diagram-lb80.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-design-an-e-commerce-marketplace-platform-1-requirements-sequence-diagram-lb80.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "design-an-e-commerce-marketplace-platform-2-functional-diagram-y3dr",
+      "title": "طراحی پلتفرم مارکت‌پلیس ای‌کامرس — بخش ۲: دیاگرام کارکردی",
+      "summary": "ترسیم معماری کارکردی مارکت‌پلیس.",
+      "section": "مطالعه‌ی موردی: مارکت‌پلیس ای‌کامرس",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "067-design-an-e-commerce-marketplace-platform-2-functional-diagram-y3dr.mp4",
+          "subtitles": [
+            {
+              "file": "067-design-an-e-commerce-marketplace-platform-2-functional-diagram-y3dr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-design-an-e-commerce-marketplace-platform-2-functional-diagram-y3dr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "طراحی پلتفرم مارکت‌پلیس ای‌کامرس — بخش ۳: معماری نهایی",
+      "summary": "جمع‌بندی معماری نهایی مارکت‌پلیس.",
+      "section": "مطالعه‌ی موردی: مارکت‌پلیس ای‌کامرس",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "068-design-an-e-commerce-marketplace-platform-3-final-software-architecture-d5fm.mp4",
+          "subtitles": [
+            {
+              "file": "068-design-an-e-commerce-marketplace-platform-3-final-software-architecture-d5fm.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-design-an-e-commerce-marketplace-platform-3-final-software-architecture-d5fm.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

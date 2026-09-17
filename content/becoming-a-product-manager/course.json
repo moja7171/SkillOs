@@ -1,0 +1,2298 @@
+{
+  "title": "تبدیل‌شدن به مدیر محصول",
+  "description": "نقش مدیر محصول از صفر — از ایده و نیاز کاربر تا MVP، متریک، نقشه‌راه و ورود به بازار کار.",
+  "outcome_statement": "مهارت‌های عملی مدیریت محصول رو یاد می‌گیری: کشف نیاز کاربر، طراحی و آزمایش MVP، تعریف متریک، نوشتن Epic/User Story، و آماده‌شدن برای مصاحبه‌ی شغلی PM.",
+  "source_note": "برگرفته از دوره‌ی «Becoming a Product Manager».",
+  "video_base_url": "/media/becoming-a-product-manager/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "مدیر محصول کیه؟",
+      "summary": "تعریف نقش مدیر محصول.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "001-what-is-a-product-manager.mp4",
+          "subtitles": [
+            {
+              "file": "001-what-is-a-product-manager.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-what-is-a-product-manager.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-a-product",
+      "title": "محصول یعنی چی؟",
+      "summary": "تعریف کلی محصول.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "002-what-is-a-product.mp4",
+          "subtitles": [
+            {
+              "file": "002-what-is-a-product.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-what-is-a-product.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "three-different-types-of-product-manager-roles",
+      "title": "سه نوع نقش مدیر محصول",
+      "summary": "تفاوت نقش‌های مختلف PM.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "003-three-different-types-of-product-manager-roles.mp4",
+          "subtitles": [
+            {
+              "file": "003-three-different-types-of-product-manager-roles.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-three-different-types-of-product-manager-roles.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-think-about-the-type-of-pm-you-want-to-be",
+      "title": "چطور نوع PMای که می‌خوای باشی رو انتخاب کنی",
+      "summary": "کمک به انتخاب مسیر شغلی PM.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "004-how-to-think-about-the-type-of-pm-you-want-to-be.mp4",
+          "subtitles": [
+            {
+              "file": "004-how-to-think-about-the-type-of-pm-you-want-to-be.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-how-to-think-about-the-type-of-pm-you-want-to-be.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-vs-project-management",
+      "title": "مدیریت محصول در برابر مدیریت پروژه",
+      "summary": "تفاوت این دو نقش.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "005-product-vs-project-management.mp4",
+          "subtitles": [
+            {
+              "file": "005-product-vs-project-management.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-product-vs-project-management.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "a-day-in-the-life",
+      "title": "یه روز از زندگی یه PM",
+      "summary": "نمونه‌ای از کار روزانه‌ی مدیر محصول.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "006-a-day-in-the-life.mp4",
+          "subtitles": [
+            {
+              "file": "006-a-day-in-the-life.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-a-day-in-the-life.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "why-product-management-is-awesome",
+      "title": "چرا مدیریت محصول شغل فوق‌العاده‌ایه",
+      "summary": "مزایای این مسیر شغلی.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "007-why-product-management-is-awesome.mp4",
+          "subtitles": [
+            {
+              "file": "007-why-product-management-is-awesome.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-why-product-management-is-awesome.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "hooray-for-free-stuff",
+      "title": "منابع رایگان تکمیلی",
+      "summary": "معرفی منابع اضافه‌ی دوره.",
+      "section": "مقدمه‌ای بر مدیریت محصول",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "008-hooray-for-free-stuff.mp4",
+          "subtitles": [
+            {
+              "file": "008-hooray-for-free-stuff.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-hooray-for-free-stuff.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-four-major-phases-of-the-product-lifecycle",
+      "title": "چهار فاز اصلی چرخه‌ی عمر محصول",
+      "summary": "نمای‌کلی چرخه‌ی عمر محصول.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "009-the-four-major-phases-of-the-product-lifecycle.mp4",
+          "subtitles": [
+            {
+              "file": "009-the-four-major-phases-of-the-product-lifecycle.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-the-four-major-phases-of-the-product-lifecycle.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-lifecycle-phases-real-world-examples",
+      "title": "مثال‌های واقعی از فازهای چرخه‌ی عمر",
+      "summary": "نمونه‌های واقعی از هر فاز.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "010-product-lifecycle-phases-real-world-examples.mp4",
+          "subtitles": [
+            {
+              "file": "010-product-lifecycle-phases-real-world-examples.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-product-lifecycle-phases-real-world-examples.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-development-process",
+      "title": "فرایند توسعه‌ی محصول",
+      "summary": "گام‌های کلی توسعه‌ی محصول.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "011-product-development-process.mp4",
+          "subtitles": [
+            {
+              "file": "011-product-development-process.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-product-development-process.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "getting-deeper-into-the-product-development-process",
+      "title": "عمیق‌تر شدن توی فرایند توسعه‌ی محصول",
+      "summary": "جزئیات بیشتر فرایند توسعه.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "012-getting-deeper-into-the-product-development-process.mp4",
+          "subtitles": [
+            {
+              "file": "012-getting-deeper-into-the-product-development-process.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-getting-deeper-into-the-product-development-process.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-lean-product-development",
+      "title": "توسعه‌ی محصول ناب (Lean) چیه؟",
+      "summary": "اصول توسعه‌ی ناب.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "013-what-is-lean-product-development.mp4",
+          "subtitles": [
+            {
+              "file": "013-what-is-lean-product-development.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-what-is-lean-product-development.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-agile",
+      "title": "چابک (Agile) چیه؟",
+      "summary": "معرفی روش چابک.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "014-what-is-agile.mp4",
+          "subtitles": [
+            {
+              "file": "014-what-is-agile.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-what-is-agile.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-scrum-and-how-does-it-work",
+      "title": "اسکرام چیه و چطور کار می‌کنه؟",
+      "summary": "معرفی چارچوب اسکرام.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "015-what-is-scrum-and-how-does-it-work.mp4",
+          "subtitles": [
+            {
+              "file": "015-what-is-scrum-and-how-does-it-work.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-what-is-scrum-and-how-does-it-work.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-kanban-and-how-does-it-work",
+      "title": "کانبان چیه و چطور کار می‌کنه؟",
+      "summary": "معرفی روش کانبان.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "016-what-is-kanban-and-how-does-it-work.mp4",
+          "subtitles": [
+            {
+              "file": "016-what-is-kanban-and-how-does-it-work.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-what-is-kanban-and-how-does-it-work.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-waterfall-development",
+      "title": "توسعه‌ی آبشاری (Waterfall) چیه؟",
+      "summary": "معرفی مدل آبشاری.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "017-what-is-waterfall-development.mp4",
+          "subtitles": [
+            {
+              "file": "017-what-is-waterfall-development.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-what-is-waterfall-development.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "real-world-examples-of-waterfall-and-agile",
+      "title": "مثال‌های واقعی از آبشاری و چابک",
+      "summary": "مقایسه‌ی این دو مدل با مثال.",
+      "section": "چرخه‌ی عمر و فرایند توسعه‌ی محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "018-real-world-examples-of-waterfall-and-agile.mp4",
+          "subtitles": [
+            {
+              "file": "018-real-world-examples-of-waterfall-and-agile.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-real-world-examples-of-waterfall-and-agile.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-ideas-and-user-needs",
+      "title": "مقدمه‌ای بر ایده‌ها و نیاز کاربر",
+      "summary": "از کجا ایده و نیاز واقعی پیدا کنیم.",
+      "section": "ایده‌ها و نیاز کاربر",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "019-introduction-to-ideas-and-user-needs.mp4",
+          "subtitles": [
+            {
+              "file": "019-introduction-to-ideas-and-user-needs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-introduction-to-ideas-and-user-needs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "where-ideas-come-from-as-a-pm",
+      "title": "ایده‌ها از کجا میان؟",
+      "summary": "منابع ایده برای مدیر محصول.",
+      "section": "ایده‌ها و نیاز کاربر",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "020-where-ideas-come-from-as-a-pm.mp4",
+          "subtitles": [
+            {
+              "file": "020-where-ideas-come-from-as-a-pm.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-where-ideas-come-from-as-a-pm.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "getting-to-the-real-user-needs",
+      "title": "رسیدن به نیاز واقعی کاربر",
+      "summary": "فرق نیاز واقعی و خواسته‌ی سطحی.",
+      "section": "ایده‌ها و نیاز کاربر",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "021-getting-to-the-real-user-needs.mp4",
+          "subtitles": [
+            {
+              "file": "021-getting-to-the-real-user-needs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-getting-to-the-real-user-needs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "users-vs-customers",
+      "title": "کاربر در برابر مشتری",
+      "summary": "تفاوت این دو مفهوم.",
+      "section": "ایده‌ها و نیاز کاربر",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "022-users-vs-customers.mp4",
+          "subtitles": [
+            {
+              "file": "022-users-vs-customers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-users-vs-customers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "market-research-sizing-the-market",
+      "title": "تحقیق بازار و اندازه‌گیری بازار",
+      "summary": "چطور اندازه‌ی بازار رو بسنجیم.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "023-market-research-sizing-the-market.mp4",
+          "subtitles": [
+            {
+              "file": "023-market-research-sizing-the-market.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-market-research-sizing-the-market.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-finding-competitors",
+      "title": "مقدمه‌ای بر پیدا کردن رقبا",
+      "summary": "چرا شناخت رقبا مهمه.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "024-introduction-to-finding-competitors.mp4",
+          "subtitles": [
+            {
+              "file": "024-introduction-to-finding-competitors.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-introduction-to-finding-competitors.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "find-competitors-as-a-product-manager",
+      "title": "پیدا کردن رقبا به‌عنوان مدیر محصول",
+      "summary": "روش‌های شناسایی رقبا.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "025-find-competitors-as-a-product-manager.mp4",
+          "subtitles": [
+            {
+              "file": "025-find-competitors-as-a-product-manager.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-find-competitors-as-a-product-manager.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "direct-indirect-and-potential-competitors-and-their-impact",
+      "title": "رقبای مستقیم، غیرمستقیم و بالقوه",
+      "summary": "انواع رقبا و اثرشون.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "026-direct-indirect-and-potential-competitors-and-their-impact.mp4",
+          "subtitles": [
+            {
+              "file": "026-direct-indirect-and-potential-competitors-and-their-impact.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-direct-indirect-and-potential-competitors-and-their-impact.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-five-criteria-for-understanding-competitors",
+      "title": "پنج معیار برای شناخت رقبا",
+      "summary": "معیارهای اول برای تحلیل رقیب.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "027-the-five-criteria-for-understanding-competitors.mp4",
+          "subtitles": [
+            {
+              "file": "027-the-five-criteria-for-understanding-competitors.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-the-five-criteria-for-understanding-competitors.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-last-three-criteria-for-understanding-competitors",
+      "title": "سه معیار پایانی برای شناخت رقبا",
+      "summary": "معیارهای باقی‌مانده‌ی تحلیل رقیب.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "028-the-last-three-criteria-for-understanding-competitors.mp4",
+          "subtitles": [
+            {
+              "file": "028-the-last-three-criteria-for-understanding-competitors.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-the-last-three-criteria-for-understanding-competitors.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "monitor-competitors",
+      "title": "پایش مداوم رقبا",
+      "summary": "چطور رقبا رو مرتب زیرنظر داشته باشیم.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "029-monitor-competitors.mp4",
+          "subtitles": [
+            {
+              "file": "029-monitor-competitors.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-monitor-competitors.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-a-feature-table",
+      "title": "جدول فیچر چیه؟",
+      "summary": "ابزاری برای مقایسه‌ی فیچرها.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "030-what-is-a-feature-table.mp4",
+          "subtitles": [
+            {
+              "file": "030-what-is-a-feature-table.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-what-is-a-feature-table.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "put-together-a-feature-table",
+      "title": "ساخت یه جدول فیچر",
+      "summary": "گام‌های ساخت جدول فیچر.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "031-put-together-a-feature-table.mp4",
+          "subtitles": [
+            {
+              "file": "031-put-together-a-feature-table.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-put-together-a-feature-table.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "practice-building-a-feature-table",
+      "title": "تمرین ساخت جدول فیچر",
+      "summary": "تمرین عملی جدول فیچر.",
+      "section": "تحقیق بازار و رقبا",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "032-practice-building-a-feature-table.mp4",
+          "subtitles": [
+            {
+              "file": "032-practice-building-a-feature-table.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-practice-building-a-feature-table.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-do-we-ultimately-care-about-as-a-product-manager",
+      "title": "نهایتاً به چی به‌عنوان PM اهمیت می‌دیم؟",
+      "summary": "اولویت اصلی مدیر محصول.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "033-what-do-we-ultimately-care-about-as-a-product-manager.mp4",
+          "subtitles": [
+            {
+              "file": "033-what-do-we-ultimately-care-about-as-a-product-manager.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-what-do-we-ultimately-care-about-as-a-product-manager.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-customer-development",
+      "title": "توسعه‌ی مشتری چیه؟",
+      "summary": "معرفی فرایند Customer Development.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "034-what-is-customer-development.mp4",
+          "subtitles": [
+            {
+              "file": "034-what-is-customer-development.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-what-is-customer-development.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-four-types-of-interviews",
+      "title": "چهار نوع مصاحبه",
+      "summary": "انواع مصاحبه با کاربر/مشتری.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "035-the-four-types-of-interviews.mp4",
+          "subtitles": [
+            {
+              "file": "035-the-four-types-of-interviews.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-the-four-types-of-interviews.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "key-differences-in-customer-development",
+      "title": "تفاوت‌های کلیدی توی توسعه‌ی مشتری",
+      "summary": "نکات مهم این فرایند.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "036-key-differences-in-customer-development.mp4",
+          "subtitles": [
+            {
+              "file": "036-key-differences-in-customer-development.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-key-differences-in-customer-development.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "who-you-should-talk-to",
+      "title": "با کی باید صحبت کنیم؟",
+      "summary": "انتخاب مصاحبه‌شونده‌ی درست.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "037-who-you-should-talk-to.mp4",
+          "subtitles": [
+            {
+              "file": "037-who-you-should-talk-to.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-who-you-should-talk-to.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "find-interviewees-externally",
+      "title": "پیدا کردن مصاحبه‌شونده از بیرون سازمان",
+      "summary": "روش‌های یافتن مصاحبه‌شونده‌ی بیرونی.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "038-find-interviewees-externally.mp4",
+          "subtitles": [
+            {
+              "file": "038-find-interviewees-externally.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-find-interviewees-externally.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "find-interviewees-internally",
+      "title": "پیدا کردن مصاحبه‌شونده از داخل سازمان",
+      "summary": "روش‌های یافتن مصاحبه‌شونده‌ی داخلی.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "039-find-interviewees-internally.mp4",
+          "subtitles": [
+            {
+              "file": "039-find-interviewees-internally.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-find-interviewees-internally.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-get-them-to-talk",
+      "title": "چطور راضیشون کنیم حرف بزنن",
+      "summary": "تکنیک‌های جلب همکاری مصاحبه‌شونده.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "040-how-to-get-them-to-talk.mp4",
+          "subtitles": [
+            {
+              "file": "040-how-to-get-them-to-talk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-how-to-get-them-to-talk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "practice-writing-emails",
+      "title": "تمرین نوشتن ایمیل دعوت",
+      "summary": "تمرین نوشتن ایمیل درخواست مصاحبه.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "041-practice-writing-emails.mp4",
+          "subtitles": [
+            {
+              "file": "041-practice-writing-emails.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-practice-writing-emails.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-run-a-customer-interview-correctly",
+      "title": "چطور مصاحبه‌ی مشتری رو درست اجرا کنیم",
+      "summary": "اصول اجرای درست مصاحبه.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "042-how-to-run-a-customer-interview-correctly.mp4",
+          "subtitles": [
+            {
+              "file": "042-how-to-run-a-customer-interview-correctly.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-how-to-run-a-customer-interview-correctly.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "good-questions-bad-questions",
+      "title": "سؤال خوب، سؤال بد",
+      "summary": "تشخیص سؤال‌های مؤثر از غیرمؤثر.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "043-good-questions-bad-questions.mp4",
+          "subtitles": [
+            {
+              "file": "043-good-questions-bad-questions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-good-questions-bad-questions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "build-user-personas-off-your-interviews",
+      "title": "ساخت پرسونای کاربر از مصاحبه‌ها",
+      "summary": "تبدیل یافته‌های مصاحبه به پرسونا.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "044-build-user-personas-off-your-interviews.mp4",
+          "subtitles": [
+            {
+              "file": "044-build-user-personas-off-your-interviews.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-build-user-personas-off-your-interviews.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "real-world-examples-of-user-persona",
+      "title": "مثال‌های واقعی از پرسونای کاربر",
+      "summary": "نمونه‌های واقعی پرسونا.",
+      "section": "توسعه‌ی مشتری (Customer Development)",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "045-real-world-examples-of-user-persona.mp4",
+          "subtitles": [
+            {
+              "file": "045-real-world-examples-of-user-persona.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "045-real-world-examples-of-user-persona.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-product-manager-and-the-data-diet",
+      "title": "مدیر محصول و رژیم داده",
+      "summary": "تعادل بین داده و شهود.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "046-the-product-manager-and-the-data-diet.mp4",
+          "subtitles": [
+            {
+              "file": "046-the-product-manager-and-the-data-diet.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-the-product-manager-and-the-data-diet.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-an-mvp",
+      "title": "MVP چیه؟",
+      "summary": "معرفی محصول حداقلی قابل‌عرضه.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "047-what-is-an-mvp.mp4",
+          "subtitles": [
+            {
+              "file": "047-what-is-an-mvp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-what-is-an-mvp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-do-product-managers-think-about-mvps",
+      "title": "مدیران محصول چطور به MVP فکر می‌کنن",
+      "summary": "نگرش درست به MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "048-how-do-product-managers-think-about-mvps.mp4",
+          "subtitles": [
+            {
+              "file": "048-how-do-product-managers-think-about-mvps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-how-do-product-managers-think-about-mvps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "seven-steps-to-running-an-mvp-experiment",
+      "title": "هفت گام اجرای آزمایش MVP",
+      "summary": "فرایند کامل آزمایش MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "049-seven-steps-to-running-an-mvp-experiment.mp4",
+          "subtitles": [
+            {
+              "file": "049-seven-steps-to-running-an-mvp-experiment.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "049-seven-steps-to-running-an-mvp-experiment.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "identify-your-assumptions",
+      "title": "فرض‌هات رو شناسایی کن",
+      "summary": "اولین گام آزمایش MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "050-identify-your-assumptions.mp4",
+          "subtitles": [
+            {
+              "file": "050-identify-your-assumptions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "050-identify-your-assumptions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "follow-along-identify-the-assumption-for-zirx",
+      "title": "تمرین عملی: شناسایی فرض برای ZIRX",
+      "summary": "مثال عملی شناسایی فرض.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "051-follow-along-identify-the-assumption-for-zirx.mp4",
+          "subtitles": [
+            {
+              "file": "051-follow-along-identify-the-assumption-for-zirx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-follow-along-identify-the-assumption-for-zirx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "find-the-riskiest-assumption-of-them-all",
+      "title": "پرریسک‌ترین فرض رو پیدا کن",
+      "summary": "اولویت‌بندی فرض‌ها بر پایه‌ی ریسک.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "052-find-the-riskiest-assumption-of-them-all.mp4",
+          "subtitles": [
+            {
+              "file": "052-find-the-riskiest-assumption-of-them-all.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "052-find-the-riskiest-assumption-of-them-all.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "make-decisions-the-risk-difficulty-square",
+      "title": "تصمیم‌گیری با مربع ریسک-دشواری",
+      "summary": "ابزاری برای اولویت‌بندی آزمایش.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "053-make-decisions-the-risk-difficulty-square.mp4",
+          "subtitles": [
+            {
+              "file": "053-make-decisions-the-risk-difficulty-square.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-make-decisions-the-risk-difficulty-square.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-a-hypothesis",
+      "title": "فرضیه چیه؟",
+      "summary": "تعریف فرضیه‌ی قابل‌آزمایش.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "054-what-is-a-hypothesis.mp4",
+          "subtitles": [
+            {
+              "file": "054-what-is-a-hypothesis.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-what-is-a-hypothesis.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "put-together-a-hypothesis",
+      "title": "ساخت یه فرضیه",
+      "summary": "گام‌های نوشتن فرضیه.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "055-put-together-a-hypothesis.mp4",
+          "subtitles": [
+            {
+              "file": "055-put-together-a-hypothesis.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-put-together-a-hypothesis.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "follow-along-identify-zirx-s-hypothesis",
+      "title": "تمرین عملی: فرضیه‌ی ZIRX",
+      "summary": "مثال عملی نوشتن فرضیه.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "056-follow-along-identify-zirx-s-hypothesis.mp4",
+          "subtitles": [
+            {
+              "file": "056-follow-along-identify-zirx-s-hypothesis.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-follow-along-identify-zirx-s-hypothesis.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-s-a-minimum-criterion-for-success",
+      "title": "معیار حداقلی موفقیت (MCS) چیه؟",
+      "summary": "تعریف معیار موفقیت آزمایش.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "057-what-s-a-minimum-criterion-for-success.mp4",
+          "subtitles": [
+            {
+              "file": "057-what-s-a-minimum-criterion-for-success.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-what-s-a-minimum-criterion-for-success.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "create-a-formula-for-your-mcs",
+      "title": "ساخت فرمول برای MCS",
+      "summary": "فرمول‌نویسی معیار موفقیت.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "058-create-a-formula-for-your-mcs.mp4",
+          "subtitles": [
+            {
+              "file": "058-create-a-formula-for-your-mcs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-create-a-formula-for-your-mcs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "optional-make-the-calculation-for-startups",
+      "title": "اختیاری: محاسبه برای استارتاپ‌ها",
+      "summary": "نمونه‌ی محاسبه برای استارتاپ.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "059-optional-make-the-calculation-for-startups.mp4",
+          "subtitles": [
+            {
+              "file": "059-optional-make-the-calculation-for-startups.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-optional-make-the-calculation-for-startups.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "mvp-techniques-emails-shadows-404-and-coming-soon",
+      "title": "تکنیک‌های MVP: ایمیل، سایه، ۴۰۴ و به‌زودی",
+      "summary": "دسته‌ی اول تکنیک‌های MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "060-mvp-techniques-emails-shadows-404-and-coming-soon.mp4",
+          "subtitles": [
+            {
+              "file": "060-mvp-techniques-emails-shadows-404-and-coming-soon.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-mvp-techniques-emails-shadows-404-and-coming-soon.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "more-mvp-techniques-explainer-fake-landing-page-and-pitch-experiments",
+      "title": "تکنیک‌های بیشتر MVP: ویدیوی معرفی، صفحه‌ی فرود جعلی و پیچ",
+      "summary": "دسته‌ی دوم تکنیک‌های MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "061-more-mvp-techniques-explainer-fake-landing-page-and-pitch-experiments.mp4",
+          "subtitles": [
+            {
+              "file": "061-more-mvp-techniques-explainer-fake-landing-page-and-pitch-experiments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-more-mvp-techniques-explainer-fake-landing-page-and-pitch-experiments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "even-more-mvp-techniques-concierge-piecemeal-and-wizard-of-oz",
+      "title": "تکنیک‌های دیگر MVP: کنسیرژ، تکه‌تکه و ویزارد آز",
+      "summary": "دسته‌ی سوم تکنیک‌های MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "062-even-more-mvp-techniques-concierge-piecemeal-and-wizard-of-oz.mp4",
+          "subtitles": [
+            {
+              "file": "062-even-more-mvp-techniques-concierge-piecemeal-and-wizard-of-oz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-even-more-mvp-techniques-concierge-piecemeal-and-wizard-of-oz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "email-based-mvps",
+      "title": "MVP مبتنی بر ایمیل",
+      "summary": "جزئیات تکنیک ایمیلی.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "063-email-based-mvps.mp4",
+          "subtitles": [
+            {
+              "file": "063-email-based-mvps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-email-based-mvps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "shadow-buttons",
+      "title": "دکمه‌های سایه (Shadow Buttons)",
+      "summary": "تست تقاضا با دکمه‌ی غیرفعال.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "064-shadow-buttons.mp4",
+          "subtitles": [
+            {
+              "file": "064-shadow-buttons.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-shadow-buttons.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "404-and-coming-soon-mvps",
+      "title": "MVP نوع ۴۰۴ و به‌زودی",
+      "summary": "تست تقاضا با صفحه‌ی ناموجود.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "065-404-and-coming-soon-mvps.mp4",
+          "subtitles": [
+            {
+              "file": "065-404-and-coming-soon-mvps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-404-and-coming-soon-mvps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "explainer-videos",
+      "title": "ویدیوهای معرفی محصول",
+      "summary": "تست ایده با ویدیوی توضیحی.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "066-explainer-videos.mp4",
+          "subtitles": [
+            {
+              "file": "066-explainer-videos.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-explainer-videos.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "piecemeal-mvps",
+      "title": "MVP تکه‌تکه (Piecemeal)",
+      "summary": "ساخت MVP با ابزارهای موجود.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "067-piecemeal-mvps.mp4",
+          "subtitles": [
+            {
+              "file": "067-piecemeal-mvps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-piecemeal-mvps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "concierge-service-mvps",
+      "title": "MVP سرویس کنسیرژی",
+      "summary": "انجام دستی خدمت پیش از خودکارسازی.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "068-concierge-service-mvps.mp4",
+          "subtitles": [
+            {
+              "file": "068-concierge-service-mvps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-concierge-service-mvps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "optional-how-do-big-companies-think-about-mvp-experiments",
+      "title": "اختیاری: شرکت‌های بزرگ چطور به آزمایش MVP فکر می‌کنن",
+      "summary": "تفاوت رویکرد شرکت بزرگ.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "069-optional-how-do-big-companies-think-about-mvp-experiments.mp4",
+          "subtitles": [
+            {
+              "file": "069-optional-how-do-big-companies-think-about-mvp-experiments.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "069-optional-how-do-big-companies-think-about-mvp-experiments.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "evaluating-results-and-learning-from-them",
+      "title": "ارزیابی نتایج و یادگیری ازشون",
+      "summary": "تحلیل نتیجه‌ی آزمایش MVP.",
+      "section": "MVP و آزمایش فرضیه",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "070-evaluating-results-and-learning-from-them.mp4",
+          "subtitles": [
+            {
+              "file": "070-evaluating-results-and-learning-from-them.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "070-evaluating-results-and-learning-from-them.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-wireframing",
+      "title": "مقدمه‌ای بر وایرفریم",
+      "summary": "معرفی وایرفریم و کاربردش.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "071-introduction-to-wireframing.mp4",
+          "subtitles": [
+            {
+              "file": "071-introduction-to-wireframing.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "071-introduction-to-wireframing.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "wireframe-mockup-prototype",
+      "title": "وایرفریم، ماکاپ و پروتوتایپ",
+      "summary": "تفاوت این سه مفهوم.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "072-wireframe-mockup-prototype.mp4",
+          "subtitles": [
+            {
+              "file": "072-wireframe-mockup-prototype.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "072-wireframe-mockup-prototype.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "jump-into-sketching",
+      "title": "شروع طراحی اسکچ",
+      "summary": "اولین قدم‌های اسکچ‌زدن.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "073-jump-into-sketching.mp4",
+          "subtitles": [
+            {
+              "file": "073-jump-into-sketching.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "073-jump-into-sketching.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "sketching-out-a-mobile-app",
+      "title": "اسکچ‌زدن یه اپ موبایل",
+      "summary": "تمرین اسکچ روی یه اپ موبایل.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "074-sketching-out-a-mobile-app.mp4",
+          "subtitles": [
+            {
+              "file": "074-sketching-out-a-mobile-app.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "074-sketching-out-a-mobile-app.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "using-pop",
+      "title": "استفاده از POP",
+      "summary": "معرفی ابزار پروتوتایپ‌سازی POP.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "075-using-pop.mp4",
+          "subtitles": [
+            {
+              "file": "075-using-pop.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "075-using-pop.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "intro-to-balsamiq",
+      "title": "مقدمه‌ای بر Balsamiq",
+      "summary": "معرفی ابزار وایرفریم Balsamiq.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "076-intro-to-balsamiq.mp4",
+          "subtitles": [
+            {
+              "file": "076-intro-to-balsamiq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "076-intro-to-balsamiq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "building-youtube-in-balsamiq",
+      "title": "ساخت یوتیوب توی Balsamiq",
+      "summary": "تمرین عملی وایرفریم با Balsamiq.",
+      "section": "وایرفریم و پروتوتایپ",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "077-building-youtube-in-balsamiq.mp4",
+          "subtitles": [
+            {
+              "file": "077-building-youtube-in-balsamiq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "077-building-youtube-in-balsamiq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-metrics",
+      "title": "مقدمه‌ای بر متریک‌ها",
+      "summary": "اهمیت متریک برای مدیر محصول.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "078-introduction-to-metrics.mp4",
+          "subtitles": [
+            {
+              "file": "078-introduction-to-metrics.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "078-introduction-to-metrics.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "real-life-examples-of-metrics",
+      "title": "مثال‌های واقعی از متریک",
+      "summary": "نمونه‌های واقعی متریک محصول.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "079-real-life-examples-of-metrics.mp4",
+          "subtitles": [
+            {
+              "file": "079-real-life-examples-of-metrics.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "079-real-life-examples-of-metrics.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "metrics-of-all-kinds",
+      "title": "انواع مختلف متریک",
+      "summary": "دسته‌بندی متریک‌های محصول.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "080-metrics-of-all-kinds.mp4",
+          "subtitles": [
+            {
+              "file": "080-metrics-of-all-kinds.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "080-metrics-of-all-kinds.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-pick-good-metrics",
+      "title": "چطور متریک خوب انتخاب کنیم",
+      "summary": "معیار انتخاب متریک مناسب.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "081-how-to-pick-good-metrics.mp4",
+          "subtitles": [
+            {
+              "file": "081-how-to-pick-good-metrics.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "081-how-to-pick-good-metrics.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "using-the-heart-metrics-framework-part-1",
+      "title": "استفاده از چارچوب متریک HEART — بخش ۱",
+      "summary": "معرفی چارچوب HEART.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "082-using-the-heart-metrics-framework-part-1.mp4",
+          "subtitles": [
+            {
+              "file": "082-using-the-heart-metrics-framework-part-1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "082-using-the-heart-metrics-framework-part-1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "using-the-heart-metrics-framework-part-2",
+      "title": "استفاده از چارچوب متریک HEART — بخش ۲",
+      "summary": "ادامه‌ی چارچوب HEART.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "083-using-the-heart-metrics-framework-part-2.mp4",
+          "subtitles": [
+            {
+              "file": "083-using-the-heart-metrics-framework-part-2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "083-using-the-heart-metrics-framework-part-2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "using-the-aarrr-pirate-metrics-framework",
+      "title": "استفاده از چارچوب متریک دزدان دریایی (AARRR)",
+      "summary": "معرفی چارچوب AARRR.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "084-using-the-aarrr-pirate-metrics-framework.mp4",
+          "subtitles": [
+            {
+              "file": "084-using-the-aarrr-pirate-metrics-framework.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "084-using-the-aarrr-pirate-metrics-framework.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tracking-your-metrics-in-practice",
+      "title": "ردیابی متریک‌ها در عمل",
+      "summary": "پیاده‌سازی عملی ردیابی متریک.",
+      "section": "متریک‌ها",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "085-tracking-your-metrics-in-practice.mp4",
+          "subtitles": [
+            {
+              "file": "085-tracking-your-metrics-in-practice.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "085-tracking-your-metrics-in-practice.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-epics",
+      "title": "مقدمه‌ای بر حماسه‌ها (Epics)",
+      "summary": "معرفی مفهوم Epic.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "086-introduction-to-epics.mp4",
+          "subtitles": [
+            {
+              "file": "086-introduction-to-epics.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "086-introduction-to-epics.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "let-s-get-into-epic-specs",
+      "title": "بریم سراغ مشخصات حماسه (Epic Spec)",
+      "summary": "نوشتن سند مشخصات Epic.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "087-let-s-get-into-epic-specs.mp4",
+          "subtitles": [
+            {
+              "file": "087-let-s-get-into-epic-specs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "087-let-s-get-into-epic-specs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "user-stories-and-acceptance-criteria",
+      "title": "یوزر استوری و معیار پذیرش",
+      "summary": "نوشتن User Story و Acceptance Criteria.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "088-user-stories-and-acceptance-criteria.mp4",
+          "subtitles": [
+            {
+              "file": "088-user-stories-and-acceptance-criteria.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "088-user-stories-and-acceptance-criteria.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "real-life-examples-of-epics-specs-user-stories-and-the-backlog",
+      "title": "مثال واقعی از Epic، User Story و بک‌لاگ",
+      "summary": "نمونه‌ی واقعی این مستندات.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "089-real-life-examples-of-epics-specs-user-stories-and-the-backlog.mp4",
+          "subtitles": [
+            {
+              "file": "089-real-life-examples-of-epics-specs-user-stories-and-the-backlog.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "089-real-life-examples-of-epics-specs-user-stories-and-the-backlog.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "estimations-and-velocity",
+      "title": "تخمین‌زنی و سرعت تیم (Velocity)",
+      "summary": "برآورد کار و سنجش سرعت تیم.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "090-estimations-and-velocity.mp4",
+          "subtitles": [
+            {
+              "file": "090-estimations-and-velocity.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "090-estimations-and-velocity.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "roadmapping",
+      "title": "نقشه‌راه محصول (Roadmapping)",
+      "summary": "ساخت نقشه‌راه محصول.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "091-roadmapping.mp4",
+          "subtitles": [
+            {
+              "file": "091-roadmapping.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "091-roadmapping.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "prioritization",
+      "title": "اولویت‌بندی",
+      "summary": "اولویت‌بندی فیچر و کار.",
+      "section": "حماسه‌ها، User Story و اولویت‌بندی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "092-prioritization.mp4",
+          "subtitles": [
+            {
+              "file": "092-prioritization.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "092-prioritization.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "general-communication-skills",
+      "title": "مهارت‌های عمومی ارتباطی",
+      "summary": "اصول کلی ارتباط مؤثر PM.",
+      "section": "مهارت‌های ارتباطی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "093-general-communication-skills.mp4",
+          "subtitles": [
+            {
+              "file": "093-general-communication-skills.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "093-general-communication-skills.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-engineers",
+      "title": "کار کردن با مهندسان",
+      "summary": "همکاری مؤثر با تیم فنی.",
+      "section": "مهارت‌های ارتباطی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "094-working-with-engineers.mp4",
+          "subtitles": [
+            {
+              "file": "094-working-with-engineers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "094-working-with-engineers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-designers",
+      "title": "کار کردن با طراحان",
+      "summary": "همکاری مؤثر با تیم طراحی.",
+      "section": "مهارت‌های ارتباطی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "095-working-with-designers.mp4",
+          "subtitles": [
+            {
+              "file": "095-working-with-designers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "095-working-with-designers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-executives-and-others",
+      "title": "کار کردن با مدیران ارشد و دیگران",
+      "summary": "ارتباط با ذی‌نفعان بالادستی.",
+      "section": "مهارت‌های ارتباطی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "096-working-with-executives-and-others.mp4",
+          "subtitles": [
+            {
+              "file": "096-working-with-executives-and-others.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "096-working-with-executives-and-others.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "get-relevant-experience",
+      "title": "تجربه‌ی مرتبط کسب کن",
+      "summary": "راه‌های کسب تجربه‌ی PM.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "097-get-relevant-experience.mp4",
+          "subtitles": [
+            {
+              "file": "097-get-relevant-experience.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "097-get-relevant-experience.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "build-a-portfolio-with-a-side-project",
+      "title": "ساخت پورتفولیو با یه پروژه‌ی جانبی",
+      "summary": "ساخت نمونه‌کار PM.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "098-build-a-portfolio-with-a-side-project.mp4",
+          "subtitles": [
+            {
+              "file": "098-build-a-portfolio-with-a-side-project.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "098-build-a-portfolio-with-a-side-project.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "brand-yourself",
+      "title": "برند شخصی خودت رو بساز",
+      "summary": "معرفی خود به‌عنوان PM.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "099-brand-yourself.mp4",
+          "subtitles": [
+            {
+              "file": "099-brand-yourself.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "099-brand-yourself.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "where-to-look-and-what-to-look-for",
+      "title": "کجا و دنبال چی بگردیم",
+      "summary": "جست‌وجوی فرصت شغلی PM.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "100-where-to-look-and-what-to-look-for.mp4",
+          "subtitles": [
+            {
+              "file": "100-where-to-look-and-what-to-look-for.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "100-where-to-look-and-what-to-look-for.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "inside-advice-on-your-pm-job-hunt",
+      "title": "توصیه‌های داخلی برای جست‌وجوی شغل PM",
+      "summary": "نکات عملی جست‌وجوی کار.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "101-inside-advice-on-your-pm-job-hunt.mp4",
+          "subtitles": [
+            {
+              "file": "101-inside-advice-on-your-pm-job-hunt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "101-inside-advice-on-your-pm-job-hunt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "resumes",
+      "title": "رزومه",
+      "summary": "نوشتن رزومه‌ی PM.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "102-resumes.mp4",
+          "subtitles": [
+            {
+              "file": "102-resumes.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "102-resumes.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "interview-for-product-management",
+      "title": "مصاحبه برای مدیریت محصول",
+      "summary": "آمادگی برای مصاحبه‌ی PM.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "103-interview-for-product-management.mp4",
+          "subtitles": [
+            {
+              "file": "103-interview-for-product-management.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "103-interview-for-product-management.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-answer-interview-questions-the-right-way",
+      "title": "چطور درست به سؤالات مصاحبه جواب بدیم",
+      "summary": "تکنیک پاسخ‌دهی درست.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "104-how-to-answer-interview-questions-the-right-way.mp4",
+          "subtitles": [
+            {
+              "file": "104-how-to-answer-interview-questions-the-right-way.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "104-how-to-answer-interview-questions-the-right-way.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "insider-tips-for-getting-the-job",
+      "title": "نکات درونی برای گرفتن شغل",
+      "summary": "توصیه‌های نهایی استخدام.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "105-insider-tips-for-getting-the-job.mp4",
+          "subtitles": [
+            {
+              "file": "105-insider-tips-for-getting-the-job.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "105-insider-tips-for-getting-the-job.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-first-things-to-do",
+      "title": "اولین کارهایی که باید انجام بدی",
+      "summary": "قدم‌های اول بعد از استخدام.",
+      "section": "ورود به شغل مدیریت محصول",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "106-the-first-things-to-do.mp4",
+          "subtitles": [
+            {
+              "file": "106-the-first-things-to-do.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "106-the-first-things-to-do.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-of-the-course",
+      "title": "جمع‌بندی دوره",
+      "summary": "مرور کل دوره.",
+      "section": "جمع‌بندی و مصاحبه‌ها",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "107-summary-of-the-course.mp4",
+          "subtitles": [
+            {
+              "file": "107-summary-of-the-course.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "107-summary-of-the-course.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "interview-with-daniel-demetri-product-lead-at-earnest-ex-pm-at-google",
+      "title": "مصاحبه با دنیل دمتری، مدیر محصول ارشد در Earnest",
+      "summary": "گفت‌وگو با یه PM باتجربه‌ی گوگل و Earnest.",
+      "section": "جمع‌بندی و مصاحبه‌ها",
+      "estimated_minutes": 28,
+      "videos": [
+        {
+          "file": "108-interview-with-daniel-demetri-product-lead-at-earnest-ex-pm-at-google.mp4",
+          "subtitles": [
+            {
+              "file": "108-interview-with-daniel-demetri-product-lead-at-earnest-ex-pm-at-google.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "108-interview-with-daniel-demetri-product-lead-at-earnest-ex-pm-at-google.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "مصاحبه با دیوید لیفسون، معاون محصول در Homepolish",
+      "summary": "گفت‌وگو با معاون محصول Homepolish.",
+      "section": "جمع‌بندی و مصاحبه‌ها",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "109-interview-with-david-lifson-vp-of-product-at-homepolish.mp4",
+          "subtitles": [
+            {
+              "file": "109-interview-with-david-lifson-vp-of-product-at-homepolish.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "109-interview-with-david-lifson-vp-of-product-at-homepolish.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

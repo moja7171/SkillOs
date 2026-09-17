@@ -1,0 +1,2312 @@
+{
+  "title": "راهنمای کامل تبدیل‌شدن به معمار نرم‌افزار",
+  "description": "نقش، طرز فکر و فرایند معماری نرم‌افزار — از نیازمندی تا سند معماری و مطالعه‌ی موردی.",
+  "outcome_statement": "یاد می‌گیری چطور مثل یه معمار نرم‌افزار فکر کنی، نیازمندی‌ها رو تحلیل کنی، پشته‌ی فناوری و الگوهای طراحی مناسب رو انتخاب کنی، و یه سند معماری بنویسی.",
+  "source_note": "برگرفته از دوره‌ی «The Complete Guide to Becoming a Software Architect».",
+  "video_base_url": "/media/software-architecture-complete-guide/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "مقدمه",
+      "summary": "دوره چی رو پوشش می‌ده و برای کیه.",
+      "section": "مقدمه",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "001-introduction.mp4",
+          "subtitles": [
+            {
+              "file": "001-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-introduction.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "who-is-this-course-for",
+      "title": "این دوره برای کیه؟",
+      "summary": "مخاطب و پیش‌نیازهای دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "003-who-is-this-course-for.mp4",
+          "subtitles": [
+            {
+              "file": "003-who-is-this-course-for.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-who-is-this-course-for.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "why-you-should-become-a-software-architect",
+      "title": "چرا باید معمار نرم‌افزار بشی؟",
+      "summary": "دلایل رفتن به مسیر معماری نرم‌افزار.",
+      "section": "مقدمه",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "004-why-you-should-become-a-software-architect.mp4",
+          "subtitles": [
+            {
+              "file": "004-why-you-should-become-a-software-architect.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-why-you-should-become-a-software-architect.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-we-will-talk-about-in-this-course",
+      "title": "توی این دوره چی یاد می‌گیریم؟",
+      "summary": "نقشه‌ی راه کلی سرفصل‌های دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "006-what-we-will-talk-about-in-this-course.mp4",
+          "subtitles": [
+            {
+              "file": "006-what-we-will-talk-about-in-this-course.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-what-we-will-talk-about-in-this-course.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "types-of-architects",
+      "title": "انواع معماران",
+      "summary": "نقش‌های مختلف معماری—راه‌حل، سازمانی، سیستم و غیره.",
+      "section": "نقش معمار نرم‌افزار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "007-types-of-architects.mp4",
+          "subtitles": [
+            {
+              "file": "007-types-of-architects.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-types-of-architects.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "responsibility-of-the-architect",
+      "title": "مسئولیت‌های معمار",
+      "summary": "چه کارهایی روی دوش معمار نرم‌افزاره.",
+      "section": "نقش معمار نرم‌افزار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "008-responsibility-of-the-architect.mp4",
+          "subtitles": [
+            {
+              "file": "008-responsibility-of-the-architect.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-responsibility-of-the-architect.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-architect-in-the-organizational-chart",
+      "title": "جایگاه معمار توی نمودار سازمانی",
+      "summary": "معمار کجای سلسله‌مراتب سازمان قرار می‌گیره.",
+      "section": "نقش معمار نرم‌افزار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "009-the-architect-in-the-organizational-chart.mp4",
+          "subtitles": [
+            {
+              "file": "009-the-architect-in-the-organizational-chart.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-the-architect-in-the-organizational-chart.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "architects-code",
+      "title": "منشور اخلاقی معماران",
+      "summary": "اصول رفتاری و اخلاقی یه معمار خوب.",
+      "section": "نقش معمار نرم‌افزار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "010-architects-code.mp4",
+          "subtitles": [
+            {
+              "file": "010-architects-code.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-architects-code.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "architects-and-academic-degrees",
+      "title": "معماران و مدرک دانشگاهی",
+      "summary": "آیا مدرک دانشگاهی برای معماری لازمه؟",
+      "section": "نقش معمار نرم‌افزار",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "011-architects-and-academic-degrees.mp4",
+          "subtitles": [
+            {
+              "file": "011-architects-and-academic-degrees.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-architects-and-academic-degrees.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "career-path-to-architect",
+      "title": "مسیر شغلی تا معماری",
+      "summary": "چطور از توسعه‌دهنده به معمار برسیم.",
+      "section": "نقش معمار نرم‌افزار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "012-career-path-to-architect.mp4",
+          "subtitles": [
+            {
+              "file": "012-career-path-to-architect.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-career-path-to-architect.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-the-architect-s-mindset",
+      "title": "مقدمه‌ای بر طرز فکر معمار",
+      "summary": "نگرشی که یه معمار باید داشته باشه.",
+      "section": "طرز فکر معمار",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "014-introduction-to-the-architect-s-mindset.mp4",
+          "subtitles": [
+            {
+              "file": "014-introduction-to-the-architect-s-mindset.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-introduction-to-the-architect-s-mindset.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understand-the-business",
+      "title": "کسب‌وکار رو بفهم",
+      "summary": "چرا معمار باید کسب‌وکار مشتری رو بشناسه.",
+      "section": "طرز فکر معمار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "015-understand-the-business.mp4",
+          "subtitles": [
+            {
+              "file": "015-understand-the-business.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-understand-the-business.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "define-the-system-s-goals",
+      "title": "اهداف سیستم رو تعریف کن",
+      "summary": "اهمیت روشن‌بودن هدف سیستم قبل از طراحی.",
+      "section": "طرز فکر معمار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "016-define-the-system-s-goals.mp4",
+          "subtitles": [
+            {
+              "file": "016-define-the-system-s-goals.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-define-the-system-s-goals.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "work-for-your-client-s-clients",
+      "title": "برای مشتریِ مشتریت کار کن",
+      "summary": "دیدن تصویر بزرگ‌تر، فراتر از مشتری مستقیم.",
+      "section": "طرز فکر معمار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "017-work-for-your-client-s-clients.mp4",
+          "subtitles": [
+            {
+              "file": "017-work-for-your-client-s-clients.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-work-for-your-client-s-clients.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "talk-to-the-right-people-with-the-right-language",
+      "title": "با زبان درست با آدم درست حرف بزن",
+      "summary": "ارتباط مؤثر معمار با ذی‌نفعان مختلف.",
+      "section": "طرز فکر معمار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "018-talk-to-the-right-people-with-the-right-language.mp4",
+          "subtitles": [
+            {
+              "file": "018-talk-to-the-right-people-with-the-right-language.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-talk-to-the-right-people-with-the-right-language.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی فرایند طراحی یه معماری.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "020-introduction.mp4",
+          "subtitles": [
+            {
+              "file": "020-introduction.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-introduction.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understand-the-system-requirements",
+      "title": "نیازمندی‌های سیستم رو بفهم",
+      "summary": "اولین گام فرایند طراحی معماری.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "021-understand-the-system-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "021-understand-the-system-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-understand-the-system-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understand-the-non-functional-requirements",
+      "title": "نیازمندی‌های غیرکارکردی رو بفهم",
+      "summary": "اهمیت نیازمندی‌های کیفی توی طراحی.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "022-understand-the-non-functional-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "022-understand-the-non-functional-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-understand-the-non-functional-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "map-the-components",
+      "title": "اجزا رو نقشه‌برداری کن",
+      "summary": "شناسایی اجزای اصلی سیستم.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "023-map-the-components.mp4",
+          "subtitles": [
+            {
+              "file": "023-map-the-components.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-map-the-components.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "select-technology-stack",
+      "title": "پشته‌ی فناوری رو انتخاب کن",
+      "summary": "تصمیم‌گیری درباره‌ی تکنولوژی‌های موردنیاز.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "024-select-technology-stack.mp4",
+          "subtitles": [
+            {
+              "file": "024-select-technology-stack.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-select-technology-stack.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "design-the-architecture",
+      "title": "معماری رو طراحی کن",
+      "summary": "ترکیب اجزا و تکنولوژی‌ها توی یه طرح.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "025-design-the-architecture.mp4",
+          "subtitles": [
+            {
+              "file": "025-design-the-architecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-design-the-architecture.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "write-the-architecture-document",
+      "title": "سند معماری رو بنویس",
+      "summary": "ثبت رسمی تصمیم‌های معماری.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "026-write-the-architecture-document.mp4",
+          "subtitles": [
+            {
+              "file": "026-write-the-architecture-document.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-write-the-architecture-document.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "support-the-team",
+      "title": "از تیم پشتیبانی کن",
+      "summary": "نقش معمار بعد از طراحی اولیه.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "027-support-the-team.mp4",
+          "subtitles": [
+            {
+              "file": "027-support-the-team.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-support-the-team.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "conclusion-architecture-process",
+      "title": "جمع‌بندی",
+      "summary": "مرور فرایند طراحی معماری.",
+      "section": "فرایند طراحی معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "028-conclusion-architecture-process.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-requirements",
+      "title": "مقدمه‌ای بر نیازمندی‌ها",
+      "summary": "نیازمندی‌ها پایه‌ی هر تصمیم معماری‌ان.",
+      "section": "نیازمندی‌ها از دید معمار",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "030-introduction-to-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "030-introduction-to-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-introduction-to-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-two-types-of-requirements",
+      "title": "دو نوع نیازمندی",
+      "summary": "کارکردی در برابر غیرکارکردی.",
+      "section": "نیازمندی‌ها از دید معمار",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "031-the-two-types-of-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "031-the-two-types-of-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-the-two-types-of-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "architects-functional-requirements",
+      "title": "نیازمندی‌های کارکردی از دید معمار",
+      "summary": "معمار با نیازمندی کارکردی چطور برخورد می‌کنه.",
+      "section": "نیازمندی‌ها از دید معمار",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "032-architects-functional-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "032-architects-functional-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-architects-functional-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "non-functional-requirements",
+      "title": "نیازمندی‌های غیرکارکردی",
+      "summary": "کیفیت‌هایی مثل کارایی، امنیت و مقیاس‌پذیری.",
+      "section": "نیازمندی‌ها از دید معمار",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "033-non-functional-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "033-non-functional-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-non-functional-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "who-defines-non-functional-requirements",
+      "title": "نیازمندی‌های غیرکارکردی رو کی تعریف می‌کنه؟",
+      "summary": "نقش معمار در کشف این نیازمندی‌ها.",
+      "section": "نیازمندی‌ها از دید معمار",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "034-who-defines-non-functional-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "034-who-defines-non-functional-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-who-defines-non-functional-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "conclusion-requirements",
+      "title": "جمع‌بندی",
+      "summary": "مرور نقش نیازمندی‌ها توی معماری.",
+      "section": "نیازمندی‌ها از دید معمار",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "035-conclusion-requirements.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-application-types",
+      "title": "مقدمه‌ای بر انواع اپلیکیشن",
+      "summary": "دسته‌بندی کلی انواع اپلیکیشن.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "037-introduction-to-application-types.mp4",
+          "subtitles": [
+            {
+              "file": "037-introduction-to-application-types.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-introduction-to-application-types.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "web-apps",
+      "title": "اپ‌های وب",
+      "summary": "ویژگی‌های معماری اپلیکیشن‌های وب.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "038-web-apps.mp4",
+          "subtitles": [
+            {
+              "file": "038-web-apps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-web-apps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "web-api",
+      "title": "وب API",
+      "summary": "معماری سرویس‌های API تحت وب.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "039-web-api.mp4",
+          "subtitles": [
+            {
+              "file": "039-web-api.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-web-api.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "mobile",
+      "title": "موبایل",
+      "summary": "ملاحظات معماری اپ‌های موبایل.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "040-mobile.mp4",
+          "subtitles": [
+            {
+              "file": "040-mobile.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-mobile.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "console",
+      "title": "کنسول",
+      "summary": "معماری اپلیکیشن‌های خط‌فرمان.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "041-console.mp4",
+          "subtitles": [
+            {
+              "file": "041-console.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-console.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "service",
+      "title": "سرویس",
+      "summary": "معماری سرویس‌های پس‌زمینه.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "042-service.mp4",
+          "subtitles": [
+            {
+              "file": "042-service.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-service.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "desktop",
+      "title": "دسکتاپ",
+      "summary": "ملاحظات معماری اپ‌های دسکتاپ.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "043-desktop.mp4",
+          "subtitles": [
+            {
+              "file": "043-desktop.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-desktop.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-application-types",
+      "title": "جمع‌بندی",
+      "summary": "مرور انواع اپلیکیشن و تفاوت‌هاشون.",
+      "section": "انواع اپلیکیشن",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "044-summary-application-types.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-technology-stack",
+      "title": "مقدمه‌ای بر پشته‌ی فناوری",
+      "summary": "پشته‌ی فناوری یعنی چی.",
+      "section": "انتخاب پشته‌ی فناوری",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "046-introduction-to-technology-stack.mp4",
+          "subtitles": [
+            {
+              "file": "046-introduction-to-technology-stack.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-introduction-to-technology-stack.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "considerations-for-technology-stack",
+      "title": "ملاحظات انتخاب پشته‌ی فناوری",
+      "summary": "عواملی که روی انتخاب تکنولوژی اثر می‌ذارن.",
+      "section": "انتخاب پشته‌ی فناوری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "047-considerations-for-technology-stack.mp4",
+          "subtitles": [
+            {
+              "file": "047-considerations-for-technology-stack.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-considerations-for-technology-stack.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "back-end-technology",
+      "title": "فناوری بک‌اند",
+      "summary": "انتخاب تکنولوژی سمت سرور.",
+      "section": "انتخاب پشته‌ی فناوری",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "048-back-end-technology.mp4",
+          "subtitles": [
+            {
+              "file": "048-back-end-technology.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-back-end-technology.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "front-end-technology",
+      "title": "فناوری فرانت‌اند",
+      "summary": "انتخاب تکنولوژی سمت کاربر.",
+      "section": "انتخاب پشته‌ی فناوری",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "050-front-end-technology.mp4",
+          "subtitles": [
+            {
+              "file": "050-front-end-technology.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "050-front-end-technology.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "data-store-technology",
+      "title": "فناوری ذخیره‌سازی داده",
+      "summary": "انتخاب پایگاه‌داده و نوع ذخیره‌سازی.",
+      "section": "انتخاب پشته‌ی فناوری",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "051-data-store-technology.mp4",
+          "subtitles": [
+            {
+              "file": "051-data-store-technology.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-data-store-technology.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-technology-stack",
+      "title": "جمع‌بندی",
+      "summary": "مرور انتخاب پشته‌ی فناوری.",
+      "section": "انتخاب پشته‌ی فناوری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "052-summary-technology-stack.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-the-ilities",
+      "title": "مقدمه‌ای بر ایلیتی‌ها",
+      "summary": "ویژگی‌های کیفی سیستم که با «ility» تموم می‌شن.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "054-introduction-to-the-ilities.mp4",
+          "subtitles": [
+            {
+              "file": "054-introduction-to-the-ilities.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-introduction-to-the-ilities.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scalability",
+      "title": "مقیاس‌پذیری",
+      "summary": "توانایی سیستم برای رشد.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "055-scalability.mp4",
+          "subtitles": [
+            {
+              "file": "055-scalability.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-scalability.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "manageability",
+      "title": "قابلیت مدیریت",
+      "summary": "چقدر راحت می‌شه سیستم رو مدیریت کرد.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "056-manageability.mp4",
+          "subtitles": [
+            {
+              "file": "056-manageability.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-manageability.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "modularity",
+      "title": "ماژولاریته",
+      "summary": "تقسیم سیستم به بخش‌های مستقل.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "057-modularity.mp4",
+          "subtitles": [
+            {
+              "file": "057-modularity.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-modularity.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "extensibility",
+      "title": "توسعه‌پذیری",
+      "summary": "توانایی افزودن فیچر تازه بدون بازنویسی.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "058-extensibility.mp4",
+          "subtitles": [
+            {
+              "file": "058-extensibility.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-extensibility.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "testability",
+      "title": "قابلیت تست",
+      "summary": "چقدر راحت می‌شه سیستم رو تست کرد.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "059-testability.mp4",
+          "subtitles": [
+            {
+              "file": "059-testability.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-testability.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-ilities",
+      "title": "جمع‌بندی",
+      "summary": "مرور ایلیتی‌های کلیدی سیستم.",
+      "section": "ایلیتی‌ها (ویژگی‌های کیفی سیستم)",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "060-summary-ilities.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-components",
+      "title": "مقدمه‌ای بر اجزا",
+      "summary": "سطح جزء (component) توی معماری.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "062-introduction-to-components.mp4",
+          "subtitles": [
+            {
+              "file": "062-introduction-to-components.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-introduction-to-components.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "layers",
+      "title": "لایه‌ها",
+      "summary": "تقسیم‌بندی لایه‌ای سیستم.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "063-layers.mp4",
+          "subtitles": [
+            {
+              "file": "063-layers.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-layers.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "interfaces",
+      "title": "رابط‌ها (Interfaces)",
+      "summary": "قرارداد بین اجزای سیستم.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "064-interfaces.mp4",
+          "subtitles": [
+            {
+              "file": "064-interfaces.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-interfaces.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "di",
+      "title": "تزریق وابستگی (DI)",
+      "summary": "کاهش وابستگی مستقیم بین اجزا.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "065-di.mp4",
+          "subtitles": [
+            {
+              "file": "065-di.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-di.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "solid",
+      "title": "اصول SOLID",
+      "summary": "پنج اصل طراحی شی‌گرای پایدار.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "066-solid.mp4",
+          "subtitles": [
+            {
+              "file": "066-solid.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-solid.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "naming-conventions",
+      "title": "قراردادهای نام‌گذاری",
+      "summary": "اهمیت نام‌گذاری خوب توی کد.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "067-naming-conventions.mp4",
+          "subtitles": [
+            {
+              "file": "067-naming-conventions.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-naming-conventions.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "exception-handling",
+      "title": "مدیریت استثنا",
+      "summary": "نحوه‌ی درست برخورد با خطا.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "068-exception-handling.mp4",
+          "subtitles": [
+            {
+              "file": "068-exception-handling.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-exception-handling.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "logging",
+      "title": "لاگ‌گیری",
+      "summary": "ثبت رویدادهای سیستم برای عیب‌یابی.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "069-logging.mp4",
+          "subtitles": [
+            {
+              "file": "069-logging.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "069-logging.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-components",
+      "title": "جمع‌بندی",
+      "summary": "مرور اصول طراحی اجزا.",
+      "section": "طراحی اجزا (Components)",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "070-summary-components.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-design-patterns",
+      "title": "مقدمه‌ای بر الگوهای طراحی",
+      "summary": "راه‌حل‌های تکرارشونده برای مسائل رایج طراحی.",
+      "section": "الگوهای طراحی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "072-introduction-to-design-patterns.mp4",
+          "subtitles": [
+            {
+              "file": "072-introduction-to-design-patterns.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "072-introduction-to-design-patterns.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-factory-pattern",
+      "title": "الگوی Factory",
+      "summary": "تفویض ساخت شیء به یه متد جدا.",
+      "section": "الگوهای طراحی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "073-the-factory-pattern.mp4",
+          "subtitles": [
+            {
+              "file": "073-the-factory-pattern.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "073-the-factory-pattern.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-repository-pattern",
+      "title": "الگوی Repository",
+      "summary": "جداسازی منطق دسترسی به داده.",
+      "section": "الگوهای طراحی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "074-the-repository-pattern.mp4",
+          "subtitles": [
+            {
+              "file": "074-the-repository-pattern.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "074-the-repository-pattern.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-facade-pattern",
+      "title": "الگوی Facade",
+      "summary": "ساده‌کردن رابط یه زیرسیستم پیچیده.",
+      "section": "الگوهای طراحی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "075-the-facade-pattern.mp4",
+          "subtitles": [
+            {
+              "file": "075-the-facade-pattern.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "075-the-facade-pattern.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-command-pattern",
+      "title": "الگوی Command",
+      "summary": "بسته‌بندی یه درخواست به‌عنوان یه شیء.",
+      "section": "الگوهای طراحی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "076-the-command-pattern.mp4",
+          "subtitles": [
+            {
+              "file": "076-the-command-pattern.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "076-the-command-pattern.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-design-patterns",
+      "title": "جمع‌بندی",
+      "summary": "مرور الگوهای طراحی رایج.",
+      "section": "الگوهای طراحی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "077-summary-design-patterns.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-system-architecture",
+      "title": "مقدمه‌ای بر معماری سیستم",
+      "summary": "سطح سیستم توی معماری.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "079-introduction-to-system-architecture.mp4",
+          "subtitles": [
+            {
+              "file": "079-introduction-to-system-architecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "079-introduction-to-system-architecture.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "loose-coupling",
+      "title": "اتصال سست (Loose Coupling)",
+      "summary": "کاهش وابستگی مستقیم بین سرویس‌ها.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "080-loose-coupling.mp4",
+          "subtitles": [
+            {
+              "file": "080-loose-coupling.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "080-loose-coupling.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "stateless",
+      "title": "بدون‌حالت بودن (Stateless)",
+      "summary": "چرا سرویس‌های بدون‌حالت مقیاس‌پذیرترن.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "081-stateless.mp4",
+          "subtitles": [
+            {
+              "file": "081-stateless.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "081-stateless.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "caching",
+      "title": "کش‌کردن",
+      "summary": "بهبود کارایی با ذخیره‌ی موقت داده.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "082-caching.mp4",
+          "subtitles": [
+            {
+              "file": "082-caching.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "082-caching.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "messaging",
+      "title": "پیام‌رسانی",
+      "summary": "ارتباط ناهمگام بین سرویس‌ها.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "083-messaging.mp4",
+          "subtitles": [
+            {
+              "file": "083-messaging.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "083-messaging.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "logging-monitoring",
+      "title": "لاگ‌گیری و پایش",
+      "summary": "دیدبانی سلامت سیستم در تولید.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "084-logging-monitoring.mp4",
+          "subtitles": [
+            {
+              "file": "084-logging-monitoring.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "084-logging-monitoring.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-system-architecture",
+      "title": "جمع‌بندی",
+      "summary": "مرور اصول معماری سیستم.",
+      "section": "معماری سیستم",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "085-summary-system-architecture.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-external-considerations",
+      "title": "مقدمه‌ای بر ملاحظات بیرونی",
+      "summary": "عواملی بیرون از فنی که روی طراحی اثر می‌ذارن.",
+      "section": "ملاحظات بیرونی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "087-introduction-to-external-considerations.mp4",
+          "subtitles": [
+            {
+              "file": "087-introduction-to-external-considerations.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "087-introduction-to-external-considerations.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "deadline",
+      "title": "ددلاین",
+      "summary": "اثر زمان‌بندی پروژه روی تصمیم‌های معماری.",
+      "section": "ملاحظات بیرونی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "088-deadline.mp4",
+          "subtitles": [
+            {
+              "file": "088-deadline.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "088-deadline.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "existing-dev-team-skills",
+      "title": "مهارت تیم توسعه‌ی فعلی",
+      "summary": "طراحی متناسب با توانایی تیم موجود.",
+      "section": "ملاحظات بیرونی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "089-existing-dev-team-skills.mp4",
+          "subtitles": [
+            {
+              "file": "089-existing-dev-team-skills.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "089-existing-dev-team-skills.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "it-support",
+      "title": "پشتیبانی فناوری اطلاعات",
+      "summary": "محدودیت‌های زیرساخت و پشتیبانی IT.",
+      "section": "ملاحظات بیرونی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "090-it-support.mp4",
+          "subtitles": [
+            {
+              "file": "090-it-support.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "090-it-support.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cost",
+      "title": "هزینه",
+      "summary": "اثر بودجه روی انتخاب‌های معماری.",
+      "section": "ملاحظات بیرونی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "091-cost.mp4",
+          "subtitles": [
+            {
+              "file": "091-cost.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "091-cost.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-architecture-document",
+      "title": "مقدمه‌ای بر سند معماری",
+      "summary": "چرا باید معماری رو مستند کرد.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "092-introduction-to-architecture-document.mp4",
+          "subtitles": [
+            {
+              "file": "092-introduction-to-architecture-document.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "092-introduction-to-architecture-document.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "goal-of-the-document",
+      "title": "هدف سند",
+      "summary": "سند معماری قراره چه مشکلی رو حل کنه.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "093-goal-of-the-document.mp4",
+          "subtitles": [
+            {
+              "file": "093-goal-of-the-document.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "093-goal-of-the-document.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "audience",
+      "title": "مخاطب سند",
+      "summary": "سند رو برای کی می‌نویسیم.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "094-audience.mp4",
+          "subtitles": [
+            {
+              "file": "094-audience.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "094-audience.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "contents-of-the-document",
+      "title": "محتوای سند",
+      "summary": "چی باید توی سند معماری باشه.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "095-contents-of-the-document.mp4",
+          "subtitles": [
+            {
+              "file": "095-contents-of-the-document.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "095-contents-of-the-document.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "document-s-structure",
+      "title": "ساختار سند",
+      "summary": "چیدمان بخش‌های سند معماری.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "096-document-s-structure.mp4",
+          "subtitles": [
+            {
+              "file": "096-document-s-structure.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "096-document-s-structure.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "background-overview-section",
+      "title": "بخش نمای‌کلی پس‌زمینه",
+      "summary": "معرفی بافت و پیش‌زمینه‌ی پروژه.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "097-background-overview-section.mp4",
+          "subtitles": [
+            {
+              "file": "097-background-overview-section.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "097-background-overview-section.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "requirements-section",
+      "title": "بخش نیازمندی‌ها",
+      "summary": "ثبت نیازمندی‌ها توی سند معماری.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "098-requirements-section.mp4",
+          "subtitles": [
+            {
+              "file": "098-requirements-section.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "098-requirements-section.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "executive-summary-section",
+      "title": "بخش خلاصه‌ی مدیریتی",
+      "summary": "خلاصه‌ی سند برای مدیران ارشد.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "099-executive-summary-section.mp4",
+          "subtitles": [
+            {
+              "file": "099-executive-summary-section.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "099-executive-summary-section.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "architecture-overview-section",
+      "title": "بخش نمای‌کلی معماری",
+      "summary": "تصویر کلان طراحی معماری.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "100-architecture-overview-section.mp4",
+          "subtitles": [
+            {
+              "file": "100-architecture-overview-section.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "100-architecture-overview-section.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "components-drill-down-section",
+      "title": "بخش جزئیات اجزا",
+      "summary": "توضیح جزئی هر جزء سیستم.",
+      "section": "نوشتن سند معماری",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "101-components-drill-down-section.mp4",
+          "subtitles": [
+            {
+              "file": "101-components-drill-down-section.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "101-components-drill-down-section.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-case-study",
+      "title": "مقدمه‌ای بر مطالعه‌ی موردی",
+      "summary": "معرفی پروژه‌ی نمونه‌ی این بخش.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "103-introduction-to-case-study.mp4",
+          "subtitles": [
+            {
+              "file": "103-introduction-to-case-study.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "103-introduction-to-case-study.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "presenting-iotoo",
+      "title": "معرفی IOToo",
+      "summary": "سیستم نمونه‌ای که قراره طراحیش کنیم.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "104-presenting-iotoo.mp4",
+          "subtitles": [
+            {
+              "file": "104-presenting-iotoo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "104-presenting-iotoo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "defining-the-requirements",
+      "title": "تعریف نیازمندی‌ها",
+      "summary": "استخراج نیازمندی برای IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "105-defining-the-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "105-defining-the-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "105-defining-the-requirements.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "mapping-the-components",
+      "title": "نقشه‌برداری اجزا",
+      "summary": "شناسایی اجزای IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "106-mapping-the-components.mp4",
+          "subtitles": [
+            {
+              "file": "106-mapping-the-components.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "106-mapping-the-components.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "choosing-messaging-methods",
+      "title": "انتخاب روش پیام‌رسانی",
+      "summary": "تصمیم درباره‌ی ارتباط بین اجزای IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "107-choosing-messaging-methods.mp4",
+          "subtitles": [
+            {
+              "file": "107-choosing-messaging-methods.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "107-choosing-messaging-methods.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "designing-the-logging-service",
+      "title": "طراحی سرویس لاگ‌گیری",
+      "summary": "طراحی جزء لاگ‌گیری IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "108-designing-the-logging-service.mp4",
+          "subtitles": [
+            {
+              "file": "108-designing-the-logging-service.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "108-designing-the-logging-service.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "designing-the-receiver",
+      "title": "طراحی دریافت‌کننده (Receiver)",
+      "summary": "طراحی جزء دریافت داده‌ی IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "109-designing-the-receiver.mp4",
+          "subtitles": [
+            {
+              "file": "109-designing-the-receiver.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "109-designing-the-receiver.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "designing-the-handler",
+      "title": "طراحی هندلر (Handler)",
+      "summary": "طراحی جزء پردازش‌گر IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "110-designing-the-handler.mp4",
+          "subtitles": [
+            {
+              "file": "110-designing-the-handler.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "110-designing-the-handler.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "designing-the-info-service",
+      "title": "طراحی سرویس اطلاعات",
+      "summary": "طراحی جزء اطلاعات IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "111-designing-the-info-service.mp4",
+          "subtitles": [
+            {
+              "file": "111-designing-the-info-service.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "111-designing-the-info-service.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "writing-the-architecture-document",
+      "title": "نوشتن سند معماری",
+      "summary": "نوشتن سند معماری برای IOToo.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "112-writing-the-architecture-document.mp4",
+          "subtitles": [
+            {
+              "file": "112-writing-the-architecture-document.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "112-writing-the-architecture-document.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "get-the-architecture-document",
+      "title": "دریافت سند معماری",
+      "summary": "دسترسی به نمونه‌ی سند نهایی.",
+      "section": "مطالعه‌ی موردی: IOToo",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "113-get-the-architecture-document.mp4",
+          "subtitles": [
+            {
+              "file": "113-get-the-architecture-document.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "113-get-the-architecture-document.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-advanced-architectures",
+      "title": "مقدمه‌ای بر معماری‌های پیشرفته",
+      "summary": "نمای‌کلی سبک‌های معماری پیشرفته‌تر.",
+      "section": "معماری‌های پیشرفته",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "114-introduction-to-advanced-architectures.mp4",
+          "subtitles": [
+            {
+              "file": "114-introduction-to-advanced-architectures.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "114-introduction-to-advanced-architectures.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "micro-services",
+      "title": "میکروسرویس‌ها",
+      "summary": "تقسیم سیستم به سرویس‌های کوچیک و مستقل.",
+      "section": "معماری‌های پیشرفته",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "115-micro-services.mp4",
+          "subtitles": [
+            {
+              "file": "115-micro-services.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "115-micro-services.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "event-sourcing",
+      "title": "Event Sourcing",
+      "summary": "ذخیره‌ی تغییرات به‌شکل رویداد به‌جای وضعیت نهایی.",
+      "section": "معماری‌های پیشرفته",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "116-event-sourcing.mp4",
+          "subtitles": [
+            {
+              "file": "116-event-sourcing.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "116-event-sourcing.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cqrs",
+      "title": "CQRS",
+      "summary": "جداسازی مسیر خواندن از نوشتن داده.",
+      "section": "معماری‌های پیشرفته",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "117-cqrs.mp4",
+          "subtitles": [
+            {
+              "file": "117-cqrs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "117-cqrs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-advanced-architectures",
+      "title": "جمع‌بندی",
+      "summary": "مرور معماری‌های پیشرفته.",
+      "section": "معماری‌های پیشرفته",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "118-summary-advanced-architectures.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-to-soft-skills",
+      "title": "مقدمه‌ای بر مهارت‌های نرم",
+      "summary": "چرا مهارت نرم برای معمار حیاتیه.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "119-introduction-to-soft-skills.mp4",
+          "subtitles": [
+            {
+              "file": "119-introduction-to-soft-skills.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "119-introduction-to-soft-skills.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "listening",
+      "title": "شنیدن فعال",
+      "summary": "اهمیت گوش‌دادن واقعی به ذی‌نفعان.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "120-listening.mp4",
+          "subtitles": [
+            {
+              "file": "120-listening.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "120-listening.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dealing-with-criticism",
+      "title": "مواجهه با انتقاد",
+      "summary": "برخورد سازنده با نقد روی طراحی.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "121-dealing-with-criticism.mp4",
+          "subtitles": [
+            {
+              "file": "121-dealing-with-criticism.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "121-dealing-with-criticism.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "be-smart-not-right",
+      "title": "باهوش باش نه لزوماً درست",
+      "summary": "اولویت‌دادن به نتیجه‌ی خوب به‌جای برد در بحث.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "122-be-smart-not-right.mp4",
+          "subtitles": [
+            {
+              "file": "122-be-smart-not-right.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "122-be-smart-not-right.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "organizational-politics",
+      "title": "سیاست‌های سازمانی",
+      "summary": "هدایت پویایی قدرت درون سازمان.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "123-organizational-politics.mp4",
+          "subtitles": [
+            {
+              "file": "123-organizational-politics.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "123-organizational-politics.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "public-speaking",
+      "title": "سخنرانی عمومی",
+      "summary": "ارائه‌ی مؤثر ایده‌های معماری.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "124-public-speaking.mp4",
+          "subtitles": [
+            {
+              "file": "124-public-speaking.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "124-public-speaking.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "learning",
+      "title": "یادگیری مداوم",
+      "summary": "اهمیت به‌روز ماندن معمار.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "125-learning.mp4",
+          "subtitles": [
+            {
+              "file": "125-learning.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "125-learning.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "summary-soft-skills",
+      "title": "جمع‌بندی",
+      "summary": "مرور مهارت‌های نرم معمار.",
+      "section": "مهارت‌های نرم برای معماران",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "126-summary-soft-skills.mp4"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "چی یاد گرفتیم؟",
+      "summary": "جمع‌بندی کل دوره.",
+      "section": "جمع‌بندی دوره",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "127-what-have-we-learned.mp4",
+          "subtitles": [
+            {
+              "file": "127-what-have-we-learned.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "127-what-have-we-learned.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

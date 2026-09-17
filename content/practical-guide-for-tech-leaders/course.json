@@ -1,0 +1,723 @@
+{
+  "title": "راهنمای عملی رهبری در حوزه‌ی فناوری",
+  "description": "مهارت‌های عملی رهبری برای رهبران فنی — از خودآگاهی و اعتمادسازی تا مدیریت عملکرد، پروژه و مبانی کسب‌وکار.",
+  "outcome_statement": "به‌عنوان یه رهبر فنی، مهارت‌های نرم و دانش کسب‌وکاری لازم برای هدایت تیم و پروژه‌های فنی رو پیدا می‌کنی.",
+  "source_note": "برگرفته از دوره‌ی «Practical Guide for Leaders in Tech».",
+  "video_base_url": "/media/practical-guide-for-tech-leaders/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی این دوره برای رهبران فنی.",
+      "section": "مقدمه و خودآگاهی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "001-introduction-syt7.mp4",
+          "subtitles": [
+            {
+              "file": "001-introduction-syt7.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-introduction-syt7.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "self-awareness-jmzm",
+      "title": "خودآگاهی",
+      "summary": "اولین گام رهبری مؤثر.",
+      "section": "مقدمه و خودآگاهی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "002-self-awareness-jmzm.mp4",
+          "subtitles": [
+            {
+              "file": "002-self-awareness-jmzm.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-self-awareness-jmzm.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "personality-svns",
+      "title": "شخصیت",
+      "summary": "اثر شخصیت رهبر روی سبک مدیریتش.",
+      "section": "مقدمه و خودآگاهی",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "003-personality-svns.mp4",
+          "subtitles": [
+            {
+              "file": "003-personality-svns.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-personality-svns.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "perception-is-reality-mizr",
+      "title": "برداشت دیگران، واقعیتشونه",
+      "summary": "چرا برداشت تیم از تو مهمه.",
+      "section": "مقدمه و خودآگاهی",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "004-perception-is-reality-mizr.mp4",
+          "subtitles": [
+            {
+              "file": "004-perception-is-reality-mizr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-perception-is-reality-mizr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "own-your-decisions-rc31",
+      "title": "مسئولیت تصمیم‌هات رو بپذیر",
+      "summary": "اهمیت پاسخگویی رهبر.",
+      "section": "مقدمه و خودآگاهی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "005-own-your-decisions-rc31.mp4",
+          "subtitles": [
+            {
+              "file": "005-own-your-decisions-rc31.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-own-your-decisions-rc31.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "directions-of-influence-vcbn",
+      "title": "جهت‌های نفوذ",
+      "summary": "نفوذ رو به بالا، پایین و کناری.",
+      "section": "نفوذ و اعتماد",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "007-directions-of-influence-vcbn.mp4",
+          "subtitles": [
+            {
+              "file": "007-directions-of-influence-vcbn.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-directions-of-influence-vcbn.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "core-beliefs-identity-knm2",
+      "title": "باورهای بنیادین و هویت",
+      "summary": "نقش باور شخصی رهبر توی رفتارش.",
+      "section": "نفوذ و اعتماد",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "008-core-beliefs-identity-knm2.mp4",
+          "subtitles": [
+            {
+              "file": "008-core-beliefs-identity-knm2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-core-beliefs-identity-knm2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "building-trust-xmwy",
+      "title": "ساختن اعتماد",
+      "summary": "پایه‌ی هر رابطه‌ی رهبری.",
+      "section": "نفوذ و اعتماد",
+      "estimated_minutes": 18,
+      "videos": [
+        {
+          "file": "009-building-trust-xmwy.mp4",
+          "subtitles": [
+            {
+              "file": "009-building-trust-xmwy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-building-trust-xmwy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "1on1s-tew2",
+      "title": "جلسات یک‌به‌یک",
+      "summary": "استفاده‌ی مؤثر از جلسات ۱:۱.",
+      "section": "مدیریت عملکرد",
+      "estimated_minutes": 14,
+      "videos": [
+        {
+          "file": "010-1on1s-tew2.mp4",
+          "subtitles": [
+            {
+              "file": "010-1on1s-tew2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-1on1s-tew2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "performance-management-ggis",
+      "title": "مدیریت عملکرد",
+      "summary": "چارچوب کلی ارزیابی و بهبود عملکرد.",
+      "section": "مدیریت عملکرد",
+      "estimated_minutes": 17,
+      "videos": [
+        {
+          "file": "011-performance-management-ggis.mp4",
+          "subtitles": [
+            {
+              "file": "011-performance-management-ggis.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-performance-management-ggis.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "reciprocity-resentment-zwiw",
+      "title": "تقابل و دلخوری",
+      "summary": "پویایی روانی بین رهبر و تیم.",
+      "section": "مدیریت عملکرد",
+      "estimated_minutes": 12,
+      "videos": [
+        {
+          "file": "012-reciprocity-resentment-zwiw.mp4",
+          "subtitles": [
+            {
+              "file": "012-reciprocity-resentment-zwiw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-reciprocity-resentment-zwiw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "growth-feedback-junw",
+      "title": "بازخورد رشدمحور",
+      "summary": "دادن بازخورد برای رشد، نه فقط ارزیابی.",
+      "section": "مدیریت عملکرد",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "013-growth-feedback-junw.mp4",
+          "subtitles": [
+            {
+              "file": "013-growth-feedback-junw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-growth-feedback-junw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "dealing-with-underperformance-sjae",
+      "title": "مواجهه با افت عملکرد",
+      "summary": "برخورد درست با عملکرد ضعیف.",
+      "section": "مدیریت عملکرد",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "014-dealing-with-underperformance-sjae.mp4",
+          "subtitles": [
+            {
+              "file": "014-dealing-with-underperformance-sjae.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-dealing-with-underperformance-sjae.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recognition-of-good-work-lnwn",
+      "title": "قدردانی از کار خوب",
+      "summary": "اهمیت دیده‌شدن تلاش خوب.",
+      "section": "مدیریت عملکرد",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "015-recognition-of-good-work-lnwn.mp4",
+          "subtitles": [
+            {
+              "file": "015-recognition-of-good-work-lnwn.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-recognition-of-good-work-lnwn.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "prioritisation-b9nl",
+      "title": "اولویت‌بندی",
+      "summary": "اولویت‌بندی کار تیم فنی.",
+      "section": "مدیریت پروژه‌ی فنی",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "017-prioritisation-b9nl.mp4",
+          "subtitles": [
+            {
+              "file": "017-prioritisation-b9nl.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-prioritisation-b9nl.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "stakeholder-management-mv56",
+      "title": "مدیریت ذی‌نفعان",
+      "summary": "هماهنگی با ذی‌نفعان پروژه.",
+      "section": "مدیریت پروژه‌ی فنی",
+      "estimated_minutes": 13,
+      "videos": [
+        {
+          "file": "018-stakeholder-management-mv56.mp4",
+          "subtitles": [
+            {
+              "file": "018-stakeholder-management-mv56.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-stakeholder-management-mv56.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "planning-rgle",
+      "title": "برنامه‌ریزی",
+      "summary": "برنامه‌ریزی پروژه‌ی فنی.",
+      "section": "مدیریت پروژه‌ی فنی",
+      "estimated_minutes": 21,
+      "videos": [
+        {
+          "file": "019-planning-rgle.mp4",
+          "subtitles": [
+            {
+              "file": "019-planning-rgle.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-planning-rgle.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "monitoring-rvfz",
+      "title": "پایش",
+      "summary": "رصد پیشرفت پروژه.",
+      "section": "مدیریت پروژه‌ی فنی",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "020-monitoring-rvfz.mp4",
+          "subtitles": [
+            {
+              "file": "020-monitoring-rvfz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-monitoring-rvfz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "execution-mxfg",
+      "title": "اجرا",
+      "summary": "اجرای مؤثر برنامه.",
+      "section": "مدیریت پروژه‌ی فنی",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "021-execution-mxfg.mp4",
+          "subtitles": [
+            {
+              "file": "021-execution-mxfg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-execution-mxfg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "closing-niuq",
+      "title": "بستن پروژه",
+      "summary": "جمع‌بندی و بستن رسمی پروژه.",
+      "section": "مدیریت پروژه‌ی فنی",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "022-closing-niuq.mp4",
+          "subtitles": [
+            {
+              "file": "022-closing-niuq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-closing-niuq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "architecture-btpy",
+      "title": "معماری",
+      "summary": "درک معماری برای رهبر فنی.",
+      "section": "مبانی فنی برای رهبران",
+      "estimated_minutes": 20,
+      "videos": [
+        {
+          "file": "024-architecture-btpy.mp4",
+          "subtitles": [
+            {
+              "file": "024-architecture-btpy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-architecture-btpy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "security-lozd",
+      "title": "امنیت",
+      "summary": "ملاحظات امنیتی که رهبر باید بدونه.",
+      "section": "مبانی فنی برای رهبران",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "025-security-lozd.mp4",
+          "subtitles": [
+            {
+              "file": "025-security-lozd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-security-lozd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "stability-o11y-vr2w",
+      "title": "پایداری و قابلیت‌رصد (O11y)",
+      "summary": "پایداری سیستم و observability.",
+      "section": "مبانی فنی برای رهبران",
+      "estimated_minutes": 23,
+      "videos": [
+        {
+          "file": "026-stability-o11y-vr2w.mp4",
+          "subtitles": [
+            {
+              "file": "026-stability-o11y-vr2w.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-stability-o11y-vr2w.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tooling-ci-cd-nekv",
+      "title": "ابزارها و CI/CD",
+      "summary": "زیرساخت ابزار و یکپارچه‌سازی/تحویل مداوم.",
+      "section": "مبانی فنی برای رهبران",
+      "estimated_minutes": 15,
+      "videos": [
+        {
+          "file": "027-tooling-ci-cd-nekv.mp4",
+          "subtitles": [
+            {
+              "file": "027-tooling-ci-cd-nekv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-tooling-ci-cd-nekv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "t-shaped-talent-wzmo",
+      "title": "استعداد T-شکل",
+      "summary": "اهمیت مهارت عمیق+گسترده توی تیم.",
+      "section": "حوزه‌های کسب‌وکار مرتبط",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "029-t-shaped-talent-wzmo.mp4",
+          "subtitles": [
+            {
+              "file": "029-t-shaped-talent-wzmo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-t-shaped-talent-wzmo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-analytics-dfef",
+      "title": "تحلیل محصول",
+      "summary": "استفاده از داده برای تصمیم محصول.",
+      "section": "حوزه‌های کسب‌وکار مرتبط",
+      "estimated_minutes": 22,
+      "videos": [
+        {
+          "file": "030-product-analytics-dfef.mp4",
+          "subtitles": [
+            {
+              "file": "030-product-analytics-dfef.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-product-analytics-dfef.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "growth-marketing-kwve",
+      "title": "بازاریابی رشدمحور",
+      "summary": "آشنایی رهبر فنی با Growth Marketing.",
+      "section": "حوزه‌های کسب‌وکار مرتبط",
+      "estimated_minutes": 19,
+      "videos": [
+        {
+          "file": "031-growth-marketing-kwve.mp4",
+          "subtitles": [
+            {
+              "file": "031-growth-marketing-kwve.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-growth-marketing-kwve.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "finance-bfl2",
+      "title": "مالی",
+      "summary": "مبانی مالی موردنیاز رهبر فنی.",
+      "section": "حوزه‌های کسب‌وکار مرتبط",
+      "estimated_minutes": 24,
+      "videos": [
+        {
+          "file": "032-finance-bfl2.mp4",
+          "subtitles": [
+            {
+              "file": "032-finance-bfl2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-finance-bfl2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "compliance-ceu2",
+      "title": "انطباق (Compliance)",
+      "summary": "الزامات قانونی و مقرراتی.",
+      "section": "حوزه‌های کسب‌وکار مرتبط",
+      "estimated_minutes": 16,
+      "videos": [
+        {
+          "file": "033-compliance-ceu2.mp4",
+          "subtitles": [
+            {
+              "file": "033-compliance-ceu2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-compliance-ceu2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "operations-q39m",
+      "title": "عملیات",
+      "summary": "مبانی عملیات کسب‌وکار.",
+      "section": "حوزه‌های کسب‌وکار مرتبط",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "034-operations-q39m.mp4",
+          "subtitles": [
+            {
+              "file": "034-operations-q39m.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-operations-q39m.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "developing-your-own-style-8ldw",
+      "title": "ساختن سبک رهبری خودت",
+      "summary": "پیدا کردن سبک شخصی رهبری.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "036-developing-your-own-style-8ldw.mp4",
+          "subtitles": [
+            {
+              "file": "036-developing-your-own-style-8ldw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-developing-your-own-style-8ldw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "victim-mentality-wdet",
+      "title": "ذهنیت قربانی",
+      "summary": "چطور از ذهنیت قربانی دوری کنیم.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "037-victim-mentality-wdet.mp4",
+          "subtitles": [
+            {
+              "file": "037-victim-mentality-wdet.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-victim-mentality-wdet.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "additional-materials-sovc",
+      "title": "منابع تکمیلی",
+      "summary": "منابع اضافه برای یادگیری بیشتر.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "038-additional-materials-sovc.mp4",
+          "subtitles": [
+            {
+              "file": "038-additional-materials-sovc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-additional-materials-sovc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "پایان دوره",
+      "summary": "جمع‌بندی نهایی دوره.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "039-end-of-the-course-tfy1.mp4",
+          "subtitles": [
+            {
+              "file": "039-end-of-the-course-tfy1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-end-of-the-course-tfy1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

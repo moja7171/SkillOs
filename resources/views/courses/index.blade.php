@@ -1,5 +1,5 @@
 <x-app-layout title="همه‌ی دوره‌ها">
-    <div class="page-narrow max-w-4xl">
+    <div class="page-narrow max-w-4xl" x-data="{ active: @js($activeCategory) }">
         <h1 class="m-0 text-[22px] font-bold mb-1">همه‌ی دوره‌ها</h1>
         <p class="text-muted mb-5">دوره‌ای که می‌خوای رو بردار؛ پیشرفتت فقط برای خودته.</p>
 
@@ -10,9 +10,20 @@
         @foreach ($coursesByCategory as $category => $group)
             <div class="mb-7">
                 @if ($category !== '')
-                    <h2 class="text-[15px] font-bold text-muted mb-3">{{ $category }}</h2>
+                    <button type="button"
+                            @click="active = (active === @js($category)) ? 'all' : @js($category)"
+                            class="flex items-center gap-1.5 text-[15px] font-bold mb-3 hover:text-ink transition-colors"
+                            :class="active === @js($category) ? 'text-ink' : 'text-muted'">
+                        {{ $category }}
+                        <x-icon name="chevron" class="w-3.5 h-3.5 transition-transform" x-bind:class="active === @js($category) ? '-rotate-90' : 'rotate-90'" />
+                    </button>
                 @endif
-                <div class="grid gap-4 sm:grid-cols-2">
+                <div class="grid gap-4 sm:grid-cols-2"
+                     @if ($category !== '')
+                         x-show="active === 'all' || active === @js($category)"
+                     @else
+                         x-show="active === 'all'"
+                     @endif>
                     @foreach ($group as $course)
                         @php $enrolled = $course->enrollments->isNotEmpty(); $color = course_color($course->id); @endphp
                         <div class="card p-[18px] flex flex-col gap-3">

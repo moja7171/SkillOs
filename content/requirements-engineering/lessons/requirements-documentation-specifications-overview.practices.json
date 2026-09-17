@@ -1,0 +1,51 @@
+[
+  {
+    "key": "why-not-raw-list",
+    "title": "چرا لیست خام ذی‌نفعان رو مستقیم به تیم طراحی نمی‌دیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا کافی نیست همون لیست خام اهداف و قابلیت‌های ذی‌نفعان رو مستقیم به تیم توسعه بدیم؟",
+    "options": [
+      "چون مهندس نیازمندی باید پلی بین زبان ساده‌ی ذی‌نفعان و زبان فنی طراحان بسازه — بدون این ترجمه، چیزی توی فهم گم می‌شه",
+      "چون قانون همیشه ترجمه‌ی رسمی رو الزامی می‌کنه",
+      "چون ذی‌نفعان اجازه‌ی صحبت مستقیم با تیم طراحی رو ندارن",
+      "چون لیست خام همیشه اشتباه و پر از خطاست"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "درس گفت بخشی از کار مهندس نیازمندی، ساختن پل بین ذی‌نفعانی که زبان فنی طراحان رو ندارن و مهندسان طراح — ترجمه‌ی زبان ساده به زبان فنی، دقیقاً همون چیزیه که مستندسازی رسمی انجام می‌ده.",
+    "hints": [
+      "درس این استعاره‌ی «پل بین دو طرف» رو دوباره از یه درس قبلی یادآوری کرد.",
+      "موضوع درست یا غلط بودن لیست خام نیست، بلکه فاصله‌ی زبانی بین دو گروهه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "strs-vs-syrs",
+    "title": "STRS و SYRS چه فرقی دارن؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، مشخصات نیازمندی ذی‌نفع (STRS) و مشخصات نیازمندی سیستم (SYRS) توی رویکرد تکرارشونده‌ی مهندسی نیازمندی چه نقشی دارن و چطور به هم مرتبطن؟",
+    "expected_outcome": "STRS نتیجه‌ی تکرار اولِ فعالیت مهندسی نیازمندیه — یه مشخصات سطح‌بالا که نیاز شناسایی‌شده رو اعتبارسنجی می‌کنه. SYRS نتیجه‌ی تکرار دومه — STRS به‌عنوان شرایط تازه استفاده می‌شه و نیازمندی‌ها تا سطح زیرسیستم (یا برای عناصر پرریسک، تا سطح جزء) تجزیه، اشتقاق و جاری می‌شن. یعنی SYRS پالایش جزئی‌تری از همون نیازمندی‌های STRSه.",
+    "hints": [
+      "STRS محصول تکرار اوله؛ SYRS محصول تکرار دومه که خود STRS رو به‌عنوان ورودی می‌گیره.",
+      "درس گفت STRS تا سطح زیرسیستم (یا جزء برای موارد پرریسک) پالایش می‌شه — نتیجه‌ش چه اسمی داره؟"
+    ],
+    "rubric": "Correct if response explains STRS as the first-iteration high-level output and SYRS as the second-iteration refinement (decomposed to subsystem/component level) that uses STRS as its starting condition. Correct_with_hint if only one document's role is explained. Incorrect otherwise."
+  },
+  {
+    "key": "documentation-vs-specification",
+    "title": "مستندسازی نیازمندی با مشخصات چه فرقی داره؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، «مستندسازی نیازمندی (requirements documentation)» با «مشخصات (specification)» چه فرقی دارن؟ حداقل دو تفاوت مشخص از درس بیار.",
+    "expected_outcome": "مستندسازی نیازمندی کمتر رسمی و بدون‌ساختاره — مثلاً یه لیست نکته‌ای از اهداف/قابلیت‌های ذی‌نفعان. مشخصات از دستورالعمل‌های سخت‌گیرانه پیروی می‌کنه: زبان مشخص هر جمله‌ی نیازمندی، موقعیت دقیق هر نیازمندی توی سند (شماره‌گذاری و طرح سلسله‌مراتبی)، یه واژه‌نامه برای شفاف‌سازی اصطلاحات، و معمولاً پایه‌ی یه قرارداد رسمی بین خریدار و فروشنده می‌شه.",
+    "hints": [
+      "درس چند ویژگی مشخص برای مشخصات (فرمت زبان، شماره‌گذاری، واژه‌نامه، پایه‌ی قرارداد) آورد که مستندسازی نداره.",
+      "به مثال «لیست نکته‌ای» به‌عنوان نمونه‌ی مستندسازیِ کمتر رسمی فکر کن."
+    ],
+    "rubric": "Correct if response names at least two distinguishing features of a specification (strict language rules, numbering/hierarchy, glossary, contractual basis) versus the informal nature of documentation. Correct_with_hint if only one distinction is given. Incorrect otherwise."
+  }
+]

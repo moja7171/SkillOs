@@ -1,0 +1,51 @@
+[
+  {
+    "key": "tbd-completeness",
+    "title": "کِی می‌شه گفت مشخصات کامله؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه مشخصات هنوز چند نیازمندی با مقدار «TBD» داره. طبق این درس، این چه معنایی داره؟",
+    "options": [
+      "مشخصات هنوز کامل نیست — TBD نشونه‌ی اینه که تحلیل بیشتری لازمه تا مقدار واقعی جایگزینش بشه",
+      "TBD یه مقدار قابل‌قبول نهاییه و مشکلی نداره اگه توی نسخه‌ی نهایی هم بمونه",
+      "TBD فقط برای نیازمندی‌های محدودیتی استفاده می‌شه، نه بقیه",
+      "وجود TBD نشون می‌ده مشخصات بیش‌ازحد جزئیه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "TBD (To Be Determined) جای‌نگه‌دارِ یه مقدار کمّیه که هنوز مشخص نشده — درس صریحاً گفت نمی‌شه گفت مشخصات کامله تا همه‌ی TBDها با اعداد واقعی و دقیق (بر پایه‌ی یافته‌های تحلیل) جایگزین بشن.",
+    "hints": [
+      "درس این رو دقیقاً یکی از سه جای رایج «ناقص‌بودن» معرفی کرد.",
+      "TBD یعنی چیزی هنوز معلوم نیست، نه اینکه قابل‌قبول یا نهاییه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "when-strs-syrs-allow-solution",
+    "title": "کِی ذکر راه‌حل توی نیازمندی اشکالی نداره؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این درس مثالی زد از دو نیازمندی متناقض («۲ تا ۳ ساعت پیش از نیاز به تعویض باتری» در برابر «پیش از نیاز به سوخت‌گیری») — و گفت این تناقض بیشتر مشکل STRS است، نه SYRS. چرا؟ SYRS چه ویژگی‌ای داره که STRS نداره؟",
+    "expected_outcome": "SYRS نتیجه‌ی تحلیل عمیق‌تر و مطالعات تطبیقیه که مشخص کردن کدوم راه‌حل (مثلاً باتری در برابر بنزین) از بین گزینه‌های ممکن، بهترین انتخاب برای برآوردن نیاز/اهداف سیستمه — پس توی SYRS اشکالی نداره نتیجه‌ی این تحلیل (یعنی راه‌حل انتخاب‌شده) رو توی جمله‌ی نیازمندی ذکر کنیم. STRS هنوز این تحلیل رو انجام نداده، پس باید بی‌طرف نسبت به راه‌حل باقی بمونه؛ اگه STRS دو نیازمندی متناقض راه‌حل‌محور داشته باشه، این یعنی سند سازگار نیست.",
+    "hints": [
+      "درس گفت SYRS «نتیجه‌ی تحلیل عمیق‌تر و مطالعات تطبیقی» است — این چه اجازه‌ای بهمون می‌ده؟",
+      "STRS هنوز این تحلیل رو انجام نداده — پس باید همچنان بی‌طرف باشه."
+    ],
+    "rubric": "Correct if response explains SYRS results from deeper analysis/trade studies that already determined the best solution, so mentioning it is fine there but not in STRS (which must stay solution-agnostic). Correct_with_hint if it says 'SYRS allows solutions' without explaining why (the trade study reasoning). Incorrect otherwise."
+  },
+  {
+    "key": "physics-inconsistency-example",
+    "title": "چرا نمی‌شه پهپاد رو با سرعت ۳۰۰ گره پرواز داد؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، چرا نیازمندی «سیستم پهپاد بذرپاش باید به سرعت ۳۰۰ گره برسد» با قوانین فیزیک ناسازگاره؟ دو پدیده‌ی فیزیکی که درس اسم برد رو در حد یک جمله برای هرکدوم توضیح بده.",
+    "expected_outcome": "برای سیستم‌های بال‌گردان (مثل پهپاد)، در سرعت‌های خیلی بالا دو پدیده رخ می‌ده: (۱) واماندگی تیغه‌ی عقب‌رونده — تیغه‌ای که به عقب حرکت می‌کنه توی فضا سرعت صفر یا منفی داره و برآ تولید نمی‌کنه، که باعث کج‌شدن و از دست‌رفتن کنترل می‌شه؛ (۲) نوک تیغه‌ی جلورونده‌ی فراصوت — نوک تیغه‌ای که هم با موتور و هم با حرکت جلوروی خود سیستم شتاب می‌گیره، ممکنه از سرعت صوت بگذره و ویژگی‌های پرواز رو به‌شدت تغییر بده و کنترل رو بیشتر از دست بده.",
+    "hints": [
+      "درس این دو پدیده رو با اسم مشخص معرفی کرد — یکی درباره‌ی تیغه‌ی عقب‌رونده، یکی درباره‌ی نوک تیغه‌ی جلورونده.",
+      "هردو پدیده در نهایت به «از دست‌رفتن کنترل» منجر می‌شن، ولی مکانیزمشون فرق داره."
+    ],
+    "rubric": "Correct if response names both retreating blade stall and advancing blade tip supersonic phenomena with a correct one-sentence explanation each. Correct_with_hint if only one phenomenon is correctly explained. Incorrect if neither matches the lesson."
+  }
+]

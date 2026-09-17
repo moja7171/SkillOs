@@ -1,0 +1,51 @@
+[
+  {
+    "key": "which-section-holds-what",
+    "title": "این نیازمندی توی کدوم بخش می‌ره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "نیازمندی مربوط به کیف حمل سخت پهپاد بذرپاش (که پیمانکار موظفه تحویلش بده) طبق ساختار MIL-STD-961E این درس، توی کدوم بخش از مشخصات جا می‌گیره؟",
+    "options": [
+      "بخش ۵ — نیازمندی‌های عناصر پشتیبانی (PHS&T)",
+      "بخش ۳ — نیازمندی‌های سیستم اصلی",
+      "بخش ۲ — اسناد قابل‌اعمال",
+      "بخش ۴ — فعالیت‌های راستی‌آزمایی"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "کیف حمل، یه عنصر پشتیبانی (نه خود سیستم مأموریتی)، پس توی بخش ۵ می‌ره — همون بخشی که درس دقیقاً همین مثال کیف حمل سخت رو براش زد.",
+    "hints": [
+      "بخش ۳ فقط برای خود سیستم مأموریتیه، نه عناصر پشتیبانی مثل کیف حمل.",
+      "درس دقیقاً این مثال (کیف حمل سخت) رو زیر عنوان بخش ۵ آورد."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "fix-personnel-requirement",
+    "title": "این نیازمندی رو درست کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "این نیازمندی توی بخش ۳ مشخصات پهپاد بذرپاش نوشته شده: «نگه‌دار باید ظرف یک ساعت تعمیرات پس از خرابی را انجام دهد.» طبق قوانین بخش ۳ این درس، این نیازمندی چه مشکلی داره؟ بازنویسیش کن.",
+    "expected_outcome": "مشکل: نیازمندی‌های بخش ۳ باید مخصوص خود سیستم باشن، نه فعالیت پرسنل بیرونی مثل نگه‌دار — نگه‌دار بیرون از مرز سیستمه. بازنویسی درست: «سیستم باید میانگین زمان تعمیر ۱ ساعت (آستانه)، نیم ساعت (هدف) داشته باشد» — با «سیستم باید» شروع می‌شه، نه «نگه‌دار باید»، و روی ویژگی خود سیستم (قابلیت تعمیرپذیری) تمرکز می‌کنه نه اقدام شخص.",
+    "hints": [
+      "درس دقیقاً همین مثال («نگه‌دار باید» در برابر «سیستم باید میانگین زمان تعمیر...») رو آورد.",
+      "نیازمندی باید روی ویژگی سیستم (مثل قابلیت تعمیر) تمرکز کنه، نه رفتار یه شخص بیرونی."
+    ],
+    "rubric": "Correct if response identifies the problem (dictating an external person's action instead of the system's property) and rewrites it starting with 'the system shall' focusing on mean-time-to-repair as a system attribute. Correct_with_hint if the problem is identified but the rewrite still references the maintainer's action. Incorrect otherwise."
+  },
+  {
+    "key": "why-template-helps-tools",
+    "title": "چرا ابزارهای مهندسی نیازمندی به قالب استاندارد نیاز دارن؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا پیروی از یه قالب استاندارد (مثل MIL-STD-961E) به ابزارهای مهندسی نیازمندی کمک می‌کنه، با مثال مشخصی که درس زد؟",
+    "expected_outcome": "چون ابزارهای مهندسی نیازمندی می‌تونن از متادیتای ساختاریافته‌ی سند (مثل شماره‌گذاری بخش‌ها) برای شناسایی و دسته‌بندی خودکار عناصر استفاده کنن — مثال درس: چون همه‌ی جمله‌های نیازمندی اصلی زیر بخش ۳ هستن، یه برنامه‌ی خودکار می‌تونه هر جمله‌ای با سرآیند ۳.x رو به‌عنوان جمله‌ی نیازمندی تشخیص بده، و حتی سلسله‌مراتب نیازمندی رو بر پایه‌ی طرح شماره‌گذاری به‌طور خودکار بسازه.",
+    "hints": [
+      "درس دقیقاً مثال «۳.x» رو زد — این عدد چه معنایی توی ساختار مشخصات داره؟",
+      "متادیتای چه چیزی (شماره‌گذاری بخش) این تشخیص خودکار رو ممکن می‌کنه؟"
+    ],
+    "rubric": "Correct if response explains that tools use the document's structured metadata (section numbering) to auto-identify and categorize elements, citing the 3.x heading example from the lesson. Correct_with_hint if it vaguely says 'tools work better with structure' without the specific numbering mechanism. Incorrect otherwise."
+  }
+]

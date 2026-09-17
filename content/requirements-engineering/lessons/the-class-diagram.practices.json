@@ -1,0 +1,51 @@
+[
+  {
+    "key": "class-diagram-three-compartments",
+    "title": "سه بخش یه کلاس چی هستن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، مستطیل سه‌بخشیِ یه کلاس توی دیاگرام کلاس، چه سه بخشی داره؟",
+    "options": [
+      "اسم کلاس، ویژگی‌ها، عملیات‌ها",
+      "اسم کلاس، والد کلاس، فرزند کلاس",
+      "ورودی، پردازش، خروجی",
+      "فاعل، فعل، مفعول"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "سه بخش یه کلاس: بخش اول اسم کلاس، بخش دوم ویژگی‌ها (مثل شماره‌تراکنش، تاریخ)، بخش سوم عملیات‌هایی که کلاس انجام می‌ده.",
+    "hints": [
+      "درس این سه بخش رو به‌ترتیب معرفی کرد — اسم، بعد یه چیز درباره‌ی خواص، بعد یه چیز درباره‌ی رفتار/عملکرد.",
+      "این ساختار دقیقاً همون چیزیه که توی UML هم استفاده می‌شه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "abstract-class-instantiation",
+    "title": "چرا نمی‌شه از کلاس انتزاعی نمونه ساخت؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "توی مثال خودپرداز این درس، «تراکنش» یه کلاس انتزاعیه و «برداشت پول نقد» یه کلاس مشخص که نوعی تراکنشه. وقتی یه کاربر واقعی جلوی خودپرداز میاد و می‌خواد پول برداشت کنه، طبق این درس دقیقاً کدوم کلاس نمونه‌سازی می‌شه، و چرا نمی‌شه مستقیماً از کلاس «تراکنش» نمونه ساخت؟",
+    "expected_outcome": "کلاس «برداشت پول نقد» (کلاس مشخص) نمونه‌سازی می‌شه، نه «تراکنش» (کلاس انتزاعی). طبق درس، کلاس انتزاعی معمولاً نمی‌تونه نمونه‌سازی بشه — فقط کلاس‌های مشخص می‌تونن به‌عنوان نمونه ساخته بشن، دقیقاً مثل نوشتن نرم‌افزار شیءگرا؛ «تراکنش» فقط ویژگی‌ها و عملیات‌های کلی رو تعریف می‌کنه که کلاس‌های مشخص‌تر (مثل برداشت پول نقد) اون‌ها رو تخصصی می‌کنن.",
+    "hints": [
+      "درس صریحاً گفت «فقط کلاس‌های مشخص می‌تونن نمونه‌سازی بشن».",
+      "«تراکنش» چه نوع کلاسیه، و «برداشت پول نقد» چه رابطه‌ای باهاش داره؟"
+    ],
+    "rubric": "Correct if response identifies Cash Withdrawal (the concrete class) as what gets instantiated, and explains abstract classes like Transaction typically can't be instantiated directly — only concrete/specialized classes can. Correct_with_hint if the correct class is named without the abstract-class reasoning. Incorrect otherwise."
+  },
+  {
+    "key": "class-diagram-for-requirements",
+    "title": "دیاگرام کلاس چطور به شناسایی نیازمندی کمک می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق مثال این درس درباره‌ی «کاربران باید برای دسترسی به حسابشون پین وارد کنن»، دیاگرام کلاس چطور کمک می‌کنه این نیازمندی رو به‌شکل ملموس پیاده‌سازی و راستی‌آزمایی کنیم؟",
+    "expected_outcome": "دیاگرام کلاس این نیازمندی رو به عناصر مشخص کلاس ترجمه می‌کنه — با اطمینان از اینکه کلاس «کاربر» یه ویژگی برای پین داره، و کلاس «خودپرداز» یه عملیات برای تأیید پین داره. این‌طوری نیازمندی انتزاعی («باید پین وارد کنن») به یه ساختار قابل‌پیاده‌سازی و قابل‌دمو تبدیل می‌شه.",
+    "hints": [
+      "درس دقیقاً همین مثال پین رو زد — به دو کلاس مشخص (کاربر، خودپرداز) و چیزی که هرکدوم باید داشته باشن اشاره کرد.",
+      "یکی از دو کلاس باید یه «ویژگی» داشته باشه، دیگری یه «عملیات»."
+    ],
+    "rubric": "Correct if response explains the requirement maps to a User class attribute for PIN and an ATM class operation for verifying it, making the abstract requirement concretely implementable/demonstrable. Correct_with_hint if only one of the two class elements is mentioned. Incorrect otherwise."
+  }
+]

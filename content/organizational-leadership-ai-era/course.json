@@ -1,0 +1,324 @@
+{
+  "title": "رهبری سازمانی در عصر هوش مصنوعی",
+  "description": "چطور رهبری سازمانی باید در عصر هوش مصنوعی تغییر کنه — از استراتژی تا ارزش‌آفرینی با داده و تخصص انسانی.",
+  "outcome_statement": "نگرش تازه‌ای نسبت به رهبری، استراتژی و ارزش‌آفرینی سازمانی در دنیایی که هوش مصنوعی داره همه‌چی رو تغییر می‌ده پیدا می‌کنی.",
+  "source_note": "برگرفته از دوره‌ی «Organizational Leadership in the Era of AI».",
+  "video_base_url": "/media/organizational-leadership-ai-era/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "جهش فناوری، جهش مدیریتی می‌خواد",
+      "summary": "چرا فناوری تازه به مدیریت تازه نیاز داره.",
+      "section": "رهبری در عصر هوش مصنوعی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "001-technology-breakthroughs-need-management-breakthroughs-gnhh.mp4",
+          "subtitles": [
+            {
+              "file": "001-technology-breakthroughs-need-management-breakthroughs-gnhh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-technology-breakthroughs-need-management-breakthroughs-gnhh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "new-leadership-for-the-ai-era-5rft",
+      "title": "رهبری تازه برای عصر هوش مصنوعی",
+      "summary": "تغییر نگرش رهبری در عصر AI.",
+      "section": "رهبری در عصر هوش مصنوعی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "002-new-leadership-for-the-ai-era-5rft.mp4",
+          "subtitles": [
+            {
+              "file": "002-new-leadership-for-the-ai-era-5rft.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-new-leadership-for-the-ai-era-5rft.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "leading-your-organization-as-a-social-system-ti9w",
+      "title": "سازمانت رو مثل یه سیستم اجتماعی رهبری کن",
+      "summary": "دیدن سازمان به‌عنوان یه سیستم اجتماعی.",
+      "section": "رهبری در عصر هوش مصنوعی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "003-leading-your-organization-as-a-social-system-ti9w.mp4",
+          "subtitles": [
+            {
+              "file": "003-leading-your-organization-as-a-social-system-ti9w.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-leading-your-organization-as-a-social-system-ti9w.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understanding-autonomous-transformation-4kq0",
+      "title": "فهم تحول خودران",
+      "summary": "تحولی که خودش رو پیش می‌بره.",
+      "section": "رهبری در عصر هوش مصنوعی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "004-understanding-autonomous-transformation-4kq0.mp4",
+          "subtitles": [
+            {
+              "file": "004-understanding-autonomous-transformation-4kq0.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-understanding-autonomous-transformation-4kq0.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "leading-autonomous-transformation-jxng",
+      "title": "رهبری تحول خودران",
+      "summary": "هدایت تحولی که از پایین شکل می‌گیره.",
+      "section": "رهبری در عصر هوش مصنوعی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "005-leading-autonomous-transformation-jxng.mp4",
+          "subtitles": [
+            {
+              "file": "005-leading-autonomous-transformation-jxng.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-leading-autonomous-transformation-jxng.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "empowering-your-experts-vi5w",
+      "title": "به کارشناسانت قدرت بده",
+      "summary": "توانمندسازی متخصصان سازمان.",
+      "section": "رهبری در عصر هوش مصنوعی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "006-empowering-your-experts-vi5w.mp4",
+          "subtitles": [
+            {
+              "file": "006-empowering-your-experts-vi5w.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-empowering-your-experts-vi5w.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "reason-driven-vs-data-driven-strategy-2ewk",
+      "title": "استراتژی مبتنی بر استدلال در برابر داده",
+      "summary": "دو رویکرد متفاوت به استراتژی.",
+      "section": "استراتژی و تصمیم‌گیری",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "007-reason-driven-vs-data-driven-strategy-2ewk.mp4",
+          "subtitles": [
+            {
+              "file": "007-reason-driven-vs-data-driven-strategy-2ewk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-reason-driven-vs-data-driven-strategy-2ewk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "harness-opposing-views-mmfv",
+      "title": "از دیدگاه‌های مخالف بهره ببر",
+      "summary": "ارزش دیدگاه‌های متضاد توی تصمیم‌گیری.",
+      "section": "استراتژی و تصمیم‌گیری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "008-harness-opposing-views-mmfv.mp4",
+          "subtitles": [
+            {
+              "file": "008-harness-opposing-views-mmfv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-harness-opposing-views-mmfv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "focus-your-resources-s0kv",
+      "title": "منابعت رو متمرکز کن",
+      "summary": "تمرکز منابع روی اولویت واقعی.",
+      "section": "استراتژی و تصمیم‌گیری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "009-focus-your-resources-s0kv.mp4",
+          "subtitles": [
+            {
+              "file": "009-focus-your-resources-s0kv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-focus-your-resources-s0kv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "communicate-your-vision-and-strategy-v27c",
+      "title": "چشم‌انداز و استراتژیت رو منتقل کن",
+      "summary": "ارتباط مؤثر چشم‌انداز سازمانی.",
+      "section": "استراتژی و تصمیم‌گیری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "010-communicate-your-vision-and-strategy-v27c.mp4",
+          "subtitles": [
+            {
+              "file": "010-communicate-your-vision-and-strategy-v27c.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-communicate-your-vision-and-strategy-v27c.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "replace-problem-solving-with-future-solving-mlsu",
+      "title": "حل مسئله رو با حل آینده جایگزین کن",
+      "summary": "نگاه به‌جلو به‌جای واکنش به مسئله.",
+      "section": "استراتژی و تصمیم‌گیری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "011-replace-problem-solving-with-future-solving-mlsu.mp4",
+          "subtitles": [
+            {
+              "file": "011-replace-problem-solving-with-future-solving-mlsu.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-replace-problem-solving-with-future-solving-mlsu.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "pair-data-with-expertise-1txs",
+      "title": "داده رو با تخصص جفت کن",
+      "summary": "ترکیب داده و تخصص انسانی.",
+      "section": "ارزش‌آفرینی با داده و تخصص",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "012-pair-data-with-expertise-1txs.mp4",
+          "subtitles": [
+            {
+              "file": "012-pair-data-with-expertise-1txs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-pair-data-with-expertise-1txs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "augment-analysis-with-synthesis-3g5l",
+      "title": "تحلیل رو با ترکیب (سنتز) تقویت کن",
+      "summary": "فراتر رفتن از تحلیل صرف.",
+      "section": "ارزش‌آفرینی با داده و تخصص",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "013-augment-analysis-with-synthesis-3g5l.mp4",
+          "subtitles": [
+            {
+              "file": "013-augment-analysis-with-synthesis-3g5l.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-augment-analysis-with-synthesis-3g5l.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "replace-use-cases-with-value-cases-dikn",
+      "title": "use case رو با value case جایگزین کن",
+      "summary": "تمرکز روی ارزش، نه فقط کاربرد.",
+      "section": "ارزش‌آفرینی با داده و تخصص",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "014-replace-use-cases-with-value-cases-dikn.mp4",
+          "subtitles": [
+            {
+              "file": "014-replace-use-cases-with-value-cases-dikn.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-replace-use-cases-with-value-cases-dikn.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "رسیدن به سطح تازه‌ای از ارزش‌آفرینی",
+      "summary": "جمع‌بندی مسیر ارزش‌آفرینی در عصر AI.",
+      "section": "ارزش‌آفرینی با داده و تخصص",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "015-reaching-new-heights-of-value-creation-abbq.mp4",
+          "subtitles": [
+            {
+              "file": "015-reaching-new-heights-of-value-creation-abbq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-reaching-new-heights-of-value-creation-abbq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

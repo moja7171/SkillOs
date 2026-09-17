@@ -1,0 +1,1248 @@
+{
+  "title": "آموزش پیشرفته‌ی اسکرام مستری",
+  "description": "آموزش عمیق نقش اسکرام مستر — از مبانی اجایل تا آرتیفکت‌ها، رویدادها و مهارت‌های پیشرفته‌ی خدمت‌رسانی.",
+  "outcome_statement": "درک عمیقی از نقش، رویدادها و آرتیفکت‌های اسکرام پیدا می‌کنی و برای اسکرام مستری حرفه‌ای (و آزمون‌های مرتبط) آماده می‌شی.",
+  "source_note": "برگرفته از دوره‌ی «The Ultimate Advanced Training For Agile Scrum Master».",
+  "video_base_url": "/media/advanced-scrum-master/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "نقشه‌راه موفقیت",
+      "summary": "نمای‌کلی مسیر این دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "001-roadmap-to-success-kdcq.mp4",
+          "subtitles": [
+            {
+              "file": "001-roadmap-to-success-kdcq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-roadmap-to-success-kdcq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "please-introduce-yourself-qykx",
+      "title": "خودت رو معرفی کن",
+      "summary": "آشنایی اولیه با دوره و مخاطب.",
+      "section": "مقدمه",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "003-please-introduce-yourself-qykx.mp4",
+          "subtitles": [
+            {
+              "file": "003-please-introduce-yourself-qykx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-please-introduce-yourself-qykx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "your-experience-with-this-course-um6c",
+      "title": "تجربه‌ی تو با این دوره",
+      "summary": "انتظارات از یادگیرنده در طول دوره.",
+      "section": "مقدمه",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "004-your-experience-with-this-course-um6c.mp4",
+          "subtitles": [
+            {
+              "file": "004-your-experience-with-this-course-um6c.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-your-experience-with-this-course-um6c.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "intro-l6oi",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی مبانی اجایل و اسکرام.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "005-intro-l6oi.mp4",
+          "subtitles": [
+            {
+              "file": "005-intro-l6oi.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-intro-l6oi.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-agile-manifesto-atda",
+      "title": "مانیفست اجایل",
+      "summary": "اصول و ارزش‌های بیانیه‌ی اجایل.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "006-the-agile-manifesto-atda.mp4",
+          "subtitles": [
+            {
+              "file": "006-the-agile-manifesto-atda.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-the-agile-manifesto-atda.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "agile-vs-waterfall-kxik",
+      "title": "اجایل در برابر آبشاری",
+      "summary": "مقایسه‌ی این دو مدل توسعه.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "007-agile-vs-waterfall-kxik.mp4",
+          "subtitles": [
+            {
+              "file": "007-agile-vs-waterfall-kxik.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-agile-vs-waterfall-kxik.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-do-we-plan-in-agile-yym3",
+      "title": "برنامه‌ریزی توی اجایل چطوره؟",
+      "summary": "تفاوت برنامه‌ریزی اجایل با روش سنتی.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "008-how-do-we-plan-in-agile-yym3.mp4",
+          "subtitles": [
+            {
+              "file": "008-how-do-we-plan-in-agile-yym3.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-how-do-we-plan-in-agile-yym3.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-management-vs-project-management-mental-shifts-mmqy",
+      "title": "مدیریت محصول در برابر مدیریت پروژه — تغییر ذهنیت",
+      "summary": "تفاوت نگرش این دو نقش.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "009-product-management-vs-project-management-mental-shifts-mmqy.mp4",
+          "subtitles": [
+            {
+              "file": "009-product-management-vs-project-management-mental-shifts-mmqy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-product-management-vs-project-management-mental-shifts-mmqy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-high-level-overview-part-1-qxqt",
+      "title": "نمای‌کلی اسکرام — بخش ۱",
+      "summary": "معرفی کلی چارچوب اسکرام.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "010-scrum-high-level-overview-part-1-qxqt.mp4",
+          "subtitles": [
+            {
+              "file": "010-scrum-high-level-overview-part-1-qxqt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-scrum-high-level-overview-part-1-qxqt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-high-level-overview-part-2-rzrh",
+      "title": "نمای‌کلی اسکرام — بخش ۲",
+      "summary": "ادامه‌ی معرفی چارچوب اسکرام.",
+      "section": "مبانی اجایل و اسکرام",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "011-scrum-high-level-overview-part-2-rzrh.mp4",
+          "subtitles": [
+            {
+              "file": "011-scrum-high-level-overview-part-2-rzrh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-scrum-high-level-overview-part-2-rzrh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cross-functionality-self-management-sf7t",
+      "title": "چندمهارتی بودن و خودمدیریتی تیم",
+      "summary": "دو ویژگی کلیدی تیم اسکرام.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "013-cross-functionality-self-management-sf7t.mp4",
+          "subtitles": [
+            {
+              "file": "013-cross-functionality-self-management-sf7t.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-cross-functionality-self-management-sf7t.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-product-owner-part-1-nmhs",
+      "title": "مالک محصول (Product Owner) — بخش ۱",
+      "summary": "نقش و مسئولیت مالک محصول.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "014-the-product-owner-part-1-nmhs.mp4",
+          "subtitles": [
+            {
+              "file": "014-the-product-owner-part-1-nmhs.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-the-product-owner-part-1-nmhs.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-product-owner-part-2-coee",
+      "title": "مالک محصول (Product Owner) — بخش ۲",
+      "summary": "ادامه‌ی نقش مالک محصول.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "015-the-product-owner-part-2-coee.mp4",
+          "subtitles": [
+            {
+              "file": "015-the-product-owner-part-2-coee.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-the-product-owner-part-2-coee.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-part-1-smfz",
+      "title": "اسکرام مستر — بخش ۱",
+      "summary": "نقش و مسئولیت اسکرام مستر.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "016-the-scrum-master-part-1-smfz.mp4",
+          "subtitles": [
+            {
+              "file": "016-the-scrum-master-part-1-smfz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-the-scrum-master-part-1-smfz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-part-2-z33m",
+      "title": "اسکرام مستر — بخش ۲",
+      "summary": "ادامه‌ی نقش اسکرام مستر.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "017-the-scrum-master-part-2-z33m.mp4",
+          "subtitles": [
+            {
+              "file": "017-the-scrum-master-part-2-z33m.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-the-scrum-master-part-2-z33m.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-developers-part-1-ba4k",
+      "title": "توسعه‌دهندگان — بخش ۱",
+      "summary": "نقش اعضای توسعه‌دهنده‌ی تیم.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "018-the-developers-part-1-ba4k.mp4",
+          "subtitles": [
+            {
+              "file": "018-the-developers-part-1-ba4k.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-the-developers-part-1-ba4k.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-developers-part-2-peuz",
+      "title": "توسعه‌دهندگان — بخش ۲",
+      "summary": "ادامه‌ی نقش توسعه‌دهندگان.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "019-the-developers-part-2-peuz.mp4",
+          "subtitles": [
+            {
+              "file": "019-the-developers-part-2-peuz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-the-developers-part-2-peuz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-of-the-key-concepts-the-scrum-team-w96f",
+      "title": "مرور مفاهیم کلیدی: تیم اسکرام",
+      "summary": "جمع‌بندی بخش تیم اسکرام.",
+      "section": "تیم اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "020-recap-of-the-key-concepts-the-scrum-team-w96f.mp4",
+          "subtitles": [
+            {
+              "file": "020-recap-of-the-key-concepts-the-scrum-team-w96f.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-recap-of-the-key-concepts-the-scrum-team-w96f.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-events-intro-h453",
+      "title": "مقدمه‌ای بر رویدادهای اسکرام",
+      "summary": "نمای‌کلی پنج رویداد اسکرام.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "022-the-scrum-events-intro-h453.mp4",
+          "subtitles": [
+            {
+              "file": "022-the-scrum-events-intro-h453.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-the-scrum-events-intro-h453.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-d4fe",
+      "title": "اسپرینت",
+      "summary": "قلب چرخه‌ی کاری اسکرام.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "023-the-sprint-d4fe.mp4",
+          "subtitles": [
+            {
+              "file": "023-the-sprint-d4fe.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-the-sprint-d4fe.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-planning-event-rouy",
+      "title": "رویداد برنامه‌ریزی اسپرینت",
+      "summary": "شروع هر اسپرینت.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "024-the-sprint-planning-event-rouy.mp4",
+          "subtitles": [
+            {
+              "file": "024-the-sprint-planning-event-rouy.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-the-sprint-planning-event-rouy.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "daily-scrum-d7sb",
+      "title": "اسکرام روزانه",
+      "summary": "هماهنگی روزانه‌ی تیم.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "025-daily-scrum-d7sb.mp4",
+          "subtitles": [
+            {
+              "file": "025-daily-scrum-d7sb.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-daily-scrum-d7sb.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-review-event-j8kp",
+      "title": "رویداد مرور اسپرینت",
+      "summary": "نمایش نتیجه‌ی کار به ذی‌نفعان.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "026-the-sprint-review-event-j8kp.mp4",
+          "subtitles": [
+            {
+              "file": "026-the-sprint-review-event-j8kp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-the-sprint-review-event-j8kp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-retrospective-event-xsjg",
+      "title": "رویداد گذشته‌نگر اسپرینت (رتروسپکتیو)",
+      "summary": "بهبود مستمر فرایند تیم.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "027-the-sprint-retrospective-event-xsjg.mp4",
+          "subtitles": [
+            {
+              "file": "027-the-sprint-retrospective-event-xsjg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-the-sprint-retrospective-event-xsjg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-length-of-the-scrum-events-clarifications-87ra",
+      "title": "طول رویدادهای اسکرام — نکات تکمیلی",
+      "summary": "زمان‌بندی و محدودیت‌های زمانی رویدادها.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 11,
+      "videos": [
+        {
+          "file": "028-the-length-of-the-scrum-events-clarifications-87ra.mp4",
+          "subtitles": [
+            {
+              "file": "028-the-length-of-the-scrum-events-clarifications-87ra.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-the-length-of-the-scrum-events-clarifications-87ra.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-of-scrum-events-lhjo",
+      "title": "مرور رویدادهای اسکرام",
+      "summary": "جمع‌بندی رویدادهای اسکرام.",
+      "section": "رویدادهای اسکرام",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "029-recap-of-scrum-events-lhjo.mp4",
+          "subtitles": [
+            {
+              "file": "029-recap-of-scrum-events-lhjo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-recap-of-scrum-events-lhjo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "intro-artifacts-commitments-uaid",
+      "title": "مقدمه‌ای بر آرتیفکت‌ها و تعهدات",
+      "summary": "نمای‌کلی آرتیفکت‌های اسکرام.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "031-intro-artifacts-commitments-uaid.mp4",
+          "subtitles": [
+            {
+              "file": "031-intro-artifacts-commitments-uaid.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-intro-artifacts-commitments-uaid.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-product-backlog-tdrz",
+      "title": "بک‌لاگ محصول",
+      "summary": "لیست اولویت‌بندی‌شده‌ی کار.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "032-the-product-backlog-tdrz.mp4",
+          "subtitles": [
+            {
+              "file": "032-the-product-backlog-tdrz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-the-product-backlog-tdrz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-product-goal-ipxc",
+      "title": "هدف محصول",
+      "summary": "تعهد پشت بک‌لاگ محصول.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "033-the-product-goal-ipxc.mp4",
+          "subtitles": [
+            {
+              "file": "033-the-product-goal-ipxc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-the-product-goal-ipxc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-sprint-backlog-sprint-goal-4odz",
+      "title": "بک‌لاگ اسپرینت و هدف اسپرینت",
+      "summary": "برنامه‌ی کار همون اسپرینت.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "034-the-sprint-backlog-sprint-goal-4odz.mp4",
+          "subtitles": [
+            {
+              "file": "034-the-sprint-backlog-sprint-goal-4odz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-the-sprint-backlog-sprint-goal-4odz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-increment-78fe",
+      "title": "افزایش (Increment)",
+      "summary": "خروجی قابل‌ارائه‌ی هر اسپرینت.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "035-the-increment-78fe.mp4",
+          "subtitles": [
+            {
+              "file": "035-the-increment-78fe.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-the-increment-78fe.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-definition-of-done-dod-lwee",
+      "title": "تعریف انجام‌شده (DoD)",
+      "summary": "معیار تکمیل واقعی کار.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "036-the-definition-of-done-dod-lwee.mp4",
+          "subtitles": [
+            {
+              "file": "036-the-definition-of-done-dod-lwee.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-the-definition-of-done-dod-lwee.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-of-the-artifacts-their-commitments-vzzh",
+      "title": "مرور آرتیفکت‌ها و تعهداتشون",
+      "summary": "جمع‌بندی آرتیفکت‌های اسکرام.",
+      "section": "آرتیفکت‌ها و تعهدات اسکرام",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "037-recap-of-the-artifacts-their-commitments-vzzh.mp4",
+          "subtitles": [
+            {
+              "file": "037-recap-of-the-artifacts-their-commitments-vzzh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-recap-of-the-artifacts-their-commitments-vzzh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "intro-grwe",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی مهارت‌های پیشرفته‌ی اسکرام مستر.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "039-intro-grwe.mp4",
+          "subtitles": [
+            {
+              "file": "039-intro-grwe.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-intro-grwe.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "empiricism-h6h8",
+      "title": "تجربه‌گرایی (Empiricism)",
+      "summary": "پایه‌ی فلسفی اسکرام.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "040-empiricism-h6h8.mp4",
+          "subtitles": [
+            {
+              "file": "040-empiricism-h6h8.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-empiricism-h6h8.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "scrum-values-deep-dive-dqrp",
+      "title": "کندوکاو در ارزش‌های اسکرام",
+      "summary": "بررسی عمیق پنج ارزش اسکرام.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "041-scrum-values-deep-dive-dqrp.mp4",
+          "subtitles": [
+            {
+              "file": "041-scrum-values-deep-dive-dqrp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-scrum-values-deep-dive-dqrp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "misunderstandings-of-the-scrum-master-behaviours-to-avoid-aooq",
+      "title": "سوءتفاهم‌های رایج درباره‌ی اسکرام مستر",
+      "summary": "رفتارهایی که باید ازشون پرهیز کرد.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "042-misunderstandings-of-the-scrum-master-behaviours-to-avoid-aooq.mp4",
+          "subtitles": [
+            {
+              "file": "042-misunderstandings-of-the-scrum-master-behaviours-to-avoid-aooq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-misunderstandings-of-the-scrum-master-behaviours-to-avoid-aooq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-advanced-part-1-jsvr",
+      "title": "اسکرام مستر پیشرفته — بخش ۱",
+      "summary": "مهارت‌های عمیق‌تر اسکرام مستری.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "043-the-scrum-master-advanced-part-1-jsvr.mp4",
+          "subtitles": [
+            {
+              "file": "043-the-scrum-master-advanced-part-1-jsvr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-the-scrum-master-advanced-part-1-jsvr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-advanced-part-2-ffe2",
+      "title": "اسکرام مستر پیشرفته — بخش ۲",
+      "summary": "ادامه‌ی مهارت‌های پیشرفته.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 10,
+      "videos": [
+        {
+          "file": "044-the-scrum-master-advanced-part-2-ffe2.mp4",
+          "subtitles": [
+            {
+              "file": "044-the-scrum-master-advanced-part-2-ffe2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-the-scrum-master-advanced-part-2-ffe2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-1-4zjv",
+      "title": "مرور ۱",
+      "summary": "جمع‌بندی بخش اول اسکرام مستر پیشرفته.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "045-recap-1-4zjv.mp4",
+          "subtitles": [
+            {
+              "file": "045-recap-1-4zjv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "045-recap-1-4zjv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-serves-the-organization-veyo",
+      "title": "اسکرام مستر در خدمت سازمان",
+      "summary": "نقش اسکرام مستر برای سازمان.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "046-the-scrum-master-serves-the-organization-veyo.mp4",
+          "subtitles": [
+            {
+              "file": "046-the-scrum-master-serves-the-organization-veyo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-the-scrum-master-serves-the-organization-veyo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-serves-the-product-owner-mtyq",
+      "title": "اسکرام مستر در خدمت مالک محصول",
+      "summary": "نقش اسکرام مستر برای PO.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "047-the-scrum-master-serves-the-product-owner-mtyq.mp4",
+          "subtitles": [
+            {
+              "file": "047-the-scrum-master-serves-the-product-owner-mtyq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-the-scrum-master-serves-the-product-owner-mtyq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "the-scrum-master-serves-the-scrum-team-sbbe",
+      "title": "اسکرام مستر در خدمت تیم اسکرام",
+      "summary": "نقش اسکرام مستر برای تیم.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "048-the-scrum-master-serves-the-scrum-team-sbbe.mp4",
+          "subtitles": [
+            {
+              "file": "048-the-scrum-master-serves-the-scrum-team-sbbe.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-the-scrum-master-serves-the-scrum-team-sbbe.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-2-jfhx",
+      "title": "مرور ۲",
+      "summary": "جمع‌بندی بخش دوم اسکرام مستر پیشرفته.",
+      "section": "اسکرام مستر پیشرفته",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "049-recap-2-jfhx.mp4",
+          "subtitles": [
+            {
+              "file": "049-recap-2-jfhx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "049-recap-2-jfhx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "fundamental-scrum-principle-1-dnvl",
+      "title": "اصل بنیادین اسکرام — ۱",
+      "summary": "یکی از اصول پایه‌ای اسکرام.",
+      "section": "اصول بنیادین و تیم‌های چندگانه",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "050-fundamental-scrum-principle-1-dnvl.mp4",
+          "subtitles": [
+            {
+              "file": "050-fundamental-scrum-principle-1-dnvl.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "050-fundamental-scrum-principle-1-dnvl.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "fundamental-scrum-principle-2-cfhz",
+      "title": "اصل بنیادین اسکرام — ۲",
+      "summary": "اصل بنیادین دیگر اسکرام.",
+      "section": "اصول بنیادین و تیم‌های چندگانه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "051-fundamental-scrum-principle-2-cfhz.mp4",
+          "subtitles": [
+            {
+              "file": "051-fundamental-scrum-principle-2-cfhz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-fundamental-scrum-principle-2-cfhz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "component-teams-vs-feature-teams-gzgt",
+      "title": "تیم‌های جزء‌محور در برابر فیچرمحور",
+      "summary": "دو مدل سازمان‌دهی تیم توسعه.",
+      "section": "اصول بنیادین و تیم‌های چندگانه",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "052-component-teams-vs-feature-teams-gzgt.mp4",
+          "subtitles": [
+            {
+              "file": "052-component-teams-vs-feature-teams-gzgt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "052-component-teams-vs-feature-teams-gzgt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-3-99qk",
+      "title": "مرور ۳",
+      "summary": "جمع‌بندی اصول بنیادین و تیم‌ها.",
+      "section": "اصول بنیادین و تیم‌های چندگانه",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "053-recap-3-99qk.mp4",
+          "subtitles": [
+            {
+              "file": "053-recap-3-99qk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-recap-3-99qk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "emergent-architecture-qskd",
+      "title": "معماری نوظهور (Emergent Architecture)",
+      "summary": "شکل‌گیری تدریجی معماری در اجایل.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "055-emergent-architecture-qskd.mp4",
+          "subtitles": [
+            {
+              "file": "055-emergent-architecture-qskd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-emergent-architecture-qskd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "velocity-value-xvnb",
+      "title": "سرعت تیم و ارزش",
+      "summary": "رابطه‌ی Velocity با ارزش واقعی.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "056-velocity-value-xvnb.mp4",
+          "subtitles": [
+            {
+              "file": "056-velocity-value-xvnb.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-velocity-value-xvnb.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-4-honv",
+      "title": "مرور ۴",
+      "summary": "جمع‌بندی موضوعات تکمیلی.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "057-recap-4-honv.mp4",
+          "subtitles": [
+            {
+              "file": "057-recap-4-honv.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-recap-4-honv.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "tools-practices-charts-bv1a",
+      "title": "ابزار، شیوه‌ها و نمودارها",
+      "summary": "ابزارهای رایج کار تیم اسکرام.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "058-tools-practices-charts-bv1a.mp4",
+          "subtitles": [
+            {
+              "file": "058-tools-practices-charts-bv1a.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-tools-practices-charts-bv1a.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "multiple-scrum-teams-everything-you-need-to-know-x2pj",
+      "title": "چند تیم اسکرام هم‌زمان — هر چی باید بدونی",
+      "summary": "هماهنگی بین چند تیم اسکرام.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "059-multiple-scrum-teams-everything-you-need-to-know-x2pj.mp4",
+          "subtitles": [
+            {
+              "file": "059-multiple-scrum-teams-everything-you-need-to-know-x2pj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-multiple-scrum-teams-everything-you-need-to-know-x2pj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "timeboxing-the-agile-concept-behind-all-scrum-events-bfn9",
+      "title": "تایم‌باکسینگ — مفهوم پشت همه‌ی رویدادهای اسکرام",
+      "summary": "چرا همه‌ی رویدادها زمان محدود دارن.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "060-timeboxing-the-agile-concept-behind-all-scrum-events-bfn9.mp4",
+          "subtitles": [
+            {
+              "file": "060-timeboxing-the-agile-concept-behind-all-scrum-events-bfn9.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-timeboxing-the-agile-concept-behind-all-scrum-events-bfn9.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "skills-within-the-scrum-team-yo6q",
+      "title": "مهارت‌های درون تیم اسکرام",
+      "summary": "تنوع مهارتی موردنیاز تیم.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "061-skills-within-the-scrum-team-yo6q.mp4",
+          "subtitles": [
+            {
+              "file": "061-skills-within-the-scrum-team-yo6q.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-skills-within-the-scrum-team-yo6q.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "burnup-burndown-charts-jfpo",
+      "title": "نمودارهای برن‌آپ و برن‌داون",
+      "summary": "ابزار پایش پیشرفت اسپرینت.",
+      "section": "موضوعات تکمیلی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "062-burnup-burndown-charts-jfpo.mp4",
+          "subtitles": [
+            {
+              "file": "062-burnup-burndown-charts-jfpo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-burnup-burndown-charts-jfpo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "recap-5-uwcd",
+      "title": "مرور ۵",
+      "summary": "جمع‌بندی نهایی مطالب دوره.",
+      "section": "جمع‌بندی و آمادگی آزمون",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "063-recap-5-uwcd.mp4",
+          "subtitles": [
+            {
+              "file": "063-recap-5-uwcd.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-recap-5-uwcd.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "intro-oyqc",
+      "title": "مقدمه",
+      "summary": "معرفی بخش آمادگی آزمون.",
+      "section": "جمع‌بندی و آمادگی آزمون",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "064-intro-oyqc.mp4",
+          "subtitles": [
+            {
+              "file": "064-intro-oyqc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-intro-oyqc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "۸ نکته‌ی برتر برای آزمون اسکرام مستر",
+      "summary": "توصیه‌های عملی برای قبولی آزمون.",
+      "section": "جمع‌بندی و آمادگی آزمون",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "065-my-top-8-tips-to-approach-the-sm-exam-agdw.mp4",
+          "subtitles": [
+            {
+              "file": "065-my-top-8-tips-to-approach-the-sm-exam-agdw.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-my-top-8-tips-to-approach-the-sm-exam-agdw.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

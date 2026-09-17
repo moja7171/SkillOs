@@ -841,3 +841,27 @@ All mail-related records (`MX`, SPF/DKIM/DMARC `TXT`, and the `mail`/`webmail`/`
 **Why.** Owner asked whether the three manual post-update browser commands (documented in README's "Manual zip upload" section) could be collapsed into one, to make routine host updates less tedious. The git-based deploy path (`public/deploy.php` on the `deploy` branch) already does exactly this automatically on every `git pull`; this brings the same convenience to the manual/content-only update path, which has no such hook.
 
 **Consequences.** README's "Manual zip upload" section rewritten to lead with `/_ops/update` and mention the three individual actions as a fallback. `DeployTest` gained `test_ops_update_runs_migrate_import_and_optimize_in_one_request`. Full suite 123/123. No change to the git-based `deploy.php` path — that already had this covered.
+
+---
+
+## 57. Skeletons for the remaining 9 C-03 courses, all at once, plus a recommended cross-course learning order (2026-09-17)
+
+**Decision.** Before continuing `requirements-engineering`'s content authoring, built skeletons (renamed/converted media, symlinked into `public/media/`, `content/<slug>/course.json` with every lesson placed into a section, one-paragraph placeholder `.md` per lesson) for all 9 remaining C-03 courses in one pass, matching the process already used for `requirements-engineering` itself:
+
+1. `software-architecture-complete-guide` — 113 lessons, 17 sections
+2. `system-design-case-studies` — 19 lessons, 7 sections
+3. `large-scale-systems-design` — 41 lessons, 11 sections
+4. `becoming-a-product-manager` — 109 lessons, 12 sections
+5. `advanced-scrum-master` — 59 lessons, 9 sections
+6. `practical-guide-for-tech-leaders` — 34 lessons, 7 sections
+7. `become-an-engineering-manager` — 66 lessons, 8 sections
+8. `organizational-leadership-ai-era` — 15 lessons, 3 sections
+9. `generative-ai-in-organizations` — 17 lessons, 5 sections
+
+Sections were inferred from each course's own lecture-title patterns (intro/summary/recap markers, topic clustering) without watching the videos — same "real (if not-yet-deep) Persian titles/summaries from the lecture titles" standard used for `requirements-engineering`'s skeleton. Media prep used a new throwaway script (not committed — one-off, `course/` is gitignored) that unwraps the `index.html?...&filename=X` download-tool artifacts, renames to `NNN-kebab-title.{mp4,en.srt,fa.srt}`, moves empty subtitle files to `broken-subs/`, converts `.srt`→`.vtt`, and reports `ffprobe` durations. Duplicate lesson slugs (multiple lectures titled just "Summary" or "Conclusion" within one course) were caught by a dedup check and disambiguated by section topic (e.g. `summary-application-types`, `conclusion-requirements`) before import — `software-architecture-complete-guide` had 10 such collisions.
+
+**Also added: a recommended cross-course learning order**, since the owner asked how to know which of the 10 courses to take in what sequence. Scoped explicitly to documentation only (no in-app "step N of 10" UI, no DB track/program entity — confirmed with the owner, consistent with §49's "no track/program layer exists and none was requested"). The order is the same as the build order already recorded in `docs/STORIES.md`'s C-03 entry, now with rationale attached: technical foundations first (requirements engineering → software architecture → system design case studies → large-scale systems design), then product/process (product management → scrum mastery), then a leadership progression (practical guide for tech leaders → engineering manager → organizational leadership in the AI era → generative AI in organizations) that ends on the two most forward-looking, least foundational topics. Recorded in `docs/STORIES.md`'s C-03 entry directly below the course list, not as a separate document.
+
+**Why.** Owner's explicit request: build all 9 skeletons in one batch (rather than one at a time as content authoring reaches each course) so the full catalog structure exists up front, and get a documented recommended order across all 10 courses. Owner will handle deploying this to the live host themselves (not asked of this session).
+
+**Consequences.** `content:import` for all 9 new courses loads cleanly (0 practices/key_points yet, expected at skeleton stage — same as `requirements-engineering` was before its own authoring began). `DeployTest::test_ops_status_migrate_import_and_clear_run_with_the_token` was asserting the exact, full `courses on disk:` list — now 12 courses instead of 2, so the assertion was loosened to check for the presence of the two original courses rather than an exact full-list match, since that list will keep growing as more courses are added and shouldn't make this test brittle. Full suite 123/123. `course/Management course/` (the original owner-dropped bulk folder) is now empty and removed; `course/scrum course/` remains untouched and out of scope, as recorded in §49.

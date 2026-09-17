@@ -1,0 +1,1395 @@
+{
+  "title": "تبدیل‌شدن به مدیر مهندسی",
+  "description": "نقش مدیر مهندسی از صفر — تعادل فنی-کسب‌وکاری، ساختار سازمانی، فرایند و برنامه‌ریزی، ساختار تیم و مدیریت افراد.",
+  "outcome_statement": "مهارت‌های عملی مدیریت یه تیم مهندسی رو یاد می‌گیری: از تصمیم‌های فنی و برنامه‌ریزی تا استخدام، ارزیابی عملکرد و حل تعارض.",
+  "source_note": "برگرفته از دوره‌ی «Become an Engineering Manager».",
+  "video_base_url": "/media/become-an-engineering-manager/",
+  "lessons": [
+    {
+      "slug": "course-overview",
+      "title": "این دوره درباره‌ی چیه؟",
+      "summary": "نمای‌کلی دوره‌ی مدیریت مهندسی.",
+      "section": "مقدمه",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "001-what-is-this-course-about-uu26.mp4",
+          "subtitles": [
+            {
+              "file": "001-what-is-this-course-about-uu26.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "001-what-is-this-course-about-uu26.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-dv0b",
+      "title": "مقدمه",
+      "summary": "معرفی مباحث ابتدایی.",
+      "section": "مقدمه",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "002-introduction-dv0b.mp4",
+          "subtitles": [
+            {
+              "file": "002-introduction-dv0b.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "002-introduction-dv0b.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "who-are-engineering-managers-and-why-company-needs-them-vbve",
+      "title": "مدیر مهندسی کیه و چرا شرکت بهش نیاز داره؟",
+      "summary": "تعریف نقش و ضرورتش.",
+      "section": "مقدمه",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "003-who-are-engineering-managers-and-why-company-needs-them-vbve.mp4",
+          "subtitles": [
+            {
+              "file": "003-who-are-engineering-managers-and-why-company-needs-them-vbve.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "003-who-are-engineering-managers-and-why-company-needs-them-vbve.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "difference-between-engineering-managers-responsibilities-in-companies-hiut",
+      "title": "تفاوت مسئولیت مدیران مهندسی در شرکت‌های مختلف",
+      "summary": "این نقش بسته به شرکت چطور فرق می‌کنه.",
+      "section": "مقدمه",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "004-difference-between-engineering-managers-responsibilities-in-companies-hiut.mp4",
+          "subtitles": [
+            {
+              "file": "004-difference-between-engineering-managers-responsibilities-in-companies-hiut.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "004-difference-between-engineering-managers-responsibilities-in-companies-hiut.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "technical-experience-and-knowledge-avil",
+      "title": "تجربه و دانش فنی",
+      "summary": "سطح فنی موردنیاز مدیر مهندسی.",
+      "section": "مقدمه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "005-technical-experience-and-knowledge-avil.mp4",
+          "subtitles": [
+            {
+              "file": "005-technical-experience-and-knowledge-avil.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "005-technical-experience-and-knowledge-avil.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "management-experience-and-knowledge-pbog",
+      "title": "تجربه و دانش مدیریتی",
+      "summary": "سطح مدیریتی موردنیاز این نقش.",
+      "section": "مقدمه",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "006-management-experience-and-knowledge-pbog.mp4",
+          "subtitles": [
+            {
+              "file": "006-management-experience-and-knowledge-pbog.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "006-management-experience-and-knowledge-pbog.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-txz8",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی تعادل فنی-کسب‌وکاری.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "007-introduction-txz8.mp4",
+          "subtitles": [
+            {
+              "file": "007-introduction-txz8.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "007-introduction-txz8.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understand-what-business-priorities-are-popr",
+      "title": "اولویت‌های کسب‌وکار رو بفهم",
+      "summary": "شناخت اولویت‌های واقعی سازمان.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "008-understand-what-business-priorities-are-popr.mp4",
+          "subtitles": [
+            {
+              "file": "008-understand-what-business-priorities-are-popr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "008-understand-what-business-priorities-are-popr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "everything-about-stakeholders-giz1",
+      "title": "هر چی درباره‌ی ذی‌نفعان باید بدونی",
+      "summary": "شناخت و مدیریت ذی‌نفعان.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "009-everything-about-stakeholders-giz1.mp4",
+          "subtitles": [
+            {
+              "file": "009-everything-about-stakeholders-giz1.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "009-everything-about-stakeholders-giz1.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "find-the-right-balance-between-tech-and-business-eccp",
+      "title": "تعادل درست بین فنی و کسب‌وکار پیدا کن",
+      "summary": "تعادل بین دو دنیای فنی و کسب‌وکار.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 9,
+      "videos": [
+        {
+          "file": "010-find-the-right-balance-between-tech-and-business-eccp.mp4",
+          "subtitles": [
+            {
+              "file": "010-find-the-right-balance-between-tech-and-business-eccp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "010-find-the-right-balance-between-tech-and-business-eccp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "forget-about-technical-vocabulary-when-speak-with-business-stakeholders-cq0a",
+      "title": "با ذی‌نفعان کسب‌وکار، زبان فنی رو کنار بذار",
+      "summary": "ارتباط ساده و بدون اصطلاح فنی.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "011-forget-about-technical-vocabulary-when-speak-with-business-stakeholders-cq0a.mp4",
+          "subtitles": [
+            {
+              "file": "011-forget-about-technical-vocabulary-when-speak-with-business-stakeholders-cq0a.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "011-forget-about-technical-vocabulary-when-speak-with-business-stakeholders-cq0a.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "product-features-discussion-gb6m",
+      "title": "بحث درباره‌ی فیچرهای محصول",
+      "summary": "مشارکت مدیر مهندسی در تصمیم فیچر.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "012-product-features-discussion-gb6m.mp4",
+          "subtitles": [
+            {
+              "file": "012-product-features-discussion-gb6m.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "012-product-features-discussion-gb6m.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "functional-and-non-functional-requirements-deh4",
+      "title": "نیازمندی‌های کارکردی و غیرکارکردی",
+      "summary": "درک این دو نوع نیازمندی.",
+      "section": "تعادل فنی و کسب‌وکاری",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "013-functional-and-non-functional-requirements-deh4.mp4",
+          "subtitles": [
+            {
+              "file": "013-functional-and-non-functional-requirements-deh4.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "013-functional-and-non-functional-requirements-deh4.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-ptav",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی ساختار سازمانی.",
+      "section": "ساختار سازمانی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "014-introduction-ptav.mp4",
+          "subtitles": [
+            {
+              "file": "014-introduction-ptav.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "014-introduction-ptav.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understand-organizational-structure-and-employee-hierarchy-ocft",
+      "title": "ساختار سازمانی و سلسله‌مراتب کارکنان رو بفهم",
+      "summary": "چیدمان سازمانی و جایگاه هر نقش.",
+      "section": "ساختار سازمانی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "015-understand-organizational-structure-and-employee-hierarchy-ocft.mp4",
+          "subtitles": [
+            {
+              "file": "015-understand-organizational-structure-and-employee-hierarchy-ocft.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "015-understand-organizational-structure-and-employee-hierarchy-ocft.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "importance-of-feature-delivery-pipeline-k9rk",
+      "title": "اهمیت پایپ‌لاین تحویل فیچر",
+      "summary": "مسیر رسیدن ایده به کاربر.",
+      "section": "ساختار سازمانی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "016-importance-of-feature-delivery-pipeline-k9rk.mp4",
+          "subtitles": [
+            {
+              "file": "016-importance-of-feature-delivery-pipeline-k9rk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "016-importance-of-feature-delivery-pipeline-k9rk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "area-of-responsibility-ruhx",
+      "title": "حوزه‌ی مسئولیت",
+      "summary": "مرزهای مسئولیت مدیر مهندسی.",
+      "section": "ساختار سازمانی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "017-area-of-responsibility-ruhx.mp4",
+          "subtitles": [
+            {
+              "file": "017-area-of-responsibility-ruhx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "017-area-of-responsibility-ruhx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "conways-law-q0dq",
+      "title": "قانون کانوی",
+      "summary": "اثر ساختار سازمانی روی معماری سیستم.",
+      "section": "ساختار سازمانی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "018-conways-law-q0dq.mp4",
+          "subtitles": [
+            {
+              "file": "018-conways-law-q0dq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "018-conways-law-q0dq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "company-lifecycle-by-adizes-k9hc",
+      "title": "چرخه‌ی عمر شرکت طبق مدل آدیزس",
+      "summary": "فازهای رشد یه سازمان.",
+      "section": "ساختار سازمانی",
+      "estimated_minutes": 8,
+      "videos": [
+        {
+          "file": "019-company-lifecycle-by-adizes-k9hc.mp4",
+          "subtitles": [
+            {
+              "file": "019-company-lifecycle-by-adizes-k9hc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "019-company-lifecycle-by-adizes-k9hc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-cudj",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی مبانی فنی مدیر مهندسی.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "020-introduction-cudj.mp4",
+          "subtitles": [
+            {
+              "file": "020-introduction-cudj.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "020-introduction-cudj.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "you-must-know-your-technical-baseline-qzzu",
+      "title": "خط‌مبنای فنی خودت رو باید بدونی",
+      "summary": "اهمیت شناخت وضعیت فنی فعلی.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "021-you-must-know-your-technical-baseline-qzzu.mp4",
+          "subtitles": [
+            {
+              "file": "021-you-must-know-your-technical-baseline-qzzu.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "021-you-must-know-your-technical-baseline-qzzu.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "review-and-approve-technical-decisions-j4wp",
+      "title": "بازبینی و تأیید تصمیم‌های فنی",
+      "summary": "نقش مدیر مهندسی در تصمیم فنی.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "022-review-and-approve-technical-decisions-j4wp.mp4",
+          "subtitles": [
+            {
+              "file": "022-review-and-approve-technical-decisions-j4wp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "022-review-and-approve-technical-decisions-j4wp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "choosing-technical-stack-ot6s",
+      "title": "انتخاب پشته‌ی فناوری",
+      "summary": "ملاحظات انتخاب تکنولوژی تیم.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "023-choosing-technical-stack-ot6s.mp4",
+          "subtitles": [
+            {
+              "file": "023-choosing-technical-stack-ot6s.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "023-choosing-technical-stack-ot6s.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "ci-cd-release-lifecycle-and-branching-strategies-ewrc",
+      "title": "CI/CD، چرخه‌ی انتشار و استراتژی برنچینگ",
+      "summary": "زیرساخت تحویل و استقرار.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "024-ci-cd-release-lifecycle-and-branching-strategies-ewrc.mp4",
+          "subtitles": [
+            {
+              "file": "024-ci-cd-release-lifecycle-and-branching-strategies-ewrc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "024-ci-cd-release-lifecycle-and-branching-strategies-ewrc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "observability-and-monitoring-9i3e",
+      "title": "قابلیت‌رصد و پایش",
+      "summary": "دیدبانی سلامت سیستم در تولید.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "025-observability-and-monitoring-9i3e.mp4",
+          "subtitles": [
+            {
+              "file": "025-observability-and-monitoring-9i3e.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "025-observability-and-monitoring-9i3e.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "incident-management-evaz",
+      "title": "مدیریت حادثه",
+      "summary": "برخورد با خرابی و رخداد بحرانی.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "026-incident-management-evaz.mp4",
+          "subtitles": [
+            {
+              "file": "026-incident-management-evaz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "026-incident-management-evaz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "knowing-you-technical-dept-q1di",
+      "title": "شناخت بدهی فنی",
+      "summary": "مدیریت بدهی فنی تیم.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "027-knowing-you-technical-dept-q1di.mp4",
+          "subtitles": [
+            {
+              "file": "027-knowing-you-technical-dept-q1di.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "027-knowing-you-technical-dept-q1di.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "quality-assurance-uwu8",
+      "title": "تضمین کیفیت",
+      "summary": "فرایند QA در تیم مهندسی.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 7,
+      "videos": [
+        {
+          "file": "028-quality-assurance-uwu8.mp4",
+          "subtitles": [
+            {
+              "file": "028-quality-assurance-uwu8.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-quality-assurance-uwu8.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-technical-documentation-you-need-cgbx",
+      "title": "چه مستندات فنی‌ای لازم داری",
+      "summary": "انواع مستندسازی موردنیاز.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "029-what-technical-documentation-you-need-cgbx.mp4",
+          "subtitles": [
+            {
+              "file": "029-what-technical-documentation-you-need-cgbx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "029-what-technical-documentation-you-need-cgbx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "keep-your-system-safe-lmde",
+      "title": "سیستمت رو ایمن نگه دار",
+      "summary": "ملاحظات امنیتی برای مدیر مهندسی.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "030-keep-your-system-safe-lmde.mp4",
+          "subtitles": [
+            {
+              "file": "030-keep-your-system-safe-lmde.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "030-keep-your-system-safe-lmde.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "ai-integration-into-development-al5m",
+      "title": "ادغام هوش مصنوعی توی توسعه",
+      "summary": "اثر AI روی فرایند توسعه.",
+      "section": "مبانی فنی برای مدیر مهندسی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "031-ai-integration-into-development-al5m.mp4",
+          "subtitles": [
+            {
+              "file": "031-ai-integration-into-development-al5m.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "031-ai-integration-into-development-al5m.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-hkxm",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی فرایند و برنامه‌ریزی.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "032-introduction-hkxm.mp4",
+          "subtitles": [
+            {
+              "file": "032-introduction-hkxm.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "032-introduction-hkxm.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-development-methodology-you-should-use-cldp",
+      "title": "از کدوم متدولوژی توسعه استفاده کنیم؟",
+      "summary": "انتخاب متدولوژی مناسب تیم.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "033-what-development-methodology-you-should-use-cldp.mp4",
+          "subtitles": [
+            {
+              "file": "033-what-development-methodology-you-should-use-cldp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "033-what-development-methodology-you-should-use-cldp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "from-idea-to-implementation-wfps",
+      "title": "از ایده تا پیاده‌سازی",
+      "summary": "مسیر کامل یه فیچر تا تولید.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "034-from-idea-to-implementation-wfps.mp4",
+          "subtitles": [
+            {
+              "file": "034-from-idea-to-implementation-wfps.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "034-from-idea-to-implementation-wfps.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cross-team-dependencies-e2l4",
+      "title": "وابستگی بین تیم‌ها",
+      "summary": "مدیریت وابستگی چندتیمی.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "035-cross-team-dependencies-e2l4.mp4",
+          "subtitles": [
+            {
+              "file": "035-cross-team-dependencies-e2l4.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-cross-team-dependencies-e2l4.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "planning-and-estimation-3vj3",
+      "title": "برنامه‌ریزی و تخمین",
+      "summary": "برآورد و زمان‌بندی کار.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "036-planning-and-estimation-3vj3.mp4",
+          "subtitles": [
+            {
+              "file": "036-planning-and-estimation-3vj3.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "036-planning-and-estimation-3vj3.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "you-are-not-a-meeting-manager-bkil",
+      "title": "تو مدیر جلسه نیستی",
+      "summary": "پرهیز از غرق‌شدن توی جلسه.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "037-you-are-not-a-meeting-manager-bkil.mp4",
+          "subtitles": [
+            {
+              "file": "037-you-are-not-a-meeting-manager-bkil.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "037-you-are-not-a-meeting-manager-bkil.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-host-meetings-dcxq",
+      "title": "چطور جلسه برگزار کنیم",
+      "summary": "برگزاری جلسه‌ی مؤثر.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "038-how-to-host-meetings-dcxq.mp4",
+          "subtitles": [
+            {
+              "file": "038-how-to-host-meetings-dcxq.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "038-how-to-host-meetings-dcxq.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-manage-several-teams-xzhb",
+      "title": "چطور چند تیم رو مدیریت کنیم",
+      "summary": "مدیریت هم‌زمان چند تیم.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "039-how-to-manage-several-teams-xzhb.mp4",
+          "subtitles": [
+            {
+              "file": "039-how-to-manage-several-teams-xzhb.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "039-how-to-manage-several-teams-xzhb.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "working-with-risks-tsdr",
+      "title": "کار با ریسک‌ها",
+      "summary": "شناسایی و مدیریت ریسک پروژه.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "040-working-with-risks-tsdr.mp4",
+          "subtitles": [
+            {
+              "file": "040-working-with-risks-tsdr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "040-working-with-risks-tsdr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "aligning-with-budget-j0vk",
+      "title": "هم‌راستایی با بودجه",
+      "summary": "مدیریت هزینه‌ی تیم فنی.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "041-aligning-with-budget-j0vk.mp4",
+          "subtitles": [
+            {
+              "file": "041-aligning-with-budget-j0vk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "041-aligning-with-budget-j0vk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "operational-metrics-4tnz",
+      "title": "متریک‌های عملیاتی",
+      "summary": "سنجش عملکرد عملیاتی تیم.",
+      "section": "فرایند و برنامه‌ریزی",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "042-operational-metrics-4tnz.mp4",
+          "subtitles": [
+            {
+              "file": "042-operational-metrics-4tnz.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "042-operational-metrics-4tnz.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-vork",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی ساختار تیم.",
+      "section": "ساختار تیم",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "043-introduction-vork.mp4",
+          "subtitles": [
+            {
+              "file": "043-introduction-vork.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "043-introduction-vork.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-is-the-team-and-why-you-need-it-1ctx",
+      "title": "تیم چیه و چرا بهش نیاز داری؟",
+      "summary": "تعریف تیم مهندسی مؤثر.",
+      "section": "ساختار تیم",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "044-what-is-the-team-and-why-you-need-it-1ctx.mp4",
+          "subtitles": [
+            {
+              "file": "044-what-is-the-team-and-why-you-need-it-1ctx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-what-is-the-team-and-why-you-need-it-1ctx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "explaining-team-structures-qmo2",
+      "title": "توضیح ساختارهای تیم",
+      "summary": "الگوهای مختلف چیدمان تیم.",
+      "section": "ساختار تیم",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "045-explaining-team-structures-qmo2.mp4",
+          "subtitles": [
+            {
+              "file": "045-explaining-team-structures-qmo2.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "045-explaining-team-structures-qmo2.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "understand-team-topologies-and-size-snca",
+      "title": "توپولوژی و اندازه‌ی تیم رو بفهم",
+      "summary": "الگوهای توپولوژی تیم و اندازه‌ی بهینه.",
+      "section": "ساختار تیم",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "046-understand-team-topologies-and-size-snca.mp4",
+          "subtitles": [
+            {
+              "file": "046-understand-team-topologies-and-size-snca.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "046-understand-team-topologies-and-size-snca.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "creating-or-changing-teams-fe7c",
+      "title": "ساخت یا تغییر تیم",
+      "summary": "چطور تیم تازه بسازیم یا تغییرش بدیم.",
+      "section": "ساختار تیم",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "047-creating-or-changing-teams-fe7c.mp4",
+          "subtitles": [
+            {
+              "file": "047-creating-or-changing-teams-fe7c.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "047-creating-or-changing-teams-fe7c.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "different-seniority-level-in-the-team-cpg4",
+      "title": "سطوح مختلف ارشدیت توی تیم",
+      "summary": "ترکیب سطوح تجربه‌ی مختلف.",
+      "section": "ساختار تیم",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "048-different-seniority-level-in-the-team-cpg4.mp4",
+          "subtitles": [
+            {
+              "file": "048-different-seniority-level-in-the-team-cpg4.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "048-different-seniority-level-in-the-team-cpg4.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-pnj5",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی مدیریت افراد.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "051-introduction-pnj5.mp4",
+          "subtitles": [
+            {
+              "file": "051-introduction-pnj5.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "051-introduction-pnj5.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "what-motivates-people-do-their-job-gucf",
+      "title": "چی آدم‌ها رو برای کارشون انگیزه می‌ده",
+      "summary": "عوامل انگیزشی کارکنان.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 6,
+      "videos": [
+        {
+          "file": "052-what-motivates-people-do-their-job-gucf.mp4",
+          "subtitles": [
+            {
+              "file": "052-what-motivates-people-do-their-job-gucf.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "052-what-motivates-people-do-their-job-gucf.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "people-are-different-and-not-like-you-d4rr",
+      "title": "آدم‌ها متفاوتن و مثل تو نیستن",
+      "summary": "اهمیت شناخت تفاوت فردی.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "053-people-are-different-and-not-like-you-d4rr.mp4",
+          "subtitles": [
+            {
+              "file": "053-people-are-different-and-not-like-you-d4rr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "053-people-are-different-and-not-like-you-d4rr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "1-2-1-meetings-ervh",
+      "title": "جلسات یک‌به‌یک",
+      "summary": "استفاده‌ی مؤثر از جلسات ۱:۱.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "054-1-2-1-meetings-ervh.mp4",
+          "subtitles": [
+            {
+              "file": "054-1-2-1-meetings-ervh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "054-1-2-1-meetings-ervh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "hire-candidates-oqqt",
+      "title": "استخدام نامزدها",
+      "summary": "فرایند استخدام درست.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "055-hire-candidates-oqqt.mp4",
+          "subtitles": [
+            {
+              "file": "055-hire-candidates-oqqt.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "055-hire-candidates-oqqt.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "fire-candidates-bc4z",
+      "title": "اخراج افراد",
+      "summary": "برخورد درست با اخراج.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "056-fire-candidates-bc4z.mp4",
+          "subtitles": [
+            {
+              "file": "056-fire-candidates-bc4z.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "056-fire-candidates-bc4z.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "performance-review-procedure-xlqg",
+      "title": "فرایند ارزیابی عملکرد",
+      "summary": "اجرای درست ارزیابی عملکرد.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "057-performance-review-procedure-xlqg.mp4",
+          "subtitles": [
+            {
+              "file": "057-performance-review-procedure-xlqg.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "057-performance-review-procedure-xlqg.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "onboarding-importance-zzzc",
+      "title": "اهمیت آنبوردینگ",
+      "summary": "تأثیر شروع خوب کارمند تازه.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "058-onboarding-importance-zzzc.mp4",
+          "subtitles": [
+            {
+              "file": "058-onboarding-importance-zzzc.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "058-onboarding-importance-zzzc.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "make-sure-people-understand-what-to-do-btut",
+      "title": "مطمئن شو افراد می‌دونن چیکار باید بکنن",
+      "summary": "شفافیت انتظارات کاری.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "059-make-sure-people-understand-what-to-do-btut.mp4",
+          "subtitles": [
+            {
+              "file": "059-make-sure-people-understand-what-to-do-btut.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "059-make-sure-people-understand-what-to-do-btut.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "how-to-successfully-resolve-conflicts-53ut",
+      "title": "چطور تعارض‌ها رو موفق حل کنیم",
+      "summary": "حل مؤثر تعارض تیمی.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 5,
+      "videos": [
+        {
+          "file": "060-how-to-successfully-resolve-conflicts-53ut.mp4",
+          "subtitles": [
+            {
+              "file": "060-how-to-successfully-resolve-conflicts-53ut.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-how-to-successfully-resolve-conflicts-53ut.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "cooperate-with-your-manager-uhz8",
+      "title": "با مدیر خودت همکاری کن",
+      "summary": "مدیریت رابطه با مدیر بالادستی.",
+      "section": "مدیریت افراد",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "061-cooperate-with-your-manager-uhz8.mp4",
+          "subtitles": [
+            {
+              "file": "061-cooperate-with-your-manager-uhz8.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "061-cooperate-with-your-manager-uhz8.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "introduction-i11w",
+      "title": "مقدمه",
+      "summary": "نمای‌کلی جمع‌بندی دوره.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "062-introduction-i11w.mp4",
+          "subtitles": [
+            {
+              "file": "062-introduction-i11w.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "062-introduction-i11w.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "stop-relying-on-memory-systems-that-work-kcvp",
+      "title": "به حافظه تکیه نکن، سیستم بساز",
+      "summary": "اهمیت سیستم‌سازی به‌جای حافظه.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "063-stop-relying-on-memory-systems-that-work-kcvp.mp4",
+          "subtitles": [
+            {
+              "file": "063-stop-relying-on-memory-systems-that-work-kcvp.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "063-stop-relying-on-memory-systems-that-work-kcvp.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "leadership-that-builds-trust-xrnk",
+      "title": "رهبری‌ای که اعتماد می‌سازه",
+      "summary": "اصول رهبری اعتمادساز.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "064-leadership-that-builds-trust-xrnk.mp4",
+          "subtitles": [
+            {
+              "file": "064-leadership-that-builds-trust-xrnk.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "064-leadership-that-builds-trust-xrnk.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "plan-smart-track-often-win-jktr",
+      "title": "هوشمند برنامه‌ریزی کن، مرتب پیگیری کن، ببر",
+      "summary": "چرخه‌ی برنامه‌ریزی و پیگیری موفق.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 4,
+      "videos": [
+        {
+          "file": "065-plan-smart-track-often-win-jktr.mp4",
+          "subtitles": [
+            {
+              "file": "065-plan-smart-track-often-win-jktr.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "065-plan-smart-track-often-win-jktr.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "control-clarity-consistency-cilx",
+      "title": "کنترل، شفافیت، ثبات",
+      "summary": "سه ستون مدیریت پایدار.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 2,
+      "videos": [
+        {
+          "file": "066-control-clarity-consistency-cilx.mp4",
+          "subtitles": [
+            {
+              "file": "066-control-clarity-consistency-cilx.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "066-control-clarity-consistency-cilx.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "precision-thinking-lrbo",
+      "title": "تفکر دقیق",
+      "summary": "اهمیت دقت در تصمیم‌گیری.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 3,
+      "videos": [
+        {
+          "file": "067-precision-thinking-lrbo.mp4",
+          "subtitles": [
+            {
+              "file": "067-precision-thinking-lrbo.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "067-precision-thinking-lrbo.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    },
+    {
+      "slug": "course-closeout",
+      "title": "حرفه‌ای باش",
+      "summary": "جمع‌بندی نهایی دوره.",
+      "section": "جمع‌بندی",
+      "estimated_minutes": 1,
+      "videos": [
+        {
+          "file": "068-be-a-professional-oenh.mp4",
+          "subtitles": [
+            {
+              "file": "068-be-a-professional-oenh.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "068-be-a-professional-oenh.fa.vtt"
+        }
+      ],
+      "key_points": [],
+      "common_mistakes": []
+    }
+  ]
+}

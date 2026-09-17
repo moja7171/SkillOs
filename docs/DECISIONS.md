@@ -831,3 +831,13 @@ All mail-related records (`MX`, SPF/DKIM/DMARC `TXT`, and the `mail`/`webmail`/`
 **Why.** Authoring a second lesson that's ~95% the same content as the first wastes effort and gives learners a repetitive, low-value second lesson — the opposite of what `docs/AUTHORING.md`'s "don't add sections the video doesn't cover" and the owner's general move-fast/avoid-low-value-work preference call for. The video pair itself looks like an instructor re-recording or course-revision artifact (GIT.IR platform intro slide identical in both), not intentionally distinct content.
 
 **Consequences.** `content/requirements-engineering/course.json` lesson count for this section: 12, not 13 (13 lecture numbers, 028–040, but 031/036 share one lesson). `docs/STORIES.md`'s course-wide section list and lecture-range notes for this section should be read with that in mind. No app/schema change — this is a one-time content-authoring call, using the existing multi-video-per-lesson mechanism (already used elsewhere, e.g. C-01's lecture+coding-video lessons).
+
+---
+
+## 56. Combined `/_ops/migrate` + `/_ops/import` + `/_ops/optimize` into one `/_ops/update` endpoint (2026-09-17)
+
+**Decision.** Added `/_ops/update?token=T` to `OpsController`, which runs migrate, then `content:import` (defaulting `prune` to **true**, unlike the standalone `import` action which defaults it to false), then the same cache-warming commands `optimize` runs — in one HTTP request instead of three separate browser visits. The three original actions (`migrate`, `import`, `optimize`) are untouched and still work individually, for the narrower case of wanting just one step (e.g. importing a single course without re-migrating or re-caching).
+
+**Why.** Owner asked whether the three manual post-update browser commands (documented in README's "Manual zip upload" section) could be collapsed into one, to make routine host updates less tedious. The git-based deploy path (`public/deploy.php` on the `deploy` branch) already does exactly this automatically on every `git pull`; this brings the same convenience to the manual/content-only update path, which has no such hook.
+
+**Consequences.** README's "Manual zip upload" section rewritten to lead with `/_ops/update` and mention the three individual actions as a fallback. `DeployTest` gained `test_ops_update_runs_migrate_import_and_optimize_in_one_request`. Full suite 123/123. No change to the git-based `deploy.php` path — that already had this covered.

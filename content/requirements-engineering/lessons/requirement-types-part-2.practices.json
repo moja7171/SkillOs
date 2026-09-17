@@ -1,0 +1,51 @@
+[
+  {
+    "key": "classify-requirement-type",
+    "title": "این نیازمندی از کدوم نوعه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "«سیستم پهپاد باید دسترس‌پذیری ذاتی (Ai) ۹۵٪ (آستانه)، ۹۹٪ (هدف) در طول کل فصل کاشت داشته باشد.» این نیازمندی از کدوم نوعه؟",
+    "options": [
+      "کیفی — چون یه ویژگی سیستم مثل قابلیت‌اطمینان/دسترس‌پذیری رو توصیف می‌کنه",
+      "کارکردی — چون یه فعل و مفعول داره",
+      "رابطی — چون بین دو سیستم تعامل تعریف می‌کنه",
+      "محدودیتی — چون یه محدودیت بودجه یا مقرراتیه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این یه نیازمندی کیفیه — دسترس‌پذیری یه ویژگی/کیفیت سیستمه (مثل قابلیت‌اطمینان یا قابلیت‌نگه‌داری)، نه یه تابع، رابط یا محدودیت.",
+    "hints": [
+      "درس دقیقاً همین مثال دسترس‌پذیری ذاتی رو زیر عنوان «نیازمندی کیفی» آورد.",
+      "دسترس‌پذیری یه ویژگی کلی سیستمه، نه یه تابع مشخص یا رابط بین دو جزء."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "functional-to-performance",
+    "title": "از کارکردی به عملکردی",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "این نیازمندی کارکردیه: «سیستم پهپاد بذرپاش باید در شرایط نیمه‌بادی عملیات کند.» طبق مثال این درس، این نیازمندی به کدوم نیازمندی عملکردی (با مقدار کمّی، واحد، و آستانه/هدف) تجزیه می‌شه؟",
+    "expected_outcome": "«سیستم پهپاد بذرپاش باید در بادهای تا ۲۰ (آستانه)، ۲۵ (هدف) مایل بر ساعت عملیات کند.» — نیازمندی کارکردی مبهم («نیمه‌بادی») به یه مقدار کمّی با واحد و مقادیر آستانه/هدف مشخص تبدیل شده.",
+    "hints": [
+      "درس دقیقاً همین جفت نیازمندی (کارکردی → عملکردی) رو مثال زد.",
+      "نیازمندی عملکردی باید مقدار عددی، واحد اندازه‌گیری، و ایده‌آل آستانه/هدف داشته باشه."
+    ],
+    "rubric": "Correct if response gives the wind-speed performance requirement with threshold 20 and objective 25 mph (or equivalent unit), matching the lesson's example. Correct_with_hint if the numeric values are close but units/threshold-objective structure is missing. Incorrect if the answer stays vague/unquantified."
+  },
+  {
+    "key": "why-california-standard",
+    "title": "چرا یه محدودیت شهر لس‌آنجلس، در واقع محدودیت ملیه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا مهندس نیازمندی برای پهپادی که قرار نیست حتماً توی لس‌آنجلس پرواز کنه، همچنان ممکنه یه نیازمندی محدودیتی بر پایه‌ی قانون شهری لس‌آنجلس بنویسه؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "چون لس‌آنجلس و کالیفرنیا از سخت‌گیرانه‌ترین مناطق آمریکا برای ساخت‌وساز، وسایل پرنده و خودرو هستن. اگه سیستم با قوانین کالیفرنیا/لس‌آنجلس سازگار باشه، به‌طور ضمنی با قوانین کمتر سخت‌گیرانه‌ی بقیه‌ی ۵۰ ایالت هم سازگاره — همین دلیلیه که خودروهای آمریکایی طبق استانداردهای کالیفرنیا ساخته می‌شن.",
+    "hints": [
+      "درس دقیقاً همین استدلال رو با مثال خودروسازی آمریکا توضیح داد.",
+      "فکر کن چرا رعایت سخت‌گیرترین قانون، رعایت قوانین سبک‌تر رو هم تضمین می‌کنه."
+    ],
+    "rubric": "Correct if response explains that California/LA have the strictest regulations in the US for this domain, so complying with them implicitly ensures compliance across all states, citing the automobile manufacturing parallel from the lesson. Correct_with_hint if it says 'strict regulations' without the implication logic. Incorrect otherwise."
+  }
+]

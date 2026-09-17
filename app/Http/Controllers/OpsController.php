@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
  */
 class OpsController extends Controller
 {
-    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'delete-course', 'deploy-log'];
+    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'update', 'delete-course', 'deploy-log'];
 
     public function __invoke(Request $request, string $action): Response
     {
@@ -40,6 +40,7 @@ class OpsController extends Controller
                 'import' => $out = $this->import($request->query('slug'), $request->boolean('prune')),
                 'optimize' => $out = $this->artisan('optimize:clear', 'config:cache', 'route:cache', 'view:cache'),
                 'clear' => $out = $this->artisan('optimize:clear'),
+                'update' => $out = $this->update($request->query('slug'), $request->boolean('prune', true)),
                 'delete-course' => $out = $this->deleteCourse($request->query('slug')),
                 'deploy-log' => $out = $this->deployLog(),
             };
@@ -128,6 +129,25 @@ class OpsController extends Controller
         }
 
         return $out ?: ['nothing to import — no course folders under content/'];
+    }
+
+    /**
+     * The three manual-path steps (migrate, import, optimize) combined into one request,
+     * mirroring what `public/deploy.php` runs automatically on the git-based path. `prune`
+     * defaults to true here (unlike the standalone `import` action) since a host update is
+     * normally a full re-sync of everything under `content/`, not a one-off partial import.
+     *
+     * @return list<string>
+     */
+    protected function update(?string $slug, bool $prune): array
+    {
+        return [
+            ...$this->migrate(),
+            '',
+            ...$this->import($slug, $prune),
+            '',
+            ...$this->artisan('optimize:clear', 'config:cache', 'route:cache', 'view:cache'),
+        ];
     }
 
     /**

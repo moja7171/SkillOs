@@ -1,0 +1,51 @@
+[
+  {
+    "key": "derivation-vs-decomposition-vs-flowdown",
+    "title": "کدوم فرایند کدومه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تیم یه نیازمندی سطح سیستم درباره‌ی وزن کل پهپاد داره و می‌خواد اون رو به محدودیت وزن هر زیرسیستم (پیشرانش، حسگر، انبارش بذر و…) تخصیص بده، طوری که ردیابی روشنی بین سطح سیستم و سطح زیرسیستم برقرار بمونه. طبق این درس، این دقیقاً کدوم فرایند است؟",
+    "options": [
+      "جاری‌سازی (flow-down) — چون هدفش تخصیص یه نیازمندی سطح‌بالا به اجزای مشخص سیستم با ردیابی روشنه",
+      "اشتقاق (derivation) — چون یه نیازمندی کاملاً تازه از مصاحبه با ذی‌نفعان تولید می‌شه",
+      "تجزیه (decomposition) — چون فقط یه نیازمندی پیچیده رو به جمله‌های کوچیک‌تر می‌شکنه بدون تخصیص به اجزا",
+      "هیچ‌کدوم؛ این یه نوع تحلیل نیازمندیه که جدا از این سه فرایند است"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این جاری‌سازیه — دقیقاً همون مثال تخصیص وزن پهپاد به زیرسیستم‌ها که درس آورد؛ هدفش تخصیص نیازمندی سطح‌بالا به اجزای مشخص سیستمه، با رابطه‌ی ردیابی‌شده بین سطوح.",
+    "hints": [
+      "درس دقیقاً همین مثال (تخصیص وزن) رو زیر عنوان جاری‌سازی آورد.",
+      "کلیدواژه‌ی «تخصیص به اجزای مشخص با ردیابی» مال کدوم فرایندِ سه‌گانه‌ست؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "decompose-planting-requirement",
+    "title": "این نیازمندی رو تجزیه کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "طبق روش تجزیه‌ی این درس، نیازمندی سطح‌بالای «سیستم پهپاد بذرپاش باید بذر رو در عمق و فاصله‌ی درست از گیاهان مجاور بکارد» رو به سه نیازمندی سطح پایین‌تر تجزیه کن (بدون نیاز به کمّی‌سازی، مثل مثال‌های خود درس).",
+    "expected_outcome": "درس دقیقاً همین تجزیه رو مثال زد: (۱) سیستم پهپاد بذرپاش باید عمق کاشت رو بر اساس شرایط خاک تنظیم کند. (۲) سیستم پهپاد بذرپاش باید فاصله از گیاهان مجاور رو تعیین کند. (۳) سیستم پهپاد بذرپاش باید بذر رو مطابق فاصله از گیاهان مجاور بکارد.",
+    "hints": [
+      "این دقیقاً همون تجزیه‌ای بود که خود درس برای همین نیازمندی نشون داد.",
+      "هر جمله‌ی فرزند باید یه جنبه‌ی خاص و مجزا از نیازمندی والد رو پوشش بده — عمق، فاصله، اجرای کاشت."
+    ],
+    "rubric": "Correct if response gives three sub-requirements matching the lesson's decomposition (adjust planting depth based on soil, determine distance from adjacent plants, plant seed according to that distance) or close paraphrases covering the same three aspects. Correct_with_hint if 2 of 3 match. Incorrect if fewer than 2 match or the sub-requirements aren't distinct aspects."
+  },
+  {
+    "key": "why-iterative-process",
+    "title": "چرا این فرایند «یک‌بار برای همیشه» نیست؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، وقتی می‌پرسیم «فرایند مشخص برای اشتقاق، تجزیه یا جاری‌سازی نیازمندی چیه؟»، جواب درس چیه، و چرا این فرایندها هیچ‌وقت «تمام‌شده» نیستن؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "جواب درس اینه که این فرایندها چیزی نیستن جز تکرار بیشتر فعالیت‌های مهندسی نیازمندی — یعنی هیچ دستورالعمل یک‌باره‌ای ندارن. این فرایندها تکرارشونده‌ان و در طول کل عمر سیستم، هرچه مفهوم سیستم از یه فاز چرخه‌ی عمر به فاز بعدی بالغ‌تر می‌شه، دوباره انجام می‌شن — چون با بالغ‌ترشدن طراحی، نیازمندی‌ها باید پالایش و به‌روزرسانی بشن تا همچنان نیاز و انتظار ذی‌نفعان رو برآورده کنن.",
+    "hints": [
+      "درس دقیقاً به این سؤال با یه عبارت مشخص جواب داد — «تکرار بیشتر فعالیت‌های...» رو پیدا کن.",
+      "چرا با پیشرفت پروژه (نه فقط یه بار در ابتدا) این فرایندها دوباره لازم می‌شن؟"
+    ],
+    "rubric": "Correct if response states the answer is 'further iterations of requirements engineering activities' and explains these processes repeat across the system life cycle as the concept matures. Correct_with_hint if it says the process is iterative without naming why or without the life-cycle-maturity reasoning. Incorrect otherwise."
+  }
+]

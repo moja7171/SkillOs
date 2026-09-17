@@ -1,0 +1,51 @@
+[
+  {
+    "key": "moe-vs-mop-level",
+    "title": "MOE توی کدوم سطح بیشتر دیده می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، MOE معمولاً توی کدوم سطح از سلسله‌مراتب نیازمندی دیده می‌شه، و چرا؟",
+    "options": [
+      "لایه‌های بالایی — چون MOE به توانایی کاربر برای انجام مؤثر مأموریتش با استفاده از سیستم گره خورده، پس انتزاعی و کم‌جزئیاته",
+      "فقط لایه‌های پایینی — چون MOE همیشه به یه جزء مشخص مثل یه پیچ یا مدار مربوطه",
+      "هیچ فرقی نداره؛ MOE و MOP دقیقاً یه چیزن با اسم متفاوت",
+      "فقط توی سند قرارداد بین خریدار و فروشنده دیده می‌شه، نه توی نیازمندی‌ها"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "MOE معمولاً توی لایه‌های بالایی سلسله‌مراتبه — چون سنجه‌ی سطح‌بالای عملکرد/قابلیت سیستمه که به مأموریت کاربر گره خورده، پس انتزاعی‌تر و کم‌جزئیات‌تر از نیازمندی‌های سطح پایینه.",
+    "hints": [
+      "درس گفت MOE «به توانایی کاربر برای انجام مؤثر مأموریتش» گره خورده — این چه سطحی از انتزاعه؟",
+      "MOP (نه MOE) اونیه که جزئی‌تر و مربوط به سطح پایین‌تره."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "decompose-moe-to-mop",
+    "title": "این MOE رو به دو MOP تجزیه کن",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "نیازمندی سطح قابلیت: «پهپاد بذرپاش باید مساحت ۵٬۰۰۰ متر مربع رو بذرپاشی کند.» طبق مثال این درس، MOE این نیازمندی چیه، و دو تا MOP (نیازمندی سطح پایین‌تر و کمّی) که این MOE رو پشتیبانی می‌کنن رو بنویس.",
+    "expected_outcome": "MOE: کل مساحت پوشش‌داده‌شده‌ی کاشت به متر مربع. دو MOP: (۱) پهپاد باید نرخ توزیع بذر ۲۰ به‌علاوه یا منهای ۲ بذر در ثانیه داشته باشد. (۲) پهپاد باید بذرها رو با فاصله‌ی میانگین ۲۰ سانتی‌متر بکاره.",
+    "hints": [
+      "درس دقیقاً همین مثال رو زد — به بخش «از MOE تا MOP» برگرد.",
+      "MOP باید کمّی و مشخص باشه (عدد + واحد)، برخلاف MOE که کلی‌تره."
+    ],
+    "rubric": "Correct if response identifies the MOE (total planted area coverage in square meters) and gives both MOPs matching the lesson (seed dispense rate ~20±2 seeds/sec, average seed spacing ~20cm). Correct_with_hint if MOE is correct but only 1 of 2 MOPs matches. Incorrect if the MOE/MOP distinction is confused."
+  },
+  {
+    "key": "why-moe-quantitative",
+    "title": "چرا MOE باید کمّی باشه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا لازمه MOE رو به‌شکل کمّی بیان کنیم، نه فقط توصیفی و کیفی (مثلاً «سیستم باید مؤثر باشه»)؟ در ۲ تا ۳ جمله توضیح بده و به رابطه‌اش با ردیابی در طول زمان اشاره کن.",
+    "expected_outcome": "MOE کمّی به ما اجازه می‌ده واقعاً بسنجیم آیا سیستم به هدفش می‌رسه یا نه — یه توصیف کیفی مثل «مؤثر باشه» قابل‌سنجش نیست. علاوه بر این، MOE کمّی به ما اجازه می‌ده اون رو در طول زمان ردیابی کنیم و بسنجیم آیا تغییراتی که توی سیستم دادیم بهبود موردنظر رو واقعاً ایجاد کرده یا نه، یا تغییر بیشتری لازمه.",
+    "hints": [
+      "درس گفت هدف از کمّی‌بودن MOE، امکان «سنجش» برآورده‌شدن اهدافه.",
+      "به بخش «ردیابی MOE در طول زمان» فکر کن — این ردیابی بدون کمّی‌بودن ممکنه؟"
+    ],
+    "rubric": "Correct if response explains quantitative MOEs are needed to actually measure goal achievement (vs. unmeasurable qualitative claims) and to track over time whether changes produced the desired improvement. Correct_with_hint if only one of these two points is made. Incorrect otherwise."
+  }
+]

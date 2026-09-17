@@ -97,14 +97,13 @@ The host only needs PHP 8.3+ with `pdo_mysql` (or `pdo_sqlite` if you're using S
 4. **Create `skillos/.env`** from `skillos/.env.production.example`: `APP_URL`, `APP_KEY` (run `php artisan key:generate --show` locally and paste), the `DB_*` values from the database you just created, `GEMINI_API_KEY`, a long random `OPS_TOKEN`, optionally `REGISTRATION_CODE`, and `MEDIA_BASE_URL` (see below). Make sure `skillos/storage` and `skillos/bootstrap/cache` are writable (usually already, PHP runs as your user; `skillos/database` only matters for SQLite).
 5. In the browser, with `T` = your `OPS_TOKEN`:
    - `https://your-domain/_ops/status?token=T` — sanity check (PHP version, DB connection, writable dirs, courses found)
-   - `https://your-domain/_ops/migrate?token=T` — runs migrations (also creates the SQLite file first, if that's what you're using)
-   - `https://your-domain/_ops/import?token=T` — imports every course under `content/` except `sample-course` (a test fixture, never auto-shipped); `&slug=x` for one course (any slug, including `sample-course`), `&prune=1` to delete removed lessons
+   - `https://your-domain/_ops/update?token=T` — the one-stop deploy step: runs migrate, then imports every course under `content/` except `sample-course` (`&slug=x` to import just one; pruning removed lessons is on by default here, pass `&prune=0` to disable), then caches config/routes/views. This is `/_ops/migrate` + `/_ops/import` + `/_ops/optimize` combined into a single request — use this instead of hitting the three separately.
    - `https://your-domain/_ops/delete-course?token=T&slug=x` — permanently removes a course and everything under it (there's no other way to remove a course on a host with no shell access; `slug` is required, no bulk form)
-   - `https://your-domain/_ops/optimize?token=T` — caches config/routes/views
    - `https://your-domain/_ops/deploy-log?token=T` — tail of `storage/logs/deploy-hook.log` (only relevant on the git-based path above; nothing writes it here)
+   - Need the three steps separately (e.g. to import one course without re-migrating or re-caching)? `/_ops/migrate`, `/_ops/import` (`&prune=1` to delete removed lessons — off by default here, unlike `/_ops/update`), and `/_ops/optimize` still work individually; `/_ops/clear` drops the caches if something looks stale.
 6. Register the first account at `/register` (with the invite code if you set one).
 
-Every later update: `tools/build-release.sh`, upload + extract over the previous release (the zip never contains `.env`, `database/` or `storage/`, so nothing is lost), then hit `/_ops/migrate`, `/_ops/import` and `/_ops/optimize` again; `/_ops/clear` drops the caches if something looks stale. Content-only updates can skip the zip: upload the changed `content/<course>/` files into `skillos/content/` and hit `/_ops/import`.
+Every later update: `tools/build-release.sh`, upload + extract over the previous release (the zip never contains `.env`, `database/` or `storage/`, so nothing is lost), then hit `/_ops/update`. Content-only updates can skip the zip: upload the changed `content/<course>/` files into `skillos/content/` and hit `/_ops/update` (or just `/_ops/import` if you don't need the migrate/cache steps too).
 
 ### Videos that stay on your own machine
 

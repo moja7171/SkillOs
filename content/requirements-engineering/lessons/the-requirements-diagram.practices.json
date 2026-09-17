@@ -1,0 +1,51 @@
+[
+  {
+    "key": "derive-vs-refine-vs-verify",
+    "title": "کدوم رابطه‌ی SysML این‌جا صادقه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه نیازمندی والد داریم («سیستم باید مساحت ۵۰۰۰ متر مربع را بپوشاند») و یه نیازمندی فرزند که ازش اشتقاق شده («سیستم باید نرخ توزیع بذر ۲۰ بذر در ثانیه داشته باشد»). طبق این درس، رابطه‌ی بین این دو نیازمندی کدومه؟",
+    "options": [
+      "اشتقاق (derive) — فرزند از والد اشتقاق شده و جنبه‌ی مشخص‌تری از همون نیازمندی رو نشون می‌ده",
+      "راستی‌آزمایی (verify) — چون این رابطه‌ی نیازمندی به یه تسته",
+      "برآورده‌سازی (satisfy) — چون این رابطه‌ی نیازمندی به طراحیه",
+      "یادداشت (comment) — چون فقط توضیح تکمیلیه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این رابطه‌ی اشتقاقه — درس گفت اشتقاق یعنی «فرزند از والد اشتقاق شده و معمولاً اطلاعات جزئی‌تر یا مشخص‌تر می‌ده، والد رو به اجزای کوچیک‌تر می‌شکنه» — دقیقاً همین رابطه بین MOE سطح‌بالا و MOP جزئی‌ترش برقراره.",
+    "hints": [
+      "این رابطه بین یه نیازمندی والد و یه نیازمندی فرزنده، نه بین نیازمندی و تست یا طراحی.",
+      "راستی‌آزمایی و برآورده‌سازی، نیازمندی رو به «تست» یا «طراحی» وصل می‌کنن، نه به نیازمندی دیگه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "requirement-compartments-match",
+    "title": "این اطلاعات کدوم بخش نیازمندیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، اگه بخوایم توضیح بدیم «چرا» یه نیازمندی خاص لازمه (مثلاً چرا سرعت پاسخ باید زیر ۰٫۵ ثانیه باشه)، این توضیح توی کدوم بخش از عنصر نیازمندی توی دیاگرام SysML ثبت می‌شه؟",
+    "expected_outcome": "بخش «توجیه (rationale)» — درس گفت این بخش اطلاعات بیشتری درباره‌ی چرایی نیاز به نیازمندی می‌ده و کمک می‌کنه ذی‌نفعان منطق پشت نیازمندی و جایگاهش توی سیستم کلی رو بفهمن.",
+    "hints": [
+      "درس ۹ بخش برای نمایش یه نیازمندی معرفی کرد — کدومش دقیقاً درباره‌ی «چرا» بود؟",
+      "این با بخش «توصیف (description)» که «چی» رو می‌گه فرق داره."
+    ],
+    "rubric": "Correct if response names the 'rationale' compartment and explains it captures why the requirement is needed. Correct_with_hint if 'rationale' is named without the explanation. Incorrect if a different compartment is named."
+  },
+  {
+    "key": "why-requirements-diagram-bridges",
+    "title": "دیاگرام نیازمندی چه پلی می‌سازه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، قابلیت مدل‌سازی نیازمندی SysML چه پلی بین دو چیز می‌سازه، و این پل چطور مدیریت نیازمندی رو در طول چرخه‌ی عمر سیستم بهبود می‌ده؟",
+    "expected_outcome": "SysML پلی بین نیازمندی‌های متنی (که ممکنه توی یه ابزار مدیریت نیازمندی نگه‌داری بشن) و مدل سیستم (که توابع، اجزا، رابط‌ها، use case و عناصر دیگه رو در بر داره) می‌سازه. این پل، ردیابی دقیق بین نیازمندی‌های متنی و عناصر مدلی که طراحی، تحلیل، پیاده‌سازی و موارد تست سیستم رو نشون می‌دن ممکن می‌کنه — که مدیریت نیازمندی رو در طول کل چرخه‌ی عمر بهبود می‌ده.",
+    "hints": [
+      "درس دقیقاً گفت SysML «پلی بین نیازمندی‌های متنی و مدل سیستم» می‌سازه.",
+      "این پل چه نوع «ردیابی»ای رو ممکن می‌کنه که بدونش سخت‌تر بود؟"
+    ],
+    "rubric": "Correct if response explains SysML bridges text-based requirements (in a requirements management tool) and the system model (functions, components, interfaces, use cases), enabling rigorous traceability that improves requirements management across the life cycle. Correct_with_hint if only one side of the bridge or the traceability benefit is mentioned. Incorrect otherwise."
+  }
+]

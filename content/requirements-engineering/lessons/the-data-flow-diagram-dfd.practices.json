@@ -1,0 +1,51 @@
+[
+  {
+    "key": "dfd-element-type",
+    "title": "این جریان از کدوم نوعه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی دیاگرام جریان داده‌ی پهپاد بذرپاش، وقتی باتری به موتور توزیع بذر توان می‌ده تا کارکنه، این جریان از کدوم نوع عنصر (از شش نوعی که درس معرفی کرد) است؟",
+    "options": [
+      "انرژی — چون از یه تابع (باتری) به تابع دیگه (موتور) فراهم یا توزیع می‌شه",
+      "ماده — چون یه چیز فیزیکیه",
+      "سیگنال — چون یه ورودی/خروجی باینریه",
+      "سرویس — چون یه تجربه به کاربر می‌ده"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این انرژیه — درس دقیقاً مثال مشابهی (زیرسیستم مدیریت توان خودپرداز که به توابع دیگه توان می‌ده) زد؛ انرژی از یه تابع به تابع دیگه فراهم یا توزیع می‌شه.",
+    "hints": [
+      "درس شش نوع عنصر جریان معرفی کرد: نیرو، داده، انرژی، سیگنال، مواد، سرویس.",
+      "توان الکتریکی که از باتری به موتور می‌ره، کدوم یکی از این‌هاست؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "dfd-vs-activity-limitation",
+    "title": "چرا DFD نمی‌تونه ترتیب عملیات رو نشون بده؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، دیاگرام جریان داده چه محدودیت مشخصی نسبت به دیاگرام فعالیت داره، و برای رفع این محدودیت باید از کدوم دیاگرام استفاده کنیم؟",
+    "expected_outcome": "دیاگرام جریان داده استاتیکه — ترتیب عملیات، اینکه کدوم تابع کنترل اجرای بقیه رو داره، یا زمانی که توابع اجرا می‌شن رو نشون نمی‌ده؛ فقط یه عکس لحظه‌ای از بخشی از یه مأموریت یا سناریوست. برای نشون‌دادن ترتیب اجرا و کنترل، باید از دیاگرام فعالیت استفاده کنیم.",
+    "hints": [
+      "درس گفت DFD «استاتیک»ه — این یعنی چی درباره‌ی ترتیب زمانی؟",
+      "درس اسم دیاگرام جایگزین رو مستقیم گفت."
+    ],
+    "rubric": "Correct if response explains DFDs are static and don't show order of operations/control flow, and names the activity diagram as the fix. Correct_with_hint if only one part is covered. Incorrect otherwise."
+  },
+  {
+    "key": "why-limit-5-to-7-processes",
+    "title": "چرا هر دیاگرام رو به ۵ تا ۷ فرایند محدود می‌کنیم؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا باید خودمون رو توی هر دیاگرام جریان داده به ۵ تا ۷ فرایند محدود کنیم؟ اگه این قانون رو رعایت نکنیم چه اتفاقی می‌افته؟",
+    "expected_outcome": "محدودکردن به ۵ تا ۷ فرایند، مدیریت و انتقال دیاگرام به بقیه رو راحت‌تر می‌کنه. اگه رعایت نکنیم، دیاگرام به یه «اسپاگتی» درهم‌وبرهم از ورودی/خروجی/تابع تبدیل می‌شه که کسی واقعاً درکش نمی‌کنه — که هدف اصلی ساخت دیاگرام جریان داده (یعنی وضوح و فهم مشترک) رو زیر سؤال می‌بره.",
+    "hints": [
+      "درس یه استعاره‌ی خاص («اسپاگتی») برای این وضعیت به کار برد.",
+      "هدف اصلی دیاگرام جریان داده چیه، و شلوغی زیاد چطور اون هدف رو نقض می‌کنه؟"
+    ],
+    "rubric": "Correct if response explains the 5-7 process limit keeps the diagram manageable/communicable, and that exceeding it turns the diagram into an incomprehensible 'spaghetti mess' that defeats the diagram's purpose. Correct_with_hint if only the limit is stated without the spaghetti-mess consequence. Incorrect otherwise."
+  }
+]

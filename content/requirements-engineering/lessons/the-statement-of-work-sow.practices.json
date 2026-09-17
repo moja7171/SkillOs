@@ -1,0 +1,51 @@
+[
+  {
+    "key": "sow-vs-system-spec",
+    "title": "بیانیه‌ی کار یا مشخصات سیستم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم جمله درست‌ترین توصیف تفاوت بین بیانیه‌ی کار (SOW) و مشخصات سیستمه؟",
+    "options": [
+      "بیانیه‌ی کار نیازمندی‌هایی هست که توسعه‌دهنده باید بهشون پایبند باشه؛ مشخصات سیستم نیازمندی‌هایی هست که خود سیستم باید بهشون پایبند باشه",
+      "بیانیه‌ی کار فقط برای پروژه‌های نرم‌افزاری استفاده می‌شه، مشخصات سیستم فقط برای سخت‌افزار",
+      "این دو دقیقاً یه سند هستن با دو اسم مختلف",
+      "بیانیه‌ی کار رو مهندس نیازمندی می‌نویسه، مشخصات سیستم رو مدیر پروژه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "درس دقیقاً با همین جمله این تفاوت رو خلاصه کرد: بیانیه‌ی کار نیازمندی‌های توسعه‌دهنده (رفتار، تحویلی، زمان‌بندی)، مشخصات سیستم نیازمندی‌های خود سیستم (رفتار فنی، عملکرد) رو در بر داره.",
+    "hints": [
+      "درس یه جمله‌ی خلاصه‌ی دقیق برای این تفاوت آورد — «به زبان ساده‌تر...».",
+      "این ربطی به نرم‌افزار/سخت‌افزار یا نویسنده‌ی سند نداره."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "why-incomplete-requirements-cause-bad-budget",
+    "title": "چرا جمع‌آوری ناقص نیازمندی به بودجه‌ی غیرواقعی منجر می‌شه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، یکی از دلایل رایج زمان‌بندی یا بودجه‌ی غیرواقعی توی بیانیه‌ی کار، «جمع‌آوری ناقص نیازمندی» است. این دقیقاً چطور اتفاق می‌افته؟",
+    "expected_outcome": "وقتی مشتری از ابتدا همه‌ی اطلاعات لازم (محدودیت‌ها، وابستگی‌ها، در دسترس‌بودن منابع) رو نمی‌ده، تیم پروژه مجبور می‌شه به فرض یا حدس تکیه کنه — که به تخمین نادرست دامنه و زمان‌بندی پروژه منجر می‌شه، و در نتیجه بودجه/زمان‌بندی غیرواقعی توی بیانیه‌ی کار ثبت می‌شه.",
+    "hints": [
+      "درس یه مثال مشخص از این وضعیت («مشتری اطلاعات کامل نداد») زد.",
+      "وقتی اطلاعات کامل نیست، تیم به چی تکیه می‌کنه، و این چه اثری روی تخمین داره؟"
+    ],
+    "rubric": "Correct if response explains that incomplete upfront information from the client forces the team to rely on assumptions/guesswork, leading to inaccurate scope and timeline estimation. Correct_with_hint if it vaguely says 'missing info causes problems' without the assumption/guesswork mechanism. Incorrect otherwise."
+  },
+  {
+    "key": "sow-is-requirements-document",
+    "title": "چرا بیانیه‌ی کار خودش یه سند نیازمندیه؟",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق نکته‌ی پایانی این درس، چرا بیانیه‌ی کار، از دید مهندسی نیازمندی، خودش یه سند نیازمندی محسوب می‌شه — با اینکه محصول رو توصیف نمی‌کنه؟",
+    "expected_outcome": "چون به‌جای توصیف محصول، خدمات و محصولات مرتبط با خدمات رو توصیف می‌کنه — مثل وظایفی که پیمانکار باید انجام بده، کِی، و توی چه سطحی از کیفیت، و چه گزارش/ارائه/تحویلی‌های دیگه‌ای مشتری انتظار داره. این‌ها هم نوعی نیازمندی‌ان، فقط موضوعشون خدماته نه محصول.",
+    "hints": [
+      "درس گفت «به‌جای توصیف محصول، خدمات و محصولات مرتبط با خدمات رو توصیف می‌کنه».",
+      "نیازمندی لزوماً فقط درباره‌ی محصول نیست — می‌تونه درباره‌ی وظایف و کیفیت خدمات هم باشه."
+    ],
+    "rubric": "Correct if response explains the SOW describes services/service-related deliverables (contractor tasks, timing, quality level, expected reports) rather than a product, which still counts as a requirements document. Correct_with_hint if it just restates 'SOW is a requirements document' without explaining what it specifies instead of a product. Incorrect otherwise."
+  }
+]

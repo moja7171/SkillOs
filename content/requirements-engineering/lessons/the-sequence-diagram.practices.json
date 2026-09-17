@@ -1,0 +1,51 @@
+[
+  {
+    "key": "sync-vs-async-message",
+    "title": "این پیام همگامه یا ناهمگام؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "خودپرداز از کاربر می‌خواد پین‌شو وارد کنه و تا دریافت این اطلاعات، هیچ گام بعدی رو برنمی‌داره. طبق این درس، این چه نوع پیامیه؟",
+    "options": [
+      "همگام (synchronous) — چون شرکت‌کننده به جواب نیاز داره و تا دریافتش یا timeout ادامه نمی‌ده",
+      "ناهمگام (asynchronous) — چون خودپرداز به کارش ادامه می‌ده",
+      "بازگشتی (return) — چون این یه پاسخه، نه یه درخواست",
+      "هیچ‌کدوم؛ این اصلاً پیام محسوب نمی‌شه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این پیام همگامه — درس دقیقاً همین مثال (خودپرداز تا دریافت اطلاعات حساب/هویت از کاربر ادامه نمی‌ده) رو برای پیام همگام آورد.",
+    "hints": [
+      "درس دقیقاً همین مثال ATM رو برای پیام همگام زد.",
+      "پیام ناهمگام یعنی خط‌زندگی به کارش ادامه می‌ده بدون منتظرماندن — این‌جا برعکسه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "diagram-must-match-scenario",
+    "title": "چرا دیاگرام و سناریو نباید با هم تناقض داشته باشن؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، رابطه‌ی بین دیاگرام توالی و توصیف روایی سناریو چطور باید باشه؟ اگه سناریو جزئی‌تر از دیاگرام باشه چه اشکالی داره؟",
+    "expected_outcome": "دیاگرام توالی و توصیف سناریو باید مکمل هم باشن، نه متناقض. اشکالی نداره سناریو جزئی‌تر از دیاگرام باشه و بعضی عناصر توی دیاگرام ثبت نشن — این قابل‌قبوله، تا وقتی خود سناریو این جزئیات رو پوشش بده.",
+    "hints": [
+      "درس یه کلمه‌ی کلیدی («مکمل») برای رابطه‌ی درست بین این دو به کار برد.",
+      "درس صریحاً گفت وقتی سناریو جزئی‌تره، این «قابل‌قبوله» — با چه شرطی؟"
+    ],
+    "rubric": "Correct if response states the diagram and scenario must be complementary (not contradictory), and that it's acceptable for the scenario to be more detailed as long as it covers what the diagram doesn't. Correct_with_hint if only the complementary relationship is stated without the acceptable-detail-gap nuance. Incorrect otherwise."
+  },
+  {
+    "key": "why-diagrams-supplement-not-replace",
+    "title": "چرا دیاگرام‌ها جایگزین نیازمندی نمی‌شن؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، دیاگرام‌های توالی (و بقیه‌ی دیاگرام‌های این ماژول) چه نقشی نسبت به مجموعه‌ی نیازمندی دارن؟ چرا نباید فقط از این دیاگرام‌ها، بدون نیازمندی، برای پیاده‌سازی استفاده کنیم؟",
+    "expected_outcome": "دیاگرام‌ها مجموعه‌ی نیازمندی که به تیم طراحی می‌دیم رو تقویت می‌کنن — یا منبعی برای نوشتن جمله‌های «باید» می‌شن، یا نیازمندی‌های موجود رو تقویت می‌کنن. نباید فقط با این دیاگرام‌ها، بدون یه مجموعه‌ی نیازمندی که معنی پشت هر دیاگرام رو کامل توصیف کنه، طراحی رو پیاده کنیم — هدف دیاگرام‌ها مکمل نیازمندی‌هاست، نه جایگزینشون.",
+    "hints": [
+      "درس دقیقاً همین جمله رو گفت: «هدف ساخت این دیاگرام‌ها، مکمل نیازمندی‌هامونه، نه جایگزین نیازمندی‌ها».",
+      "دیاگرام‌ها به تیم طراحی چه تصویری از سیستم می‌دن که فقط جمله‌ی نیازمندی نمی‌ده؟"
+    ],
+    "rubric": "Correct if response explains diagrams reinforce/supplement the requirement set (as a source for shall statements or reinforcing existing ones) and should never replace requirements as the basis for implementation. Correct_with_hint if it vaguely says 'diagrams help' without the supplement-not-replace distinction. Incorrect otherwise."
+  }
+]

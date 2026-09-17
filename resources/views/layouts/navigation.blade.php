@@ -11,7 +11,7 @@
     <div class="hidden sm:flex gap-1 items-center">
         <x-nav-link :href="route('home')" :active="request()->routeIs('home')">خانه</x-nav-link>
 
-        <x-dropdown align="right" width="w-72" content-classes="py-1.5 bg-surface">
+        <x-dropdown align="center" width="w-72" content-classes="py-1.5 bg-surface">
             <x-slot name="trigger">
                 <button type="button" class="flex items-center gap-1 {{ $coursesActive ? 'px-3 py-1.5 rounded-md text-[14px] font-medium text-ink bg-surface2 hover:text-ink' : 'px-3 py-1.5 rounded-md text-[14px] font-medium text-muted hover:text-ink hover:bg-surface2 transition' }}"
                         aria-haspopup="true" :aria-expanded="open.toString()">

@@ -8,7 +8,12 @@
         @endif
 
         @foreach ($coursesByCategory as $category => $group)
-            <div class="mb-7">
+            <div class="mb-7"
+                 @if ($category !== '')
+                     x-show="active === 'all' || active === @js($category)"
+                 @else
+                     x-show="active === 'all'"
+                 @endif>
                 @if ($category !== '')
                     <button type="button"
                             @click="active = (active === @js($category)) ? 'all' : @js($category)"
@@ -17,12 +22,7 @@
                         {{ $category }}
                     </button>
                 @endif
-                <div class="grid gap-4 sm:grid-cols-2"
-                     @if ($category !== '')
-                         x-show="active === 'all' || active === @js($category)"
-                     @else
-                         x-show="active === 'all'"
-                     @endif>
+                <div class="grid gap-4 sm:grid-cols-2">
                     @foreach ($group as $course)
                         @php $enrolled = $course->enrollments->isNotEmpty(); @endphp
                         <div class="card overflow-hidden flex flex-col">

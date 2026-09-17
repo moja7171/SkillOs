@@ -1,0 +1,42 @@
+[
+  {
+    "key": "vague-vs-engineered",
+    "title": "کدوم پرامپت خروجی بهتری می‌ده؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم پرامپت زیر احتمالاً یه پرسونای کاربر دقیق‌تر و قابل‌استفاده‌تر تولید می‌کنه؟",
+    "options": [
+      "«یه پرسونا برای اپمون بساز.»",
+      "«به‌عنوان محقق UX، بر اساس این سند، یه پرسونا با اسم، بیوگرافی، اهداف، دلخوری‌ها و انگیزه بساز.»",
+      "«پرسونا یعنی چی؟»",
+      "«یه کاربر تصور کن.»"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "پرامپت دوم نقش (محقق UX)، منبع زمینه (سند پیوست‌شده) و ساختار خروجی (اسم، بیوگرافی، اهداف، دلخوری‌ها، انگیزه) رو مشخص کرده — دقیقاً برخلاف پرامپت مبهم اول.",
+    "hints": ["به تعداد جزئیات مشخص‌شده توی هر گزینه نگاه کن.", "درس گفت پرامپت مهندسی‌شده باید نقش، دستور، و ساختار خروجی رو داشته باشه."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "write-a-user-story-prompt",
+    "title": "یه پرامپت COSTAR برای یوزر استوری بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "می‌خوای برای این ویژگی یه یوزر استوری کامل بسازی: «کاربر می‌تونه از طریق اپ، سفارشش رو با یه کلیک لغو کنه، تا وقتی که هنوز ارسال نشده.» با چارچوب COSTAR یه پرامپت کامل (Role, Context, Objective/Action, Response structure) بنویس که یوزر استوری با معیار پذیرش تولید کنه.",
+    "expected_outcome": "نمونه:\n```\nRole: تو یه Product Owner باتجربه در یه اپلیکیشن فروشگاهیه.\nContext: کاربر می‌خواد بتونه سفارش ثبت‌شده رو تا قبل از ارسال لغو کنه.\nAction: سناریوی لغو سفارش با یک کلیک.\nResponse: عنوان یوزر استوری، متن استاندارد (As a / I want / So that)، و لیست کامل معیار پذیرش شامل مسیر موفق و حالت خطا (مثلاً سفارش قبلاً ارسال شده).\n```\nهر پاسخی که نقش، زمینه/اکشن، و ساختار خروجی مشخص (شامل معیار پذیرش) رو بپوشونه قابل‌قبوله.",
+    "hints": ["مثل مثال درس، چهار بخش رو مشخص کن: نقش، زمینه، اکشن، و ساختار پاسخ.", "توی بخش ساختار پاسخ، حتماً معیار پذیرش رو هم بخواه، نه فقط متن یوزر استوری."],
+    "rubric": "Correct: prompt has a clear Role, Context, Action, and Response-structure section requesting a title/story/acceptance criteria, coherent with the cancel-order feature. Correct_with_hint: missing one of the four sections but otherwise coherent. Incorrect: missing 2+ sections or incoherent with the scenario."
+  },
+  {
+    "key": "four-automatable-tasks",
+    "title": "چهار کاربرد روزمره رو جفت کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "درس چهار کاربرد دیگه رو معرفی کرد: تجزیه‌ی کار، شناسایی وابستگی، تخمین تلاش، و تعریف هدف اسپرینت. برای «تخمین تلاش» توضیح بده دقیقاً چه ورودی‌ای به AI می‌دی و چه خروجی‌ای می‌خوای — طوری که واقعاً بتونی توی جلسه‌ی planning poker ازش استفاده کنی.",
+    "expected_outcome": "ورودی: متن یوزر استوری و روش تخمینی که تیم استفاده می‌کنه (مثلاً Fibonacci). خواسته: لیست عوامل پیچیدگی مؤثر بر تخمین (مثلاً مقیاس‌پذیری، امنیت، زیرساخت real-time، چالش‌های UI/UX). خروجی این لیست، ورودی بحث تیم توی planning poker می‌شه — نه این‌که AI خودش عدد نهایی تخمین رو بده، بلکه عوامل رو برای بحث تیم آماده می‌کنه.",
+    "hints": ["درس گفت خروجی این پرامپت «عوامل پیچیدگی» بود، نه یه عدد تخمین قطعی.", "به یاد بیار که این لیست قراره کجا استفاده بشه — یه جلسه‌ی تیمی خاص."],
+    "rubric": "Correct: mentions feeding the user story (+ estimation method) as input, and getting a list of complexity factors as output to feed into a team planning-poker discussion — not a final number from AI. Partial: gets input/output roughly right but misses that it feeds team discussion rather than replacing it. Incorrect: describes AI giving a final estimate number, or unrelated answer."
+  }
+]

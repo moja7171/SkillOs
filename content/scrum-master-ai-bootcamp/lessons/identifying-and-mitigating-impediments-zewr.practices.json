@@ -1,0 +1,42 @@
+[
+  {
+    "key": "explicit-vs-implicit",
+    "title": "مانع آشکار یا مانع پنهان؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه استوری سه روزه توی وضعیت «در حال بررسی» گیر کرده، ولی هیچ‌کس توی دیلی صریحاً نگفته «بلوکه شدم». این نمونه‌ی کدوم نوع مانعه؟",
+    "options": [
+      "مانع آشکار، چون توی داده‌ی پیشرفت دیده می‌شه",
+      "مانع پنهان (implicit)، چون کسی مستقیم اعلامش نکرده و فقط از روی الگوی داده کشف می‌شه",
+      "اصلاً مانع حساب نمی‌شه چون کسی چیزی نگفته",
+      "فقط با پرسیدن مستقیم از فرد مسئول قابل‌تشخیصه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "این دقیقاً یه مانع پنهانه — چیزی که کسی صریح نگفته ولی از الگوی داده (گیرکردن طولانی توی یه وضعیت) قابل‌استنتاجه. همین نوع مانع‌ها معمولاً از چشم آدم دور می‌مونن.",
+    "hints": ["به تعریف درس فکر کن: مانع آشکار = گفته‌شده، مانع پنهان = از الگو استنتاج‌شده.", "کسی چیزی نگفته، ولی داده‌ها یه چیزی رو نشون می‌دن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "three-resolution-considerations",
+    "title": "استراتژی حل مانع چی رو در نظر می‌گیره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "پرامپت ساخت استراتژی حل مانع، سه دسته‌بندی رو برای هر مانع در نظر می‌گیره. این سه‌تا رو نام ببر.",
+    "expected_outcome": "۱) راه‌حل داخلی (جفت‌کاری، اشتراک مهارت، workaround). ۲) تشدید بیرونی (escalation) — چه‌کسی باید مطلع بشه. ۳) راه‌حل فوری در مقابل بلندمدت، همراه با تخمین زمان و اقدام پیشگیرانه.",
+    "hints": ["یکیش درباره‌ی حل کردن داخل تیمه.", "یکیش درباره‌ی زمان‌بندیه — فوری یا بلندمدت."],
+    "rubric": "Correct: names internal solutions, external escalation, and immediate-vs-long-term fixes with prevention. Partial: names 2 of 3. Incorrect: fewer than 2."
+  },
+  {
+    "key": "contact-doc-purpose",
+    "title": "چرا سند اطلاعات تماس ذی‌نفعان لازم بود؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "برای ساخت استراتژی حل مانع، علاوه‌بر ماتریس مهارت، یه سند اطلاعات تماس ذی‌نفعان هم پیوست شد. این سند دقیقاً چه بخشی از خروجی رو ممکن می‌کنه؟",
+    "expected_outcome": "این سند به AI اجازه می‌ده بخش «تشدید بیرونی» رو با اسم و مسئولیت واقعی افراد پر کنه — یعنی به‌جای یه توصیه‌ی کلی مثل «با تیم مربوطه تماس بگیر»، دقیقاً بگه چه‌کسی مسئوله و چطور باید بهش دسترسی پیدا کرد.",
+    "hints": ["به بخش «تشدید بیرونی» فکر کن — این بخش به چه اطلاعاتی نیاز داره تا مشخص و عملی باشه، نه کلی؟", "بدون این سند، AI فقط می‌تونست بگه «با کسی تماس بگیر»، نه با کدوم شخص مشخص."],
+    "rubric": "Correct: explains it enables specific, named escalation contacts/owners instead of generic advice. Partial: says 'helps with escalation' without specifying the name/role detail. Incorrect: unrelated."
+  }
+]

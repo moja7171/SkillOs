@@ -1,0 +1,42 @@
+[
+  {
+    "key": "costar-vs-rise",
+    "title": "COSTAR یا RISE؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای یه پرامپت برای «تحلیل کامل یه ریسک فنی پیچیده در چند مرحله‌ی منطقی» بنویسی. کدوم چارچوب مناسب‌تره؟",
+    "options": [
+      "COSTAR، چون شامل Audience هم می‌شه",
+      "RISE، چون بخش Steps مخصوص شکستن کار به مراحل منطقیه",
+      "هیچ‌کدوم فرقی ندارن",
+      "COSTAR، چون فقط برای ایمیل طراحی شده"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "RISE برای کارهای پیچیده و چندمرحله‌ای طراحی شده و بخش Steps دقیقاً برای شکستن کار به مراحل منطقی و پشت‌سرهمه — چیزی که COSTAR نداره.",
+    "hints": ["فرق اصلی این دو چارچوب توی یه بخش خاصه؛ کدوم بخش مخصوص «چند مرحله» ست؟", "به تعریف RISE فکر کن: Role, Input, Steps, Expectation."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "write-a-costar-prompt",
+    "title": "یه پرامپت COSTAR واقعی بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "تیم تو یه باگ بحرانی توی محیط پروداکشن پیدا کرده و باید یه پیام کوتاه برای مدیر محصول (غیرفنی) بنویسی که وضعیت رو شفاف توضیح بده. با استفاده از چارچوب COSTAR (شش بخش C-O-S-T-A-R) یه پرامپت کامل برای این کار بنویس.",
+    "expected_outcome": "پرامپت باید هر شش بخش رو صریح داشته باشه، مثلاً:\n```\nContext: تیم ما یه باگ بحرانی توی محیط پروداکشن پیدا کرده که روی پرداخت کاربرها اثر می‌ذاره.\nObjective: یه پیام کوتاه برای مدیر محصول بنویس که وضعیت فعلی و برنامه‌ی رفع مشکل رو توضیح بده.\nStyle: مستقیم و مختصر.\nTone: شفاف و مسئولانه، بدون ایجاد نگرانی بیش‌ازحد.\nAudience: مدیر محصول، غیرفنی.\nResponse: پیام کوتاه سه‌پاراگرافی با یه خط تیتر.\n```\nهر پاسخی که این شش بخش رو با محتوای منطقی و مرتبط پر کنه قابل‌قبوله.",
+    "hints": ["شش بخش رو با لیبل جدا مشخص کن: Context, Objective, Style, Tone, Audience, Response.", "Audience رو فراموش نکن — چون مخاطب غیرفنیه، باید توی Style/Tone هم اثرش رو ببینی."],
+    "rubric": "Correct: prompt explicitly labels and fills all six COSTAR elements with content coherent to the bug-report scenario, correctly reflecting a non-technical audience. Correct_with_hint: 4-5 elements present and coherent. Incorrect: fewer than 4 elements, or elements present but incoherent/irrelevant to the scenario."
+  },
+  {
+    "key": "prompt-manifesto-principle",
+    "title": "کدوم اصل رو زیر پا گذاشته؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "این پرامپت رو در نظر بگیر: «یه چیزی درباره‌ی محصولمون بنویس، هر چی خودت صلاح می‌دونی.» کدوم یکی از اصول «مانیفست پرامپت‌نویسی اجایل» که توی درس اومد رو نقض می‌کنه، و چرا این باعث خروجی ضعیف می‌شه؟",
+    "expected_outcome": "این پرامپت اصل «دقت به‌جای ابهام» و «زمینه پادشاهه» رو زیر پا می‌ذاره — نه دستور مشخصی داره، نه زمینه‌ای از محصول. چون AI هیچی از محصول خاص تو نمی‌دونه و پرامپت هم مبهمه، مدل مجبور می‌شه فرض‌های خودش رو بذاره که احتمالاً با نیت واقعی تو یکی نیست.",
+    "hints": ["به دو تا از پنج اصل مانیفست فکر کن که مستقیماً به وضوح و زمینه مربوط می‌شن.", "این پرامپت نه نقش داره، نه دستور واضح، نه زمینه."],
+    "rubric": "Correct: identifies 'precision over vagueness' and/or 'context is king' as the violated principle(s) and explains that the model will fill gaps with assumptions misaligned with real intent. Partial: identifies a relevant issue but doesn't tie it to the named principles. Incorrect: unrelated or wrong principle."
+  }
+]

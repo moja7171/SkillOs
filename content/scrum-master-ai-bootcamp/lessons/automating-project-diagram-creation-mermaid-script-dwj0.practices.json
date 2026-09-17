@@ -1,0 +1,51 @@
+[
+  {
+    "key": "which-diagram-type",
+    "title": "کدوم نوع دیاگرام مناسبه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای این فرایند رو مستند کنی: «کاربر سفارش ثبت می‌کنه → سرویس پرداخت چک می‌شه → انبار موجودی رو تأیید می‌کنه → سرویس ارسال اطلاع‌رسانی می‌شه → کاربر تأییدیه می‌گیره.» چند بازیگر مختلف با هم پیام رد و بدل می‌کنن. کدوم نوع دیاگرام Mermaid مناسب‌تره؟",
+    "options": [
+      "فلوچارت ساده",
+      "دیاگرام توالی (sequence diagram)",
+      "دیاگرام کلاس (class diagram)",
+      "دیاگرام ER (entity relationship)"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "چون چند بازیگر (کاربر، سرویس پرداخت، انبار، سرویس ارسال) با هم پیام رد و بدل می‌کنن، دیاگرام توالی مناسب‌تره — دقیقاً همون منطقی که توی مثال درس (سناریوی خدمات مشتری) به کار رفت.",
+    "hints": [
+      "به تعداد «بازیگر»های درگیر و تعامل بینشون فکر کن.",
+      "فلوچارت برای سناریوهای چندبازیگره سریع شلوغ و غیرقابل‌خوندن می‌شه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "fix-syntax-error",
+    "title": "اسکریپت Mermaid رندر نمی‌شه، چیکار می‌کنی؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "اسکریپت Mermaidی که AI تولید کرده، توی mermaid.live خطای نحوی می‌ده و رندر نمی‌شه. سریع‌ترین راه رفعش چیه؟",
+    "expected_outcome": "پیام خطای دقیق رو کپی کنی و به همون AI بدی و بخوای اصلاحش کنه — نه این‌که خودت دستی اسکریپت رو دیباگ کنی.",
+    "hints": [
+      "درس نشون داد این کار با کپی‌کردن خود پیام خطا و دادنش به AI حل شد.",
+      "این با اصل «تکرار و اصلاح» که قبلاً یاد گرفتیم مرتبطه."
+    ],
+    "rubric": "Correct: says to paste the exact error message back to the AI and ask it to fix the script. Partial: says 'ask AI to fix it' without mentioning pasting the actual error. Incorrect: unrelated or suggests manual debugging only."
+  },
+  {
+    "key": "control-complexity",
+    "title": "دیاگرام خیلی شلوغه، چیکار می‌کنی؟",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "اگه دیاگرام تولیدشده خیلی پیچیده و پرجزئیاته و می‌خوای یه نسخه‌ی ساده‌تر و خلاصه‌تر داشته باشی، توی پرامپت چی می‌نویسی؟",
+    "expected_outcome": "صریح می‌خوای: «این رو ساده‌تر کن، تعداد مرحله‌ها و بازیگرها رو کم کن» — پیچیدگی خروجی هم مثل هر جنبه‌ی دیگه‌ی خروجی، با یه دستور صریح قابل‌تنظیمه.",
+    "hints": [
+      "درس همین دستور رو نمونه زد — یادت میاد چی گفت؟",
+      "کلمه‌ی کلیدی «ساده‌تر کن» و کاهش تعداد مرحله‌ها/بازیگرها رو توی پرامپت بگنجون."
+    ],
+    "rubric": "Correct: asks to simplify by reducing steps/entities explicitly. Partial: says 'ask it to simplify' without specifics. Incorrect: unrelated."
+  }
+]

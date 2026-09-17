@@ -1,0 +1,42 @@
+[
+  {
+    "key": "why-audience-profile",
+    "title": "چرا پروفایل مخاطب یه سند جدا لازم داشت؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "برای ساخت QBR، یه سند «پروفایل مخاطب هدف» جدا از داده‌ی خام فصلی به AI داده شد. این سند دقیقاً چه چیزی رو ممکن می‌کنه که بدونش امکان‌پذیر نبود؟",
+    "expected_outcome": "بدون این سند، AI نمی‌دونست گزارش برای چه‌کسی نوشته می‌شه — چه سطح فنی داره، چی براش مهمه (تأثیر کسب‌وکار، ROI)، و چی نباید توش باشه (جزئیات فنی). با این سند، گزارش می‌تونه زبان و محتوای متناسب با یه مخاطب اجرایی و غیرفنی بسازه، به‌جای یه گزارش فنی عمومی که ممکنه براشون نامناسب یا گیج‌کننده باشه.",
+    "hints": ["به درس‌های اول دوره برگرد — «Audience» یکی از عناصر چارچوب COSTAR بود؛ همون اصل اینجا هم صادقه.", "بدون این سند، AI فرض‌های خودش رو می‌ذاشت — که ممکنه با نیاز واقعی مدیران ارشد فرق داشته باشه."],
+    "rubric": "Correct: explains the audience profile enables tailoring tone/content/technical depth to specific executive needs, avoiding generic or overly technical output. Partial: says 'it makes the report better' without specifying the tailoring mechanism. Incorrect: unrelated or missing the audience-tailoring point."
+  },
+  {
+    "key": "recurring-pattern-fix",
+    "title": "یه الگوی تکراری این دوره رو تشخیص بده",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "وقتی داشبورد اول Claude با یه خطای داخلی مواجه شد، راه‌حل چی بود؟ این راه‌حل با کدوم درس قبلی این دوره یکیه؟",
+    "options": [
+      "از صفر یه پرامپت کاملاً متفاوت نوشتن",
+      "پیام خطا رو به همون AI دادن و خواستن دوباره بسازه — همون الگویی که توی درس اسکریپت‌های Mermaid دیدیم",
+      "تعویض کامل ابزار به یه ابزار دیگه",
+      "نادیده‌گرفتن خطا و ادامه با داشبورد ناقص"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "همون الگوی «تکرار و اصلاح»: پیام خطا رو مستقیم به AI بدی و بخوای دوباره تلاش کنه — دقیقاً همون کاری که توی درس اسکریپت Mermaid برای رفع خطای نحوی انجام دادیم.",
+    "hints": ["این الگو قبلاً یه‌بار دیگه توی همین بخش (ابزارهای روزمره) دیده شد.", "به یاد بیار توی درس دیاگرام Mermaid، خطای نحوی چطور رفع شد."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "course-recap",
+    "title": "کل دوره رو در سه جمله جمع‌بندی کن",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "این دوره چهار بخش داشت. در سه تا چهار جمله، جمع‌بندی کن که هر بخش چه چیزی رو یاد داد و مهم‌ترین اصل مشترک بین همه‌ی بخش‌ها چی بود.",
+    "expected_outcome": "بخش ۱: مبانی AI مولد و مهندسی پرامپت (COSTAR/RISE/RTF، اعتبارسنجی). بخش ۲: یه مطالعه‌ی موردی کامل از سند چشم‌انداز تا سناریوی تست. بخش ۳: خودکارسازی اجرای اسپرینت (اولویت‌بندی تا برن‌داون). بخش ۴: ابزارهای روزمره (Agent Mode، Connector، Copilot، Mermaid، Otter، Claude برای گزارش‌های اجرایی). اصل مشترک: AI کار سنگین تولید محتوا و تحلیل رو انجام می‌ده، ولی بازبینی و تصمیم نهایی همیشه با آدمه — همون اصل اعتبارسنجی که از همون درس‌های اول تکرار شد.",
+    "hints": ["به عنوان هر بخش این دوره فکر کن.", "یه اصل تقریباً توی هر درس این دوره تکرار شد — همون که درباره‌ی چک‌کردن خروجی بود."],
+    "rubric": "Correct: summarizes all four sections roughly accurately and names validation/human-review as the recurring shared principle. Partial: summarizes 2-3 sections correctly or misses the shared principle. Incorrect: summary is mostly inaccurate or missing."
+  }
+]

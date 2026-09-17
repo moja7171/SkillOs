@@ -1,0 +1,51 @@
+[
+  {
+    "key": "autosave-prereq",
+    "title": "پیش‌نیاز فنی Copilot توی Excel",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "برای کارکردن Copilot توی Excel، فایل باید چه شرطی داشته باشه؟",
+    "options": [
+      "باید فرمت CSV باشه",
+      "باید AutoSave روشن و روی OneDrive ذخیره شده باشه",
+      "باید کمتر از ۱۰۰ ردیف داشته باشه",
+      "هیچ پیش‌نیازی نداره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "AutoSave باید روشن باشه، که یعنی فایل باید روی OneDrive ذخیره شده باشه، نه فقط لوکال روی سیستم.",
+    "hints": [
+      "درس صریحاً این پیش‌نیاز فنی رو قبل از دمو مطرح کرد.",
+      "بدون AutoSave روشن، Copilot نمی‌تونه تغییرات رو به‌صورت زنده روی فایل اعمال کنه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-preview-matters",
+    "title": "چرا پیش‌نمایش ستون قبل از درج مهمه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "Copilot قبل از اضافه‌کردن واقعی یه ستون جدید، یه پیش‌نمایش نشون می‌ده. این قدم دقیقاً چه فایده‌ای داره و با کدوم اصل کلی‌تر دوره مرتبطه؟",
+    "expected_outcome": "پیش‌نمایش اجازه می‌ده قبل از تغییر واقعی فایل، محاسبات رو چک کنی و مطمئن بشی درسته. این نمونه‌ای از اعتبارسنجی خروجی AI پیش از قبول‌کردنشه — همون اصل چارچوب کیفیت AI که قبلاً یاد گرفتیم، فقط این‌بار به‌شکل یه قدم داخل خودِ ابزار.",
+    "hints": [
+      "به این فکر کن چرا بهتره قبل از تغییر واقعی فایل، نتیجه رو ببینی.",
+      "این با اصل اعتبارسنجی خروجی AI مرتبطه، حتی اگه محاسبه ساده به‌نظر برسه."
+    ],
+    "rubric": "Correct: explains preview lets you verify correctness before the file actually changes, connecting it to the general AI-output validation principle. Partial: says 'so you can check it' without the broader connection. Incorrect: unrelated."
+  },
+  {
+    "key": "analytical-question",
+    "title": "یه سؤال تحلیلی روی بک‌لاگ خودت طراحی کن",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "فرض کن بک‌لاگ اسپرینتت ستون‌های «MoSCoW»، «وضعیت» و «ساعت باقی‌مونده» داره. یه سؤال تحلیلی (نه ساخت ستون جدید) بنویس که با Copilot بخوای بدون فرمول‌نویسی دستی جوابش رو بگیری.",
+    "expected_outcome": "مثال قابل‌قبول: «کدوم استوری‌های must-have هنوز بیشتر از ۱۰ ساعت باقی‌مونده و وضعیتشون in-progress نیست؟» — هر سؤالی که چند شرط رو با هم ترکیب کنه (نه فقط یه ستون رو فیلتر کنه) قابل‌قبوله.",
+    "hints": [
+      "درس یه نمونه زد: «کدوم استوری‌ها هنوز شروع نشدن؟» که دو شرط رو با هم ترکیب می‌کرد.",
+      "سعی کن سؤالت بیشتر از یه ستون رو در نظر بگیره."
+    ],
+    "rubric": "Correct: a plausible natural-language analytical question combining at least two columns/conditions from the backlog. Partial: a valid question but using only one column/condition. Incorrect: unrelated to the backlog or asks for a new column instead of an analysis."
+  }
+]

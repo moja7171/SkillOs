@@ -1,0 +1,42 @@
+[
+  {
+    "key": "three-inputs-for-backlog",
+    "title": "سه ورودی ساخت بک‌لاگ",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "برای پرامپت «ساخت بک‌لاگ اولیه»، چه سه سندی به AI پیوست می‌شن؟",
+    "expected_outcome": "سند چشم‌انداز محصول، گزارش تحقیق بازار (خروجی مرحله‌ی قبل از Perplexity)، و سند پرسونای کاربر.",
+    "hints": ["یکیش از قدم قبلی همین درس میاد (تحقیق بازار).", "یکیش از همون اول به‌عنوان ورودی اصلی معرفی شد."],
+    "rubric": "Correct: names all three (vision doc, market research report, user persona doc). Partial: names 2 of 3. Incorrect: fewer than 2."
+  },
+  {
+    "key": "moscow-prompt",
+    "title": "یه پرامپت COSTAR برای بک‌لاگ بنویس",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 6,
+    "prompt": "فرض کن سند چشم‌انداز و پرسونای یه اپ رزرو رستوران داری (بدون گزارش تحقیق بازار جدا). با چارچوب COSTAR یه پرامپت بنویس که از این دو سند، بک‌لاگ اولیه (اپیک + یوزر استوری + پرسونای مرتبط + اولویت MoSCoW) بسازه.",
+    "expected_outcome": "نمونه:\n```\nContext: تو یه Product Owner باتجربه هستی؛ سند چشم‌انداز و پرسونای اپ رزرو رستوران رو پیوست می‌کنم.\nObjective: ایده رو به اپیک بشکن، زیر هر اپیک چند یوزر استوری بساز، پرسونای مرتبط هر کدوم رو مشخص کن و با MoSCoW اولویت بده.\nStyle: جدول Markdown با ستون‌های اپیک، یوزر استوری، پرسونا، اولویت.\nTone: عملی و کاربرمحور.\nAudience: تیم اسکرام (توسعه‌دهنده، QA، اسکرام مستر).\nResponse: همون جدول Markdown.\n```\nهر پاسخی که این شش عنصر رو منطقی پر کنه و روی سناریوی رستوران منطبق باشه قابل‌قبوله.",
+    "hints": ["از همون ساختار درس الگو بگیر: نقش، زمینه، دستور شامل MoSCoW، و فرمت جدولی.", "یادت نره فرمت خروجی رو دقیقاً مشخص کنی (ستون‌های جدول)."],
+    "rubric": "Correct: all six COSTAR elements present, coherent with a restaurant-booking app, explicitly asking for epics/stories/persona/MoSCoW priority in a table. Correct_with_hint: 4-5 elements coherent. Incorrect: fewer than 4, or incoherent with the scenario."
+  },
+  {
+    "key": "table-to-excel",
+    "title": "از جدول به اکسل، بدون کپی‌پیست",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "یه جدول Markdown از بک‌لاگ گرفتی و می‌خوای توی Excel کار کنی. سریع‌ترین راه چیه؟",
+    "options": [
+      "دستی هر سطر رو کپی‌پیست کنی توی Excel",
+      "از AI بخوای همون جدول رو به فایل Excel تبدیل کنه",
+      "از اول پرامپت رو با فرمت CSV دوباره بنویسی",
+      "جدول رو دستی تایپ کنی توی یه فایل جدید"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "کافیه بگی «این جدول رو به فایل Excel تبدیل کن» — ابزارهایی مثل ChatGPT می‌تونن مستقیم فایل قابل‌دانلود بسازن.",
+    "hints": ["درس دقیقاً همین نکته رو به‌عنوان یه میان‌بر عملی گفت.", "لازم نیست از اول یه پرامپت جدید بنویسی — همون خروجی رو فرمت‌تبدیل بخواه."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "key": "otter-vs-chatbot",
+    "title": "Otter.ai با ChatGPT چه فرقی داره؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "بر خلاف ChatGPT که باهاش گفت‌وگو می‌کنی، Otter.ai چطور کار می‌کنه؟ در ۱ تا ۲ جمله توضیح بده.",
+    "expected_outcome": "Otter.ai مستقیم توی خودِ جلسه‌ی آنلاین به‌عنوان یه شرکت‌کننده (note taker) حاضر می‌شه و صدا/تصویر جلسه رو گوش می‌ده و ضبط می‌کنه — نه این‌که بعداً بهش سؤال بدی، بلکه از همون لحظه‌ی جلسه حضور داره.",
+    "hints": [
+      "به تفاوت «حضور در جلسه» با «پاسخ‌دادن به سؤال» فکر کن.",
+      "Otter مثل یه منشی واقعی جلسه عمل می‌کنه، نه یه چت‌بات که ازش سؤال می‌پرسی."
+    ],
+    "rubric": "Correct: explains Otter joins the live meeting as an attendee to capture it in real time, unlike a chatbot you query after the fact. Partial: says 'it records meetings' without the attendee/real-time distinction. Incorrect: unrelated."
+  },
+  {
+    "key": "per-meeting-control",
+    "title": "کنترل شرکت Otter در هر جلسه",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "بعد از وصل‌کردن تقویم به Otter، آیا Otter خودکار و بدون کنترل، توی همه‌ی جلسات شرکت می‌کنه؟",
+    "options": [
+      "بله، هیچ کنترلی روی این موضوع نداری",
+      "نه، برای هر جلسه به‌طور جداگانه می‌تونی مشخص کنی Otter شرکت کنه یا نه",
+      "فقط برای جلسات Teams کار می‌کنه، نه Google Meet",
+      "فقط یه‌بار در روز می‌شه فعالش کرد"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "برای هر جلسه‌ی مشخص، می‌تونی جداگانه تعیین کنی Otter توش شرکت کنه یا نه — کنترل کامل داری که کدوم جلسه‌ها ضبط بشن.",
+    "hints": [
+      "درس صراحتاً گفت این کنترل به‌ازای هر جلسه انجام می‌شه.",
+      "توی تقویم متصل‌شده، کنار هر جلسه یه گزینه‌ی روشن/خاموش برای Otter بود."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "transparency-consideration",
+    "title": "چرا اطلاع دادن به شرکت‌کننده‌ها مهمه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "درس گفت باید همه‌ی شرکت‌کننده‌های جلسه از حضور Otter خبر داشته باشن. این چرا یه ملاحظه‌ی مهمه، فراتر از یه جزئیات فنی؟",
+    "expected_outcome": "چون Otter واقعاً صدا (و گاهی تصویر) جلسه رو ضبط می‌کنه — یه مسئله‌ی حریم خصوصی و شفافیته، نه فقط یه تنظیم فنی. اگه کسی ندونه جلسه ضبط می‌شه، ممکنه احساس کنه بدون رضایتش ضبط شده، که هم از نظر اخلاقی هم احتمالاً از نظر قانونی/سازمانی مشکل‌سازه.",
+    "hints": [
+      "به این فکر کن Otter واقعاً چیکار می‌کنه — فقط یادداشت‌برداری یا ضبط واقعی صدا؟",
+      "این یه مسئله‌ی رضایت و شفافیته، نه فقط تنظیمات فنی."
+    ],
+    "rubric": "Correct: connects to privacy/consent — meeting participants should know they're being recorded, since Otter captures actual audio/video. Partial: says 'it's polite to tell people' without the privacy/consent framing. Incorrect: unrelated or dismisses the concern."
+  }
+]

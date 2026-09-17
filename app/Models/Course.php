@@ -12,6 +12,10 @@ class Course extends Model
 {
     use HasFactory;
 
+    // Display-only catalog grouping (DECISIONS.md §58) — fixed section order for the
+    // catalog page and the nav's courses menu. Not a DB table; just a few known labels.
+    public const CATEGORIES = ['مسیر رهبری فنی', 'اسکرام و اجایل', 'برنامه‌نویسی'];
+
     public function getRouteKeyName(): string
     {
         return 'slug';

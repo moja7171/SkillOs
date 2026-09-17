@@ -1,0 +1,42 @@
+[
+  {
+    "key": "cutoff-meaning",
+    "title": "knowledge cutoff دقیقاً چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "«knowledge cutoff» یه مدل زبانی یعنی چی؟",
+    "options": [
+      "تاریخی که مدل بعدش دیگه هیچ سؤالی رو جواب نمی‌ده",
+      "آخرین تاریخی که داده‌های آموزشی مدل تا اون‌جا رو پوشش می‌ده",
+      "تاریخی که اشتراک کاربر باید تمدید بشه",
+      "حداکثر طول context window مدل"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "knowledge cutoff یعنی داده‌های آموزشی مدل فقط تا یه تاریخ مشخص رو پوشش می‌ده؛ اتفاق‌های بعد از اون تاریخ توی حافظه‌ی پیش‌فرض مدل نیستن، مگراینکه از جست‌وجوی وب کمک بگیره.",
+    "hints": ["ربطی به قطع سرویس یا اشتراک نداره.", "به کلمه‌ی «cutoff» فکر کن — یعنی داده‌ها کجا قطع می‌شن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "search-vs-deep-research",
+    "title": "جست‌وجوی وب یا تحقیق عمیق؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "دو تا کار داری: (الف) می‌خوای بدونی نسخه‌ی فعلی یه ابزار خاص کدومه؛ (ب) می‌خوای یه گزارش مستند درباره‌ی الگوهای معماری رایج توی اپلیکیشن‌های بانکداری موبایل بنویسی، با منابع مشخص. برای هر کدوم، جست‌وجوی وب ساده مناسب‌تره یا تحقیق عمیق؟ چرا؟",
+    "expected_outcome": "کار (الف) یه سؤال ساده و سریعه — جست‌وجوی وب ساده کافیه و سریع جواب می‌ده. کار (ب) یه تحقیق چندمرحله‌ای و مستنده که نیاز به بررسی چند منبع و تولید گزارش ساختاریافته داره — برای این‌جور کار، تحقیق عمیق (deep research) مناسب‌تره، حتی اگه چند دقیقه طول بکشه.",
+    "hints": ["به تفاوت اصلی که درس گفت فکر کن: تعداد مراحل و عمق تحلیل.", "کدوم کار «چند دقیقه صبر کردن برای یه گزارش کامل» رو می‌ارزه؟"],
+    "rubric": "Correct: picks simple web search for the quick fact-lookup and deep research for the multi-source documented report, with reasoning about depth/time tradeoff. Correct_with_hint: right picks but weak reasoning. Incorrect: picks reversed or gives no reasoning."
+  },
+  {
+    "key": "force-web-search",
+    "title": "چطور مطمئن بشی مدل سراغ اینترنت رفته؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "اگه نمی‌خوای به تشخیص خودکار مدل تکیه کنی و مطمئن بخوای مدل حتماً وب رو جست‌وجو کنه، چیکار می‌کنی؟",
+    "expected_outcome": "از قابلیت فعال‌سازی دستی جست‌وجوی وب استفاده می‌کنی — مثلاً توی ChatGPT از منوی گزینه‌های اضافه (+) روی «Web search» می‌زنی تا مدل مجبور بشه به اینترنت بره، نه فقط به دانش آموزشی خودش تکیه کنه.",
+    "hints": ["درس گفت این قابلیت رو می‌شه هم خودکار گذاشت هم دستی فعال کرد.", "دنبال یه گزینه‌ی مشخص توی منوی prompt box بگرد."],
+    "rubric": "Correct: mentions manually toggling/forcing web search (e.g. the '+' menu's Web search option) instead of relying on automatic detection. Partial: says 'ask it to search the web' without naming the mechanism. Incorrect: unrelated answer."
+  }
+]

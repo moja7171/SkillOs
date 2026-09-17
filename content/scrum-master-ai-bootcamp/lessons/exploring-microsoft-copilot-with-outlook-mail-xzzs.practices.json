@@ -1,0 +1,37 @@
+[
+  {
+    "key": "when-summarize-useful",
+    "title": "کِی دکمه‌ی خلاصه‌سازی واقعاً به کار میاد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "دکمه‌ی «Summarize» توی Outlook بیشترین ارزش رو کِی داره؟",
+    "options": [
+      "برای یه ایمیل تک‌خطی و کوتاه",
+      "برای یه thread طولانی با چند پاسخ و نظر مختلف",
+      "فقط برای ایمیل‌های خودکار و بدون‌پاسخ",
+      "فقط وقتی ایمیل ضمیمه‌ی PDF داره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "برای یه thread طولانی با چند پاسخ، خلاصه‌سازی وقت زیادی صرفه‌جویی می‌کنه چون لازم نیست از اول تا آخر بخونی تا بفهمی الان کجای بحث هستیم.",
+    "hints": [
+      "درس صریحاً گفت این قابلیت برای thread تکی کاربرد چندانی نداره.",
+      "برای یه ایمیل کوتاه، خوندنش سریع‌تر از خلاصه‌خواستنه؛ فایده کجا بیشتره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "two-copilot-outlook-features",
+    "title": "دو قابلیت اصلی Copilot توی Outlook",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "دو قابلیت اصلی Copilot که توی این درس دیدیم رو نام ببر و برای هر کدوم یه موقعیت واقعی از کار اسکرام مستری بزن.",
+    "expected_outcome": "۱) پیشنهاد پاسخ متناسب با محتوای ایمیل — مثلاً پاسخ سریع به یه سؤال از یه ذی‌نفع. ۲) خلاصه‌سازی thread طولانی — مثلاً فهمیدن نتیجه‌ی یه بحث طولانی ایمیلی درباره‌ی یه تصمیم فنی، بدون خوندن کل thread.",
+    "hints": [
+      "یکی درباره‌ی نوشتنه، یکی درباره‌ی خوندنه.",
+      "هر دو قابلیت رو با یه مثال واقعی از کار روزمره‌ی خودت وصل کن."
+    ],
+    "rubric": "Correct: names both features (reply drafting and thread summarization) with a plausible real-world scenario for each. Partial: names both but with weak/generic scenarios, or names only one with a good scenario. Incorrect: names fewer than one correctly."
+  }
+]

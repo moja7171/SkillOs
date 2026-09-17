@@ -1,0 +1,31 @@
+[
+  {
+    "key": "connector-vs-agent",
+    "title": "Connector یا Agent Mode؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "می‌خوای هر روز صبح از ChatGPT بپرسی «جلسات امروزم چیه؟» — یه کار تکراری و ساده. کدوم روش (Connector یا Agent Mode) مناسب‌تره؟",
+    "options": [
+      "Agent Mode، چون قوی‌تره",
+      "Connector، چون یه‌بار وصل می‌شه و برای دسترسی مکرر و ساده به یه سرویس شناخته‌شده مناسب‌تره",
+      "فرقی ندارن، هر دو دقیقاً یه کار می‌کنن",
+      "هیچ‌کدوم، باید دستی وارد Google Calendar بشی"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Connector برای دسترسی مکرر و ساده به یه سرویس شناخته‌شده (مثل چک‌کردن روزانه‌ی تقویم) بهتره؛ Agent Mode بیشتر برای کارهای یک‌باره و پیچیده‌تر (مثل اجرای کد روی یه فایل) مناسبه.",
+    "hints": ["درس صریحاً این تفاوت کاربرد رو مطرح کرد.", "به کلمه‌ی «تکراری» و «ساده» توی سؤال دقت کن."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "check-update-date",
+    "title": "چرا باید تاریخ به‌روزرسانی رو چک کنی؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی مثال Canva، وقتی خواستیم «آخرین پوستر» رو بیاره، فایلی که برگشت واقعاً جدیدترین نبود. چرا این اتفاق افتاد و چیکار باید بکنی؟",
+    "expected_outcome": "چون ممکنه چند فایل با اسم مشابه وجود داشته باشن و AI اون‌ها رو دقیق تشخیص نده که کدوم واقعاً جدیدتره؛ باید همیشه تاریخ آخرین به‌روزرسانی هر فایل رو خودت چک کنی، نه این‌که صرفاً به کلمه‌ی «آخرین» که AI گفته اعتماد کنی.",
+    "hints": ["درس گفت باید همیشه تاریخ به‌روزرسانی هر فایل رو خودت نگاه کنی.", "این با اصل کلی اعتبارسنجی خروجی AI هم مرتبطه."],
+    "rubric": "Correct: explains multiple similarly-named files can confuse 'latest', and the user must manually verify the update date rather than trusting the AI's label. Partial: says 'double-check it' without explaining why. Incorrect: unrelated."
+  }
+]

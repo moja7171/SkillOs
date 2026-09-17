@@ -1,0 +1,31 @@
+[
+  {
+    "key": "project-vs-thread-memory",
+    "title": "Project در مقابل حافظه‌ی مکالمه‌ای",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "فرق اصلی دسترسی به فایل توی یه ChatGPT Project با حافظه‌ی مکالمه‌ای معمولی (که توی درس‌های اول دوره دیدیم) چیه؟",
+    "options": [
+      "هیچ فرقی ندارن، هر دو فقط داخل یه thread کار می‌کنن",
+      "فایل‌های آپلودشده توی Project، در سطح کل Project در دسترسن — نه فقط داخل یه thread خاص",
+      "Project فقط برای فایل‌های تصویری کار می‌کنه",
+      "حافظه‌ی مکالمه‌ای قوی‌تر از Project ه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "حافظه‌ی مکالمه‌ای فقط داخل همون thread کار می‌کنه (یه گفت‌وگوی جدید ازش بی‌خبره)، ولی فایل‌های آپلودشده توی یه Project، به همه‌ی thread های جدید داخل همون Project در دسترسن — سطح گسترده‌تری از دسترسی.",
+    "hints": ["به درس حافظه‌ی مکالمه‌ای برگرد: اون حافظه فقط مال کجا بود؟", "Project یه لایه‌ی بالاتر از یه thread تنهاست."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "when-to-use-project",
+    "title": "کِی یه Project بسازیم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه اسکرام مستر باید کِی یه Project اختصاصی بسازه، به‌جای این‌که فقط توی یه thread عادی کار کنه؟",
+    "expected_outcome": "وقتی قراره به‌طور مداوم و بلندمدت با یه پروژه یا تیم خاص کار کنه و بارها به همون اسناد مرجع (بک‌لاگ، سند چشم‌انداز، پرسونا) نیاز داشته باشه — Project از تکرار پیوست فایل توی هر گفت‌وگوی جدید جلوگیری می‌کنه. برای یه سؤال یک‌باره و بی‌ربط به پروژه، یه thread عادی کافیه.",
+    "hints": ["به تفاوت «کار مداوم روی یه پروژه» با «یه سؤال یک‌باره» فکر کن.", "مزیت اصلی Project چی بود؟ تکرار نکردن پیوست فایل."],
+    "rubric": "Correct: explains Projects suit ongoing work tied to a specific set of reference files, avoiding repeated re-attachment. Partial: says 'for big projects' without the file-reuse reasoning. Incorrect: unrelated."
+  }
+]

@@ -22,11 +22,18 @@ class CourseController extends Controller
         // Display-only grouping (DECISIONS.md §58) — just makes the catalog page easier to
         // scan, no effect on enrollment/planner/streak. Category section order is fixed here;
         // uncategorized courses (a local fixture, say) fall into a trailing group with no label.
-        $categoryOrder = array_flip(['مسیر رهبری فنی', 'اسکرام و اجایل', 'برنامه‌نویسی']);
+        $categoryOrder = array_flip(Course::CATEGORIES);
         $coursesByCategory = $courses->groupBy(fn ($c) => $c->category ?? '')
             ->sortBy(fn ($group, $category) => $categoryOrder[$category] ?? count($categoryOrder));
 
-        return view('courses.index', compact('courses', 'coursesByCategory'));
+        // Clicking a category in the nav's courses menu (or a header on this page) can
+        // pre-filter which section is shown; validated against the known list so a stale/
+        // bogus query value just falls back to "all" instead of silently matching nothing.
+        $activeCategory = in_array($request->query('category'), Course::CATEGORIES, true)
+            ? $request->query('category')
+            : 'all';
+
+        return view('courses.index', compact('courses', 'coursesByCategory', 'activeCategory'));
     }
 
     public function show(Request $request, Course $course): View

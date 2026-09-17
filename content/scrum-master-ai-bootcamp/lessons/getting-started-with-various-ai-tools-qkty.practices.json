@@ -1,0 +1,31 @@
+[
+  {
+    "key": "app-vs-model",
+    "title": "کی واقعاً جواب می‌ده؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "وقتی توی رابط ChatGPT یه سؤال می‌پرسی، واقعاً کی جواب رو تولید می‌کنه؟",
+    "options": [
+      "خودِ اپلیکیشن ChatGPT با یه سری قانون از پیش‌نوشته‌شده",
+      "مدل زبانی (مثلاً GPT-5) که پشت رابط ChatGPT قرار داره",
+      "یه پایگاه‌داده‌ی از پیش آماده‌شده از جواب‌های رایج",
+      "سروری که فقط سؤال‌ها رو ذخیره می‌کنه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "ChatGPT رابط کاربریه که سؤال رو به مدل (مثلاً GPT-5) می‌فرسته؛ مدل، موتور واقعی تولید جوابه. همین رابطه برای Gemini با مدل‌های Gemini و برای Claude با مدل‌های Claude برقراره.",
+    "hints": ["به تفاوت «پورتال/رابط» و «موتور پشتش» فکر کن.", "درس صریحاً گفت ChatGPT خودش جواب نمی‌ده."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "choose-a-tool",
+    "title": "کدوم ابزار برای کدوم کار؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تو اسکرام مستر یه تیمی و دو تا کار داری: (۱) باید سریع یه خلاصه‌ی به‌روز از آخرین ترندهای بازار محصول رقیب پیدا کنی، (۲) می‌خوای یه اسکریپت کوچیک پایتون برای پردازش گزارش برن‌داون بنویسی. طبق چیزی که توی درس گفته شد، برای هر کدوم چه ابزاری منطقی‌تره و چرا؟",
+    "expected_outcome": "برای تحقیق سریع و خلاصه (کار ۱)، Perplexity گزینه‌ی قوی‌ایه چون به تحقیق سریع و ایجاز معروفه (هرچند ChatGPT/Gemini هم می‌تونن). برای کدنویسی (کار ۲)، مدل‌های Claude (مثل Sonnet) طبق درس انتخاب بهتری‌ان. نکته‌ی مهم: هیچ‌کدوم قانون سفت‌وسخت نیست، چون تفاوت‌ها ظریف‌ان.",
+    "hints": ["درس دو تا مثال مشخص زد: یکی برای تحقیق سریع، یکی برای کدنویسی.", "به بخش «تفاوت‌ها ظریف‌ان نه بنیادی» فکر کن — جواب نباید مطلق باشه."],
+    "rubric": "Correct: picks Perplexity (or acknowledges ChatGPT/Gemini also work) for quick research, and Claude for coding, referencing the lesson's stated reasoning. Correct_with_hint: picks reasonable tools but without the lesson's specific reasoning. Incorrect: arbitrary or unjustified choices."
+  }
+]

@@ -35,6 +35,19 @@ class DeployTest extends TestCase
         $this->get('/_ops/clear?token=secret')->assertOk()->assertSee('artisan optimize:clear → exit 0');
     }
 
+    public function test_ops_update_runs_migrate_import_and_optimize_in_one_request(): void
+    {
+        config(['app.ops_token' => 'secret']);
+
+        $this->get('/_ops/update?token=secret&slug=sample-course')
+            ->assertOk()
+            ->assertSee('artisan migrate → exit 0')
+            ->assertSee('artisan content:import → exit 0')
+            ->assertSee('artisan config:cache → exit 0');
+
+        $this->assertDatabaseHas('courses', ['slug' => 'sample-course']);
+    }
+
     public function test_ops_delete_course_removes_a_course_and_refuses_without_a_slug(): void
     {
         config(['app.ops_token' => 'secret']);

@@ -155,6 +155,8 @@ Both source folders had a real gotcha: every `.srt` file (not just the video fil
 
 **«نقش معمار نرم‌افزار» section complete 2026-09-17 (6 lessons, text-only pass).** `types-of-architects`, `responsibility-of-the-architect`, `the-architect-in-the-organizational-chart`, `architects-code`, `architects-and-academic-degrees`, `career-path-to-architect`. Caught and fixed a skeleton-stage title/summary mismatch: `architects-code` (lecture 010) was titled «منشور اخلاقی معماران» (code of ethics) at skeleton time going only off the filename, but the actual video is about whether an architect should write code — retitled to «آیا معمار باید کد بزنه؟» with a matching summary in `course.json`. `validate.py` clean of stubs for these 6; `content:import` loads 113/0; `CourseImporterTest` 10/10.
 
+**«طرز فکر معمار» section complete 2026-09-17 (5 lessons, text-only pass).** `introduction-to-the-architect-s-mindset`, `understand-the-business`, `define-the-system-s-goals`, `work-for-your-client-s-clients`, `talk-to-the-right-people-with-the-right-language` — the core mindset-shift section (business understanding, system goals vs. requirements, "work for your client's client", audience-adapted communication with the Sophie/Dave/Shelly examples kept as-is from the video). `validate.py` clean of stubs; `content:import` loads 113/0; `CourseImporterTest` 10/10.
+
 **Course `requirements-engineering` is now 100% authored: 8 sections, 85 lessons, 244 practices.** No further sections remain for this course.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)

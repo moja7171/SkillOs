@@ -1,0 +1,51 @@
+[
+  {
+    "key": "moe-vs-mop-preview",
+    "title": "MOE چه چیزی رو می‌سنجه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، معیار اثربخشی (MOE) دقیقاً چه چیزی رو می‌سنجه؟",
+    "options": [
+      "اینکه محصول یا سیستم چقدر خوب به اهداف/انتظاراتش می‌رسه — یه متریک مشخص و قابل‌سنجش",
+      "فقط هزینه‌ی تولید هر واحد از محصول",
+      "فقط تعداد باگ‌های کشف‌شده در تست",
+      "فقط زمان صرف‌شده برای نوشتن مستندات"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "MOE یه متریک قابل‌سنجشه که نشون می‌ده محصول یا سیستم چقدر خوب به اهدافش می‌رسه — می‌تونه شامل معیارهای هزینه، زمان‌بندی، عملکرد فنی و موارد دیگه باشه، نه فقط یکی از این‌ها.",
+    "hints": [
+      "درس MOE رو با یه تعریف کلی معرفی کرد که فقط به هزینه یا زمان محدود نمی‌شد.",
+      "به مثال‌های چندگانه‌ی درس (قابلیت‌استفاده، هزینه، زمان‌بندی، فنی) فکر کن."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "internal-vs-external-constraints-classify",
+    "title": "این محدودیت داخلیه یا خارجی؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "دو تا محدودیت برای پروژه‌ی پهپاد بذرپاش داریم: (۱) «فقط سه مهندس هوانوردی توی تیم در دسترسن.» (۲) «پهپاد باید با مقررات ارتفاع پرواز سازمان هوانوردی سازگار باشه.» طبق این درس، هرکدوم محدودیت داخلیه یا خارجی، و این تفاوت چه اثری روی نحوه‌ی مدیریتشون داره؟",
+    "expected_outcome": "محدودیت (۱) داخلیه — محدودیت منابع/تخصص فنی که در کنترل تیم پروژه‌ست. محدودیت (۲) بیرونیه — یه مقرراتِ خارج از کنترل تیم توسعه، که باید شناسایی و مدیریت بشه تا سیستم بهش پایبند بمونه. تفاوت اصلی: محدودیت‌های داخلی رو تیم می‌تونه مستقیماً مدیریت/تغییر بده (مثلاً با استخدام یا آموزش)، ولی محدودیت‌های بیرونی رو باید پذیرفت و طراحی رو باهاشون تطبیق داد.",
+    "hints": [
+      "درس گفت محدودیت داخلی «در کنترل تیم پروژه‌ست»؛ محدودیت بیرونی «خارج از کنترل تیم توسعه‌ست».",
+      "کدوم محدودیت رو تیم می‌تونه مستقیماً تغییر بده (مثلاً با استخدام)، و کدوم رو باید فقط پذیرفت؟"
+    ],
+    "rubric": "Correct if response correctly classifies (1) as internal and (2) as external, and explains the internal ones are within the team's control to manage/change while external ones must be accepted and designed around. Correct_with_hint if the classification is correct but the management-difference reasoning is missing. Incorrect if the classification is swapped."
+  },
+  {
+    "key": "why-only-partial-architecture",
+    "title": "چرا این دوره فقط بخشی از معماری رو پوشش می‌ده؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا این دوره فقط بخشی از توسعه‌ی معماری رو پوشش می‌ده و نه کل موضوع رو؟ در ۱ تا ۲ جمله توضیح بده.",
+    "expected_outcome": "چون این دوره تمرکزش روی مهندسی نیازمندیه، نه توسعه‌ی معماری به‌طور کلی — فقط اون بخشی از معماری که مستقیماً به مهندسی نیازمندی مربوطه پوشش داده می‌شه؛ عمق بیشتر ساخت معماری (مثل مهندسی سیستم مبتنی بر مدل/MBSE) موضوع یه دوره‌ی جداگانه‌ست.",
+    "hints": [
+      "درس صریحاً دلیل رو گفت — به دامنه‌ی موضوعی این دوره در برابر MBSE فکر کن.",
+      "این محدودیت دامنه، به معنی ناقص‌بودن درس نیست — یه انتخاب آگاهانه‌ست."
+    ],
+    "rubric": "Correct if response explains that architecture is only covered to the extent it relates to requirements engineering, since the course's scope is requirements engineering specifically, with deeper architecture (MBSE) left to a separate course. Correct_with_hint if it vaguely says 'out of scope' without naming the reason or MBSE. Incorrect otherwise."
+  }
+]

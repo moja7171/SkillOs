@@ -1,0 +1,51 @@
+[
+  {
+    "key": "kj-characteristics",
+    "title": "کدوم ویژگی روش KJ نیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم گزینه جزو پنج ویژگی کلیدی روش KJ که این درس معرفی کرد نیست؟",
+    "options": [
+      "کمّی (quantitative) — نتایج رو با معیارهای عددی دقیق می‌سنجه",
+      "بدون‌قضاوت — هیچ ایده‌ای رو نسبت به بقیه در اولویت نمی‌ذاره",
+      "تکرارشونده — شامل چند دور تولید و دسته‌بندی ایده‌ست",
+      "فراگیر — مشارکت همه‌ی اعضا رو صرف‌نظر از نقش یا تخصص تشویق می‌کنه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "روش KJ عمدتاً یه تکنیک کیفیه، نه کمّی — درس صریحاً این رو جزو محدودیت‌هاش (نه ویژگی‌هاش) آورد: «داده یا معیار کمّی برای سنجش اثربخشی راه‌حل نمی‌ده».",
+    "hints": [
+      "پنج ویژگی اصلی که درس معرفی کرد: بدون‌قضاوت، مشارکتی، بصری، تکرارشونده، فراگیر — کمّی بین‌شون نیست.",
+      "درس «کیفی‌بودن» و نبود داده‌ی کمّی رو جزو محدودیت‌ها آورد، نه مزایا."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "kj-steps-order",
+    "title": "مراحل KJ رو به ترتیب درست بچین",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "شش مرحله‌ی استفاده از روش KJ برای مهندسی نیازمندی رو، طبق این درس، به ترتیب درست بنویس (از تعریف مسئله تا مستندسازی نهایی).",
+    "expected_outcome": "۱. تعریف مسئله؛ ۲. جمع‌آوری ورودی (نوشتن ایده روی کارت/استیکی‌نوت)؛ ۳. گروه‌بندی و دسته‌بندی ایده‌ها؛ ۴. برچسب‌گذاری دسته‌ها؛ ۵. اولویت‌بندی نیازمندی‌ها درون هر دسته؛ ۶. مستندسازی نیازمندی‌های اولویت‌بندی‌شده.",
+    "hints": [
+      "قبل از گروه‌بندی، باید اول ایده‌ها جمع بشن — این کدوم مرحله‌ست؟",
+      "برچسب‌گذاری دسته‌ها بعد از گروه‌بندیه یا قبلش؟"
+    ],
+    "rubric": "Correct if all six steps are listed in the correct order: define problem, gather input, group/categorize, label categories, prioritize, document. Correct_with_hint if the steps are all present but 1-2 are out of order. Incorrect if the order is substantially wrong or steps are missing."
+  },
+  {
+    "key": "kj-limitation-mitigation",
+    "title": "چطور محدودیت «ذهنی‌بودن» KJ رو جبران کنیم؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، روش KJ چرا «ذهنی (subjective)» محسوب می‌شه، و چطور می‌شه این محدودیت رو جبران کرد؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "KJ ذهنیه چون کاملاً به نظر و دیدگاه شخصی شرکت‌کننده‌ها متکیه، که می‌تونه سوگیری و اختلاف تعبیر وارد کنه. برای جبرانش، باید از معیارهای عینی برای ارزیابی ایده‌ها و نیازمندی‌های تولیدشده استفاده کرد، تا نتیجه‌ی نهایی بر پایه‌ی معیارهای قابل‌سنجش و توافق‌شده باشه، نه فقط برداشت شخصی افراد.",
+    "hints": [
+      "درس گفت این محدودیت به‌خاطر تکیه‌ی روش روی «نظر و دیدگاه شرکت‌کننده‌ها»ست.",
+      "راه‌حل درس، اضافه‌کردن یه نوع معیار خاص بود — دنبالش بگرد."
+    ],
+    "rubric": "Correct if response explains subjectivity stems from reliance on participant opinions/perspectives (leading to bias/interpretation differences) and names the fix (using objective criteria to evaluate ideas/requirements). Correct_with_hint if only the problem or only the fix is stated. Incorrect otherwise."
+  }
+]

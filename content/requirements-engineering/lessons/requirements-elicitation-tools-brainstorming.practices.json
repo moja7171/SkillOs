@@ -1,0 +1,51 @@
+[
+  {
+    "key": "pick-brainstorming-type",
+    "title": "کدوم نوع بارش فکری مناسبه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تیم می‌خواد ریسک‌ها و نقاط ضعف احتمالی پهپاد بذرپاش رو کشف کنه — قبل از این‌که فیچرهای مثبت رو لیست کنن، می‌خوان بدونن «چطور می‌شه این سیستم رو بدتر و ناکارآمدتر کرد؟». کدوم نوع بارش فکری دقیقاً برای همین هدفه؟",
+    "options": [
+      "بارش فکری معکوس (reverse brainstorming)",
+      "بارش فکری نوبتی (round-robin)",
+      "بارش فکری ساکت (silent brainstorming)",
+      "بارنویسی (brainwriting)"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "بارش فکری معکوس دقیقاً برای همینه — از گروه می‌خوایم راه‌های بدتر کردن وضعیت رو پیشنهاد بدن، که به کشف ریسک‌ها و نقاط ضعف کمک می‌کنه.",
+    "hints": [
+      "درس این نوع بارش فکری رو دقیقاً برای «شناسایی ریسک و نقاط ضعف» معرفی کرد.",
+      "کدوم نوع، سؤال رو معکوس می‌کنه؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "defer-judgment-technique",
+    "title": "چطور تعویق قضاوت رو توی جلسه پیاده کنیم؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "توی یه جلسه‌ی بارش فکری برای پهپاد بذرپاش، یکی از اعضا محض شنیدن یه ایده‌ی غیرمعمول («پهپاد بتونه شب‌ها با نور مادون‌قرمز پرواز کنه») فوراً می‌گه «این عملی نیست، بی‌خیالش شو». طبق اصل «تعویق قضاوت» این درس، تسهیل‌گر باید چیکار کنه؟ حداقل دو اقدام مشخص از درس بیار.",
+    "expected_outcome": "تسهیل‌گر باید یادآوری کنه که هدف این مرحله، کمیت نه کیفیته، و انتقاد/ارزیابی ایده‌ها باید به بعد موکول بشه. می‌تونه از زبان مثبت («بله، و…») به‌جای رد مستقیم استفاده کنه، به عضو یادآوری کنه همه‌ی ایده‌ها — حتی غیرمتعارف‌ترین‌ها — خوش‌آمدن، و بگه فیلتر و پالایش ایده‌ها بعداً (توی مرحله‌ی ارزیابی) انجام می‌شه.",
+    "hints": [
+      "درس چند اقدام مشخص برای «تشویق تعویق قضاوت» پیشنهاد داد — «کمیت بر کیفیت»، «زبان مثبت»، «پالایش بعداً».",
+      "این انتقاد فوری دقیقاً همون چیزیه که قوانین بارش فکری می‌خوان جلوش رو بگیرن."
+    ],
+    "rubric": "Correct if response gives at least two concrete facilitator actions from the lesson (emphasizing quantity over quality, deferring criticism/evaluation to later, using positive language, reminding that all ideas are welcome). Correct_with_hint if only one action is given. Incorrect if the response endorses immediate criticism or gives no concrete action."
+  },
+  {
+    "key": "brainstorming-evaluation-criteria",
+    "title": "چطور از بین ده‌ها ایده، بهترین‌ها رو انتخاب کنیم؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، بعد از تولید ده‌ها ایده توی یه جلسه‌ی بارش فکری، چطور می‌شه بهترین‌ها رو ارزیابی و انتخاب کرد؟ در ۲ تا ۳ جمله، حداقل سه روش از درس رو بیار.",
+    "expected_outcome": "می‌شه ایده‌ها رو بر اساس شباهت/سودمندی/تأثیر دسته‌بندی کرد، بر اساس معیارهایی مثل شدنی‌بودن، تأثیر و پیچیدگی امتیازدهی کرد، ایده‌های غیرشدنی یا نامرتبط (از نظر فنی، هزینه، زمان، منابع یا محدودیت‌های اجتماعی) رو حذف کرد، و با کل تیم درباره‌ی ایده‌ها بحث و گفت‌وگو کرد — و این فرایند باید مشارکتی باشه، نه تصمیم یک‌نفره.",
+    "hints": [
+      "درس چهار روش مشخص برای ارزیابی معرفی کرد: دسته‌بندی، امتیازدهی، حذف، بحث گروهی.",
+      "درس تأکید کرد این فرایند باید «مشارکتی» باشه."
+    ],
+    "rubric": "Correct if response names at least three evaluation methods from the lesson (categorizing by similarity/usefulness, scoring by feasibility/impact/complexity, eliminating infeasible ideas, group discussion) and notes the process should be collaborative. Correct_with_hint if only 1-2 methods are named. Incorrect if no concrete methods are given."
+  }
+]

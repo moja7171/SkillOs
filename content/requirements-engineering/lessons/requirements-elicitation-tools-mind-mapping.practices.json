@@ -1,0 +1,51 @@
+[
+  {
+    "key": "central-idea-abstraction",
+    "title": "ایده‌ی مرکزی چه سطح انتزاعی داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، سطح انتزاع نقشه‌ی ذهنی از مرکز به بیرون چطور تغییر می‌کنه؟",
+    "options": [
+      "ایده‌ی مرکزی انتزاعی‌ترینه؛ هرچه شاخه‌ها به بیرون گسترش پیدا می‌کنن، مشخص‌تر و جزئی‌تر می‌شن",
+      "ایده‌ی مرکزی مشخص‌ترینه؛ هرچه به بیرون بریم انتزاعی‌تر می‌شه",
+      "همه‌ی سطوح نقشه (مرکز تا انتهای شاخه‌ها) یه سطح انتزاع یکسان دارن",
+      "سطح انتزاع تصادفیه و به ترتیب رسم شاخه‌ها بستگی داره"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "ایده‌ی مرکزی معمولاً انتزاعیه (نماینده‌ی مفهوم کلان)؛ هرچه نقشه به بیرون گسترش پیدا می‌کنه، شاخه‌ها و زیرشاخه‌ها مشخص‌تر و جزئی‌تر می‌شن — دقیقاً مثال «راه‌اندازی محصول تازه» تا «تحقیق بازار» توی درس.",
+    "hints": [
+      "به مثال «راه‌اندازی محصول تازه» برگرد — کدوم سطح کلی‌تره، مرکز یا زیرشاخه‌ها؟",
+      "درس صریحاً گفت مرکز «انتزاعی» و انتهای شاخه‌ها «خاص‌تر» هستن."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "build-drone-mind-map",
+    "title": "نقشه‌ی ذهنی پهپاد رو گسترش بده",
+    "form": "coding",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "طبق مثال این درس، ایده‌ی مرکزی نقشه‌ی ذهنی پهپاد بذرپاش «پهپاد کاشت خودران بذر» است و یکی از شاخه‌های سطح اولش «مکانیزم کاشت»ه. سه تا زیرشاخه برای «مکانیزم کاشت» بنویس که طبق ساختار سلسله‌مراتبی این درس (از کلی به جزئی) منطقی باشن.",
+    "expected_outcome": "درس دقیقاً همین مثال رو زد: آماده‌سازی خاک (soil preparation)، تحویل بذر (seed delivery)، و کنترل عمق بذر (seed depth control) — هرکدوم یه جنبه‌ی خاص و جزئی‌تر از مکانیزم کاشت.",
+    "hints": [
+      "درس این مثال دقیق رو زیر شاخه‌ی «مکانیزم کاشت» آورد.",
+      "به دنبال زیرشاخه‌هایی باش که مراحل یا جنبه‌های خاص‌تر خود عمل کاشت باشن."
+    ],
+    "rubric": "Correct if response lists soil preparation, seed delivery, and seed depth control (or close paraphrases matching the lesson's example) as sub-branches. Correct_with_hint if 2 of 3 match, with the third being a reasonable but unlisted alternative. Incorrect if sub-branches are unrelated to planting mechanism or violate the general-to-specific hierarchy."
+  },
+  {
+    "key": "mind-map-vs-kj",
+    "title": "نقشه‌ی ذهنی چه چیز اضافه‌ای نسبت به KJ داره؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "هم روش KJ (درس قبل) و هم نقشه‌ی ذهنی، ابزارهای بصری و مشارکتی برای سازمان‌دهی ایده‌ان. طبق این دو درس، چه تفاوت ساختاری کلیدی بین این دو هست؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "روش KJ با ایده‌های پراکنده و بدون‌ساختار شروع می‌شه و بعداً اون‌ها رو به دسته‌های نوظهور گروه‌بندی می‌کنه (دسته‌ها از پایین به بالا شکل می‌گیرن). نقشه‌ی ذهنی برعکس، از یه ایده‌ی مرکزی از پیش‌مشخص شروع می‌کنه و به‌شکل سلسله‌مراتبی و شاخه‌ای (از کلی به جزئی) به بیرون گسترش پیدا می‌کنه — ساختار از بالا به پایین از قبل مشخصه.",
+    "hints": [
+      "توی KJ، دسته‌ها بعد از دیدن ایده‌ها کشف می‌شن؛ توی نقشه‌ی ذهنی، ساختار سلسله‌مراتبی از کجا شروع می‌شه؟",
+      "کدوم یکی «از پایین به بالا» ساختار پیدا می‌کنه، کدوم «از بالا به پایین»؟"
+    ],
+    "rubric": "Correct if response explains that KJ builds categories bottom-up from unstructured ideas afterward, while mind mapping starts top-down from a predefined central idea and branches outward hierarchically. Correct_with_hint if only one direction is described correctly. Incorrect if the distinction is confused or absent."
+  }
+]

@@ -12,10 +12,9 @@
                 @if ($category !== '')
                     <button type="button"
                             @click="active = (active === @js($category)) ? 'all' : @js($category)"
-                            class="flex items-center gap-1.5 text-[15px] font-bold mb-3 hover:text-ink transition-colors"
+                            class="text-[15px] font-bold mb-3 hover:text-ink transition-colors"
                             :class="active === @js($category) ? 'text-ink' : 'text-muted'">
                         {{ $category }}
-                        <x-icon name="chevron" class="w-3.5 h-3.5 transition-transform" x-bind:class="active === @js($category) ? '-rotate-90' : 'rotate-90'" />
                     </button>
                 @endif
                 <div class="grid gap-4 sm:grid-cols-2"
@@ -34,7 +33,12 @@
                                         {{ mb_substr($course->title, 0, 1) }}
                                     </span>
                                     <div class="flex-1 min-w-0 flex items-center justify-between gap-2">
-                                        <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
+                                        <div class="flex items-center gap-2 min-w-0">
+                                            @if ($category !== '' && $course->category_order)
+                                                <span class="badge badge-ghost shrink-0" title="ترتیب پیشنهادی توی «{{ $category }}»">{{ fa_num($course->category_order) }}</span>
+                                            @endif
+                                            <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
+                                        </div>
                                         @if ($enrolled)
                                             <span class="badge badge-ok shrink-0"><span class="dot"></span>برداشته‌شده</span>
                                         @endif

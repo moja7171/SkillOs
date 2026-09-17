@@ -1,0 +1,31 @@
+[
+  {
+    "key": "exec-summary-source",
+    "title": "خلاصه‌ی اجرایی از کجا میاد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "وقتی از Copilot می‌خوای یه اسلاید «خلاصه‌ی اجرایی» برای ارائه‌ات بسازه، این خلاصه از چی ساخته می‌شه؟",
+    "options": [
+      "از دانش عمومی AI درباره‌ی موضوع ارائه",
+      "از محتوای واقعی همه‌ی اسلایدهای موجود توی همون فایل",
+      "از یه قالب آماده‌ی خلاصه‌ی اجرایی",
+      "از جست‌وجوی اینترنتی درباره‌ی موضوع"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Copilot محتوای واقعی اسلایدهای موجود توی همون فایل رو می‌خونه و یه چکیده می‌سازه — نه از دانش عمومی یا جست‌وجوی بیرونی.",
+    "hints": ["به این فکر کن Copilot چه دسترسی‌ای به فایل باز داره.", "این دقیقاً همون چیزیه که هدف اصلی Copilot داخل اپلیکیشنه: کار روی سند بازت."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "when-speaker-notes-useful",
+    "title": "یادداشت سخنران کِی بیشترین فایده رو داره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "قابلیت «افزودن یادداشت سخنران» دقیقاً توی چه موقعیتی برای یه اسکرام مستر یا PO بیشترین ارزش رو داره؟",
+    "expected_outcome": "وقتی برای یه ارائه‌ی مهم (مثل مرور اسپرینت یا QBR) وقت آماده‌سازی کمه — به‌جای این‌که از صفر بشینی و برای هر اسلاید متن راهنما بنویسی، Copilot بر اساس محتوای همون اسلاید یه نسخه‌ی اولیه می‌سازه که فقط باید بازبینی و شخصی‌سازیش کنی.",
+    "hints": ["به موقعیتی فکر کن که وقت آماده‌شدن برای یه ارائه کمه.", "این یه کار تکراری و وقت‌گیره که AI می‌تونه سرعتش بده."],
+    "rubric": "Correct: identifies time-pressured presentation prep as the key use case, with AI producing a first draft to review rather than write from scratch. Partial: says it's 'useful for presentations' without the time-pressure/first-draft angle. Incorrect: unrelated."
+  }
+]

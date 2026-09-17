@@ -624,8 +624,14 @@
           "subtitle": "023-working-with-chatgpt-agent-mode-rc7o.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "Agent Mode می‌تونه واقعاً اقدام کنه (اجرای کد، ورود به وبسایت، خوندن حساب متصل)، نه فقط تولید متن.",
+        "توانایی انجام یه کار با یه ابزار، به‌معنی بهترین‌بودن اون ابزار برای اون کار نیست — برای ساخت ارائه، ابزار تخصصی معمولاً بهتره.",
+        "حتی داده‌ی واقعی که Agent Mode از یه حساب متصل می‌کشه بیرون، ممکنه اشتباه تفسیر بشه — باز هم نیاز به بازبینی داره."
+      ],
+      "common_mistakes": [
+        "استفاده از Agent Mode برای هر کاری، حتی جایی که یه ابزار تخصصی سریع‌تر و باکیفیت‌تر جواب می‌ده."
+      ]
     },
     {
       "slug": "integrate-chatgpt-with-google-calendar-and-stuj",
@@ -645,8 +651,14 @@
           "subtitle": "024-integrate-chatgpt-with-google-calendar-and-stuj.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "Connector یه اتصال پایدار (با OAuth) بین ChatGPT و یه سرویس دیگه‌ست — برای دسترسی مکرر و ساده مناسب‌تر از Agent Mode.",
+        "بعد از وصل‌کردن، می‌شه با زبان طبیعی از سرویس‌های متصل (تقویم، Canva و…) اطلاعات کشید.",
+        "همیشه باید جزئیاتی مثل تاریخ آخرین به‌روزرسانی رو خودت چک کنی، نه صرفاً به برچسب AI اعتماد کنی."
+      ],
+      "common_mistakes": [
+        "اعتماد به لیبل «آخرین نسخه» بدون چک‌کردن تاریخ واقعی به‌روزرسانی."
+      ]
     },
     {
       "slug": "exploring-microsoft-copilot-with-word-documents-250u",
@@ -666,8 +678,13 @@
           "subtitle": "025-exploring-microsoft-copilot-with-word-documents-250u.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "مزیت خاص Copilot نسبت به ChatGPT، حضور مستقیم داخل اپلیکیشن‌های آفیسه، نه تنوع بیشتر قابلیت.",
+        "فرمت خروجی رو باید صریح بخوای (مثلاً «جدولی»)، وگرنه ممکنه فقط یه بازنویسی ساده بگیری."
+      ],
+      "common_mistakes": [
+        "درخواست مبهم («لیست کن») به‌جای مشخص‌کردن فرمت دقیق خروجی."
+      ]
     },
     {
       "slug": "exploring-microsoft-copilot-with-excel-sheets-5wrl",
@@ -687,8 +704,14 @@
           "subtitle": "026-exploring-microsoft-copilot-with-excel-sheets-5wrl.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "برای کارکردن Copilot توی Excel، فایل باید AutoSave روشن و روی OneDrive باشه.",
+        "Copilot می‌تونه هم ستون محاسبه‌شده بسازه، هم سؤال تحلیلی چندشرطی از داده بپرسه — بدون فرمول‌نویسی دستی.",
+        "پیش‌نمایش قبل از درج ستون، فرصتیه برای اعتبارسنجی محاسبات قبل از تغییر واقعی فایل."
+      ],
+      "common_mistakes": [
+        "نادیده‌گرفتن پیش‌نمایش و قبول‌کردن ستون جدید بدون چک‌کردن مقادیرش."
+      ]
     },
     {
       "slug": "exploring-microsoft-copilot-with-powerpoint-presentations-tayc",
@@ -708,7 +731,10 @@
           "subtitle": "027-exploring-microsoft-copilot-with-powerpoint-presentations-tayc.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "Copilot می‌تونه از محتوای واقعی اسلایدهای موجود، یه اسلاید خلاصه‌ی اجرایی بسازه.",
+        "افزودن خودکار یادداشت سخنران، برای آماده‌سازی سریع قبل از یه ارائه‌ی مهم مفیده."
+      ],
       "common_mistakes": []
     },
     {
@@ -729,7 +755,10 @@
           "subtitle": "028-exploring-microsoft-copilot-with-outlook-mail-xzzs.fa.vtt"
         }
       ],
-      "key_points": [],
+      "key_points": [
+        "Copilot می‌تونه پیش‌نویس پاسخ متناسب با محتوای دقیق یه ایمیل بسازه.",
+        "دکمه‌ی خلاصه‌سازی بیشترین ارزش رو برای thread های طولانی با چند پاسخ داره."
+      ],
       "common_mistakes": []
     },
     {
@@ -750,8 +779,14 @@
           "subtitle": "029-creating-and-managing-projects-with-chatgpt-9n4l.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "یه ChatGPT Project، چت‌ها، فایل‌ها، و دستورالعمل سفارشی رو برای یه کار مداوم یک‌جا نگه می‌داره.",
+        "فایل‌های آپلودشده توی یه Project، برخلاف حافظه‌ی مکالمه‌ای، به همه‌ی thread های جدید همون Project در دسترسن.",
+        "می‌شه یه دستورالعمل سفارشی مخصوص همون Project تنظیم کرد، جدا از persistent memory سراسری حساب."
+      ],
+      "common_mistakes": [
+        "استفاده از یه thread عادی برای کار مداوم و بلندمدت، به‌جای ساخت یه Project اختصاصی."
+      ]
     },
     {
       "slug": "automating-project-diagram-creation-mermaid-script-dwj0",
@@ -771,8 +806,15 @@
           "subtitle": "030-automating-project-diagram-creation-mermaid-script-dwj0.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "اسکریپت Mermaid یه توصیف متنی از دیاگرامه که یه ابزار رندرکننده (مثل mermaid.live) ازش تصویر می‌سازه.",
+        "انتخاب نوع دیاگرام درست (توالی، فلوچارت، کلاس، ER) به تعداد بازیگرها و نوع تعامل بستگی داره.",
+        "خطای نحوی رو می‌شه با کپی‌کردن پیام خطا و دادنش به همون AI رفع کرد.",
+        "پیچیدگی دیاگرام هم مثل هر جنبه‌ی دیگه‌ی خروجی، با دستور صریح قابل‌کنترله."
+      ],
+      "common_mistakes": [
+        "استفاده از فلوچارت برای سناریوهای چندبازیگره‌ای که یه دیاگرام توالی براشون مناسب‌تره."
+      ]
     },
     {
       "slug": "automating-meeting-scribing-with-otter-ai-zkfj",
@@ -792,8 +834,15 @@
           "subtitle": "031-automating-meeting-scribing-with-otter-ai-zkfj.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "Otter.ai به تقویم وصل می‌شه و مثل یه شرکت‌کننده‌ی واقعی، توی جلسات زنده حضور پیدا می‌کنه.",
+        "برای هر جلسه به‌طور جداگانه می‌شه تعیین کرد Otter شرکت کنه یا نه.",
+        "بعد از جلسه، مرور کلی، اقدامات، اسکرین‌شات‌ها و یه پنل پرسش‌وپاسخ درباره‌ی همون جلسه در دسترسه.",
+        "چون صدا/تصویر واقعی ضبط می‌شه، همه‌ی شرکت‌کننده‌ها باید از حضور Otter خبر داشته باشن."
+      ],
+      "common_mistakes": [
+        "فعال‌کردن Otter برای یه جلسه بدون اطلاع‌رسانی به بقیه‌ی شرکت‌کننده‌ها."
+      ]
     },
     {
       "slug": "claude-ai-for-data-analysis-and-8swz",
@@ -813,8 +862,15 @@
           "subtitle": "032-claude-ai-for-data-analysis-and-8swz.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "تحلیل چند اسپرینت تاریخی با Claude، پیشنهادهای عملی با استدلال کمّی (نه فقط توصیه‌ی کلی) تولید می‌کنه.",
+        "از یه جدول تحلیل، با یه پرامپت پیگیری می‌شه مستقیم یه داشبورد بصری تعاملی ساخت.",
+        "برای گزارش QBR/MBR، یه سند «پروفایل مخاطب هدف» جدا از داده‌ی خام لازمه تا لحن و محتوا متناسب مدیران ارشد بشه.",
+        "محتوای اسلاید تولیدشده رو می‌شه با Gamma.app به یه ارائه‌ی واقعی و قابل‌export تبدیل کرد."
+      ],
+      "common_mistakes": [
+        "ساخت گزارش برای مدیران ارشد بدون یه پروفایل مخاطب مشخص، که باعث می‌شه لحن/محتوا با نیاز واقعی مخاطب هم‌خونی نداشته باشه."
+      ]
     }
   ]
 }

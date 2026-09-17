@@ -1,0 +1,37 @@
+[
+  {
+    "key": "copilot-strength",
+    "title": "مزیت خاص Copilot نسبت به ChatGPT چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق درس، مزیت اصلی Microsoft Copilot نسبت به ChatGPT چیه؟",
+    "options": [
+      "قابلیت‌های خیلی متنوع‌تری داره",
+      "حضور مستقیم داخل اپلیکیشن‌های آفیس (Word، Excel، …) بدون نیاز به خروج از سند",
+      "همیشه پاسخ‌های دقیق‌تری می‌ده",
+      "هزینه‌ش رایگانه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس گفت Copilot به‌طور کلی هنوز به‌اندازه‌ی ChatGPT متنوع نیست، ولی مزیت خاصش حضور داخل خودِ اپلیکیشن‌های آفیسه — می‌تونی بدون خروج از سند، مستقیم ازش کمک بگیری.",
+    "hints": [
+      "درس صریحاً گفت Copilot از نظر تنوع قابلیت هنوز عقب‌تره؛ پس مزیتش جای دیگه‌ست.",
+      "به این فکر کن که ChatGPT رو باید جدا باز کنی، ولی Copilot همون‌جای سند حاضره."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "specify-output-format",
+    "title": "چرا جواب اول کافی نبود؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی مثال درس، پرامپت اول («تفاوت این دو پرسونا رو لیست کن») یه بازنویسی ساده داد، نه یه مقایسه‌ی واقعی. چرا، و چه تغییری این مشکل رو حل کرد؟",
+    "expected_outcome": "چون فرمت خروجی دقیق مشخص نشده بود، AI فقط محتوای موجود رو بازنویسی کرد. با درخواست صریح «فرمت جدولی، با ستون جدا برای هر پرسونا»، خروجی به یه مقایسه‌ی واقعی و قابل‌استفاده تبدیل شد. این دقیقاً همون اصل «فرمت خروجی رو صریح بخواه» از چارچوب‌های COSTAR/RISه.",
+    "hints": [
+      "به بخش «Response/Output indicator» توی چارچوب‌های پرامپت‌نویسی قبلی فکر کن.",
+      "فرق «لیست کن» با «به فرمت جدولی مقایسه کن» چیه؟"
+    ],
+    "rubric": "Correct: explains the vague prompt lacked an explicit output format, and specifying a table format fixed it — connecting to the earlier prompt-framework lesson. Partial: notices the fix but doesn't connect it to output-format principle. Incorrect: unrelated or no explanation."
+  }
+]

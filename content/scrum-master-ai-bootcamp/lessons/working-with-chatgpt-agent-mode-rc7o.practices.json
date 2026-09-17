@@ -1,0 +1,42 @@
+[
+  {
+    "key": "agent-vs-chat",
+    "title": "Agent Mode چه فرقی با گفت‌وگوی معمولی داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "تفاوت اصلی Agent Mode با یه گفت‌وگوی معمولی ChatGPT چیه؟",
+    "options": [
+      "Agent Mode فقط برای سؤال‌های فارسی کار می‌کنه",
+      "Agent Mode می‌تونه واقعاً اقدام کنه (اجرای کد، ورود به وبسایت، خوندن حساب متصل)، نه فقط تولید متن",
+      "Agent Mode فقط برای اسناد PDF کار می‌کنه",
+      "هیچ فرقی ندارن، فقط اسمش فرق داره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Agent Mode از «فقط تولید متن» فراتر می‌ره — می‌تونه یه محیط اجرایی باز کنه، کد بنویسه و اجرا کنه، وارد وبسایت بشه، یا به حساب متصل (مثل تقویم) سر بزنه.",
+    "hints": ["به فعل‌هایی که توی درس اومد فکر کن: «اجرا کردن»، «وارد شدن»، نه فقط «نوشتن».", "این حالت شبیه یه دستیار با دسترسی واقعیه، نه فقط یه چت‌بات."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "capable-vs-best",
+    "title": "چرا برای ارائه از Gamma استفاده کنیم، نه Agent Mode؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "درس نشون داد Agent Mode می‌تونه یه فایل PPT بسازه، ولی توصیه نکرد از همین راه برای ساخت ارائه استفاده کنیم. چرا؟ این نکته چه درس کلی‌تری داره؟",
+    "expected_outcome": "چون Agent Mode برای این کار کندتر بود و طراحی نهایی ساده‌تر از ابزار تخصصی (Gamma.app) بود. درس کلی: این‌که یه ابزار **بتونه** یه کاری رو انجام بده، به این معنی نیست که بهترین انتخاب براش باشه — باید ابزار متناسب با کار رو انتخاب کرد، نه صرفاً چیزی که «هم می‌تونه انجامش بده».",
+    "hints": ["درس دو تا مشکل خاص با این روش رو اسم برد: سرعت و کیفیت طراحی.", "این با اصل کلی‌تری مرتبطه: توانایی انجام یه کار ≠ بهترین ابزار برای اون کار."],
+    "rubric": "Correct: identifies slower speed and simpler design as the reasons, and generalizes to 'capable ≠ best tool for the job'. Partial: mentions one issue without the general lesson. Incorrect: unrelated or no reasoning."
+  },
+  {
+    "key": "verify-agent-output",
+    "title": "چرا خروجی Agent Mode هم باید چک بشه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی مثال تقویم Outlook، Agent Mode یه اسم جلسه رو اشتباه تفسیر کرد. این با کدوم اصلی که قبلاً توی دوره یاد گرفتیم مرتبطه؟",
+    "expected_outcome": "با چارچوب اعتبارسنجی خروجی AI مرتبطه — حتی وقتی داده از یه منبع واقعی و متصل (مثل تقویم واقعی) میاد، ممکنه AI جزئیاتش رو اشتباه تفسیر یا برچسب‌گذاری کنه؛ پس اعتبارسنجی همیشه لازمه، حتی برای داده‌ی «واقعی».",
+    "hints": ["به درسی که درباره‌ی چارچوب کیفیت AI بود فکر کن.", "منبع داده واقعی بودن، تضمین نمی‌کنه تفسیر AI هم همیشه درست باشه."],
+    "rubric": "Correct: connects to the AI QA/validation framework, noting even real connected data can be misinterpreted by AI so it still needs verification. Partial: says 'AI can be wrong' without connecting to the earlier framework. Incorrect: unrelated."
+  }
+]

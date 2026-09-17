@@ -24,29 +24,28 @@
                          x-show="active === 'all'"
                      @endif>
                     @foreach ($group as $course)
-                        @php $enrolled = $course->enrollments->isNotEmpty(); $color = course_color($course->id); @endphp
-                        <div class="card p-[18px] flex flex-col gap-3">
-                            <a href="{{ route('courses.show', $course) }}" class="flex-1 flex flex-col gap-3 text-ink hover:text-ink">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-11 h-11 rounded-xl grid place-items-center shrink-0 text-[17px] font-bold"
-                                          style="background: color-mix(in srgb, {{ $color }} 18%, transparent); color: {{ $color }};">
-                                        {{ mb_substr($course->title, 0, 1) }}
-                                    </span>
-                                    <div class="flex-1 min-w-0 flex items-center justify-between gap-2">
-                                        <div class="flex items-center gap-2 min-w-0">
-                                            @if ($category !== '' && $course->category_order)
-                                                <span class="badge badge-ghost shrink-0" title="ترتیب پیشنهادی توی «{{ $category }}»">{{ fa_num($course->category_order) }}</span>
-                                            @endif
-                                            <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
-                                        </div>
+                        @php $enrolled = $course->enrollments->isNotEmpty(); @endphp
+                        <div class="card overflow-hidden flex flex-col">
+                            <a href="{{ route('courses.show', $course) }}" class="flex-1 flex flex-col text-ink hover:text-ink">
+                                <div class="relative aspect-[16/9] shrink-0">
+                                    <x-course-cover :course="$course" />
+                                    <div class="absolute inset-x-2.5 top-2.5 flex items-start justify-between gap-2">
+                                        @if ($category !== '' && $course->category_order)
+                                            <span class="badge bg-surface/90 backdrop-blur-sm shadow-sm" title="ترتیب پیشنهادی توی «{{ $category }}»">قدم {{ fa_num($course->category_order) }}</span>
+                                        @else
+                                            <span></span>
+                                        @endif
                                         @if ($enrolled)
-                                            <span class="badge badge-ok shrink-0"><span class="dot"></span>برداشته‌شده</span>
+                                            <span class="badge badge-ok bg-surface/90 backdrop-blur-sm shadow-sm"><span class="dot"></span>برداشته‌شده</span>
                                         @endif
                                     </div>
                                 </div>
-                                <div class="text-[13px] text-muted line-clamp-3">{{ $course->description ?? $course->outcome_statement }}</div>
+                                <div class="p-[18px] pb-3 flex-1 flex flex-col gap-2">
+                                    <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
+                                    <div class="text-[13px] text-muted line-clamp-2">{{ $course->description ?? $course->outcome_statement }}</div>
+                                </div>
                             </a>
-                            <div class="flex items-center justify-between gap-3 pt-2.5 border-t border-line">
+                            <div class="flex items-center justify-between gap-3 px-[18px] pb-[18px] pt-2.5 mt-auto border-t border-line">
                                 <div class="flex items-center gap-3 text-[12.5px] text-faint">
                                     <span>{{ fa_num($course->lessons_count) }} درس</span>
                                     @if ($course->lessons_minutes_sum)

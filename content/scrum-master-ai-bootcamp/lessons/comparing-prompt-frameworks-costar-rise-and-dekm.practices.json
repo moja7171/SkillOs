@@ -1,0 +1,24 @@
+[
+  {
+    "key": "pick-the-framework",
+    "title": "برای این سه تا کار، کدوم چارچوب؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "سه‌تا کار داری: (۱) خلاصه‌ی سریع یادداشت‌های جلسه‌ی دیلی، (۲) تحلیل ریشه‌ای یه اینسیدنت پیچیده با چند مرحله‌ی بررسی، (۳) یه پیام به ذی‌نفع درباره‌ی تأخیر با لحن دقیقاً حساب‌شده. برای هر کدوم بگو COSTAR، RISE یا RTF مناسب‌تره.",
+    "expected_outcome": "(۱) RTF — کار ساده و سریع، فقط نقش/کار/فرمت لازمه. (۲) RISE — کار پیچیده و چندمرحله‌ای، بخش Steps لازمه. (۳) COSTAR — لحن و مخاطب اهمیت زیادی داره، نیاز به تنظیم دقیق سبک/لحن.",
+    "hints": ["به جدول درس فکر کن: سادگی → RTF، پیچیدگی چندمرحله‌ای → RISE، حساسیت لحن/مخاطب → COSTAR.", "کدوم کار «فقط باید سریع و مختصر باشه» و کدوم «باید چندتا مرحله رو طی کنه»؟"],
+    "rubric": "Correct: RTF for (1), RISE for (2), COSTAR for (3), matching the lesson's stated use cases. Correct_with_hint: 2 of 3 correct. Incorrect: 0-1 correct."
+  },
+  {
+    "key": "rtf-simplicity",
+    "title": "چرا RTF رو همه‌جا استفاده نمی‌کنیم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "اگه RTF ساده‌تر و سریع‌تر از COSTAR و RISE ه، چرا نباید همیشه همون رو استفاده کنیم؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "چون RTF فقط سه بخش داره (نقش، کار، فرمت) و برای کارهای پیچیده کافی نیست — نه بخش «مراحل» برای کارهای چندمرحله‌ای داره (که RISE داره)، نه امکان تنظیم دقیق سبک/لحن/مخاطب رو می‌ده (که COSTAR داره). استفاده‌ی RTF برای یه کار پیچیده باعث می‌شه AI جزئیات مهمی رو از قلم بندازه.",
+    "hints": ["به این فکر کن چه چیزی توی COSTAR و RISE هست که توی RTF نیست.", "سادگی همیشه مزیت نیست — گاهی جزئیات مهمن."],
+    "rubric": "Correct: explains RTF lacks the steps breakdown (RISE) and fine-grained style/tone/audience control (COSTAR), so complex or nuance-sensitive tasks lose important detail. Partial: says RTF is 'too simple' without specifying what's missing. Incorrect: unrelated or wrong reasoning."
+  }
+]

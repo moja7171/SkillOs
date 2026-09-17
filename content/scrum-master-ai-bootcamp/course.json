@@ -25,8 +25,16 @@
           "subtitle": "001-introduction-to-generative-ai-and-business-dmt6.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "هوش مصنوعی مولد برخلاف نرم‌افزار سنتی، محتوای جدید تولید می‌کنه (متن، تصویر، کد، تحلیل)، نه فقط پردازش داده‌ی ساخت‌یافته.",
+        "AI رو مثل یه عضو تیم ببین که همه‌چی دنیا رو می‌دونه ولی هیچی از زمینه‌ی خاص پروژه‌ی تو نمی‌دونه.",
+        "اتوماسیون شناختی یعنی تبدیل ورودی زبان طبیعی بی‌ساختار (یادداشت جلسه) به خروجی ساخت‌یافته (یوزر استوری، معیار پذیرش).",
+        "بازار AI مولد در حال رشد نمایی‌ست، ولی چالش‌های واقعی‌ای مثل یکپارچه‌سازی با سیستم‌های موجود و شکاف مهارتی هم وجود داره.",
+        "«۹۰٪ شغل‌ها تحت‌تأثیر AI» یعنی بخشی از وظایف قابل‌خودکارسازی هستن، نه این‌که شغل‌ها جایگزین می‌شن."
+      ],
+      "common_mistakes": [
+        "این تصور غلط که آمار «تحت‌تأثیر AI» یعنی جایگزینی کامل شغل‌ها."
+      ]
     },
     {
       "slug": "getting-started-with-various-ai-tools-qkty",
@@ -46,8 +54,15 @@
           "subtitle": "002-getting-started-with-various-ai-tools-qkty.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "ChatGPT، Gemini، Claude و بقیه رابط‌های کاربری هستن؛ موتور واقعی تولید جواب، مدل زبانی پشتشونه (مثلاً GPT-5).",
+        "هر ابزار چند نسخه/مدل مختلف داره (سریع، دقیق‌تر، legacy) که از رابطش قابل‌تعویضه.",
+        "تفاوت ابزارها ظریفه؛ برای کدنویسی Claude، برای تحقیق سریع Perplexity معمولاً پیشنهاد می‌شن، ولی همه چندمنظوره‌ان.",
+        "قیمت per-token روی صفحه‌ی مدل‌ها مربوط به استفاده‌ی برنامه‌نویسی از API‌ه، نه اشتراک معمولی رابط چت."
+      ],
+      "common_mistakes": [
+        "قاطی‌کردن هزینه‌ی API (per-token) با هزینه‌ی اشتراک ماهانه‌ی رابط چت."
+      ]
     },
     {
       "slug": "conversational-and-persistent-memory-tokens-and-3rqj",
@@ -67,8 +82,15 @@
           "subtitle": "003-conversational-and-persistent-memory-tokens-and-3rqj.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "حافظه‌ی مکالمه‌ای فقط داخل یه thread کار می‌کنه؛ یه گفت‌وگوی جدید بهش دسترسی نداره.",
+        "حافظه‌ی پایدار (شخصی‌سازی) یه‌بار تنظیم می‌شه و روی همه‌ی گفت‌وگوها اثر می‌ذاره.",
+        "توکن کوچیک‌ترین واحد متنیه که مدل باهاش کار می‌کنه.",
+        "context window شامل سؤال، حافظه‌ی مکالمه، پیوست‌ها و خروجیه؛ سقف توکنی داره که نباید ازش رد بشی."
+      ],
+      "common_mistakes": [
+        "فکر کردن به این‌که یه چت جدید باز کردن، تنظیمات persistent memory رو هم پاک می‌کنه (نمی‌کنه — این دوتا جدان)."
+      ]
     },
     {
       "slug": "knowledge-cut-off-web-search-and-fwtp",
@@ -88,8 +110,14 @@
           "subtitle": "004-knowledge-cut-off-web-search-and-fwtp.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "knowledge cutoff یعنی آخرین تاریخی که داده‌های آموزشی مدل تا اون‌جا رو پوشش می‌ده.",
+        "جست‌وجوی وب به مدل اجازه می‌ده برای اطلاعات به‌روز، مستقیم بره اینترنت رو بگرده — خودکار یا با فعال‌سازی دستی.",
+        "تحقیق عمیق (deep research) سؤال رو به چند مرحله می‌شکنه و یه گزارش مفصل و مستند تولید می‌کنه؛ کندتر ولی خیلی کامل‌تر از جست‌وجوی ساده‌ست."
+      ],
+      "common_mistakes": [
+        "فرض‌کردن این‌که مدل همیشه اطلاعات به‌روز داره، بدون فعال‌کردن جست‌وجوی وب."
+      ]
     },
     {
       "slug": "custom-gpts-building-your-very-own-ctjf",
@@ -109,8 +137,14 @@
           "subtitle": "005-custom-gpts-building-your-very-own-ctjf.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "Custom GPT یه دستیار مکالمه‌ای شخصی‌سازی‌شده‌ست که روی سند(های) مشخص پروژه کار می‌کنه.",
+        "می‌شه چند سند مرجع هم‌زمان بهش داد و بعداً هم سند اضافه کرد.",
+        "سه سطح دسترسی داره: فقط خودم، هر کسی با لینک، و قابل‌کشف در GPT Store."
+      ],
+      "common_mistakes": [
+        "این فرض که یه Custom GPT فقط می‌تونه یه سند داشته باشه."
+      ]
     },
     {
       "slug": "understanding-prompt-architectures-bet0",
@@ -130,8 +164,15 @@
           "subtitle": "006-understanding-prompt-architectures-bet0.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "پرامپت مهندسی‌شده شامل نقش، دستور واضح، زمینه، داده‌ی ورودی، محدودیت و فرمت خروجیه.",
+        "COSTAR (Context, Objective, Style, Tone, Audience, Response) برای پرامپت‌هایی که تنظیم دقیق سبک/لحن/مخاطب لازم دارن مناسبه.",
+        "RISE (Role, Input, Steps, Expectation) برای کارهای پیچیده و چندمرحله‌ای با یه جریان منطقی مناسبه.",
+        "حالت thinking مدل برای تسک‌های تحلیلی سنگین، خروجی دقیق‌تری می‌ده."
+      ],
+      "common_mistakes": [
+        "نوشتن پرامپت‌های مبهم بدون زمینه و انتظار خروجی دقیق."
+      ]
     },
     {
       "slug": "comparing-prompt-frameworks-costar-rise-and-dekm",
@@ -151,8 +192,13 @@
           "subtitle": "007-comparing-prompt-frameworks-costar-rise-and-dekm.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "RTF (Role, Task, Format) ساده‌ترین چارچوبه و برای کارهای مستقیم و سریع مناسبه.",
+        "قانون سرانگشتی: کار پیچیده → RISE، لحن/مخاطب مهم → COSTAR، کار ساده و سریع → RTF."
+      ],
+      "common_mistakes": [
+        "استفاده از RTF برای کارهای پیچیده و از‌دست‌دادن جزئیات مهم مثل مراحل یا لحن."
+      ]
     },
     {
       "slug": "practice-prompts-on-common-agile-processes-bxdr",
@@ -172,8 +218,14 @@
           "subtitle": "008-practice-prompts-on-common-agile-processes-bxdr.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "الگوی مشترک پرامپت‌های خوب: نقش + زمینه‌ی دقیق + دستور مشخص + فرمت خروجی.",
+        "می‌شه از AI خواست خروجی موجود رو به فرمت دیگه (مثلاً جدول یا Excel) تبدیل کنه، به‌جای نوشتن پرامپت از صفر.",
+        "تجزیه‌ی کار، شناسایی وابستگی، تخمین تلاش و تعریف هدف اسپرینت هم با همین الگو قابل‌خودکارسازی‌ان."
+      ],
+      "common_mistakes": [
+        "این تصور که خروجی تخمین تلاش AI، جای بحث و توافق تیم توی planning poker رو می‌گیره."
+      ]
     },
     {
       "slug": "prompt-chaining-meta-prompting-and-chain-l56v",
@@ -193,8 +245,14 @@
           "subtitle": "009-prompt-chaining-meta-prompting-and-chain-l56v.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "زنجیره‌ی پرامپت: خروجی یه پرامپت، ورودی پرامپت بعدی می‌شه — برای کارهای بزرگ و چندمرحله‌ای.",
+        "متاپرامپت: از AI می‌خوای پرامپت یا خروجی خودش (یا مدل دیگه) رو نقد و بهبود بده.",
+        "زنجیره‌ی تفکر: از مدل می‌خوای قبل از جواب نهایی، مراحل استدلالش رو قدم‌به‌قدم نشون بده."
+      ],
+      "common_mistakes": [
+        "خواستن همه‌ی کار پیچیده با یه پرامپت غول‌پیکر، که کیفیت خروجی رو پایین میاره."
+      ]
     },
     {
       "slug": "the-ai-quality-assurance-framework-qqyt",
@@ -214,8 +272,14 @@
           "subtitle": "010-the-ai-quality-assurance-framework-qqyt.fa.vtt"
         }
       ],
-      "key_points": [],
-      "common_mistakes": []
+      "key_points": [
+        "اعتبارسنجی خروجی AI باید مثل Definition of Done، یه بخش ثابت از فرایند کار باشه، نه اختیاری.",
+        "چهار روش اعتبارسنجی: مقایسه با منابع معتبر، درخواست و بررسی منبع، بررسی سازگاری منطقی، مشورت با متخصص.",
+        "می‌شه از خودِ AI برای نقد خروجی‌های خودش استفاده کرد: تشخیص بایاس، صحت واقعیت‌ها، دیدگاه جایگزین، مغالطه‌های منطقی."
+      ],
+      "common_mistakes": [
+        "دیدن این‌که AI منبع داده کافیه، بدون این‌که واقعاً منبع رو باز و بررسی کنی."
+      ]
     },
     {
       "slug": "module-case-study-introduction-and-goal-jc0u",

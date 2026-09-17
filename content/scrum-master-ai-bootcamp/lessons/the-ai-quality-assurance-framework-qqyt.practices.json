@@ -1,0 +1,42 @@
+[
+  {
+    "key": "dod-analogy",
+    "title": "اعتبارسنجی و Definition of Done",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "درس اعتبارسنجی خروجی AI رو با «تعریف انجام‌شده» (Definition of Done) مقایسه کرد. در ۱ تا ۲ جمله توضیح بده این مقایسه دقیقاً چی رو می‌خواد بگه.",
+    "expected_outcome": "همون‌طور که یه کار بدون رعایت DoD تمام‌شده حساب نمی‌شه، یه خروجی AI هم بدون اعتبارسنجی «تمام‌شده» حساب نمی‌شه — یعنی اعتبارسنجی باید یه مرحله‌ی ثابت و اجباری توی فرایند کار باشه، نه یه قدم اختیاری که فقط اگه وقت داشتی انجامش بدی.",
+    "hints": ["DoD یعنی یه معیار ثابت که همیشه باید رعایت بشه تا کار «تمام» حساب بشه.", "درس گفت اعتبارسنجی باید «core component» باشه، نه اختیاری."],
+    "rubric": "Correct: explains validation should be a mandatory, standard part of the workflow (like DoD), not an optional afterthought. Partial: mentions DoD but doesn't connect it to 'validation is mandatory'. Incorrect: unrelated or missing the core point."
+  },
+  {
+    "key": "which-critique-angle",
+    "title": "کدوم زاویه‌ی نقد مناسبه؟",
+    "form": "mcq",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه هم‌تیمیت توی رتروسپکتیو می‌گه: «یا اسپرینت‌های منظم و قابل‌پیش‌بینی داریم، یا هرج‌ومرج کامل — راه سومی نیست.» می‌خوای از AI بخوای این استدلال رو نقد کنه. کدوم زاویه‌ی نقد (از چهارتایی که درس گفت) مستقیماً برای این مورد مناسبه؟",
+    "options": [
+      "تشخیص بایاس",
+      "بررسی صحت واقعیت‌ها",
+      "بررسی مغالطه‌های منطقی (از جمله دوراهی کاذب)",
+      "دیدگاه جایگزین"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "این جمله دقیقاً یه نمونه‌ی «دوراهی کاذب» (false dilemma) ه — فقط دو گزینه‌ی افراطی رو مطرح می‌کنه و راه‌حل‌های میانه رو نادیده می‌گیره. بررسی مغالطه‌های منطقی دقیقاً برای همین طراحی شده.",
+    "hints": ["به اسم مغالطه‌ای که توی درس اومد فکر کن — دقیقاً همین الگوی «یا این یا اون» رو توصیف می‌کنه.", "این جمله ادعای واقعیتی نداره که بشه راستی‌آزمایی کرد؛ پس گزینه‌ی ب رد می‌شه."],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "verify-a-source",
+    "title": "چرا دیدن منبع کافی نیست؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "درس گفت «کافی نیست فقط منبع رو ببینی» وقتی از AI می‌خوای منبعش رو بگه. چرا؟ توضیح بده باید چیکار کنی که واقعاً کافی باشه.",
+    "expected_outcome": "چون خود AI ممکنه یه منبع رو اشتباه نقل کنه، یا منبعی که می‌ده معتبر/مرتبط نباشه. کافی نبودن یعنی باید واقعاً بری سراغ اون منبع، بازش کنی، و چک کنی که واقعاً همون چیزی رو می‌گه که AI ادعا کرده و منبع معتبریه.",
+    "hints": ["درس صریحاً گفت «a human must then verify» — یه آدم باید بره چک کنه.", "به این فکر کن: خودِ AI هم می‌تونه توی نقل منبع اشتباه کنه."],
+    "rubric": "Correct: explains that AI can misattribute or misquote a source, so a human must actually open/check the source for credibility and accuracy, not just see a citation exists. Partial: says 'you should check the source' without explaining why seeing it isn't enough. Incorrect: unrelated or missing the verification step entirely."
+  }
+]

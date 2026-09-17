@@ -1,0 +1,42 @@
+[
+  {
+    "key": "team-member-mindset",
+    "title": "AI چی رو نمی‌دونه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق مثال «AI مثل یه عضو تیمه»، این هم‌تیمی جدید معمولاً چی رو **نمی‌دونه** و باید بهش بدی؟",
+    "options": [
+      "قواعد عمومی زبان فارسی و انگلیسی",
+      "زمینه و جزئیات خاص پروژه‌ی خودت",
+      "تعریف چارچوب اسکرام و رویدادهاش",
+      "نحوه‌ی نوشتن یه ایمیل رسمی"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "AI روی دانش عمومی اینترنت (از جمله مفاهیم اسکرام و نگارش) آموزش دیده، ولی از پروژه‌ی خاص تو — بک‌لاگ، تیم، معماری، محدودیت‌ها — چیزی نمی‌دونه مگه این‌که بهش بدی.",
+    "hints": ["به مثال «هم‌تیمی‌ای که همه‌چی می‌دونه» فکر کن؛ تنها استثناش چیه؟", "دانش عمومی اینترنت رو داره؛ چیزی که نداره مخصوص خودته."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "cognitive-automation-example",
+    "title": "یه نمونه‌ی اتوماسیون شناختی",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق تعریف اتوماسیون شناختی، یه کار روزمره‌ی اسکرام مستری رو مثال بزن که ورودیش زبان طبیعی و بی‌ساختاره (مثل یادداشت جلسه یا صحبت تیم) و خروجیش یه آرتیفکت ساخت‌یافته‌ست.",
+    "expected_outcome": "مثلاً: یادداشت خام جلسه‌ی ریفاینمنت رو می‌دی به AI و ازش می‌خوای اون‌ها رو به چند تا یوزر استوری با معیار پذیرش تبدیل کنه؛ یا خلاصه‌ی گفت‌وگوی دیلی رو به یه گزارش وضعیت ساخت‌یافته تبدیل کنه.",
+    "hints": ["اتوماسیون شناختی یعنی ورودی بی‌ساختار (حرف زدن آدم‌ها) به خروجی ساخت‌یافته (سند/آرتیفکت) تبدیل بشه.", "یه مثال از یادداشت جلسه، معیار پذیرش، یا خلاصه‌ی دیلی بزن."],
+    "rubric": "Correct: mentions unstructured input (meeting notes, conversation, raw requirements) turned into a structured Scrum artifact (user story, acceptance criteria, status report) with AI's help. Partial: mentions AI helping with a task but doesn't capture the unstructured-to-structured transformation. Incorrect: unrelated example or no transformation described."
+  },
+  {
+    "key": "market-numbers-sanity",
+    "title": "«۹۰٪ شغل‌ها تحت‌تأثیر AI» یعنی چی؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی درس گفته شد ۹۰٪ شغل‌ها تحت‌تأثیر AI قرار می‌گیرن. در ۲ تا ۳ جمله توضیح بده این آمار دقیقاً یعنی چی و چرا با «۹۰٪ شغل‌ها با AI جایگزین می‌شن» فرق داره.",
+    "expected_outcome": "یعنی توی ۹۰٪ نقش‌های شغلی، بخشی از کارها می‌تونه با کمک AI خودکار یا سریع‌تر انجام بشه — نه این‌که خود شغل یا آدم حذف بشه. این با «جایگزینی کامل شغل» فرق اساسی داره؛ AI بیشتر نقش تقویت‌کننده و اتوماسیون‌کننده‌ی بخشی از وظایف رو داره.",
+    "hints": ["به تفاوت «تحت‌تأثیر قرار گرفتن» و «جایگزین شدن» فکر کن.", "درس صریحاً گفت این آمار به‌معنی جایگزینی نیست."],
+    "rubric": "Correct: clearly distinguishes 'AI touches/assists most job functions' from 'AI replaces most jobs', explaining it's about partial automation of tasks within roles. Partial: gets the gist but is vague about the distinction. Incorrect: claims the statistic means jobs are being replaced."
+  }
+]

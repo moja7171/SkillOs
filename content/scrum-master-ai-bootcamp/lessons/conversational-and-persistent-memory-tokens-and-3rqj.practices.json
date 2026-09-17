@@ -1,0 +1,42 @@
+[
+  {
+    "key": "which-memory",
+    "title": "کدوم حافظه فعاله؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه گفت‌وگوی جدید (new chat) باز می‌کنی و می‌پرسی «سؤالی که دیروز درباره‌ی برنامه‌ریزی اسپرینت پرسیدم رو یادته؟». چرا AI معمولاً این رو یادش نیست؟",
+    "options": [
+      "چون حافظه‌ی مکالمه‌ای فقط مال همون thread قبلیه، نه thread جدید",
+      "چون AI اصلاً هیچ نوع حافظه‌ای نداره",
+      "چون باید حتماً همون سؤال رو کلمه‌به‌کلمه دوباره بپرسی",
+      "چون حافظه‌ی پایدار (persistent memory) فقط برای سؤال‌های فنی کار می‌کنه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "حافظه‌ی مکالمه‌ای محدود به همون thread ه. یه thread جدید یعنی شروع از صفر، مگراینکه توی تنظیمات persistent memory اطلاعاتی درباره‌ی خودت/کارت ثبت کرده باشی که همه‌جا در دسترسه.",
+    "hints": ["دو نوع حافظه معرفی شد؛ کدومش «فقط داخل یه thread» کار می‌کنه؟", "این thread جدیده — یعنی گفت‌وگوی قبلی پاک نشده ولی این چت بهش دسترسی نداره."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "context-window-budget",
+    "title": "بودجه‌ی context window",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق تعریف درس، context window شامل چه چهار چیزیه؟ در ۲ تا ۳ جمله توضیح بده و بگو چرا یه thread خیلی طولانی می‌تونه مشکل‌ساز بشه.",
+    "expected_outcome": "context window شامل: سؤال فعلی، حافظه‌ی کل مکالمه (سؤال‌جواب‌های قبلی همون thread)، هر سند/متن اضافه‌ای که پیوست شده، و خروجی تولیدشده. چون هر سؤال جدید کل حافظه‌ی مکالمه رو هم دوباره می‌فرسته، یه thread طولانی با صدها پیام می‌تونه به سقف توکن مدل نزدیک یا از اون رد بشه.",
+    "hints": ["درس دقیقاً چهار جزء رو اسم برد؛ سعی کن هر چهارتاش رو بیاری.", "به این فکر کن که هر سؤال جدید توی یه thread طولانی، چی رو باید دوباره بفرسته."],
+    "rubric": "Correct: names all four components (current question, conversation memory, attached documents, output) and explains that a long thread resends accumulated memory each time, risking the token limit. Partial: names 2-3 components or gives a vague reason for the long-thread problem. Incorrect: missing most components or wrong reasoning."
+  },
+  {
+    "key": "custom-instructions-use",
+    "title": "یه دستورالعمل سفارشی برای خودت بنویس",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "فرض کن می‌خوای persistent memory رو برای نقش خودت (اسکرام مستر یا PO) تنظیم کنی. یه جمله‌ی نمونه برای «custom instructions» بنویس که باعث بشه جواب‌های AI متناسب‌تر با کارت باشن.",
+    "expected_outcome": "مثال قابل‌قبول: «من اسکرام مستر یه تیم ۶ نفره‌ی توسعه‌ی موبایلم؛ جواب‌ها رو مختصر و عملی بده و همیشه با زبان اسکرام (اسپرینت، بک‌لاگ، ذی‌نفع) توضیح بده.» هر جمله‌ای که نقش/زمینه‌ی کاری رو مشخص کنه و روی سبک جواب اثر بذاره قابل‌قبوله.",
+    "hints": ["درس مثال زد: «من اسکرام مستر هستم و دارم برای فلان گواهی‌نامه آماده می‌شم».", "دو چیز رو مشخص کن: نقشت چیه، و چه سبک جوابی می‌خوای."],
+    "rubric": "Correct: a plausible custom-instruction sentence that states the learner's role/context and how it should shape AI responses, in the spirit of the lesson's example. Partial: mentions role but no clear effect on response style, or vice versa. Incorrect: unrelated or generic sentence with no role/context."
+  }
+]

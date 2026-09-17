@@ -1,0 +1,51 @@
+[
+  {
+    "key": "software-vs-hardware-requirement",
+    "title": "این کدوم نوع نیازمندیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، کدوم گزینه یه مثال از نیازمندی نرم‌افزاری (نه سخت‌افزاری) رو درست توصیف می‌کنه؟",
+    "options": [
+      "سیستم باید بتواند ۵۰۰ کاربر هم‌زمان را مدیریت کند — تمرکز روی رفتار سیستم",
+      "دستگاه باید بتواند مقدار مشخصی فشار فیزیکی را تحمل کند",
+      "قطعه باید از جنس آلومینیوم با ضخامت مشخص ساخته شود",
+      "دستگاه باید در دمای منفی ۲۰ تا ۵۰ درجه فیزیکی سالم بماند"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این نیازمندی نرم‌افزاریه — روی رفتار سیستم (مدیریت کاربران هم‌زمان) تمرکز داره، نه محدودیت یا ویژگی فیزیکی مثل فشار، جنس یا دما که مخصوص نیازمندی سخت‌افزاریه.",
+    "hints": [
+      "درس گفت نیازمندی نرم‌افزاری روی «رفتار سیستم» تمرکز داره، نه «محدودیت و توانایی فیزیکی».",
+      "بقیه‌ی گزینه‌ها همه درباره‌ی ویژگی‌های فیزیکی (فشار، جنس، دما) هستن."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "software-flexibility-advantage",
+    "title": "چرا نیازمندی نرم‌افزاری انعطاف‌پذیرتره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا نیازمندی‌های نرم‌افزاری معمولاً از نیازمندی‌های سخت‌افزاری انعطاف‌پذیرترن؟ در یکی دو جمله توضیح بده.",
+    "expected_outcome": "چون سیستم‌های نرم‌افزاری رو می‌شه راحت‌تر به‌روزرسانی و پیکربندی کرد تا با نیاز کاربر در حال تغییر هم‌راستا بشن، در حالی که سیستم‌های سخت‌افزاری معمولاً برای برآوردن فیچر یا تغییر تازه نیاز به تغییر فیزیکی واقعی دارن.",
+    "hints": [
+      "درس این تفاوت رو مستقیم با کلمه‌ی «به‌روزرسانی» و «پیکربندی» توضیح داد.",
+      "نقطه‌ی مقابلش چیه؟ سخت‌افزار برای تغییر به چی نیاز داره؟"
+    ],
+    "rubric": "Correct if response explains software can be updated/reconfigured easily to meet changing needs, while hardware requires physical changes. Correct_with_hint if only one side of the comparison is given. Incorrect otherwise."
+  },
+  {
+    "key": "scope-creep-prevention",
+    "title": "نیازمندی خوب چطور از افزایش دامنه جلوگیری می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، نیازمندی نرم‌افزاری چطور به جلوگیری از «افزایش دامنه (scope creep)» کمک می‌کنه؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "نیازمندی نرم‌افزاری درک روشنی از اهداف پروژه می‌ده و دامنه‌ی پروژه رو به‌وضوح تعریف می‌کنه — با داشتن یه مرز مشخص و مستند از اینکه سیستم دقیقاً چیکار باید بکنه، اضافه‌شدن ناخواسته و تدریجی فیچرهای خارج از دامنه (که به افزایش هزینه و تأخیر منجر می‌شه) راحت‌تر تشخیص داده و رد می‌شه.",
+    "hints": [
+      "درس گفت نیازمندی نرم‌افزاری «با تعریف روشن دامنه‌ی پروژه» از افزایش دامنه جلوگیری می‌کنه.",
+      "به رابطه‌ی بین «دامنه‌ی مشخص» و «هزینه/تأخیر» فکر کن."
+    ],
+    "rubric": "Correct if response explains that clearly defined requirements set explicit project scope/goals, which makes unplanned scope additions (and their cost/delay impact) easier to identify and prevent. Correct_with_hint if it just restates 'prevents scope creep' without the mechanism. Incorrect otherwise."
+  }
+]

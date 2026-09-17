@@ -1,0 +1,51 @@
+[
+  {
+    "key": "process-step-order",
+    "title": "کدوم گام قبل از کدومه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، ترتیب درست گام‌های اصلی فرایند توسعه‌ی نرم‌افزار کدومه؟",
+    "options": [
+      "جمع‌آوری و تحلیل نیازمندی → طراحی → پیاده‌سازی → تست سیستم → استقرار → نگه‌داری",
+      "طراحی → پیاده‌سازی → جمع‌آوری و تحلیل نیازمندی → تست سیستم → نگه‌داری → استقرار",
+      "پیاده‌سازی → طراحی → تست سیستم → جمع‌آوری و تحلیل نیازمندی → استقرار → نگه‌داری",
+      "تست سیستم → پیاده‌سازی → طراحی → استقرار → نگه‌داری → جمع‌آوری و تحلیل نیازمندی"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "ترتیب درست: نیازمندی → طراحی → پیاده‌سازی → تست → استقرار → نگه‌داری — نیازمندی همیشه اول میاد چون پایه‌ی طراحی و بقیه‌ی مراحله.",
+    "hints": [
+      "نیازمندی «پایه‌ی طراحی و پیاده‌سازی» رو می‌سازه — پس باید اول باشه.",
+      "استقرار قبل از نگه‌داریه، نه بعدش — نمی‌شه چیزی رو که هنوز مستقر نشده نگه‌داری کرد."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "identify-concurrent-activity",
+    "title": "این فعالیت کدوم یکیه؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "تیم توسعه‌ی نرم‌افزار خودپرداز، یه نسخه‌ی اولیه از سیستم رو به چند کاربر واقعی می‌ده تا باهاش تراکنش انجام بدن و بازخورد بدن که آیا سیستم نیازشون رو برآورده می‌کنه یا نه. طبق این درس، این فعالیت کدوم یکی از فعالیت‌های موازیه، و معمولاً هم‌زمان با کدوم دو گام اصلی اتفاق می‌افته؟",
+    "expected_outcome": "این تست پذیرش کاربر (UAT) است — تست سیستم با کاربران نهایی برای اطمینان از برآوردن نیاز و انتظارشون. طبق درس، UAT معمولاً هم‌زمان با گام‌های پیاده‌سازی و تست سیستم اتفاق می‌افته.",
+    "hints": [
+      "درس پنج فعالیت موازی معرفی کرد — کدومشون مستقیماً درباره‌ی تست با «کاربران نهایی» بود؟",
+      "درس صریحاً گفت این فعالیت با کدوم دو گام هم‌زمانه."
+    ],
+    "rubric": "Correct if response identifies this as User Acceptance Testing (UAT) and correctly names implementation and system testing as the two steps it typically overlaps with. Correct_with_hint if UAT is named but the overlapping steps are missing/wrong. Incorrect if the wrong activity is named."
+  },
+  {
+    "key": "why-domain-knowledge-needed",
+    "title": "چرا دانش تخصصی حوزه لازمه؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا توسعه‌ی نیازمندی نرم‌افزاری معمولاً به دانش تخصصی حوزه (domain-specific knowledge) نیاز داره؟ در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "چون سیستم‌های نرم‌افزاری معمولاً برای یه صنعت یا کاربرد خاص توسعه پیدا می‌کنن، مهندس نیازمندی باید درک عمیقی از اون حوزه داشته باشه — شامل فرایندهای کسب‌وکار، الزامات مقرراتی، و محدودیت‌های فنی خاص همون حوزه — تا بتونه نیازمندی‌های واقعاً درست و کاربردی رو شناسایی و مستند کنه.",
+    "hints": [
+      "درس سه چیز مشخص رو اسم برد که مهندس نیازمندی باید بفهمه: فرایند کسب‌وکار، الزامات مقرراتی، و محدودیت فنی.",
+      "چرا یه نیازمندی که این‌ها رو در نظر نگیره، ممکنه اشتباه یا ناقص باشه؟"
+    ],
+    "rubric": "Correct if response explains that software systems are typically built for specific industries/applications, requiring the requirements engineer to understand that domain's business processes, regulatory requirements, and technical constraints. Correct_with_hint if it says 'domain knowledge is needed' without naming what specifically. Incorrect otherwise."
+  }
+]

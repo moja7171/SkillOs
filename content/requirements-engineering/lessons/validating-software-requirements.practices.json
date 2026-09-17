@@ -1,0 +1,51 @@
+[
+  {
+    "key": "regression-testing-trigger",
+    "title": "کِی تست رگرسیون لازمه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، وقتی یه نیازمندی تازه‌ی پیش‌بینی‌نشده حین توسعه‌ی خودپرداز ظاهر می‌شه، چرا فقط تست خود اون فیچر تازه کافی نیست؟",
+    "options": [
+      "چون باید همه‌ی توابع و فیچرهای تحت‌تأثیر هم دوباره تست بشن (تست رگرسیون) تا مطمئن بشیم فیچر تازه به بقیه‌ی سیستم آسیب نزده",
+      "چون هر فیچر تازه باید توسط مشتری شخصاً امضا بشه، نه تیم تست",
+      "چون فیچر تازه همیشه باید کاملاً جدا از بقیه‌ی سیستم پیاده‌سازی بشه",
+      "چون تست فقط باید توی مرحله‌ی استقرار انجام بشه، نه حین توسعه"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "درس گفت وقتی نیازمندی تازه اضافه می‌شه، باید اطمینان حاصل بشه که با بقیه‌ی سیستم یکپارچه‌ست و روی نیازمندی/اجزای دیگه اثر منفی نذاشته — این یعنی همه‌ی توابع و فیچرهای تحت‌تأثیر باید دوباره تست بشن، که بهش تست رگرسیون می‌گن.",
+    "hints": [
+      "درس یه اصطلاح مشخص برای «دوباره تست کردن فیچرهای تحت‌تأثیر» به کار برد.",
+      "چرا فقط تست خود فیچر تازه کافی نیست؟ فکر کن به تأثیرش روی بقیه‌ی سیستم."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "reliability-validation-tools",
+    "title": "قابلیت‌اطمینان رو چطور اعتبارسنجی می‌کنیم؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 5,
+    "prompt": "تیم می‌خواد نیازمندی «قابلیت‌اطمینان» نرم‌افزار خودپرداز رو اعتبارسنجی کنه، ولی این نیازمندی غیرکارکردی و سخت‌اندازه‌گیریه. طبق این درس، چه عواملی روی قابلیت‌اطمینان اثر می‌ذارن، و چه تکنیک‌های تخصصی‌ای برای شبیه‌سازی و سنجشش پیشنهاد شده؟",
+    "expected_outcome": "عواملی که روی قابلیت‌اطمینان اثر می‌ذارن: خرابی سخت‌افزار، خطای نرم‌افزار، و رویدادهای بیرونی مثل قطع برق یا اختلال شبکه. تکنیک‌های تخصصی پیشنهادی: تزریق خطا (fault injection) و تست تنش (stress testing) برای شبیه‌سازی سناریوهای مختلف خرابی و بررسی واکنش سیستم، همراه با پایش و ثبت گسترده حین تست برای شناسایی مشکلات.",
+    "hints": [
+      "درس دقیقاً سه عامل مؤثر بر قابلیت‌اطمینان رو اسم برد.",
+      "دو تا تکنیک تخصصی با اسم مشخص («تزریق» و «تست تنش») توی درس اومدن."
+    ],
+    "rubric": "Correct if response names hardware failure, software errors, and external events (power outages/network disruptions) as factors, and fault injection + stress testing as the specialized techniques, plus monitoring/logging during tests. Correct_with_hint if only factors or only techniques are named, not both. Incorrect otherwise."
+  },
+  {
+    "key": "why-repeat-best-practices",
+    "title": "چرا این شیوه‌های خوب تکراری‌ان؟",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 3,
+    "prompt": "این درس گفت خیلی از شیوه‌های خوبِ اعتبارسنجی، شبیه شیوه‌های شناسایی و تحلیل نیازمندی نرم‌افزارن که قبلاً دیدیم. طبق این درس، چرا با وجود این تکرار، ارزش داشت دوباره اشاره بشن؟",
+    "expected_outcome": "درس صراحتاً گفت «به‌خاطر اهمیتشون ارزش تکرار دارن» — یعنی هدف این نبود که چیز جدیدی معرفی کنه، بلکه تأکید کردن روی اینکه این شیوه‌ها (مثل ردیابی، بازبینی همتا، استفاده از متریک، تمرکز روی حیاتی‌ترین نیازمندی‌ها) باید در طول کل فرایند — نه فقط شناسایی و تحلیل، بلکه اعتبارسنجی هم — پیوسته اعمال بشن.",
+    "hints": [
+      "درس یه جمله‌ی صریح درباره‌ی این تکرار داشت — به همون عبارت برگرد.",
+      "این نشون می‌ده این شیوه‌ها یه‌بار انجام نمی‌شن، بلکه در طول کل فرایند اعمال می‌شن."
+    ],
+    "rubric": "Correct if response states the lesson explicitly said these practices bear repeating for their importance, and explains this signals they apply continuously across identification/analysis/validation, not just once. Correct_with_hint if it only vaguely says 'because they're important' without the continuity point. Incorrect otherwise."
+  }
+]

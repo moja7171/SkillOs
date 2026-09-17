@@ -80,7 +80,8 @@
         <circle cx="{{ $glowX }}" cy="{{ $glowY }}" r="130" fill="#ffffff" fill-opacity="0.08" />
         <rect width="400" height="225" fill="url(#{{ $mid }})" />
 
-        <text x="24" y="{{ $startY }}" font-size="26" font-weight="700" fill="#ffffff" font-family="inherit" style="letter-spacing: -.2px">
+        <text x="24" y="{{ $startY }}" font-size="26" font-weight="700" fill="#ffffff" font-family="inherit"
+              direction="ltr" text-anchor="start" style="letter-spacing: -.2px; direction: ltr; unicode-bidi: bidi-override;">
             @foreach ($lines as $i => $l)
                 <tspan x="24" dy="{{ $i === 0 ? 0 : 30 }}">{{ $l }}</tspan>
             @endforeach

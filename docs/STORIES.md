@@ -157,6 +157,8 @@ Both source folders had a real gotcha: every `.srt` file (not just the video fil
 
 **«طرز فکر معمار» section complete 2026-09-17 (5 lessons, text-only pass).** `introduction-to-the-architect-s-mindset`, `understand-the-business`, `define-the-system-s-goals`, `work-for-your-client-s-clients`, `talk-to-the-right-people-with-the-right-language` — the core mindset-shift section (business understanding, system goals vs. requirements, "work for your client's client", audience-adapted communication with the Sophie/Dave/Shelly examples kept as-is from the video). `validate.py` clean of stubs; `content:import` loads 113/0; `CourseImporterTest` 10/10.
 
+**«فرایند طراحی معماری» section complete 2026-09-17 (9 lessons, text-only pass).** `introduction`, `understand-the-system-requirements`, `understand-the-non-functional-requirements`, `map-the-components`, `select-technology-stack`, `design-the-architecture`, `write-the-architecture-document`, `support-the-team`, `conclusion-architecture-process`. Short roadmap-style lectures (source transcripts 6–17 lines each) previewing the 7-step process that the rest of the course deep-dives section by section; lessons stayed correspondingly brief, matching the video's own pacing rather than padding. `validate.py` clean of stubs; `content:import` loads 113/0; `CourseImporterTest` 10/10.
+
 **Course `requirements-engineering` is now 100% authored: 8 sections, 85 lessons, 244 practices.** No further sections remain for this course.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)

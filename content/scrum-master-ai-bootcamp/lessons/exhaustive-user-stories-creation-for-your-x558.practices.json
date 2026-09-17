@@ -1,0 +1,42 @@
+[
+  {
+    "key": "why-one-epic",
+    "title": "چرا فقط روی یه اپیک تمرکز کردیم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی این درس، پرامپت فقط روی یه اپیک خاص تمرکز کرد، نه همه‌ی بک‌لاگ هم‌زمان. چرا این کار بهتر از خواستن همه‌ی اپیک‌ها با یه پرامپت بود؟",
+    "expected_outcome": "چون تمرکز روی یه بخش کوچیک باعث می‌شه خروجی جامع‌تر و دقیق‌تر بشه — همون اصلی که توی درس زنجیره‌ی پرامپت یاد گرفتیم: یه کار بزرگ رو مرحله‌به‌مرحله جلو ببر تا کیفیت هر بخش بالاتر بمونه؛ اگه همه‌ی اپیک‌ها رو یه‌جا بخوای، خروجی برای هر کدوم سطحی و فشرده می‌شه.",
+    "hints": ["این دقیقاً همون درسیه که توی درس زنجیره‌ی پرامپت (بخش قبلی دوره) یاد گرفتی.", "به تفاوت کیفیت وقتی کار تقسیم می‌شه در مقابل یه‌جا خواسته می‌شه فکر کن."],
+    "rubric": "Correct: connects to the prompt-chaining principle — focusing on one epic at a time produces more exhaustive/detailed output than asking for all epics at once. Partial: says 'more detail' without the reasoning. Incorrect: unrelated or no reasoning."
+  },
+  {
+    "key": "gherkin-format",
+    "title": "معیار پذیرش با فرمت Gherkin",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "فرمت Gherkin برای نوشتن معیار پذیرش از سه بخش تشکیل شده. اسم این سه بخش رو بنویس و یه مثال کوتاه (برای یه یوزر استوری دلخواه) بزن.",
+    "expected_outcome": "Given (شرایط اولیه) / When (اقدام کاربر) / Then (نتیجه‌ی انتظاری). مثال: «Given کاربر یه کالا توی سبدشه، When دکمه‌ی حذف رو می‌زنه، Then کالا از سبد و از مجموع قیمت حذف می‌شه.»",
+    "hints": ["درس این فرمت رو صراحتاً «given/when/then» نام برد.", "given یعنی شرایط شروع، when یعنی اقدام، then یعنی نتیجه."],
+    "rubric": "Correct: names Given/When/Then correctly and gives a coherent example matching the pattern. Partial: names the three parts but example is incoherent or missing. Incorrect: wrong or missing terms."
+  },
+  {
+    "key": "repeat-for-other-epics",
+    "title": "بعدش چیکار می‌کنی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 1,
+    "prompt": "بعد از این‌که اپیک «سبد خرید و تسویه‌حساب» رو کامل ریفاین کردی، برای بقیه‌ی اپیک‌های بک‌لاگ چیکار باید بکنی؟",
+    "options": [
+      "کاری لازم نیست، همه‌ی اپیک‌ها خودکار ریفاین شدن",
+      "همون پرامپت رو با تغییر اسم اپیک هدف، برای هر اپیک دیگه هم تکرار کنی",
+      "باید از اول یه ابزار متفاوت استفاده کنی",
+      "دیگه لازم نیست بقیه‌ی اپیک‌ها رو ریفاین کنی"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "باید همین پرامپت رو (فقط با تغییر اپیک هدف) برای هر اپیک دیگه هم تکرار کنی — دقیقاً مثل برگزاری چند جلسه‌ی ریفاینمنت جدا برای هر اپیک.",
+    "hints": ["درس صریحاً گفت این کار باید برای بقیه‌ی اپیک‌ها هم تکرار بشه.", "به یاد بیار که پرامپت فقط روی یه اپیک خاص متمرکز بود، نه کل بک‌لاگ."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

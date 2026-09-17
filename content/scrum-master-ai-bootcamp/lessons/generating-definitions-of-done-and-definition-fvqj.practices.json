@@ -1,0 +1,42 @@
+[
+  {
+    "key": "dor-vs-dod",
+    "title": "DoR یا DoD؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم جمله درسته؟",
+    "options": [
+      "Definition of Ready تعیین می‌کنه یه استوری کِی می‌تونه وارد اسپرینت بشه؛ Definition of Done تعیین می‌کنه یه استوری کِی واقعاً تمام حساب می‌شه",
+      "Definition of Ready و Definition of Done دقیقاً یه چیز هستن، فقط اسمشون فرق داره",
+      "Definition of Done قبل از شروع اسپرینت چک می‌شه؛ Definition of Ready بعد از پایان اسپرینت",
+      "این دو تا فقط برای پروژه‌های نرم‌افزاری بزرگ لازمن"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "DoR مرز ورودیه (کی اجازه داره وارد اسپرینت بشه)، DoD مرز خروجیه (کی اجازه داره کامل حساب بشه). این دو مکمل هم‌ان، نه یکی.",
+    "hints": ["به معنای واژه‌ها دقت کن: Ready (آماده‌ی شروع) در مقابل Done (تمام‌شده).", "یکی مرز ورودی اسپرینته، یکی مرز خروجی."],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "why-skill-matrix",
+    "title": "چرا ماتریس مهارت تیم لازم بود؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "چرا برای ساخت DoD و DoR، سند ماتریس مهارت تیم (نه یه چک‌لیست عمومی اینترنتی) به‌عنوان ورودی داده شد؟",
+    "expected_outcome": "چون هدف اینه که DoD/DoR واقع‌بینانه و متناسب با توان واقعی همون تیم باشن، نه یه چک‌لیست آرمانی و عمومی که با سطح مهارت و تکنولوژی‌های واقعی تیم هم‌خونی نداره. اطلاعات مهارت به AI کمک می‌کنه معیارهایی پیشنهاد بده که تیم واقعاً بتونه رعایتشون کنه.",
+    "hints": ["به تفاوت «چک‌لیست عمومی از اینترنت» با «چک‌لیست متناسب با تیم خودت» فکر کن.", "این با اصل «زمینه پادشاهه» از درس‌های قبل هم مرتبطه."],
+    "rubric": "Correct: explains the skill matrix grounds DoD/DoR in the team's real capabilities/tech stack rather than a generic checklist. Partial: says it's 'more accurate' without explaining why. Incorrect: unrelated or no connection to team realism."
+  },
+  {
+    "key": "reattach-document",
+    "title": "دوباره پیوست کردن سند لازمه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "توی همون گفت‌وگویی که برای DoD سند پیوست کردی، برای پرامپت DoR دوباره همون سند رو پیوست کردیم. آیا این کار از نظر فنی ضروری بود؟ چرا؟",
+    "expected_outcome": "نه، ضروری نبود — چون حافظه‌ی مکالمه‌ای همون thread، سند پیوست‌شده‌ی قبلی رو یادش هست. پیوست دوباره فقط برای تازه نگه‌داشتن زمینه توی «ذهن» AI بود، نه یه ضرورت فنی.",
+    "hints": ["به درس حافظه‌ی مکالمه‌ای برگرد — یه thread چی رو یادش می‌مونه؟", "درس صراحتاً گفت این کار «لازم نبود» ولی کمک می‌کنه."],
+    "rubric": "Correct: says it wasn't strictly necessary because conversational memory within the same thread retains the attached document; re-attaching was just to keep context fresh. Partial: says 'not necessary' without the memory-based reasoning. Incorrect: says it was required, or unrelated."
+  }
+]

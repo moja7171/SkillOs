@@ -1,0 +1,42 @@
+[
+  {
+    "key": "why-board-empty",
+    "title": "چرا برد اسکرام خالیه؟",
+    "form": "explanation",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه پروژه‌ی تازه توی Jira ساختی ولی برد اسکرام قابل‌استفاده نیست. چرا و چیکار باید بکنی؟",
+    "expected_outcome": "چون هنوز بک‌لاگ خالیه — یه اسپرینت باید از دل آیتم‌های بک‌لاگ ساخته بشه. باید اول اپیک و یوزر استوری به بک‌لاگ اضافه کنی، بعد ازشون یه اسپرینت بسازی تا برد فعال بشه.",
+    "hints": ["درس گفت اسپرینت وقتی شروع می‌شه که «بک‌لاگ اسپرینت» نهایی شده باشه.", "برد از کجا آیتم می‌گیره؟"],
+    "rubric": "Correct: explains a sprint must be created from backlog items, so an empty backlog means no usable board yet. Partial: says 'need to add items' without the sprint/backlog connection. Incorrect: unrelated."
+  },
+  {
+    "key": "jql-vs-natural-language",
+    "title": "JQL یا زبان طبیعی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "دیگه لازم نیست نحو JQL رو حفظ باشی، چون…",
+    "options": [
+      "JQL کلاً از Jira حذف شده",
+      "می‌تونی سؤالت رو به زبان طبیعی بپرسی و Jira خودش هم JQL معادل می‌سازه هم نتیجه رو نشون می‌ده",
+      "همه‌ی کوئری‌ها الان فقط با کلیک انجام می‌شن",
+      "JQL فقط برای پروژه‌های سازمانی لازمه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "گزینه‌ی AI توی نوار جست‌وجو، سؤال زبان طبیعی رو می‌گیره، معادل JQLش رو می‌سازه، و نتیجه رو اجرا می‌کنه — JQL هنوز وجود داره، فقط دیگه اجباری نیست.",
+    "hints": ["JQL حذف نشده، فقط یه جایگزین بهش اضافه شده.", "درس صریحاً گفت هم JQL معادل ساخته می‌شه هم نتیجه اجرا می‌شه."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "review-ai-content-in-jira",
+    "title": "چرا محتوای AI داخل Jira رو باید چک کنی؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "درس گفت هر توضیحی که Writing Assistant داخل Jira می‌سازه باید بازبینی بشه. این با کدوم اصلی که قبلاً توی دوره یاد گرفتی مرتبطه؟ توضیح بده.",
+    "expected_outcome": "با چارچوب اعتبارسنجی خروجی AI (Agile AI Quality Assurance Framework) مرتبطه — همون‌طور که اونجا گفته شد، اعتبارسنجی باید مثل Definition of Done، بخش ثابتی از فرایند باشه، نه اختیاری؛ محتوای تولیدشده‌ی داخل Jira هم استثنا نیست.",
+    "hints": ["به درس چارچوب کیفیت AI و مقایسه‌ش با Definition of Done فکر کن.", "این اصل فقط مخصوص ChatGPT نیست — همه‌جا که AI محتوا تولید می‌کنه صدق می‌کنه."],
+    "rubric": "Correct: connects to the AI QA framework / 'validation as part of Definition of Done' principle from the earlier lesson. Partial: says 'AI can be wrong' without connecting to the earlier framework. Incorrect: unrelated or no connection made."
+  }
+]

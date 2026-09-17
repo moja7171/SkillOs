@@ -1,0 +1,42 @@
+[
+  {
+    "key": "why-reasoning-column",
+    "title": "ستون «دلیل» چه فایده‌ای داره؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "پرامپت این درس یه ستون اضافه به‌اسم «دلیل» (reasoning) خواست که بگه هر سناریوی تست کدوم معیار پذیرش رو اعتبارسنجی می‌کنه. این ستون دقیقاً چه مشکلی رو حل می‌کنه؟",
+    "expected_outcome": "این ستون، هر سناریوی تست رو مستقیم به یه شماره‌ی مشخص از معیار پذیرش وصل می‌کنه — یعنی ردیابی‌پذیری بین معیار پذیرش و تست شفاف می‌شه و معلومه هیچ معیاری بی‌تست نمونده و هیچ تستی بی‌دلیل نیست. این چیزیه که توی اسناد تست دستی‌نوشته معمولاً فراموش می‌شه.",
+    "hints": ["به رابطه‌ی بین معیار پذیرش و سناریوی تست فکر کن — چطور می‌فهمی کدوم تست کدوم معیار رو پوشش می‌ده؟", "درس گفت این ستون به شماره‌ی معیار پذیرش اشاره می‌کنه."],
+    "rubric": "Correct: explains the reasoning column creates explicit traceability between each test scenario and a specific acceptance criterion. Partial: says it 'explains the test' without mentioning traceability to acceptance criteria. Incorrect: unrelated or missing the traceability point."
+  },
+  {
+    "key": "why-separator",
+    "title": "چرا از یه جداکننده استفاده کردیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی پرامپت این درس، بین متن دستور و متن یوزر استوری/معیار پذیرش، یه خط جداکننده (مثل `---`) گذاشته شد. دلیلش چی بود؟",
+    "options": [
+      "فقط برای زیبایی بصری پرامپت",
+      "تا مدل قاطی نکنه کدوم بخش دستوره و کدوم بخش محتوای یوزر استوریه",
+      "چون بدون جداکننده، ChatGPT اصلاً پرامپت رو قبول نمی‌کنه",
+      "برای این‌که پرامپت کوتاه‌تر به‌نظر برسه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "جداکننده کمک می‌کنه مدل به‌وضوح تشخیص بده کدوم بخش متن، دستورالعمل توئه و کدوم بخش محتوای ورودی (یوزر استوری) که باید پردازش بشه — جلوی قاطی‌شدن این دو رو می‌گیره.",
+    "hints": ["به هدف عملی این جداکننده فکر کن، نه ظاهرش.", "درس گفت این کار برای «یادگرفتن» مدل بود که این بخش یوزر استوریه، نه چیز دیگه."],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "final-recap",
+    "title": "کل مسیر مطالعه‌ی موردی رو مرور کن",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "از اول این بخش تا این‌جا، پنج مرحله‌ی اصلی رو طی کردیم (تحقیق بازار تا سناریوی تست). به ترتیب بنویسشون و برای هر کدوم بگو کدوم ابزار (Perplexity، ChatGPT/Gemini، یا Claude) بیشتر استفاده شد.",
+    "expected_outcome": "۱) تحقیق بازار — Perplexity. ۲) ساخت بک‌لاگ اولیه — ChatGPT/Gemini. ۳) ریفاینمنت یوزر استوری‌های یه اپیک — ChatGPT/Gemini (با Claude برای اصلاح کیفیت). ۴) ساخت DoD/DoR — ChatGPT. ۵) تولید سناریوی تست پذیرش — ChatGPT. Jira هم در کنار این مراحل برای پیاده‌سازی و اتصال Claude استفاده شد.",
+    "hints": ["به هر درس این بخش فکر کن و کدوم ابزار توش نمایش داده شد.", "دقت لازم نیست صد در صد باشه؛ ترتیب و منطق کلی مهم‌تره."],
+    "rubric": "Correct: lists the 5 steps in roughly the right order with plausible tool attribution (Perplexity for research, ChatGPT/Gemini for backlog/stories/DoD-DoR/tests, Claude mentioned for refinement or Jira integration). Partial: right steps, tools mismatched or missing. Incorrect: fewer than 3 steps correct."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "four-steps-order",
+    "title": "ترتیب چهار مرحله‌ی مطالعه‌ی موردی",
+    "form": "short_answer",
+    "difficulty": "intro",
+    "estimated_minutes": 3,
+    "prompt": "چهار مرحله‌ی اصلی این مطالعه‌ی موردی رو به ترتیب درستشون بنویس.",
+    "expected_outcome": "۱) ساخت بک‌لاگ از سند چشم‌انداز (با تحقیق بازار). ۲) ساخت و ریفاین یوزر استوری‌ها با معیار پذیرش. ۳) تعریف Definition of Done و Definition of Ready. ۴) تولید سناریوهای تست پذیرش.",
+    "hints": ["اول باید بدونیم چی می‌سازیم (بک‌لاگ)، بعد جزئیاتش رو دقیق کنیم.", "استانداردهای کیفیت (DoD/DoR) قبل از تست نهایی میان، نه اول کار."],
+    "rubric": "Correct: lists all four steps in the right order (backlog → user stories → DoD/DoR → acceptance test cases). Partial: right steps, wrong order, or 3 of 4 correct. Incorrect: fewer than 3 correct or unrelated."
+  },
+  {
+    "key": "which-tool-for-research",
+    "title": "کدوم ابزار برای تحقیق بازار؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی مرحله‌ی اول (ساخت بک‌لاگ از سند چشم‌انداز)، کدوم ابزار برای تحقیق عمیق بازار پیشنهاد شد؟",
+    "options": ["Jira", "Perplexity", "Claude", "Rovo Chat"],
+    "correct_option": 1,
+    "expected_outcome": "Perplexity برای تحقیق عمیق بازار استفاده شد؛ ChatGPT/Gemini برای ساخت بک‌لاگ ساخت‌یافته، و Claude برای اصلاح تدریجی کیفیت.",
+    "hints": ["درس این ابزار رو به‌خاطر سرعت و ایجازش توی تحقیق معرفی کرد.", "همون ابزاری که توی درس‌های قبلی هم برای deep research معرفی شده بود."],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

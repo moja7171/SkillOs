@@ -811,3 +811,13 @@ All mail-related records (`MX`, SPF/DKIM/DMARC `TXT`, and the `mail`/`webmail`/`
 **Why.** Direct owner report; permanent (not quick-tunnel) requested explicitly once the quick-tunnel's instability was explained. Full-domain migration (not subdomain delegation) chosen once subdomain delegation was found to be Enterprise-only; owner explicitly preferred it (free) over buying a separate domain.
 
 **Consequences.** Once live, `media-server.py` must keep running on the owner's machine (unchanged from the original design) — the tunnel only fixes *reachability*, not the "media lives on the owner's own machine" architecture itself. No app code changes; this is pure ops/DNS/service setup, nothing to test with `php artisan test`.
+
+---
+
+## 54. English lesson text (§52) discontinued going forward — Persian-only for the rest of C-03 and all future courses (2026-09-17)
+
+**Decision.** Owner ended the §52 experiment: the two `requirements-engineering` sections already written bilingual — «مقدمه و مبانی» (18 lessons) and «سناریو، User Story و Use Case» (9 lessons) — keep their `.en.md` files as-is, no rollback. But **every lesson from here on, for the rest of `requirements-engineering` and for every other course**, goes back to Persian-only, matching C-01/C-02's original rule. No more `<slug>.en.md`, no more English-pane toggle work, for anything authored after this point.
+
+**Why.** Direct owner instruction, no reason elaborated beyond ending the experiment early. §52 itself already flagged the tradeoff up front — English text roughly doubles per-lesson writing volume even with the "write from transcript, not translate" shortcut — so this reads as the owner deciding that cost isn't worth it past the two sections already committed to.
+
+**Consequences.** `docs/AUTHORING.md` §3.2a updated to mark the English-text workflow as retired (kept only as a description of what the two already-bilingual sections did, not as standing instruction). `lessons.content_en` and the فارسی/English toggle in `<x-lesson-content>` stay in the schema/UI — they still render correctly for the two sections that have `content_en` populated, they just won't gain new data. No `validate.py` or importer change needed (the English file was always optional/silently-skipped). `docs/STORIES.md`'s C-03 "NEXT UP" pointer no longer instructs writing `.en.md` for upcoming sections.

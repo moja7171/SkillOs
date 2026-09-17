@@ -4,6 +4,8 @@
   "outcome_statement": "با دیدن طراحی کامل چند سیستم واقعی، توانایی خودت رو برای طراحی سیستم‌های مقیاس‌پذیر و مصاحبه‌ی System Design تقویت می‌کنی.",
   "source_note": "برگرفته از دوره‌ی «Software Architecture & System Design: Practical Case Studies».",
   "video_base_url": "/media/system-design-case-studies/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 3,
   "lessons": [
     {
       "slug": "course-overview",

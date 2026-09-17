@@ -42,6 +42,8 @@ class CourseImporter
                 'description' => $data['description'] ?? null,
                 'outcome_statement' => $data['outcome_statement'] ?? null,
                 'source_note' => $data['source_note'] ?? null,
+                'category' => $data['category'] ?? null,
+                'category_order' => $data['category_order'] ?? null,
             ]);
 
             $lessonsBySlug = [];

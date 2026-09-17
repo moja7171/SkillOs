@@ -865,3 +865,19 @@ Sections were inferred from each course's own lecture-title patterns (intro/summ
 **Why.** Owner's explicit request: build all 9 skeletons in one batch (rather than one at a time as content authoring reaches each course) so the full catalog structure exists up front, and get a documented recommended order across all 10 courses. Owner will handle deploying this to the live host themselves (not asked of this session).
 
 **Consequences.** `content:import` for all 9 new courses loads cleanly (0 practices/key_points yet, expected at skeleton stage — same as `requirements-engineering` was before its own authoring began). `DeployTest::test_ops_status_migrate_import_and_clear_run_with_the_token` was asserting the exact, full `courses on disk:` list — now 12 courses instead of 2, so the assertion was loosened to check for the presence of the two original courses rather than an exact full-list match, since that list will keep growing as more courses are added and shouldn't make this test brittle. Full suite 123/123. `course/Management course/` (the original owner-dropped bulk folder) is now empty and removed; `course/scrum course/` remains untouched and out of scope, as recorded in §49.
+
+---
+
+## 58. Course catalog grouped into three display-only categories (2026-09-17)
+
+**Decision.** Owner asked for a way to browse the growing catalog (now 15 courses) more easily — group the 10-course C-03 leadership bundle together in its build order, group the Scrum courses together, group the Python courses together. Added `courses.category` (string) and `courses.category_order` (unsigned smallint) columns, set per course in `content/<slug>/course.json` and carried through by `CourseImporter`. Three categories, assigned once each course is fully identified with exactly one (asked the owner first — `advanced-scrum-master` is simultaneously course 6/10 of the leadership bundle *and* topically a Scrum course; owner chose single-category over letting a course appear twice, so it stayed under «مسیر رهبری فنی» since that's its already-documented, ordered home):
+
+- «مسیر رهبری فنی» (`category_order` 1–10): the same 10 C-03 courses, same order as §57/STORIES.md.
+- «اسکرام و اجایل» (1–2): `agile-scrum-master-product-owner`, then `scrum-master-ai-bootcamp` (C-04).
+- «برنامه‌نویسی» (1–2): `complete-python-mastery`, then `python-deep-dive-1`.
+
+`courses/index.blade.php` now renders one section per category (heading + grid), `CourseController::index` groups and orders sections via a fixed `$categoryOrder` array (programming, scrum-agile, leadership-path — courses with no category, e.g. `sample-course` locally, fall into a trailing unlabeled group). Confirmed explicitly with the owner beforehand: **display-only** — no gating, no locking a course until a previous one in its category is finished, no effect on enrollment/planner/streak. Same category-string-as-label pattern already used for `lessons.section` (no separate labels table), consistent with the project's "avoid low-value heavy work" bias.
+
+**Why.** With C-03's 10-course bundle plus the new Scrum pair plus the two Python courses, a flat alphabetical grid stopped being enough to answer "what do I read and in what order" — the same problem `docs/STORIES.md`'s recommended-order note (§57) solved in the docs, now surfaced in the app itself where the owner actually browses.
+
+**Consequences.** New migration `add_category_to_courses_table`; `Course`'s `#[Fillable(...)]` gained the two fields. All 13 real courses' `course.json` updated with `category`/`category_order`; re-imported. Full suite 123/123 (including `PagesRenderTest`'s existing smoke test of `courses.index`). This is a narrower move than a real track/program layer — §49's "no track/program layer exists" stance still holds for gating/sequencing; this only changes how the catalog page groups and orders what's already there.

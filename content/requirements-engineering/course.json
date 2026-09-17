@@ -4,6 +4,8 @@
   "outcome_statement": "در پایان این دوره می‌تونی نیازمندی‌های یک پروژه رو به‌درستی استخراج، بنویسی، اولویت‌بندی، مدل‌سازی و ردیابی کنی؛ و با ذی‌نفعان روی نیازمندی‌های متعارض مذاکره کنی.",
   "source_note": "برگرفته از دوره‌ی «Requirements Engineering: Learn IREB and INCOSE standards»؛ متن دروس از روی زیرنویس انگلیسی نوشته شده، نه ترجمه‌ی ماشینی فارسی.",
   "video_base_url": "/media/requirements-engineering/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 1,
   "lessons": [
     {
       "slug": "course-overview",

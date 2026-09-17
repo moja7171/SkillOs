@@ -4,6 +4,8 @@
   "outcome_statement": "در پایان این دوره می‌تونی برنامه‌های واقعی پایتون بنویسی: با متغیرها، شرط‌ها، حلقه‌ها و توابع کار کنی، از لیست/دیکشنری/ست به‌درستی استفاده کنی، استثناها رو مدیریت کنی و با کلاس و شی برنامه‌نویسی شی‌گرا انجام بدی.",
   "source_note": "برگرفته از دوره‌ی «The Complete Python Course» (Programming with Mosh)؛ متن دروس از روی زیرنویس انگلیسی نوشته شده، نه ترجمه‌ی ماشینی فارسی.",
   "video_base_url": "/media/complete-python-mastery/",
+  "category": "برنامه‌نویسی",
+  "category_order": 1,
   "lessons": [
     {
       "slug": "course-overview",

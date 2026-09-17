@@ -4,6 +4,8 @@
   "outcome_statement": "نگرش تازه‌ای نسبت به رهبری، استراتژی و ارزش‌آفرینی سازمانی در دنیایی که هوش مصنوعی داره همه‌چی رو تغییر می‌ده پیدا می‌کنی.",
   "source_note": "برگرفته از دوره‌ی «Organizational Leadership in the Era of AI».",
   "video_base_url": "/media/organizational-leadership-ai-era/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 9,
   "lessons": [
     {
       "slug": "course-overview",

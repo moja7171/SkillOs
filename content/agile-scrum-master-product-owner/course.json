@@ -4,6 +4,8 @@
   "outcome_statement": "در پایان این دوره می‌تونی چارچوب اسکرام رو کامل توضیح بدی، نقش‌ها و رویدادها و آرتیفکت‌هاش رو در عمل به‌کار ببری، و مسیر شغلی اسکرام مستری یا مالک محصول رو با آگاهی بیشتری دنبال کنی.",
   "source_note": "برگرفته از دوره‌ی «Agile and Scrum Course for Scrum Master and Product Owner»؛ متن دروس (در فاز محتوا) از روی زیرنویس انگلیسی نوشته می‌شه، نه ترجمه‌ی ماشینی فارسی.",
   "video_base_url": "/media/agile-scrum-master-product-owner/",
+  "category": "اسکرام و اجایل",
+  "category_order": 1,
   "lessons": [
     {
       "slug": "getting-the-most-from-this-course-9vfk",

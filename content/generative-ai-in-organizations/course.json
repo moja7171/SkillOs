@@ -4,6 +4,8 @@
   "outcome_statement": "می‌دونی چطور یه سازمان رو برای پذیرش هوش مصنوعی مولد آماده کنی — از جلب حمایت مدیران ارشد تا ساختن ائتلاف بین‌بخشی و رعایت ملاحظات امنیتی و اخلاقی.",
   "source_note": "برگرفته از دوره‌ی «Introducing Generative AI into Your Organization».",
   "video_base_url": "/media/generative-ai-in-organizations/",
+  "category": "مسیر رهبری فنی",
+  "category_order": 10,
   "lessons": [
     {
       "slug": "course-overview",

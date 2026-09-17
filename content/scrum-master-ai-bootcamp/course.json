@@ -4,6 +4,8 @@
   "outcome_statement": "در پایان این دوره می‌تونی از ابزارهای هوش مصنوعی برای نوشتن یوزر استوری، اولویت‌بندی بک‌لاگ، برنامه‌ریزی اسپرینت، پایش پیشرفت و خودکارسازی کارهای روزمره‌ی اسکرام استفاده کنی.",
   "source_note": "برگرفته از دوره‌ی «Scrum Master's AI Bootcamp: Generative AI as Agile Co-Pilot»؛ متن دروس (در فاز محتوا) از روی زیرنویس انگلیسی نوشته می‌شه، نه ترجمه‌ی ماشینی فارسی.",
   "video_base_url": "/media/scrum-master-ai-bootcamp/",
+  "category": "اسکرام و اجایل",
+  "category_order": 2,
   "lessons": [
     {
       "slug": "introduction-to-generative-ai-and-business-dmt6",

@@ -7,41 +7,48 @@
             <div class="card p-10 text-center text-muted">هنوز دوره‌ای وارد نشده. <span class="mono text-[12px]">php artisan content:import &lt;slug&gt;</span></div>
         @endif
 
-        <div class="grid gap-4 sm:grid-cols-2">
-            @foreach ($courses as $course)
-                @php $enrolled = $course->enrollments->isNotEmpty(); $color = course_color($course->id); @endphp
-                <div class="card p-[18px] flex flex-col gap-3">
-                    <a href="{{ route('courses.show', $course) }}" class="flex-1 flex flex-col gap-3 text-ink hover:text-ink">
-                        <div class="flex items-center gap-3">
-                            <span class="w-11 h-11 rounded-xl grid place-items-center shrink-0 text-[17px] font-bold"
-                                  style="background: color-mix(in srgb, {{ $color }} 18%, transparent); color: {{ $color }};">
-                                {{ mb_substr($course->title, 0, 1) }}
-                            </span>
-                            <div class="flex-1 min-w-0 flex items-center justify-between gap-2">
-                                <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
-                                @if ($enrolled)
-                                    <span class="badge badge-ok shrink-0"><span class="dot"></span>برداشته‌شده</span>
-                                @endif
+        @foreach ($coursesByCategory as $category => $group)
+            <div class="mb-7">
+                @if ($category !== '')
+                    <h2 class="text-[15px] font-bold text-muted mb-3">{{ $category }}</h2>
+                @endif
+                <div class="grid gap-4 sm:grid-cols-2">
+                    @foreach ($group as $course)
+                        @php $enrolled = $course->enrollments->isNotEmpty(); $color = course_color($course->id); @endphp
+                        <div class="card p-[18px] flex flex-col gap-3">
+                            <a href="{{ route('courses.show', $course) }}" class="flex-1 flex flex-col gap-3 text-ink hover:text-ink">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-11 h-11 rounded-xl grid place-items-center shrink-0 text-[17px] font-bold"
+                                          style="background: color-mix(in srgb, {{ $color }} 18%, transparent); color: {{ $color }};">
+                                        {{ mb_substr($course->title, 0, 1) }}
+                                    </span>
+                                    <div class="flex-1 min-w-0 flex items-center justify-between gap-2">
+                                        <div class="text-[16px] font-semibold leading-[1.4]">{{ $course->title }}</div>
+                                        @if ($enrolled)
+                                            <span class="badge badge-ok shrink-0"><span class="dot"></span>برداشته‌شده</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="text-[13px] text-muted line-clamp-3">{{ $course->description ?? $course->outcome_statement }}</div>
+                            </a>
+                            <div class="flex items-center justify-between gap-3 pt-2.5 border-t border-line">
+                                <div class="flex items-center gap-3 text-[12.5px] text-faint">
+                                    <span>{{ fa_num($course->lessons_count) }} درس</span>
+                                    @if ($course->lessons_minutes_sum)
+                                        <span>· حدود {{ fa_num((int) round($course->lessons_minutes_sum / 60)) }} ساعت</span>
+                                    @endif
+                                </div>
+                                @unless ($enrolled)
+                                    <form method="POST" action="{{ route('courses.enroll', $course) }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm"><x-icon name="plus" class="w-3.5 h-3.5" /> برداشتن</button>
+                                    </form>
+                                @endunless
                             </div>
                         </div>
-                        <div class="text-[13px] text-muted line-clamp-3">{{ $course->description ?? $course->outcome_statement }}</div>
-                    </a>
-                    <div class="flex items-center justify-between gap-3 pt-2.5 border-t border-line">
-                        <div class="flex items-center gap-3 text-[12.5px] text-faint">
-                            <span>{{ fa_num($course->lessons_count) }} درس</span>
-                            @if ($course->lessons_minutes_sum)
-                                <span>· حدود {{ fa_num((int) round($course->lessons_minutes_sum / 60)) }} ساعت</span>
-                            @endif
-                        </div>
-                        @unless ($enrolled)
-                            <form method="POST" action="{{ route('courses.enroll', $course) }}">
-                                @csrf
-                                <button type="submit" class="btn btn-sm"><x-icon name="plus" class="w-3.5 h-3.5" /> برداشتن</button>
-                            </form>
-                        @endunless
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
 </x-app-layout>

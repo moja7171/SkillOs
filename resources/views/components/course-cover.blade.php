@@ -1,7 +1,12 @@
 @props(['course'])
 
 @php
-    $color = course_color($course->id);
+    // Deterministic per-course "identicon" — same course always renders the same
+    // cover, but every course looks distinct (hue, pattern and glow all derive
+    // from the slug, not from a small shared palette).
+    $seed = crc32($course->slug);
+    $hue = $seed % 360;
+    $hue2 = ($hue + 40) % 360;
     $gid = 'cc-'.$course->id;
     $pid = 'cp-'.$course->id;
 
@@ -11,22 +16,38 @@
         'برنامه‌نویسی' => 'text',
         default => 'sparkle',
     };
+
+    $patternType = $seed % 3;
+    $rot = ($seed % 60) - 30;
+    $glowX = 240 + ($seed % 100);
+    $glowY = -10 + (intdiv($seed, 7) % 50);
 @endphp
 
 <div class="relative w-full h-full">
     <svg viewBox="0 0 400 225" class="w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
             <linearGradient id="{{ $gid }}" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="{{ $color }}" />
-                <stop offset="100%" stop-color="color-mix(in srgb, {{ $color }} 55%, black)" />
+                <stop offset="0%" stop-color="hsl({{ $hue }} 72% 45%)" />
+                <stop offset="100%" stop-color="hsl({{ $hue2 }} 65% 22%)" />
             </linearGradient>
-            <pattern id="{{ $pid }}" width="26" height="26" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1.3" fill="#ffffff" fill-opacity="0.15" />
-            </pattern>
+
+            @if ($patternType === 0)
+                <pattern id="{{ $pid }}" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1.4" fill="#ffffff" fill-opacity="0.16" />
+                </pattern>
+            @elseif ($patternType === 1)
+                <pattern id="{{ $pid }}" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate({{ $rot }})">
+                    <line x1="0" y1="0" x2="0" y2="22" stroke="#ffffff" stroke-opacity="0.10" stroke-width="7" />
+                </pattern>
+            @else
+                <pattern id="{{ $pid }}" width="46" height="46" patternUnits="userSpaceOnUse">
+                    <circle cx="23" cy="23" r="16" fill="none" stroke="#ffffff" stroke-opacity="0.13" stroke-width="2" />
+                </pattern>
+            @endif
         </defs>
         <rect width="400" height="225" fill="url(#{{ $gid }})" />
         <rect width="400" height="225" fill="url(#{{ $pid }})" />
-        <circle cx="350" cy="15" r="130" fill="#ffffff" fill-opacity="0.07" />
+        <circle cx="{{ $glowX }}" cy="{{ $glowY }}" r="130" fill="#ffffff" fill-opacity="0.08" />
     </svg>
     <div class="absolute inset-0 grid place-items-center">
         <x-icon :name="$icon" class="w-9 h-9 text-white/80" />

@@ -21,7 +21,7 @@
             </x-slot>
             <x-slot name="content">
                 <x-dropdown-link :href="route('courses.index')" @class(['whitespace-nowrap font-semibold' => true, 'bg-surface2' => $coursesActive && ! request()->query('category')])>همه‌ی دوره‌ها</x-dropdown-link>
-                <div class="mt-1 pt-2 mx-4 border-t border-line text-[11px] text-faint">دسته‌بندی‌ها</div>
+                <div class="my-1 border-t border-line"></div>
                 @foreach (\App\Models\Course::CATEGORIES as $cat)
                     <x-dropdown-link :href="route('courses.index', ['category' => $cat])" @class(['whitespace-nowrap' => true, 'bg-surface2' => request()->query('category') === $cat])>{{ $cat }}</x-dropdown-link>
                 @endforeach

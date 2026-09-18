@@ -1,0 +1,37 @@
+[
+  {
+    "key": "functional-vs-non-functional",
+    "title": "کدوم سؤال، کدوم نوع؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "نیازمندی‌های کارکردی به کدوم سؤال جواب می‌دن؟",
+    "options": [
+      "سیستم با چی باید کنار بیاد؟",
+      "سیستم چیکار باید بکنه؟",
+      "سیستم چقدر هزینه داره؟",
+      "سیستم روی کدوم سرور دیپلوی می‌شه؟"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "نیازمندی‌های کارکردی به «سیستم چیکار باید بکنه» جواب می‌دن؛ نیازمندی‌های غیرکارکردی به «سیستم با چی باید کنار بیاد».",
+    "hints": [
+      "درس می‌گه از فرسنگ‌ها می‌شه این نوع رو تشخیص داد — دقیقاً با کدوم سؤال؟",
+      "سؤالِ دیگه (با چی باید کنار بیاد) مالِ نوعِ دیگه‌ی نیازمندیه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "600mb-story-lesson",
+    "title": "درسِ ۶۰۰ مگابایتی",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی داستانِ این درس، سیستمی که در نگاه اول ساده به نظر می‌رسید، به خاطر یه سؤالِ ساده کاملاً زیرورو شد. اون سؤال چی بود، و چرا جوابش کل معماری رو عوض کرد؟",
+    "expected_outcome": "سؤال این بود: «حداکثر اندازه‌ی داده‌ای که این سرویس دریافت می‌کنه چقدره؟» — و جواب ۶۰۰ مگابایت بود. یه سرویسِ REST معمولی نمی‌تونه همچین درخواستِ بزرگی رو مدیریت کنه، پس معماری از سرویس‌های REST به ایجنت‌هایی که یه دیتابیس NoSQL رو گوش می‌کردن تغییر کرد.",
+    "hints": [
+      "این سؤال دقیقاً درباره‌ی کدوم نوع نیازمندی بود — کارکردی یا غیرکارکردی؟",
+      "درس می‌گه معماریِ نهایی چطور از سرویسِ REST به یه چیزِ کاملاً متفاوت تغییر کرد."
+    ],
+    "rubric": "Correct if response names the max-message-size question and explains it revealed a non-functional requirement (data volume per message) that broke the REST-based design, forcing a switch to NoSQL-listening agents. Correct_with_hint if only the question or only the outcome is mentioned. Incorrect if no real reasoning is given."
+  }
+]

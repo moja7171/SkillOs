@@ -40,6 +40,25 @@ export function mountPlayers(root = document) {
             t.addEventListener('load', () => { t.track.mode = 'disabled'; }, { once: true });
         });
 
+        // Videos/captions may be requested from a download host first (config/media.php's
+        // download_base_url), with the owner's own machine as a fallback for anything not
+        // migrated there yet. `error` on <video>/<track> fires per failed request (a 404 from
+        // the download host counts), so swap to the fallback src once and reload just that piece.
+        const source = el.querySelector('source[data-fallback-src]');
+        if (source) {
+            el.addEventListener('error', () => {
+                if (source.src === source.dataset.fallbackSrc) return;
+                source.src = source.dataset.fallbackSrc;
+                el.load();
+            });
+        }
+        el.querySelectorAll('track[data-fallback-src]').forEach((t) => {
+            t.addEventListener('error', () => {
+                if (t.src === t.dataset.fallbackSrc) return;
+                t.src = t.dataset.fallbackSrc;
+            });
+        });
+
         const player = new Plyr(el, {
             iconUrl: '/plyr.svg',
             i18n,

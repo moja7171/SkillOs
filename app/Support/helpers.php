@@ -48,6 +48,25 @@ if (! function_exists('media_url')) {
     }
 }
 
+if (! function_exists('media_download_url')) {
+    /**
+     * Resolve a stored media URL onto the download host (config('media.download_base_url')),
+     * or null when that host isn't configured or the URL isn't a `/media/...` path. Views use
+     * this as the primary `src` with media_url() as the browser-side fallback — see
+     * resources/js/player.js.
+     */
+    function media_download_url(?string $url): ?string
+    {
+        $base = config('media.download_base_url');
+
+        if ($url === null || ! $base || ! str_starts_with($url, '/media/')) {
+            return null;
+        }
+
+        return rtrim($base, '/').substr($url, strlen('/media'));
+    }
+}
+
 if (! function_exists('course_color')) {
     /**
      * A stable, distinctive accent color for a course's monogram avatar (catalog cards,

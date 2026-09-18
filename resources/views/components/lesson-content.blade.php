@@ -49,9 +49,14 @@
                         <div class="player-shell rounded-lg overflow-hidden bg-black" dir="ltr">
                             <video class="js-player" playsinline preload="metadata" crossorigin="anonymous"
                                    data-video-id="{{ $video->id }}" data-captions-default="{{ $video->subtitles[0]['lang'] ?? 'en' }}">
-                                <source src="{{ media_url($embed['src']) }}" type="video/mp4">
+                                @php $downloadSrc = media_download_url($embed['src']); @endphp
+                                <source src="{{ $downloadSrc ?? media_url($embed['src']) }}" type="video/mp4"
+                                        @if ($downloadSrc) data-fallback-src="{{ media_url($embed['src']) }}" @endif>
                                 @foreach ($video->subtitles ?? [] as $track)
-                                    <track kind="captions" src="{{ media_url($track['url']) }}" srclang="{{ $track['lang'] }}" label="{{ $track['label'] }}" @if ($loop->first) default @endif>
+                                    @php $downloadTrackSrc = media_download_url($track['url']); @endphp
+                                    <track kind="captions" src="{{ $downloadTrackSrc ?? media_url($track['url']) }}" srclang="{{ $track['lang'] }}" label="{{ $track['label'] }}"
+                                           @if ($loop->first) default @endif
+                                           @if ($downloadTrackSrc) data-fallback-src="{{ media_url($track['url']) }}" @endif>
                                 @endforeach
                             </video>
                         </div>

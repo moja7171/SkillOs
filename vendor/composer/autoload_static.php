@@ -521,6 +521,7 @@ class ComposerStaticInit2b1f3a64d187955b4781c949ae95b942
         'App\\Models\\PlanItem' => __DIR__ . '/../..' . '/app/Models/PlanItem.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
+        'App\\Services\\Ai\\Concerns\\UsesOutboundProxy' => __DIR__ . '/../..' . '/app/Services/Ai/Concerns/UsesOutboundProxy.php',
         'App\\Services\\Ai\\GeminiClient' => __DIR__ . '/../..' . '/app/Services/Ai/GeminiClient.php',
         'App\\Services\\Content\\CourseImporter' => __DIR__ . '/../..' . '/app/Services/Content/CourseImporter.php',
         'App\\Services\\Content\\ImportException' => __DIR__ . '/../..' . '/app/Services/Content/ImportException.php',

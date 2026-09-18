@@ -7,6 +7,7 @@ use App\Models\Lesson;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class DeployTest extends TestCase
@@ -75,6 +76,26 @@ class DeployTest extends TestCase
         $this->get('/_ops/deploy-log?token=secret')->assertOk()->assertSee('line one')->assertSee('line two');
 
         File::delete($path);
+    }
+
+    public function test_ops_ai_check_reports_success_on_a_real_gemini_round_trip(): void
+    {
+        config(['app.ops_token' => 'secret', 'services.gemini.api_key' => 'test-key', 'services.gemini.model' => 'gemini-test']);
+
+        Http::fake(['generativelanguage.googleapis.com/*' => Http::response([
+            'candidates' => [['content' => ['parts' => [['text' => '{"answer":"OK"}']]]]],
+        ])]);
+
+        $this->get('/_ops/ai-check?token=secret')->assertOk()->assertSee('Gemini relay test SUCCESS')->assertSee('"answer":"OK"', false);
+    }
+
+    public function test_ops_ai_check_reports_failure_when_gemini_errors(): void
+    {
+        config(['app.ops_token' => 'secret', 'services.gemini.api_key' => 'test-key', 'services.gemini.model' => 'gemini-test']);
+
+        Http::fake(['generativelanguage.googleapis.com/*' => Http::response('nope', 500)]);
+
+        $this->get('/_ops/ai-check?token=secret')->assertOk()->assertSee('Gemini relay test FAILED');
     }
 
     public function test_registration_requires_the_invite_code_when_configured(): void

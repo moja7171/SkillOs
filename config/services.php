@@ -40,4 +40,9 @@ return [
         'model' => env('GEMINI_MODEL', 'gemini-2.5-flash'),
     ],
 
+    'ai_proxy' => [
+        'url' => env('AI_PROXY_URL'),
+        'secret' => env('AI_PROXY_SECRET'),
+    ],
+
 ];

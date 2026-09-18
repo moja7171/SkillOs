@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Services\Ai\GeminiClient;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Artisan;
@@ -17,7 +18,7 @@ use Illuminate\Support\Str;
  */
 class OpsController extends Controller
 {
-    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'update', 'delete-course', 'deploy-log'];
+    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'update', 'delete-course', 'deploy-log', 'ai-check'];
 
     public function __invoke(Request $request, string $action): Response
     {
@@ -43,6 +44,7 @@ class OpsController extends Controller
                 'update' => $out = $this->update($request->query('slug'), $request->boolean('prune', true)),
                 'delete-course' => $out = $this->deleteCourse($request->query('slug')),
                 'deploy-log' => $out = $this->deployLog(),
+                'ai-check' => $out = $this->aiCheck(),
             };
         } catch (\Throwable $e) {
             $out[] = 'ERROR: '.$e->getMessage();
@@ -65,6 +67,7 @@ class OpsController extends Controller
             'database: '.$this->databaseStatusLine($connection),
             'media base: '.(config('media.base_url') ?: '(same host)'),
             'gemini key: '.(config('services.gemini.api_key') ? 'set' : 'MISSING'),
+            'ai proxy: '.(config('services.ai_proxy.url') ?: '(direct — no relay configured)'),
             'writable: '.$this->writableStatusLine($connection),
             'courses on disk: '.implode(', ', $this->courseSlugs()),
         ];
@@ -193,6 +196,34 @@ class OpsController extends Controller
         }
 
         return [collect(explode("\n", File::get($path)))->slice(-200)->implode("\n")];
+    }
+
+    /**
+     * Round-trips a real Gemini call (direct, or through the relay when `AI_PROXY_URL`
+     * is set — see DECISIONS.md §60) so a config change can be confirmed working without
+     * needing a learner to submit a real practice. Iran-hosted production genuinely
+     * cannot reach Gemini directly (confirmed 2026-09-18); this is how to check whether
+     * the relay is actually wired up correctly after changing `.env`.
+     *
+     * @return list<string>
+     */
+    protected function aiCheck(): array
+    {
+        $proxy = config('services.ai_proxy.url');
+
+        $out = ['ai proxy: '.($proxy ?: '(direct — no relay configured)')];
+
+        try {
+            $result = app(GeminiClient::class)->generateJson(
+                'Reply with the word OK in the answer field.',
+                ['type' => 'OBJECT', 'properties' => ['answer' => ['type' => 'STRING']], 'required' => ['answer']],
+            );
+            $out[] = 'Gemini relay test SUCCESS: '.json_encode($result);
+        } catch (\Throwable $e) {
+            $out[] = 'Gemini relay test FAILED: '.$e->getMessage();
+        }
+
+        return $out;
     }
 
     /**

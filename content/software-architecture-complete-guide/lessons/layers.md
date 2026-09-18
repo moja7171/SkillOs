@@ -33,7 +33,7 @@
 **۲. اتصال سست (Loose Coupling):** توی درس بعدی بیشتر درباره‌ش حرف می‌زنیم، ولی فعلاً کافیه بدونی که لایه‌ها باید طوری با هم ارتباط برقرار کنن که موقع تغییر، کمترین تأثیر رو داشته باشه. یه مثال ساده: فرض کن این کد توی لایه‌ی BL هست که DAL رو صدا می‌زنه:
 
 ```csharp
-// اتصال محکم — ارجاع مستقیم به کلاس DAL
+// strong coupling — direct reference to the DAL class
 var dal = new SqlOrderRepository();
 var order = dal.GetOrder(orderId);
 ```
@@ -43,7 +43,7 @@ var order = dal.GetOrder(orderId);
 روش درست، ارجاع لایه‌ها از طریق **تزریق وابستگی (dependency injection)**ـه — جایی که لایه‌ی فراخوان فقط به یه اینترفیس که کارکرد موردنظر رو نشون می‌ده ارجاع می‌ده، نه خودِ کلاس مشخص:
 
 ```csharp
-// اتصال سست — فقط به اینترفیس ارجاع می‌ده
+// loose coupling — refers only to the interface
 IOrderRepository dal = OrderRepositoryFactory.GetInstance();
 var order = dal.GetOrder(orderId);
 ```

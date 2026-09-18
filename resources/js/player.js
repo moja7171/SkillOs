@@ -17,8 +17,88 @@ const i18n = {
 const SPEED_KEY = 'skillos.player.speed';
 const positionKey = (id) => `skillos.player.pos.${id}`;
 
+// Same ladder as the settings-menu speed options and the keyboard fallback.
+const SPEED_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+
 function read(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function write(key, value) { try { localStorage.setItem(key, value); } catch { /* private mode etc. */ } }
+
+function formatSpeed(value) {
+    return `${Math.round(value * 100) / 100}×`;
+}
+
+// Compact speed-up / slow-down control in the control bar (a pro-player feel):
+// [−] shows the current speed as a pill [+] — the pill itself resets to 1×.
+// The settings menu always stays in sync via the shared speed option ladder.
+function mountSpeedControl(player) {
+    const controls = player.elements.controls;
+    if (!controls || controls.querySelector('.plyr-speed')) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'plyr__controls__item plyr-speed';
+
+    // Same tooltip bubble as the built-in controls: a hidden .plyr__tooltip span
+    // that the shared Plyr CSS reveals on hover (no browser-native title).
+    const withTip = (btn, label, tipLabel) => {
+        btn.setAttribute('aria-label', label);
+        const tip = document.createElement('span');
+        tip.className = 'plyr__tooltip';
+        tip.textContent = tipLabel;
+        btn.appendChild(tip);
+    };
+
+    const key = document.createElement('button');
+    key.type = 'button';
+    key.className = 'plyr__control plyr-speed-btn';
+    key.dataset.plyrSpeed = 'slower';
+    key.innerHTML = '<svg class="plyr-speed-glyph" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><rect x="4.25" y="8" width="9.5" height="2" rx="1"/></svg>';
+    withTip(key, 'کندتر پخش کن', 'کندتر');
+
+    const value = document.createElement('span');
+    value.className = 'plyr-speed-value';
+
+    const pill = document.createElement('button');
+    pill.type = 'button';
+    pill.className = 'plyr__control plyr-speed-pill';
+    pill.dataset.plyrSpeed = 'reset';
+    withTip(pill, 'سرعت پخش — برای حالت عادی بزن', 'برگرد به حالت عادی');
+    pill.appendChild(value);
+
+    const rest = document.createElement('button');
+    rest.type = 'button';
+    rest.className = 'plyr__control plyr-speed-btn';
+    rest.dataset.plyrSpeed = 'faster';
+    rest.innerHTML = '<svg class="plyr-speed-glyph" viewBox="0 0 18 18" fill="currentColor" aria-hidden="true"><rect x="8" y="4.25" width="2" height="9.5" rx="1"/><rect x="4.25" y="8" width="9.5" height="2" rx="1"/></svg>';
+    withTip(rest, 'سریع‌تر پخش کن', 'سریع‌تر');
+
+    const render = () => {
+        const offNormal = player.speed !== 1;
+        value.textContent = formatSpeed(player.speed);
+        pill.dataset.active = String(offNormal);
+        pill.setAttribute('aria-label', `سرعت: ${formatSpeed(player.speed)} — برای حالت عادی بزن`);
+    };
+
+    wrap.addEventListener('click', (event) => {
+        const btn = event.target.closest('[data-plyr-speed]');
+        if (!btn) return;
+        const idx = SPEED_STEPS.indexOf(player.speed);
+        switch (btn.dataset.plyrSpeed) {
+            case 'slower': player.speed = SPEED_STEPS[Math.max(0, idx - 1)]; break;
+            case 'reset': player.speed = 1; break;
+            case 'faster': player.speed = SPEED_STEPS[Math.min(SPEED_STEPS.length - 1, idx === -1 ? 1 : idx + 1)]; break;
+        }
+        render();
+    });
+
+    wrap.append(key, pill, rest);
+    // The settings button lives inside Plyr's nested menu, not as a direct child of
+    // the controls bar — anchor on the menu item so insertBefore always has a real sibling.
+    const anchor = controls.querySelector('.plyr__menu') || controls.querySelector('[data-plyr="settings"]') || null;
+    controls.insertBefore(wrap, anchor);
+
+    render();
+    player.on('ratechange', render);
+}
 
 export function mountPlayers(root = document) {
     root.querySelectorAll('.js-player').forEach((el) => {
@@ -77,6 +157,9 @@ export function mountPlayers(root = document) {
             // each switch, which falls back to the configured default language whenever it can't
             // read back what it just tried to save.
         });
+
+        // Speed +/- control added after the built-ins (near the settings button).
+        mountSpeedControl(player);
 
         // Resume where the learner stopped (skip if near the start or the end).
         // Metadata may already be loaded before Plyr wires up, so try on both events.

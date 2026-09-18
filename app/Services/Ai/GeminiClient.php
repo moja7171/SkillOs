@@ -2,11 +2,14 @@
 
 namespace App\Services\Ai;
 
+use App\Services\Ai\Concerns\UsesOutboundProxy;
 use Illuminate\Support\Facades\Http;
 use RuntimeException;
 
 class GeminiClient
 {
+    use UsesOutboundProxy;
+
     protected string $apiKey;
 
     protected string $model;
@@ -30,17 +33,20 @@ class GeminiClient
             throw new RuntimeException('GEMINI_API_KEY is not set. Add it to .env before generating AI content.');
         }
 
-        $response = Http::timeout(60)
-            ->withHeader('x-goog-api-key', $this->apiKey)
-            ->post("https://generativelanguage.googleapis.com/v1beta/models/{$this->model}:generateContent", [
-                'contents' => [
-                    ['role' => 'user', 'parts' => [['text' => $prompt]]],
-                ],
-                'generationConfig' => [
-                    'responseMimeType' => 'application/json',
-                    'responseSchema' => $schema,
-                ],
-            ]);
+        $url = "https://generativelanguage.googleapis.com/v1beta/models/{$this->model}:generateContent";
+
+        $response = $this->withOutboundProxy(
+            Http::timeout(60)->withHeader('x-goog-api-key', $this->apiKey),
+            $url,
+        )->post($this->outboundUrl($url), [
+            'contents' => [
+                ['role' => 'user', 'parts' => [['text' => $prompt]]],
+            ],
+            'generationConfig' => [
+                'responseMimeType' => 'application/json',
+                'responseSchema' => $schema,
+            ],
+        ]);
 
         if ($response->failed()) {
             throw new RuntimeException('Gemini request failed: '.$response->body());

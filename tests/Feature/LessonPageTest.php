@@ -89,4 +89,19 @@ class LessonPageTest extends TestCase
         $this->assertStringContainsString('src="http://localhost:8765/course-slug/lesson-slug/video.mp4"', $html);
         $this->assertStringNotContainsString('data-fallback-src', $html);
     }
+
+    public function test_attachment_link_prefers_the_download_host_with_the_local_media_server_as_a_fallback(): void
+    {
+        config(['media.base_url' => 'http://localhost:8765', 'media.download_base_url' => 'https://downloads.example.com']);
+
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->withActivities()->create([
+            'attachments' => [['title' => 'کد نمونه', 'url' => '/media/course-slug/lesson-slug/starter.zip']],
+        ]);
+
+        $html = $this->actingAs($user)->get($lesson->url())->assertOk()->getContent();
+
+        $this->assertStringContainsString('href="https://downloads.example.com/course-slug/lesson-slug/starter.zip"', $html);
+        $this->assertStringContainsString('data-fallback-src="http://localhost:8765/course-slug/lesson-slug/starter.zip"', $html);
+    }
 }

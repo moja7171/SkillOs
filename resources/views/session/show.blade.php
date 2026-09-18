@@ -98,8 +98,9 @@
                     @if (! empty($payload['attachments']))
                         <div class="flex flex-col gap-1.5 mt-3">
                             @foreach ($payload['attachments'] as $file)
-                                @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); @endphp
-                                <a href="{{ media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-2.5 text-[13px] text-ink hover:text-accent">
+                                @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); $downloadSrc = media_download_url($file['url']); @endphp
+                                <a href="{{ $downloadSrc ?? media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-2.5 text-[13px] text-ink hover:text-accent"
+                                   @if ($downloadSrc) data-fallback-src="{{ media_url($file['url']) }}" @endif>
                                     <span class="badge badge-ghost uppercase">{{ $ext ?: 'file' }}</span>
                                     <span class="truncate">{{ $file['title'] }}</span>
                                 </a>

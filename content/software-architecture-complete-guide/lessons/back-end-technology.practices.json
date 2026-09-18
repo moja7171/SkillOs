@@ -1,0 +1,51 @@
+[
+  {
+    "key": "node-not-for-services",
+    "title": "Node.js برای کدوم نوع اپلیکیشن مناسب نیست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، Node.js برای کدوم نوع کاربرد هدف‌گذاری *نشده*؟",
+    "options": [
+      "اپ‌های وبی با عملیاتِ I/O همزمانِ زیاد",
+      "فرایندهای طولانی‌مدت — یعنی نباید برای ساختنِ سرویس ازش استفاده کرد",
+      "اپ‌هایی با concurrency بالا",
+      "اپلیکیشن‌هایی با سینتکسِ JavaScript"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس صراحتاً می‌گه Node.js برای فرایندهای طولانی‌مدت هدف‌گذاری نشده، پس نباید برای ساختنِ سرویس ازش استفاده کرد — ولی برای اپ‌های وبِ با I/O همزمانِ زیاد باید بالای لیست باشه.",
+    "hints": [
+      "درس یه جمله‌ی صریح داره: «پس برای ساختنِ سرویس ازش استفاده نکن».",
+      "این محدودیت با بهینه‌بودنش برای concurrency در تضاد نیست — دو موضوعِ جدان."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "dotnet-classic-limitation",
+    "title": "بزرگ‌ترین محدودیتِ .NET Classic",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، بزرگ‌ترین محدودیتِ .NET Classic نسبت به بقیه‌ی گزینه‌های این جدول چیه؟",
+    "expected_outcome": ".NET Classic کراس‌پلتفرم نیست — فقط برای اپلیکیشن‌های مبتنی بر ویندوز مرتبطه، درحالی‌که بقیه‌ی گزینه‌های جدول (به‌جز همین یکی) کراس‌پلتفرم‌ان.",
+    "hints": [
+      "به ستونِ «کراس‌پلتفرم» توی جدولِ جمع‌بندی نگاه کن — فقط یه ردیف «نه» داره.",
+      "درس این محدودیت رو با یه جمله‌ی کوتاه و مستقیم بیان می‌کنه."
+    ],
+    "rubric": "Correct if response identifies .NET Classic is not cross-platform / Windows-only. Incorrect if it names a different limitation or gives no answer."
+  },
+  {
+    "key": "pick-platform-scenario",
+    "title": "یه تیم که با Python و Postgres راحته",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه تیمِ توسعه با Python و Postgres تجربه‌ی زیادی داره و قراره یه سرویسِ داده‌محورِ نه‌چندان پیچیده بسازه که نیازِ خاصی به performanceِ فوق‌العاده نداره. طبق این درس، آیا باید مجبورشون کرد به‌جاش .NET Core یا Java یاد بگیرن؟ چرا؟",
+    "expected_outcome": "نه، لازم نیست. درس می‌گه تقریباً هر ترکیبی کار می‌کنه، فقط پلتفرم باید بتونه به‌شکلِ لازم (کنسول/سرویس/وب) پیاده بشه و به دیتابیس دسترسی داشته باشه. Python هم برای این کار کاملاً مناسبه.",
+    "hints": [
+      "درس درباره‌ی یه ترکیبِ مشابه (Python و Postgres) صراحتاً مثال می‌زنه — چی درباره‌ش می‌گه؟",
+      "به این فکر کن: آیا تصمیمِ پشته‌ی فناوری باید فارغ از تجربه‌ی تیم گرفته بشه؟"
+    ],
+    "rubric": "Correct if response says no, explains almost any combination works as long as the platform meets the technical needs, and references sticking with the team's existing experience. Correct_with_hint if it says \"no\" without the reasoning. Incorrect if it recommends switching platforms without justification."
+  }
+]

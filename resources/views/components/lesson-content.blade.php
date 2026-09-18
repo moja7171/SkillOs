@@ -1,14 +1,22 @@
 {{-- Video/text tabs + key points for a lesson. Used by the lesson page and the session pane. --}}
 @props(['lesson', 'compact' => false])
-@php $hasVideo = $lesson->videos->isNotEmpty(); $hasEnglish = filled($lesson->content_en); @endphp
-<div x-data="{ tab: '{{ $hasVideo ? 'video' : 'text' }}', textLang: 'fa' }" {{ $attributes }}>
+@php $hasVideo = $lesson->videos->isNotEmpty(); $hasEnglish = filled($lesson->content_en); $tabKey = 'skillos.lesson.tab.'.$lesson->id; $tabDefault = $hasVideo ? 'video' : 'text'; @endphp
+<div x-data="{
+    tab: (() => {
+        if (! {{ $hasVideo ? 'true' : 'false' }}) return 'text';
+        try { const t = localStorage.getItem('{{ $tabKey }}'); return t === 'video' || t === 'text' ? t : '{{ $tabDefault }}'; }
+        catch { return '{{ $tabDefault }}'; }
+    })(),
+    textLang: 'fa',
+    setTab(t) { this.tab = t; try { localStorage.setItem('{{ $tabKey }}', t); } catch {} }
+}" {{ $attributes }}>
     <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-line">
         @if ($hasVideo)
-            <button type="button" class="btn btn-sm" :class="tab === 'video' ? '' : 'btn-ghost'" @click="tab = 'video'">
+            <button type="button" class="btn btn-sm" :class="tab === 'video' ? '' : 'btn-ghost'" @click="setTab('video')">
                 <x-icon name="video" class="w-3.5 h-3.5" /> ویدیو <span class="badge badge-warn ms-1">پیشنهادی</span>
             </button>
         @endif
-        <button type="button" class="btn btn-sm" :class="tab === 'text' ? '' : 'btn-ghost'" @click="tab = 'text'">
+        <button type="button" class="btn btn-sm" :class="tab === 'text' ? '' : 'btn-ghost'" @click="setTab('text')">
             <x-icon name="text" class="w-3.5 h-3.5" /> متن
             @unless ($hasVideo)<span class="badge badge-warn ms-1">پیشنهادی</span>@endunless
         </button>

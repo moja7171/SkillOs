@@ -91,7 +91,7 @@
             </div>
 
             {{-- Practice pane --}}
-            <div class="flex flex-col bg-surface lg:max-h-[calc(100vh-56px)] overflow-y-auto">
+            <div class="flex flex-col bg-surface lg:max-h-[calc(100vh-56px)] overflow-y-auto" x-data="{ sending: false }">
                 <div class="px-6 pt-5 pb-4 border-b border-line">
                     <div class="text-[12.5px] font-semibold text-muted mb-1">صورت تمرین</div>
                     <div class="prose-fa">{!! Str::markdown($payload['prompt'] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</div>
@@ -129,7 +129,7 @@
                     @endfor
 
                     @if ($open)
-                        <form method="POST" action="{{ route('session.submit', $attempt) }}" class="flex flex-col gap-4" id="answer-form">
+                        <form method="POST" action="{{ route('session.submit', $attempt) }}" class="flex flex-col gap-4" id="answer-form" x-on:submit="sending = true">
                             @csrf
                             @if ($form === 'mcq')
                                 <div class="flex flex-col gap-2">
@@ -236,7 +236,10 @@
 
                 <div class="border-t border-line px-6 py-4 flex items-center gap-3 flex-wrap">
                     @if ($open)
-                        <button type="submit" form="answer-form" class="btn btn-primary"><x-icon name="check" class="w-4 h-4" /> ارسال پاسخ</button>
+                        <button type="submit" form="answer-form" class="btn btn-primary" :disabled="sending">
+                            <span x-show="! sending" class="inline-flex items-center gap-2"><x-icon name="check" class="w-4 h-4" /> ارسال پاسخ</span>
+                            <span x-show="sending" x-cloak class="inline-flex items-center gap-2"><svg class="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" /><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z" /></svg> در حال ارسال…</span>
+                        </button>
                         <button type="button" x-data="" x-on:click="$dispatch('open-modal', 'give-up')" class="btn btn-ghost ms-auto">بی‌خیال، جواب رو نشون بده</button>
                     @else
                         @if ($nextAction)

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "no-required-degree",
+    "title": "مدرک لازمه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، برای معمار نرم‌افزار شدن چی لازمه؟",
+    "options": [
+      "یه مدرک دانشگاهیِ مخصوص معماری نرم‌افزار",
+      "گواهینامه‌ی TOGAF",
+      "هیچ مدرک خاصی لازم نیست؛ عمدتاً به تجربه بستگی داره",
+      "حتماً باید مدرکِ ارشد داشته باشی"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "هیچ دانشگاهی مدرکِ مخصوصِ معماری نرم‌افزار نداره و هیچ مدرکِ خاصی الزامی نیست. مسیر معماری عمدتاً به تجربه بستگی داره.",
+    "hints": [
+      "درس می‌گه TOGAF بیشتر سمتِ کدوم نوع معماریه — همونی که این دوره درباره‌ش نیست؟",
+      "جوابِ درس به این سؤال با «جواب خیلی کوتاهه:» شروع می‌شه."
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "togaf-scope",
+    "title": "TOGAF برای کدوم نوع معماریه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "درس می‌گه دوره‌ها و گواهینامه‌هایی مثل TOGAF هست که به معماری می‌پردازن، ولی بیشتر سمتِ کدوم نوع معماری‌ان، نه معماری نرم‌افزار؟",
+    "expected_outcome": "معماری سازمانی (Enterprise Architecture).",
+    "hints": [
+      "این نوع معماری رو توی درسِ «انواعِ معماران» قبل‌تر توی همین بخش بررسی کردیم.",
+      "این نوع معمار با مدیریتِ ارشد کار می‌کنه، نه با جزئیاتِ فنیِ خودِ نرم‌افزار."
+    ],
+    "rubric": "Correct if response names enterprise architecture. Incorrect if it names software or infrastructure architecture."
+  }
+]

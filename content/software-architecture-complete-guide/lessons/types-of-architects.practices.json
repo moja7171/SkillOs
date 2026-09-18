@@ -1,0 +1,37 @@
+[
+  {
+    "key": "match-architect-type",
+    "title": "کدوم معمار کدومه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه نفر با CEO و CIO سازمان کار می‌کنه تا گلوگاه‌های IT رو پیدا کنه و مطمئن بشه IT مانع رشد کسب‌وکار نیست. این کدوم نوع معماره؟",
+    "options": [
+      "معمار زیرساخت",
+      "معمار نرم‌افزار",
+      "معمار سازمانی",
+      "معمار امنیت"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "این توصیف دقیقاً معمار سازمانیه — کسی که با مدیریت ارشد کار می‌کنه تا IT رو به توانمندساز کسب‌وکار تبدیل کنه، نه مانعش.",
+    "hints": [
+      "درس می‌گه این نوع معمار تقریباً هیچ ارتباط کاری‌ای با دنیای توسعه نداره.",
+      "کلیدواژه‌ها رو دنبال کن: CEO، CIO، «توانمندساز کسب‌وکار» — کدوم نوع معمار دقیقاً با همین کلمات توصیف شد؟"
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "storage-capacity-question",
+    "title": "کدوم معمار باید نگران ۳ ترابایت رشد سالانه باشه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق مثالِ درس، اگه یه سیستم قراره هر سال ۳ ترابایت رشد کنه، کدوم نوع معمار باید مطمئن بشه فضای ذخیره‌سازی از پسش برمیاد؟",
+    "expected_outcome": "معمار زیرساخت — چون مسئول طراحی عناصر غیرنرم‌افزاری مثل سرورها و فضای ذخیره‌سازیه، و باید با نیازمندی‌های سیستم (مثل رشد داده) آشنا باشه تا زیرساخت متناسب باهاش طراحی کنه.",
+    "hints": [
+      "کدوم نوع معمار مسئول «عناصر غیرنرم‌افزاری» مثل سرور و فضای ذخیره‌سازیه؟",
+      "دقیقاً همین مثال (رشد ۳ ترابایتی) توی توصیف یکی از سه نوع معمار توی درس اومده."
+    ],
+    "rubric": "Correct: names the infrastructure architect. Partial: names a different architect type but shows understanding that it's the role responsible for physical/storage capacity. Incorrect: names software or enterprise architect, or gives no reasoning."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "console-architecture-unchanged",
+    "title": "کنسول بودن، معماری رو عوض می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، اینکه یه اپلیکیشن از نوعِ کنسول باشه، چه تأثیری روی معماریش داره؟",
+    "options": [
+      "معماری باید کاملاً متفاوت طراحی بشه",
+      "هیچ تغییری ایجاد نمی‌کنه؛ همه‌ی الگوهای معماری برایش صدق می‌کنن",
+      "دیگه نیازی به لایه‌بندی نیست",
+      "دیگه لاگ‌گیری لازم نیست"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس صراحتاً می‌گه اینکه یه اپلیکیشن کنسول باشه، هیچ تغییری توی معماریش ایجاد نمی‌کنه — همه‌ی الگوها و شیوه‌های معماری براش هم صدق می‌کنن.",
+    "hints": [
+      "این نکته توی آخرین پاراگرافِ درس، به‌عنوانِ «یه نکته‌ی مهم» اومده.",
+      "به این فکر کن که آیا نوعِ اپلیکیشن (کنسول، وب و…) با معماریِ داخلیش (لایه‌ها، DI و…) یکی هستن یا دو چیزِ جدا."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "console-use-case",
+    "title": "کنسول برای کدوم موقعیت؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه شرکت به یه ابزار برای export کردنِ دوره‌ایِ داده‌ی مشتری‌ها نیاز داره، که فقط تیمِ عملیات ازش استفاده می‌کنه. طبق این درس، این سناریو چقدر با اپلیکیشنِ کنسول تناسب داره، و چرا؟",
+    "expected_outcome": "تناسبِ خوبی داره — اپلیکیشن‌های کنسول برای اکشن‌های کوتاه و متمرکز مثل export داده، که توسط کاربرانِ حرفه‌ای و آموزش‌دیده استفاده می‌شن، مناسبن. نیازی به رابطِ کاربریِ شیک نیست و سطحی از دانشِ فنی برای اجراش کافیه.",
+    "hints": [
+      "درس دقیقاً مثالِ «export داده» رو به‌عنوانِ یه کاربردِ رایجِ اپلیکیشن‌های کنسول می‌زنه.",
+      "به این فکر کن: مخاطبِ این ابزار (تیمِ عملیات) با مخاطبِ توصیف‌شده توی درس چقدر همخوانی داره؟"
+    ],
+    "rubric": "Correct if response identifies this as a good console-app fit and explains it matches the short/focused data-export use case for trained professional users. Correct_with_hint if the fit is stated without the reasoning. Incorrect if it recommends a different application type without justification."
+  }
+]

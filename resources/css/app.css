@@ -50,6 +50,13 @@
 /* Plyr's menu is laid out LTR; labels stay Persian, just isolated so they read correctly. */
 .player-shell .plyr__menu__container [role="menuitemradio"] span:first-child { unicode-bidi: plaintext; }
 .player-shell .plyr__control--forward:focus-visible, .player-shell .plyr__control:focus-visible { outline: 2px solid var(--accent); }
+/* Speed control mirrors the built-in Plyr buttons (same .plyr__control size, icon
+   fill and hover) — only the value pill keeps a mono, tightly-widened label. */
+.player-shell .plyr-speed { display: inline-flex; align-items: center; }
+.player-shell .plyr-speed .plyr-speed-pill { min-width: 34px; padding-inline: 5px; font-family: 'JetBrains Mono', 'Vazirmatn', monospace; font-size: 12.5px; font-weight: 700; direction: ltr; unicode-bidi: isolate; }
+.player-shell .plyr-speed .plyr-speed-pill[data-active="true"] { color: var(--plyr-color-main, var(--accent)); }
+.player-shell .plyr-speed .plyr-speed-pill:hover,
+.player-shell .plyr-speed .plyr-speed-pill[data-active="true"]:hover { color: var(--plyr-video-control-color-hover, #fff); }
 
 /* ---- Components mirrored from the approved mockup ---- */
 @layer components {

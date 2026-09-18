@@ -1803,7 +1803,7 @@
       "slug": "introduction-to-case-study",
       "title": "مقدمه‌ای بر مطالعه‌ی موردی",
       "summary": "معرفی پروژه‌ی نمونه‌ی این بخش.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 2,
       "videos": [
         {
@@ -1822,9 +1822,9 @@
     },
     {
       "slug": "presenting-iotoo",
-      "title": "معرفی IOToo",
+      "title": "معرفی IO2",
       "summary": "سیستم نمونه‌ای که قراره طراحیش کنیم.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 2,
       "videos": [
         {
@@ -1844,8 +1844,8 @@
     {
       "slug": "defining-the-requirements",
       "title": "تعریف نیازمندی‌ها",
-      "summary": "استخراج نیازمندی برای IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "استخراج نیازمندی برای IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 10,
       "videos": [
         {
@@ -1865,8 +1865,8 @@
     {
       "slug": "mapping-the-components",
       "title": "نقشه‌برداری اجزا",
-      "summary": "شناسایی اجزای IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "شناسایی اجزای IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 7,
       "videos": [
         {
@@ -1886,8 +1886,8 @@
     {
       "slug": "choosing-messaging-methods",
       "title": "انتخاب روش پیام‌رسانی",
-      "summary": "تصمیم درباره‌ی ارتباط بین اجزای IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "تصمیم درباره‌ی ارتباط بین اجزای IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 6,
       "videos": [
         {
@@ -1907,8 +1907,8 @@
     {
       "slug": "designing-the-logging-service",
       "title": "طراحی سرویس لاگ‌گیری",
-      "summary": "طراحی جزء لاگ‌گیری IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "طراحی جزء لاگ‌گیری IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 8,
       "videos": [
         {
@@ -1928,8 +1928,8 @@
     {
       "slug": "designing-the-receiver",
       "title": "طراحی دریافت‌کننده (Receiver)",
-      "summary": "طراحی جزء دریافت داده‌ی IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "طراحی جزء دریافت داده‌ی IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 5,
       "videos": [
         {
@@ -1949,8 +1949,8 @@
     {
       "slug": "designing-the-handler",
       "title": "طراحی هندلر (Handler)",
-      "summary": "طراحی جزء پردازش‌گر IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "طراحی جزء پردازش‌گر IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 3,
       "videos": [
         {
@@ -1970,8 +1970,8 @@
     {
       "slug": "designing-the-info-service",
       "title": "طراحی سرویس اطلاعات",
-      "summary": "طراحی جزء اطلاعات IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "طراحی جزء اطلاعات IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 7,
       "videos": [
         {
@@ -1991,8 +1991,8 @@
     {
       "slug": "writing-the-architecture-document",
       "title": "نوشتن سند معماری",
-      "summary": "نوشتن سند معماری برای IOToo.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "summary": "نوشتن سند معماری برای IO2.",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 1,
       "videos": [
         {
@@ -2013,7 +2013,7 @@
       "slug": "get-the-architecture-document",
       "title": "دریافت سند معماری",
       "summary": "دسترسی به نمونه‌ی سند نهایی.",
-      "section": "مطالعه‌ی موردی: IOToo",
+      "section": "مطالعه‌ی موردی: IO2",
       "estimated_minutes": 2,
       "videos": [
         {

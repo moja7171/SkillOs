@@ -72,7 +72,7 @@ public class OrderService
 مزیت اصلیِ الگوی تزریق سازنده نسبت به الگوی سنتی، **پایداری و راحتیِ تست**ـه. کلاسی که وابستگی‌هاش توی سازنده تزریق می‌شن، تستش خیلی راحت‌تره — متد تست می‌تونه کلاس رو با آبجکت‌های mock نمونه‌سازی کنه و تست رو اجرا کنه:
 
 ```csharp
-var mockLogger = new MockLogger(); // چیزی نمی‌نویسه، فقط برای تست
+var mockLogger = new MockLogger(); // no-op, test double only
 var service = new OrderService(mockLogger);
 service.PlaceOrder(testOrder);
 ```

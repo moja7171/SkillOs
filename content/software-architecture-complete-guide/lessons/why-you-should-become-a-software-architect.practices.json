@@ -1,0 +1,37 @@
+[
+  {
+    "key": "three-reasons-mcq",
+    "title": "سه دلیل، کدومه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم گزینه جزو سه دلیلی که این درس برای معمار نرم‌افزار شدن می‌گه *نیست*؟",
+    "options": [
+      "شغل جذاب و متنوع، با ارتباط با همه‌ی سطوح سازمان",
+      "مسیر شغلی و دیده‌شدن نزد مدیریت",
+      "پاداش مالی بهتر نسبت به توسعه‌دهندگی",
+      "امکان کار کاملاً دورکار و بدون جلسه"
+    ],
+    "correct_option": 3,
+    "expected_outcome": "سه دلیلی که درس می‌گه: شغل جذاب و متنوع، مسیر شغلی/دیده‌شدن، و پاداش مالی. دورکاری یا نبودن جلسه اصلاً جزو این سه دلیل نیست — راستش معمار طبق تعریف خودِ درس با همه‌ی سطوح سازمان در ارتباطه.",
+    "hints": [
+      "درس دقیقاً سه دلیل رو شماره‌گذاری می‌کنه — سه‌تاشون رو مرور کن.",
+      "یکی از گزینه‌ها اصلاً به هیچ‌کدوم از این سه دلیل ربطی نداره، و حتی با تعریف نقش معمار (ارتباط زیاد) در تضاده."
+    ],
+    "rubric": "Correct only if option 3 is selected."
+  },
+  {
+    "key": "money-first-mistake",
+    "title": "دوستت فقط برای پول می‌خواد معمار بشه",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه دوست بهت می‌گه: «شنیدم معمارها تقریباً دو برابر توسعه‌دهنده‌ها حقوق می‌گیرن، پس فقط برای پول می‌خوام برم سمت معماری.» بر اساس این درس، در ۲ تا ۳ جمله بهش چی می‌گی؟",
+    "expected_outcome": "درس می‌گه با اینکه پول یکی از دلایل واقعیه، نباید فقط برای پول سراغ این مسیر رفت. یه معمار خوب کسیه که عاشق چالش، بحث و تحقیقه — و فقط بعد از اون باید به پول فکر کرد.",
+    "hints": [
+      "درس صراحتاً یه توصیه‌ی صادقانه درباره‌ی اولویت‌ها می‌ده — دقیقاً کجای درس این حرف زده می‌شه؟",
+      "به ترتیبی که درس دلایل رو می‌چینه فکر کن؛ پول کجای این ترتیب قرار می‌گیره؟"
+    ],
+    "rubric": "Correct if response conveys that money alone shouldn't be the reason, and references loving the challenge/discussions/research as the real motivation that should come first. Correct_with_hint if it only says \"money isn't everything\" without the reasoning. Incorrect if it endorses pursuing architecture purely for salary without pushback."
+  }
+]

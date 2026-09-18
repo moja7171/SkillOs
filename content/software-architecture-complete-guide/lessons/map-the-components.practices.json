@@ -1,0 +1,37 @@
+[
+  {
+    "key": "map-is-non-technical",
+    "title": "نقشه‌ی اجزا فنیه یا نه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، توی مرحله‌ی نقشه‌برداریِ اجزا، کدوم تصمیم هنوز نباید گرفته شده باشه؟",
+    "options": [
+      "وظایفِ کارکردیِ سیستم",
+      "اینکه سیستم چند جزء داره",
+      "نوعِ دیتابیس یا پلتفرمِ توسعه",
+      "اینکه اجزا با هم چه رابطه‌ای دارن"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "درس صراحتاً می‌گه نقشه‌ی اجزا کاملاً غیرفنیه — هنوز نباید درباره‌ی پلتفرم، ابزارِ توسعه یا نوعِ دیتابیس تصمیم گرفته باشی.",
+    "hints": [
+      "درس یه جمله‌ی کلیدی داره: «نقشه‌ی اجزا کاملاً غیرفنیه».",
+      "این تصمیم‌ها مربوط به قدمِ بعدیِ فرایندن، نه این قدم."
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "two-goals-of-the-map",
+    "title": "نقشه‌ی اجزا دو هدف داره",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، نقشه‌ی اجزا دو هدفِ اصلی داره. اون‌ها رو نام ببر.",
+    "expected_outcome": "۱. کمک به خودِ معمار برای فهمیدنِ سیستم و بخش‌های مختلفش. ۲. یه راهِ خوب برای انتقالِ این درک به مشتری و مطمئن‌شدن از اینکه چیزی جا نیفتاده.",
+    "hints": [
+      "درس این دو هدف رو توی یه لیستِ بولت میاره.",
+      "یکی از این دو هدف داخلیه (خودِ معمار)، اون یکی بیرونیه (ارتباط با مشتری)."
+    ],
+    "rubric": "Correct if both goals are named (helping understand the system internally, and communicating that understanding to the client to catch anything missed). Partial if only one is named."
+  }
+]

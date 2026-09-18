@@ -236,7 +236,10 @@
 
                 <div class="border-t border-line px-6 py-4 flex items-center gap-3 flex-wrap">
                     @if ($open)
-                        <button type="submit" form="answer-form" class="btn btn-primary"><x-icon name="check" class="w-4 h-4" /> ارسال پاسخ</button>
+                        <button type="submit" form="answer-form" class="btn btn-primary" x-data="{ sending: false }" @click="sending = document.getElementById('answer-form').checkValidity()" :disabled="sending">
+                            <span x-show="! sending" class="inline-flex items-center gap-2"><x-icon name="check" class="w-4 h-4" /> ارسال پاسخ</span>
+                            <span x-show="sending" x-cloak class="inline-flex items-center gap-2"><svg class="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"></path></svg> در حال ارسال…</span>
+                        </button>
                         <button type="button" x-data="" x-on:click="$dispatch('open-modal', 'give-up')" class="btn btn-ghost ms-auto">بی‌خیال، جواب رو نشون بده</button>
                     @else
                         @if ($nextAction)

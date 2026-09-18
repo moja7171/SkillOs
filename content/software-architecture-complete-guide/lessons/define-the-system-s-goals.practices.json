@@ -1,0 +1,37 @@
+[
+  {
+    "key": "goal-vs-requirement",
+    "title": "هدف یا نیازمندی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "کدوم گزینه یه «هدف»ه، نه یه «نیازمندی»؟",
+    "options": [
+      "سیستم باید به کاربران اجازه‌ی ثبتِ سفارش بده",
+      "سیستم باید داده‌ی سفارش رو توی دیتابیس ذخیره کنه",
+      "این سیستم قراره فرایندِ استخدام رو روان کنه و درآمدِ شرکت رو رشد بده",
+      "سیستم باید ۵۰۰ درخواستِ همزمان رو مدیریت کنه"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "هدف، تأثیریه که سیستم روی سازمان می‌ذاره (مثلاً رشدِ درآمد). بقیه‌ی گزینه‌ها نیازمندی‌ان — چیزی که سیستم باید انجام بده یا باهاش کنار بیاد.",
+    "hints": [
+      "درس می‌گه هدف درباره‌ی «چیکار باید بکنه» نیست، بلکه درباره‌ی تأثیرِ روی سازمانه.",
+      "به مثالِ سیستمِ HR توی درس فکر کن — کدوم جمله شبیهِ همون تأثیرِ نهایی‌ایه که اونجا توصیف شد؟"
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "client-doesnt-know-goals",
+    "title": "وقتی مشتری خودش اهداف رو نمی‌دونه",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "توی مثالِ درس، مشخصاتِ سیستم (فیلدها، سرویس‌ها، صفحه‌ها) از قبل کاملاً واضح بود، ولی در نهایت کل دامنه‌ی سیستم عوض شد. در ۲ تا ۳ جمله توضیح بده چرا، و چه درسی از این ماجرا می‌گیریم.",
+    "expected_outcome": "وقتی درباره‌ی جایگاهِ سیستم توی سازمان بحث شد، معلوم شد کسی قرار نیست از سیستم به همون شکل استفاده کنه، چون سیستم‌های مشابهی از قبل وجود داشتن که کاربرها بهشون عادت داشتن. درسش اینه: داشتنِ مشخصاتِ فنیِ واضح، جایگزینِ فهمیدنِ هدفِ واقعیِ سیستم نیست — مشتری همیشه اهدافِ سیستم رو صریح بیان نمی‌کنه.",
+    "hints": [
+      "درس می‌گه مشکل از کجا کشف شد — نه از مشخصاتِ فنی، بلکه از چه بحثی؟",
+      "به این فکر کن: چرا با اینکه فیلدها و صفحه‌ها مشخص بودن، بازم لازم بود اهداف رو جدا بررسی کنن؟"
+    ],
+    "rubric": "Correct if response explains the discovery came from discussing the system's place in the organization (not from the clear specs), and draws the lesson that clear functional specs don't guarantee the real goal was understood. Correct_with_hint if only the story is retold without the lesson. Incorrect if it says the specs alone were sufficient."
+  }
+]

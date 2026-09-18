@@ -1,0 +1,37 @@
+[
+  {
+    "key": "faas-not-web-app-or-api",
+    "title": "Function as a Service کدوم دسته‌ست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، اپلیکیشن‌های ساخته‌شده روی Function as a Service (مثلِ AWS Lambda) چه نوعی‌ان؟",
+    "options": [
+      "دقیقاً همون اپ وب هستن",
+      "دقیقاً همون وب API هستن",
+      "نه اپ وب‌ان، نه وب API — یه نوعِ جدیدِ اپلیکیشن رو نمایندگی می‌کنن",
+      "همیشه اپلیکیشنِ کنسول محسوب می‌شن"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "درس می‌گه اپلیکیشن‌های مبتنی بر FaaS نه اپ وب هستن نه وب API، و یه نوعِ جدیدِ اپلیکیشن رو نمایندگی می‌کنن که خارج از دسته‌بندیِ سنتیِ این بخش قرار می‌گیره.",
+    "hints": [
+      "درس دقیقاً همین جمله رو درباره‌ی FaaS داره.",
+      "به این فکر کن: توسعه‌دهنده با FaaS دیگه نگرانِ چه چیزهایی نیست — چه فرقی با یه اپ وب معمولی داره؟"
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "mixed-system-scenario",
+    "title": "یه سیستمِ ترکیبی",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق مثالِ این درس، خیلی از اپ‌های وب، علاوه بر اپلیکیشنِ اصلی، یه سرویس هم دارن که کارهای نگهداری انجام می‌ده. یه مثال از این نوع کارِ نگهداری که درس می‌زنه رو بگو، و در ۱ تا ۲ جمله توضیح بده چرا این کار بهترِ توی یه سرویسِ جدا باشه، نه توی خودِ اپ وب.",
+    "expected_outcome": "مثال: حذفِ رکوردهای قدیمیِ داده، یا پایشِ فرایندهای مختلف. این کارها فرایندهایی طولانی‌مدت و بدونِ تعاملِ کاربرن، درحالی‌که اپ وب برای اکشن‌های کوتاه و درخواست‌محور طراحی شده — پس این دو نوع وظیفه با هم فرق دارن و باید توی اجزای جداگونه پیاده بشن.",
+    "hints": [
+      "درس دقیقاً دو مثال از کارِ نگهداری می‌زنه.",
+      "به تفاوتِ مدلِ اجراییِ اپ وب (درخواست-پاسخ) با یه فرایندِ طولانی‌مدت و پیوسته فکر کن."
+    ],
+    "rubric": "Correct if response names one of the examples (deleting old records, monitoring processes) and explains it's a long-running/non-request-driven task unsuited to the web app's request-response model. Correct_with_hint if only the example is named without the reasoning. Incorrect if no real example or reasoning is given."
+  }
+]

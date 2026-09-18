@@ -1,0 +1,51 @@
+[
+  {
+    "key": "developer-vs-architect",
+    "title": "توسعه‌دهنده در مقابل معمار",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، کدوم جمله بهتر فرق توسعه‌دهنده و معمار رو توضیح می‌ده؟",
+    "options": [
+      "توسعه‌دهنده می‌دونه چی می‌شه انجام داد؛ معمار می‌دونه چی باید انجام بشه",
+      "توسعه‌دهنده فقط با فرانت‌اند کار می‌کنه؛ معمار فقط با بک‌اند",
+      "معمار همیشه سال‌های بیشتری تجربه‌ی برنامه‌نویسی داره",
+      "توسعه‌دهنده مسئول تست است؛ معمار مسئول دیپلوی"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "این دقیقاً همون جمله‌ی کلیدیِ درسه — توسعه‌دهنده تمرکزش روی جزئیاتِ پیاده‌سازیه، معمار تمرکزش روی اینکه طراحی نیازمندی‌های سیستم رو برآورده کنه.",
+    "hints": [
+      "درس یه جمله‌ی خیلی کوتاه و به‌یادماندنی داره که دقیقاً همین سؤال رو جواب می‌ده.",
+      "به فعل‌های «می‌شه» در مقابل «باید» فکر کن — این فرقِ نگاه سطح‌پایین با نگاه سطح‌کلانه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "four-pillars",
+    "title": "چهار ستونِ هر معماری",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چهار ویژگی‌ای که تقریباً هر سیستمی باید داشته باشه و «گرال مقدسِ معماری» نامیده می‌شن رو نام ببر.",
+    "expected_outcome": "سریع (Fast)، امن (Secure)، قابل‌اطمینان (Reliable)، قابل‌نگهداری (Easy to maintain).",
+    "hints": [
+      "این چهار ویژگی هیچ ربطی به فناوری یا الگوهای خاص ندارن — کاملاً مستقل از پلتفرم‌ان.",
+      "درس می‌گه این چهار ویژگی، هدفِ نهاییِ هر معماری‌ان، نه خودِ وسیله‌ی رسیدن بهشون."
+    ],
+    "rubric": "Correct: names all 4 (fast, secure, reliable, easy to maintain), in Persian or English. Partial: names 2-3 correctly. Incorrect: names technology/patterns instead of these 4 qualities."
+  },
+  {
+    "key": "junior-suggests-tech-first",
+    "title": "یه توسعه‌دهنده‌ی جونیور با تو مخالفه",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "یکی از توسعه‌دهنده‌ها توی جلسه می‌گه: «چرا اول درباره‌ی fast/secure/reliable/maintainable حرف می‌زنیم؟ بیاید اول بگیم از چه فناوری‌ای استفاده می‌کنیم، بعد بقیه‌ی جزئیات مشخص می‌شن.» بر اساس این درس، در ۲ تا ۳ جمله بهش جواب بده.",
+    "expected_outcome": "این چهار ویژگی هیچ ربطی به فناوریِ خاصی ندارن و باید قبل از انتخاب فناوری تعیین بشن، چون فناوری فقط یه وسیله برای رسیدن به این اهدافه، نه خودِ هدف. اول باید بدونیم دنبال چه نتیجه‌ای هستیم (fast, secure...) و بعد فناوریِ متناسب باهاش رو انتخاب کنیم، نه برعکس.",
+    "hints": [
+      "درس صراحتاً می‌گه فناوری و الگوها «فقط وسیله‌ای برای رسیدن به نتیجه‌ان» — این رو با ترتیبِ درست ربط بده.",
+      "اگه اول فناوری رو انتخاب کنیم و بعد ببینیم نیازمندی‌ها چی بودن، چه ریسکی داره؟"
+    ],
+    "rubric": "Correct if response explains that technology serves the requirements/qualities, not vice versa, and that picking tech first risks a mismatch with what's actually needed. Correct_with_hint if only the conclusion is stated without the \"technology as a means\" reasoning. Incorrect if it agrees technology should be picked first."
+  }
+]

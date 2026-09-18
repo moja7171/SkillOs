@@ -1,0 +1,37 @@
+[
+  {
+    "key": "web-api-vs-web-app",
+    "title": "فرقِ اصلیِ وب API با اپ وب",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، وب API با اپ وب چه فرقِ کلیدی‌ای داره؟",
+    "options": [
+      "وب API فقط روی سرورهای لینوکس اجرا می‌شه",
+      "وب API داده (معمولاً JSON) سرو می‌کنه، نه HTML، و کلاینت‌هاش اپلیکیشن‌های دیگه‌ان",
+      "وب API نمی‌تونه با REST پیاده بشه",
+      "وب API همیشه کندتر از اپ وبه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "دو فرقِ کلیدی: وب API صفحه‌ی HTML سرو نمی‌کنه، بلکه داده (معمولاً JSON) سرو می‌کنه؛ و کلاینت‌هاش مرورگر نیستن، بلکه اپلیکیشن‌های دیگه‌ان.",
+    "hints": [
+      "درس دقیقاً با «دو فرق مهم» شروع می‌شه.",
+      "به نوعِ چیزی که برمی‌گردونه (HTML یا JSON) و نوعِ کلاینتش فکر کن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "rest-vs-soap-advantage",
+    "title": "چرا REST از SOAP ساده‌تره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، مزیتِ اصلیِ REST نسبت به پروتکل‌های سنگین‌تری مثل SOAP چیه؟",
+    "expected_outcome": "REST چیزی بیشتر از یه URL استاندارد برای اجرای API لازم نداره و برخلافِ SOAP، به پروتکل‌های اضافیِ روی HTTP نیازی نداره.",
+    "hints": [
+      "درس این مزیت رو مستقیم با کلمه‌ی «مزیتِ اصلی» معرفی می‌کنه.",
+      "به این فکر کن: REST برای اجرای یه فراخوانی، به چه چیزی جز URL نیاز داره؟"
+    ],
+    "rubric": "Correct if response mentions REST needs nothing more than a standard URL / doesn't require extra protocols on top of HTTP (unlike SOAP). Incorrect if it gives an unrelated or vague answer."
+  }
+]

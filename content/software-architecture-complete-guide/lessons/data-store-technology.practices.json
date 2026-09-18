@@ -1,0 +1,51 @@
+[
+  {
+    "key": "sql-vs-nosql-concept",
+    "title": "SQL و NoSQL: محصول یا مفهوم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، وقتی از «SQL» و «NoSQL» حرف می‌زنیم، دقیقاً درباره‌ی چی صحبت می‌کنیم؟",
+    "options": [
+      "دو محصولِ خاص، مثلِ SQL Server و MongoDB",
+      "دو مفهومِ ذخیره‌سازیِ داده، نه محصولاتِ خاص",
+      "دو نسخه‌ی مختلف از یه محصولِ واحد",
+      "دو زبانِ برنامه‌نویسیِ متفاوت"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس صراحتاً می‌گه داریم درباره‌ی محصولاتی مثل SQL Server یا MongoDB صحبت نمی‌کنیم، بلکه درباره‌ی دو مفهومِ ذخیره‌سازیِ داده حرف می‌زنیم.",
+    "hints": [
+      "درس یه بخشِ کامل با عنوانِ «اول، دو مفهوم رو بشناسیم» داره.",
+      "به این فکر کن: SQL Server و MySQL هر دو یه مفهومِ واحد رو پیاده می‌کنن — کدوم؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "eventual-consistency",
+    "title": "چرا NoSQL فقط بخشی از ACID رو پشتیبانی می‌کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، بیشترِ دیتابیس‌های NoSQL به‌جای تراکنشِ کاملِ ACID، از eventual consistency (سازگاریِ نهایی) استفاده می‌کنن. در ۲ تا ۳ جمله توضیح بده این یعنی چی و چرا NoSQL این مصالحه رو انتخاب کرده.",
+    "expected_outcome": "Eventual consistency یعنی دیتابیس تضمین می‌ده اکشن اجرا می‌شه، ولی تضمین نمی‌ده دقیقاً کِی — کد باید بتونه با ناسازگاریِ موقتِ داده کنار بیاد. دلیلِ این انتخاب اینه که تراکنشِ کامل، performance رو زیر بارِ سنگین کند می‌کنه، و NoSQL هدفش اصلی‌ش سرعت و مقیاسه.",
+    "hints": [
+      "درس می‌گه eventual consistency چه چیزی رو تضمین می‌کنه و چه چیزی رو تضمین نمی‌کنه.",
+      "به رابطه‌ی بینِ «هدفِ اصلیِ NoSQL» (که قبل‌تر توی درس گفته شد) و این مصالحه فکر کن."
+    ],
+    "rubric": "Correct if response explains eventual consistency guarantees the action happens but not exactly when, and connects the tradeoff to NoSQL's performance/scale goals (full ACID would hurt performance at scale). Correct_with_hint if only the definition is given without the reasoning. Incorrect if it says NoSQL fully supports ACID or gives no real explanation."
+  },
+  {
+    "key": "blurring-lines-example",
+    "title": "مرزِ SQL و NoSQL داره کم‌رنگ می‌شه",
+    "form": "short_answer",
+    "difficulty": "stretch",
+    "estimated_minutes": 2,
+    "prompt": "طبق نکته‌ی پایانیِ این درس، یکی از مشتری‌های مدرس این دوره MongoDB رو کنار گذاشت و به‌جاش چی رو انتخاب کرد، و چرا؟",
+    "expected_outcome": "SQL Server رو انتخاب کرد، چون از ترکیبِ پشتیبانیِ کاملِ تراکنش و قابلیتِ کوئریِ خوبِ JSON خوشش اومد — چیزی که قبلاً فقط توی NoSQL پیدا می‌شد.",
+    "hints": [
+      "این مثال دقیقاً توی بخشِ «یه نکته‌ی آخر» درسه.",
+      "به این فکر کن: چه دو قابلیتی که قبلاً جدا از هم بودن، الان توی SQL Server با هم اومدن؟"
+    ],
+    "rubric": "Correct if response names SQL Server and explains the reason (full transaction support combined with good JSON querying). Incorrect if it names a different product or gives no reasoning."
+  }
+]

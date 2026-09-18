@@ -1,0 +1,51 @@
+[
+  {
+    "key": "angular-vs-react-mcq",
+    "title": "چه وقت Angular، چه وقت React؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه تیمِ کوچیک با ددلاینِ فشرده می‌خواد سریع یه فرانت‌اندِ وب بسازه و وقتِ زیادی برای آموزش نداره. طبق این درس، کدوم گزینه براشون مناسب‌تره؟",
+    "options": [
+      "Angular، چون فریم‌ورکِ کامل‌تریه",
+      "React، چون منحنیِ یادگیریش کوتاه‌تره و توی چند روز راه می‌افتن",
+      "هیچ‌کدوم؛ باید حتماً Vue.js یاد بگیرن",
+      "فرقی نمی‌کنه، هر دو دقیقاً یه سرعتِ یادگیری دارن"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس می‌گه اگه دنبالِ یه راه‌حلِ همه‌کاره هستی و وقتِ آموزش داری، Angular؛ در غیرِ این صورت React — چون منحنیِ یادگیریش خیلی کوتاه‌تره و توسعه‌دهنده‌ها توی چند روز راه می‌افتن.",
+    "hints": [
+      "درس دقیقاً همین قاعده رو به‌عنوانِ جمع‌بندیِ این بخش می‌گه.",
+      "به تفاوتِ زمانِ یادگیری بینِ این دو (چند روز در مقابل چند هفته) فکر کن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "mobile-approach-tradeoff",
+    "title": "Native، Hybrid یا Cross-Platform؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه استارتاپِ کوچیک با فقط توسعه‌دهنده‌های وب می‌خواد سریع و ارزون یه اپِ موبایلِ ساده بسازه که گرافیکِ سنگینی نداره. طبق این درس، کدوم رویکرد (Native، Hybrid یا Cross-Platform) براشون منطقی‌تره، و چرا؟",
+    "expected_outcome": "Hybrid منطقی‌تره — بزرگ‌ترین مزیتش زمانِ توسعه‌ست: جدا از wrapperِ بومی که کمی آموزش لازم داره، بقیه‌ی کار توسعه‌ی وبِ معموله، پس تیمی که بلده اپ وب بسازه، بلده اپ hybrid هم بسازه.",
+    "hints": [
+      "درس دقیقاً همین سناریو رو توصیف می‌کنه: «بزرگ‌ترین مزیتِ اپ‌های hybrid، زمانِ توسعه‌ست».",
+      "به تخصصِ تیم (فقط وب) فکر کن — کدوم رویکرد بیشترین همپوشانی رو با این مهارت داره؟"
+    ],
+    "rubric": "Correct if response picks hybrid and explains the reasoning: dev-time advantage, and web-dev skills transferring directly. Correct_with_hint if hybrid is picked without the reasoning, or native is picked citing performance without acknowledging the team-skills/time tradeoff. Incorrect if cross-platform or native is picked with no relevant reasoning."
+  },
+  {
+    "key": "wpf-vs-uwp",
+    "title": "WPF یا UWP؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، اگه بخوای یه اپلیکیشنِ دسکتاپ بسازی که هم روی PC و هم روی Xbox اجرا بشه، کدوم فناوری (WinForms، WPF یا UWP) رو باید انتخاب کنی؟",
+    "expected_outcome": "UWP — چون تلاشِ مایکروسافته برای یکپارچه‌کردنِ همه‌ی صفحه‌نمایش‌ها (PC، Xbox، Surface و…) زیرِ یه پلتفرمِ UI واحد، و روی همه‌ی این صفحه‌نمایش‌ها اجرا می‌شه.",
+    "hints": [
+      "درس دقیقاً همین سناریو (PC و Xbox) رو به‌عنوانِ کاربردِ UWP معرفی می‌کنه.",
+      "WinForms و WPF فقط برای دسکتاپِ ویندوز طراحی شدن، نه چند صفحه‌نمایشِ مختلف."
+    ],
+    "rubric": "Correct if response names UWP and references it being Microsoft's cross-screen (PC/Xbox/etc.) unification effort. Incorrect if it names WinForms or WPF."
+  }
+]

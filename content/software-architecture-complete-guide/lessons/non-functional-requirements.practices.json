@@ -1,0 +1,51 @@
+[
+  {
+    "key": "latency-vs-throughput",
+    "title": "Latency یا Throughput؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "«چند کاربر می‌شه توی یه دقیقه ذخیره کرد؟» — این سؤال به کدوم مفهوم مربوطه؟",
+    "options": [
+      "Latency",
+      "Throughput",
+      "SLA",
+      "Load"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Throughput جوابِ این سؤاله: توی یه واحدِ زمانیِ مشخص، چند تا کار می‌شه انجام داد؟ Latency جوابِ سؤالِ دیگه‌ایه: انجامِ یه کارِ واحد چقدر طول می‌کشه؟",
+    "hints": [
+      "درس این دو مفهوم رو با دو سؤالِ متفاوت تعریف می‌کنه — کدومش «واحدِ زمانی» رو توش داره؟",
+      "درس مستقیماً مثالِ «چند کاربر توی یک دقیقه» رو برای همین مفهوم می‌زنه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "load-vs-throughput-diff",
+    "title": "فرقِ Load و Throughput چیه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "درس می‌گه یه نیازمندیِ performance می‌تونه throughput رو ۱۰۰ درخواست در ثانیه بذاره، ولی نیازمندیِ load بگه سیستم باید ۵۰۰ درخواستِ همزمان رو بدونِ کرش مدیریت کنه، حتی اگه هر کدوم بیشتر از یه ثانیه طول بکشه. در ۲ تا ۳ جمله توضیح بده این دو نیازمندی دقیقاً چه فرقی دارن.",
+    "expected_outcome": "throughput واحدِ زمانی رو تعریف می‌کنه (چند کار در ثانیه انجام می‌شه)، ولی load در دسترس‌بودنِ سیستم رو تعریف می‌کنه — یعنی سیستم باید بتونه اون تعداد درخواستِ همزمان رو بدونِ کرش‌کردن مدیریت کنه، حتی اگه کندتر بشه. بدترین اتفاق برای سیستم، کرش‌کردنه، نه کندی.",
+    "hints": [
+      "درس می‌گه throughput چی رو تعریف می‌کنه، و load چی رو — این دو کلمه رو پیدا کن: «واحدِ زمانی» در مقابل «در دسترس‌بودن».",
+      "به این فکر کن: چرا کاربرها کندی رو تحمل می‌کنن ولی کرش‌کردن رو نه؟"
+    ],
+    "rubric": "Correct if response explains throughput measures work-per-time-unit while load measures the system's ability to survive concurrent requests without crashing, and connects this to \"crashing is worse than slowness\". Correct_with_hint if only one side of the distinction is explained. Incorrect if it conflates the two or gives no real distinction."
+  },
+  {
+    "key": "sla-negotiation-scenario",
+    "title": "مشتری می‌خواد SLA ۱۰۰٪",
+    "form": "scenario",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "یه مشتری اصرار داره سیستمش باید SLA ۱۰۰٪ داشته باشه — «هیچ‌وقت نباید خاموش بشه». طبق تکنیکی که این درس معرفی می‌کنه، چطور باهاش برخورد می‌کنی؟",
+    "expected_outcome": "می‌شه با ذکرِ هزینه‌ی واقعیِ رسیدن به این SLA (مثلاً حداقل سه دیتاسنتر توی قاره‌های مختلف، با ایستگاه‌های برقِ مستقل و دوگانه و failover خودکار)، مشتری رو به یه بحثِ واقع‌بینانه‌تر درباره‌ی هدفِ SLA برگردوند.",
+    "hints": [
+      "درس یه پاسخِ کاملاً آماده برای دقیقاً همین موقعیت داره — کجای درس این پاسخ اومده؟",
+      "این پاسخ به‌جای رد‌کردنِ مستقیمِ خواسته‌ی مشتری، هزینه‌ی واقعیش رو نشون می‌ده."
+    ],
+    "rubric": "Correct if response describes explaining the real infrastructure cost (multiple data centers, dual power, automatic failover) to bring the client back to a realistic SLA discussion, rather than simply agreeing or flatly refusing. Correct_with_hint if it only says \"explain it's unrealistic\" without the concrete technique. Incorrect if it says to just agree to 100% or refuse without explanation."
+  }
+]

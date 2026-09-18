@@ -1,0 +1,37 @@
+[
+  {
+    "key": "who-is-the-real-client",
+    "title": "مشتریِ مشتری کیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "توی سازمان‌های معمولی، معمار توسطِ دپارتمانِ IT استخدام می‌شه. طبق این درس، معمار طرز فکرش رو باید معطوفِ چه کسی کنه؟",
+    "options": [
+      "خودِ دپارتمانِ IT، چون همونه که پول می‌ده",
+      "کاربرانِ نهاییِ اپلیکیشن، یعنی مشتریِ مشتری",
+      "فقط مدیرِ پروژه",
+      "فقط تیمِ توسعه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "طرز فکرِ معمار باید معطوفِ مشتریِ مشتری باشه — کاربرانِ نهایی. باید توی هر تصمیم از خودت بپرسی این تصمیم چه تأثیری روی اون‌ها داره، حتی اگه راحتیِ خودِ IT رو کمی سخت‌تر کنه.",
+    "hints": [
+      "درس صراحتاً می‌گه راحتیِ کدوم طرف باید اولویتِ بالاتری داشته باشه.",
+      "به تیترِ خودِ درس فکر کن — دقیقاً همین سؤال رو جواب می‌ده."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "cache-tradeoff-scenario",
+    "title": "چرا این راه‌حلِ پیچیده‌تر رو انتخاب کردن؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "توی مثالِ درس، تیم می‌تونست فقط یه پیام خطا به کاربر نشون بده وقتی دیتابیس آفلاینه — ساده‌تر و کم‌کارتر. ولی در عوض یه لایه‌ی cache اضافه کردن که کار توسعه‌دهنده‌ها رو سخت‌تر کرد. طبق مفهومِ «کار برای مشتریِ مشتری»، در ۲ تا ۳ جمله توضیح بده چرا این انتخابِ درستی بود.",
+    "expected_outcome": "مشتری (تیمِ IT) کارِ سخت‌تری کشید، ولی مشتریِ مشتری (کاربرِ نهایی) تونست حتی موقعِ آفلاین‌بودنِ دیتابیس هم داده رو ببینه — که راحتیش اولویتِ بالاتری داره. طرز فکرِ درست، پرسیدنِ «این تصمیم چه تأثیری روی کاربرِ نهایی داره» بود، نه فقط «راحت‌ترین راه برای تیمِ توسعه چیه».",
+    "hints": [
+      "درس می‌گه بینِ راحتیِ مشتری و راحتیِ مشتریِ مشتری، کدوم باید اولویت داشته باشه؟",
+      "به واکنشِ نهاییِ کاربرِ نهایی توی این داستان فکر کن — چرا از این راه‌حل راضی بود؟"
+    ],
+    "rubric": "Correct if response explains the dev team accepted more work so the end user (the client's client) got a better experience, tying it back to prioritizing the end user's comfort. Correct_with_hint if it retells the story without connecting it to the mindset principle. Incorrect if it says the simpler error-message solution would have been equally good."
+  }
+]

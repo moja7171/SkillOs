@@ -132,8 +132,9 @@
                     <div class="card">
                         <div class="card-h"><h3>فایل‌های درس</h3></div>
                         @forelse ($lesson->attachments ?? [] as $file)
-                            @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); @endphp
-                            <a href="{{ media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-3 px-[18px] py-2.5 border-b border-line last:border-b-0 text-ink hover:bg-hover">
+                            @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); $downloadSrc = media_download_url($file['url']); @endphp
+                            <a href="{{ $downloadSrc ?? media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-3 px-[18px] py-2.5 border-b border-line last:border-b-0 text-ink hover:bg-hover"
+                               @if ($downloadSrc) data-fallback-src="{{ media_url($file['url']) }}" @endif>
                                 <span class="badge badge-ghost uppercase">{{ $ext ?: 'file' }}</span>
                                 <span class="text-[13px] flex-1 min-w-0 truncate">{{ $file['title'] }}</span>
                             </a>

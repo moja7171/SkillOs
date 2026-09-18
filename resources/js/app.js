@@ -1,6 +1,7 @@
 import Alpine from 'alpinejs';
 import 'plyr/dist/plyr.css';
 import { mountPlayers } from './player';
+import { mountDownloadFallbacks } from './download-fallback';
 
 window.Alpine = Alpine;
 
@@ -25,6 +26,6 @@ function isolateCodeLines() {
         code.dataset.isolated = '1';
     });
 }
-document.addEventListener('DOMContentLoaded', () => { isolateCodeLines(); mountPlayers(); });
+document.addEventListener('DOMContentLoaded', () => { isolateCodeLines(); mountPlayers(); mountDownloadFallbacks(); });
 
 Alpine.start();

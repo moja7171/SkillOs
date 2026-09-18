@@ -18,4 +18,20 @@ return [
 
     'base_url' => env('MEDIA_BASE_URL'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Media download-host base URL
+    |--------------------------------------------------------------------------
+    |
+    | Optional. When set, video/caption files are requested from this host
+    | first (e.g. a dedicated download-host where courses are gradually
+    | migrated to), falling back to MEDIA_BASE_URL in the browser if a file
+    | 404s there — see resources/js/player.js. Lets courses move off the
+    | owner's machine one at a time without a per-video "is it migrated yet"
+    | flag.
+    |
+    */
+
+    'download_base_url' => env('MEDIA_DOWNLOAD_BASE_URL'),
+
 ];

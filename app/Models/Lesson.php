@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Collection;
 
 #[Fillable(['course_id', 'slug', 'order', 'title', 'section', 'summary', 'content', 'content_en', 'key_points', 'common_mistakes', 'attachments', 'estimated_minutes'])]
 class Lesson extends Model
@@ -103,6 +104,36 @@ class Lesson extends Model
             ->unique();
 
         return $practices->pluck('id')->diff($passedActivityIds)->isEmpty();
+    }
+
+    /**
+     * lesson_video ids this user has watched to the end (VideoView, written by
+     * player.js's `ended` handler). Empty when the lesson has no videos.
+     */
+    public function watchedVideoIdsBy(User $user): Collection
+    {
+        $videos = $this->relationLoaded('videos') ? $this->videos : $this->videos()->get();
+        if ($videos->isEmpty()) {
+            return collect();
+        }
+
+        return VideoView::where('user_id', $user->id)
+            ->whereIn('lesson_video_id', $videos->pluck('id'))
+            ->pluck('lesson_video_id');
+    }
+
+    /**
+     * Gate for the "انجام دادم" button, video half: every video watched to the end.
+     * A lesson with no videos has nothing to gate on.
+     */
+    public function allVideosWatchedBy(User $user): bool
+    {
+        $videos = $this->relationLoaded('videos') ? $this->videos : $this->videos()->get();
+        if ($videos->isEmpty()) {
+            return true;
+        }
+
+        return $videos->pluck('id')->diff($this->watchedVideoIdsBy($user))->isEmpty();
     }
 
     /**

@@ -6,6 +6,7 @@ use App\Models\Attempt;
 use App\Models\Lesson;
 use App\Models\MasteryRecord;
 use App\Models\User;
+use App\Models\VideoView;
 use App\Services\Mastery\MasteryService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -50,6 +51,38 @@ class LessonMarkDoneTest extends TestCase
         $this->assertSame('completed', $done->result_status);
 
         $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('این درس رو انجام دادی');
+    }
+
+    public function test_mark_done_is_rejected_until_every_video_is_watched(): void
+    {
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->withActivities()->create();
+        $practice = $lesson->practices()->first();
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $user->id, 'result_status' => 'correct']);
+
+        $video1 = $lesson->videos()->create(['order' => 0, 'title' => 'قسمت ۱', 'url' => 'https://example.com/a.mp4']);
+        $video2 = $lesson->videos()->create(['order' => 1, 'title' => 'قسمت ۲', 'url' => 'https://example.com/b.mp4']);
+
+        // Practices alone aren't enough once the lesson has videos.
+        $this->actingAs($user)->post(route('lessons.mark-done', $lesson))->assertStatus(422);
+
+        $this->actingAs($user)->post(route('lesson-videos.watched', $video1))->assertOk();
+        $this->actingAs($user)->post(route('lessons.mark-done', $lesson))->assertStatus(422);
+
+        $this->actingAs($user)->post(route('lesson-videos.watched', $video2))->assertOk();
+        $this->actingAs($user)->post(route('lessons.mark-done', $lesson))->assertRedirect($lesson->url());
+    }
+
+    public function test_watching_the_same_video_twice_does_not_duplicate_the_view_row(): void
+    {
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->create();
+        $video = $lesson->videos()->create(['order' => 0, 'url' => 'https://example.com/a.mp4']);
+
+        $this->actingAs($user)->post(route('lesson-videos.watched', $video))->assertOk();
+        $this->actingAs($user)->post(route('lesson-videos.watched', $video))->assertOk();
+
+        $this->assertSame(1, VideoView::where('user_id', $user->id)->where('lesson_video_id', $video->id)->count());
     }
 
     public function test_the_done_mark_survives_a_later_review_that_drops_mastery_below_familiar(): void

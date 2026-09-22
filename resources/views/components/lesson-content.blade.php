@@ -1,6 +1,13 @@
 {{-- Video/text tabs + key points for a lesson. Used by the lesson page and the session pane. --}}
 @props(['lesson', 'compact' => false])
-@php $hasVideo = $lesson->videos->isNotEmpty(); $hasEnglish = filled($lesson->content_en); $tabKey = 'skillos.lesson.tab.'.$lesson->id; $tabDefault = $hasVideo ? 'video' : 'text'; @endphp
+@php
+    $hasVideo = $lesson->videos->isNotEmpty();
+    $hasEnglish = filled($lesson->content_en);
+    $tabKey = 'skillos.lesson.tab.'.$lesson->id;
+    $tabDefault = $hasVideo ? 'video' : 'text';
+    $multiVideo = $lesson->videos->count() > 1;
+    $watchedVideoIds = $hasVideo ? $lesson->watchedVideoIdsBy(auth()->user()) : collect();
+@endphp
 <div x-data="{
     tab: (() => {
         if (! {{ $hasVideo ? 'true' : 'false' }}) return 'text';
@@ -13,7 +20,9 @@
     <div class="flex items-center gap-1.5 px-4 py-2.5 border-b border-line">
         @if ($hasVideo)
             <button type="button" class="btn btn-sm" :class="tab === 'video' ? '' : 'btn-ghost'" @click="setTab('video')">
-                <x-icon name="video" class="w-3.5 h-3.5" /> ویدیو <span class="badge badge-warn ms-1">پیشنهادی</span>
+                <x-icon name="video" class="w-3.5 h-3.5" /> ویدیو
+                @if ($multiVideo)<span class="badge badge-ghost ms-1">{{ fa_num($lesson->videos->count()) }} قسمت</span>@endif
+                <span class="badge badge-warn ms-1">پیشنهادی</span>
             </button>
         @endif
         <button type="button" class="btn btn-sm" :class="tab === 'text' ? '' : 'btn-ghost'" @click="setTab('text')">
@@ -34,16 +43,24 @@
              The picker is small numbered buttons (never wraps to a second line, unlike full-label chips) plus a label for the
              active one; every video past the first starts with `display:none` inline so nothing stacks before Alpine boots. --}}
         <div x-show="tab === 'video'" data-video-group
-             x-data="{ video: 0, labels: {{ Js::from($lesson->videos->map(fn ($v, $i) => $v->title ?? 'قسمت '.fa_num($i + 1))->values()) }}, pick(i) { this.video = i; $el.querySelectorAll('video').forEach(v => v.pause()); window.setActiveVideo && window.setActiveVideo($el, i); } }"
+             x-data="{
+                 video: 0,
+                 labels: {{ Js::from($lesson->videos->map(fn ($v, $i) => $v->title ?? 'قسمت '.fa_num($i + 1))->values()) }},
+                 watchedIds: {{ Js::from($watchedVideoIds->values()) }},
+                 pick(i) { this.video = i; $el.querySelectorAll('video').forEach(v => v.pause()); window.setActiveVideo && window.setActiveVideo($el, i); }
+             }"
+             @video-watched.window="if (! watchedIds.includes($event.detail.videoId)) watchedIds.push($event.detail.videoId)"
              class="p-4 flex flex-col gap-3">
-            @if ($lesson->videos->count() > 1)
+            @if ($multiVideo)
+                <div class="text-[12.5px] text-muted">این درس {{ fa_num($lesson->videos->count()) }} ویدیو داره — بعد از هرکدوم برو سراغ بعدی.</div>
                 <div class="flex items-center gap-2 min-w-0">
-                    <div class="flex items-center gap-1 shrink-0">
+                    <div class="flex items-center gap-1.5 shrink-0">
                         @foreach ($lesson->videos as $video)
                             <button type="button" class="w-7 h-7 rounded-md text-[12px] font-semibold grid place-items-center transition shrink-0"
-                                    :class="video === {{ $loop->index }} ? 'bg-accent text-accent-ink' : 'bg-surface2 text-muted hover:text-ink'"
+                                    :class="video === {{ $loop->index }} ? 'bg-accent text-accent-ink' : (watchedIds.includes({{ $video->id }}) ? 'bg-surface2 text-ok' : 'bg-surface2 text-muted hover:text-ink')"
                                     @click="pick({{ $loop->index }})" title="{{ $video->title ?? 'قسمت '.fa_num($loop->iteration) }}">
-                                {{ fa_num($loop->iteration) }}
+                                <template x-if="watchedIds.includes({{ $video->id }})"><x-icon name="check" class="w-3.5 h-3.5" /></template>
+                                <template x-if="! watchedIds.includes({{ $video->id }})"><span>{{ fa_num($loop->iteration) }}</span></template>
                             </button>
                         @endforeach
                     </div>

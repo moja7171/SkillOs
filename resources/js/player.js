@@ -23,6 +23,18 @@ const SPEED_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 function read(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function write(key, value) { try { localStorage.setItem(key, value); } catch { /* private mode etc. */ } }
 
+// Records that this video was watched to the end (gates the "انجام دادم" button server-side —
+// see Lesson::allVideosWatchedBy) and tells any open picker/mark-done UI to update its checkmark.
+function markWatched(id) {
+    const token = document.querySelector('meta[name="csrf-token"]')?.content;
+    if (!token) return;
+    fetch(`/lesson-videos/${id}/watched`, {
+        method: 'POST',
+        headers: { 'X-CSRF-TOKEN': token, Accept: 'application/json' },
+    }).catch(() => { /* best-effort; a missed ping just leaves the gate closed */ });
+    window.dispatchEvent(new CustomEvent('video-watched', { detail: { videoId: Number(id) } }));
+}
+
 function formatSpeed(value) {
     return `${Math.round(value * 100) / 100}×`;
 }
@@ -197,7 +209,7 @@ export function mountPlayers(root = document) {
             });
             player.on('seeked', save);
             player.on('pause', save);
-            player.on('ended', () => write(positionKey(id), '0'));
+            player.on('ended', () => { write(positionKey(id), '0'); markWatched(id); });
         }
 
         player.on('ratechange', () => write(SPEED_KEY, String(player.speed)));

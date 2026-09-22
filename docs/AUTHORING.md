@@ -15,6 +15,7 @@ The owner drops course materials into `course/<slug>/` (videos, `.srt`/`.vtt` su
 5. **No Skill layer, no learner-created topics.** A course is a fixed catalog authored here; the learner only enrolls. Don't design content that assumes otherwise.
 6. **Practices are authored by us** (not generated at runtime). Gemini only grades open answers against the rubric.
 7. Log important process/format changes in `docs/DECISIONS.md`; tick progress in `docs/STORIES.md` (C-01 line); keep `docs/DESIGN.md` §4 in sync if the file format changes.
+8. **Always check quality before moving on — lessons and practices alike.** Don't just satisfy the validator (schema-valid ≠ good). Re-read what you wrote against the actual lesson content: does the prompt test something the video really taught, is the `expected_outcome`/`rubric` factually correct and specific, does the tone match §5, is a `short_answer` genuinely short (§6)? Fix it before committing, not after the owner flags it.
 
 ## 2. Where everything lives
 

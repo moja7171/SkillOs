@@ -26,12 +26,12 @@
   {
     "key": "closure-vs-class-state",
     "title": "cell یا attribute؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۲ تا ۳ جمله: در factoryِ closure پارامترهای a و b کجا نگه‌داری می‌شوند و در نسخه‌ی کلاسی کجا؟ یک مزیت عملی نسخه‌ی کلاسی (مثلاً از بیرون) بگو و یک مورد که closure ترجیح دارد.",
-    "expected_outcome": "در closure، a و b متغیرهای آزادِ inner هستند و در cell زندگی می‌کنند؛ در کلاس، در `self.a`/`self.b` که attributeهای instance‌اند. مزیت کلاس: حالت از بیرون قابل خواندن/تغییر است (`obj.a`) و می‌توان متدهای کمکی و وراثت داشت؛ closure برای decoratorهای کوتاه، کم‌نویس‌تر و بدون boilerplate است.",
+    "estimated_minutes": 2,
+    "prompt": "در factoryِ closure، پارامترهای a و b کجا نگه‌داری می‌شن؟ و در نسخه‌ی کلاسی کجا؟",
+    "expected_outcome": "closure: توی cell / کلاس: توی self.a, self.b (attribute)",
     "hints": ["cell در برابر attribute.", "به دسترسی از بیرون فکر کن."],
-    "rubric": "Correct: cells vs instance attributes, plus one valid advantage each way. Partial: location right, trade-off missing. Incorrect: confuses where state lives."
+    "rubric": "Correct if both are right: closure cells vs instance attributes. Correct_with_hint if only one is right."
   }
 ]

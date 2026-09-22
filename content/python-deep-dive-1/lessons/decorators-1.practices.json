@@ -26,12 +26,12 @@
   {
     "key": "why-wraps",
     "title": "wraps چه چیزی را درست می‌کند؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: بعد از `add = counter(add)` چرا `help(add)` امضای `inner(*args, **kwargs)` را نشان می‌دهد؟ تنظیم دستی `__name__` و `__doc__` چه چیزی را درست می‌کند و چه چیزی را نه؟ `@wraps(fn)` چطور به کار می‌رود و چرا باید `fn` را به آن بدهیم؟",
-    "expected_outcome": "چون `add` دیگر تابع اصلی نیست بلکه closure `inner` است و help متادیتای همان را نشان می‌دهد. تنظیم دستی نام و docstring را درست می‌کند ولی امضا/annotation/پیش‌فرض‌ها را نه. `wraps(fn)` یک decorator می‌سازد که روی inner اعمال می‌شود (`@wraps(fn)` یا `inner = wraps(fn)(inner)`) و متادیتای fn را کپی می‌کند؛ باید fn را بدهیم چون wraps نمی‌داند تابع اصلی کدام آرگومان است.",
+    "estimated_minutes": 2,
+    "prompt": "بعد از `add = counter(add)`، چرا `help(add)` امضای `inner(*args, **kwargs)` رو نشون می‌ده، نه امضای واقعی add؟",
+    "expected_outcome": "چون add دیگه تابع اصلی نیست، خودِ closure inner ـه",
     "hints": ["add بعد از decorate شدن به چه شیئی اشاره می‌کند؟", "wraps خودش decorator پارامتردار است."],
-    "rubric": "Correct: identifies add as the inner closure, manual fix covers name/doc but not signature, wraps(fn) as a parametrized decorator that copies metadata and needs fn. Partial: two of three. Incorrect: claims decoration modifies the original function in place."
+    "rubric": "Correct if response says add is now the inner closure, not the original function."
   }
 ]

@@ -26,12 +26,12 @@
   {
     "key": "class-vs-closure",
     "title": "کلاس یا closure؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: در مثال averager، حالت (state) در نسخه‌ی کلاس کجا نگه‌داری می‌شود و در نسخه‌ی closure کجا؟ چرا دو فراخوانی `averager()` دو میانگین‌گیر مستقل می‌دهند؟ چه زمانی ترجیح می‌دهی کلاس بنویسی؟",
-    "expected_outcome": "در کلاس، حالت در attributeهای instance (`self.total`, `self.count`) است؛ در closure، در cellهای متغیرهای آزاد (`total`, `count`) که با تابع درونی زنده می‌مانند. هر فراخوانی averager یک scope و cellهای تازه می‌سازد → مستقل، مثل دو instance جدا. کلاس وقتی بهتر است که چند عملیات/متد، وراثت، یا نیاز به خواندن حالت از بیرون داشته باشی؛ closure برای «یک حالت + یک عمل» کوتاه‌تر و سبک‌تر است.",
-    "hints": ["به cell و scope هر فراخوانی فکر کن.", "closure یک callable با یک رفتار است؛ کلاس چند رفتار می‌تواند داشته باشد."],
-    "rubric": "Correct: locates state in instance attributes vs closure cells, explains independence via per-call scopes, and gives a reasonable criterion for choosing a class. Partial: two of three. Incorrect: claims closures share state across calls to averager()."
+    "estimated_minutes": 2,
+    "prompt": "توی مثال averager، حالت (state) توی نسخه‌ی closure کجا نگه‌داری می‌شه؟",
+    "expected_outcome": "توی cellهای متغیرهای آزاد (free variables)",
+    "hints": ["به cell و scope هر فراخوانی فکر کن.", "closure یک callable با یک رفتار است."],
+    "rubric": "Correct if response names closure cells (free variables) as where state lives."
   }
 ]

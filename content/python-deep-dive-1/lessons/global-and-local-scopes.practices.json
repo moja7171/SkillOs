@@ -26,12 +26,12 @@
   {
     "key": "compile-vs-run",
     "title": "کامپایل در برابر اجرا",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در ۳ تا ۵ جمله توضیح بده: پایتون *کِی* تصمیم می‌گیرد یک نام داخل تابع local است، بر چه اساسی، و *کِی* local scope واقعاً ساخته می‌شود؟ چرا این تفاوت باعث می‌شود «اول بخوان بعد انتساب کن» به همان متغیر global داخل یک تابع بدون `global` غیرممکن باشد؟",
-    "expected_outcome": "تصمیم در زمان کامپایل `def` گرفته می‌شود: هر نامی که در بدنه مقدار می‌گیرد (انتساب، پارامتر) local علامت می‌خورد مگر با `global`؛ نام‌هایی که فقط خوانده می‌شوند non-local‌اند و در اجرا از scopeهای بیرونی جست‌وجو می‌شوند. اما خود scope/namespace فقط هنگام *فراخوانی* ساخته می‌شود و با بازگشت از بین می‌رود. چون local بودن یک ویژگی کل تابع است نه خط‌به‌خط، خواندن نام قبل از انتسابش در همان تابع، local ولی بدون مقدار است → UnboundLocalError.",
+    "estimated_minutes": 2,
+    "prompt": "پایتون کِی تصمیم می‌گیره یه نام داخل تابع local باشه — موقع def یا موقع اجرا؟",
+    "expected_outcome": "موقع def (کامپایل بدنه‌ی تابع)",
     "hints": ["دو لحظه‌ی متفاوت: def و فراخوانی.", "local بودن به خط وابسته نیست، به کل بدنه وابسته است."],
-    "rubric": "Correct: distinguishes compile-time classification (assignment anywhere → local unless global) from run-time scope creation per call, and explains UnboundLocalError from that. Partial: one of the two moments explained. Incorrect: says scope is created at def time or classification happens line by line."
+    "rubric": "Correct if response says the local/non-local classification happens at def-compile time, not at execution."
   }
 ]

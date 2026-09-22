@@ -25,13 +25,13 @@
   },
   {
     "key": "total-ordering-why",
-    "title": "چرا total_ordering؟",
-    "form": "explanation",
+    "title": "چرا p1 > p3 کار کرد ولی p1 <= p3 نه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: چرا `p1 > p3` بدون تعریف `__gt__` کار کرد ولی `p1 <= p3` نه؟ `total_ordering` چه چیزی لازم دارد و چه چیزی می‌سازد؟ چرا نسخه‌ی دستی `complete_ordering` درس «ناقص» بود؟",
-    "expected_outcome": "پایتون برای `a > b` وقتی `__gt__` نیست، عملگر بازتابی `b.__lt__(a)` را امتحان می‌کند؛ ولی برای `<=` معادل بازتابی `>=` است که آن هم تعریف نشده، پس TypeError. total_ordering به `__eq__` و حداقل یکی از `__lt__/__le__/__gt__/__ge__` نیاز دارد و سه تای دیگر را از آنها می‌سازد. نسخه‌ی دستی فقط با `__lt__` کار می‌کرد، بررسی نوع و NotImplemented نداشت و در کلاس patch کردن dunderها بی‌احتیاط بود.",
-    "hints": ["عملگرهای بازتابی: a > b ↔ b < a.", "total_ordering از هر یک از چهار عملگر شروع می‌کند."],
-    "rubric": "Correct: explains reflection for >, why <= fails, total_ordering's requirements/output, and at least one shortcoming of the manual version. Partial: two of three. Incorrect: thinks Python auto-derives all comparisons."
+    "estimated_minutes": 2,
+    "prompt": "بدون تعریف __gt__، چرا `p1 > p3` کار کرد؟",
+    "expected_outcome": "چون پایتون عملگر بازتابی __lt__ طرف مقابل رو امتحان می‌کنه",
+    "hints": ["عملگرهای بازتابی: a > b ↔ b < a.", "برای <= چه عملگر بازتابی‌ای لازمه؟"],
+    "rubric": "Correct if response says Python falls back to the reflected __lt__ on the other operand."
   }
 ]

@@ -36,16 +36,16 @@
   },
   {
     "key": "mind-map-vs-kj",
-    "title": "نقشه‌ی ذهنی چه چیز اضافه‌ای نسبت به KJ داره؟",
-    "form": "explanation",
+    "title": "KJ از پایین به بالا، نقشه‌ی ذهنی از بالا به پایین؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "هم روش KJ (درس قبل) و هم نقشه‌ی ذهنی، ابزارهای بصری و مشارکتی برای سازمان‌دهی ایده‌ان. طبق این دو درس، چه تفاوت ساختاری کلیدی بین این دو هست؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "روش KJ با ایده‌های پراکنده و بدون‌ساختار شروع می‌شه و بعداً اون‌ها رو به دسته‌های نوظهور گروه‌بندی می‌کنه (دسته‌ها از پایین به بالا شکل می‌گیرن). نقشه‌ی ذهنی برعکس، از یه ایده‌ی مرکزی از پیش‌مشخص شروع می‌کنه و به‌شکل سلسله‌مراتبی و شاخه‌ای (از کلی به جزئی) به بیرون گسترش پیدا می‌کنه — ساختار از بالا به پایین از قبل مشخصه.",
+    "estimated_minutes": 2,
+    "prompt": "روش KJ و نقشه‌ی ذهنی چه تفاوت ساختاری کلیدی دارن — دسته‌ها/ساختار کدومشون از قبل مشخصه؟",
+    "expected_outcome": "KJ: دسته‌ها بعداً کشف می‌شن (پایین به بالا) / نقشه‌ی ذهنی: از یه ایده‌ی مرکزی از پیش‌مشخص شروع می‌شه (بالا به پایین)",
     "hints": [
       "توی KJ، دسته‌ها بعد از دیدن ایده‌ها کشف می‌شن؛ توی نقشه‌ی ذهنی، ساختار سلسله‌مراتبی از کجا شروع می‌شه؟",
       "کدوم یکی «از پایین به بالا» ساختار پیدا می‌کنه، کدوم «از بالا به پایین»؟"
     ],
-    "rubric": "Correct if response explains that KJ builds categories bottom-up from unstructured ideas afterward, while mind mapping starts top-down from a predefined central idea and branches outward hierarchically. Correct_with_hint if only one direction is described correctly. Incorrect if the distinction is confused or absent."
+    "rubric": "Correct if response names KJ as bottom-up (categories emerge later) and mind mapping as top-down (starts from a predefined central idea). Correct_with_hint if only one direction is right."
   }
 ]

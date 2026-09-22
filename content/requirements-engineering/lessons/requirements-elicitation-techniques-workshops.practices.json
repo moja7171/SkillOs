@@ -22,30 +22,30 @@
   },
   {
     "key": "planning-checklist-fixes",
-    "title": "سه اشتباه توی برنامه‌ریزی این کارگاه رو پیدا کن",
-    "form": "scenario",
+    "title": "سه اشتباه توی برنامه‌ریزی این کارگاه",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
-    "prompt": "یه همکار داره یه کارگاه استخراج نیازمندی برای پهپاد بذرپاش برنامه‌ریزی می‌کنه: (۱) ۳۵ نفر از تمام ذی‌نفعان ممکن رو دعوت کرده تا هیچ‌کس جا نمونه. (۲) کارگاه رو توی دفتر مرکزی یکی از شرکت‌های توسعه‌دهنده‌ی پهپاد که توی پروژه رقیب داره برگزار می‌کنه. (۳) دعوت‌نامه رو سه روز قبل از کارگاه فرستاده. طبق این درس، هر سه مورد چه مشکلی دارن، و راه‌حل درست هرکدوم چیه؟",
-    "expected_outcome": "(۱) ۳۵ نفر خیلی زیاده — محدوده‌ی توصیه‌شده ۵ تا ۱۵ نفره؛ باید یا روی یه بافت/مأموریت خاص تمرکز کنه و فقط ذی‌نفعان مرتبط با اون رو دعوت کنه، یا کارگاه رو به چند جلسه‌ی کوچیک‌تر تقسیم کنه. (۲) محل باید زمین خنثی باشه، نه دفتر یه توسعه‌دهنده‌ی خاص — چون رقبای دعوت‌شده ممکنه احساس ناخوشایند کنن یا کمتر تخصصشون رو به اشتراک بذارن؛ باید یه مکان خنثی مثل هتل یا محل مشتری انتخاب بشه. (۳) دعوت باید حداقل یک ماه (و نه بیشتر از دو ماه) قبل فرستاده بشه، نه سه روز — چون تقویم افراد از قبل پره.",
+    "estimated_minutes": 3,
+    "prompt": "یه همکار: (۱) ۳۵ نفر رو دعوت کرده. (۲) کارگاه رو توی دفتر یکی از شرکت‌های رقیب پروژه برگزار می‌کنه. (۳) دعوت‌نامه رو سه روز قبل فرستاده. هر سه مورد چه مشکلی دارن؟",
+    "expected_outcome": "(۱) تعداد زیاد (بازه‌ی توصیه‌شده ۵-۱۵ نفر) (۲) مکان غیرخنثی (۳) دعوت خیلی دیر (باید ۱-۲ ماه قبل)",
     "hints": [
-      "به سه بخش «چه کسی دعوت کنیم»، «مکان» و «زمان‌بندی» درس برگرد — هرکدوم یه عدد یا قانون مشخص داشتن.",
+      "به سه بخش «چه کسی دعوت کنیم»، «مکان» و «زمان‌بندی» درس برگرد.",
       "محدوده‌ی تعداد نفرات، خنثی‌بودن مکان، و بازه‌ی زمانی دعوت — سه چیزی که این مثال هرکدوم رو نقض کرده."
     ],
-    "rubric": "Correct if response identifies all three issues (too many participants vs. the 5-15 range, non-neutral venue at a competing developer's site, and invitation sent too late vs. the 1-2 month window) with the correct fix for each. Correct_with_hint if 2 of 3 issues are correctly identified and fixed. Incorrect if fewer than 2 are correctly identified."
+    "rubric": "Correct if all three issues are named: too many participants (vs. 5-15 range), non-neutral venue, invitation sent too late (vs. 1-2 month window). Correct_with_hint if 2 of 3 are named."
   },
   {
     "key": "workshop-vs-meeting",
     "title": "کارگاه چرا از جلسه‌ی معمولی بهتره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا کارگاه (workshop) معمولاً از یه جلسه‌ی معمولی برای استخراج نیازمندی مؤثرتره؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "جلسه‌ی معمولی معمولاً به بحث داغ و بی‌ساختار می‌رسه، جایی که شخصیت‌های قوی‌تر افراد آروم‌تر (که ممکنه ایده‌ی خوبی داشته باشن) رو تحت‌الشعاع قرار می‌دن — این آشفتگی به ناامیدی و نتیجه‌ی ضعیف منجر می‌شه. کارگاه با داشتن ساختار مشخص (هدف تعریف‌شده، ابزار از پیش انتخاب‌شده، مدیر جلسه‌ی بی‌طرف، قوانین تعامل) این مشکلات سیاست‌بازی تیمی، دانش نامتقارن و سبک‌های کاری متفاوت رو دور می‌زنه.",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا کارگاه (workshop) معمولاً از یه جلسه‌ی معمولی برای استخراج نیازمندی مؤثرتره؟",
+    "expected_outcome": "ساختار مشخص داره (هدف، ابزار، مدیر بی‌طرف، قوانین)",
     "hints": [
       "درس دقیقاً گفت جلسات چه مشکلی دارن — شخصیت‌های قوی در برابر افراد آروم‌تر.",
       "کارگاه چه چیزی به همکاری گروهی اضافه می‌کنه که جلسه‌ی معمولی نداره؟"
     ],
-    "rubric": "Correct if response explains that regular meetings suffer from stronger personalities dominating quieter ones and unstructured heated debate, while workshops provide structure (defined goal, chosen tools, neutral moderator, engagement rules) that avoids team politics, asymmetrical knowledge, and differing work styles. Correct_with_hint if only the meeting's downside or only the workshop's structural fix is mentioned, not both. Incorrect otherwise."
+    "rubric": "Correct if response names workshop's defined structure (goal, tools, neutral moderator, rules) as the fix, vs. unstructured meetings dominated by strong personalities."
   }
 ]

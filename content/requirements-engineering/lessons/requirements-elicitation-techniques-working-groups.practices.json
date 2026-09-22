@@ -23,29 +23,29 @@
   {
     "key": "workshop-vs-working-group-table",
     "title": "کارگاه یا گروه کاری؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "دو تا موقعیت داریم: (۱) تیم می‌خواد ۱۲ ذی‌نفع متنوع (کاربر، نگه‌دار، توسعه‌دهنده، ناظر) رو دور هم جمع کنه تا با بارش فکری، ایده‌های اولیه برای یه فیچر تازه تولید کنن. (۲) تیم می‌خواد ۴ کارشناس عمیق حوزه‌ی ایمنی پرواز رو دور هم جمع کنه تا دقیقاً نیازمندی‌های فنی سیستم فرود اضطراری رو مشخص کنن. طبق این درس، کدوم موقعیت به کارگاه و کدوم به گروه کاری نزدیک‌تره؟ استدلالت رو با تفاوت‌های جدول درس توضیح بده.",
-    "expected_outcome": "موقعیت (۱) به کارگاه نزدیک‌تره — گروه بزرگ‌تر و متنوع‌تر، هدف تولید ایده و تشویق بحث، سبک غیررسمی‌تر (بارش فکری). موقعیت (۲) به گروه کاری نزدیک‌تره — گروه کوچیک و متمرکز از کارشناسان عمیق حوزه، هدف ساخت نیازمندی فنی مشخص، سبک ساختاریافته‌تر با مشارکت فردی.",
+    "estimated_minutes": 2,
+    "prompt": "(۱) ۱۲ ذی‌نفع متنوع دور هم جمع می‌شن تا با بارش فکری ایده‌ی اولیه تولید کنن. (۲) ۴ کارشناس عمیق حوزه‌ی ایمنی دور هم جمع می‌شن تا نیازمندی فنی دقیق مشخص کنن. کدوم به کارگاه نزدیک‌تره و کدوم به گروه کاری؟",
+    "expected_outcome": "(۱) کارگاه (۲) گروه کاری",
     "hints": [
       "به جدول تفاوت‌های کارگاه/گروه کاری برگرد — اندازه، هدف و ترکیب اعضا کلید تشخیصن.",
       "کدوم موقعیت «تولید ایده» می‌خواد و کدوم «نیازمندی مشخص از کارشناس عمیق»؟"
     ],
-    "rubric": "Correct if response correctly maps (1) to workshop and (2) to working group, citing at least two of the table's distinguishing factors (size, goal, style, member composition). Correct_with_hint if the mapping is correct but reasoning cites only one factor. Incorrect if the mapping is swapped."
+    "rubric": "Correct if (1) is matched with workshop and (2) with working group. Correct_with_hint if only one is right."
   },
   {
     "key": "breaking-down-mars-problem",
-    "title": "چرا مسئله‌ی مریخ رو یه‌جا حل نمی‌کنیم؟",
-    "form": "explanation",
+    "title": "ابزار پیشنهادی برای تجزیه‌ی مسئله‌ی مریخ چیه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا نمی‌شه کل مسئله‌ی «رسوندن تجهیزات به مریخ و راه‌اندازی تأسیسات» رو توی یه جلسه‌ی گروه کاری حل کرد؟ در ۲ تا ۳ جمله توضیح بده و بگو چه ابزاری برای این تجزیه پیشنهاد شد.",
-    "expected_outcome": "چون آدم‌ها محدودیت پردازش اطلاعات دارن و نمی‌تونن یه مسئله‌ی خیلی پیچیده رو یک‌جا و کامل حل کنن؛ باید مسئله رو به تکه‌های کوچیک و قابل‌مدیریت تقسیم کرد (مثلاً یه جلسه روی جمع‌کردن بسته‌ها، یکی روی نصب توی وسیله‌ی فضایی، یکی روی آماده‌سازی پرتاب، و غیره) و به‌تدریج راه‌حل رو جمع کرد. ابزار پیشنهادی درس برای این تجزیه، مهندسی سیستم مبتنی بر مدل (MBSE) بود.",
+    "estimated_minutes": 2,
+    "prompt": "چرا نمی‌شه کل مسئله‌ی «رسوندن تجهیزات به مریخ» رو یه‌جا حل کرد، و چه ابزاری برای تجزیه‌اش پیشنهاد شد؟",
+    "expected_outcome": "محدودیت پردازش انسان / MBSE (مهندسی سیستم مبتنی بر مدل)",
     "hints": [
-      "درس دلیل رو به «محدودیت پردازش اطلاعات انسان» ربط داد — این جمله رو پیدا کن.",
+      "درس دلیل رو به «محدودیت پردازش اطلاعات انسان» ربط داد.",
       "ابزار اسم‌برده‌شده یه مخفف سه‌حرفیه."
     ],
-    "rubric": "Correct if response explains humans' limited information-processing capacity as the reason for chunking the problem, gives an example of the breakdown, and names MBSE as the suggested tool. Correct_with_hint if the reasoning is given but MBSE isn't named. Incorrect otherwise."
+    "rubric": "Correct if response names limited human information-processing as the reason and MBSE as the tool. Correct_with_hint if only one is right."
   }
 ]

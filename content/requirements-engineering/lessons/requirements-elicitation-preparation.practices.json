@@ -22,30 +22,30 @@
   },
   {
     "key": "trace-scenarios-to-goals",
-    "title": "ردیابی سناریو به هدف",
-    "form": "scenario",
+    "title": "کدوم هدف سناریوی خودش رو نداره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "تیم پهپاد بذرپاش سه‌تا هدف سیستم داره: (۱) کاشت مؤثر بذر، (۲) کاهش هزینه‌ی عملیات نسبت به روش سنتی، (۳) حفظ ایمنی محیط اطراف حین پرواز. موقع بازبینی سناریوها، متوجه می‌شن هیچ سناریویی درباره‌ی «چی می‌شه اگه پهپاد توی حین پرواز به یه رهگذر نزدیک بشه» ننوشتن. طبق روش این درس، این یعنی چی، و تیم باید چیکار کنه؟",
-    "expected_outcome": "این یعنی هدف سوم (ایمنی محیط اطراف) توی هیچ سناریویی توصیف نشده — درس گفت باید هر هدف رو به یک یا چند سناریو ردیابی کرد و مطمئن شد همه‌ی اهداف پوشش داده شدن. تیم باید یه سناریوی تازه (احتمالاً روز بارونی/استثنا) بسازه که رفتار پهپاد نزدیک رهگذر رو توصیف کنه، تا بشه ازش نیازمندی ایمنی استخراج کرد.",
+    "estimated_minutes": 2,
+    "prompt": "تیم پهپاد سه هدف داره: (۱) کاشت مؤثر بذر، (۲) کاهش هزینه، (۳) حفظ ایمنی محیط اطراف. هیچ سناریویی درباره‌ی نزدیک شدن پهپاد به یه رهگذر ننوشتن. کدوم هدف بدون سناریو مونده؟",
+    "expected_outcome": "هدف سوم (ایمنی محیط اطراف)",
     "hints": [
-      "درس گفت باید «سناریوها رو به اهدافی که برآورده می‌کنن ردیابی کنیم و مطمئن بشیم همه‌ی اهداف توی یک یا چند سناریو توصیف شدن» — این‌جا کدوم هدف بدون سناریو مونده؟",
-      "راه‌حل چیه وقتی یه هدف سناریوی خودش رو نداره؟"
+      "درس گفت باید هر هدف رو به یک یا چند سناریو ردیابی کرد.",
+      "کدوم هدف با «نزدیک شدن به رهگذر» مرتبطه؟"
     ],
-    "rubric": "Correct if response identifies goal 3 (safety near bystanders) as uncovered by any scenario, and states the fix is creating a new scenario for that goal per the trace-scenarios-to-goals rule. Correct_with_hint if the gap is identified but the fix (create a new scenario) is vague or missing. Incorrect if the wrong goal is identified."
+    "rubric": "Correct only if response names goal 3 (safety around bystanders)."
   },
   {
     "key": "why-glossary-matters",
-    "title": "بدون واژه‌نامه چه اتفاقی می‌افته؟",
-    "form": "explanation",
+    "title": "بدون واژه‌نامه، مهندس طراح چیکار می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، اگه تیم واژه‌نامه نسازه، چه ریسکی توی مرحله‌ی پیاده‌سازی پیش میاد؟ در ۲ تا ۳ جمله توضیح بده، با تمرکز روی نقش مهندس طراح.",
-    "expected_outcome": "بدون واژه‌نامه، وقتی مهندسان طراح دارن فیچرها رو پیاده می‌کنن، ممکنه هر کدوم تعبیر خودشون از یه اصطلاح یا عبارت خاص سیستم رو به کار ببرن. اگه این تعبیر اشتباه باشه، نتیجه‌ش یه فیچر یا پارامتر نامطلوب یا غیرمنتظره می‌شه که با نیت واقعی ذی‌نفعان یا سازمان فرق داره.",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، اگه تیم واژه‌نامه نسازه، مهندس طراح موقع پیاده‌سازی چیکار می‌کنه؟",
+    "expected_outcome": "به تعبیر خودش از اصطلاحات رجوع می‌کنه",
     "hints": [
-      "درس دقیقاً گفت مهندسان طراح «به تعبیر خودشون» از اصطلاحات رجوع می‌کنن — این‌جا چه خطری هست؟",
-      "نتیجه‌ی یه تعبیر اشتباه چه شکلی می‌تونه باشه؟ درس یه عبارت مشخص برای این استفاده کرد."
+      "درس دقیقاً گفت مهندسان طراح «به تعبیر خودشون» از اصطلاحات رجوع می‌کنن.",
+      "نتیجه‌ی یه تعبیر اشتباه چه شکلی می‌تونه باشه؟"
     ],
-    "rubric": "Correct if response explains that without a glossary, design engineers are left to their own interpretation of terms during implementation, and a wrong interpretation can produce a suboptimal or unintended feature/parameter. Correct_with_hint if only 'confusion happens' is stated without the interpretation/implementation-time mechanism. Incorrect otherwise."
+    "rubric": "Correct if response says design engineers fall back on their own interpretation of terms."
   }
 ]

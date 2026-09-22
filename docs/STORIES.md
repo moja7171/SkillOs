@@ -194,7 +194,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 
 **«مقدمه و مبانی» done 2026-09-22 (17 lessons with practices, 34 explanation/scenario practices rewritten to true short_answer).** Also fixed a pre-existing bug found along the way: `the-system-hierarchy`'s `multiplicity-scenario` practice had `form: "scenario"` but was actually mcq-shaped (`options`/`correct_option`, rubric "Correct only if option 1 is selected") — the textarea UI would've shown no options at all. Changed its form to `mcq`, content unchanged. `validate.py requirements-engineering` clean (only the pre-existing harmless `.en.md`-not-in-course.json note); `content:import` loads 85 lessons / 244 practices (same counts, forms changed not counts); `CourseImporterTest` 10/10.
 **«سناریو، User Story و Use Case» done 2026-09-22 (9 lessons, 12 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
-➡ NEXT UP: «استخراج نیازمندی‌ها (Elicitation)» (12 lessons) — third section of `requirements-engineering`.
+**«استخراج نیازمندی‌ها (Elicitation)» done 2026-09-22 (12 lessons, 22 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
+➡ NEXT UP: «نوشتن و فرایند نیازمندی‌ها» (6 lessons) — fourth section of `requirements-engineering`.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

@@ -23,29 +23,29 @@
   {
     "key": "inform-or-not-decision",
     "title": "این مشاهده رو باید با اطلاع انجام بدیم یا نه؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "تیم می‌خواد ببینه کارکنان یه رستوران واقعاً پروتکل بهداشتی شست‌وشوی دست رو رعایت می‌کنن یا نه — چون گزارش‌های قبلی نشون داده وقتی می‌دونن ناظر داره نگاه می‌کنه، رفتارشون فرق می‌کنه. طبق این درس، آیا این یکی از موارد نادری‌ست که نباید سوژه‌ها رو از قبل مطلع کرد؟ چه ملاحظه‌ای طبق درس باید در نظر گرفته بشه، حتی اگه تصمیم به عدم اطلاع‌رسانی بگیرن؟",
-    "expected_outcome": "بله، این می‌تونه یکی از موارد نادر باشه — دقیقاً همون سناریویی که درس توصیف کرد: وقتی می‌خوایم داده‌ی بی‌سوگیری از رفتار طبیعی بگیریم و اثر هاثورن مانع اینه. اما درس تأکید کرد این تصمیم باید «اخلاقی و با دقت» توسط تیم مشاهده گرفته بشه — یعنی باید ملاحظات اخلاقی (حریم خصوصی، رضایت ضمنی یا قانونی، آسیب احتمالی) سنجیده بشه، نه اینکه صرفاً چون داده‌ی بهتری می‌گیریم، بدون فکر جلو بریم.",
+    "estimated_minutes": 2,
+    "prompt": "تیم می‌خواد ببینه کارکنان رستوران واقعاً پروتکل شست‌وشوی دست رو رعایت می‌کنن، بدون این‌که رفتارشون به‌خاطر اثر هاثورن تغییر کنه. طبق این درس، حتی اگه تصمیم به عدم اطلاع‌رسانی بگیرن، این تصمیم باید چطور گرفته بشه؟",
+    "expected_outcome": "اخلاقی و با دقت (با در نظر گرفتن ملاحظات اخلاقی)",
     "hints": [
-      "درس دقیقاً گفت «در موارد نادر» می‌شه از اطلاع‌رسانی صرف‌نظر کرد — این‌جا چه شرطی برقراره؟",
-      "حتی وقتی تصمیم به عدم اطلاع‌رسانی گرفته می‌شه، درس یه قید مهم اضافه کرد — دنبالش بگرد."
+      "درس دقیقاً گفت «در موارد نادر» می‌شه از اطلاع‌رسانی صرف‌نظر کرد.",
+      "حتی وقتی تصمیم به عدم اطلاع‌رسانی گرفته می‌شه، درس یه قید مهم اضافه کرد."
     ],
-    "rubric": "Correct if response says this is a valid rare-case candidate for not informing subjects (to avoid the Hawthorne effect), AND notes that the decision must still be made ethically and carefully by the observation team. Correct_with_hint if only one of the two points is present. Incorrect if it says informing should always happen or ethics isn't mentioned at all."
+    "rubric": "Correct if response says the decision must be made ethically and carefully, not just because it yields better data."
   },
   {
     "key": "recording-tradeoff",
     "title": "ضبط قدرتمنده، ولی چی از دست می‌ره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، استفاده از دستگاه ضبط برای مشاهده احتمالاً قدرتمندترین روشه، ولی یه معامله (tradeoff) مشخص داره. اون معامله چیه، و چطور می‌شه جبرانش کرد؟",
-    "expected_outcome": "ضبط فعالیت، ورودی/خروجی و تعامل سوژه رو کامل ثبت می‌کنه، ولی ممکنه دلیل انجام بعضی اقدامات از دست بره — مگر اینکه از قبل با رویه‌ی سوژه خیلی آشنا باشیم. برای جبرانش، می‌شه (مثل مثال ضبط صفحه‌نمایش) هم‌زمان یا بعد از ضبط، از سوژه مصاحبه گرفت و افکار/دلایل پشت اقداماتش رو پرسید، تا فقط شاهد حرکت ماوس یا وقفه نباشیم و دلیل واقعیش رو هم بفهمیم.",
+    "estimated_minutes": 2,
+    "prompt": "استفاده از دستگاه ضبط برای مشاهده یه معامله (tradeoff) مشخص داره. اون معامله چیه؟",
+    "expected_outcome": "دلیل («چرا») پشت اقدامات از دست می‌ره",
     "hints": [
       "درس گفت ضبط چی رو ممکنه «از دست بدیم»، مگر از قبل با رویه آشنا باشیم.",
-      "مثال ضبط صفحه‌نمایش یه راه‌حل مشخص برای این مشکل پیشنهاد داد — مصاحبه‌ی هم‌زمان یا بعدی."
+      "مثال ضبط صفحه‌نمایش یه راه‌حل مشخص برای این مشکل پیشنهاد داد."
     ],
-    "rubric": "Correct if response identifies the tradeoff (losing the 'why' behind actions unless already familiar with the procedure) and the fix (pairing recording with interviewing the subject during/after, as in the screen-capture example). Correct_with_hint if only the tradeoff or only the fix is mentioned. Incorrect otherwise."
+    "rubric": "Correct if response names losing the 'why' behind actions as the tradeoff."
   }
 ]

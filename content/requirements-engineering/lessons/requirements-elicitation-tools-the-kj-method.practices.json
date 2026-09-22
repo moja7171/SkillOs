@@ -37,15 +37,15 @@
   {
     "key": "kj-limitation-mitigation",
     "title": "چطور محدودیت «ذهنی‌بودن» KJ رو جبران کنیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، روش KJ چرا «ذهنی (subjective)» محسوب می‌شه، و چطور می‌شه این محدودیت رو جبران کرد؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "KJ ذهنیه چون کاملاً به نظر و دیدگاه شخصی شرکت‌کننده‌ها متکیه، که می‌تونه سوگیری و اختلاف تعبیر وارد کنه. برای جبرانش، باید از معیارهای عینی برای ارزیابی ایده‌ها و نیازمندی‌های تولیدشده استفاده کرد، تا نتیجه‌ی نهایی بر پایه‌ی معیارهای قابل‌سنجش و توافق‌شده باشه، نه فقط برداشت شخصی افراد.",
+    "estimated_minutes": 2,
+    "prompt": "روش KJ چرا «ذهنی (subjective)» محسوب می‌شه، و چطور می‌شه این محدودیت رو جبران کرد؟",
+    "expected_outcome": "متکی به نظر شخصیه / با معیارهای عینی جبران می‌شه",
     "hints": [
       "درس گفت این محدودیت به‌خاطر تکیه‌ی روش روی «نظر و دیدگاه شرکت‌کننده‌ها»ست.",
-      "راه‌حل درس، اضافه‌کردن یه نوع معیار خاص بود — دنبالش بگرد."
+      "راه‌حل درس، اضافه‌کردن یه نوع معیار خاص بود."
     ],
-    "rubric": "Correct if response explains subjectivity stems from reliance on participant opinions/perspectives (leading to bias/interpretation differences) and names the fix (using objective criteria to evaluate ideas/requirements). Correct_with_hint if only the problem or only the fix is stated. Incorrect otherwise."
+    "rubric": "Correct if response names reliance on participant opinion as the cause and objective criteria as the fix. Correct_with_hint if only one is right."
   }
 ]

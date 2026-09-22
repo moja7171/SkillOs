@@ -23,29 +23,29 @@
   {
     "key": "traceability-challenge",
     "title": "چرا ردیابی نیازمندی نرم‌افزاری چالش‌برانگیزه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، ردیابی نیازمندی نرم‌افزاری چرا مهمه، و چرا می‌تونه چالش‌برانگیز باشه؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "ردیابی مطمئن می‌شه هر نیازمندی به یه نیاز یا خواسته‌ی مشخص ذی‌نفع پیوند خورده — که تضمین می‌کنه هر نیازمندی ضروریه و با اهداف تلاش توسعه هم‌راستاست. چالش‌برانگیز می‌شه چون نیازمندی‌ها می‌تونن پیچیده باشن و وابستگی‌های متعددی به هم داشته باشن، که حفظ این پیوندها رو سخت می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "ردیابی نیازمندی نرم‌افزاری مطمئن می‌شه هر نیازمندی به چی پیوند خورده؟ و چرا حفظ این پیوندها چالش‌برانگیزه؟",
+    "expected_outcome": "به یه نیاز مشخص ذی‌نفع / به‌خاطر پیچیدگی و وابستگی‌های متعدد",
     "hints": [
-      "درس گفت ردیابی «مطمئن می‌شه هر نیازمندی ضروریه و با اهداف هم‌راستاست» — این چرا مهمه؟",
+      "درس گفت ردیابی «مطمئن می‌شه هر نیازمندی ضروریه و با اهداف هم‌راستاست».",
       "چالش رو درس با «پیچیدگی و وابستگی‌های متعدد» توضیح داد."
     ],
-    "rubric": "Correct if response explains traceability ensures each requirement links to a specific stakeholder need (confirming necessity/alignment) and names complexity/multiple dependencies as the source of difficulty. Correct_with_hint if only one half is covered. Incorrect otherwise."
+    "rubric": "Correct if response names linking to a specific stakeholder need, and complexity/multiple dependencies as the challenge."
   },
   {
     "key": "ten-best-practices-recall",
-    "title": "سه‌تا از ۱۰ شیوه‌ی خوب رو بیار",
+    "title": "دوتا از ۱۰ شیوه‌ی خوب رو بیار",
     "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "این درس ۱۰ شیوه‌ی خوب برای شناسایی نیازمندی نرم‌افزار معرفی کرد. سه‌تا از این‌ها رو نام ببر و برای هرکدوم یه جمله توضیح بده.",
-    "expected_outcome": "نمونه‌هایی از ۱۰ مورد درس: (۱) درگیرکردن همه‌ی ذی‌نفعان برای دیدگاه جامع؛ (۲) استفاده از چند تکنیک استخراج برای اعتبارسنجی متقابل؛ (۳) تمرکز روی نیاز کاربر نهایی؛ (۴) استفاده از فرمت استاندارد (user story/use case)؛ (۵) اولویت‌بندی نیازمندی‌ها؛ (۶) برقراری ردیابی؛ (۷) استفاده از روش‌های چابک؛ (۸) استفاده از کمک بصری؛ (۹) استفاده از ابزار مدیریت نیازمندی (JIRA/ReqIF)؛ (۱۰) اطمینان از سازگاری و کامل‌بودن با بازبینی مشترک.",
+    "estimated_minutes": 2,
+    "prompt": "این درس ۱۰ شیوه‌ی خوب برای شناسایی نیازمندی نرم‌افزار معرفی کرد. دوتا از این‌ها رو نام ببر.",
+    "expected_outcome": "هر دو تا از: درگیرکردن همه‌ی ذی‌نفعان، چند تکنیک استخراج، تمرکز روی کاربر نهایی، فرمت استاندارد، اولویت‌بندی، ردیابی، روش‌های چابک، کمک بصری، ابزار مدیریت نیازمندی، بازبینی مشترک",
     "hints": [
-      "درس این ۱۰ مورد رو به‌ترتیب شماره‌گذاری کرد — سه‌تا از اولی‌ها یا هرکدوم رو که یادت میاد بیار.",
-      "هر مورد باید یه اقدام مشخص باشه، نه یه توصیف کلی مثل «نیازمندی خوب بنویس»."
+      "درس این ۱۰ مورد رو به‌ترتیب شماره‌گذاری کرد.",
+      "هر مورد باید یه اقدام مشخص باشه، نه یه توصیف کلی."
     ],
-    "rubric": "Correct if response names any 3 of the 10 distinct best practices from the lesson with a correct one-sentence explanation each. Correct_with_hint if 2 of 3 are correct/from the lesson. Incorrect if fewer than 2 match the lesson's list."
+    "rubric": "Correct if two distinct best practices from the lesson's list of 10 are named."
   }
 ]

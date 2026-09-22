@@ -22,30 +22,30 @@
   },
   {
     "key": "reliability-validation-tools",
-    "title": "قابلیت‌اطمینان رو چطور اعتبارسنجی می‌کنیم؟",
-    "form": "scenario",
+    "title": "قابلیت‌اطمینان رو با چه تکنیک‌هایی می‌سنجیم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "تیم می‌خواد نیازمندی «قابلیت‌اطمینان» نرم‌افزار خودپرداز رو اعتبارسنجی کنه، ولی این نیازمندی غیرکارکردی و سخت‌اندازه‌گیریه. طبق این درس، چه عواملی روی قابلیت‌اطمینان اثر می‌ذارن، و چه تکنیک‌های تخصصی‌ای برای شبیه‌سازی و سنجشش پیشنهاد شده؟",
-    "expected_outcome": "عواملی که روی قابلیت‌اطمینان اثر می‌ذارن: خرابی سخت‌افزار، خطای نرم‌افزار، و رویدادهای بیرونی مثل قطع برق یا اختلال شبکه. تکنیک‌های تخصصی پیشنهادی: تزریق خطا (fault injection) و تست تنش (stress testing) برای شبیه‌سازی سناریوهای مختلف خرابی و بررسی واکنش سیستم، همراه با پایش و ثبت گسترده حین تست برای شناسایی مشکلات.",
+    "estimated_minutes": 2,
+    "prompt": "برای اعتبارسنجی «قابلیت‌اطمینان» نرم‌افزار خودپرداز، دو تا تکنیک تخصصی که این درس پیشنهاد داد رو نام ببر.",
+    "expected_outcome": "تزریق خطا (fault injection) و تست تنش (stress testing)",
     "hints": [
-      "درس دقیقاً سه عامل مؤثر بر قابلیت‌اطمینان رو اسم برد.",
-      "دو تا تکنیک تخصصی با اسم مشخص («تزریق» و «تست تنش») توی درس اومدن."
+      "دو تا تکنیک تخصصی با اسم مشخص توی درس اومدن.",
+      "هردو برای شبیه‌سازی سناریوهای خرابی هستن."
     ],
-    "rubric": "Correct if response names hardware failure, software errors, and external events (power outages/network disruptions) as factors, and fault injection + stress testing as the specialized techniques, plus monitoring/logging during tests. Correct_with_hint if only factors or only techniques are named, not both. Incorrect otherwise."
+    "rubric": "Correct if both fault injection and stress testing are named. Correct_with_hint if only one is right."
   },
   {
     "key": "why-repeat-best-practices",
-    "title": "چرا این شیوه‌های خوب تکراری‌ان؟",
-    "form": "explanation",
+    "title": "چرا این شیوه‌های خوب دوباره تکرار شدن؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "این درس گفت خیلی از شیوه‌های خوبِ اعتبارسنجی، شبیه شیوه‌های شناسایی و تحلیل نیازمندی نرم‌افزارن که قبلاً دیدیم. طبق این درس، چرا با وجود این تکرار، ارزش داشت دوباره اشاره بشن؟",
-    "expected_outcome": "درس صراحتاً گفت «به‌خاطر اهمیتشون ارزش تکرار دارن» — یعنی هدف این نبود که چیز جدیدی معرفی کنه، بلکه تأکید کردن روی اینکه این شیوه‌ها (مثل ردیابی، بازبینی همتا، استفاده از متریک، تمرکز روی حیاتی‌ترین نیازمندی‌ها) باید در طول کل فرایند — نه فقط شناسایی و تحلیل، بلکه اعتبارسنجی هم — پیوسته اعمال بشن.",
+    "estimated_minutes": 2,
+    "prompt": "این درس گفت خیلی از شیوه‌های خوبِ اعتبارسنجی، شبیه شیوه‌های شناسایی/تحلیل نیازمندی‌ان که قبلاً دیدیم. طبق درس چرا ارزش داشت دوباره اشاره بشن؟",
+    "expected_outcome": "به‌خاطر اهمیتشون / باید در کل فرایند پیوسته اعمال بشن",
     "hints": [
-      "درس یه جمله‌ی صریح درباره‌ی این تکرار داشت — به همون عبارت برگرد.",
-      "این نشون می‌ده این شیوه‌ها یه‌بار انجام نمی‌شن، بلکه در طول کل فرایند اعمال می‌شن."
+      "درس یه جمله‌ی صریح درباره‌ی این تکرار داشت.",
+      "این نشون می‌ده این شیوه‌ها یه‌بار انجام نمی‌شن."
     ],
-    "rubric": "Correct if response states the lesson explicitly said these practices bear repeating for their importance, and explains this signals they apply continuously across identification/analysis/validation, not just once. Correct_with_hint if it only vaguely says 'because they're important' without the continuity point. Incorrect otherwise."
+    "rubric": "Correct if response says the practices bear repeating for their importance and apply continuously, not just once."
   }
 ]

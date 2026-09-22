@@ -26,8 +26,8 @@
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا نیازمندی‌های نرم‌افزاری معمولاً از نیازمندی‌های سخت‌افزاری انعطاف‌پذیرترن؟ در یکی دو جمله توضیح بده.",
-    "expected_outcome": "چون سیستم‌های نرم‌افزاری رو می‌شه راحت‌تر به‌روزرسانی و پیکربندی کرد تا با نیاز کاربر در حال تغییر هم‌راستا بشن، در حالی که سیستم‌های سخت‌افزاری معمولاً برای برآوردن فیچر یا تغییر تازه نیاز به تغییر فیزیکی واقعی دارن.",
+    "prompt": "چرا نیازمندی‌های نرم‌افزاری معمولاً از نیازمندی‌های سخت‌افزاری انعطاف‌پذیرترن؟",
+    "expected_outcome": "نرم‌افزار راحت‌تر به‌روزرسانی/پیکربندی می‌شه؛ سخت‌افزار نیاز به تغییر فیزیکی داره",
     "hints": [
       "درس این تفاوت رو مستقیم با کلمه‌ی «به‌روزرسانی» و «پیکربندی» توضیح داد.",
       "نقطه‌ی مقابلش چیه؟ سخت‌افزار برای تغییر به چی نیاز داره؟"
@@ -37,15 +37,15 @@
   {
     "key": "scope-creep-prevention",
     "title": "نیازمندی خوب چطور از افزایش دامنه جلوگیری می‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، نیازمندی نرم‌افزاری چطور به جلوگیری از «افزایش دامنه (scope creep)» کمک می‌کنه؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "نیازمندی نرم‌افزاری درک روشنی از اهداف پروژه می‌ده و دامنه‌ی پروژه رو به‌وضوح تعریف می‌کنه — با داشتن یه مرز مشخص و مستند از اینکه سیستم دقیقاً چیکار باید بکنه، اضافه‌شدن ناخواسته و تدریجی فیچرهای خارج از دامنه (که به افزایش هزینه و تأخیر منجر می‌شه) راحت‌تر تشخیص داده و رد می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "نیازمندی نرم‌افزاری چطور به جلوگیری از «افزایش دامنه (scope creep)» کمک می‌کنه؟",
+    "expected_outcome": "با تعریف روشن دامنه/اهداف پروژه",
     "hints": [
       "درس گفت نیازمندی نرم‌افزاری «با تعریف روشن دامنه‌ی پروژه» از افزایش دامنه جلوگیری می‌کنه.",
       "به رابطه‌ی بین «دامنه‌ی مشخص» و «هزینه/تأخیر» فکر کن."
     ],
-    "rubric": "Correct if response explains that clearly defined requirements set explicit project scope/goals, which makes unplanned scope additions (and their cost/delay impact) easier to identify and prevent. Correct_with_hint if it just restates 'prevents scope creep' without the mechanism. Incorrect otherwise."
+    "rubric": "Correct if response says clearly defined scope/goals make unplanned additions easier to identify and reject."
   }
 ]

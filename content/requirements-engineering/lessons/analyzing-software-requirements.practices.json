@@ -23,29 +23,29 @@
   {
     "key": "time-and-materials-contract",
     "title": "چرا قرارداد «زمان و مواد» برای نرم‌افزار مناسب نیست؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، بعد از عقد قرارداد، تغییر نیازمندی معمولاً نیاز به تغییر قرارداد و مذاکره‌ی مجدد داره — به‌جز یه استثنا: قرارداد «زمان و مواد». این نوع قرارداد چیه، و چرا درس صراحتاً گفت برای توسعه‌ی نرم‌افزار مناسب نیست؟",
-    "expected_outcome": "قرارداد زمان و مواد یعنی پیمانکار عملاً هر تغییری که مشتری بخواد رو انجام می‌ده، تا وقتی مشتری زمان یا پول (یا هردو) تموم کنه — بدون محدودیت دامنه‌ی از قبل توافق‌شده. درس این رو صراحتاً «نوع نامناسب قرارداد برای توسعه‌ی نرم‌افزار» خطاب کرد، چون این مدل، افزایش بی‌رویه‌ی دامنه و هزینه/زمان رو تشویق می‌کنه بدون هیچ محدودیت یا کنترل تغییر واقعی.",
+    "estimated_minutes": 2,
+    "prompt": "قرارداد «زمان و مواد» چیه، و چرا درس گفت برای توسعه‌ی نرم‌افزار مناسب نیست؟",
+    "expected_outcome": "پیمانکار هر تغییری رو تا تموم‌شدن زمان/پول انجام می‌ده / باعث افزایش بی‌رویه‌ی دامنه می‌شه",
     "hints": [
       "درس این نوع قرارداد رو با عبارت «تا وقتی مشتری زمان یا پول تموم کنه» توصیف کرد.",
-      "درس مستقیماً گفت این نوع قرارداد برای توسعه‌ی نرم‌افزار مناسب نیست — چرا این می‌تونه خطرناک باشه؟"
+      "درس مستقیماً گفت این نوع قرارداد برای توسعه‌ی نرم‌افزار مناسب نیست."
     ],
-    "rubric": "Correct if response explains time-and-materials contracts let the contractor do whatever the customer wants until time/budget runs out, and connects this to uncontrolled scope/cost growth as why it's unsuitable for software development. Correct_with_hint if it names the contract type but not why it's risky. Incorrect otherwise."
+    "rubric": "Correct if response explains the contractor does whatever the customer wants until time/budget runs out, and connects this to uncontrolled scope growth."
   },
   {
     "key": "change-control-elements",
     "title": "کنترل تغییر شامل چیه؟",
     "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، «کنترل تغییر (change control)» به چه رویه‌هایی اشاره داره؟ و چرا باید تغییرات نیازمندی رو توی بازبینی‌های دروازه‌ای (gate review) دوباره ارزیابی کرد؟",
-    "expected_outcome": "کنترل تغییر یعنی رویه‌های مشخصی که تعیین می‌کنن تغییرات نیازمندی چطور درخواست، ارزیابی، تأیید و اجرا می‌شن. بازارزیابی توی بازبینی‌های دروازه‌ای لازمه تا مطمئن بشیم تغییراتی که انجام دادیم همچنان با اهداف و اولویت‌های کلی پروژه هم‌راستان — تغییرات می‌تونن روی زمان‌بندی و بودجه‌ی پروژه اثر بذارن، پس باید مرتب سنجیده بشن.",
+    "estimated_minutes": 2,
+    "prompt": "«کنترل تغییر (change control)» به چه رویه‌هایی اشاره داره؟",
+    "expected_outcome": "درخواست، ارزیابی، تأیید، اجرا",
     "hints": [
-      "درس چهار فعل مشخص برای کنترل تغییر آورد: درخواست، ارزیابی، تأیید، اجرا.",
-      "بازبینی دروازه‌ای چرا لازمه؟ به رابطه‌ی تغییر با اهداف کلی پروژه فکر کن."
+      "درس چهار فعل مشخص برای کنترل تغییر آورد.",
+      "این‌ها مراحل رسیدگی به یه درخواست تغییرن."
     ],
-    "rubric": "Correct if response defines change control as the request/evaluate/approve/implement procedures for requirement changes, and explains gate reviews re-evaluate whether changes still align with project goals/priorities. Correct_with_hint if only the definition or only the gate-review reasoning is given. Incorrect otherwise."
+    "rubric": "Correct if response names the request/evaluate/approve/implement procedures."
   }
 ]

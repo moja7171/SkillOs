@@ -13,12 +13,12 @@
   {
     "key": "missing-required-argument",
     "title": "این کد چرا خطا می‌ده؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\ndef greet(first_name, last_name):\n    print(f\"Hi {first_name} {last_name}\")\n\n\ngreet(\"Sara\")\n```\nاین کد با `TypeError` مواجه می‌شه. در ۱ تا ۲ جمله بگو چرا، و چطور درستش کنیم.",
-    "expected_outcome": "چون greet دو تا پارامتر اجباری داره (first_name و last_name)، ولی موقع صدازدنش فقط یه آرگومان دادیم. باید هر دو آرگومان رو بدیم: greet(\"Sara\", \"...\").",
+    "estimated_minutes": 2,
+    "prompt": "`def greet(first_name, last_name):` با `greet(\"Sara\")` صدا زده شده و TypeError می‌ده. چرا؟",
+    "expected_outcome": "چون دو پارامتر اجباری داره ولی فقط یکی داده شده",
     "hints": ["به‌طور پیش‌فرض، همه‌ی پارامترها اجباری‌ان.", "این تابع دو تا پارامتر داره، ولی صدازدنش با یکی انجام شده."],
-    "rubric": "Correct if the answer explains that both parameters are required by default and only one argument was passed, with the fix being to supply both."
+    "rubric": "Correct if response says both parameters are required by default but only one argument was passed."
   }
 ]

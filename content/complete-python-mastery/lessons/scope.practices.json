@@ -26,12 +26,12 @@
   {
     "key": "why-avoid-global",
     "title": "چرا تغییردادن global بده؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا تغییردادن یه متغیر سراسری از داخل یه تابع (با global) یه عادت بده، حتی با اینکه از نظر فنی درست کار می‌کنه.",
-    "expected_outcome": "چون ممکنه چندین تابع مختلف به همون متغیر سراسری وابسته باشن؛ اگه یه تابع مقدارش رو تغییر بده، ممکنه رفتار توابع دیگه‌ای که به همون متغیر متکی‌ان، بدون اینکه انتظارش رو داشته باشی خراب بشه — یه اثر جانبی (side effect) که پیداکردن باگش سخته.",
+    "estimated_minutes": 2,
+    "prompt": "چرا تغییردادن یه متغیر سراسری از داخل یه تابع (با global) یه عادت بده؟",
+    "expected_outcome": "توابع دیگه که به همون متغیر وابسته‌ن ممکنه بدون انتظار خراب بشن (side effect)",
     "hints": ["به این فکر کن اگه چند تابع مختلف به یه متغیر سراسری وابسته باشن، چه اتفاقی می‌افته.", "کلیدواژه: اثر جانبی (side effect) روی توابع دیگه."],
-    "rubric": "Correct if the answer mentions that other functions relying on the same global variable can be affected unexpectedly (a side effect), making bugs hard to trace. Correct_with_hint if it vaguely says \"it's risky\" without the side-effect reasoning. Incorrect otherwise."
+    "rubric": "Correct if response says other functions relying on the same global can be affected unexpectedly (side effect)."
   }
 ]

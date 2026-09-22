@@ -25,13 +25,13 @@
   },
   {
     "key": "finder-loader",
-    "title": "finder، loader، spec",
-    "form": "explanation",
+    "title": "ModuleSpec چه اطلاعاتی داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: وقتی `import mymod` اجرا می‌شود و mymod در sys.modules نیست، `sys.meta_path` چه نقشی دارد، ModuleSpec چیست و چه اطلاعاتی دارد، و چرا اضافه کردن یک پوشه به `sys.path` باعث می‌شود PathFinder ماژول را پیدا کند؟ ModuleNotFoundError دقیقاً کِی رخ می‌دهد؟",
-    "expected_outcome": "پایتون finderهای sys.meta_path را به ترتیب صدا می‌زند (BuiltinImporter، FrozenImporter، PathFinder)؛ هر کدام یا None برمی‌گرداند یا یک ModuleSpec شامل نام، loader مناسب و origin (مکان منبع). PathFinder در پوشه‌های sys.path دنبال فایل/پکیج می‌گردد، پس افزودن پوشه یعنی جزو محل‌های جست‌وجو می‌شود. اگر همه‌ی finderها None بدهند، ModuleNotFoundError.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی یه finder یه ماژول رو پیدا می‌کنه، یه ModuleSpec برمی‌گردونه. این شامل چه سه چیزیه؟",
+    "expected_outcome": "نام، loader، origin (مکان منبع)",
     "hints": ["finder پیدا می‌کند، loader بار می‌کند.", "spec = نام + loader + origin."],
-    "rubric": "Correct: ordered meta_path query, spec contents, sys.path's relation to PathFinder, and the all-None → error condition. Partial: three of four. Incorrect: thinks sys.path is searched by all finders."
+    "rubric": "Correct if at least two of name/loader/origin are named."
   }
 ]

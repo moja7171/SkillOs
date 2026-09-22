@@ -12,13 +12,13 @@
   },
   {
     "key": "regular-vs-namespace",
-    "title": "کِی namespace package؟",
-    "form": "explanation",
+    "title": "namespace package چی نداره که پکیج معمولی داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: دو تفاوت عملی مهم پکیج معمولی و namespace package چیست؟ یک مورد استفاده‌ی واقعی برای namespace package بگو، و توضیح بده چرا برای اکثر پروژه‌ها پکیج معمولی پیش‌فرض بهتری است.",
-    "expected_outcome": "تفاوت: namespace package `__init__.py` و کد اولیه ندارد (نمی‌شود نام‌ها را export یا هنگام import کاری کرد) و می‌تواند در چند پوشه/آرشیو پخش باشد با `__path__` پویا؛ پکیج معمولی یک پوشه با `__init__.py` و `__file__` است. مورد استفاده: چند توزیع مستقل که زیر یک namespace مشترک (مثل `company.tool1`, `company.tool2`) نصب می‌شوند. پکیج معمولی پیش‌فرض بهتر است چون رفتارش صریح است، `__init__` برای رابط عمومی لازم است، و ابزارها/توسعه‌دهندگان آن را انتظار دارند.",
-    "hints": ["__init__ چه امکاناتی می‌دهد که namespace ندارد؟", "پخش شدن یک namespace روی چند محل."],
-    "rubric": "Correct: no __init__/code and multi-location path as differences, a plausible use case, and the explicitness argument. Partial: two of three. Incorrect: treats a missing __init__ as always harmless."
+    "estimated_minutes": 2,
+    "prompt": "namespace package چه چیزی رو نداره که پکیج معمولی داره؟",
+    "expected_outcome": "__init__.py (و کد اولیه/export)",
+    "hints": ["__init__ چه امکاناتی می‌دهد که namespace ندارد؟", "namespace package فایل کد ندارد."],
+    "rubric": "Correct if response names the missing __init__.py / no initial code."
   }
 ]

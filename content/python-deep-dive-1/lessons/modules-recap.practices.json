@@ -25,13 +25,13 @@
   },
   {
     "key": "circular-import",
-    "title": "import دایره‌ای",
-    "form": "explanation",
+    "title": "چرا حلقه‌ی بی‌نهایت رخ نمی‌ده؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "```python\n# a.py\nimport b\ndef fa(): return 'fa'\n\n# b.py\nimport a\ndef fb(): return a.fa()\n```\nاگر `python -c \"import a\"` اجرا شود، در ۳ تا ۴ جمله توضیح بده چرا حلقه‌ی بی‌نهایت رخ نمی‌دهد، در لحظه‌ای که b.py اجرا می‌شود `a` در sys.modules چه وضعی دارد، و چرا `from a import fa` در b.py به‌جای `import a` خطا می‌داد.",
-    "expected_outcome": "a قبل از اجرای کدش در sys.modules ثبت می‌شود؛ وقتی b `import a` می‌کند، شیء a (هنوز خالی، بدون fa) از cache برمی‌گردد و اجرا ادامه می‌یابد؛ بعداً a تکمیل می‌شود و `a.fa()` در زمان فراخوانی fb پیدا می‌شود. `from a import fa` اما همان لحظه دنبال نام fa در ماژول نیمه‌کاره می‌گردد و ImportError (cannot import name) می‌دهد چون هنوز تعریف نشده.",
+    "estimated_minutes": 2,
+    "prompt": "a.py و b.py همدیگه رو import می‌کنن (import دایره‌ای). چرا `import a` حلقه‌ی بی‌نهایت نمی‌سازه؟",
+    "expected_outcome": "چون a قبل از اجرای کدش توی sys.modules ثبت می‌شه",
     "hints": ["ثبت زودهنگام در cache.", "from-import نام را همان لحظه می‌خواهد؛ import ماژول را."],
-    "rubric": "Correct: early registration prevents the loop, a is partially initialized when b runs, deferred attribute lookup works, from-import fails at that moment. Partial: three of four. Incorrect: claims Python detects the cycle and raises."
+    "rubric": "Correct if response says a is registered in sys.modules before its code runs, so b's import of a returns the (partial) cached object."
   }
 ]

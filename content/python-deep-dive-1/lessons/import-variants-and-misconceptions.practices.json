@@ -25,13 +25,13 @@
   },
   {
     "key": "nested-import-cost",
-    "title": "هزینه‌ی import داخل تابع",
-    "form": "explanation",
+    "title": "دلیل اصلی پرهیز از import داخل تابع چیه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در ۳ تا ۵ جمله: چرا `import math` داخل تابعی که ۱۰ میلیون بار صدا زده می‌شود ~۵۰٪ کندتر است ولی `from math import sqrt` داخل همان تابع ~۲۰۰٪ کندتر؟ چرا با این حال دلیل اصلی پرهیز از import داخل تابع، کارایی نیست؟ در چه شرایطی import داخل تابع مجاز/منطقی است؟",
-    "expected_outcome": "هر فراخوانی، namespace محلی تازه می‌سازد؛ `import math` هر بار sys.modules را چک می‌کند و ارجاع ماژول را در locals می‌گذارد؛ `from math import sqrt` علاوه بر آن باید sqrt را در namespace ماژول پیدا و در locals bind کند — یک قدم اضافه که در ۱۰ میلیون تکرار سنگین می‌شود. دلیل اصلی، خوانایی است: وابستگی‌ها یک‌جا در بالای فایل دیده نمی‌شوند. مجاز: شکستن import دایره‌ای، decorator/ماژول خودکفا، یا وابستگی سنگین/اختیاری که فقط در مسیر خاصی لازم است — وقتی تابع به‌ندرت صدا زده می‌شود.",
+    "estimated_minutes": 2,
+    "prompt": "دلیل اصلی پرهیز از import داخل تابع، کارایی نیست. پس چیه؟",
+    "expected_outcome": "خوانایی (وابستگی‌ها یک‌جا بالای فایل دیده نمی‌شن)",
     "hints": ["به کاری که هر بار فراخوانی باید انجام شود فکر کن.", "خوانایی در برابر میکروثانیه‌ها."],
-    "rubric": "Correct: per-call locals rebinding, the extra lookup for from-import, readability as the main reason, and a valid legitimate use. Partial: three of four. Incorrect: claims the module is reloaded on every call."
+    "rubric": "Correct if response names readability as the main reason."
   }
 ]

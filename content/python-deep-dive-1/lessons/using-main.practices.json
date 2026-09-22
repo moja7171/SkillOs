@@ -25,13 +25,13 @@
   },
   {
     "key": "main-py",
-    "title": "__main__.py و zip",
-    "form": "explanation",
+    "title": "python somedir/ چه فایلی رو اجرا می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۲ تا ۳ جمله: `python somedir/` چه فایلی را اجرا می‌کند و اگر نباشد چه می‌شود؟ چطور می‌توان یک برنامه‌ی چندفایلی را در یک آرشیو zip گذاشت و مستقیم اجرا کرد؟ `python -m zipfile` نمونه‌ی کدام الگوی این درس است؟",
-    "expected_outcome": "پایتون در پوشه دنبال `__main__.py` می‌گردد و آن را به‌عنوان نقطه‌ی ورود اجرا می‌کند؛ اگر نباشد: can't find '__main__' module. با `python -m zipfile -c app __main__.py other.py` آرشیو بساز و `python app` را اجرا کن — پایتون داخل zip را می‌خواند. `python -m zipfile` یعنی خود ماژول zipfile با بلوک `if __name__ == '__main__'` یک رابط خط فرمان دارد — همان الگوی ماژول دومنظوره.",
-    "hints": ["نام فایل ورودی پوشه چیست؟", "-m ماژول را به‌عنوان اسکریپت اجرا می‌کند."],
-    "rubric": "Correct: __main__.py lookup and error, zip creation + direct run, and -m/zipfile as the dual-use pattern. Partial: two of three. Incorrect: thinks python dir/ runs every file."
+    "estimated_minutes": 2,
+    "prompt": "python somedir/ چه فایلی رو به‌عنوان نقطه‌ی ورود اجرا می‌کنه؟",
+    "expected_outcome": "__main__.py",
+    "hints": ["نام فایل ورودی پوشه چیست؟", "اگه نباشه، خطا می‌ده."],
+    "rubric": "Correct only if response names __main__.py."
   }
 ]

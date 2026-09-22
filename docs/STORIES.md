@@ -207,7 +207,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«توابع درجه‌یک» done 2026-09-22 (9 lessons, 9 explanation practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 106/258.
 **«دامنه‌ها، closureها و decoratorها» done 2026-09-22 (9 lessons, 8 explanation practices rewritten to true short_answer; `nonlocal-scopes/trace-layers` left unchanged, compact trace question).** `validate.py` clean; `content:import` loads 106/258.
 **«tuple به‌عنوان ساختار داده و named tuple» done 2026-09-22 (6 lessons, 6 explanation practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 106/258.
-➡ NEXT UP: «ماژول‌ها، پکیج‌ها و namespaceها» (12 explanation practices) — next section.
+**«ماژول‌ها، پکیج‌ها و namespaceها» done 2026-09-22 (12 lessons, 12 explanation practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 106/258.
+➡ NEXT UP: «به‌روزرسانی‌های پایتون» (2 practices) and «مطالب تکمیلی» (4 practices) — last two sections.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

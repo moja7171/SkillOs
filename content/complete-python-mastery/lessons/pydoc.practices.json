@@ -2,13 +2,13 @@
   {
     "key": "pydoc-source-of-content",
     "title": "pydoc اطلاعاتش رو از کجا می‌گیره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
     "prompt": "اگه یه ماژول هیچ docstring‌ای نداشته باشه، خروجی pydoc روش چه شکلی می‌شه؟",
-    "expected_outcome": "تقریباً خالی یا خیلی کم‌محتوا -- چون pydoc هیچ اطلاعات جدیدی تولید نمی‌کنه، فقط docstringهایی که خودمون نوشتیم رو به‌شکل خوانا نمایش می‌ده. بدون docstring، چیزی برای نمایش نداره.",
+    "expected_outcome": "تقریباً خالی/کم‌محتوا",
     "hints": ["pydoc چیزی رو خودش تولید نمی‌کنه، فقط نمایش می‌ده.", "منبع محتوای pydoc دقیقاً همون docstringهای درس قبله."],
-    "rubric": "Correct if the answer explains pydoc's output is only as good as the docstrings present, with none available if none are written."
+    "rubric": "Correct if response says pydoc's output has little to no content without docstrings, since it only displays them."
   },
   {
     "key": "pydoc-flags",

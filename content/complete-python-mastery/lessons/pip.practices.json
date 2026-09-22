@@ -26,12 +26,12 @@
   {
     "key": "wildcard-version-meaning",
     "title": "این دستور چه نسخه‌ای نصب می‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "دستور `pip install requests==2.9.*` رو اجرا می‌کنی. اگه نسخه‌های 2.9.0، 2.9.1 و 2.9.2 موجود باشن، کدومش نصب می‌شه و چرا؟",
-    "expected_outcome": "2.9.2 (آخرین نسخه‌ی موجود که با پیشوند 2.9 مطابقت داره) -- علامت ستاره یعنی «آخرین نسخه‌ی سازگار با این پیشوند»، نه دقیقاً 2.9.0.",
+    "estimated_minutes": 2,
+    "prompt": "دستور `pip install requests==2.9.*` رو اجرا می‌کنی. اگه نسخه‌های 2.9.0، 2.9.1 و 2.9.2 موجود باشن، کدومش نصب می‌شه؟",
+    "expected_outcome": "2.9.2",
     "hints": ["ستاره یعنی «هرچی با این پیشوند مطابقت داره»، نه یه نسخه‌ی دقیق.", "بین گزینه‌های مطابق، آخرین (جدیدترین) انتخاب می‌شه."],
-    "rubric": "Correct if the answer identifies 2.9.2 as the latest matching patch version, explaining the wildcard's meaning."
+    "rubric": "Correct if response says 2.9.2, the latest matching patch version."
   }
 ]

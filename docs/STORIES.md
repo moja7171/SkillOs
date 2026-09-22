@@ -219,7 +219,9 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«برنامه‌نویسی شی‌گرا» done 2026-09-22 (19 practices rewritten across 19 lessons — largest section).** `validate.py` clean; `content:import` loads 133/335.
 **«ماژول‌ها و پکیج‌ها» done 2026-09-22 (7 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
 **«کتابخانه‌ی استاندارد پایتون» done 2026-09-22 (17 practices rewritten across 15 lessons).** `validate.py` clean; `content:import` loads 133/335.
-➡ NEXT UP: «مدیریت پکیج‌ها» (8 practices) — last section.
+**«مدیریت پکیج‌ها» done 2026-09-22 (8 practices rewritten across 8 lessons — last section).** `validate.py` clean; `content:import` loads 133/335; `CourseImporterTest` passes.
+✅ **`complete-python-mastery` C-05 migration complete**: all 89 `explanation` practices rewritten across 9 sections. Final tally: 86 mcq, 164 short_answer, 85 coding, 0 explanation/scenario (335 total).
+➡ NEXT UP: no course actively in progress. Remaining courses with `explanation`/`scenario` practices (`software-architecture-complete-guide`, etc.) still need migrating in a future session, on request.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

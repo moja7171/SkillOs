@@ -199,7 +199,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«نیازمندی‌های نرم‌افزار» done 2026-09-22 (10 lessons, 20 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
 **«مستندسازی و مدل‌سازی نیازمندی‌ها» done 2026-09-22 (15 lessons, 26 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
 **«مذاکره و مدیریت تعارض» done 2026-09-22 (8 lessons, 13 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
-➡ NEXT UP: «مدیریت، ردیابی و جمع‌بندی» (7 lessons) — eighth and last section of `requirements-engineering`.
+**«مدیریت، ردیابی و جمع‌بندی» done 2026-09-22 (7 lessons, 10 explanation/scenario practices rewritten to true short_answer) — course fully migrated.** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10. Final form tally for `requirements-engineering`: 154 short_answer, 80 mcq, 10 coding, **0 explanation/scenario** — every one of the original 155 essay-style practices (73 explanation + 42 scenario + 40 overlong short_answer) is now a true short_answer.
+✅ C-05 for `requirements-engineering` is done. Other courses (`complete-python-mastery`, `python-deep-dive-1`, `software-architecture-complete-guide`, etc.) still have `explanation`/`scenario` practices — migrating them is a separate future session, not started here.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

@@ -4,42 +4,42 @@
     "title": "جایگاه SRR توی زنجیره‌ی بازبینی‌ها",
     "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، SRR معمولاً کِی نسبت به اعطای قرارداد توسعه برگزار می‌شه، و در چه شرایطی ممکنه SFR یا PDR هم قبل از اعطای قرارداد لازم بشه؟",
-    "expected_outcome": "SRR معمولاً درست قبل از اعطای قرارداد توسعه برگزار می‌شه. اگه سازمان بخواد قبل از قرارداد بیشتر پالایش کنه، SFR رو هم قبلش برگزار می‌کنه؛ اگه هنوز راحت نباشه، می‌تونه از توسعه‌دهنده بخواد طراحی اولیه بسازه و PDR رو هم قبل از قرارداد برگزار کنه (رایج توی خرید سیستم‌های نظامی دولت آمریکا).",
+    "estimated_minutes": 2,
+    "prompt": "SRR معمولاً کِی نسبت به اعطای قرارداد توسعه برگزار می‌شه؟",
+    "expected_outcome": "درست قبل از اعطای قرارداد",
     "hints": [
       "درس با «درست قبل از اعطای قرارداد» شروع شد.",
       "چه وقتی سازمان به بازبینی‌های اضافه‌تر (SFR، PDR) قبل از قرارداد نیاز پیدا می‌کنه؟"
     ],
-    "rubric": "Full credit places SRR right before contract award and explains the SFR/PDR escalation path for extra risk reduction before award."
+    "rubric": "Correct if response places SRR right before contract award."
   },
   {
     "key": "third-party-chair-conflict-of-interest",
     "title": "چرا رئیس شخص ثالث باید واقعاً بی‌طرف باشه؟",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "درس هشدار داد که شرکت‌های مشاوره‌ای که برای ریاست SRR استخدام می‌شن، ممکنه انگیزه‌ی مالی برای رضایت مشتری داشته باشن. این چه ریسکی برای بی‌طرفی SRR ایجاد می‌کنه و چه راه‌حلی پیشنهاد شد؟",
-    "expected_outcome": "اگه رئیس بازبینی به لحاظ مالی به رضایت یکی از دو سازمان (که صورت‌حساب رو می‌پردازه) وابسته باشه، ممکنه ارزیابی‌ها کمتر بی‌طرفانه بشه و مسائل واقعی نادیده گرفته بشن. درس پیشنهاد داد یه آژانس دولتی خارجی بدون انگیزه‌ی مالی برای راضی‌نگه‌داشتن هیچ‌کدوم از دو طرف، بهترین گزینه‌ست.",
+    "estimated_minutes": 2,
+    "prompt": "شرکت‌های مشاوره‌ای که برای ریاست SRR استخدام می‌شن، ممکنه انگیزه‌ی مالی برای رضایت مشتری داشته باشن. درس چه راه‌حلی پیشنهاد داد؟",
+    "expected_outcome": "یه آژانس دولتی خارجی بدون انگیزه‌ی مالی",
     "hints": [
       "چه کسی صورت‌حساب مشاور رو می‌پردازه و این چطور رو قضاوتش اثر می‌ذاره؟",
       "درس یه گزینه‌ی خاص به‌عنوان بهترین راه‌حل پیشنهاد داد."
     ],
-    "rubric": "Full credit explains the financial-incentive conflict of interest and names an external government agency (no financial stake) as the lesson's recommended fix."
+    "rubric": "Correct if response names an external government agency (with no financial stake) as the recommended fix."
   },
   {
     "key": "specification-becomes-law",
-    "title": "چرا «مشخصات بعد از قرارداد قانون می‌شه» مهمه؟",
-    "form": "scenario",
+    "title": "بعد از اعطای قرارداد، مشخصات چه وضعیتی پیدا می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
-    "prompt": "بعد از SRR و اعطای قرارداد، یه ذی‌نفع متوجه می‌شه یه نیازمندی رو اشتباه تعبیر کرده و می‌خواد تغییرش بده. طبق درس، این چه پیامدی داره و چرا SRR این‌قدر روی رسیدن به توافق کامل قبل از اعطا تأکید داره؟",
-    "expected_outcome": "بعد از اعطای قرارداد، مشخصات به لحاظ قراردادی قانون می‌شه — هر تغییر نیاز به تغییر قرارداد و مذاکره‌ی دوباره داره که هزینه‌بر و زمان‌بره، و پروژه می‌تونه کاملاً متوقف بشه. به همین دلیل SRR تأکید می‌کنه هیچ ابهام یا اجندای پنهانی نباید باقی بمونه — همه‌ی توافق‌ها باید قبل از اعطا حاصل بشن.",
+    "estimated_minutes": 2,
+    "prompt": "بعد از SRR و اعطای قرارداد، یه ذی‌نفع می‌خواد یه نیازمندی رو تغییر بده. این چه پیامدی داره؟",
+    "expected_outcome": "نیاز به تغییر قرارداد و مذاکره‌ی دوباره (هزینه‌بر و کند)",
     "hints": [
       "به جمله‌ی «نه اجندای پنهان، نه معامله‌ی پشت‌پرده» برگرد.",
       "چرا تغییر بعد از قرارداد گرون‌تر از تغییر قبل از قرارداده؟"
     ],
-    "rubric": "Full credit explains post-award changes require costly, slow contract renegotiation, motivating the pre-award emphasis on full agreement at SRR."
+    "rubric": "Correct if response says post-award changes require costly, slow contract renegotiation."
   },
   {
     "key": "rfi-vs-rfa-srr-context",
@@ -67,13 +67,13 @@
     "title": "معیارهای ورود SRR",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "دو مورد از پنج معیار ورود SRR که این درس معرفی کرد رو نام ببر و توضیح بده هر کدوم چه چیزی رو تضمین می‌کنه.",
-    "expected_outcome": "مثلاً: تحلیل هزینه‌ی اولیه (تضمین می‌کنه برآورد هزینه واقع‌بینانه‌ست)، ارزیابی ریسک (هزینه/زمان‌بندی/فنی و پیامدشون)، برنامه‌های مختلف پروژه (PMI knowledge areas)، مشخصات نیازمندی سیستم (آماده‌ی اعطا و پیاده‌سازی). هر دو مورد ذکرشده باید با توضیح درست باشن.",
+    "estimated_minutes": 2,
+    "prompt": "یکی از پنج معیار ورود SRR که این درس معرفی کرد رو نام ببر.",
+    "expected_outcome": "مثلاً: تحلیل هزینه، ارزیابی ریسک، برنامه‌های پروژه، یا بلوغ مشخصات نیازمندی سیستم",
     "hints": [
       "درس پنج معیار ورود رو به‌صورت لیست معرفی کرد.",
       "هر معیار به چه سؤالی حین SRR پاسخ می‌ده؟"
     ],
-    "rubric": "Full credit names two of the five entry criteria (cost analysis, risk assessment, project plans, requirements specification maturity) with correct explanation of what each ensures."
+    "rubric": "Correct if response names one of the five entry criteria (cost analysis, risk assessment, project plans, requirements specification maturity)."
   }
 ]

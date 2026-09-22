@@ -4,13 +4,13 @@
     "title": "چرا به مدیریت نیازمندی نیاز داریم؟",
     "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، مدیریت نیازمندی چه مشکلی رو حل می‌کنه که کل دوره تا این‌جا باهاش دست‌وپنجه نرم کرده؟",
-    "expected_outcome": "با توجه به حجم زیاد آرتیفکت‌ها و فعالیت‌های مهندسی نیازمندی (استخراج، نوشتن، اشتقاق، مدل‌سازی، ریسک، تعارض)، مدیریت نیازمندی ابزاری برای پیگیری و کنترل این حجم آشفتگیه.",
+    "estimated_minutes": 2,
+    "prompt": "مدیریت نیازمندی چه مشکلی رو حل می‌کنه که کل دوره تا این‌جا باهاش دست‌وپنجه نرم کرده؟",
+    "expected_outcome": "پیگیری/کنترل حجم زیاد آرتیفکت‌ها و فعالیت‌های RE",
     "hints": [
       "درس یه لیست بلند از چیزهایی که تا این‌جا یاد گرفتیم رو مرور کرد.",
       "مدیریت نیازمندی دقیقاً برای چه چیزی معرفی شد؟"
     ],
-    "rubric": "Full credit explains requirements management as the tool for tracking and controlling the large volume of RE artifacts and activities covered throughout the course."
+    "rubric": "Correct if response names tracking/controlling the large volume of RE artifacts and activities."
   }
 ]

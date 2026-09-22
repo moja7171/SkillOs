@@ -15,13 +15,13 @@
   {
     "key": "missing-subpackage-init",
     "title": "چرا هنوز import کار نمی‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه نفر پوشه‌ی analytics/reports/ رو ساخته و __init__.py رو فقط توی analytics/ گذاشته، نه توی reports/. وقتی می‌نویسه `from analytics.reports import sales_report`، خطا می‌گیره. چرا؟",
-    "expected_outcome": "چون reports هم باید خودش یه __init__.py داشته باشه تا پکیج حساب بشه -- داشتن __init__.py توی پکیج والد (analytics) کافی نیست، هر پوشه‌ای که می‌خوای قابل‌import باشه به __init__.py خودش نیاز داره.",
+    "estimated_minutes": 2,
+    "prompt": "__init__.py فقط توی analytics/ هست، نه توی analytics/reports/. `from analytics.reports import sales_report` چرا خطا می‌ده؟",
+    "expected_outcome": "چون هر پوشه‌ای که پکیج باشه (حتی زیرپکیج) __init__.py خودش رو لازم داره",
     "hints": ["هر پوشه‌ای که قراره یه پکیج باشه، __init__.py خودش رو نیاز داره.", "__init__.py توی analytics فقط analytics رو پکیج می‌کنه، نه reports رو."],
-    "rubric": "Correct if the answer explains each directory in the chain needs its own __init__.py, not just the top-level one."
+    "rubric": "Correct if response says each directory in the chain needs its own __init__.py."
   },
   {
     "key": "build-subpackage-structure",

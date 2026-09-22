@@ -26,12 +26,12 @@
   {
     "key": "use-dir-for-debugging",
     "title": "با dir() یه مشکل رو پیدا کن",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی مطمئنه ماژول utils یه تابع به اسم format_currency داره ولی وقتی صداش می‌زنه AttributeError می‌گیره. چطور می‌شه با dir() سریع فهمید مشکل چیه؟",
-    "expected_outcome": "با اجرای print(dir(utils)) می‌شه لیست کامل اسم‌های واقعی تعریف‌شده توی اون ماژول رو دید و چک کرد آیا واقعاً تابعی با همین اسم دقیق وجود داره یا نه (شاید اسمش چیز دیگه‌ای باشه یا اصلاً تعریف نشده باشه).",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی مطمئنه utils تابع format_currency داره ولی AttributeError می‌گیره. چطور می‌شه با dir() سریع مشکل رو پیدا کرد؟",
+    "expected_outcome": "با dir(utils) لیست اسم‌های واقعی موجود رو ببینیم",
     "hints": ["dir(utils) لیست دقیق همه‌ی اسم‌های موجود توی اون ماژول رو نشون می‌ده.", "شاید اسم تابع کمی فرق داره یا اصلاً وجود نداره."],
-    "rubric": "Correct if the answer proposes calling dir(utils) to inspect the actual available names and compare against the expected function name."
+    "rubric": "Correct if response proposes calling dir(utils) to inspect the actual available names."
   }
 ]

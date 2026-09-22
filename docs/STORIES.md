@@ -217,7 +217,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«ساختارهای داده‌ی درونی» done 2026-09-22 (15 practices rewritten across 14 lessons).** `validate.py` clean; `content:import` loads 133/335.
 **«استثناها» done 2026-09-22 (4 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
 **«برنامه‌نویسی شی‌گرا» done 2026-09-22 (19 practices rewritten across 19 lessons — largest section).** `validate.py` clean; `content:import` loads 133/335.
-➡ NEXT UP: «ماژول‌ها و پکیج‌ها» (7 practices) — next section.
+**«ماژول‌ها و پکیج‌ها» done 2026-09-22 (7 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
+➡ NEXT UP: «کتابخانه‌ی استاندارد پایتون» (17 practices) — next section.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

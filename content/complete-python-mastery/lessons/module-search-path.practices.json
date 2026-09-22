@@ -15,13 +15,13 @@
   {
     "key": "module-not-found-reason",
     "title": "چرا پایتون این ماژول رو پیدا نمی‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی فایل helpers.py رو توی یه پوشه‌ی کاملاً متفاوت (مثلاً Desktop) گذاشته و از پوشه‌ی پروژه سعی می‌کنه `import helpers` کنه، ولی ModuleNotFoundError می‌گیره. چرا؟",
-    "expected_outcome": "چون sys.path فقط پوشه‌ی فعلی (پوشه‌ی پروژه) و پوشه‌های نصب پایتون رو شامل می‌شه -- پوشه‌ی Desktop توی این لیست نیست، پس پایتون فایل helpers.py رو پیدا نمی‌کنه.",
-    "hints": ["به لیست sys.path فکر کن: کدوم پوشه‌ها توش هستن؟", "پایتون فقط توی پوشه‌ی فعلی و پوشه‌های نصب می‌گرده، نه هرجایی روی سیستم."],
-    "rubric": "Correct if the answer explains sys.path doesn't include arbitrary directories like Desktop, only the current directory and Python's installation paths."
+    "estimated_minutes": 2,
+    "prompt": "helpers.py توی Desktop‌ه، نه پوشه‌ی پروژه. `import helpers` چرا ModuleNotFoundError می‌ده؟",
+    "expected_outcome": "چون sys.path فقط پوشه‌ی فعلی و مسیرهای نصب پایتونه، نه هرجایی روی سیستم",
+    "hints": ["به لیست sys.path فکر کن: کدوم پوشه‌ها توش هستن؟", "پایتون فقط توی پوشه‌ی فعلی و پوشه‌های نصب می‌گرده."],
+    "rubric": "Correct if response says sys.path doesn't include arbitrary directories, only the current directory and installation paths."
   },
   {
     "key": "print-sys-path",

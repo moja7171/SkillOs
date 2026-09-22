@@ -2,13 +2,13 @@
   {
     "key": "why-not-app-cached",
     "title": "چرا app.py توی pycache نیست؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "توی پوشه‌ای که app.py و sales.py هست، بعد از اجرای `python app.py`، فقط نسخه‌ی کامپایل‌شده‌ی sales توی __pycache__ ظاهر می‌شه، نه app. چرا؟",
-    "expected_outcome": "چون app.py همون فایلیه که مستقیماً به‌عنوان نقطه‌ی ورود اجرا شده (python app.py)؛ پایتون همیشه ماژولی که مستقیم اجرا می‌شه رو از نو کامپایل می‌کنه و کشش نمی‌کنه، ولی ماژول‌هایی که import می‌شن (مثل sales) رو کش می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "بعد از `python app.py`، فقط sales توی __pycache__ ظاهر می‌شه، نه app. چرا؟",
+    "expected_outcome": "چون فقط ماژول‌های import‌شده کش می‌شن، نه فایل نقطه‌ی ورود که مستقیم اجرا شده",
     "hints": ["به تفاوت بین «اجرا کردن مستقیم یه فایل» و «import کردنش» فکر کن.", "فقط ماژول‌های import‌شده کش می‌شن."],
-    "rubric": "Correct if the answer explains only imported modules are cached, not the directly-executed entry-point script."
+    "rubric": "Correct if response says only imported modules are cached, not the directly-executed entry-point script."
   },
   {
     "key": "when-recompiled",

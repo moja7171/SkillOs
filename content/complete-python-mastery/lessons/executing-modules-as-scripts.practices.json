@@ -25,13 +25,13 @@
   },
   {
     "key": "why-code-runs-once",
-    "title": "چرا فقط یه بار اجرا می‌شه؟",
-    "form": "explanation",
+    "title": "چرا کد سطح‌بالا فقط یه بار اجرا می‌شه؟",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "اگه یه ماژول از سه جای مختلف برنامه import بشه، کدهای سطح‌بالای اون ماژول (مثل یه print خارج از تابع) چند بار اجرا می‌شن؟ چرا؟",
-    "expected_outcome": "فقط یه بار -- پایتون یه ماژول رو اولین باری که import می‌شه لود و اجرا می‌کنه، و بعدش نسخه‌ی لودشده رو کش می‌کنه. import‌های بعدی همون نسخه‌ی کش‌شده رو برمی‌گردونن، بدون اجرای دوباره‌ی کد سطح‌بالا.",
+    "estimated_minutes": 2,
+    "prompt": "اگه یه ماژول از سه جای مختلف import بشه، کدهای سطح‌بالاش چند بار اجرا می‌شن؟",
+    "expected_outcome": "فقط یه بار (بار اول؛ import‌های بعدی از نسخه‌ی کش‌شده استفاده می‌کنن)",
     "hints": ["پایتون هر ماژول رو فقط یه بار لود می‌کنه، حتی اگه چند بار import بشه.", "import‌های بعدی از یه نسخه‌ی کش‌شده استفاده می‌کنن."],
-    "rubric": "Correct if the answer explains modules are loaded and their top-level code executed only once, with subsequent imports reusing the cached module."
+    "rubric": "Correct if response says only once, with subsequent imports reusing the cached module."
   }
 ]

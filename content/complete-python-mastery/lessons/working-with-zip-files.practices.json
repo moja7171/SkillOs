@@ -26,12 +26,12 @@
   {
     "key": "why-with-statement-zip",
     "title": "چرا با with باز کردیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "چرا برای کار با ZipFile از `with ZipFile(...) as zip:` استفاده می‌کنیم به‌جای اینکه دستی close() رو صدا بزنیم؟",
-    "expected_outcome": "چون with تضمین می‌کنه فایل zip حتی اگه وسط کار خطایی رخ بده، به‌درستی بسته بشه -- بدون نیاز به نوشتن دستی یه بلوک try/finally.",
-    "hints": ["فکر کن وسط نوشتن فایل‌ها یه خطا رخ بده -- close() صدا زده می‌شه؟", "with این تضمین رو خودکار می‌ده."],
-    "rubric": "Correct if the answer explains `with` guarantees the file is closed even if an error occurs mid-operation."
+    "prompt": "چرا برای کار با ZipFile از `with ZipFile(...) as zip:` استفاده می‌کنیم به‌جای دستی close()؟",
+    "expected_outcome": "چون with تضمین می‌کنه فایل حتی با خطا هم بسته بشه",
+    "hints": ["فکر کن وسط نوشتن فایل‌ها یه خطا رخ بده — close() صدا زده می‌شه؟", "with این تضمین رو خودکار می‌ده."],
+    "rubric": "Correct if response says with guarantees the file is closed even if an error occurs."
   }
 ]

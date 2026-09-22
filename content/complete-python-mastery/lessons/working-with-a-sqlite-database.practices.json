@@ -2,24 +2,24 @@
   {
     "key": "operational-error-no-table",
     "title": "چرا این خطا می‌گیریم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nwith sqlite3.connect(\"db.sqlite3\") as conn:\n    conn.execute(\"INSERT INTO users VALUES (?, ?)\", (1, \"Ali\"))\n```\nاین کد `sqlite3.OperationalError: no such table: users` می‌ده، با اینکه فایل db.sqlite3 وجود داره. چرا؟",
-    "expected_outcome": "چون sqlite3.connect فقط فایل پایگاه‌داده رو می‌سازه (اگه نبود)، نه هیچ جدولی داخلش. باید قبل از درج داده، با یه دستور CREATE TABLE جدول users رو بسازیم.",
+    "estimated_minutes": 2,
+    "prompt": "با اینکه db.sqlite3 وجود داره، INSERT INTO users → OperationalError: no such table. چرا؟",
+    "expected_outcome": "چون connect فقط فایل رو می‌سازه، جدول رو نه (باید CREATE TABLE بزنیم)",
     "hints": ["connect فقط فایل رو می‌سازه، نه ساختار جدول‌ها.", "باید صریح یه دستور CREATE TABLE اجرا کنیم."],
-    "rubric": "Correct if the answer explains connect() only creates the database file, not tables, so a CREATE TABLE statement is needed first."
+    "rubric": "Correct if response says connect() only creates the database file, not tables."
   },
   {
     "key": "why-placeholders",
     "title": "چرا از ? استفاده می‌کنیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا به‌جای نوشتن مستقیم مقادیر توی رشته‌ی SQL (مثل f\"INSERT INTO movies VALUES ({id}, '{title}', {year})\")، از placeholder (?) و پاس‌دادن مقادیر جدا استفاده می‌کنیم؟",
-    "expected_outcome": "چون چسبوندن مستقیم مقادیر (خصوصاً ورودی‌های خارجی/کاربر) توی رشته‌ی SQL می‌تونه به SQL injection منجر بشه -- یه نوع حمله‌ی امنیتی. استفاده از placeholder باعث می‌شه مقادیر به‌شکل امن و جدا از دستور SQL پردازش بشن.",
+    "estimated_minutes": 2,
+    "prompt": "چرا به‌جای چسبوندن مقادیر توی رشته‌ی SQL، از placeholder (?) استفاده می‌کنیم؟",
+    "expected_outcome": "برای جلوگیری از SQL injection",
     "hints": ["فکر کن یکی از مقادیر شامل کوتیشن یا کاراکترهای خاص SQL باشه.", "این یه مسئله‌ی امنیتیه، نه فقط سبک نوشتن."],
-    "rubric": "Correct if the answer identifies SQL injection risk as the reason for using placeholders instead of string interpolation."
+    "rubric": "Correct if response names SQL injection as the reason for using placeholders."
   },
   {
     "key": "insert-and-read-rows",

@@ -2,13 +2,13 @@
   {
     "key": "no-month-or-year",
     "title": "چرا timedelta ماه نداره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا کلاس timedelta ویژگی‌هایی مثل months یا years نداره، با اینکه datetime این ویژگی‌ها رو داره؟",
-    "expected_outcome": "چون طول یه ماه یا سال ثابت نیست (ماه‌ها بین ۲۸ تا ۳۱ روزن، سال کبیسه ۳۶۶ روزه)؛ یه مدت‌زمان مثل «یک ماه» معنای دقیقی به تعداد روز نداره. برای همین timedelta فقط واحدهای همیشه‌ثابت (روز، ثانیه، میکروثانیه) رو پشتیبانی می‌کنه.",
-    "hints": ["طول ماه‌های مختلف با هم فرق داره.", "datetime یه نقطه‌ی مشخصه (پس month معنا داره)، timedelta یه مدت‌زمانه."],
-    "rubric": "Correct if the answer explains months/years have variable length, unlike the fixed units days/seconds/microseconds."
+    "estimated_minutes": 2,
+    "prompt": "چرا timedelta ویژگی‌هایی مثل months یا years نداره؟",
+    "expected_outcome": "چون طول ماه/سال ثابت نیست (روزهای متفاوت)",
+    "hints": ["طول ماه‌های مختلف با هم فرق داره.", "datetime یه نقطه‌ی مشخصه، timedelta یه مدت‌زمانه."],
+    "rubric": "Correct if response says months/years have variable length, unlike fixed units like days/seconds."
   },
   {
     "key": "seconds-vs-total-seconds",

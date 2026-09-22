@@ -15,13 +15,13 @@
   {
     "key": "check-argument-count",
     "title": "چرا len(sys.argv) == 1 یعنی بدون آرگومان؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا برای چک‌کردن «آیا کاربر هیچ آرگومانی نداده»، شرط `len(sys.argv) == 1` رو می‌نویسیم، نه `len(sys.argv) == 0`؟",
-    "expected_outcome": "چون sys.argv همیشه حداقل یه عضو داره -- اسم فایل درحال‌اجرا -- حتی وقتی کاربر هیچ آرگومان اضافه‌ای نداده. پس طول ۱ یعنی فقط همون اسم فایل هست و هیچ آرگومان واقعی‌ای داده نشده.",
+    "estimated_minutes": 2,
+    "prompt": "چرا برای چک «کاربر هیچ آرگومانی نداده»، len(sys.argv) == 1 می‌نویسیم، نه == 0؟",
+    "expected_outcome": "چون sys.argv همیشه حداقل اسم فایل رو داره",
     "hints": ["sys.argv هیچ‌وقت کاملاً خالی نیست.", "طول ۱ یعنی فقط اسم فایل توش هست."],
-    "rubric": "Correct if the answer explains sys.argv always has at least the filename, so length 1 means no real arguments were passed."
+    "rubric": "Correct if response says sys.argv always has at least the filename."
   },
   {
     "key": "read-two-arguments",

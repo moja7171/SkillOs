@@ -15,13 +15,13 @@
   {
     "key": "why-not-hardcode-password",
     "title": "چرا رمز رو توی کد ننویسیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی می‌گه «برای تست سریع‌تره که رمز ایمیلم رو مستقیم توی کد بنویسم.» چرا این کار خطرناکه؟",
-    "expected_outcome": "چون اگه این کد جایی مثل یه مخزن گیت (حتی خصوصی) ذخیره یا به‌اشتراک گذاشته بشه، رمز واقعی حساب فاش می‌شه. به‌جاش باید از متغیرهای محیطی یا فایل تنظیمات جدا از کد (و ترجیحاً یه App Password مخصوص) استفاده کرد.",
+    "estimated_minutes": 2,
+    "prompt": "چرا نوشتن مستقیم رمز ایمیل توی کد خطرناکه؟",
+    "expected_outcome": "چون اگه کد جایی share/commit بشه، رمز فاش می‌شه",
     "hints": ["فکر کن این فایل کد رو تصادفی جایی commit یا share کنی.", "رمز واقعی حساب نباید هیچ‌وقت توی متن کد باشه."],
-    "rubric": "Correct if the answer identifies the security risk of leaking real credentials via source code and proposes environment variables/config as the alternative."
+    "rubric": "Correct if response identifies the risk of leaking real credentials via source code."
   },
   {
     "key": "build-and-send-message",

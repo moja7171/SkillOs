@@ -2,13 +2,13 @@
   {
     "key": "read-text-vs-open",
     "title": "چرا read_text راحت‌تره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا `Path(\"file.txt\").read_text()` معمولاً به `open(\"file.txt\")` و مدیریت دستی بازوبسته‌کردن فایل ترجیح داده می‌شه؟",
-    "expected_outcome": "چون read_text خودش باز و بسته‌کردن فایل رو پشت‌صحنه مدیریت می‌کنه، پس نیازی به نوشتن with open(...) و نگرانی درباره‌ی بسته‌شدن فایل نیست -- کد کوتاه‌تر و کم‌خطاتر می‌شه.",
-    "hints": ["با open باید صریح فایل رو باز و بسته کنی (یا از with استفاده کنی).", "read_text این مدیریت رو خودش انجام می‌ده."],
-    "rubric": "Correct if the answer explains read_text handles opening/closing internally, simplifying the code."
+    "estimated_minutes": 2,
+    "prompt": "چرا `Path(\"file.txt\").read_text()` به open() و مدیریت دستی بازوبسته‌کردن ترجیح داده می‌شه؟",
+    "expected_outcome": "چون read_text باز/بسته‌کردن فایل رو خودش پشت‌صحنه مدیریت می‌کنه",
+    "hints": ["با open باید صریح فایل رو باز و بسته کنی.", "read_text این مدیریت رو خودش انجام می‌ده."],
+    "rubric": "Correct if response says read_text handles opening/closing internally."
   },
   {
     "key": "copy-with-shutil",

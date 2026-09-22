@@ -14,14 +14,14 @@
   },
   {
     "key": "import-vs-subprocess",
-    "title": "چرا با import فرق داره؟",
-    "form": "explanation",
+    "title": "چرا subprocess با import فرق داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا اجرای یه اسکریپت پایتونی دیگه با `subprocess.run([\"python3\", \"other.py\"])` با import کردنش کاملاً فرق داره؟",
-    "expected_outcome": "چون subprocess.run اون اسکریپت رو توی یه پردازش (process) کاملاً جدا و مستقل اجرا می‌کنه -- دو اسکریپت هیچ متغیری با هم به‌اشتراک نمی‌ذارن. در مقابل، import همون فایل رو داخل همون پردازش و فضای حافظه‌ی برنامه‌ی اصلی اجرا می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا اجرای اسکریپت دیگه با subprocess.run کاملاً با import کردنش فرق داره؟",
+    "expected_outcome": "چون subprocess یه پردازش کاملاً جدا می‌سازه (بدون اشتراک متغیر)",
     "hints": ["فکر کن دو تا برنامه‌ی کاملاً جدا روی سیستم اجرا بشن.", "با import، هر دو اسکریپت توی یه پردازش مشترکن."],
-    "rubric": "Correct if the answer explains subprocess.run spawns a separate process with no shared memory/variables, unlike import."
+    "rubric": "Correct if response says subprocess.run spawns a separate process with no shared memory/variables."
   },
   {
     "key": "handle-command-error",

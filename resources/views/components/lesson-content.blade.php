@@ -33,8 +33,8 @@
         {{-- One player at a time, capped in width so the page stays scannable; fullscreen is still available from the player.
              The picker is small numbered buttons (never wraps to a second line, unlike full-label chips) plus a label for the
              active one; every video past the first starts with `display:none` inline so nothing stacks before Alpine boots. --}}
-        <div x-show="tab === 'video'"
-             x-data="{ video: 0, labels: {{ Js::from($lesson->videos->map(fn ($v, $i) => $v->title ?? 'قسمت '.fa_num($i + 1))->values()) }}, pick(i) { this.video = i; $el.querySelectorAll('video').forEach(v => v.pause()); } }"
+        <div x-show="tab === 'video'" data-video-group
+             x-data="{ video: 0, labels: {{ Js::from($lesson->videos->map(fn ($v, $i) => $v->title ?? 'قسمت '.fa_num($i + 1))->values()) }}, pick(i) { this.video = i; $el.querySelectorAll('video').forEach(v => v.pause()); window.setActiveVideo && window.setActiveVideo($el, i); } }"
              class="p-4 flex flex-col gap-3">
             @if ($lesson->videos->count() > 1)
                 <div class="flex items-center gap-2 min-w-0">

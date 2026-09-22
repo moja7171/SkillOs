@@ -100,6 +100,20 @@ function mountSpeedControl(player) {
     player.on('ratechange', render);
 }
 
+// Multi-video lessons mount every video's Plyr instance up front so switching between
+// them is instant, but each instance's `keyboard.global` listener sits on `window` with
+// no notion of which player is actually visible — so pressing space toggled play/pause on
+// every mounted video at once, not just the one on screen. Keep the global listener live
+// on only the active video per group (see setActiveVideo(), called from the video picker).
+const mountedPlayers = new Map();
+
+export function setActiveVideo(groupEl, activeIndex) {
+    groupEl.querySelectorAll('.js-player').forEach((el, i) => {
+        const player = mountedPlayers.get(el);
+        if (player) player.listeners.global(i === activeIndex);
+    });
+}
+
 export function mountPlayers(root = document) {
     root.querySelectorAll('.js-player').forEach((el) => {
         if (el.dataset.mounted) return;
@@ -187,5 +201,9 @@ export function mountPlayers(root = document) {
         }
 
         player.on('ratechange', () => write(SPEED_KEY, String(player.speed)));
+
+        mountedPlayers.set(el, player);
     });
+
+    root.querySelectorAll('[data-video-group]').forEach((groupEl) => setActiveVideo(groupEl, 0));
 }

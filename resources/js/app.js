@@ -1,9 +1,11 @@
 import Alpine from 'alpinejs';
 import 'plyr/dist/plyr.css';
-import { mountPlayers } from './player';
+import { mountPlayers, setActiveVideo } from './player';
 import { mountDownloadFallbacks } from './download-fallback';
 
 window.Alpine = Alpine;
+
+window.setActiveVideo = setActiveVideo;
 
 window.toggleTheme = function () {
     const dark = document.documentElement.classList.toggle('dark');

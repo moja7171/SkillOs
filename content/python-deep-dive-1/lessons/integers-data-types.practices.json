@@ -17,10 +17,10 @@
     "title": "پایتون با Java چه فرقی دارد؟",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "در Java باید بین `int` (۳۲ بیت) و `long` (۶۴ بیت) انتخاب کنی و اگر عدد از بازه بیرون بزند overflow می‌شود. در ۲ تا ۴ جمله بگو پایتون این مسئله را چطور حل کرده، و دو هزینه‌ای که در ازایش می‌پردازی چیست.",
-    "expected_outcome": "پایتون `int` با تعداد بیت متغیر دارد: هر چه عدد بزرگ شود خودش بیت اضافه می‌کند، پس overflow وجود ندارد و حد فقط حافظه است. هزینه: (۱) حافظه — هر int سربار ۲۴ بایتی دارد و اعداد بزرگ بایت‌های بیشتری می‌گیرند (`sys.getsizeof`)، (۲) سرعت — عملیات روی اعداد بزرگ‌تر از عرض CPU باید تکه‌تکه انجام شود و کندتر است.",
+    "estimated_minutes": 2,
+    "prompt": "در Java باید بین int (۳۲ بیت) و long (۶۴ بیت) انتخاب کنی و اگه عدد از بازه بیرون بزنه overflow می‌شه. پایتون این مسئله رو چطور حل کرده؟ یه هزینه‌ای که در ازاش می‌پردازی رو هم بگو.",
+    "expected_outcome": "int عرض متغیر داره (بدون overflow) / هزینه: حافظه یا سرعت بیشتر",
     "hints": ["عرض ثابت در برابر عرض متغیر.", "مدرس دو benchmark نشان داد: اندازه با getsizeof و زمان با perf_counter."],
-    "rubric": "Correct: says Python ints grow to arbitrary size (no fixed width / no overflow, limited by memory) and names both costs: more memory per object and slower arithmetic for large values. Partial: gets the arbitrary size but only one cost. Incorrect: claims Python ints are 64-bit or overflow."
+    "rubric": "Correct if response says Python ints grow to arbitrary size (no overflow) and names one cost (memory or speed)."
   }
 ]

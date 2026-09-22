@@ -14,13 +14,13 @@
   },
   {
     "key": "explain-static-vs-dynamic",
-    "title": "برای یک برنامه‌نویس جاوا توضیح بده",
-    "form": "explanation",
+    "title": "نوع مال متغیره یا شیء؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "یک همکار جاوایی می‌پرسد: «پس در پایتون متغیرها بی‌نوع‌اند؟ یعنی type checking ندارد؟» در ۳ تا ۵ جمله توضیح بده تفاوت static و dynamic typing دقیقاً کجاست، و اینکه پایتون «بی‌نوع» نیست — نوع کجا زندگی می‌کند.",
-    "expected_outcome": "در Java نوع به *متغیر* چسبیده و کامپایلر انتساب ناسازگار را رد می‌کند. در پایتون متغیر فقط یک ارجاع بی‌نوع است؛ **شیء** نوع دارد و `type(x)` نوع شیء فعلی را برمی‌گرداند. پایتون به‌شدت type-checked است ولی در زمان اجرا و روی اشیا (مثلاً `\"a\" + 1` خطای TypeError می‌دهد)، نه روی متغیرها در زمان کامپایل.",
-    "hints": ["دو سؤال جدا: نوع *کجا* ذخیره می‌شود، و *کی* چک می‌شود.", "مثال بزن که پایتون همچنان خطای نوع می‌دهد — ولی روی عملیات، نه روی انتساب."],
-    "rubric": "Correct: states that in Java the type belongs to the variable and is checked at compile time, while in Python the type belongs to the object and variables are untyped references; explicitly says Python still enforces types at runtime on objects/operations. Partial: gets the variable-vs-object distinction but claims Python has no type checking, or vice versa. Incorrect: says Python variables have types or Java objects don't."
+    "estimated_minutes": 2,
+    "prompt": "همکار جاوایی می‌پرسه «پس متغیرها تو پایتون بی‌نوع‌ان؟» (۱) نوع در پایتون مال چیه؟ (۲) پایتون نوع رو کِی چک می‌کنه؟",
+    "expected_outcome": "(۱) شیء (نه متغیر) (۲) زمان اجرا (runtime)",
+    "hints": ["در Java نوع به متغیر چسبیده؛ در پایتون چی؟", "type(x) نوع چه چیزی رو برمی‌گردونه؟"],
+    "rubric": "Correct if (1) says the type belongs to the object and (2) says type-checking happens at runtime. Correct_with_hint if only one is right."
   }
 ]

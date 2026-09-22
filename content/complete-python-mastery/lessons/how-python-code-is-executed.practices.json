@@ -1,14 +1,14 @@
 [
   {
     "key": "explain-to-a-non-coder",
-    "title": "برای یه دوست غیرفنی توضیح بده",
-    "form": "explanation",
+    "title": "پشت‌صحنه‌ی اجرای کد پایتون",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه دوست که اصلاً برنامه‌نویسی بلد نیست می‌پرسه: «وقتی برنامه‌ی پایتونیتو اجرا می‌کنی، پشت‌صحنه دقیقاً چه اتفاقی می‌افته؟» در ۳ تا ۴ جمله ساده براش توضیح بده.",
-    "expected_outcome": "اول CPython کد پایتون رو به بایت‌کد پایتون کامپایل می‌کنه. بعد ماشین مجازی پایتون این بایت‌کد رو می‌خونه و در لحظه‌ی اجرا به کد ماشینِ مخصوص همون سیستم تبدیل و اجراش می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی برنامه‌ی پایتونیتو اجرا می‌کنی، اول CPython کد رو به چی تبدیل می‌کنه؟",
+    "expected_outcome": "بایت‌کد (bytecode)",
     "hints": ["دو مرحله وجود داره: کامپایل به یه زبان میانی، و بعد تبدیل اون به کد ماشین.", "این دقیقاً همون الگوییه که جاوا با بایت‌کد و JVM دنبال می‌کنه."],
-    "rubric": "Correct: mentions both steps — compiling to Python bytecode, then the Python virtual machine converting/executing that bytecode as machine code. Partial: mentions only one of the two steps. Incorrect: neither, or describes direct compilation to machine code."
+    "rubric": "Correct only if response names bytecode as what the source is first compiled to."
   },
   {
     "key": "why-bytecode-is-portable",

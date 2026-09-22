@@ -211,6 +211,10 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«به‌روزرسانی‌های پایتون» و «مطالب تکمیلی» done 2026-09-22 (6 practices rewritten) — `python-deep-dive-1` fully migrated.** Final form tally: 94 mcq, 84 short_answer, 80 coding, **0 explanation**. `validate.py` clean; `content:import` loads 106/258; `CourseImporterTest` 10/10.
 ✅ C-05 for `python-deep-dive-1` is done. Remaining courses with `explanation`/`scenario` practices (`complete-python-mastery`, `software-architecture-complete-guide`, etc.) still need migrating in a future session.
 
+**`complete-python-mastery` migration started 2026-09-22.** 335 practices across 133 lessons/11 sections: 86 mcq + 85 coding stay untouched. All 89 `explanation` practices get rewritten. Checked `short_answer` for genuine prose (the "در N جمله" prompt pattern) same as prior courses — only 2 hits (`cost-of-raising-exceptions/raise-vs-if-tradeoff`, `packages/package-vs-module`), and both are already single-sentence facts, not essays — left unchanged. So **89 total** rewrites across 9 sections. Per-section: شروع به کار (4), متغیرها و انواع داده (1), عبارت‌های شرطی (3), حلقه‌ها (3), توابع (8), ساختارهای داده‌ی درونی (15), استثناها (4), برنامه‌نویسی شی‌گرا (19 — largest), ماژول‌ها و پکیج‌ها (7), کتابخانه‌ی استاندارد پایتون (17), مدیریت پکیج‌ها (8).
+**«شروع به کار»، «متغیرها و انواع داده»، «عبارت‌های شرطی» done 2026-09-22 (8 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
+➡ NEXT UP: «حلقه‌ها» (3 practices) — next section.
+
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 
 ### [x] S-36 Course catalog cards feel sparse on wide screens, no per-course visual identity

@@ -12,13 +12,13 @@
   },
   {
     "key": "help-a-teammate",
-    "title": "به یه هم‌تیمی کمک کن",
-    "form": "explanation",
+    "title": "این SyntaxError چرا رخ داد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این خط رو توی مفسر پایتون زده:\n```python\n2 >\n```\nو این خطا رو گرفته: `SyntaxError`. برایش در ۲ تا ۳ جمله توضیح بده مشکل کجاست و چرا این اتفاق افتاده.",
-    "expected_outcome": "این یه عبارت مقایسه‌ی ناقصه — عملگر `>` به یه مقدار دوم نیاز داره که وجود نداره، پس مفسر نمی‌تونه بفهمدش. به این‌جور خطاها syntax error می‌گیم، یعنی گرامر کد غلط یا ناقصه.",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی `2 >` رو توی مفسر زده و SyntaxError گرفته. چرا؟",
+    "expected_outcome": "عملگر > به یه مقدار دوم نیاز داره که غایبه",
     "hints": ["Syntax یعنی گرامر یا دستور زبون کد.", "عملگر مقایسه به دو طرف نیاز داره؛ اینجا طرف دومش غایبه."],
-    "rubric": "Correct: mentions that syntax error means grammatically invalid/incomplete code AND connects it to the missing right-hand operand of `>`. Partial: only one of the two. Incorrect: neither, or an unrelated explanation."
+    "rubric": "Correct if response says the > operator is missing its right-hand operand."
   }
 ]

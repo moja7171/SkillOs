@@ -1,14 +1,14 @@
 [
   {
     "key": "signup-form-age-bug",
-    "title": "فرم ثبت‌نام یه باگ داره",
-    "form": "explanation",
+    "title": "چرا age + 18 خطا می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "توی فرم ثبت‌نام، سن کاربر رو با input می‌گیری و می‌خوای نشون بدی ۱۸ سال دیگه چند سالشه:\n```python\nage = input(\"age: \")\nfuture_age = age + 18\n```\nاین کد خطا می‌ده. چرا، و چطور درستش کنیم؟",
-    "expected_outcome": "چون input همیشه یه رشته (str) برمی‌گردونه، حتی اگه کاربر عدد تایپ کرده باشه. پایتون نمی‌تونه یه رشته رو مستقیم با یه عدد جمع کنه. راه‌حل: اول با int(age) تبدیلش کنیم به عدد.",
+    "estimated_minutes": 2,
+    "prompt": "`age = input(\"age: \")` بعد `age + 18` خطا می‌ده. چرا، و چه تابعی رو باید دور age بذاریم؟",
+    "expected_outcome": "input همیشه str برمی‌گردونه / int(age)",
     "hints": ["input چه نوع داده‌ای برمی‌گردونه، همیشه؟", "قبل از جمع کردن باید نوعشو با int() عوض کنی."],
-    "rubric": "Correct: explains that input() always returns a string, so adding an int to it fails, AND mentions converting with int() as the fix. Partial: mentions only one of the two (either the cause or the fix). Incorrect: neither."
+    "rubric": "Correct if response says input() always returns a string and int() is the fix."
   },
   {
     "key": "is-bio-empty",

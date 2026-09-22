@@ -12,13 +12,13 @@
   },
   {
     "key": "why-finally-not-after",
-    "title": "چرا finally بهتر از گذاشتن بعد از کل بلوکه؟",
-    "form": "explanation",
+    "title": "چرا کد بستن فایل رو توی finally می‌ذاریم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌پرسه «چرا کد بستن فایل رو توی finally می‌ذاریم؟ چرا نمی‌ذاریمش بعد از کل try/except؟» در ۲ تا ۳ جمله جوابش بده.",
-    "expected_outcome": "چون اگه try با استثنا مواجه بشه (مثلاً همون خط باز کردن فایل شکست بخوره)، متغیری که باید بسته بشه اصلاً ساخته نشده، پس کد بعد از try/except با NameError مواجه می‌شه. finally تنها جاییه که هم بعد از موفقیت هم بعد از شکست، تضمینی اجرا می‌شه.",
-    "hints": ["اگه خود باز-کردن فایل شکست بخوره، متغیر فایل اصلاً وجود نداره.", "finally تضمین می‌کنه که این کد همیشه اجرا بشه، صرف‌نظر از موفقیت یا شکست."],
-    "rubric": "Correct if the answer explains that code after try/except can fail with NameError if the resource was never created, while finally always runs regardless of success or failure."
+    "estimated_minutes": 2,
+    "prompt": "چرا کد بستن فایل رو توی finally می‌ذاریم، نه بعد از کل try/except؟",
+    "expected_outcome": "چون اگه try شکست بخوره، متغیر فایل اصلاً ساخته نشده (NameError)",
+    "hints": ["اگه خود باز-کردن فایل شکست بخوره، متغیر فایل اصلاً وجود نداره.", "finally تضمین می‌کنه که این کد همیشه اجرا بشه."],
+    "rubric": "Correct if response says code after try/except can fail with NameError if the resource was never created, while finally always runs."
   }
 ]

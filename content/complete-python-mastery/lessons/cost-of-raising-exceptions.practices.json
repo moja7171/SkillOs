@@ -13,13 +13,13 @@
   {
     "key": "when-raise-cost-matters",
     "title": "الان این نگرانی مهمه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌گه «توی همه‌ی توابعمون به‌جای raise باید از return None استفاده کنیم، چون raise آهسته‌تره.» این تابع فقط توی یه فرم ثبت‌نام، هر بار یه کاربر که فرم می‌فرسته، یه‌بار صدا زده می‌شه. نظرت چیه؟",
-    "expected_outcome": "برای این مورد، این نگرانی زیادی سخت‌گیرانه‌ست. تفاوت کارایی raise فقط وقتی محسوسه که تابع هزاران بار پشت‌سرهم اجرا بشه؛ یه تابع که هر بار فقط یه‌بار (به ازای هر کاربر) صدا زده می‌شه، هیچ مشکل کارایی‌ای نداره — raise این‌جا کاملاً قابل‌قبوله، و پیام خطای واضحی هم می‌ده.",
+    "estimated_minutes": 2,
+    "prompt": "تابعی که فقط یه‌بار به ازای هر کاربر صدا زده می‌شه، raise توش مشکل کاراییه؟",
+    "expected_outcome": "نه (تفاوت کارایی فقط توی اجرای هزاران‌باره محسوسه)",
     "hints": ["تفاوت کارایی raise فقط توی اجرای هزاران‌باره محسوسه.", "این تابع فقط به ازای هر کاربر، یه‌بار صدا زده می‌شه."],
-    "rubric": "Correct if the answer says the concern is overblown here, since the performance difference only matters at scale (thousands of calls), not a single call per user submission."
+    "rubric": "Correct if response says no, the performance difference only matters at scale."
   },
   {
     "key": "raise-vs-if-tradeoff",

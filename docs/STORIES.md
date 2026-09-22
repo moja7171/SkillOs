@@ -215,7 +215,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«شروع به کار»، «متغیرها و انواع داده»، «عبارت‌های شرطی» done 2026-09-22 (8 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
 **«حلقه‌ها» و «توابع» done 2026-09-22 (11 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
 **«ساختارهای داده‌ی درونی» done 2026-09-22 (15 practices rewritten across 14 lessons).** `validate.py` clean; `content:import` loads 133/335.
-➡ NEXT UP: «استثناها» (4 practices) — next section.
+**«استثناها» done 2026-09-22 (4 practices rewritten).** `validate.py` clean; `content:import` loads 133/335.
+➡ NEXT UP: «برنامه‌نویسی شی‌گرا» (19 practices) — largest section, next.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

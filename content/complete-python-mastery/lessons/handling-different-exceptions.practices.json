@@ -1,14 +1,14 @@
 [
   {
     "key": "unhandled-exception-type",
-    "title": "چرا هنوز کرش می‌کنه؟",
-    "form": "explanation",
+    "title": "چرا با age=0 هنوز کرش می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\ntry:\n    age = int(input(\"Age: \"))\n    result = 100 / age\nexcept ValueError:\n    print(\"invalid input\")\n```\nوقتی کاربر `0` وارد می‌کنه، برنامه بازم کرش می‌کنه. چرا، و چطور درستش کنیم؟",
-    "expected_outcome": "چون 100/0 یه ZeroDivisionError صادر می‌کنه، نه ValueError — و این کد فقط ValueError رو مدیریت می‌کنه. باید یه except دیگه برای ZeroDivisionError هم اضافه کنیم.",
+    "estimated_minutes": 2,
+    "prompt": "کد فقط `except ValueError:` داره. وقتی کاربر 0 وارد می‌کنه (100/0)، بازم کرش می‌کنه. چرا؟",
+    "expected_outcome": "چون 100/0 یه ZeroDivisionError می‌ده، نه ValueError",
     "hints": ["نوع استثنایی که 100/0 می‌ده با نوعی که فقط مدیریت شده فرق داره.", "باید یه except جدید برای ZeroDivisionError اضافه بشه."],
-    "rubric": "Correct if the answer identifies ZeroDivisionError as the unhandled exception type and proposes adding an except clause for it."
+    "rubric": "Correct if response names ZeroDivisionError as the unhandled exception type."
   },
   {
     "key": "shared-except-clause",

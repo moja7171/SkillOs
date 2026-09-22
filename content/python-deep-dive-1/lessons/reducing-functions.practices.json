@@ -25,13 +25,13 @@
   },
   {
     "key": "any-without-bool",
-    "title": "چرا bool لازم است؟",
-    "form": "explanation",
+    "title": "چرا r1 با r2/r3 فرق داره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "```python\nl = [0, '', None, 100, 'x']\nr1 = reduce(lambda a, b: a or b, l)\nr2 = reduce(lambda a, b: bool(a) or bool(b), l)\nr3 = any(l)\n```\nمقدار `r1`، `r2` و `r3` را بنویس و توضیح بده چرا `r1` با دو تای دیگر فرق دارد. همچنین بگو برای لیست خالی `reduce(..., [])` چه می‌شود و `any([])` چه.",
-    "expected_outcome": "`r1 = 100` (عملگر `or` خود عنصر را برمی‌گرداند: 0 or '' → '', '' or None → None, None or 100 → 100, 100 or 'x' → 100)؛ `r2 = True` و `r3 = True` چون به bool تبدیل می‌شوند. reduce روی لیست خالی بدون initializer `TypeError` می‌دهد؛ `any([])` `False` برمی‌گرداند (و `all([])` `True`).",
-    "hints": ["or مقدار یکی از دو عملوند را برمی‌گرداند، نه True/False.", "reduce بدون initializer روی iterable خالی چه می‌کند؟"],
-    "rubric": "Correct: r1 = 100 with the short-circuit reasoning, r2 = r3 = True, TypeError for empty reduce, any([]) False. Partial: r1 explained but empty-list behaviour wrong or missing. Incorrect: r1 = True."
+    "estimated_minutes": 2,
+    "prompt": "`reduce(lambda a,b: a or b, [0,'',None,100,'x'])` مقدار 100 می‌ده، ولی `any([0,'',None,100,'x'])` می‌ده True. چرا؟",
+    "expected_outcome": "or خود عنصر رو برمی‌گردونه، نه True/False",
+    "hints": ["or مقدار یکی از دو عملوند را برمی‌گرداند، نه True/False.", "any همیشه bool برمی‌گردونه."],
+    "rubric": "Correct if response says the or operator returns the operand's own value, not a boolean."
   }
 ]

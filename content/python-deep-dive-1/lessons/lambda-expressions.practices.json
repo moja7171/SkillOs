@@ -26,12 +26,12 @@
   {
     "key": "lambda-vs-def",
     "title": "lambda در برابر def",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: `f = lambda x: x ** 2` با `def f(x): return x ** 2` چه تفاوت‌هایی دارد و چه شباهت‌هایی؟ (به شیء ساخته‌شده، نام، و محدودیت‌های بدنه اشاره کن.) چه زمانی lambda انتخاب مناسب‌تری است؟",
-    "expected_outcome": "هر دو یک شیء `function` واقعی می‌سازند و متغیر `f` به آن اشاره می‌کند؛ رفتار فراخوانی یکسان است و همه‌ی انواع پارامتر در هر دو مجاز است. تفاوت: `def` نام تابع (`__name__`) را `f` می‌گذارد ولی lambda `<lambda>` می‌ماند؛ بدنه‌ی lambda فقط یک عبارت است (نه statement، نه annotation، نه docstring). lambda برای توابع کوتاهی که در لحظه به تابع دیگری پاس می‌دهیم (مثل key در sorted) مناسب است.",
-    "hints": ["به `__name__` و خروجی نمایش تابع فکر کن.", "بدنه‌ی lambda چه چیزهایی نمی‌تواند داشته باشد؟"],
-    "rubric": "Correct: mentions both produce a real function object, the name difference (<lambda>), single-expression limitation (no statements/annotations), and a sensible use case. Partial: two of these. Incorrect: claims lambda is a different kind of object or is a closure."
+    "estimated_minutes": 2,
+    "prompt": "`f = lambda x: x ** 2` با `def f(x): return x ** 2` چه فرق کلیدی‌ای دارن؟ (به `__name__` فکر کن.)",
+    "expected_outcome": "نام تابع در def برابر f است؛ lambda همیشه <lambda> می‌مونه",
+    "hints": ["به `__name__` و خروجی نمایش تابع فکر کن.", "بدنه‌ی lambda فقط یک عبارته."],
+    "rubric": "Correct if response names the __name__ difference (def sets f, lambda stays <lambda>)."
   }
 ]

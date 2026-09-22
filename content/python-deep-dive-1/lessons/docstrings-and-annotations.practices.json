@@ -26,12 +26,12 @@
   {
     "key": "eval-once",
     "title": "annotation کِی ارزیابی می‌شود؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "```python\nlimit = 10\n\ndef check(n: 'must be below ' + str(limit)) -> bool:\n    return n < limit\n\nlimit = 100\nprint(check(50))\nprint(check.__annotations__['n'])\n```\nخروجی هر print را بنویس و توضیح بده چرا این دو با هم ناسازگار به نظر می‌رسند و این رفتار به کدام نکته‌ی بخش قبل شبیه است.",
-    "expected_outcome": "`True` (بدنه هر بار `limit` فعلی = 100 را می‌خواند) و `'must be below 10'` (عبارت annotation یک بار موقع `def` با `limit = 10` ارزیابی و ذخیره شد). دقیقاً مثل مقدار پیش‌فرض پارامترها: هر دو در زمان ساخت تابع ارزیابی می‌شوند، نه در هر فراخوانی؛ بدنه اما هر بار اجرا می‌شود.",
+    "estimated_minutes": 2,
+    "prompt": "annotation یه پارامتر با `'must be below ' + str(limit)` نوشته شده، وقتی limit بعداً عوض می‌شه. این annotation کِی ارزیابی می‌شه — موقع def یا هر فراخوانی؟",
+    "expected_outcome": "موقع def (یک‌بار، نه هر فراخوانی)",
     "hints": ["def خودش یک بار اجرا می‌شود.", "درس «مراقب مقدارهای پیش‌فرض باش» را به یاد بیاور."],
-    "rubric": "Correct: True and 'must be below 10', explains def-time evaluation of annotations vs run-time body, and links it to default values. Partial: outputs right but explanation incomplete. Incorrect: claims annotation shows 100."
+    "rubric": "Correct if response says annotations are evaluated once at def time, like default values."
   }
 ]

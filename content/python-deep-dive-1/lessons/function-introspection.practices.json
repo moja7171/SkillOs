@@ -25,13 +25,13 @@
   },
   {
     "key": "function-vs-method",
-    "title": "تابع، متد، routine",
-    "form": "explanation",
+    "title": "تابع و متد چه فرقی دارن؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nclass Counter:\n    def inc(self): ...\n\nc = Counter()\n```\nبرای هر یک از `Counter.inc` و `c.inc` بگو `isfunction`، `ismethod` و `isroutine` چه برمی‌گردانند و در ۲ جمله توضیح بده تفاوت «تابع» و «متد» چیست.",
-    "expected_outcome": "`Counter.inc`: isfunction True، ismethod False، isroutine True. `c.inc`: isfunction False، ismethod True، isroutine True. متد callable‌ای است که به یک instance (یا کلاس) bound شده و آن را به‌عنوان آرگومان اول (self) دریافت می‌کند؛ همان `def` وقتی از طریق کلاس دسترسی می‌شود هنوز یک تابع ساده است. isroutine هر دو را می‌پذیرد.",
-    "hints": ["دسترسی از طریق instance آن را bound می‌کند.", "isroutine = function یا method."],
-    "rubric": "Correct: all six values right and explains bound-to-instance as the distinction. Partial: values right but explanation vague, or one value wrong. Incorrect: claims c.inc is a function."
+    "estimated_minutes": 2,
+    "prompt": "`Counter.inc` و `c.inc` (نمونه‌ی Counter) — کدوم تابع سادست و کدوم متد باند شده؟",
+    "expected_outcome": "Counter.inc: تابع ساده / c.inc: متد باندشده",
+    "hints": ["دسترسی از طریق instance آن را bound می‌کند.", "متد یعنی callable باندشده به یک instance."],
+    "rubric": "Correct if response says Counter.inc is a plain function and c.inc is a bound method."
   }
 ]

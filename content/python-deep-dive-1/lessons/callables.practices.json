@@ -25,13 +25,13 @@
   },
   {
     "key": "class-call-steps",
-    "title": "وقتی کلاس را صدا می‌زنی",
-    "form": "explanation",
+    "title": "چرا instance ساخته‌شده callable نیست ولی خود کلاس هست؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "وقتی می‌نویسی `a = Decimal('10.5')` دقیقاً چه اتفاقی می‌افتد؟ در ۳ تا ۴ جمله مراحل را بگو و توضیح بده چرا با اینکه `Decimal` تابع نیست، callable است، و چرا `a` (به‌طور پیش‌فرض) callable نیست.",
-    "expected_outcome": "فراخوانی کلاس اول `__new__` را اجرا می‌کند که شیء جدید را می‌سازد (اگر تعریف نشده از `object` ارث می‌رسد)، بعد `__init__` را با آن شیء در `self` اجرا می‌کند تا مقداردهی شود، و در نهایت شیء ساخته‌شده برگردانده می‌شود. `Decimal` از نوع `type` است نه `function`، ولی عملگر `()` رویش تعریف شده، پس callable است. `a` یک instance است و چون کلاس Decimal متد `__call__` ندارد، `a()` معنی ندارد و `callable(a)` False است.",
-    "hints": ["دو متد dunder در ساخت شیء نقش دارند.", "چه چیزی یک instance را callable می‌کند؟"],
-    "rubric": "Correct: mentions __new__ then __init__ then returning the instance, that classes are callable though type(Decimal) is type, and that instances need __call__. Partial: misses __new__ or the __call__ point. Incorrect: says Decimal is a function."
+    "estimated_minutes": 2,
+    "prompt": "`Decimal('10.5')` صدا زدن یعنی فراخوانی کلاسه. چرا Decimal (کلاس) callable است ولی `a` (instance ساخته‌شده) نیست؟",
+    "expected_outcome": "کلاس‌ها ذاتاً callable‌ان (عملگر () روشون تعریف شده)؛ instance فقط اگه __call__ داشته باشه callable می‌شه",
+    "hints": ["چه چیزی یک instance را callable می‌کند؟", "Decimal از نوع type است."],
+    "rubric": "Correct if response says classes are callable by nature while instances need their own __call__ method."
   }
 ]

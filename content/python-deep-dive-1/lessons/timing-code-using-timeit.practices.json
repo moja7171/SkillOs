@@ -25,13 +25,13 @@
   },
   {
     "key": "globals-locals",
-    "title": "globals یا locals؟",
-    "form": "explanation",
+    "title": "چرا timeit بدون globals خطا می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: چرا `timeit(stmt='math.sqrt(2)')` بدون setup/globals خطا می‌دهد؟ تفاوت گذاشتن import در `stmt` با `setup` چیست؟ کِی باید `globals=locals()` بدهی؟",
-    "expected_outcome": "timeit کد را در namespace مستقل خودش اجرا می‌کند و از importها/متغیرهای ما خبر ندارد. import داخل stmt در هر تکرار اجرا و زمان‌سنجی می‌شود (نادرست)؛ setup یک بار قبل از تکرارها اجرا می‌شود. وقتی داخل تابع هستی و stmt به متغیرهای محلی تابع نیاز دارد، `globals=locals()` آن namespace را در اختیارش می‌گذارد (globals() آنها را ندارد).",
+    "estimated_minutes": 2,
+    "prompt": "چرا `timeit(stmt='math.sqrt(2)')` بدون setup/globals خطا می‌ده؟",
+    "expected_outcome": "چون timeit کد رو توی namespace مستقل خودش اجرا می‌کنه",
     "hints": ["namespace جدا.", "setup یک بار، stmt number بار."],
-    "rubric": "Correct: isolated namespace, setup-once vs stmt-every-time, locals() inside functions. Partial: two of three. Incorrect: thinks timeit sees the caller's variables automatically."
+    "rubric": "Correct if response says timeit runs code in its own isolated namespace, unaware of our imports/variables."
   }
 ]

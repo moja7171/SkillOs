@@ -25,13 +25,13 @@
   },
   {
     "key": "pick-approach",
-    "title": "کدام رویکرد؟",
-    "form": "explanation",
+    "title": "کدوم رویکرد برای سیستم پلاگین؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "برای هر سناریو بگو if/elif، dict، decorator ثبت‌کننده یا `match` را انتخاب می‌کنی و چرا: (۱) تبدیل کد وضعیت HTTP به پیام، ثابت و ۱۰ مورد؛ (۲) سیستم پلاگین که ماژول‌های دیگر دستور جدید ثبت می‌کنند؛ (۳) شاخه‌هایی که هر کدام ۲۰ خط منطق با شرط‌های تودرتو دارند.",
-    "expected_outcome": "(۱) match (3.10+) یا dict ثابت — ساده و خوانا. (۲) decorator ثبت‌کننده — ثبت توزیع‌شده در زمان import ماژول‌ها. (۳) if/elif یا match با فراخوانی توابع جدا — بدنه‌های بزرگ در dict/lambda جا نمی‌شوند.",
-    "hints": ["پویا بودن caseها.", "اندازه‌ی بدنه‌ی هر شاخه."],
-    "rubric": "Correct: sensible choice for each with rationale (static → match/dict, dynamic/distributed → registry decorator, heavy bodies → if/elif or functions). Partial: two of three. Incorrect: same tool for all without reasoning."
+    "estimated_minutes": 2,
+    "prompt": "برای یه سیستم پلاگین که ماژول‌های دیگه دستور جدید ثبت می‌کنن، کدوم رویکرد رو انتخاب می‌کنی: if/elif، dict ثابت، یا decorator ثبت‌کننده؟",
+    "expected_outcome": "decorator ثبت‌کننده (registry)",
+    "hints": ["پویا بودن caseها.", "ثبت توزیع‌شده در زمان import ماژول‌ها."],
+    "rubric": "Correct only if response picks a registry/register decorator approach."
   }
 ]

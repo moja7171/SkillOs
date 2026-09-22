@@ -25,13 +25,13 @@
     "title": "چرا مستندسازی تغییرات مهمه؟",
     "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 4,
-    "prompt": "دو دلیلی که درس برای اهمیت مستندسازی تغییرات نیازمندی حین مذاکره آورد رو بنویس.",
-    "expected_outcome": "مثلاً: (۱) به‌عنوان سابقه‌ی تاریخی برای حل اختلاف یا سوءتفاهم آینده عمل می‌کنه، (۲) تضمین می‌کنه همه‌ی ذی‌نفعان نیازمندی‌ها رو یکسان درک کنن و به‌عنوان نقطه‌ی مرجع برای مذاکرات آینده عمل می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "یه دلیلی که درس برای اهمیت مستندسازی تغییرات نیازمندی حین مذاکره آورد رو بنویس.",
+    "expected_outcome": "مثلاً: سابقه‌ی تاریخی برای حل اختلاف / درک مشترک بین ذی‌نفعان",
     "hints": [
       "به پاراگراف اول درس برگرد.",
       "چه چیزی جلوی تفسیرهای متفاوت از نیازمندی رو می‌گیره؟"
     ],
-    "rubric": "Full credit gives at least two of: historical record for disputes, shared understanding among stakeholders, reference point for future changes."
+    "rubric": "Correct if response names one of: historical record for disputes, shared understanding among stakeholders, reference point for future changes."
   }
 ]

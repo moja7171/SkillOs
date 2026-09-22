@@ -22,30 +22,30 @@
   },
   {
     "key": "deriving-quality-from-functional",
-    "title": "از کارکردی به کیفیتی، بدون پاک کردن",
-    "form": "scenario",
+    "title": "کارکردی رو پاک کنیم یا نگه داریم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "نیازمندی کارکردی داریم: «پهپاد بذرپاش باید بذر رو روی منطقه‌ی هدف بریزد.» بعد از تحلیل، می‌خوایم یه نیازمندی کیفیتی هم اضافه کنیم درباره‌ی دقت ریختن بذر. طبق این درس، درست‌ترین کار کدومه؟ در ۳ تا ۴ جمله توضیح بده.",
-    "expected_outcome": "نیازمندی کارکردی رو نباید پاک کرد؛ باید یه نیازمندی کیفیتی جدید (مثلاً «دقت ریختن بذر باید در شعاع ۲ متری نقطه‌ی هدف باشد») به‌عنوان مشتق از همون نیازمندی کارکردی اضافه کرد. این‌جوری ردیابی‌پذیری حفظ می‌شه — همیشه می‌شه دید نیازمندی کیفیتی از کدوم نیازمندی کارکردی اومده.",
+    "estimated_minutes": 2,
+    "prompt": "نیازمندی کارکردی «پهپاد باید بذر رو روی منطقه‌ی هدف بریزد» رو داریم و می‌خوایم یه نیازمندی کیفیتی درباره‌ی دقت ریختن اضافه کنیم. نیازمندی کارکردی رو پاک کنیم یا نگه داریم؟",
+    "expected_outcome": "نگه داریم (کیفیتی از روش مشتق می‌شه)",
     "hints": [
       "قاعده‌ی این درس چی بود: «نیازمندی کارکردی رو نگه دار و کیفیتی رو ازش مشتق کن» — نه پاک‌کردن و جایگزینی.",
       "چرا حفظ نیازمندی اصلی مهمه؟ به واژه‌ی «ردیابی‌پذیری (traceability)» فکر کن."
     ],
-    "rubric": "Correct if response says to keep the functional requirement and derive/add a new quality requirement from it (not delete/replace), and explains this preserves traceability. Correct_with_hint if it says to derive without explaining the traceability reason. Incorrect if it suggests deleting/replacing the functional requirement."
+    "rubric": "Correct if response says to keep the functional requirement and derive the quality one from it, not delete/replace it."
   },
   {
     "key": "conflicting-quality-requirements",
-    "title": "تعارض بین نیازمندی‌های کیفیتی پهپاد",
-    "form": "explanation",
+    "title": "کدوم دو نیازمندی با هم تعارض دارن؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "برای پهپاد بذرپاش، دو تا نیازمندی کیفیتی پیشنهاد شده: (۱) پهپاد باید حداقل ۵ کیلوگرم بذر حمل کنه، (۲) پهپاد باید حداقل ۴۵ دقیقه بدون شارژ پرواز کنه. در ۲ تا ۳ جمله بگو این دو نیازمندی چرا ممکنه با هم تعارض داشته باشن، و مثل مثال سرعت/وزن ماشین توی این درس توضیح بده.",
-    "expected_outcome": "هرچی بذر بیشتری حمل بشه، وزن پهپاد بیشتر می‌شه و باتری سریع‌تر مصرف می‌شه — یعنی افزایش ظرفیت بذر (نیازمندی ۱) مستقیماً با افزایش مدت پرواز (نیازمندی ۲) تعارض داره، دقیقاً مثل تعارض سرعت و وزن ماشین.",
+    "estimated_minutes": 2,
+    "prompt": "برای پهپاد بذرپاش: (۱) حداقل ۵ کیلوگرم بذر حمل کنه، (۲) حداقل ۴۵ دقیقه بدون شارژ پرواز کنه. این دو چرا ممکنه با هم تعارض داشته باشن؟",
+    "expected_outcome": "وزن بذر بیشتر / مصرف باتری بیشتر (پرواز کوتاه‌تر)",
     "hints": [
       "به مثال سرعت/وزن ماشین توی این درس برگرد — همون منطق رو با وزن بذر/باتری پیاده کن.",
       "وزن بیشتر معمولاً یعنی مصرف انرژی بیشتر برای همون کار."
     ],
-    "rubric": "Correct if response identifies the weight/battery-life tradeoff and explicitly parallels it to the speed/weight car example from the lesson. Correct_with_hint if the tradeoff is identified without the parallel. Incorrect if no real conflict is identified."
+    "rubric": "Correct if response names the weight-vs-battery-life tradeoff (more seed weight drains the battery faster)."
   }
 ]

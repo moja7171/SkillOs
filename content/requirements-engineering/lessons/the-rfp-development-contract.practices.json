@@ -22,30 +22,30 @@
   },
   {
     "key": "cost-of-early-mistakes",
-    "title": "اشتباه کوچیک، هزینه‌ی بزرگ",
-    "form": "explanation",
+    "title": "ابهام تو مشخصات، کجا گیر می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "این درس گفت اشتباهات مرحله‌ی مشخصات/قرارداد می‌تونن بعداً هزینه‌ی زمانی و مالی بزرگی بسازن. فرض کن مشخصات نیازمندی‌های سیستمِ ATM یه ابهام داره (مثلاً مشخص نکرده ATM باید چند نوع ارز پشتیبانی کنه). در ۳ تا ۴ جمله بگو این ابهام چه تأثیری روی مراحل بعدی (طراحی، یکپارچه‌سازی، تست) می‌ذاره.",
-    "expected_outcome": "پیمانکار احتمالاً بر اساس یه فرض (مثلاً فقط یه ارز) طراحی و می‌سازه. اگه فرضش با نیاز واقعی مشتری فرق کنه، باید بعد از طراحی/ساخت برگرده و دوباره‌کاری کنه — که خیلی گرون‌تر و کندتر از اصلاح یه جمله توی مرحله‌ی مشخصات‌نویسیه. ممکنه حتی نیاز به تغییر قرارداد و مذاکره‌ی دوباره هم پیش بیاد.",
+    "estimated_minutes": 2,
+    "prompt": "مشخصات نیازمندی‌های ATM ابهام داره (تعداد ارزهای پشتیبانی‌شده مشخص نیست). پیمانکار بر چه چیزی طراحی می‌کنه، و اگه فرضش غلط دربیاد باید چیکار کنه؟",
+    "expected_outcome": "بر یه فرض (مثلاً یک ارز) / دوباره‌کاری (redesign)",
     "hints": [
-      "هرچی جلوتر توی چرخه‌ی عمر می‌ریم، هزینه‌ی اصلاح یه اشتباه بیشتر می‌شه — چرا؟",
-      "اگه پیمانکار قبلاً طراحی و ساخته، اصلاح یعنی برگشتن و دوباره‌کاری، نه فقط ویرایش یه سند."
+      "هرچی جلوتر توی چرخه‌ی عمر می‌ریم، هزینه‌ی اصلاح یه اشتباه بیشتر می‌شه.",
+      "اگه پیمانکار قبلاً طراحی و ساخته، اصلاح یعنی برگشتن و دوباره‌کاری."
     ],
-    "rubric": "Correct if response explains that an ambiguous spec leads to a wrong assumption during design/build, and that fixing it later (after design/integration) is far more costly/slower than catching it at the spec stage. Correct_with_hint if only the general idea (costs rise later) is stated without the mechanism. Incorrect if no real reasoning or claims it has no real impact."
+    "rubric": "Correct if response names that the contractor designs on an assumption, and fixing a wrong one later means costly rework/redesign. Correct_with_hint if only one half is given."
   },
   {
     "key": "sole-source-tradeoff",
-    "title": "چرا گاهی قرارداد تک‌منبعی؟",
-    "form": "explanation",
+    "title": "قرارداد تک‌منبعی کِی توجیه داره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "معمولاً RFP باید در دسترس عموم باشه تا رقابت شکل بگیره، ولی گاهی سازمان‌ها مستقیم با یه تأمین‌کننده‌ی خاص (بدون رقابت) قرارداد می‌بندن — قرارداد تک‌منبعی. در ۲ تا ۳ جمله حدس بزن چه شرایطی این تصمیم رو توجیه می‌کنه.",
-    "expected_outcome": "معمولاً وقتی می‌شه نشون داد هیچ تأمین‌کننده‌ی دیگه‌ای نمی‌تونه همون سیستم رو با همون قیمت، زمان‌بندی و سطح ریسک بسازه — مثلاً چون فقط یه شرکت اون تخصص یا فناوری خاص رو داره. رقابت مصنوعی توی این حالت فقط پروژه رو کند می‌کنه بدون سود واقعی.",
+    "estimated_minutes": 2,
+    "prompt": "قرارداد تک‌منبعی (بدون رقابت) معمولاً کِی توجیه داره؟",
+    "expected_outcome": "وقتی هیچ تأمین‌کننده‌ی دیگه‌ای نمی‌تونه همون قیمت/زمان‌بندی/ریسک رو بده",
     "hints": [
-      "به این فکر کن که رقابت چه فایده‌ای داره — قیمت بهتر، ریسک کمتر. اگه فقط یه گزینه‌ی واقعی وجود داشته باشه چی؟",
-      "درس اشاره کرد به این‌که این تصمیم باید توجیه و مجوز رسمی داشته باشه — یعنی یه استثنای قابل‌دفاع، نه یه میان‌بر دلبخواهی."
+      "به این فکر کن رقابت چه فایده‌ای داره — اگه فقط یه گزینه‌ی واقعی وجود داشته باشه چی؟",
+      "درس گفت این تصمیم باید توجیه و مجوز رسمی داشته باشه."
     ],
-    "rubric": "Correct if response identifies that sole-source contracts are justified when no other supplier can realistically match the price/schedule/risk profile (e.g. unique expertise). Correct_with_hint if it gestures at 'special cases' without the reasoning. Incorrect if it claims sole-source is just about saving time with no justification needed."
+    "rubric": "Correct if response identifies sole-source is justified when no other supplier can realistically match price/schedule/risk (e.g. unique expertise)."
   }
 ]

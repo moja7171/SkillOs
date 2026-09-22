@@ -25,7 +25,7 @@
     "title": "سه جمله برای یه نیاز واقعی",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
+    "estimated_minutes": 4,
     "prompt": "برای ATM (فرض کن هنوز اختراع نشده)، سه جمله‌ی «وضعیت فعلی»، «تأثیر»، و «نیاز» رو طبق ساختار این درس بنویس. یادت باشه: implementation-free، بدون صفت اضافه، بدون پس‌زمینه.",
     "expected_outcome": "نمونه: وضعیت فعلی: برای برداشت پول نقد، مشتریان باید در ساعات کاری بانک حضوری مراجعه کنند و با یک تحویل‌دار تعامل داشته باشند. تأثیر: این فرایند برای مشتریان زمان‌بر است و خارج از ساعات کاری بانک، دسترسی به پول نقد ممکن نیست. نیاز: نیاز به سیستمی است که به مشتریان اجازه دهد در هر ساعت از شبانه‌روز و بدون تعامل با یک کارمند بانک، پول نقد برداشت کنند.",
     "hints": [
@@ -36,16 +36,16 @@
   },
   {
     "key": "why-quantify-need",
-    "title": "چرا نیاز باید کمّی باشه؟",
-    "form": "explanation",
+    "title": "عدد کمّی نیاز، بعداً کجا دوباره استفاده می‌شه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "این درس گفت باید تا حد امکان بیانیه‌ی نیاز رو کمّی کنیم (مثلاً «چقدر بد» وضعیت فعلیه). در ۲ تا ۳ جمله بگو این عدد دقیقاً بعداً کجای فرایند دوباره سر و کله‌ش پیدا می‌شه، و چرا این ارتباط مهمه.",
-    "expected_outcome": "این اعداد بعداً به نیازمندی‌های عملیاتی تبدیل می‌شن، و در تست سطح سیستم، محصول نهایی دقیقاً در برابر همین اعداد سنجیده می‌شه. یعنی کمّی‌کردن نیاز از همون ابتدا، معیار موفقیت رو برای کل پروژه (تا مرحله‌ی تست) از قبل مشخص می‌کنه — بدون این عدد، هیچ‌وقت نمی‌شه عینی گفت راه‌حل واقعاً نیاز رو برطرف کرده یا نه.",
+    "estimated_minutes": 2,
+    "prompt": "این درس گفت باید نیاز رو تا حد امکان کمّی کنیم. این عدد بعداً دقیقاً کجای فرایند دوباره سر و کله‌ش پیدا می‌شه؟",
+    "expected_outcome": "در تست/راستی‌آزمایی سطح سیستم",
     "hints": [
       "درس گفت «این اعداد بعداً در طول تست سیستم دوباره سراغشون میایم» — دقیقاً کجای فرایند؟",
       "بدون عدد، چطور می‌شه ثابت کرد یه راه‌حل «به‌اندازه‌ی کافی خوب» بوده؟"
     ],
-    "rubric": "Correct if response explains the quantified need traces forward into operational requirements and gets tested against at system-level verification, and explains why this traceability matters (objective success criteria). Correct_with_hint if only one of these two points is present. Incorrect if no real reasoning given."
+    "rubric": "Correct if response names system-level testing/verification as where the quantified need is used again."
   }
 ]

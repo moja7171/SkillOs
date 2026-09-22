@@ -22,30 +22,30 @@
   },
   {
     "key": "when-se-is-overkill",
-    "title": "برای یه اپ ساده، SE لازمه؟",
-    "form": "scenario",
+    "title": "SE کامل لازمه یا نه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه تیم کوچیک می‌خواد یه اپلیکیشن ساده‌ی یادداشت‌برداری بسازه — بدون سخت‌افزار خاص، بدون تیم چندرشته‌ای، فقط چند تا برنامه‌نویس. آیا این تیم باید کل جعبه‌ابزار مهندسی سیستم‌ها (۸ فرایند مدیریت فنی، ۴ فعالیت اصلی و غیره) رو به کار ببره؟ در ۳ تا ۴ جمله توضیح بده.",
-    "expected_outcome": "نه، احتمالاً لازم نیست. مهندسی سیستم‌ها برای مدیریت پیچیدگی سیستم‌های چندرشته‌ای طراحی شده؛ یه اپ ساده‌ی یادداشت‌برداری این پیچیدگی رو نداره. با این حال، تیم همچنان باید نیازمندی‌های خوب بنویسه (مهندسی نیازمندی‌ها) — چون RE برخلاف SE، همیشه لازمه، فقط اجرای کاملش زیر چتر SE نیست.",
+    "estimated_minutes": 2,
+    "prompt": "یه تیم کوچیک می‌خواد یه اپ ساده‌ی یادداشت‌برداری بسازه، بدون سخت‌افزار خاص. آیا این تیم به کل جعبه‌ابزار مهندسی سیستم‌ها نیاز داره؟ و آیا به مهندسی نیازمندی‌ها نیاز داره؟",
+    "expected_outcome": "SE کامل: نه / RE: بله (همیشه)",
     "hints": [
       "به قاعده‌ی «کِی متوقف بشیم» توی این درس برگرد — معیارش چی بود؟",
       "فراموش نکن که حتی وقتی SE لازم نیست، RE هنوز لازمه."
     ],
-    "rubric": "Correct if response says full SE is likely unnecessary for a simple single-discipline app but requirements engineering itself is still needed. Correct_with_hint if only one of these two points is present. Incorrect if it claims either that SE is always required or that no requirements discipline is needed at all."
+    "rubric": "Correct if response says full SE isn't needed for a simple app but requirements engineering (RE) still is."
   },
   {
     "key": "recursive-subsystem-engineering",
-    "title": "مهندس زیرسیستم پیشرانه چیکار می‌کنه؟",
-    "form": "explanation",
+    "title": "زیرسیستم پیشرانه، مثل یه سیستم مستقل",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "این درس گفت هر عنصر پیچیده‌ی سلسله‌مراتب می‌تونه خودش یه «سیستم» مستقل حساب بشه و همون ۴ فعالیت مهندسی سیستم‌ها روش اجرا بشه. برای زیرسیستم پیشرانه‌ی یه ماشین، این یعنی چی؟ در ۲ تا ۳ جمله با اشاره به حداقل ۲ تا از ۴ فعالیت توضیح بده.",
-    "expected_outcome": "مهندس زیرسیستم پیشرانه، پیشرانه رو مثل یه سیستم مستقل در نظر می‌گیره: نیازمندی‌های خودِ پیشرانه رو توسعه می‌ده (مثلاً حداقل قدرت خروجی)، مأموریت‌ها و کارکردهای پیشرانه رو تعریف می‌کنه (مثلاً تبدیل سوخت به چرخش)، و کارکردها رو به قطعات فیزیکی پیشرانه (پیستون، میل‌لنگ) تخصیص می‌ده — دقیقاً همون فرایندی که در سطح کل ماشین اجرا شده بود، فقط این‌بار در مقیاس زیرسیستم.",
+    "estimated_minutes": 2,
+    "prompt": "مهندس زیرسیستم پیشرانه‌ی ماشین، پیشرانه رو مثل یه سیستم مستقل می‌بینه. نام دو تا از چهار فعالیت اصلی SE که روی خودِ پیشرانه هم تکرار می‌شن رو ببر.",
+    "expected_outcome": "هر دو تا از: توسعه‌ی نیازمندی، توسعه‌ی کارکرد/مأموریت، تعریف فیزیکی، راستی‌آزمایی",
     "hints": [
       "چهار فعالیت اصلی چی بودن؟ توسعه‌ی نیازمندی، توسعه‌ی کارکرد/مأموریت، تعریف فیزیکی، راستی‌آزمایی.",
       "همون کاری که در سطح «ماشین» انجام شد، این‌بار در سطح «پیشرانه» تکرار می‌شه."
     ],
-    "rubric": "Correct if response applies at least two of the four SE activities specifically to the propulsion subsystem (not just repeating the car-level example). Correct_with_hint if only one activity is applied or the explanation is generic. Incorrect if it doesn't connect to the recursive/per-level application idea."
+    "rubric": "Correct if at least two of the four SE activities (requirements, function/mission, physical definition, verification) are named."
   }
 ]

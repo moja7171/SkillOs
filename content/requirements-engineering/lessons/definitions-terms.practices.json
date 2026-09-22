@@ -22,30 +22,30 @@
   },
   {
     "key": "capability-vs-necessary-drone",
-    "title": "قابلیت لازم پهپاد بذرپاش",
-    "form": "scenario",
+    "title": "لازم یا نه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "برای پهپاد بذرپاش جنگل، دو تا قابلیت پیشنهاد شده: (۱) توانایی پرواز روی مناطق جنگل‌زدایی‌شده و ریختن بذر با دقت مشخص، (۲) توانایی پخش یه موزیک آرامش‌بخش حین پرواز برای کسانی که از دور می‌بیننش. در ۳ تا ۴ جمله بگو کدوم «لازم» هست و کدوم نه، و چرا.",
-    "expected_outcome": "قابلیت اول لازمه، چون مستقیماً به مأموریت اصلی پهپاد (بازجنگل‌کاری با دقت) مرتبطه — بدونش پهپاد نمی‌تونه کارش رو انجام بده. قابلیت دوم لازم نیست، چون هیچ ربطی به مأموریت اصلی نداره؛ حتی اگه از یه زاویه‌ی بازاریابی جذاب باشه.",
+    "estimated_minutes": 2,
+    "prompt": "برای پهپاد بذرپاش جنگل: (۱) پرواز روی مناطق جنگل‌زدایی‌شده و ریختن بذر با دقت مشخص، (۲) پخش موزیک آرامش‌بخش حین پرواز. کدوم «لازم» هست و کدوم نه؟",
+    "expected_outcome": "(۱) لازم (۲) لازم نیست",
     "hints": [
       "مأموریت اصلی پهپاد بذرپاش چیه؟ هر قابلیتی که مستقیم به اون مربوط نشه، احتمالاً «لازم» نیست.",
       "به مثال هولوگرام ATM فکر کن — یه قابلیت جذاب که هیچ نقشی در مأموریت اصلی نداره."
     ],
-    "rubric": "Correct if response identifies capability 1 as necessary (tied to the core mission) and capability 2 as not necessary (unrelated to the mission), with reasoning. Correct_with_hint if the classification is right but reasoning is thin. Incorrect if the classification is reversed or unexplained."
+    "rubric": "Correct if (1) is marked necessary and (2) not necessary. Correct_with_hint if only one is right."
   },
   {
     "key": "requirement-definitions-compared",
     "title": "INCOSE در برابر PMI",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "تعریف INCOSE از نیازمندی می‌گه باید «برای پذیرش یه ذی‌نفع لازم» باشه؛ تعریف PMI می‌گه باید «یه نیاز کسب‌وکاری رو برآورده کنه». در ۲ تا ۳ جمله بگو این دو ایده یکی‌ان یا فرق دارن، و چرا.",
-    "expected_outcome": "اساساً یه ایده‌ی مشترکن، فقط با زاویه‌ی دید متفاوت: هر دو می‌گن نیازمندی باید به یه هدف واقعی گره بخوره، نه یه ویژگی دلبخواهی. INCOSE از زاویه‌ی «رضایت ذی‌نفع» نگاه می‌کنه، PMI از زاویه‌ی «سود سازمانی» — ولی هر دو دارن همون چیزی رو می‌گن که این درس زیر عنوان «لازم» و «نیاز کسب‌وکاری» توضیح داد.",
+    "estimated_minutes": 2,
+    "prompt": "تعریف INCOSE از نیازمندی: «برای پذیرش یه ذی‌نفع لازم». تعریف PMI: «یه نیاز کسب‌وکاری رو برآورده کنه». این دو ایده یکی‌ان یا فرق دارن؟",
+    "expected_outcome": "اساساً یکی‌ان (فقط زاویه‌ی دید فرق داره)",
     "hints": [
-      "به تعریف «لازم» و «نیاز کسب‌وکاری» که همین درس داد برگرد — هر دو تعریف نیازمندی همین دو مفهوم رو دارن بازتاب می‌دن.",
-      "سؤال اینه که آیا «ذی‌نفع راضی شدن» و «نیاز کسب‌وکاری برآورده شدن» دو تا هدف جدان یا دو روی یه سکه."
+      "به تعریف «لازم» و «نیاز کسب‌وکاری» که همین درس داد برگرد.",
+      "سؤال اینه که «رضایت ذی‌نفع» و «نیاز کسب‌وکاری» دو تا هدف جدان یا دو روی یه سکه."
     ],
-    "rubric": "Correct if response recognizes the two definitions point at essentially the same underlying idea (tying a requirement to a real, necessary purpose) from different angles (stakeholder satisfaction vs. business benefit). Correct_with_hint if it says they're similar without explaining why. Incorrect if it claims they're unrelated with no reasoning."
+    "rubric": "Correct if response says the two definitions are essentially the same idea (tying a requirement to a real necessary purpose), just from different angles. Correct_with_hint if it says 'similar' without naming both angles. Incorrect if it says they're unrelated."
   }
 ]

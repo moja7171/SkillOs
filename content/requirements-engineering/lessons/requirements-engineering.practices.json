@@ -22,30 +22,30 @@
   },
   {
     "key": "why-validate-before-engineering",
-    "title": "چرا قبل از خرج‌کردن منابع، برمی‌گردیم؟",
-    "form": "explanation",
+    "title": "برگشت قبل از مهندسی راه‌حل، چه ریسکی رو کم می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "این درس گفت باید قبل از خرج‌کردن منابع زیاد برای مهندسی یه راه‌حل، مطمئن بشیم مفاهیم چرخه‌ی عمر (life cycle concepts) واقعاً نیاز اصلی رو پوشش می‌دن — و اگه نه، باید برگردیم. در ۳ تا ۴ جمله بگو چرا این فلش برگشتی این‌قدر مهمه، و چه ریسکی رو کم می‌کنه.",
-    "expected_outcome": "اگه بدون این چک برگشتی جلو بریم و بعداً بفهمیم مفاهیم چرخه‌ی عمر (یعنی داستان‌ها/سناریوهایی که قراره پایه‌ی نیازمندی‌ها بشن) اصلاً نیاز واقعی رو پوشش نمی‌دن، تازه اون‌موقع می‌فهمیم که کلی منابع (زمان، پول، تلاش مهندسی) صرف چیز اشتباهی شده. این فلش برگشتی، ریسک ساختن یه راه‌حل که کاملاً نیاز رو برآورده نمی‌کنه رو زودتر و ارزون‌تر کشف می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "این درس گفت باید قبل از خرج‌کردن منابع زیاد برای مهندسی راه‌حل، برگردیم و چک کنیم مفاهیم چرخه‌ی عمر واقعاً نیاز اصلی رو پوشش می‌دن. این چک، چه ریسکی رو کم می‌کنه؟",
+    "expected_outcome": "هدررفتن منابع (زمان/پول) روی راه‌حل اشتباه",
     "hints": [
       "اگه این چک رو انجام ندیم و مستقیم بریم سراغ مهندسی راه‌حل، اشتباه کِی و با چه هزینه‌ای کشف می‌شه؟",
       "به درس RFP/قرارداد برگرد — اونجا هم دیدیم اشتباهات اولیه چقدر بعداً گرون تموم می‌شن."
     ],
-    "rubric": "Correct if response explains that the backward check catches a mismatch between life-cycle concepts and the real need early, before expensive engineering work is done, reducing wasted resources. Correct_with_hint if only the general idea of 'checking early is good' is present without the resource-waste reasoning. Incorrect if no real reasoning given."
+    "rubric": "Correct if response names wasted resources/effort on the wrong solution as the risk being reduced by catching a mismatch early."
   },
   {
     "key": "recursive-goals",
-    "title": "اهداف هم قابل‌تجزیه‌ان",
-    "form": "explanation",
+    "title": "هدف پهپاد به چند زیرهدف تجزیه می‌شه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "این درس گفت خیلی از مراحل (مثل اهداف) یه فلش برگشتی/تجزیه‌ای دارن. برای پهپاد بذرپاش، هدف «بازجنگل‌کاری مناطق سوخته» رو در نظر بگیر. در ۲ تا ۳ جمله نشون بده این هدف چطور می‌تونه به زیراهداف کوچیک‌تر تجزیه بشه، و این کار چه ربطی به درس سلسله‌مراتب سیستم داره.",
-    "expected_outcome": "مثلاً «بازجنگل‌کاری» می‌تونه به زیراهداف «پرواز تا منطقه‌ی هدف»، «شناسایی نقاط مناسب کاشت» و «ریختن دقیق بذر» تجزیه بشه. این دقیقاً همون منطق سلسله‌مراتب سیستمه — یه هدف انتزاعیِ سطح‌بالا رو به اجزای کوچیک‌تر و قابل‌مدیریت‌تر می‌شکنیم، لایه به لایه.",
+    "estimated_minutes": 2,
+    "prompt": "هدف «بازجنگل‌کاری مناطق سوخته» رو برای پهپاد بذرپاش، به ۲ تا زیرهدف تجزیه کن.",
+    "expected_outcome": "مثلاً: پرواز تا منطقه‌ی هدف / ریختن دقیق بذر",
     "hints": [
       "به مثال «تراکنش بانکی → برداشت + واریز + انتقال» توی همین درس فکر کن، و همون الگو رو با پهپاد پیاده کن.",
-      "درس صریح گفت این تجزیه «همون منطق سلسله‌مراتبیه که قبلاً دیدیم» — به درس سلسله‌مراتب سیستم رجوع کن."
+      "درس صریح گفت این تجزیه «همون منطق سلسله‌مراتبیه که قبلاً دیدیم»."
     ],
-    "rubric": "Correct if response provides a plausible decomposition of the drone goal into 2-3 sub-goals and explicitly connects it to the hierarchical decomposition idea from the system-hierarchy lesson. Correct_with_hint if a decomposition is given without the explicit connection. Incorrect if no real decomposition is attempted."
+    "rubric": "Correct if response gives at least two plausible sub-goals of the drone's reforestation goal."
   }
 ]

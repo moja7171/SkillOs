@@ -22,30 +22,30 @@
   },
   {
     "key": "why-not-every-context-diagram",
-    "title": "چرا برای هر بستر یه دیاگرام نمی‌کشیم؟",
-    "form": "explanation",
+    "title": "کِی واقعاً یه دیاگرام زمینه‌ی جدید لازمه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "این درس گفت نباید برای هر بستر ممکن (مأموریت اصلی، تولید، تعمیر، حمل‌ونقل و...) یه دیاگرام زمینه‌ی جدا کشید. در ۳ تا ۴ جمله بگو چرا، و چه معیاری تصمیم می‌گیره کِی یه دیاگرام زمینه‌ی جدید واقعاً لازمه.",
-    "expected_outcome": "چون این کار می‌تونه به صدها دیاگرام منجر بشه که اکثرشون هیچ ارزش عملی ندارن و فقط وقت می‌گیرن. معیار درست اینه: فقط وقتی یه دیاگرام زمینه بساز که واقعاً به کشف نیازمندی جدید یا پالایش نیازمندی موجود کمک کنه — نه صرفاً چون یه بستر جدید وجود داره.",
+    "estimated_minutes": 2,
+    "prompt": "این درس گفت نباید برای هر بستر ممکن یه دیاگرام زمینه‌ی جدا کشید. طبق چه معیاری تصمیم می‌گیریم کِی یه دیاگرام زمینه‌ی جدید واقعاً لازمه؟",
+    "expected_outcome": "وقتی به کشف/پالایش نیازمندی کمک کنه",
     "hints": [
       "به هدف اصلی دیاگرام زمینه فکر کن — چرا اصلاً می‌کشیمش؟",
       "درس گفت «به‌جای ساختن همه‌ی دیاگرام‌های ممکن، فقط طبق نیاز بسازشون»."
     ],
-    "rubric": "Correct if response explains the impracticality of exhaustive diagramming and states the real criterion (draw one only when it helps surface or refine requirements). Correct_with_hint if only one of the two points is present. Incorrect if no real reasoning given."
+    "rubric": "Correct if response says a new context diagram is drawn only when it helps surface or refine requirements, not just because a new context exists."
   },
   {
     "key": "drone-operator-boundary",
-    "title": "اپراتور پهپاد داخل مرزه یا بیرون؟",
-    "form": "explanation",
+    "title": "مرز واقعی سیستم پهپاد کجاست؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، کاربرها معمولاً بیرون مرز سیستم قرار می‌گیرن. اپراتوری که پهپاد بذرپاش رو کنترل می‌کنه چطور؟ در ۲ تا ۳ جمله توضیح بده چرا اپراتور هم، با اینکه مستقیم با سیستم کار می‌کنه، باز هم بیرون مرزه، و مرز واقعی سیستم کجاست.",
-    "expected_outcome": "اپراتور بیرون مرزه چون رفتار انسانی قابل‌پیش‌بینی و کنترل کامل نیست — نمی‌شه اپراتور رو جزو سیستم حساب کرد و رفتارش رو طراحی کرد. مرز واقعی سیستم همون رابط انسان-ماشین (مثلاً کنترلر دستی، صفحه‌نمایش وضعیت پرواز) هست؛ سیستم می‌تونه روی رفتار اپراتور اثر بذاره (هشدار، راهنما) ولی کنترلش نمی‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "اپراتور پهپاد بذرپاش مستقیم باهاش کار می‌کنه، ولی طبق این درس بیرون مرز سیستمه. چرا؟ و مرز واقعی کجاست؟",
+    "expected_outcome": "رفتار انسان قابل‌کنترل نیست / رابط انسان-ماشین",
     "hints": [
       "چرا سیستم‌ها اصلاً نمی‌تونن رفتار کاربر رو کاملاً پیش‌بینی کنن؟",
       "مرز بین سیستم و کاربر رو این درس با چه اسمی صدا زد؟"
     ],
-    "rubric": "Correct if response explains that human behavior can't be fully controlled/predicted, so the operator stays outside the boundary, and correctly identifies the human-machine interface as the actual boundary. Correct_with_hint if only one of these two points is present. Incorrect if it claims the operator is inside the boundary or gives no reasoning."
+    "rubric": "Correct if response names unpredictable/uncontrollable human behavior as the reason, and the human-machine interface as the actual boundary. Correct_with_hint if only one is given."
   }
 ]

@@ -22,30 +22,30 @@
   },
   {
     "key": "skipping-decision-gates",
-    "title": "رد شدن از دروازه‌های تصمیم",
-    "form": "scenario",
+    "title": "رد شدن از دروازه‌ی تصمیم چه ریسکی داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه تیم توسعه‌ی پهپاد بذرپاش، برای صرفه‌جویی در زمان، از مرحله‌ی «مفهوم» و بازبینی‌های دروازه‌ی تصمیمش رد می‌شه و مستقیم می‌ره سراغ ساخت پروتوتایپ. در ۳ تا ۴ جمله بگو این کار چه ریسکی داره.",
-    "expected_outcome": "بدون مرحله‌ی مفهوم، نیازها و ذی‌نفعان به‌درستی شناسایی نشدن و فناوری‌های ممکن بررسی نشدن — یعنی تیم داره روی فرضیات ناتأیید می‌سازه. دروازه‌ی تصمیم هم جایی بود که همه چک می‌کردن آماده‌ی رفتن به مرحله‌ی بعدن؛ حذفش یعنی ریسک شکست محصول (چیزی که کاربر نمی‌خواد، یا پول و زمان زیادی که هدر می‌ره) به‌شدت بالا می‌ره.",
+    "estimated_minutes": 2,
+    "prompt": "یه تیم پهپاد بذرپاش، برای صرفه‌جویی در زمان، از مرحله‌ی «مفهوم» و دروازه‌ی تصمیمش رد می‌شه. این کار چه ریسکی رو بیشتر می‌کنه؟",
+    "expected_outcome": "ریسک شکست محصول / ساختن روی فرضیات ناتأیید",
     "hints": [
       "مرحله‌ی مفهوم دقیقاً برای چی بود؟ چه چیزی رو تأیید می‌کرد؟",
-      "درس گفت حذف یا رد شدن از مرحله‌ها، ریسک شکست پروژه رو «به‌شدت» بالا می‌بره — چرا؟"
+      "بدون این مرحله، تیم داره روی چی می‌سازه — فرضیات تأییدشده یا نشده؟"
     ],
-    "rubric": "Correct if response explains that skipping concept means building on unvalidated needs/stakeholders/technology choices, and connects this to increased risk of a failed or unwanted product. Correct_with_hint if only the risk is stated without explaining why concept matters. Incorrect if it claims skipping is fine or gives no reasoning."
+    "rubric": "Correct if response names increased risk of building on unvalidated needs/stakeholders/technology, leading to product failure. Correct_with_hint if only 'risk' is named without the mechanism."
   },
   {
     "key": "need-vs-technological-opportunity",
     "title": "نیاز محصول یا فرصت فناورانه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "یه شرکت باتری‌سازی یه فناوری جدید کشف می‌کنه که باتری رو خیلی سریع‌تر شارژ می‌کنه، بدون اینکه از قبل بدونه کدوم بازار دقیقاً بهش نیاز داره. طبق این درس، این شروعِ چرخه‌ی عمر از کدوم مسیر بوده — «نیاز محصول» یا «فرصت فناورانه»؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "این نمونه‌ی فرصت فناورانه‌ست: فناوری اول کشف شده و بعد دنبال بازار/کاربرد مناسب می‌گرده، برخلاف نیاز محصول که از یه مشکل مشخص شروع می‌شه و بعد دنبال راه‌حل می‌گرده.",
+    "estimated_minutes": 2,
+    "prompt": "یه شرکت باتری‌سازی یه فناوری جدید کشف می‌کنه که باتری رو سریع‌تر شارژ می‌کنه، بدون اینکه از قبل بدونه کدوم بازار بهش نیاز داره. این شروعِ چرخه‌ی عمر از کدوم مسیر بوده؟",
+    "expected_outcome": "فرصت فناورانه (technological opportunity)",
     "hints": [
       "نیاز محصول از یه مشکل مشخص شروع می‌شه؛ فرصت فناورانه از یه فناوری جدید که هنوز کاربردش معلوم نیست.",
-      "به مثال سطح‌های لمسی حساس به گرما (که بعداً شد گوشی‌های تاچ‌اسکرین) توی همین درس فکر کن."
+      "به مثال سطح‌های لمسی حساس به گرما که بعداً شد گوشی‌های تاچ‌اسکرین فکر کن."
     ],
-    "rubric": "Correct if response identifies this as a technological opportunity and explains the distinction (tech discovered first, market found later) vs. product need (problem first, solution later). Correct_with_hint if the classification is right but reasoning is thin. Incorrect if classified as product need or unexplained."
+    "rubric": "Correct only if response names technological opportunity."
   }
 ]

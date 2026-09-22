@@ -22,30 +22,30 @@
   },
   {
     "key": "not-just-the-obvious-ones",
-    "title": "اینا که نیازمندی نیستن، فقط جزئیات سفارشن!",
-    "form": "explanation",
+    "title": "مادی یا غیرمادی؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "دوستت داره برای خونه‌ش یه دیوار پیش‌ساخته سفارش می‌ده. پیمانکار می‌پرسه دیوار چه‌قدر بلند باشه، از چه متریالی ساخته بشه، و اینکه کل کار باید تا آخر ماه تموم بشه. دوستت می‌گه: «اینا که نیازمندی نیستن، فقط جزئیات سفارشن.» در ۳ تا ۴ جمله بگو چرا دوستت اشتباه می‌کنه، و بین نوع نیازمندی‌هایی که اینجا هست فرق بذار.",
-    "expected_outcome": "همه‌ی این موارد نیازمندی‌ان. ارتفاع و نوع متریال، نیازمندی‌های مادی/محسوس‌ان (مشخصات فیزیکی محصول نهایی). محدودیت زمانی (تا آخر ماه) یه نیازمندی غیرمادیه — محصول رو توصیف نمی‌کنه، ولی همچنان یه خواسته‌ی مشخص و لازم‌الاجراست که باید در قرارداد ذکر بشه.",
+    "estimated_minutes": 2,
+    "prompt": "دوستت داره برای دیوار خونه‌ش سفارش می‌ده: ارتفاع، نوع متریال، و مهلت «تا آخر ماه». (۱) ارتفاع و متریال چه نوع نیازمندی‌ان؟ (۲) مهلت تحویل چه نوع نیازمندی‌ایه؟",
+    "expected_outcome": "(۱) فیزیکی/محسوس (۲) غیرمادی",
     "hints": [
       "نیازمندی لزوماً چیزی نیست که فقط ظاهر یا اندازه‌ی محصول نهایی رو توصیف کنه.",
-      "زمان تحویل هم یه خواسته‌ی مشخصه، فقط از جنس دیگه‌ست — نیازمندی‌های غیرمادی."
+      "زمان تحویل هم یه خواسته‌ی مشخصه، فقط از جنس دیگه‌ست."
     ],
-    "rubric": "Correct if response says all three (height, material, deadline) count as requirements, and distinguishes material/physical requirements (height, material) from non-material ones (the deadline). Correct_with_hint if the distinction is present but shallow. Partial/Incorrect if it claims the deadline isn't a requirement, or gives no reasoning."
+    "rubric": "Correct if both short answers are given: (1) physical/tangible for height & material, (2) non-material for the deadline. Correct_with_hint if only one is right. Incorrect otherwise."
   },
   {
     "key": "why-split-into-documents",
-    "title": "چرا یه قرارداد بزرگ، چند تا سند جداست؟",
-    "form": "explanation",
+    "title": "کدوم سند کدوم رو توصیف می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "برای یه قرارداد کوچیک مثل ساخت پاسیو، یه لیست ساده از نیازمندی‌ها کافیه. ولی برای قرارداد ساخت یه هواپیما، نیازمندی‌ها بین چند تا سند جدا (مشخصات فنی، بیانیه‌ی کار، لیست نیازمندی‌های داده، شرایط و ضوابط) تقسیم می‌شن. در ۲ تا ۳ جمله حدس بزن چرا این تفکیک لازم می‌شه.",
-    "expected_outcome": "چون در مقیاس بزرگ، انواع مختلفی از خواسته‌ها با ماهیت‌های متفاوت وجود داره — مشخصات محصول نهایی، کارها و خدماتی که باید انجام بشه، مستنداتی که باید تحویل داده بشه، و شرایط حقوقی. جدا کردن این‌ها به هر طرف (فنی، مدیریت پروژه، حقوقی) اجازه می‌ده روی بخش مربوط به خودش تمرکز کنه، به‌جای گم‌شدن توی یه لیست غول‌پیکر و درهم.",
+    "estimated_minutes": 3,
+    "prompt": "توی قرارداد بزرگ، نیازمندی‌ها بین چند سند جدا تقسیم می‌شن. کدوم سند «کارها و خدماتی که باید انجام بشه» رو توصیف می‌کنه؟ و کدوم سند «بخش حقوقی توافق» رو؟",
+    "expected_outcome": "بیانیه‌ی کار (Statement of Work) / شرایط و ضوابط قرارداد",
     "hints": [
-      "به تفاوت بین «چی باید ساخته بشه» و «چه کارهایی باید انجام بشه» فکر کن — این دو یکی نیستن.",
-      "هرچی پروژه بزرگ‌تر می‌شه، افراد بیشتری (فنی، مالی، حقوقی) باید بتونن فقط بخش مربوط به خودشون رو بخونن."
+      "به جدول این درس نگاه کن — چهار نوع سند رو لیست کرده.",
+      "«کار» و «حقوقی» دو تا ستون جداگانه‌ی همون جدولن."
     ],
-    "rubric": "Correct if response identifies that different document types separate different concerns (product specification vs. work/services vs. deliverables vs. legal terms), and connects this to managing complexity at scale. Correct_with_hint if only one distinction is named. Incorrect if no real reasoning is given."
+    "rubric": "Correct if both are named: Statement of Work for work/services, terms and conditions for the legal part. Correct_with_hint if only one is right."
   }
 ]

@@ -22,16 +22,16 @@
   },
   {
     "key": "why-trouble-reports-best",
-    "title": "چرا تیکت پشتیبانی این‌قدر ارزشمنده؟",
-    "form": "explanation",
+    "title": "چرا تیکت پشتیبانی از استاندارد عمومی بهتره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "این درس گفت گزارش‌های مشکل و تیکت‌های پشتیبانی، «بهترین منبع» برای نیازمندی‌های بهبود/ارتقا هستن. در ۲ تا ۳ جمله حدس بزن چرا این منبع از، مثلاً، یه استاندارد صنعتی عمومی بهتر می‌تونه بگه چی رو باید بهبود بدیم.",
-    "expected_outcome": "تیکت‌های پشتیبانی مستقیماً از تجربه‌ی واقعی کاربران با سیستم فعلی میان — یعنی دقیقاً نشون می‌دن کجای سیستم واقعاً مشکل داره، نه یه فرضیه‌ی کلی. یه استاندارد عمومی درباره‌ی همه‌ی سیستم‌های مشابه صحبت می‌کنه، نه دقیقاً همین سیستم و همین کاربران.",
+    "estimated_minutes": 2,
+    "prompt": "چرا تیکت‌های پشتیبانی از، مثلاً، یه استاندارد صنعتی عمومی بهتر می‌تونن بگن چی رو باید بهبود بدیم؟",
+    "expected_outcome": "از تجربه‌ی واقعی کاربران با سیستم فعلی میان",
     "hints": [
       "تیکت پشتیبانی از کجا میاد؟ مستقیماً از کسایی که با سیستم واقعی کار کردن.",
       "استاندارد عمومی، فرضی و کلیه؛ تیکت پشتیبانی، واقعی و مشخصه."
     ],
-    "rubric": "Correct if response explains that trouble reports come from real user experience with the actual existing system, giving concrete/specific insight vs. the generic nature of industry standards. Correct_with_hint if it gestures at 'more accurate' without explaining why. Incorrect if no real reasoning given."
+    "rubric": "Correct if response says trouble reports reflect real user experience with the actual system, vs. the generic nature of standards."
   }
 ]

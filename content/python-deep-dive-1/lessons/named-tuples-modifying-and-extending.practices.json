@@ -25,13 +25,13 @@
   },
   {
     "key": "why-not-slicing",
-    "title": "چرا نه slicing؟",
-    "form": "explanation",
+    "title": "چرا extended unpacking برای تغییر وسط کار نمی‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا برای تغییر فیلدی در وسط یک named tuple بزرگ، extended unpacking اصلاً کار نمی‌کند، slicing کار می‌کند ولی توصیه نمی‌شود، و `_replace` بهترین انتخاب است. تفاوت نوع خروجی `*current, _ = t` با `t[:7]` چیست؟",
-    "expected_outcome": "extended unpacking فقط یک `*` مجاز دارد، پس نمی‌شود «قبل، فیلد، بعد» را جدا کرد. slicing با اندیس‌های عددی کار می‌کند (`t[:3] + (v,) + t[4:]`) ولی ناخوانا و خطاخیز است و با چند فیلد بدتر می‌شود. `_replace(field=value)` با نام فیلد کار می‌کند و مستقل از موقعیت است. `*current, _` یک list می‌دهد؛ `t[:7]` یک tuple (slice نوع را حفظ می‌کند).",
-    "hints": ["چند * در یک انتساب مجاز است؟", "slice نوع ورودی را برمی‌گرداند."],
-    "rubric": "Correct: single-star limitation, slicing readability/error-proneness, _replace by name, and list-vs-tuple result types. Partial: three of four. Incorrect: claims unpacking can target the middle."
+    "estimated_minutes": 2,
+    "prompt": "برای تغییر یه فیلد وسط named tuple، چرا extended unpacking اصلاً کار نمی‌کنه؟",
+    "expected_outcome": "چون فقط یه * توی یه انتساب مجازه",
+    "hints": ["چند * در یک انتساب مجاز است؟", "_replace با نام فیلد کار می‌کند، مستقل از موقعیت."],
+    "rubric": "Correct if response says only one * is allowed per assignment."
   }
 ]

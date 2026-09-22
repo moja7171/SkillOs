@@ -13,12 +13,12 @@
   {
     "key": "why-namedtuple-return",
     "title": "چرا نه tuple ساده؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "در ۲ تا ۳ جمله: برگرداندن named tuple به‌جای tuple ساده چه فایده‌ای برای *صداکننده* دارد (دو مورد) و چه چیزی را از دست نمی‌دهد؟",
-    "expected_outcome": "صداکننده با نام فیلد می‌خواند (`color.alpha`) نه با اندیس، repr خوانا دارد، و ویرایشگر autocomplete می‌دهد حتی بدون import کردن کلاس. هیچ‌چیز از دست نمی‌رود: همچنان tuple است و unpacking، اندیس‌گذاری و پیمایش کار می‌کند.",
+    "prompt": "برگردوندن named tuple به‌جای tuple ساده چه فایده‌ای برای صداکننده داره؟",
+    "expected_outcome": "با نام فیلد می‌خونه (نه اندیس) و repr خواناتره",
     "hints": ["به تجربه‌ی نوشتن کد در ویرایشگر فکر کن.", "named tuple هنوز tuple است."],
-    "rubric": "Correct: at least two caller benefits (names, repr, autocomplete) and notes nothing is lost since it is still a tuple. Partial: one benefit. Incorrect: claims unpacking stops working."
+    "rubric": "Correct if at least one caller benefit is named (reading by field name, readable repr, autocomplete)."
   }
 ]

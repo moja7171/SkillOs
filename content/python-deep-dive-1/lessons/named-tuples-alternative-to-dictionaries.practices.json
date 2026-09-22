@@ -26,12 +26,12 @@
   {
     "key": "when-dict",
     "title": "کِی dict بهتر است؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: چه زمانی named tuple را به dict ترجیح می‌دهی و چه زمانی برعکس؟ معادل `d[key_name]` و `d.get(k, default)` برای named tuple چیست؟",
-    "expected_outcome": "named tuple وقتی ساختار ثابت و شناخته‌شده دارد، فقط خوانده می‌شود و کلیدها identifier معتبرند (رکورد، ردیف دیتابیس، مقدار برگشتی) — سبک‌تر، immutable، با نام و autocomplete. dict وقتی کلیدها پویا/ناشناخته‌اند، اضافه/حذف می‌شوند، یا رشته/identifier نیستند. معادل‌ها: `getattr(nt, key_name)` و `getattr(nt, k, default)`.",
-    "hints": ["ثابت بودن ساختار و mutability.", "getattr سه آرگومان می‌گیرد."],
-    "rubric": "Correct: sensible criteria both ways plus getattr with and without default. Partial: criteria fine but getattr missing. Incorrect: says named tuples can take non-string keys."
+    "estimated_minutes": 2,
+    "prompt": "چه زمانی named tuple رو به dict ترجیح می‌دی و چه زمانی برعکس؟",
+    "expected_outcome": "named tuple: ساختار ثابت/شناخته‌شده / dict: کلیدها پویا یا اضافه/حذف می‌شن",
+    "hints": ["ثابت بودن ساختار و mutability.", "کلیدها identifier معتبرن یا نه؟"],
+    "rubric": "Correct if response gives a sensible criterion for each direction (fixed known structure vs dynamic keys)."
   }
 ]

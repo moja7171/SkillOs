@@ -25,13 +25,13 @@
   },
   {
     "key": "prototype-vs-defaults",
-    "title": "prototype یا __defaults__؟",
-    "form": "explanation",
+    "title": "پیش‌فرض‌ها چرا روی __new__ می‌شینن؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله، دو روش تعیین پیش‌فرض برای named tuple (prototype + `_replace` و `__new__.__defaults__`) را مقایسه کن: هر یک چطور کار می‌کند، سه ایراد روش prototype چیست، و چرا پیش‌فرض‌ها روی `__new__` گذاشته می‌شوند نه `__init__`؟",
-    "expected_outcome": "prototype: یک instance با همه‌ی مقادیر می‌سازیم و بقیه را با `_replace(...)` از آن مشتق می‌کنیم؛ ایرادها: نام کلاس در ساخت دیده نمی‌شود، به‌جای فراخوانی کلاس متد `_replace` صدا می‌زنیم، و فقط keyword مجاز است. `__defaults__`: tuple پیش‌فرض‌ها را روی سازنده می‌گذاریم و کلاس مثل همیشه (positional/keyword) صدا زده می‌شود. instanceهای named tuple در `__new__` ساخته می‌شوند (سازنده)، نه `__init__` (مقداردهی بعد از ساخت)، پس پارامترهای سازنده آنجا هستند.",
-    "hints": ["_replace فقط keyword می‌گیرد.", "__new__ می‌سازد، __init__ مقداردهی می‌کند."],
-    "rubric": "Correct: both mechanisms, the three prototype drawbacks, and the __new__ vs __init__ reason. Partial: two of three. Incorrect: says __init__ takes the fields."
+    "estimated_minutes": 2,
+    "prompt": "چرا پیش‌فرض‌های named tuple روی __new__ گذاشته می‌شن، نه __init__؟",
+    "expected_outcome": "چون instance توی __new__ ساخته می‌شه، نه __init__",
+    "hints": ["__new__ می‌سازد، __init__ مقداردهی می‌کند.", "پارامترهای سازنده کجا تعریف می‌شن؟"],
+    "rubric": "Correct if response says instances are built in __new__ (the constructor), not __init__."
   }
 ]

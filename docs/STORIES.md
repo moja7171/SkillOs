@@ -206,7 +206,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«متغیرها و حافظه»، «انواع عددی»، «پارامترهای تابع» done 2026-09-22 (4 practices rewritten; 2 more short_answer candidates found compact/acceptable on inspection and left unchanged — `argument-vs-parameter/same-object`, `nonlocal-scopes/trace-layers`, `decimals-constructors-and-contexts/prec-vs-ctor` are trace-prediction-plus-one-sentence, matching the owner's "multiple short answers OK" allowance, not real essays).** `validate.py` clean; `content:import` loads 106/258.
 **«توابع درجه‌یک» done 2026-09-22 (9 lessons, 9 explanation practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 106/258.
 **«دامنه‌ها، closureها و decoratorها» done 2026-09-22 (9 lessons, 8 explanation practices rewritten to true short_answer; `nonlocal-scopes/trace-layers` left unchanged, compact trace question).** `validate.py` clean; `content:import` loads 106/258.
-➡ NEXT UP: «tuple به‌عنوان ساختار داده و named tuple» (6 explanation practices) — next section.
+**«tuple به‌عنوان ساختار داده و named tuple» done 2026-09-22 (6 lessons, 6 explanation practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 106/258.
+➡ NEXT UP: «ماژول‌ها، پکیج‌ها و namespaceها» (12 explanation practices) — next section.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

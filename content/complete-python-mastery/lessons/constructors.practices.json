@@ -12,14 +12,14 @@
   },
   {
     "key": "self-not-passed-explicitly",
-    "title": "یه هم‌تیمی سؤال داره",
-    "form": "explanation",
+    "title": "self از کجا میاد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی تازه‌کار می‌پرسه: «چرا وقتی متد draw رو صدا می‌زنم فقط می‌نویسم point.draw()، ولی خود متد یه پارامتر self داره؟ مگه نباید یه چیزی بهش بدم؟» در ۱ تا ۲ جمله جوابش بده.",
-    "expected_outcome": "پایتون خودش، پشت‌صحنه، آبجکتی که متد روش صدا زده شده (اینجا point) رو به‌عنوان self پاس می‌ده — نیازی نیست دستی بدیش. فقط پارامترهای بعد از self هستن که باید خودت موقع صدازدن متد بدی.",
+    "estimated_minutes": 2,
+    "prompt": "`point.draw()` صدا می‌زنیم ولی خود متد یه پارامتر self داره. self از کجا میاد؟",
+    "expected_outcome": "پایتون خودش آبجکت (point) رو به‌عنوان self پاس می‌ده",
     "hints": ["self همیشه خودکار پاس داده می‌شه.", "فقط پارامترهای بعد از self رو باید دستی بدی."],
-    "rubric": "Correct if the answer explains Python automatically passes the object as self when calling a method, so it's never supplied manually."
+    "rubric": "Correct if response says Python automatically passes the object as self."
   },
   {
     "key": "init-trace",

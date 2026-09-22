@@ -26,12 +26,12 @@
   {
     "key": "why-custom-exception",
     "title": "چرا یه استثنای سفارشی ساختیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "چرا برای «باز کردن یه جریان ازقبل‌بازشده» از ValueError یا یه استثنای آماده‌ی دیگه استفاده نکردیم، و به‌جاش InvalidOperationError ساختیم؟",
-    "expected_outcome": "چون این موقعیت درباره‌ی یه مقدار نامعتبر نیست (ValueError برای اون مناسبه)، بلکه درباره‌ی انجام یه عملیات در یه حالت (state) نامعتبره -- هیچ استثنای آماده‌ای توی پایتون دقیقاً این مفهوم رو نشون نمی‌ده، پس خودمون یکی می‌سازیم که معنای دقیق‌تری داره.",
+    "prompt": "چرا برای «باز کردن یه جریان ازقبل‌بازشده» از ValueError استفاده نکردیم و InvalidOperationError ساختیم؟",
+    "expected_outcome": "چون این درباره‌ی یه مقدار نامعتبر نیست، درباره‌ی عملیات در حالت نامعتبره",
     "hints": ["ValueError درباره‌ی یه مقدار غلطه، نه یه عملیات در زمان نامناسب.", "استثنای سفارشی، معنای دقیق‌تری به خواننده‌ی کد می‌ده."],
-    "rubric": "Correct if the answer explains no built-in exception precisely matches 'invalid operation given current state', so a custom one communicates intent more clearly."
+    "rubric": "Correct if response says no built-in exception matches 'invalid operation given current state'."
   }
 ]

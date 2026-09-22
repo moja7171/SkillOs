@@ -2,13 +2,13 @@
   {
     "key": "property-vs-get-set",
     "title": "چرا property بهتر از get/set هست؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی می‌پرسه «چرا به‌جای اینکه مستقیم از get_price() و set_price() استفاده کنیم، بریم سراغ property؟ که هر دو یه کار رو انجام می‌دن.» در ۱ تا ۲ جمله جوابش بده.",
-    "expected_outcome": "با property می‌شه از بیرون کلاس، ویژگی رو دقیقاً مثل یه ویژگی معمولی خوند و نوشت (مثلاً product.price)، بدون اینکه کد استفاده‌کننده مجبور باشه هر بار متد صدا بزنه؛ اعتبارسنجی یا منطق اضافه، پشت‌صحنه و شفاف از دید کاربر کلاس اجرا می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا به‌جای get_price()/set_price()، بریم سراغ property؟",
+    "expected_outcome": "چون از بیرون مثل یه ویژگی معمولی خونده/نوشته می‌شه (product.price)",
     "hints": ["property باعث می‌شه فراخوانی متد، شبیه دسترسی ساده به یه ویژگی به نظر بیاد.", "از دید کد استفاده‌کننده، هیچ فرقی با یه ویژگی معمولی نداره."],
-    "rubric": "Correct if the answer explains property lets external code use plain attribute syntax while validation/logic still runs behind the scenes."
+    "rubric": "Correct if response says property lets external code use plain attribute syntax while logic runs behind the scenes."
   },
   {
     "key": "add-validation-property",

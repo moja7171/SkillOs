@@ -1,14 +1,14 @@
 [
   {
     "key": "spot-inheritance-abuse",
-    "title": "این وراثت مشکل داره؟",
-    "form": "explanation",
+    "title": "چرا این وراثت سوءاستفاده‌ست؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "```python\nclass Vehicle:\n    def refuel(self):\n        print(\"refuel\")\n\n\nclass Bicycle(Vehicle):\n    pass\n```\nیه هم‌تیمی این کد رو نوشته. چرا این یه نمونه از سوءاستفاده از وراثته؟",
-    "expected_outcome": "چون دوچرخه سوخت‌گیری نمی‌شه؛ Bicycle الان متد refuel رو به ارث برده که براش بی‌معنیه -- درست مثل مرغی که به‌خاطر ارث‌بری از Bird می‌تونه fly رو صدا بزنه با اینکه نمی‌تونه پرواز کنه.",
+    "estimated_minutes": 2,
+    "prompt": "Bicycle از Vehicle (که متد refuel داره) ارث می‌بره. چرا این سوءاستفاده از وراثته؟",
+    "expected_outcome": "چون دوچرخه سوخت‌گیری نمی‌شه (متد بی‌معنی به ارث رسیده)",
     "hints": ["یه دوچرخه چطور می‌تونه refuel بشه؟", "همون مشکل مرغی که fly رو به ارث می‌بره."],
-    "rubric": "Correct if the answer identifies that Bicycle inherits a method (refuel) that doesn't make sense for it."
+    "rubric": "Correct if response says Bicycle inherits a method (refuel) that doesn't make sense for it."
   },
   {
     "key": "count-inheritance-levels",

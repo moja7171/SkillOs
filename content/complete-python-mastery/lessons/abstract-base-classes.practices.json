@@ -26,12 +26,12 @@
   {
     "key": "why-abc-useful",
     "title": "ABC چه مشکلی رو حل می‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی می‌گه «همون‌قدر که همه‌ی زیرکلاس‌ها متد read رو با یه اسم بنویسن کافیه، لازم نیست از ABC استفاده کنیم.» در ۱ تا ۲ جمله بگو چرا این ریسکیه.",
-    "expected_outcome": "چون بدون ABC، این فقط یه قرارداد نانوشته‌ست -- هیچ‌چیزی جلوی این رو نمی‌گیره که یه نفر فراموش کنه متد رو پیاده‌سازی کنه یا اسمش رو اشتباه بذاره، و پایتون تا وقتی اون متد صدا زده نشه هیچ خطایی نمی‌ده. ABC این قرارداد رو در زمان تعریف کلاس اجباری می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "«همه‌ی زیرکلاس‌ها متد read رو با یه اسم بنویسن کافیه، لازم نیست از ABC استفاده کنیم» — چرا این ریسکیه؟",
+    "expected_outcome": "چون این فقط یه قرارداد نانوشته‌ست؛ ABC این قرارداد رو در زمان تعریف/نمونه‌سازی اجباری می‌کنه",
     "hints": ["بدون ABC، اگه یه نفر اسم متد رو اشتباه بنویسه، پایتون کِی متوجه می‌شه؟", "ABC این چک رو زودتر (موقع نمونه‌سازی) انجام می‌ده."],
-    "rubric": "Correct if the answer explains ABC enforces the contract early (at instantiation) rather than relying on an unenforced naming convention."
+    "rubric": "Correct if response says ABC enforces the contract early rather than relying on an unenforced convention."
   }
 ]

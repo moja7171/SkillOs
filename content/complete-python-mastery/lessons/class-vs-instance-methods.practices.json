@@ -26,12 +26,12 @@
   {
     "key": "when-to-use-classmethod",
     "title": "چرا متد کارخانه‌ای بهتره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا داشتن یه متد کارخانه‌ای (مثل Point.zero())، وقتی ساختن یه آبجکت پیچیده‌ست، بهتر از تکرار همون مقادیر هرجایی که لازمه؟",
-    "expected_outcome": "چون پیچیدگی ساختن اون آبجکت (چه مقادیری، چه منطقی) فقط یه‌بار، داخل خود کلاس نوشته می‌شه؛ هرجای دیگه‌ی برنامه فقط کافیه متد کارخانه‌ای رو صدا بزنی، بدون تکرار مقادیر یا منطق. اگه بعداً نحوه‌ی ساختش عوض بشه، فقط یه جا رو باید تغییر بدی.",
+    "estimated_minutes": 2,
+    "prompt": "چرا داشتن یه متد کارخانه‌ای (مثل Point.zero())، وقتی ساختن یه آبجکت پیچیده‌ست، بهتر از تکرار همون مقادیر هرجایی که لازمه؟",
+    "expected_outcome": "چون پیچیدگی ساخت فقط یه‌جا (توی کلاس) نوشته می‌شه",
     "hints": ["به تکرار مقادیر/منطق در چندین جای برنامه فکر کن.", "اگه بعداً منطق ساخت عوض بشه، چند جا باید تغییر کنه؟"],
-    "rubric": "Correct if the answer explains that a factory method centralizes construction complexity in one place, avoiding repetition and easing future changes."
+    "rubric": "Correct if response says a factory method centralizes construction complexity in one place."
   }
 ]

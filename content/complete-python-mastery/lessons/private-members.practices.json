@@ -14,14 +14,14 @@
   },
   {
     "key": "name-mangling-explanation",
-    "title": "پس چطور واقعاً محافظت نمی‌شه؟",
-    "form": "explanation",
+    "title": "دو زیرخط واقعاً امنیت میاره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی می‌گه «پس با دو زیرخط، این ویژگی کاملاً امنه و هیچ‌کس از بیرون بهش دسترسی نداره، درسته؟» در ۱ تا ۲ جمله جوابش بده.",
-    "expected_outcome": "نه دقیقاً. پایتون اسم ویژگی رو تغییر می‌ده (name mangling) و جلوش اسم کلاس رو اضافه می‌کنه (مثلاً _Wallet__balance)، ولی هنوز از نظر فنی با همون اسم جدید قابل‌دسترسیه. دو زیرخط بیشتر یه هشدار قراردادیه، نه یه مکانیزم امنیتی واقعی.",
-    "hints": ["پایتون مفهوم واقعی «خصوصی» مثل جاوا یا C# رو نداره.", "اسم واقعی ویژگی توی حافظه، با name mangling عوض می‌شه، نه غیرقابل‌دسترسی."],
-    "rubric": "Correct if the answer explains this is a convention (name mangling), not true security -- the attribute is still technically accessible under a mangled name."
+    "estimated_minutes": 2,
+    "prompt": "«با دو زیرخط، ویژگی کاملاً امنه و هیچ‌کس بهش دسترسی نداره» — درسته؟",
+    "expected_outcome": "نه دقیقاً (name mangling، نه امنیت واقعی؛ با اسم تغییریافته هنوز قابل‌دسترسیه)",
+    "hints": ["پایتون مفهوم واقعی «خصوصی» مثل جاوا یا C# رو نداره.", "اسم واقعی ویژگی توی حافظه، با name mangling عوض می‌شه."],
+    "rubric": "Correct if response says this is name mangling (a convention), not true security — still accessible under the mangled name."
   },
   {
     "key": "make-attribute-private",

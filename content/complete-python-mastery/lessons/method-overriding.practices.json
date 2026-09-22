@@ -1,14 +1,14 @@
 [
   {
     "key": "missing-super-call",
-    "title": "چرا خطا می‌گیریم؟",
-    "form": "explanation",
+    "title": "چرا این AttributeError رخ می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "```python\nclass Shape:\n    def __init__(self):\n        self.color = \"black\"\n\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        self.radius = radius\n\n\nc = Circle(5)\nprint(c.color)\n```\nاین کد `AttributeError` می‌ده. چرا، و چطور درستش کنیم؟",
-    "expected_outcome": "چون سازنده‌ی Circle، سازنده‌ی Shape رو بازنویسی (override) کرده و super().__init__() رو صدا نزده، پس color هیچ‌وقت مقداردهی نمی‌شه. راه‌حل: اول تابع __init__ کلاس Circle، super().__init__() رو صدا بزنیم.",
+    "estimated_minutes": 2,
+    "prompt": "Circle از Shape ارث می‌بره ولی سازنده‌ی خودش رو داره و super().__init__() صدا نمی‌زنه. `c.color` چرا AttributeError می‌ده؟",
+    "expected_outcome": "چون super().__init__() صدا زده نشده، color هیچ‌وقت مقداردهی نشده",
     "hints": ["سازنده‌ی Circle، سازنده‌ی Shape رو کامل جایگزین کرده.", "برای اجرای هر دو سازنده، باید صریح super().__init__() رو صدا بزنی."],
-    "rubric": "Correct if the answer identifies the overridden constructor not calling super().__init__() as the cause, and proposes adding that call."
+    "rubric": "Correct if response says the overridden constructor never calls super().__init__(), so color is never set."
   },
   {
     "key": "fix-with-super",

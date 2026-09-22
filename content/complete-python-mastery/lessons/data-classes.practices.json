@@ -14,14 +14,14 @@
   },
   {
     "key": "immutable-namedtuple-error",
-    "title": "چرا این خطا می‌ده؟",
-    "form": "explanation",
+    "title": "چرا c.r = 100 خطا می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nColor = namedtuple(\"Color\", [\"r\", \"g\", \"b\"])\nc = Color(r=255, g=0, b=0)\nc.r = 100\n```\nخط آخر AttributeError می‌ده. چرا، و اگه واقعاً بخوایم r رو عوض کنیم چیکار باید بکنیم؟",
-    "expected_outcome": "چون namedtuple یه tuple هست و tuple ها غیرقابل‌تغییرن (immutable) -- بعد از ساخته‌شدن نمی‌شه مقادیرشون رو عوض کرد. برای «تغییر» یه مقدار، باید یه نمونه‌ی کاملاً جدید بسازیم، مثلاً c = Color(r=100, g=0, b=0).",
+    "estimated_minutes": 2,
+    "prompt": "`c.r = 100` روی یه namedtuple → AttributeError. چرا؟",
+    "expected_outcome": "چون namedtuple یه tuple ـه و tupleها immutableان",
     "hints": ["namedtuple زیرمجموعه‌ی tuple هست.", "به‌جای تغییر، باید یه نمونه‌ی جدید بسازی."],
-    "rubric": "Correct if the answer identifies namedtuples as immutable tuples and proposes creating a new instance instead of mutating."
+    "rubric": "Correct if response says namedtuples are immutable tuples."
   },
   {
     "key": "convert-class-to-namedtuple",

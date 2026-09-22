@@ -22,30 +22,30 @@
   },
   {
     "key": "when-strs-syrs-allow-solution",
-    "title": "کِی ذکر راه‌حل توی نیازمندی اشکالی نداره؟",
-    "form": "scenario",
+    "title": "SYRS چرا می‌تونه راه‌حل رو ذکر کنه، ولی STRS نه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "این درس مثالی زد از دو نیازمندی متناقض («۲ تا ۳ ساعت پیش از نیاز به تعویض باتری» در برابر «پیش از نیاز به سوخت‌گیری») — و گفت این تناقض بیشتر مشکل STRS است، نه SYRS. چرا؟ SYRS چه ویژگی‌ای داره که STRS نداره؟",
-    "expected_outcome": "SYRS نتیجه‌ی تحلیل عمیق‌تر و مطالعات تطبیقیه که مشخص کردن کدوم راه‌حل (مثلاً باتری در برابر بنزین) از بین گزینه‌های ممکن، بهترین انتخاب برای برآوردن نیاز/اهداف سیستمه — پس توی SYRS اشکالی نداره نتیجه‌ی این تحلیل (یعنی راه‌حل انتخاب‌شده) رو توی جمله‌ی نیازمندی ذکر کنیم. STRS هنوز این تحلیل رو انجام نداده، پس باید بی‌طرف نسبت به راه‌حل باقی بمونه؛ اگه STRS دو نیازمندی متناقض راه‌حل‌محور داشته باشه، این یعنی سند سازگار نیست.",
+    "estimated_minutes": 2,
+    "prompt": "SYRS نتیجه‌ی چه فرایندیه که بهش اجازه می‌ده راه‌حل انتخاب‌شده رو توی نیازمندی ذکر کنه، برخلاف STRS؟",
+    "expected_outcome": "تحلیل عمیق‌تر و مطالعات تطبیقی (trade studies)",
     "hints": [
-      "درس گفت SYRS «نتیجه‌ی تحلیل عمیق‌تر و مطالعات تطبیقی» است — این چه اجازه‌ای بهمون می‌ده؟",
+      "درس گفت SYRS «نتیجه‌ی تحلیل عمیق‌تر و مطالعات تطبیقی» است.",
       "STRS هنوز این تحلیل رو انجام نداده — پس باید همچنان بی‌طرف باشه."
     ],
-    "rubric": "Correct if response explains SYRS results from deeper analysis/trade studies that already determined the best solution, so mentioning it is fine there but not in STRS (which must stay solution-agnostic). Correct_with_hint if it says 'SYRS allows solutions' without explaining why (the trade study reasoning). Incorrect otherwise."
+    "rubric": "Correct if response names trade studies/deeper analysis as what SYRS results from."
   },
   {
     "key": "physics-inconsistency-example",
-    "title": "چرا نمی‌شه پهپاد رو با سرعت ۳۰۰ گره پرواز داد؟",
-    "form": "explanation",
+    "title": "دو پدیده‌ی فیزیکی که سرعت ۳۰۰ گره رو غیرممکن می‌کنن",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، چرا نیازمندی «سیستم پهپاد بذرپاش باید به سرعت ۳۰۰ گره برسد» با قوانین فیزیک ناسازگاره؟ دو پدیده‌ی فیزیکی که درس اسم برد رو در حد یک جمله برای هرکدوم توضیح بده.",
-    "expected_outcome": "برای سیستم‌های بال‌گردان (مثل پهپاد)، در سرعت‌های خیلی بالا دو پدیده رخ می‌ده: (۱) واماندگی تیغه‌ی عقب‌رونده — تیغه‌ای که به عقب حرکت می‌کنه توی فضا سرعت صفر یا منفی داره و برآ تولید نمی‌کنه، که باعث کج‌شدن و از دست‌رفتن کنترل می‌شه؛ (۲) نوک تیغه‌ی جلورونده‌ی فراصوت — نوک تیغه‌ای که هم با موتور و هم با حرکت جلوروی خود سیستم شتاب می‌گیره، ممکنه از سرعت صوت بگذره و ویژگی‌های پرواز رو به‌شدت تغییر بده و کنترل رو بیشتر از دست بده.",
+    "estimated_minutes": 2,
+    "prompt": "نیازمندی «پهپاد باید به سرعت ۳۰۰ گره برسد» با قوانین فیزیک ناسازگاره. دو پدیده‌ی فیزیکی که درس اسم برد رو نام ببر.",
+    "expected_outcome": "واماندگی تیغه‌ی عقب‌رونده و نوک تیغه‌ی جلورونده‌ی فراصوت",
     "hints": [
       "درس این دو پدیده رو با اسم مشخص معرفی کرد — یکی درباره‌ی تیغه‌ی عقب‌رونده، یکی درباره‌ی نوک تیغه‌ی جلورونده.",
-      "هردو پدیده در نهایت به «از دست‌رفتن کنترل» منجر می‌شن، ولی مکانیزمشون فرق داره."
+      "هردو پدیده در نهایت به «از دست‌رفتن کنترل» منجر می‌شن."
     ],
-    "rubric": "Correct if response names both retreating blade stall and advancing blade tip supersonic phenomena with a correct one-sentence explanation each. Correct_with_hint if only one phenomenon is correctly explained. Incorrect if neither matches the lesson."
+    "rubric": "Correct if both retreating blade stall and advancing blade tip supersonic phenomena are named. Correct_with_hint if only one is right."
   }
 ]

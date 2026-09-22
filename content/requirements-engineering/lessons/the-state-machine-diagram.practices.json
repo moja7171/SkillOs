@@ -23,29 +23,29 @@
   {
     "key": "change-event-vs-time-event",
     "title": "رویداد تغییر یا رویداد زمانی؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "دو مثال از گذار حالت داریم: (۱) یه چراغ راهنمایی قدیمی که بعد از ۳۰ ثانیه از قرمز به سبز تغییر می‌کنه، بدون توجه به وجود خودرو. (۲) یه چراغ راهنمایی مدرن که وقتی یه عابر دکمه‌ی عبور رو فشار می‌ده، زودتر به سبز عابر تغییر می‌کنه. طبق این درس، هرکدوم از این دو گذار از کدوم نوعه؟",
-    "expected_outcome": "(۱) رویداد زمانی (time event) — گذار فقط بر پایه‌ی گذشت زمان اتفاق می‌افته، بدون دستور بیرونی. (۲) رویداد تغییر (change event) — گذار با یه دستور یا محرک بیرونی مشخص (فشردن دکمه‌ی عبور) راه می‌افته. درس دقیقاً همین دو مثال چراغ راهنمایی رو زد.",
+    "estimated_minutes": 2,
+    "prompt": "(۱) چراغ راهنمایی که بعد از ۳۰ ثانیه از قرمز به سبز تغییر می‌کنه، بدون توجه به خودرو. (۲) چراغی که با فشردن دکمه‌ی عابر زودتر سبز می‌شه. هرکدوم کدوم نوع گذاره؟",
+    "expected_outcome": "(۱) رویداد زمانی (۲) رویداد تغییر",
     "hints": [
-      "درس دقیقاً همین دو مثال (چراغ قدیمی و چراغ مدرن با دکمه‌ی عابر) رو برای این دو نوع گذار زد.",
+      "درس دقیقاً همین دو مثال چراغ راهنمایی رو زد.",
       "رویداد زمانی صرفاً بر پایه‌ی گذشت زمانه؛ رویداد تغییر یه محرک بیرونی مشخص داره."
     ],
-    "rubric": "Correct if response correctly classifies (1) as a time event and (2) as a change event, matching the traffic light example from the lesson. Correct_with_hint if the classification is right but reasoning is thin. Incorrect if classifications are swapped."
+    "rubric": "Correct if (1) is labeled time event and (2) change event. Correct_with_hint if only one is right."
   },
   {
     "key": "why-nested-states-need-markers",
     "title": "چرا حالت‌های تودرتو هم به نشانگر اولیه/نهایی نیاز دارن؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، وقتی یه حالت (مثل «در حال سرویس‌دهی به مشتری») رو به حالت‌های تودرتو (احراز هویت، انتخاب تراکنش، انجام تراکنش، نهایی‌سازی) تجزیه می‌کنیم، چرا نباید نشانگرهای اولیه و نهایی رو برای این حالت‌های تودرتو فراموش کنیم؟",
-    "expected_outcome": "نشانگرهای اولیه و نهایی مشخص می‌کنن این توالی از حالت‌های تودرتو دقیقاً از کجا شروع و کجا تموم می‌شه — همون‌طور که برای کل دیاگرام ماشین‌حالت لازمه. بدون این نشانگرها، حتی توی یه گروه از حالت‌های تودرتو، مشخص نیست ترتیب و مرز شروع/پایان این زیرمجموعه از حالت‌ها کجاست، که ابهام ایجاد می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی یه حالت رو به حالت‌های تودرتو تجزیه می‌کنیم، چرا نباید نشانگرهای اولیه و نهایی رو برای این حالت‌های تودرتو فراموش کنیم؟",
+    "expected_outcome": "وگرنه مشخص نیست این زیرمجموعه از کجا شروع/تموم می‌شه (ابهام)",
     "hints": [
       "درس صریحاً گفت «اگه حالت‌های تودرتو داریم، نباید نشانگرهای اولیه و نهایی رو فراموش کنیم».",
-      "همون منطقی که برای کل دیاگرام لازم بود (مشخص‌کردن شروع/پایان)، برای یه زیرمجموعه‌ی تودرتو هم لازمه."
+      "همون منطقی که برای کل دیاگرام لازم بود، برای یه زیرمجموعه‌ی تودرتو هم لازمه."
     ],
-    "rubric": "Correct if response explains that initial/final markers are needed even within nested states to clearly mark where that sub-sequence starts and ends, avoiding ambiguity. Correct_with_hint if it just restates the rule without explaining why ambiguity would result. Incorrect otherwise."
+    "rubric": "Correct if response says without markers it's unclear where the nested sub-sequence starts/ends, causing ambiguity."
   }
 ]

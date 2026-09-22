@@ -22,30 +22,30 @@
   },
   {
     "key": "abstract-class-instantiation",
-    "title": "چرا نمی‌شه از کلاس انتزاعی نمونه ساخت؟",
-    "form": "scenario",
+    "title": "کدوم کلاس نمونه‌سازی می‌شه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "توی مثال خودپرداز این درس، «تراکنش» یه کلاس انتزاعیه و «برداشت پول نقد» یه کلاس مشخص که نوعی تراکنشه. وقتی یه کاربر واقعی جلوی خودپرداز میاد و می‌خواد پول برداشت کنه، طبق این درس دقیقاً کدوم کلاس نمونه‌سازی می‌شه، و چرا نمی‌شه مستقیماً از کلاس «تراکنش» نمونه ساخت؟",
-    "expected_outcome": "کلاس «برداشت پول نقد» (کلاس مشخص) نمونه‌سازی می‌شه، نه «تراکنش» (کلاس انتزاعی). طبق درس، کلاس انتزاعی معمولاً نمی‌تونه نمونه‌سازی بشه — فقط کلاس‌های مشخص می‌تونن به‌عنوان نمونه ساخته بشن، دقیقاً مثل نوشتن نرم‌افزار شیءگرا؛ «تراکنش» فقط ویژگی‌ها و عملیات‌های کلی رو تعریف می‌کنه که کلاس‌های مشخص‌تر (مثل برداشت پول نقد) اون‌ها رو تخصصی می‌کنن.",
+    "estimated_minutes": 2,
+    "prompt": "«تراکنش» کلاس انتزاعیه و «برداشت پول نقد» کلاس مشخصیه که نوعی تراکنشه. وقتی کاربر می‌خواد پول برداشت کنه، کدوم کلاس نمونه‌سازی می‌شه؟",
+    "expected_outcome": "برداشت پول نقد (کلاس مشخص، نه انتزاعی)",
     "hints": [
       "درس صریحاً گفت «فقط کلاس‌های مشخص می‌تونن نمونه‌سازی بشن».",
-      "«تراکنش» چه نوع کلاسیه، و «برداشت پول نقد» چه رابطه‌ای باهاش داره؟"
+      "«تراکنش» چه نوع کلاسیه؟"
     ],
-    "rubric": "Correct if response identifies Cash Withdrawal (the concrete class) as what gets instantiated, and explains abstract classes like Transaction typically can't be instantiated directly — only concrete/specialized classes can. Correct_with_hint if the correct class is named without the abstract-class reasoning. Incorrect otherwise."
+    "rubric": "Correct only if response names the concrete Cash Withdrawal class."
   },
   {
     "key": "class-diagram-for-requirements",
-    "title": "دیاگرام کلاس چطور به شناسایی نیازمندی کمک می‌کنه؟",
-    "form": "explanation",
+    "title": "پین‌واردکردن به کدوم دو کلاس نگاشت می‌شه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق مثال این درس درباره‌ی «کاربران باید برای دسترسی به حسابشون پین وارد کنن»، دیاگرام کلاس چطور کمک می‌کنه این نیازمندی رو به‌شکل ملموس پیاده‌سازی و راستی‌آزمایی کنیم؟",
-    "expected_outcome": "دیاگرام کلاس این نیازمندی رو به عناصر مشخص کلاس ترجمه می‌کنه — با اطمینان از اینکه کلاس «کاربر» یه ویژگی برای پین داره، و کلاس «خودپرداز» یه عملیات برای تأیید پین داره. این‌طوری نیازمندی انتزاعی («باید پین وارد کنن») به یه ساختار قابل‌پیاده‌سازی و قابل‌دمو تبدیل می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "نیازمندی «کاربران باید برای دسترسی به حسابشون پین وارد کنن» به کدوم کلاس‌ها و چه عناصری نگاشت می‌شه؟",
+    "expected_outcome": "کاربر: ویژگی پین / خودپرداز: عملیات تأیید پین",
     "hints": [
-      "درس دقیقاً همین مثال پین رو زد — به دو کلاس مشخص (کاربر، خودپرداز) و چیزی که هرکدوم باید داشته باشن اشاره کرد.",
+      "درس دقیقاً همین مثال پین رو زد.",
       "یکی از دو کلاس باید یه «ویژگی» داشته باشه، دیگری یه «عملیات»."
     ],
-    "rubric": "Correct if response explains the requirement maps to a User class attribute for PIN and an ATM class operation for verifying it, making the abstract requirement concretely implementable/demonstrable. Correct_with_hint if only one of the two class elements is mentioned. Incorrect otherwise."
+    "rubric": "Correct if response names User class attribute for PIN and ATM class operation for verifying it. Correct_with_hint if only one is right."
   }
 ]

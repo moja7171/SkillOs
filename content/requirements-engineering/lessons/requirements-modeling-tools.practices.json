@@ -26,12 +26,12 @@
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "طبق این درس، سه ابزار رایگان و متن‌باز MBSE که معرفی شدن رو نام ببر، و بگو نسبت به ابزارهای پولی مثل Sparx EA یا IBM DOORS چه محدودیتی دارن.",
-    "expected_outcome": "سه ابزار رایگان: Modelio، Papyrus، Capella. درس گفت این‌ها ممکنه همه‌ی فیچرها و قابلیت‌های ابزارهای پولی رو نداشته باشن.",
+    "prompt": "سه ابزار رایگان و متن‌باز MBSE که این درس معرفی کرد رو نام ببر.",
+    "expected_outcome": "Modelio، Papyrus، Capella",
     "hints": [
       "این سه اسم دقیقاً توی درس با هم به‌عنوان گزینه‌های رایگان معرفی شدن.",
-      "درس یه جمله‌ی احتیاطی درباره‌ی «فیچر و قابلیت» این ابزارها نسبت به نسخه‌ی پولی آورد."
+      "هرسه اسم مشخصی دارن، نه توصیف کلی."
     ],
-    "rubric": "Correct if response names Modelio, Papyrus, and Capella and states they may lack the full feature set of paid tools. Correct_with_hint if only 2 of 3 tools are named correctly with the limitation. Incorrect if fewer than 2 tools are named."
+    "rubric": "Correct if all three tools (Modelio, Papyrus, Capella) are named. Correct_with_hint if 2 of 3 are named."
   }
 ]

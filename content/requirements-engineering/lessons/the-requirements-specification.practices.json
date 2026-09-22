@@ -22,30 +22,30 @@
   },
   {
     "key": "corner-case-atomic",
-    "title": "چرا این نیازمندی گوشه‌ای باید به دو جمله تقسیم بشه؟",
-    "form": "scenario",
+    "title": "چرا این نیازمندی باید به دو جمله تقسیم بشه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "درس یه نیازمندی گوشه‌ای برای پهپاد گیرکرده توی مانع مثال زد و گفت باید به دو جمله‌ی اتمی تقسیم بشه: یکی برای اطلاع‌دادن وضعیت با دقت مکانی، یکی برای تکرار این اطلاع‌رسانی در بازه‌ی زمانی مشخص. چرا نمی‌شه این دو رو توی یه جمله‌ی واحد نوشت («پهپاد باید وضعیت و موقعیتش را با دقت ۱۰ متر به کاربر اطلاع دهد و هر ۵ ثانیه این کار را تکرار کند»)؟",
-    "expected_outcome": "چون طبق قانون اتمی‌بودن نیازمندی (که توی درس‌های قبلی این دوره دیدیم)، هر نیازمندی باید فقط یک ایده/الزام رو در بر بگیره؛ ترکیب «دقت مکانی» و «فرکانس تکرار» توی یه جمله، دو الزام مجزا رو با حرف ربط به هم وصل می‌کنه که ابهام‌زا و سخت‌راستی‌آزماییه — باید هرکدوم جمله‌ی جداگانه‌ای باشن تا هرکدوم مستقل قابل‌تست و ردیابی باشن.",
+    "estimated_minutes": 2,
+    "prompt": "«پهپاد باید وضعیت و موقعیتش را با دقت ۱۰ متر به کاربر اطلاع دهد و هر ۵ ثانیه این کار را تکرار کند.» چرا نمی‌شه این رو یه جمله نوشت؟",
+    "expected_outcome": "چون اتمی نیست (دو الزام جدا رو با حرف ربط وصل کرده)",
     "hints": [
       "درس صریحاً گفت «چون نیازمندی‌ها باید اتمی باشن» به همین دلیل دو جمله لازم شد.",
-      "این دقیقاً همون قانون «یه نیازمندی، یه جمله» و «بدون حرف ربط» از درس نوشتن نیازمندیه که قبلاً دیدیم."
+      "این دقیقاً همون قانون «یه نیازمندی، یه جمله» و «بدون حرف ربط»ه."
     ],
-    "rubric": "Correct if response connects this to the atomicity/single-sentence-per-requirement rule from the requirement-writing lesson, explaining that combining two distinct requirements (accuracy + repeat frequency) in one sentence with a conjunction creates ambiguity and complicates verification. Correct_with_hint if it says 'atomicity' without explaining why combining causes problems. Incorrect otherwise."
+    "rubric": "Correct if response names the atomicity/single-requirement-per-sentence rule as the reason."
   },
   {
     "key": "strs-syrs-sync-risk",
-    "title": "چرا هم‌گام‌نگه‌داشتن STRS و SYRS مهمه؟",
-    "form": "explanation",
+    "title": "تسترهای مستقل از کدوم سند به‌عنوان پایه استفاده می‌کنن؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، اگه نیازمندی‌های STRS رو توی SYRS هم ادغام کنیم (که رایجه)، و بعداً یکی از نیازمندی‌های ذی‌نفع نیاز به تغییر پیدا کنه، چه ریسکی وجود داره؟ و راه‌حلش چیه؟",
-    "expected_outcome": "اگه فقط SYRS (نسخه‌ی جزئی‌تر) رو به‌روز کنیم و STRS اصلی رو فراموش کنیم، این دو سند از هم واگرا می‌شن. این مشکل‌ساز می‌شه چون تسترهای مستقل حین اعتبارسنجی سیستم، از STRS اصلی (نه SYRS جزئی‌تر) به‌عنوان پایه استفاده می‌کنن — پس ممکنه STRS قدیمی و نادرست رو تست کنن. راه‌حل: به‌روزرسانی همه‌ی اسناد مرتبط (نه فقط نزدیک‌ترین سند) رو باید توی فرایند مدیریت پیکربندی پروژه بگنجونیم.",
+    "estimated_minutes": 2,
+    "prompt": "اگه فقط SYRS رو به‌روز کنیم و STRS رو فراموش کنیم، این دو سند از هم واگرا می‌شن. تسترهای مستقل حین اعتبارسنجی سیستم، از کدوم سند به‌عنوان پایه استفاده می‌کنن؟",
+    "expected_outcome": "STRS (سند اصلی)",
     "hints": [
       "درس گفت تسترهای مستقل حین اعتبارسنجی از کدوم سند به‌عنوان پایه استفاده می‌کنن — STRS یا SYRS؟",
-      "راه‌حل درس درباره‌ی گنجاندن به‌روزرسانی همه‌ی اسناد توی یه فرایند مشخص بود."
+      "این یعنی اگه STRS به‌روز نشه، تست بر پایه‌ی سند قدیمی انجام می‌شه."
     ],
-    "rubric": "Correct if response explains the risk of STRS and SYRS diverging when only one is updated, notes that independent validation testers use the original STRS as their baseline, and states the fix is including all related document updates in the configuration management process. Correct_with_hint if only the risk or only the fix is covered. Incorrect otherwise."
+    "rubric": "Correct only if response names STRS as the baseline independent testers use."
   }
 ]

@@ -197,7 +197,8 @@ Owner rule, general going forward: no practice should require a multi-sentence a
 **«استخراج نیازمندی‌ها (Elicitation)» done 2026-09-22 (12 lessons, 22 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
 **«نوشتن و فرایند نیازمندی‌ها» done 2026-09-22 (6 lessons, 8 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
 **«نیازمندی‌های نرم‌افزار» done 2026-09-22 (10 lessons, 20 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
-➡ NEXT UP: «مستندسازی و مدل‌سازی نیازمندی‌ها» (15 lessons) — sixth section of `requirements-engineering`.
+**«مستندسازی و مدل‌سازی نیازمندی‌ها» done 2026-09-22 (15 lessons, 26 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
+➡ NEXT UP: «مذاکره و مدیریت تعارض» (8 lessons) — seventh section of `requirements-engineering`.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

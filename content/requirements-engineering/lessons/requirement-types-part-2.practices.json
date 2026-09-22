@@ -36,16 +36,16 @@
   },
   {
     "key": "why-california-standard",
-    "title": "چرا یه محدودیت شهر لس‌آنجلس، در واقع محدودیت ملیه؟",
-    "form": "explanation",
+    "title": "چرا رعایت قانون لس‌آنجلس، رعایت قانون ملی رو هم تضمین می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا مهندس نیازمندی برای پهپادی که قرار نیست حتماً توی لس‌آنجلس پرواز کنه، همچنان ممکنه یه نیازمندی محدودیتی بر پایه‌ی قانون شهری لس‌آنجلس بنویسه؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "چون لس‌آنجلس و کالیفرنیا از سخت‌گیرانه‌ترین مناطق آمریکا برای ساخت‌وساز، وسایل پرنده و خودرو هستن. اگه سیستم با قوانین کالیفرنیا/لس‌آنجلس سازگار باشه، به‌طور ضمنی با قوانین کمتر سخت‌گیرانه‌ی بقیه‌ی ۵۰ ایالت هم سازگاره — همین دلیلیه که خودروهای آمریکایی طبق استانداردهای کالیفرنیا ساخته می‌شن.",
+    "estimated_minutes": 2,
+    "prompt": "چرا مهندس نیازمندی برای پهپادی که قرار نیست حتماً توی لس‌آنجلس پرواز کنه، ممکنه همچنان یه نیازمندی بر پایه‌ی قانون شهر لس‌آنجلس بنویسه؟",
+    "expected_outcome": "چون سخت‌گیرانه‌ترین قانونه؛ رعایتش رعایت بقیه‌ی ایالت‌ها رو هم تضمین می‌کنه",
     "hints": [
       "درس دقیقاً همین استدلال رو با مثال خودروسازی آمریکا توضیح داد.",
       "فکر کن چرا رعایت سخت‌گیرترین قانون، رعایت قوانین سبک‌تر رو هم تضمین می‌کنه."
     ],
-    "rubric": "Correct if response explains that California/LA have the strictest regulations in the US for this domain, so complying with them implicitly ensures compliance across all states, citing the automobile manufacturing parallel from the lesson. Correct_with_hint if it says 'strict regulations' without the implication logic. Incorrect otherwise."
+    "rubric": "Correct if response says California/LA have the strictest regulations, so complying with them covers compliance elsewhere."
   }
 ]

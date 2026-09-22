@@ -23,29 +23,29 @@
   {
     "key": "internal-vs-external-constraints-classify",
     "title": "این محدودیت داخلیه یا خارجی؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "دو تا محدودیت برای پروژه‌ی پهپاد بذرپاش داریم: (۱) «فقط سه مهندس هوانوردی توی تیم در دسترسن.» (۲) «پهپاد باید با مقررات ارتفاع پرواز سازمان هوانوردی سازگار باشه.» طبق این درس، هرکدوم محدودیت داخلیه یا خارجی، و این تفاوت چه اثری روی نحوه‌ی مدیریتشون داره؟",
-    "expected_outcome": "محدودیت (۱) داخلیه — محدودیت منابع/تخصص فنی که در کنترل تیم پروژه‌ست. محدودیت (۲) بیرونیه — یه مقرراتِ خارج از کنترل تیم توسعه، که باید شناسایی و مدیریت بشه تا سیستم بهش پایبند بمونه. تفاوت اصلی: محدودیت‌های داخلی رو تیم می‌تونه مستقیماً مدیریت/تغییر بده (مثلاً با استخدام یا آموزش)، ولی محدودیت‌های بیرونی رو باید پذیرفت و طراحی رو باهاشون تطبیق داد.",
+    "estimated_minutes": 2,
+    "prompt": "(۱) «فقط سه مهندس هوانوردی در دسترسن.» (۲) «پهپاد باید با مقررات ارتفاع پرواز سازمان هوانوردی سازگار باشه.» هرکدوم محدودیت داخلیه یا خارجی؟",
+    "expected_outcome": "(۱) داخلی (۲) خارجی",
     "hints": [
       "درس گفت محدودیت داخلی «در کنترل تیم پروژه‌ست»؛ محدودیت بیرونی «خارج از کنترل تیم توسعه‌ست».",
       "کدوم محدودیت رو تیم می‌تونه مستقیماً تغییر بده (مثلاً با استخدام)، و کدوم رو باید فقط پذیرفت؟"
     ],
-    "rubric": "Correct if response correctly classifies (1) as internal and (2) as external, and explains the internal ones are within the team's control to manage/change while external ones must be accepted and designed around. Correct_with_hint if the classification is correct but the management-difference reasoning is missing. Incorrect if the classification is swapped."
+    "rubric": "Correct if (1) is labeled internal and (2) external. Correct_with_hint if only one is right."
   },
   {
     "key": "why-only-partial-architecture",
     "title": "چرا این دوره فقط بخشی از معماری رو پوشش می‌ده؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا این دوره فقط بخشی از توسعه‌ی معماری رو پوشش می‌ده و نه کل موضوع رو؟ در ۱ تا ۲ جمله توضیح بده.",
-    "expected_outcome": "چون این دوره تمرکزش روی مهندسی نیازمندیه، نه توسعه‌ی معماری به‌طور کلی — فقط اون بخشی از معماری که مستقیماً به مهندسی نیازمندی مربوطه پوشش داده می‌شه؛ عمق بیشتر ساخت معماری (مثل مهندسی سیستم مبتنی بر مدل/MBSE) موضوع یه دوره‌ی جداگانه‌ست.",
+    "estimated_minutes": 2,
+    "prompt": "چرا این دوره فقط بخشی از توسعه‌ی معماری رو پوشش می‌ده و نه کل موضوع رو؟",
+    "expected_outcome": "دامنه‌ی دوره مهندسی نیازمندیه، نه معماری کامل",
     "hints": [
       "درس صریحاً دلیل رو گفت — به دامنه‌ی موضوعی این دوره در برابر MBSE فکر کن.",
-      "این محدودیت دامنه، به معنی ناقص‌بودن درس نیست — یه انتخاب آگاهانه‌ست."
+      "این محدودیت دامنه، به معنی ناقص‌بودن درس نیست."
     ],
-    "rubric": "Correct if response explains that architecture is only covered to the extent it relates to requirements engineering, since the course's scope is requirements engineering specifically, with deeper architecture (MBSE) left to a separate course. Correct_with_hint if it vaguely says 'out of scope' without naming the reason or MBSE. Incorrect otherwise."
+    "rubric": "Correct if response says architecture is covered only as far as it relates to requirements engineering, the course's actual scope."
   }
 ]

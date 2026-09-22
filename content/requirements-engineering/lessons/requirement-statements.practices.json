@@ -36,17 +36,17 @@
   },
   {
     "key": "definite-vs-indefinite-article",
-    "title": "چرا حرف تعریف نامعین مشکل‌سازه؟",
-    "form": "scenario",
+    "title": "«هر شخصی» چه مشکلی داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "این نیازمندی نوشته شده: «سیستم خودپرداز باید برای هر شخصی تراکنش انجام دهد.» طبق این درس، چرا این نیازمندی مشکل داره، و چطور با واژه‌نامه و حرف تعریف معین اصلاح می‌شه؟",
-    "expected_outcome": "«هر شخصی» یه حرف تعریف نامعینه که دامنه‌ی نیازمندی رو نامشخص و غیرقابل‌کنترل می‌کنه — یعنی مثلاً افراد بدون حساب یا حتی کاربران غیرمجاز هم می‌تونن مشمولش بشن. اصلاح درست: «سیستم خودپرداز باید برای کاربر در محیط عملیاتی تراکنش انجام دهد» — با حرف تعریف معین («کاربر»، «محیط عملیاتی») که واژه‌نامه دقیق تعریفشون کرده، دامنه‌ی نیازمندی محدود و دقیق می‌شه و مطمئن می‌شه سیستم نیاز واقعی رو برآورده می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "«سیستم خودپرداز باید برای هر شخصی تراکنش انجام دهد.» این نیازمندی چه مشکلی داره؟",
+    "expected_outcome": "حرف تعریف نامعین (دامنه نامشخص/غیرقابل‌کنترل)",
     "hints": [
       "درس دقیقاً همین مثال ATM رو با «هر شخصی» در برابر «کاربر در محیط عملیاتی» زد.",
-      "حرف تعریف معین به کمک واژه‌نامه (اصطلاح بزرگ و زیرخط‌دار) دامنه رو دقیق می‌کنه."
+      "«هر شخصی» شامل چه کسانی می‌تونه بشه که نباید بشه؟"
     ],
-    "rubric": "Correct if response identifies 'any person' as an indefinite article that leaves scope unbounded, and rewrites using a definite article tied to a glossary-defined term (user, operational environment). Correct_with_hint if the problem is identified but the fix doesn't reference the glossary mechanism. Incorrect otherwise."
+    "rubric": "Correct if response names the indefinite article ('any person') as leaving the scope unbounded/uncontrolled."
   },
   {
     "key": "threshold-objective-identify",
@@ -72,29 +72,29 @@
   {
     "key": "extreme-boundary-loophole",
     "title": "این نیازمندی رو با «وکیل‌مدافع شیطان» تست کن",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 6,
-    "prompt": "این نیازمندی نوشته شده: «سیستم خودپرداز باید تا ۱۰۰ اسکناس ۵۰ هزار تومانی نگه دارد.» طبق روش «وکیل‌مدافع شیطان» این درس، یه توسعه‌دهنده چطور می‌تونه از این نیازمندی به شکلی سوءاستفاده کنه که از نیت واقعی‌ش فرار کنه؟ نیازمندی رو طوری بازنویسی کن که این شکاف بسته بشه.",
-    "expected_outcome": "توسعه‌دهنده می‌تونه محفظه‌ای بسازه که فقط ۱ اسکناس نگه می‌داره (که کمتر از ۱۰۰ است، پس «تا ۱۰۰» رو فنی برآورده می‌کنه) یا محفظه‌ای که فقط دقیقاً ۱۰۰ اسکناس رو قبول می‌کنه و با هر مقدار دیگه‌ای کار نمی‌کنه. نیازمندی اصلاح‌شده باید یه کران پایین هم اضافه کنه: «سیستم خودپرداز باید از ۱ تا ۱۰۰ اسکناس ۵۰ هزار تومانی نگه دارد» — هرچند این هم قابل تعریف نیت واقعی‌تری داره، مثلاً بازه‌ای که موردنیاز عملیاتی واقعیه، نه فقط یه کران پایین دلبخواه.",
+    "estimated_minutes": 3,
+    "prompt": "«سیستم خودپرداز باید تا ۱۰۰ اسکناس ۵۰ هزار تومانی نگه دارد.» یه توسعه‌دهنده با یه مقدار پیش‌پاافتاده چطور می‌تونه فنی این نیازمندی رو برآورده کنه؟ و چی باید بهش اضافه بشه تا این شکاف بسته بشه؟",
+    "expected_outcome": "با نگه‌داشتن فقط ۱ اسکناس (کمتر از ۱۰۰) / اضافه‌کردن یه کران پایین",
     "hints": [
-      "درس دقیقاً همین الگو رو با مثال ۵٬۰۰۰ دلار و اسکناس ۲۰ دلاری نشون داد — به همون ساختار فکر کن.",
-      "«تا X» بدون کران پایین، یعنی مقدار خیلی کوچیک (حتی صفر یا یک) هم فنی برآورده‌کننده‌ست."
+      "درس دقیقاً همین الگو رو با مثال ۵٬۰۰۰ دلار و اسکناس ۲۰ دلاری نشون داد.",
+      "«تا X» بدون کران پایین، یعنی مقدار خیلی کوچیک هم فنی برآورده‌کننده‌ست."
     ],
-    "rubric": "Correct if response identifies that 'up to 100' allows a trivially small or a rigidly exact-only implementation to technically satisfy the requirement, and rewrites with a lower bound (a range) to close the gap. Correct_with_hint if only one of the two loophole types is identified. Incorrect if no real loophole is identified."
+    "rubric": "Correct if response identifies that a trivially small value technically satisfies 'up to 100', and names adding a lower bound as the fix."
   },
   {
     "key": "spec-set-characteristics",
     "title": "چهار ویژگی مجموعه‌ی نیازمندی",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، مجموعه‌ی نیازمندی (مشخصات) علاوه بر ویژگی‌های تک‌تک جمله‌های نیازمندی، چهار ویژگی سطح مجموعه هم باید داشته باشه. این چهار ویژگی رو نام ببر و برای هرکدوم یه جمله توضیح بده.",
-    "expected_outcome": "۱. کامل بودن — مجموعه باید همه‌ی قابلیت، عملکرد، تابع، محدودیت و رابط لازم برای برآوردن نیاز اصلی رو در بر بگیره. ۲. سازگاری — نباید با مجموعه‌های دیگه‌ی نیازمندی/مشخصات همون سیستم توی همون فاز چرخه‌ی عمر تضاد داشته باشه. ۳. شدنی‌بودن — نه فقط هر نیازمندی تنها، بلکه ترکیب همه‌شون با هم هم باید شدنی بمونه. ۴. اعتبارسنجی‌شده — سازمان باید ثابت کنه بعد از استقرار، سیستم واقعاً باارزش، مفید، اثربخش و مناسب عملیات توی محیط واقعیه.",
+    "estimated_minutes": 2,
+    "prompt": "علاوه بر ویژگی‌های تک‌تک جمله‌های نیازمندی، مجموعه‌ی نیازمندی (مشخصات) باید چهار ویژگی سطح مجموعه هم داشته باشه. این چهار ویژگی رو نام ببر.",
+    "expected_outcome": "کامل، سازگار، شدنی، اعتبارسنجی‌شده",
     "hints": [
-      "این چهار ویژگی جدا از ویژگی‌های تک‌تک جمله‌های نیازمندی (که قبل‌تر توی درس اومدن) هستن — مخصوص کل مجموعه.",
+      "این چهار ویژگی جدا از ویژگی‌های تک‌تک جمله‌های نیازمندی هستن — مخصوص کل مجموعه.",
       "یکیشون درباره‌ی تضادنداشتن با اسناد دیگه‌ست، یکی درباره‌ی پوشش کامل، یکی درباره‌ی شدنی‌بودن ترکیبی، و یکی درباره‌ی اثبات بعد از استقرار."
     ],
-    "rubric": "Correct if response names all four characteristics (complete, consistent, feasible, validated) with a correct one-sentence explanation for each. Correct_with_hint if 3 of 4 are correctly named/explained. Incorrect if fewer than 3 are correct."
+    "rubric": "Correct if all four are named: complete, consistent, feasible, validated. Correct_with_hint if 3 of 4 are named."
   }
 ]

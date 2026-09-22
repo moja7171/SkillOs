@@ -23,29 +23,29 @@
   {
     "key": "abstract-vs-detailed-drone",
     "title": "کدوم سناریو انتزاعیه، کدوم جزئی؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "دو تا توصیف برای پهپاد بذرپاش داریم: (الف) «پهپاد به سایت می‌رسد و بذر می‌کارد.» (ب) «پهپاد روی نقطه‌ی هدف می‌ایستد، دریچه‌ی مخزن بذر را باز می‌کند، سه بذر را با فشار هوا به عمق ۲ سانتی‌متری خاک شلیک می‌کند و دریچه را می‌بندد.» کدوم انتزاعیه و کدوم جزئی، و طبق قانون سرانگشتی این درس، هر کدوم چه زمانی مناسب‌تره؟",
-    "expected_outcome": "(الف) انتزاعیه — فقط قابلیت کلی رو می‌گه بدون اشاره به مکانیزم داخلی. (ب) جزئیه — مکانیزم دقیق (دریچه، فشار هوا، عمق) رو مشخص می‌کنه که تلویحاً راه‌حل طراحیه. طبق قانون سرانگشتی، (الف) برای اطلاعات کم‌اهمیت‌تر یا هنوز تصمیم‌گیری‌نشده مناسبه، و (ب) برای وقتیه که جزئیات فنی نهایی شده و می‌خوایم ذی‌نفعان روی همون مکانیزم مشخص به توافق برسن.",
+    "estimated_minutes": 2,
+    "prompt": "دو تا توصیف برای پهپاد بذرپاش داریم: (الف) «پهپاد به سایت می‌رسد و بذر می‌کارد.» (ب) «پهپاد روی نقطه‌ی هدف می‌ایستد، دریچه‌ی مخزن بذر را باز می‌کند، سه بذر را با فشار هوا به عمق ۲ سانتی‌متری خاک شلیک می‌کند و دریچه را می‌بندد.» کدوم انتزاعیه و کدوم جزئی؟",
+    "expected_outcome": "(الف) انتزاعی (ب) جزئی",
     "hints": [
       "کدوم جمله راه‌حل و مکانیزم داخلی رو مشخص کرده، و کدوم فقط قابلیت رو گفته؟",
-      "قانون سرانگشتی درس درباره‌ی «اطلاعات مهم/نهایی» در برابر «اطلاعات کم‌اهمیت/نامشخص» بود."
+      "جزئی یعنی مکانیزم دقیق مشخص شده؛ انتزاعی فقط قابلیت کلی رو می‌گه."
     ],
-    "rubric": "Correct if response correctly labels (الف) as abstract and (ب) as detailed, and explains the rule of thumb (detailed for solidified/important info, abstract for unknown/less important info). Correct_with_hint if labels are right but the rule of thumb reasoning is missing or wrong. Incorrect if labels are swapped."
+    "rubric": "Correct if (الف) is labeled abstract and (ب) is labeled detailed. Correct_with_hint if only one is right."
   },
   {
     "key": "use-case-vs-scenario",
-    "title": "use case با سناریو چه فرقی داره؟",
-    "form": "explanation",
+    "title": "use case جزئی‌ترین نوع چیه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، use case چطور با یه سناریوی معمولی فرق داره؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "use case جزئی‌ترین نوع سناریوئه — به‌جای توصیف کلی یه مأموریت، روی یه دنباله‌ی خاص از تعامل بین سیستم و یه بازیگر (با بازیگرهای پشتیبان) توی یه موقعیت مشخص تمرکز می‌کنه. یه سناریو معمولاً به چند use case تجزیه می‌شه که هرکدوم فقط یه هدف یا تعامل رو پوشش می‌دن.",
+    "estimated_minutes": 2,
+    "prompt": "use case چطور با یه سناریوی معمولی فرق داره؟",
+    "expected_outcome": "جزئی‌ترین نوع سناریو / یه دنباله‌ی خاص از تعامل",
     "hints": [
       "use case رو درس با عبارت «جزئی‌ترین نوع سناریو» معرفی کرد.",
       "به رابطه‌ی «یک سناریو → چند use case» فکر کن."
     ],
-    "rubric": "Correct if response identifies use case as the most detailed scenario type, focused on a single goal/interaction with a specific sequence, and that one scenario decomposes into multiple use cases. Correct_with_hint if only 'more detailed' is mentioned without the decomposition relationship. Incorrect otherwise."
+    "rubric": "Correct if response identifies use case as the most detailed scenario type, focused on a specific interaction sequence."
   }
 ]

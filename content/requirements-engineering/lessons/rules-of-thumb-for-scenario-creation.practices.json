@@ -37,15 +37,15 @@
   {
     "key": "sunny-day-first-why",
     "title": "چرا اول سناریوی روز آفتابی؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق قانون نهم این درس، چرا باید اول سناریوی روز آفتابی رو بسازیم و روز بارونی رو بعدش؟ در ۲ تا ۳ جمله توضیح بده چه ریسکی رو کم می‌کنه.",
-    "expected_outcome": "چون اگه زمان یا منابع تیم تموم بشه، حداقل مأموریت روز آفتابی (حالت اصلی و پایه‌ای سیستم) ثبت و آماده‌ی کار شده. اگه برعکس عمل کنیم و فقط روی روز بارونی تمرکز کنیم، هیچ تضمینی نیست که سیستم حتی توی ساده‌ترین حالت (روز آفتابی) هم درست کار کنه یا رفتار غیرمنتظره‌ای نشون نده.",
+    "estimated_minutes": 2,
+    "prompt": "طبق قانون نهم این درس، چرا باید اول سناریوی روز آفتابی رو بسازیم و روز بارونی رو بعدش؟",
+    "expected_outcome": "تا حداقل مسیر پایه ثبت بشه، حتی اگه زمان/منابع تموم بشه",
     "hints": [
       "به جمله‌ی درس درباره‌ی «بدترین حالت» فکر کن — چه اتفاقی می‌افته اگه فقط زمان کافی برای روز آفتابی باشه؟",
       "برعکسش رو هم در نظر بگیر: طراحی فقط برای روز بارونی چه خطری برای عملکرد پایه داره؟"
     ],
-    "rubric": "Correct if response explains both: (a) sunny day first ensures the baseline mission is captured even if time/resources run out, and (b) designing only for rainy day leaves no guarantee the basic sunny-day operation works correctly. Correct_with_hint if only one of these two points is present. Incorrect otherwise."
+    "rubric": "Correct if response says sunny day first ensures the baseline mission is captured even if time/resources run out."
   }
 ]

@@ -22,30 +22,30 @@
   },
   {
     "key": "atm-use-case-fields",
-    "title": "use case برداشت پول رو تحلیل کن",
-    "form": "scenario",
+    "title": "پیش‌شرط و تضمین use case برداشت پول",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
-    "prompt": "برای use case «برداشت پول نقد» از خودپرداز (طبق مثال این درس)، پیش‌شرط و تضمین use case رو بنویس. بعد بگو چرا گام‌های دنباله‌ی رویدادها باید «کلی و عام» نوشته بشن، با یه مثال از خود درس.",
-    "expected_outcome": "پیش‌شرط: مشتری باید حساب جاری یا پس‌انداز فعال داشته باشه. تضمین: مشتری پول نقد درخواستی و (اختیاری) رسید دریافت می‌کنه. گام‌ها باید کلی و عام بمونن چون هنوز راه‌حل نهایی طراحی مشخص نشده — مثلاً به‌جای «مشتری صفحه‌ی لمسی را فشار می‌دهد» می‌گیم «مشتری با خودپرداز تعامل می‌کند»، و به‌جای «کارت را وارد و پین را تایپ می‌کند» می‌گیم «مشتری اطلاعات هویتی حساب را ارائه می‌دهد» — چون ممکنه راه‌حل نهایی تشخیص چهره یا اثر انگشت باشه، و این تصمیم به طراحان بعدی سپرده می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "برای use case «برداشت پول نقد» از خودپرداز، پیش‌شرط و تضمین use case چیه؟",
+    "expected_outcome": "پیش‌شرط: حساب فعال / تضمین: دریافت پول (و رسید اختیاری)",
     "hints": [
-      "پیش‌شرط و تضمین دقیقاً همون‌هاییه که درس برای این مثال گفت — به بخش «مثال: برداشت پول از خودپرداز» برگرد.",
-      "درس دو مثال زد از «راه‌حل مشخص» در برابر «قابلیت کلی» — کارت/پین در برابر تشخیص چهره."
+      "پیش‌شرط و تضمین دقیقاً همون‌هاییه که درس برای این مثال گفت.",
+      "پیش‌شرط قبل از شروعه؛ تضمین نتیجه‌ی نهاییه."
     ],
-    "rubric": "Correct if response gives the correct precondition (active account) and guarantee (cash + optional receipt), and explains that steps stay generic because the design solution isn't determined yet, citing the touchscreen/keypad or card/PIN example from the lesson. Correct_with_hint if precondition/guarantee are right but the generic-steps reasoning is missing or generic without an example. Incorrect if precondition/guarantee are wrong."
+    "rubric": "Correct if both are named: an active account as precondition, cash (plus optional receipt) as the guarantee. Correct_with_hint if only one is right."
   },
   {
     "key": "include-vs-extend",
     "title": "include یا extend؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "دو تا use case داریم: (۱) «مقداردهی اولیه‌ی تراکنش» که ابتدای هر use case خودپرداز (برداشت، واریز، انتقال) تکرار می‌شه. (۲) «موجودی ناکافی» که فقط وقتی رخ می‌ده که مشتری بیشتر از موجودی حسابش درخواست برداشت کنه. کدوم رابطه (include یا extend) برای هرکدوم مناسبه، و چرا؟",
-    "expected_outcome": "«مقداردهی اولیه‌ی تراکنش» با رابطه‌ی include به use case اصلی وصل می‌شه — چون همیشه به‌عنوان بخشی از دنباله‌ی اصلی رخ می‌ده و بین چند use case مشترکه، برای جلوگیری از تکرار کد. «موجودی ناکافی» با رابطه‌ی extend وصل می‌شه — چون یه مسیر استثناست که فقط بسته به شرایط (کمبود موجودی) ممکنه رخ بده، نه همیشه.",
+    "estimated_minutes": 2,
+    "prompt": "(۱) «مقداردهی اولیه‌ی تراکنش» که ابتدای هر use case خودپرداز تکرار می‌شه. (۲) «موجودی ناکافی» که فقط وقتی رخ می‌ده مشتری بیشتر از موجودیش درخواست بده. کدوم رابطه (include یا extend) برای هرکدوم مناسبه؟",
+    "expected_outcome": "(۱) include (۲) extend",
     "hints": [
       "include برای بخشی از دنباله‌ی اصلیه که همیشه اتفاق می‌افته و بین use caseها مشترکه؛ extend برای مسیرهای شرایطی/استثناست.",
       "«مقداردهی اولیه» همیشه رخ می‌ده؛ «موجودی ناکافی» فقط گاهی."
     ],
-    "rubric": "Correct if response correctly assigns include to Initialize Transaction (always happens, shared across use cases) and extend to Insufficient Funds (conditional exception path), with reasoning for both. Correct_with_hint if the assignments are correct but reasoning is thin or only one is justified. Incorrect if assignments are swapped."
+    "rubric": "Correct if (1) is matched with include and (2) with extend. Correct_with_hint if only one is right."
   }
 ]

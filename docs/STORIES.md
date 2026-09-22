@@ -193,7 +193,8 @@ Both source folders had a real gotcha: every `.srt` file (not just the video fil
 Owner rule, general going forward: no practice should require a multi-sentence answer. `explanation`/`scenario` forms and any overlong `short_answer` get rewritten to true short answers (1–2 words, multiple short blanks OK). `requirements-engineering` first: 155 of 244 practices need rewriting (73 explanation + 42 scenario + 40 overlong short_answer), section by section, one commit per section. Other courses (`complete-python-mastery`, `python-deep-dive-1`, `software-architecture-complete-guide`, etc.) keep their existing `explanation`/`scenario` practices until a later session migrates them — not in scope here.
 
 **«مقدمه و مبانی» done 2026-09-22 (17 lessons with practices, 34 explanation/scenario practices rewritten to true short_answer).** Also fixed a pre-existing bug found along the way: `the-system-hierarchy`'s `multiplicity-scenario` practice had `form: "scenario"` but was actually mcq-shaped (`options`/`correct_option`, rubric "Correct only if option 1 is selected") — the textarea UI would've shown no options at all. Changed its form to `mcq`, content unchanged. `validate.py requirements-engineering` clean (only the pre-existing harmless `.en.md`-not-in-course.json note); `content:import` loads 85 lessons / 244 practices (same counts, forms changed not counts); `CourseImporterTest` 10/10.
-➡ NEXT UP: «سناریو، User Story و Use Case» (9 lessons) — second section of `requirements-engineering`.
+**«سناریو، User Story و Use Case» done 2026-09-22 (9 lessons, 12 explanation/scenario practices rewritten to true short_answer).** `validate.py` clean; `content:import` loads 85/244 unchanged; `CourseImporterTest` 10/10.
+➡ NEXT UP: «استخراج نیازمندی‌ها (Elicitation)» (12 lessons) — third section of `requirements-engineering`.
 
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 

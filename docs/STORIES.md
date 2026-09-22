@@ -189,6 +189,10 @@ Both source folders had a real gotcha: every `.srt` file (not just the video fil
 
 **Course `requirements-engineering` is now 100% authored: 8 sections, 85 lessons, 244 practices.** No further sections remain for this course.
 
+### [~] C-05 Retire essay-style practices, starting with `requirements-engineering` (owner rule 2026-09-22, DECISIONS.md §64)
+Owner rule, general going forward: no practice should require a multi-sentence answer. `explanation`/`scenario` forms and any overlong `short_answer` get rewritten to true short answers (1–2 words, multiple short blanks OK). `requirements-engineering` first: 155 of 244 practices need rewriting (73 explanation + 42 scenario + 40 overlong short_answer), section by section, one commit per section. Other courses (`complete-python-mastery`, `python-deep-dive-1`, `software-architecture-complete-guide`, etc.) keep their existing `explanation`/`scenario` practices until a later session migrates them — not in scope here.
+➡ NEXT UP: «مقدمه و مبانی» (18 lessons) — first section of `requirements-engineering`.
+
 ## M10 — UI/UX pass (found by screenshotting the real app, not just reading classes)
 
 ### [x] S-36 Course catalog cards feel sparse on wide screens, no per-course visual identity

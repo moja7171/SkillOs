@@ -25,13 +25,13 @@
   },
   {
     "key": "how-register-works",
-    "title": "register چطور کار می‌کند؟",
-    "form": "explanation",
+    "title": "register چرا باید decorator factory باشه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در پیاده‌سازی دستی `singledispatch` درس: (۱) چرا `register` باید یک decorator *factory* باشد نه decorator ساده؟ (۲) چرا `inner` تابع را بدون تغییر برمی‌گرداند و این چه امکانی می‌دهد؟ (۳) `register` چطور از بیرون در دسترس است با اینکه داخل `singledispatch` تعریف شده؟ (۴) `registry` چه نوع متغیری برای این توابع است؟",
-    "expected_outcome": "(۱) چون باید نوع را بگیرد: `register(int)` اول با نوع صدا زده می‌شود و decoratorی برمی‌گرداند که تابع را می‌گیرد. (۲) برگرداندن خود fn یعنی نام تابع همچنان به تابع اصلی اشاره می‌کند و می‌شود چند `@register` را پشته کرد (هر کدام همان fn را می‌گیرد). (۳) به‌عنوان attribute روی تابع برگشتی چسبانده شده: `decorated.register = register`. (۴) متغیر آزاد closure — هر سه تابع درونی به همان cell/dict اشاره می‌کنند، پس ثبت از بیرون در dispatch دیده می‌شود.",
-    "hints": ["به تفاوت @register(int) با @register فکر کن.", "توابع attribute می‌گیرند."],
-    "rubric": "Correct: all four points (factory for the type argument, returning fn enables stacking, attribute on the returned function, registry as shared free variable). Partial: three of four. Incorrect: two or fewer."
+    "estimated_minutes": 2,
+    "prompt": "توی پیاده‌سازی دستی singledispatch، چرا register باید یه decorator *factory* باشه، نه یه decorator ساده؟",
+    "expected_outcome": "چون باید اول نوع (مثلاً register(int)) رو بگیره، بعد تابع رو",
+    "hints": ["به تفاوت @register(int) با @register فکر کن.", "register(int) اول با نوع صدا زده می‌شه."],
+    "rubric": "Correct if response says register(type) first takes the type, then returns a decorator that takes the function."
   }
 ]

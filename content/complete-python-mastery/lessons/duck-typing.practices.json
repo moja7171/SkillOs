@@ -15,13 +15,13 @@
   {
     "key": "duck-typing-explanation",
     "title": "Duck Typing یعنی چی؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "به زبون خودت، در ۱ تا ۲ جمله duck typing رو توضیح بده -- و بگو چرا اسمش این‌طوریه.",
-    "expected_outcome": "duck typing یعنی پایتون به نوع دقیق یه آبجکت اهمیت نمی‌ده، فقط به اینکه چه متدهایی داره. اسمش از این ضرب‌المثله: «اگه یه چیزی مثل اردک راه بره و مثل اردک صدا کنه، پس اردکه» -- یعنی رفتار مهمه، نه اعلام نوع.",
+    "prompt": "duck typing یعنی چی؟ (یه جمله)",
+    "expected_outcome": "پایتون به نوع دقیق اهمیت نمی‌ده، فقط به متدهایی که آبجکت داره",
     "hints": ["به جمله‌ی «اگه مثل اردک راه بره...» فکر کن.", "duck typing درباره‌ی رفتار (متدها)ست، نه نوع اعلام‌شده."],
-    "rubric": "Correct if the answer explains Python checks for the presence of methods/behavior rather than a declared type."
+    "rubric": "Correct if response says Python checks for the presence of methods/behavior rather than a declared type."
   },
   {
     "key": "still-use-abc-why",

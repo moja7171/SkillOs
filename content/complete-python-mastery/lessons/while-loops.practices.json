@@ -14,13 +14,13 @@
   },
   {
     "key": "case-insensitive-comparison",
-    "title": "یه هم‌تیمی این خط رو نوشته",
-    "form": "explanation",
+    "title": "چرا YES حلقه رو متوقف نمی‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌خواد حلقه‌ش تا وقتی کاربر «yes» تایپ نکرده ادامه پیدا کنه، و این کد رو نوشته:\n```python\nanswer = \"\"\nwhile answer != \"yes\":\n    answer = input(\"> \")\n```\nمی‌گه وقتی کاربر `YES` یا `Yes` تایپ می‌کنه، حلقه متوقف نمی‌شه. چرا این اتفاق می‌افته و چطور درستش کنیم؟",
-    "expected_outcome": "چون مقایسه‌ی رشته‌ها به بزرگی/کوچیکی حروف حساسه؛ \"YES\" != \"yes\" هست. راه‌حل: قبل از مقایسه، ورودی رو با متد `lower()` یکدست کوچیک کنیم: `while answer.lower() != \"yes\":`.",
+    "estimated_minutes": 2,
+    "prompt": "`while answer != \"yes\":` وقتی کاربر YES یا Yes تایپ می‌کنه، حلقه متوقف نمی‌شه. چرا، و چه متدی رو باید اضافه کنیم؟",
+    "expected_outcome": "مقایسه‌ی رشته حساس به حروفه / .lower()",
     "hints": ["مقایسه‌ی رشته‌ای حساس به بزرگی/کوچیکی حروفه.", "یه متد روی رشته هست که همه‌چیزو کوچیک می‌کنه."],
-    "rubric": "Correct if the answer identifies case-sensitive string comparison as the cause AND proposes using .lower() (or equivalent normalization) on the comparison. Correct_with_hint if only the cause is identified. Incorrect otherwise."
+    "rubric": "Correct if response names case-sensitive comparison as the cause and .lower() as the fix."
   }
 ]

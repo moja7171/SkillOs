@@ -15,13 +15,13 @@
   {
     "key": "issubclass-vs-isinstance",
     "title": "isinstance یا issubclass؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "یه هم‌تیمی نمی‌دونه کِی از isinstance استفاده کنه و کِی از issubclass. در ۱ تا ۲ جمله فرقشون رو توضیح بده.",
-    "expected_outcome": "isinstance(obj, Class) یه آبجکت رو با یه کلاس مقایسه می‌کنه (آیا این نمونه‌ی این کلاسه؟)؛ issubclass(ClassA, ClassB) دو تا کلاس رو با هم مقایسه می‌کنه (آیا ClassA از ClassB ارث می‌بره؟) — اولی پارامتر اولش یه آبجکته، دومی هر دو پارامترش کلاسن.",
+    "prompt": "isinstance(obj, Class) و issubclass(ClassA, ClassB) چه فرقی دارن؟ (پارامتر اول هرکدوم چیه؟)",
+    "expected_outcome": "isinstance: آبجکت در برابر کلاس / issubclass: کلاس در برابر کلاس",
     "hints": ["به نوع پارامتر اول هر تابع نگاه کن: یکی آبجکت می‌گیره، یکی کلاس.", "isinstance درباره‌ی یه شیء خاصه، issubclass درباره‌ی خود کلاس‌هاست."],
-    "rubric": "Correct if the answer distinguishes isinstance (object vs class) from issubclass (class vs class)."
+    "rubric": "Correct if response distinguishes isinstance (object vs class) from issubclass (class vs class)."
   },
   {
     "key": "predict-object-base",

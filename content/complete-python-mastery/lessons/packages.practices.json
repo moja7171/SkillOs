@@ -2,13 +2,13 @@
   {
     "key": "missing-init-file",
     "title": "چرا پایتون این ماژول رو پیدا نمی‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه پوشه‌ی billing با یه فایل invoices.py توش ساخته شده، ولی هیچ __init__.py توش نیست. وقتی از app.py می‌نویسیم `from billing import invoices`، خطا می‌گیریم. چرا، و چطور درستش کنیم؟",
-    "expected_outcome": "چون بدون __init__.py، پایتون پوشه‌ی billing رو یه پکیج قابل‌import نمی‌شناسه. راه‌حل: یه فایل خالی __init__.py داخل پوشه‌ی billing بسازیم.",
+    "estimated_minutes": 2,
+    "prompt": "پوشه‌ی billing با invoices.py هست ولی __init__.py نداره. `from billing import invoices` چرا خطا می‌ده؟",
+    "expected_outcome": "چون بدون __init__.py، پایتون billing رو پکیج نمی‌شناسه",
     "hints": ["فقط وجود یه پوشه کافی نیست؛ باید علامت‌گذاری بشه که این یه پکیجه.", "اون فایل خالی که پوشه رو به پکیج تبدیل می‌کنه چه اسمی داره؟"],
-    "rubric": "Correct if the answer identifies the missing __init__.py as the cause and proposes adding it."
+    "rubric": "Correct if response names the missing __init__.py as the cause."
   },
   {
     "key": "three-import-styles",

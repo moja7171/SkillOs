@@ -4,27 +4,27 @@
     "title": "کلمه‌ی «مناسب» توی انتخاب متادیتا",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "درس روی کلمه‌ی «مناسب» حین تصمیم‌گیری درباره‌ی اطلاعات همراه هر آرتیفکت نیازمندی تأکید کرد و مثال کاغذبازی دولتی رو آورد. این اصل چی می‌گه و چرا مهمه؟",
-    "expected_outcome": "باید فقط اطلاعاتی رو جمع کنیم/نگه داریم که واقعاً برای مدیریت بهتر آرتیفکت‌ها به مدیر نیازمندی کمک می‌کنه — نه هر فیلدی که «شاید یه روز لازم بشه». جمع‌آوری اطلاعات بی‌فایده (مثل پرکردن فرم‌های اضافی بدون ارزیابی سودمندی) وقت و منابعی رو هدر می‌ده که می‌تونست صرف کارهای مهم‌تر بشه.",
+    "estimated_minutes": 2,
+    "prompt": "درس روی کلمه‌ی «مناسب» حین تصمیم‌گیری درباره‌ی اطلاعات همراه هر آرتیفکت نیازمندی تأکید کرد. این اصل چی می‌گه؟",
+    "expected_outcome": "فقط اطلاعاتی که واقعاً به مدیریت بهتر کمک می‌کنه، نه هر فیلد «شاید لازم بشه»",
     "hints": [
       "چرا بعضی پروژه‌ها به بیشتر از شناسه/عنوان/نسخه نیاز دارن و بعضی نه؟",
       "به مثال شخصی مدرس درباره‌ی کاغذبازی دولتی برگرد."
     ],
-    "rubric": "Full credit explains that metadata should be chosen based on actual usefulness to the project, avoiding wasted effort on unused fields, referencing the red-tape example."
+    "rubric": "Correct if response says metadata should be chosen based on actual usefulness, not collected just in case."
   },
   {
     "key": "configuration-management-baseline",
-    "title": "چرا مدیریت پیکربندی لازمه؟",
-    "form": "scenario",
+    "title": "چرا این مشکل رخ داد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "دو مهندس طراحی دارن مؤلفه‌هایی می‌سازن که قراره با هم کار کنن، ولی یکی از نسخه‌ی قدیمی مشخصات کار می‌کنه و دیگری از نسخه‌ی تازه. طبق درس، این مشکل چطور رخ داد و مدیریت پیکربندی چطور جلوشو می‌گیره؟",
-    "expected_outcome": "این مشکل به‌خاطر نبود یه خط‌مبنای مشترک و اطلاع‌رسانی‌نشدن تغییرات رخ داد (مثال درس: یکی فرض اترنت پهن‌باند، دیگری فرض وای‌فای). مدیریت پیکربندی هم تغییرات رو کنترل می‌کنه و هم تضمین می‌کنه همه‌ی اعضای مرتبط تیم از تغییرات مطلع بشن، تا همه از یه خط‌مبنای یکسان کار کنن.",
+    "estimated_minutes": 2,
+    "prompt": "دو مهندس دارن مؤلفه‌هایی می‌سازن که باید با هم کار کنن، ولی یکی از نسخه‌ی قدیمی مشخصات کار می‌کنه و دیگری از نسخه‌ی تازه. این مشکل چطور رخ داد؟",
+    "expected_outcome": "نبود خط‌مبنای مشترک / اطلاع‌رسانی‌نشدن تغییرات",
     "hints": [
       "مدیریت پیکربندی فقط اعمال تغییر نیست.",
       "به مثال اترنت/وای‌فای درس برگرد."
     ],
-    "rubric": "Full credit ties the mismatch to lack of a shared baseline/notification and explains configuration management fixes it by both controlling and communicating changes."
+    "rubric": "Correct if response names lack of a shared baseline/notification of changes as the cause."
   }
 ]

@@ -23,57 +23,57 @@
   {
     "key": "identify-tpm-type",
     "title": "این TPM از کدوم نوعه؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "دو تا TPM برای پهپاد بذرپاش داریم: (۱) «سیستم باید با استاندارد FAA FAR Part 107 برای وزن سازگار باشه.» (۲) «تیم می‌خواد ببینه فرایند توسعه‌ی نرم‌افزار ناوبری پهپاد چقدر کارآمده، با سنجش نرخ نقص و زمان توسعه.» طبق این درس، هرکدوم از این‌ها کدوم نوع TPM هستن؟",
-    "expected_outcome": "(۱) انطباق‌محور (compliance-based) — چون سیستم رو در برابر یه استاندارد مقرراتی ازپیش‌تعیین‌شده می‌سنجه. (۲) فرایندمحور (process-based) — چون روی عملکرد فنی خود فرایند توسعه (نه محصول نهایی) تمرکز داره، با متریک‌هایی مثل نرخ نقص و زمان توسعه.",
+    "estimated_minutes": 2,
+    "prompt": "(۱) «سیستم باید با استاندارد FAA FAR Part 107 برای وزن سازگار باشه.» (۲) «تیم می‌خواد ببینه فرایند توسعه‌ی نرم‌افزار ناوبری چقدر کارآمده، با سنجش نرخ نقص و زمان توسعه.» هرکدوم کدوم نوع TPM هستن؟",
+    "expected_outcome": "(۱) انطباق‌محور (۲) فرایندمحور",
     "hints": [
       "درس گفت انطباق‌محور «در برابر استانداردهای مقرراتی یا صنعتی» سنجیده می‌شه.",
       "درس گفت فرایندمحور «روی عملکرد فنی خود فرایند توسعه، نه محصول نهایی» تمرکز داره."
     ],
-    "rubric": "Correct if response correctly identifies (1) as compliance-based and (2) as process-based, with brief reasoning for each. Correct_with_hint if only one is correctly classified. Incorrect if both are wrong."
+    "rubric": "Correct if (1) is labeled compliance-based and (2) process-based. Correct_with_hint if only one is right."
   },
   {
     "key": "measure-vs-metric",
-    "title": "اندازه (measure) با متریک (metric) چه فرقی داره؟",
-    "form": "explanation",
+    "title": "اندازه با متریک چه فرقی داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، «اندازه (measure)» و «متریک (metric)» توی بافت TPM چه فرقی دارن؟ با یه مثال از درس توضیح بده.",
-    "expected_outcome": "اندازه یه نقطه‌داده‌ی منفرده — مثلاً زمانی که سیستم برای یه کار خاص لازم داره، یا دقت یه اندازه‌گیری خاص. متریک، مجموعه‌ای از اندازه‌هاست که برای ارزیابی عملکرد فنی کلی در طول زمان استفاده می‌شه — مثال درس: اگه سیستمی مداوم به هدف عملکردی «زمان پاسخ» (یه اندازه) نرسه، متریکی که این اندازه رو در طول زمان ردیابی می‌کنه، توسعه‌دهنده‌ها رو از نیاز بررسی بیشتر مطلع می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "«اندازه (measure)» و «متریک (metric)» توی بافت TPM چه فرقی دارن؟",
+    "expected_outcome": "اندازه = یه نقطه‌داده / متریک = مجموعه‌ای از اندازه‌ها در طول زمان",
     "hints": [
       "اندازه = یه نقطه‌داده؛ متریک = مجموعه‌ای از اندازه‌ها در طول زمان.",
       "درس مثال «زمان پاسخ» رو برای این تمایز زد."
     ],
-    "rubric": "Correct if response explains measure as a single data point and metric as a collection of measures tracked over time to spot trends, with the response-time example or equivalent. Correct_with_hint if the definitions are right but no example is given. Incorrect otherwise."
+    "rubric": "Correct if response explains measure as a single data point and metric as a collection of measures tracked over time."
   },
   {
     "key": "when-expert-judgment",
     "title": "کِی از قضاوت کارشناسی استفاده می‌کنیم؟",
     "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، روش «قضاوت کارشناسی» برای شناسایی TPM کِی مخصوصاً مفیده، و چه ریسکی داره که باید کاهشش بدیم؟",
-    "expected_outcome": "قضاوت کارشناسی مخصوصاً وقتی مفیده که TPM و CTP به‌خوبی تعریف یا شناخته‌شده نیستن، یا سیستم جدیده و داده‌ی تاریخی/موجود کمیه. ریسکش اینه که ذهنیه و می‌تونه تحت‌تأثیر نظر و سوگیری کارشناسان قرار بگیره — برای کاهشش باید از یه گروه متنوع از کارشناسان نظر گرفت و منطق/فرایند تصمیم‌گیری رو با دقت مستند کرد.",
+    "estimated_minutes": 2,
+    "prompt": "روش «قضاوت کارشناسی» برای شناسایی TPM کِی مخصوصاً مفیده؟",
+    "expected_outcome": "وقتی TPM/CTP شناخته‌شده نیست یا سیستم جدیده و داده‌ی کمیه",
     "hints": [
-      "درس دو شرط مشخص برای استفاده از این روش گفت: TPM/CTP ناشناخته، یا سیستم جدید با داده‌ی کم.",
-      "برای کاهش ریسک سوگیری، درس دو اقدام مشخص پیشنهاد داد."
+      "درس دو شرط مشخص برای استفاده از این روش گفت.",
+      "به سیستم‌های جدید بدون سابقه فکر کن."
     ],
-    "rubric": "Correct if response states expert judgment is used when TPMs/CTPs are poorly defined or the system is new with little historical data, and names diverse expert input + documented rationale as the bias mitigation. Correct_with_hint if only the use-case or only the mitigation is given. Incorrect otherwise."
+    "rubric": "Correct if response says expert judgment is used when TPMs/CTPs are poorly defined or the system is new with little historical data."
   },
   {
     "key": "tpm-lifecycle-shift",
-    "title": "TPM از مفهوم تا تولید چطور تغییر می‌کنه؟",
-    "form": "explanation",
+    "title": "توی فاز تولید، TPM چه دو چیزی رو هم‌زمان می‌سنجه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، رویکرد شناسایی TPM بین فاز «توسعه‌ی مفهوم» و فاز «توسعه‌ی مهندسی» چطور فرق می‌کنه؟ و توی فاز تولید، TPM چه دو چیز متفاوتی رو هم‌زمان ارزیابی می‌کنه؟",
-    "expected_outcome": "توی توسعه‌ی مفهوم، اول از رویکرد بالا-به-پایین برای TPM سطح‌بالا (عملکرد پایه، هزینه، زمان‌بندی) استفاده می‌شه، بعد به رویکرد پایین-به-بالا برای TPM جزئی‌تر می‌ریم. توی توسعه‌ی مهندسی، عمدتاً رویکرد پایین-به-بالا در سطح جزء به کار می‌ره، همراه با نظر کارشناسان و داده‌ی تاریخی، و وقتی تست راستی‌آزمایی شروع می‌شه از داده‌ی واقعی تست استفاده می‌شه. توی فاز تولید، TPM هم عملکرد خود سیستم تولیدشده (قابلیت‌اطمینان، قابلیت‌نگه‌داری، دسترس‌پذیری) رو ارزیابی می‌کنه، هم عملکرد خود خط تولید (کارایی تولید، نرخ نقص، هزینه به ازای واحد و…) رو.",
+    "estimated_minutes": 2,
+    "prompt": "توی فاز تولید، TPM چه دو چیز متفاوتی رو هم‌زمان ارزیابی می‌کنه؟",
+    "expected_outcome": "خود سیستم تولیدشده و خود خط تولید",
     "hints": [
-      "درس گفت توسعه‌ی مفهوم اول بالا-به-پایین شروع می‌شه، بعد به پایین-به-بالا سوییچ می‌کنه.",
-      "توی فاز تولید، درس دو چیز جدا رو نام برد که TPM هم‌زمان پایش می‌کنه — خود سیستم و خود خط تولید."
+      "یکی درباره‌ی محصول نهایی، یکی درباره‌ی فرایند ساختشه.",
+      "مثال محصول: قابلیت‌اطمینان. مثال خط تولید: نرخ نقص."
     ],
-    "rubric": "Correct if response explains the concept-development top-down-then-bottom-up shift, the engineering-development bottom-up-plus-test-data approach, and names both production-line metrics and per-unit system performance metrics for the production stage. Correct_with_hint if 2 of these 3 points are covered. Incorrect if fewer than 2."
+    "rubric": "Correct if response names both the production line's own performance and the produced system's own performance as the two things TPM tracks in production."
   }
 ]

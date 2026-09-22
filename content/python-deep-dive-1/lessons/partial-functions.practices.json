@@ -25,13 +25,13 @@
   },
   {
     "key": "baked-reference",
-    "title": "چه چیزی ذخیره می‌شود؟",
-    "form": "explanation",
+    "title": "partial چی رو ذخیره می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "```python\nrate = 0.1\ntaxed = partial(lambda p, r: p * (1 + r), r=rate)\nrate = 0.2\nprint(taxed(100))\n\ncfg = {'r': 0.1}\ntaxed2 = partial(lambda p, c: p * (1 + c['r']), c=cfg)\ncfg['r'] = 0.2\nprint(taxed2(100))\n```\nخروجی هر print را بنویس و در ۲ تا ۳ جمله توضیح بده چرا این دو متفاوت رفتار می‌کنند و این به کدام درس قبلی مربوط است.",
-    "expected_outcome": "`110.0` و `120.0`. partial ارجاع به شیء را ذخیره می‌کند نه نام متغیر: `rate = 0.2` نام را به شیء جدیدی می‌برد ولی partial همچنان به `0.1` اشاره دارد. `cfg` اما mutable است و `cfg['r'] = 0.2` همان شیء را تغییر می‌دهد، پس partial تغییر را می‌بیند. همان رفتار مقدارهای پیش‌فرض تابع (immutable ثابت، mutable مشترک).",
+    "estimated_minutes": 2,
+    "prompt": "بعد از `taxed = partial(f, r=rate)`، اگه `rate` رو دوباره assign کنیم (`rate = 0.2`)، taxed مقدار جدید رو می‌بینه؟",
+    "expected_outcome": "نه (partial ارجاع به شیء قدیمی رو نگه می‌داره، نه اسم متغیر رو)",
     "hints": ["نام متغیر ذخیره نمی‌شود؛ ارجاع ذخیره می‌شود.", "reassign کردن با mutate کردن فرق دارد."],
-    "rubric": "Correct: 110.0 and 120.0, explains reference capture, distinguishes rebinding vs mutation, links to default-value behaviour. Partial: outputs right but explanation muddled. Incorrect: expects 120.0 for the first."
+    "rubric": "Correct if response says partial keeps a reference to the object, not the variable name — reassignment doesn't affect it."
   }
 ]

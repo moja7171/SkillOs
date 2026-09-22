@@ -4,14 +4,14 @@
     "title": "رویدادمحور در برابر زمان‌بندی‌محور",
     "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 5,
-    "prompt": "چرا بازبینی فنی رویدادمحور بهتر از زمان‌بندی‌محوره؟ معیارهای ورود و خروج توی این تفاوت چه نقشی دارن؟",
-    "expected_outcome": "بازبینی زمان‌بندی‌محور می‌تونه ذی‌نفعان رو زمانی جمع کنه که آرتیفکت‌ها هنوز نابالغن (مثلاً فقط ۱۰٪ کامل)، که اتلاف وقته. بازبینی رویدادمحور فقط وقتی برگزار می‌شه که معیارهای ورود (سطح بلوغ لازم) برآورده شده باشن، و با معیارهای خروج (چک‌لیست آمادگی برای فاز بعد) بسته می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا بازبینی فنی رویدادمحور بهتر از زمان‌بندی‌محوره؟",
+    "expected_outcome": "چون منتظر می‌مونه معیارهای ورود (بلوغ کافی) برآورده بشه، نه وقتِ ثابت",
     "hints": [
       "به مثال «حضور همه با آرتیفکت‌های ۱۰٪ کامل» برگرد.",
-      "معیار ورود چه زمانی باید برآورده بشه؟ معیار خروج چه زمانی؟"
+      "معیار ورود چه زمانی باید برآورده بشه؟"
     ],
-    "rubric": "Full credit explains event-driven reviews avoid wasted time on immature artifacts, tied to entry criteria (trigger) and exit criteria (closure)."
+    "rubric": "Correct if response says event-driven reviews wait for entry criteria (maturity) instead of a fixed date."
   },
   {
     "key": "review-chain-order",
@@ -39,14 +39,14 @@
     "title": "چرا همه‌ی سطوح سلسله‌مراتب بازبینی فنی نمی‌گیرن؟",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "طبق مثال خودروی برقی تسلا توی درس، چرا زیرسیستم صندلی یا ترمز بازبینی فنی جداگانه نمی‌گیره ولی زیرسیستم مدیریت باتری می‌گیره؟",
-    "expected_outcome": "بازبینی فنی وقت و منابع زیادی می‌گیره و از نظر اقتصادی برای همه‌ی عناصر سلسله‌مراتب به‌صرفه نیست. توی سطوح پایین‌تر فقط برای فناوری‌های پرریسک، حیاتی و نابالغ (مثل مدیریت باتری) بازبینی جداگانه برگزار می‌شه؛ مؤلفه‌های سال‌ها اثبات‌شده (صندلی، ترمز) ریسک قابل‌قبولی دارن و نیازی به بازبینی جداگانه ندارن.",
+    "estimated_minutes": 2,
+    "prompt": "طبق مثال خودروی برقی تسلا، چرا زیرسیستم صندلی بازبینی فنی جداگانه نمی‌گیره ولی زیرسیستم مدیریت باتری می‌گیره؟",
+    "expected_outcome": "باتری پرریسک/نابالغه؛ صندلی سال‌ها اثبات‌شده و ریسک قابل‌قبولی داره",
     "hints": [
       "به هزینه/منفعت بازبینی فنی فکر کن.",
       "کدوم مؤلفه‌ها فناوری نابالغ و پرریسک‌ان؟"
     ],
-    "rubric": "Full credit ties the decision to cost-benefit and risk/maturity of the specific subsystem."
+    "rubric": "Correct if response ties the decision to risk/maturity of the specific subsystem."
   },
   {
     "key": "rfi-vs-rfa",

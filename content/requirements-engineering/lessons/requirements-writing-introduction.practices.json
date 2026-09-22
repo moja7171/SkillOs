@@ -22,16 +22,16 @@
   },
   {
     "key": "shared-understanding-benefit",
-    "title": "چرا درک مشترک از نیازمندی اهمیت داره؟",
-    "form": "explanation",
+    "title": "درک مشترک دقیقاً چی رو ممکن می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، وقتی نیازمندی‌ها خوب نوشته می‌شن و درک مشترکی بین ذی‌نفعان مختلف (تحلیل‌گر کسب‌وکار، توسعه‌دهنده، تستر، کاربر) می‌سازن، این دقیقاً چه چیزی رو ممکن می‌کنه؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "درک مشترک، همکاری بین این گروه‌های مختلف رو حین توسعه و راستی‌آزمایی سیستم ممکن می‌کنه، و کمک می‌کنه ریسک‌ها سریع‌تر شناسایی و رسیدگی بشن — چون همه دارن روی همون تعریف مشترک از «سیستم باید چیکار کنه» کار می‌کنن، نه تعبیرهای مجزا و بالقوه متضاد.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی نیازمندی‌ها درک مشترکی بین ذی‌نفعان مختلف می‌سازن، این دقیقاً چه چیزی رو ممکن می‌کنه؟",
+    "expected_outcome": "همکاری در توسعه/راستی‌آزمایی و رسیدگی سریع‌تر به ریسک‌ها",
     "hints": [
       "درس گفت درک مشترک «همکاری در توسعه و راستی‌آزمایی» و «رسیدگی سریع به ریسک» رو ممکن می‌کنه.",
-      "فکر کن اگه هرکدوم از این گروه‌ها تعبیر متفاوتی از نیازمندی داشته باشن، چه اتفاقی می‌افته."
+      "فکر کن اگه هرکدوم از این گروه‌ها تعبیر متفاوتی داشته باشن چه اتفاقی می‌افته."
     ],
-    "rubric": "Correct if response explains that shared understanding enables cross-stakeholder collaboration during development/verification and faster risk resolution, as stated in the lesson. Correct_with_hint if only a generic 'better communication' answer is given without these specifics. Incorrect otherwise."
+    "rubric": "Correct if response names cross-stakeholder collaboration during development/verification and faster risk resolution."
   }
 ]

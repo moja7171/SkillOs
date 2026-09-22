@@ -23,13 +23,13 @@
   },
   {
     "key": "why-raise-is-not-free",
-    "title": "یه پیش‌بینی قبل از درس بعد",
-    "form": "explanation",
+    "title": "چرا raise از if سنگین‌تره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "در ۱ تا ۲ جمله حدس بزن: چرا صادرکردن استثنا (raise) نسبت به یه if معمولی ممکنه هزینه‌ی اجرایی بیشتری داشته باشه؟",
-    "expected_outcome": "چون پایتون موقع صادرکردن یه استثنا، باید یه شیء استثنا بسازه و پشته‌ی فراخوانی (call stack) رو برای پیداکردن نزدیک‌ترین except بگرده — این کار از یه مقایسه‌ی ساده‌ی if سنگین‌تره. (جواب دقیقش رو توی درس بعد می‌بینیم.)",
-    "hints": ["به این فکر کن پشت صحنه، صادرکردن یه استثنا چه کارهای اضافه‌ای داره که یه if نداره.", "این یه سؤال حدسیه — جواب دقیقش توی درس بعد میاد."],
-    "rubric": "Correct if the answer reasonably suggests exceptions involve extra work (building an exception object, searching for a handler) compared to a plain condition check. Correct_with_hint if it just says \"exceptions are slower\" without any reasoning. Incorrect if it claims there's no difference."
+    "estimated_minutes": 2,
+    "prompt": "چرا صادرکردن یه استثنا (raise) نسبت به یه if معمولی ممکنه هزینه‌ی اجرایی بیشتری داشته باشه؟",
+    "expected_outcome": "باید یه شیء استثنا بسازه و call stack رو برای handler بگرده",
+    "hints": ["به این فکر کن پشت صحنه، صادرکردن یه استثنا چه کارهای اضافه‌ای داره که یه if نداره.", "ساختن شیء + جستجوی handler."],
+    "rubric": "Correct if response mentions building an exception object and/or searching the call stack for a handler."
   }
 ]

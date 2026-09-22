@@ -14,14 +14,14 @@
   },
   {
     "key": "not-redundant-comparison",
-    "title": "یه هم‌تیمی این خط رو نوشته",
-    "form": "explanation",
+    "title": "چرا high_income == True زائده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی به‌جای `if high_income:` نوشته:\n```python\nif high_income == True:\n    print(\"Eligible\")\n```\nدر ۲ تا ۳ جمله بهش بگو چرا این کار زائده و چی رو باید عوض کنه.",
-    "expected_outcome": "`high_income` خودش از قبل یه مقدار بولیه (True یا False)، پس مقایسه‌ش با True هیچ اطلاعات اضافه‌ای نمی‌ده — نتیجه‌ی `high_income == True` دقیقاً همون `high_income`ه. کافیه بنویسه `if high_income:`.",
+    "estimated_minutes": 2,
+    "prompt": "به‌جای `if high_income:` یکی نوشته `if high_income == True:`. چرا زائده؟",
+    "expected_outcome": "چون high_income خودش از قبل بولیه (True/False)",
     "hints": ["`high_income` از قبل True یا False هست؛ چه نیازی به مقایسه با True؟", "به جاش مستقیم از خود متغیر توی شرط استفاده کن."],
-    "rubric": "Correct if the answer notes that high_income is already a boolean, so comparing it to True is redundant, and suggests writing `if high_income:` directly. Correct_with_hint if it identifies the redundancy but not the fix. Incorrect otherwise."
+    "rubric": "Correct if response says high_income is already a boolean, so comparing to True is redundant."
   },
   {
     "key": "operator-precedence",

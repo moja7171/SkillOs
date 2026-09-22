@@ -26,8 +26,8 @@
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "طبق این درس، دیاگرام جریان داده چه محدودیت مشخصی نسبت به دیاگرام فعالیت داره، و برای رفع این محدودیت باید از کدوم دیاگرام استفاده کنیم؟",
-    "expected_outcome": "دیاگرام جریان داده استاتیکه — ترتیب عملیات، اینکه کدوم تابع کنترل اجرای بقیه رو داره، یا زمانی که توابع اجرا می‌شن رو نشون نمی‌ده؛ فقط یه عکس لحظه‌ای از بخشی از یه مأموریت یا سناریوست. برای نشون‌دادن ترتیب اجرا و کنترل، باید از دیاگرام فعالیت استفاده کنیم.",
+    "prompt": "دیاگرام جریان داده چه محدودیت مشخصی نسبت به ترتیب اجرا داره، و برای رفعش باید از کدوم دیاگرام استفاده کنیم؟",
+    "expected_outcome": "استاتیکه (ترتیب اجرا رو نشون نمی‌ده) / دیاگرام فعالیت",
     "hints": [
       "درس گفت DFD «استاتیک»ه — این یعنی چی درباره‌ی ترتیب زمانی؟",
       "درس اسم دیاگرام جایگزین رو مستقیم گفت."
@@ -36,16 +36,16 @@
   },
   {
     "key": "why-limit-5-to-7-processes",
-    "title": "چرا هر دیاگرام رو به ۵ تا ۷ فرایند محدود می‌کنیم؟",
-    "form": "explanation",
+    "title": "بیش از ۷ فرایند توی یه دیاگرام چه مشکلی داره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا باید خودمون رو توی هر دیاگرام جریان داده به ۵ تا ۷ فرایند محدود کنیم؟ اگه این قانون رو رعایت نکنیم چه اتفاقی می‌افته؟",
-    "expected_outcome": "محدودکردن به ۵ تا ۷ فرایند، مدیریت و انتقال دیاگرام به بقیه رو راحت‌تر می‌کنه. اگه رعایت نکنیم، دیاگرام به یه «اسپاگتی» درهم‌وبرهم از ورودی/خروجی/تابع تبدیل می‌شه که کسی واقعاً درکش نمی‌کنه — که هدف اصلی ساخت دیاگرام جریان داده (یعنی وضوح و فهم مشترک) رو زیر سؤال می‌بره.",
+    "estimated_minutes": 2,
+    "prompt": "چرا باید هر دیاگرام جریان داده رو به ۵ تا ۷ فرایند محدود کنیم؟",
+    "expected_outcome": "وگرنه دیاگرام «اسپاگتی» و غیرقابل‌فهم می‌شه",
     "hints": [
       "درس یه استعاره‌ی خاص («اسپاگتی») برای این وضعیت به کار برد.",
-      "هدف اصلی دیاگرام جریان داده چیه، و شلوغی زیاد چطور اون هدف رو نقض می‌کنه؟"
+      "هدف اصلی دیاگرام جریان داده چیه؟"
     ],
-    "rubric": "Correct if response explains the 5-7 process limit keeps the diagram manageable/communicable, and that exceeding it turns the diagram into an incomprehensible 'spaghetti mess' that defeats the diagram's purpose. Correct_with_hint if only the limit is stated without the spaghetti-mess consequence. Incorrect otherwise."
+    "rubric": "Correct if response says exceeding the limit turns the diagram into an incomprehensible mess."
   }
 ]

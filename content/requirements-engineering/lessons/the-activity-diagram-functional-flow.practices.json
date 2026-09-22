@@ -22,30 +22,30 @@
   },
   {
     "key": "child-inherits-parent-io",
-    "title": "چرا فراموش‌کردن ورودی/خروجی والد گرون تموم می‌شه؟",
-    "form": "explanation",
+    "title": "چرا باید ورودی/خروجی والد رو توی دیاگرام فرزند هم نشون بدیم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، وقتی یه فعالیت پیچیده رو به زیرفعالیت‌ها تجزیه می‌کنیم، چرا مهمه که ورودی/خروجی‌های سطح والد توی دیاگرام سطح فرزند هم نمایش داده بشن؟ اگه این کار رو فراموش کنیم چه اتفاقی می‌افته؟",
-    "expected_outcome": "چون مرز دیاگرام فرزند باید ورودی/خروجی‌های سطح والد رو ارث ببره، و این کار رابط‌های اصلی بین عناصر رو شناسایی می‌کنه. اگه فراموشش کنیم، مهندسانی که راه‌حل رو کد یا پیاده می‌کنن تصویر کامل رو نمی‌بینن — که می‌تونه به هدررفت وقت و پول زیادی برای رفع اشتباهات ناشی از رونویسی‌نکردن رابط‌های بین والد و فرزند منجر بشه.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی یه فعالیت رو به زیرفعالیت‌ها تجزیه می‌کنیم، اگه ورودی/خروجی‌های سطح والد رو توی دیاگرام فرزند فراموش کنیم، چه اتفاقی می‌افته؟",
+    "expected_outcome": "مهندسان پیاده‌ساز تصویر کامل رو نمی‌بینن / هدررفت وقت و پول",
     "hints": [
-      "درس گفت این کار «رابط‌های اصلی بین عناصر» رو شناسایی می‌کنه — چرا این مهمه؟",
+      "درس گفت این کار «رابط‌های اصلی بین عناصر» رو شناسایی می‌کنه.",
       "پیامد فراموشی این کار روی مهندسانی که راه‌حل رو پیاده می‌کنن چیه؟"
     ],
-    "rubric": "Correct if response explains child diagrams must inherit parent-level inputs/outputs to identify key interfaces, and that forgetting this leaves implementing engineers without the full picture, wasting time/money fixing interface mistakes. Correct_with_hint if only the rule or only the consequence is covered. Incorrect otherwise."
+    "rubric": "Correct if response says implementing engineers lose the full picture, wasting time/money fixing interface mistakes."
   },
   {
     "key": "why-separate-diagram-per-alternative",
     "title": "چرا هر جایگزین/استثنا یه دیاگرام جدا می‌خواد؟",
     "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا باید برای هر جایگزین یا استثنای توی سناریوهامون، یه دیاگرام فعالیت جداگانه بسازیم؟",
-    "expected_outcome": "چون این کار بسته‌های کوچیک‌تر و قابل‌مدیریت‌تری می‌سازه که می‌شه بعداً به تیم‌های طراحی برای پیاده‌سازی سپرد.",
+    "estimated_minutes": 2,
+    "prompt": "چرا باید برای هر جایگزین یا استثنای توی سناریوهامون، یه دیاگرام فعالیت جداگانه بسازیم؟",
+    "expected_outcome": "بسته‌های کوچیک‌تر و قابل‌مدیریت‌تر برای تیم‌های طراحی",
     "hints": [
-      "درس یه دلیل مشخص برای این جداسازی آورد — درباره‌ی اندازه و قابل‌مدیریت‌بودن بسته‌های کار.",
+      "درس یه دلیل مشخص برای این جداسازی آورد.",
       "این با تیم‌های طراحی که قراره پیاده‌سازیش کنن چه ارتباطی داره؟"
     ],
-    "rubric": "Correct if response states separate diagrams per alternative/exception create smaller, workable packages assignable to design teams for implementation. Correct_with_hint if it vaguely says 'for clarity' without the workable-package/design-team reasoning. Incorrect otherwise."
+    "rubric": "Correct if response says separate diagrams create smaller, workable packages assignable to design teams."
   }
 ]

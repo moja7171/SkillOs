@@ -4,11 +4,11 @@
     "title": "چرا ارجاع مشترک برای str امن است؟",
     "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "پایتون برای `a = \"hello\"; b = \"hello\"` یک شیء مشترک می‌سازد ولی برای `a = [1]; b = [1]` نه. در دو سه جمله بگو چرا این تصمیم برای رشته امن است و برای لیست نه.",
-    "expected_outcome": "رشته immutable است: تنها راه «تغییر» b این است که ارجاعش به شیء دیگری برود، پس a هرگز تحت تأثیر قرار نمی‌گیرد. لیست mutable است: اگر b و a یک شیء بودند، `b.append(...)` مقدار a را هم عوض می‌کرد — رفتاری که هیچ‌کس انتظارش را ندارد.",
+    "estimated_minutes": 2,
+    "prompt": "پایتون برای `a = \"hello\"; b = \"hello\"` یک شیء مشترک می‌سازد ولی برای `a = [1]; b = [1]` نه. این تصمیم برای رشته چرا امنه؟",
+    "expected_outcome": "چون رشته immutable است (تغییر درجا ممکن نیست)",
     "hints": ["به تفاوت «عوض کردن ارجاع» و «عوض کردن state شیء» فکر کن.", "برای لیست، تغییر درجا از طریق یکی از نام‌ها از نام دیگر هم دیده می‌شود."],
-    "rubric": "Correct: links safety to immutability (string can't be changed in place, only re-pointed) and danger to mutability (in-place change visible through both names). Partial: says 'because strings are immutable' without explaining the consequence for the other name. Incorrect: attributes it to size or speed."
+    "rubric": "Correct if response ties safety to string immutability (can't be changed in place)."
   },
   {
     "key": "spot-the-alias",

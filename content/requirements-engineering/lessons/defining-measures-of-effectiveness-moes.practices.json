@@ -37,15 +37,15 @@
   {
     "key": "why-moe-quantitative",
     "title": "چرا MOE باید کمّی باشه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا لازمه MOE رو به‌شکل کمّی بیان کنیم، نه فقط توصیفی و کیفی (مثلاً «سیستم باید مؤثر باشه»)؟ در ۲ تا ۳ جمله توضیح بده و به رابطه‌اش با ردیابی در طول زمان اشاره کن.",
-    "expected_outcome": "MOE کمّی به ما اجازه می‌ده واقعاً بسنجیم آیا سیستم به هدفش می‌رسه یا نه — یه توصیف کیفی مثل «مؤثر باشه» قابل‌سنجش نیست. علاوه بر این، MOE کمّی به ما اجازه می‌ده اون رو در طول زمان ردیابی کنیم و بسنجیم آیا تغییراتی که توی سیستم دادیم بهبود موردنظر رو واقعاً ایجاد کرده یا نه، یا تغییر بیشتری لازمه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا لازمه MOE رو به‌شکل کمّی بیان کنیم، نه فقط کیفی (مثلاً «سیستم باید مؤثر باشه»)؟",
+    "expected_outcome": "تا بشه سنجید و در طول زمان ردیابی کرد",
     "hints": [
       "درس گفت هدف از کمّی‌بودن MOE، امکان «سنجش» برآورده‌شدن اهدافه.",
-      "به بخش «ردیابی MOE در طول زمان» فکر کن — این ردیابی بدون کمّی‌بودن ممکنه؟"
+      "به بخش «ردیابی MOE در طول زمان» فکر کن."
     ],
-    "rubric": "Correct if response explains quantitative MOEs are needed to actually measure goal achievement (vs. unmeasurable qualitative claims) and to track over time whether changes produced the desired improvement. Correct_with_hint if only one of these two points is made. Incorrect otherwise."
+    "rubric": "Correct if response says quantitative MOEs allow measuring goal achievement and tracking over time."
   }
 ]

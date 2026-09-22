@@ -12,14 +12,14 @@
   },
   {
     "key": "sort-ascending-vs-descending",
-    "title": "بدون reverse چی می‌شه؟",
-    "form": "explanation",
+    "title": "بدون reverse، sorted چه ترتیبی می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته تا **کم‌تکرارترین** کاراکتر رو پیدا کنه:\n```python\nsorted_chars = sorted(char_frequency.items(), key=lambda item: item[1])\nleast_common = sorted_chars[0]\n```\nاین کد درسته یا نه؟ چرا؟",
-    "expected_outcome": "درسته. بدون reverse=True، sorted صعودی مرتب می‌کنه — یعنی کمترین تعداد اول میاد. پس sorted_chars[0] دقیقاً کم‌تکرارترین کاراکتره؛ برای پرتکرارترین بود که باید reverse=True اضافه می‌شد.",
+    "estimated_minutes": 2,
+    "prompt": "`sorted(char_frequency.items(), key=lambda item: item[1])` بدون reverse=True. sorted_chars[0] کم‌تکرارترینه یا پرتکرارترین؟",
+    "expected_outcome": "کم‌تکرارترین (چون پیش‌فرض sorted صعودیه)",
     "hints": ["پیش‌فرض sorted صعودیه (کم به زیاد).", "برای برعکسش (زیاد به کم)، باید reverse=True اضافه کنی."],
-    "rubric": "Correct if the answer says this is correct, explaining that without reverse=True, sorted() ascends, so index 0 is the least frequent character."
+    "rubric": "Correct if response says index 0 is the least frequent because sorted() ascends by default."
   },
   {
     "key": "full-frequency-solution",

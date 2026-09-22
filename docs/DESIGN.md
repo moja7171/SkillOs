@@ -81,6 +81,7 @@ Persian UI, `dir="rtl"`, desktop-first. LeetCode-inspired density: top nav, main
 | `courses` | Catalog entry | `slug` (unique), `title`, `description`, `outcome_statement`, `source_note`, `category`, `category_order` (display-only catalog grouping, §58 — no gating) |
 | `lessons` | Topic unit inside a course | `course_id`, `slug` (unique per course), `order`, `title`, `summary`, `content` (markdown), `key_points` json, `common_mistakes` json, `estimated_minutes` |
 | `lesson_videos` | 0..n videos per lesson | `lesson_id`, `order`, `title`, `url` |
+| `video_views` | This user watched this video to the end | `user_id`, `lesson_video_id` (unique pair), `watched_at` — gates "انجام دادم" alongside `allPracticesPassedBy` (DECISIONS.md §63) |
 | `lesson_prerequisites` | Directed edges inside a course | `lesson_id`, `prerequisite_lesson_id` |
 | `activities` | Learn (one per lesson) and practice templates | `lesson_id`, `key` (stable per lesson, from content files), `type` learn|practice, `title`, `estimated_minutes`, `payload` json (§4.2) |
 | `enrollments` | User × course config | `user_id`, `course_id` (unique pair), `priority`, `daily_time_minutes`, `preferred_time`, `status`, `last_activity_at` |

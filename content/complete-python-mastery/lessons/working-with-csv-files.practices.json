@@ -2,24 +2,24 @@
   {
     "key": "csv-values-are-strings",
     "title": "چرا این جمع اشتباهه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nwith open(\"data.csv\") as file:\n    reader = csv.reader(file)\n    rows = list(reader)\n\ntotal = rows[1][2] + rows[2][2]\n```\nاگه ستون سوم قیمته (مثلاً 5 و 8)، این کد به‌جای 13 چیزی مثل \"58\" می‌ده. چرا؟",
-    "expected_outcome": "چون csv.reader همه‌ی مقادیر رو به‌شکل رشته برمی‌گردونه، حتی اگه توی فایل عدد به‌نظر برسن. پس rows[1][2] و rows[2][2] رشته‌های \"5\" و \"8\" هستن، و + روی رشته‌ها یعنی الحاق (concatenation)، نه جمع عددی. باید اول با int() یا float() تبدیلشون کنیم.",
+    "estimated_minutes": 2,
+    "prompt": "rows[1][2] + rows[2][2] از csv.reader به‌جای 13، «58» می‌ده. چرا؟",
+    "expected_outcome": "چون csv.reader همه‌ی مقادیر رو رشته برمی‌گردونه (+ یعنی الحاق، نه جمع)",
     "hints": ["csv.reader مقادیر رو همیشه به‌شکل رشته برمی‌گردونه.", "+ روی دو رشته یعنی به‌هم‌چسبوندن، نه جمع عددی."],
-    "rubric": "Correct if the answer identifies CSV values as strings requiring explicit conversion (int/float) before arithmetic."
+    "rubric": "Correct if response says CSV values are always strings, requiring explicit conversion before arithmetic."
   },
   {
     "key": "reader-exhausted",
     "title": "چرا حلقه چیزی چاپ نمی‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nwith open(\"data.csv\") as file:\n    reader = csv.reader(file)\n    rows = list(reader)\n    for row in reader:\n        print(row)\n```\nحلقه‌ی for هیچی چاپ نمی‌کنه. چرا؟",
-    "expected_outcome": "چون list(reader) خودش reader رو تا انتهای فایل پیمایش می‌کنه و موقعیتش رو به آخر فایل می‌بره؛ وقتی حلقه‌ی for دوباره روی همون reader اجرا می‌شه، دیگه چیزی برای خوندن باقی نمونده.",
-    "hints": ["reader یه موقعیت داخلی داره که فقط یه بار می‌شه از اول تا آخرش پیمایش کرد.", "list(reader) خودش یه پیمایش کامله."],
-    "rubric": "Correct if the answer explains the reader's position is exhausted after list(reader), so the subsequent loop finds nothing left."
+    "estimated_minutes": 2,
+    "prompt": "بعد از `rows = list(reader)`، حلقه‌ی for روی همون reader هیچی چاپ نمی‌کنه. چرا؟",
+    "expected_outcome": "چون list(reader) خودش reader رو تا آخر پیمایش کرده (چیزی نمونده)",
+    "hints": ["reader یه موقعیت داخلی داره که فقط یه بار می‌شه پیمایش کرد.", "list(reader) خودش یه پیمایش کامله."],
+    "rubric": "Correct if response says the reader's position is already exhausted after list(reader)."
   },
   {
     "key": "write-csv-rows",

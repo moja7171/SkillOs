@@ -22,30 +22,30 @@
   },
   {
     "key": "prototyping-loop",
-    "title": "چرا فرایند پروتوتایپ‌سازی تکرارشونده‌ست؟",
-    "form": "scenario",
+    "title": "بعد از فیدبک کاربر، چه گام‌هایی طی می‌شه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "تیم یه پروتوتایپ اولیه از اپ بانکداری موبایل ساخته و بعد از تست کاربری، فهمیده که کاربران نمی‌تونن دکمه‌ی انتقال وجه رو پیدا کنن. طبق فرایند این درس، از این نقطه به بعد تیم دقیقاً چه گام‌هایی رو باید طی کنه تا این بازخورد به یه نیازمندی به‌روزشده و اعتبارسنجی‌شده تبدیل بشه؟ گام‌ها رو به ترتیب بنویس.",
-    "expected_outcome": "طبق فرایند درس: ابتدا پالایش پروتوتایپ (اصلاح طراحی بر اساس بازخورد کاربر)، سپس تحلیل بازخورد (شناسایی اینکه کدوم نیازمندی باید ثبت یا پالایش بشه — مثلاً نیازمندی وضوح بصری دکمه‌ی انتقال وجه)، بعد به‌روزرسانی سند نیازمندی یا مدل معماری بر اساس این تحلیل، سپس اعتبارسنجی نیازمندی‌های به‌روزشده با ذی‌نفعان (نشون‌دادن پروتوتایپ اصلاح‌شده)، و در نهایت تکرار این چرخه تا همه‌ی نیازمندی‌ها ثبت بشن.",
+    "estimated_minutes": 3,
+    "prompt": "کاربران نمی‌تونن دکمه‌ی انتقال وجه رو تو پروتوتایپ پیدا کنن. طبق فرایند این درس، از «پالایش پروتوتایپ» تا «اعتبارسنجی با ذی‌نفعان» چه گام‌هایی به ترتیب طی می‌شه؟",
+    "expected_outcome": "پالایش پروتوتایپ → تحلیل بازخورد → به‌روزرسانی سند نیازمندی → اعتبارسنجی با ذی‌نفعان",
     "hints": [
-      "این درس شش گام مشخص برای فرایند استخراج نیازمندی از پروتوتایپ داد — از پالایش تا تکرار.",
-      "بعد از پالایش پروتوتایپ، بازخورد باید تحلیل بشه تا معلوم بشه کدوم نیازمندی رو باید تغییر داد."
+      "این درس شش گام مشخص برای فرایند استخراج نیازمندی از پروتوتایپ داد.",
+      "بعد از پالایش، بازخورد باید تحلیل بشه تا معلوم بشه کدوم نیازمندی رو باید تغییر داد."
     ],
-    "rubric": "Correct if response lists the steps in roughly the right order: refine prototype based on feedback, analyze feedback to identify the requirement, update the requirements document/model, validate updated requirements with stakeholders, and iterate. Correct_with_hint if most steps are present but out of order or one is missing. Incorrect if the response doesn't follow the lesson's iterative process."
+    "rubric": "Correct if the steps are given in roughly the right order: refine prototype, analyze feedback, update requirements, validate with stakeholders. Correct_with_hint if 2-3 are right/ordered."
   },
   {
     "key": "prototype-vs-other-techniques",
-    "title": "چرا پروتوتایپ چیزی می‌ده که بارش فکری یا مصاحبه نمی‌ده؟",
-    "form": "explanation",
+    "title": "پروتوتایپ چه چیز منحصربه‌فردی می‌ده؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، پروتوتایپ‌سازی چه چیز منحصربه‌فردی به فرایند استخراج نیازمندی اضافه می‌کنه که تکنیک‌هایی مثل مصاحبه یا بارش فکری (که فقط با حرف و توصیف کار می‌کنن) نمی‌تونن بدن؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "پروتوتایپ یه «تجربه‌ی مستقیم» و ملموس از سیستم می‌ده — ذی‌نفعان می‌تونن واقعاً با یه نسخه‌ی کاری تعامل کنن، نه فقط درباره‌ش حرف بزنن. این باعث می‌شه فیچرهای مبهم، ناهماهنگی یا نیازمندی‌های نادیده‌گرفته‌شده‌ای که با توصیف کلامی کشف نمی‌شدن، از طریق تعامل واقعی آشکار بشن — و درک دقیق‌تر و ملموس‌تری از قابلیت‌ها و محدودیت‌های سیستم بده.",
+    "estimated_minutes": 2,
+    "prompt": "پروتوتایپ‌سازی چه چیز منحصربه‌فردی به استخراج نیازمندی اضافه می‌کنه که مصاحبه یا بارش فکری (فقط با حرف) نمی‌تونن بدن؟",
+    "expected_outcome": "تجربه‌ی مستقیم و تعامل واقعی با یه نسخه‌ی کاری",
     "hints": [
       "درس یه عبارت مشخص برای این «تجربه‌ی مستقیم» به کار برد — همون اول درس.",
       "چرا دیدن و لمس‌کردن یه چیز، چیزی بیشتر از توصیفش می‌ده؟"
     ],
-    "rubric": "Correct if response explains that prototyping provides direct, tangible experience/interaction with a working version, which surfaces unclear features, mismatches, or overlooked requirements that pure verbal description can't. Correct_with_hint if it says prototyping is 'more concrete' without explaining what that surfaces. Incorrect otherwise."
+    "rubric": "Correct if response names direct, tangible experience/interaction with a working version as the unique contribution."
   }
 ]

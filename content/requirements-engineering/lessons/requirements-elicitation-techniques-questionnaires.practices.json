@@ -37,15 +37,15 @@
   {
     "key": "google-forms-tradeoff",
     "title": "«رایگان» یعنی واقعاً رایگان؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، وقتی از یه سرویس «رایگان» مثل Google Forms برای پرسش‌نامه استفاده می‌کنیم، چه هزینه‌ی پنهانی وجود داره؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "این سرویس‌ها واقعاً رایگان نیستن — کاربر با داده‌های شخصی خودش (ایمیل، تاریخچه‌ی مرورگر، عادت‌های خرید، آدرس) بهاشون رو می‌ده. سازمانی که از این سرویس‌ها استفاده می‌کنه باید این تبادل داده رو در نظر بگیره، مخصوصاً وقتی داده‌های ذی‌نفعانش رو هم از این طریق جمع می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی از یه سرویس «رایگان» مثل Google Forms برای پرسش‌نامه استفاده می‌کنیم، با چی داریم بهاش رو می‌دیم؟",
+    "expected_outcome": "داده‌های شخصی (ایمیل، مرور، خرید، آدرس)",
     "hints": [
       "درس دقیقاً گفت «رایگان» یعنی چی — با چی داریم پرداخت می‌کنیم؟",
       "چهار نوع داده‌ی شخصی که درس اسم برد رو به یاد بیار."
     ],
-    "rubric": "Correct if response explains that 'free' services are paid for with personal data (email, browsing history, shopping habits, addresses) rather than money, and that this is a real cost to weigh. Correct_with_hint if it says there's a hidden cost but doesn't specify the data-as-payment mechanism. Incorrect otherwise."
+    "rubric": "Correct if response names personal data as the real payment, not money."
   }
 ]

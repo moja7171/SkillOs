@@ -15,6 +15,7 @@ The owner drops course materials into `course/<slug>/` (videos, `.srt`/`.vtt` su
 5. **No Skill layer, no learner-created topics.** A course is a fixed catalog authored here; the learner only enrolls. Don't design content that assumes otherwise.
 6. **Practices are authored by us** (not generated at runtime). Gemini only grades open answers against the rubric.
 7. Log important process/format changes in `docs/DECISIONS.md`; tick progress in `docs/STORIES.md` (C-01 line); keep `docs/DESIGN.md` §4 in sync if the file format changes.
+8. **Always check quality before moving on — lessons and practices alike.** Don't just satisfy the validator (schema-valid ≠ good). Re-read what you wrote against the actual lesson content: does the prompt test something the video really taught, is the `expected_outcome`/`rubric` factually correct and specific, does the tone match §5, is a `short_answer` genuinely short (§6)? Fix it before committing, not after the owner flags it.
 
 ## 2. Where everything lives
 
@@ -117,7 +118,7 @@ Rubric conventions:
 - mcq: exactly `Correct only if option N is selected.` with N = `correct_option` (the validator checks this).
 - open forms: `Correct: … Partial: … Incorrect: …` — name the specific facts/steps that must appear, and what is an acceptable alternative. The grader returns `correct | correct_with_hint | incorrect`, so "Partial" describes what still counts as correct-with-reservations.
 
-Per-lesson mix that works: one `intro` (usually mcq, 1–2 min), one `core` (coding or short_answer, 4–6 min), one `core`/`stretch` (explanation, 3–4 min). Difficulty drives the planner's choice; keep the distribution roughly 1/1/1 across a section.
+Per-lesson mix that works: one `intro` (usually mcq, 1–2 min), one `core` (coding or short_answer, 4–6 min), one `core`/`stretch` (short_answer or mcq, 3–4 min). Difficulty drives the planner's choice; keep the distribution roughly 1/1/1 across a section. (`explanation` is legacy — see §6.)
 
 ## 4. Workflow for a section (do this, in this order)
 
@@ -163,12 +164,14 @@ Sanity check at the end of a section: every lesson `.md` > 800 bytes, every prac
 
 ## 6. Practices: what good ones look like
 
+> **No essay-style answers (owner rule, 2026-09-22, DECISIONS.md §64).** Every non-mcq, non-coding practice must be a true `short_answer`: recall a specific fact/term/name/number/reason in 1–2 words, not a paragraph of reasoning. A prompt may ask for more than one such short answer when natural (two or three named items), but never "explain in 3–4 sentences." `explanation` and `scenario` are **legacy forms** — don't author new ones; existing ones in other courses get migrated over time, starting with `requirements-engineering`.
+
 - **They test the lesson, not trivia.** Each practice maps to a key point. A learner who understood the video should be able to do it without the text.
 - **Practical and motivating, not dry drills.** Favor a tangible little task the learner can picture doing over an abstract "what does this print" quiz question whenever the concept allows it — framed so solving it feels worth doing, not just a correctness check. `prompt`/`title` stay simple and casual too (see §5's register note), same as the lesson text. No emoji anywhere. A pattern that works well: thread one running relatable scenario across a whole section's practices (e.g. building a "user profile" — avatar initials, masking a national ID, a signup form) instead of a fresh disconnected mini-story per practice; for a tooling-only section with no code to write, reframe as help-a-friend/code-review moments ("a teammate hit this error, explain why and how to fix it").
 - **mcq**: a code snippet + "خروجی چیست؟" with three plausible wrong answers that correspond to real misconceptions (e.g. `list` vs `tuple` for `*args`). Never "all of the above". Put the correct answer at a varying index across the lesson's MCQs.
 - **coding**: a small task with a clear target output; `expected_outcome` includes reference code in a fenced block and the expected result; rubric lists the must-haves ("uses `nonlocal`", "returns the result", "forwards `*args/**kwargs`") and acceptable alternatives.
-- **explanation**: "در ۳ تا ۴ جمله …" with 2–4 concrete things to cover; rubric = which of those points must be present for Correct / Partial.
-- **short_answer**: predict-the-output or fill-in-the-fact; `expected_outcome` is the exact answer.
+- **short_answer**: predict-the-output, name-the-term, or fill-in-the-fact — `expected_outcome` is the exact short answer(s), 1–2 words each; `prompt` may ask for 2–3 of them in one go ("اسم دو تا از سه استثنا رو ببر") but never asks for reasoning in full sentences. `rubric` names each required short item and any acceptable synonym.
+- *(legacy, don't author new)* **explanation**/**scenario**: multi-sentence reasoning answers, superseded by the short_answer bar above (DECISIONS.md §64).
 - Hints: first hint = where to look / what concept; second hint = the decisive detail. Two, always.
 - Keep prompts self-contained (include the code being asked about); don't reference "the code above" from the lesson text.
 

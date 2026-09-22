@@ -73,9 +73,10 @@ class LessonController extends Controller
     public function markDone(Request $request, Lesson $lesson, AttemptSession $sessions): RedirectResponse
     {
         $user = $request->user();
-        $lesson->loadMissing('practices', 'learnActivity');
+        $lesson->loadMissing('practices', 'videos', 'learnActivity');
 
         abort_unless($lesson->allPracticesPassedBy($user), 422);
+        abort_unless($lesson->allVideosWatchedBy($user), 422);
 
         if (! $lesson->isMarkedDoneBy($user)) {
             $sessions->markLessonDone($user, $lesson->learnActivity);

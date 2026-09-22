@@ -12,13 +12,13 @@
   },
   {
     "key": "intellisense-abbreviation",
-    "title": "تایپ سریع‌تر",
-    "form": "explanation",
+    "title": "چطور سریع‌تر بنویسیم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی همیشه کل اسم `calculate_total` رو حرف‌به‌حرف تایپ می‌کنه. در ۱ تا ۲ جمله بهش بگو چطور می‌تونه سریع‌تر بنویسدش.",
-    "expected_outcome": "لازم نیست کل اسم رو تایپ کنه — می‌تونه چند حرف اول (مثلاً calc) رو بنویسه و از پیشنهاد IntelliSense انتخاب کنه، یا حتی حروفی از وسط اسم رو به ترتیب بنویسه (مثلاً ctt) تا IntelliSense پیداش کنه.",
+    "estimated_minutes": 2,
+    "prompt": "به‌جای تایپ کامل `calculate_total`، چطور می‌شه سریع‌تر نوشتش؟",
+    "expected_outcome": "چند حرف اول رو بنویس و از پیشنهاد IntelliSense انتخاب کن",
     "hints": ["IntelliSense فقط با حروف اول کار نمی‌کنه.", "می‌شه حروف پراکنده از وسط اسم رو هم به ترتیب تایپ کرد."],
-    "rubric": "Correct if the answer mentions typing a few starting letters (or scattered letters in order) and picking from IntelliSense's suggestions instead of typing the full name."
+    "rubric": "Correct if response says typing a few letters and picking from IntelliSense's suggestions."
   }
 ]

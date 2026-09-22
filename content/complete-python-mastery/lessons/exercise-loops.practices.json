@@ -12,13 +12,13 @@
   },
   {
     "key": "sum-instead-of-count",
-    "title": "یه هم‌تیمی این خط رو نوشته",
-    "form": "explanation",
+    "title": "چرا total += 1 اشتباهه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌خواد **مجموع** اعداد زوج بین ۱ تا ۱۰ رو حساب کنه (نه تعدادشون)، ولی این کد رو نوشته و هنوز از الگوی شمارنده استفاده می‌کنه:\n```python\ntotal = 0\n\nfor number in range(1, 10):\n    if number % 2 == 0:\n        total += 1\n\nprint(f\"sum is {total}\")\n```\nدر ۲ تا ۳ جمله بهش بگو اشکال کار کجاست و چطور درستش کنه.",
-    "expected_outcome": "اشکال اینه که `total += 1` همیشه فقط یکی اضافه می‌کنه (یعنی داره تعداد رو می‌شماره، نه جمع می‌زنه). برای مجموع واقعی باید خود عدد رو اضافه کنه: `total += number`.",
-    "hints": ["`total += 1` دقیقاً همون کاری رو می‌کنه که یه شمارنده می‌کنه.", "برای جمع‌زدن، باید خود number رو اضافه کنی، نه عدد ثابت 1 رو."],
-    "rubric": "Correct if the answer identifies that `total += 1` counts instead of sums, and proposes `total += number` as the fix. Correct_with_hint if it identifies the bug without the specific fix. Incorrect otherwise."
+    "estimated_minutes": 2,
+    "prompt": "برای مجموع اعداد زوج، یکی نوشته `total += 1`. اشکالش چیه، و درستش چیه؟",
+    "expected_outcome": "داره می‌شماره نه جمع می‌زنه / total += number",
+    "hints": ["`total += 1` دقیقاً همون کاری رو می‌کنه که یه شمارنده می‌کنه.", "برای جمع‌زدن، باید خود number رو اضافه کنی."],
+    "rubric": "Correct if response says total += 1 counts instead of summing, and total += number is the fix."
   }
 ]

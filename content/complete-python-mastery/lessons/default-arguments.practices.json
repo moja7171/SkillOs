@@ -12,13 +12,13 @@
   },
   {
     "key": "required-after-optional",
-    "title": "یه هم‌تیمی این کد رو نوشته",
-    "form": "explanation",
+    "title": "این SyntaxError چرا رخ می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این تابع رو نوشته و با خطای syntax مواجه شده:\n```python\ndef send_message(urgent=False, text):\n    ...\n```\nدر ۱ تا ۲ جمله بهش بگو مشکل کجاست و چطور درستش کنه.",
-    "expected_outcome": "پارامتر اختیاری (urgent=False) قبل از پارامتر اجباری (text) اومده — این مجاز نیست. باید ترتیبشون رو عوض کنه: `def send_message(text, urgent=False):`",
+    "estimated_minutes": 2,
+    "prompt": "`def send_message(urgent=False, text):` خطای syntax می‌ده. چرا؟",
+    "expected_outcome": "پارامتر اختیاری قبل از اجباری اومده (نامجازه)",
     "hints": ["پارامترهای اختیاری (با مقدار پیش‌فرض) باید کجای لیست پارامترها بیان؟", "text اجباریه، urgent اختیاری — ترتیبشون رو بررسی کن."],
-    "rubric": "Correct if the answer identifies that the optional parameter comes before the required one, and that the fix is reordering so required parameters come first."
+    "rubric": "Correct if response says the optional parameter comes before the required one."
   }
 ]

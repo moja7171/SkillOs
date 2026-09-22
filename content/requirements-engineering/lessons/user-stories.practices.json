@@ -23,16 +23,16 @@
   {
     "key": "invest-violations",
     "title": "کدوم اصل INVEST نقض شده؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "این user story برای اپ خودپرداز نوشته شده: «به‌عنوان کاربر خودپرداز، می‌خوام رابط کاربری زیبا و لذت‌بخشی داشته باشم، تا از استفاده لذت ببرم.» کدوم یکی یا چند تا از اصول INVEST رو نقض کرده، و چرا؟ چطور می‌شه بازنویسیش کرد که اون اصل رعایت بشه؟",
-    "expected_outcome": "این user story اصل «قابل‌تست (Testable)» رو نقض می‌کنه — «زیبا و لذت‌بخش» معیار عینی و قابل‌تأیید نیست و برای هرکس معنی متفاوتی داره. بازنویسی درست باید یه معیار مشخص و قابل‌سنجش بذاره، مثل: «به‌عنوان کاربر خودپرداز، می‌خوام رابط کاربری با استاندارد دسترس‌پذیری XYZ سازگار باشه، تا بتونم به‌راحتی و بدون سردرگمی ازش استفاده کنم.»",
+    "estimated_minutes": 2,
+    "prompt": "user story: «به‌عنوان کاربر خودپرداز، می‌خوام رابط کاربری زیبا و لذت‌بخشی داشته باشم، تا از استفاده لذت ببرم.» کدوم اصل INVEST رو نقض کرده؟",
+    "expected_outcome": "قابل‌تست (Testable)",
     "hints": [
-      "کدوم اصل INVEST دقیقاً درباره‌ی قابل‌تأیید بودن معیارهاست؟ به مثال «رابط کاربری خوب» درس فکر کن.",
-      "برای درستش کردن، یه استاندارد یا معیار عینی جایگزین صفت‌های ذهنی («زیبا»، «لذت‌بخش») کن."
+      "کدوم اصل INVEST دقیقاً درباره‌ی قابل‌تأیید بودن معیارهاست؟",
+      "«زیبا و لذت‌بخش» معیار عینی و قابل‌سنجش نیست."
     ],
-    "rubric": "Correct if response identifies the Testable violation, explains why 'beautiful/enjoyable' is subjective and unverifiable, and rewrites the story with a concrete, verifiable standard. Correct_with_hint if the violation is identified but the rewrite is still vague. Incorrect if a different, unsupported principle is claimed as violated without justification."
+    "rubric": "Correct only if response names the Testable principle."
   },
   {
     "key": "split-large-user-story",

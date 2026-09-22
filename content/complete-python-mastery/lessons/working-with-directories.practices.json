@@ -2,13 +2,13 @@
   {
     "key": "why-generator-not-list",
     "title": "چرا iterdir یه جنراتور برمی‌گردونه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا p.iterdir() یه جنراتور برمی‌گردونه به‌جای یه لیست آماده از همون اول؟",
-    "expected_outcome": "چون یه پوشه ممکنه میلیون‌ها فایل داشته باشه؛ اگه همه‌شون یه‌باره توی حافظه بارگذاری بشن، این کار پرهزینه و ناکارآمده. جنراتور هر بار فقط یه مقدار جدید تولید می‌کنه، پس حافظه‌ی کمتری مصرف می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا p.iterdir() یه جنراتور برمی‌گردونه به‌جای یه لیست آماده؟",
+    "expected_outcome": "چون پوشه ممکنه میلیون‌ها فایل داشته باشه (حافظه‌ی کمتر مصرف می‌کنه)",
     "hints": ["فکر کن یه پوشه با یه میلیون فایل داری.", "جنراتور همه‌چیز رو یه‌جا توی حافظه نگه نمی‌داره."],
-    "rubric": "Correct if the answer explains memory efficiency with potentially huge directories as the reason for using a generator."
+    "rubric": "Correct if response names memory efficiency with potentially huge directories as the reason."
   },
   {
     "key": "glob-vs-rglob",

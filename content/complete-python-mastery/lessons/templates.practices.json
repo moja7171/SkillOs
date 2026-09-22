@@ -15,13 +15,13 @@
   {
     "key": "why-separate-template-file",
     "title": "چرا بدنه رو توی فایل جدا می‌ذاریم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "چرا بدنه‌ی طولانی یه ایمیل رو توی یه فایل HTML جدا (قالب) نگه می‌داریم، به‌جای اینکه مستقیم توی رشته‌ی پایتون بنویسیمش؟",
-    "expected_outcome": "چون بدنه‌ی ایمیل معمولاً چندین خط HTML‌ه؛ نگه‌داشتنش توی کد پایتون، هم خوندن کد سخت می‌شه هم تغییردادن محتوا -- با فایل جدا، محتوای هر سناریو (خوش‌آمدگویی، بازنشانی رمز و غیره) مستقل و قابل‌ویرایش می‌مونه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا بدنه‌ی طولانی یه ایمیل رو توی یه فایل جدا نگه می‌داریم، نه توی رشته‌ی پایتون؟",
+    "expected_outcome": "چون خوانایی و نگهداری کد رو راحت‌تر می‌کنه",
     "hints": ["فکر کن بدنه‌ی ایمیل ۵۰ خط HTML باشه.", "جداکردن محتوا از منطق کد، خوانایی و نگهداری رو راحت‌تر می‌کنه."],
-    "rubric": "Correct if the answer explains separating long HTML content from Python logic improves readability and maintainability."
+    "rubric": "Correct if response says separating content from code logic improves readability/maintainability."
   },
   {
     "key": "fill-and-attach-template",

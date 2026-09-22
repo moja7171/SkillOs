@@ -13,12 +13,12 @@
   {
     "key": "magic-method-auto-called",
     "title": "چرا مستقیم __str__ رو صدا نمی‌زنیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی می‌پرسه «چرا برای گرفتن نسخه‌ی متنی یه آبجکت می‌نویسیم print(obj)، به‌جای اینکه مستقیم obj.__str__() رو صدا بزنیم؟» در ۱ تا ۲ جمله جوابش بده.",
-    "expected_outcome": "متدهای جادویی (مثل __str__) قرار نیست مستقیم صدا زده بشن — پایتون خودش، بسته به اینکه چطور از آبجکت استفاده می‌کنی (اینجا print یا str())، پشت‌صحنه صداشون می‌زنه. این باعث می‌شه استفاده از آبجکت طبیعی و یکدست به‌نظر برسه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا برای گرفتن نسخه‌ی متنی یه آبجکت می‌نویسیم print(obj)، به‌جای obj.__str__()؟",
+    "expected_outcome": "چون متدهای جادویی رو خودِ پایتون پشت‌صحنه صدا می‌زنه",
     "hints": ["متد جادویی قرار نیست دستی صدا زده بشه.", "پایتون خودش تشخیص می‌ده کِی این متد رو صدا بزنه."],
-    "rubric": "Correct if the answer explains magic methods are called automatically by Python based on usage, not meant to be invoked directly."
+    "rubric": "Correct if response says magic methods are called automatically by Python based on usage."
   }
 ]

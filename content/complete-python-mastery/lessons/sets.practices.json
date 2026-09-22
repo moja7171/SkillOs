@@ -23,13 +23,13 @@
   },
   {
     "key": "set-no-index",
-    "title": "یه هم‌تیمی خطا گرفته",
-    "form": "explanation",
+    "title": "چرا set ایندکس‌پذیر نیست؟",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\ncolors = {\"red\", \"green\", \"blue\"}\nprint(colors[0])\n```\nو با `TypeError: 'set' object is not subscriptable` مواجه شده. چرا، و اگه واقعاً به دسترسی با ایندکس نیاز داره چی‌کار کنه؟",
-    "expected_outcome": "مجموعه بدون ترتیبه، پس دسترسی با ایندکس معنی نداره. اگه واقعاً نیاز به ترتیب و ایندکس داره، باید از لیست استفاده کنه (یا مجموعه رو با list() به لیست تبدیل کنه).",
+    "estimated_minutes": 2,
+    "prompt": "`colors = {\"red\",\"green\",\"blue\"}` بعد `colors[0]` → TypeError: set object is not subscriptable. چرا؟",
+    "expected_outcome": "چون set بدون ترتیبه (unordered)",
     "hints": ["مجموعه اعضاش رو به ترتیب نگه نمی‌داره.", "برای دسترسی با ایندکس، یا از اول لیست استفاده کن، یا مجموعه رو به لیست تبدیل کن."],
-    "rubric": "Correct if the answer explains sets are unordered (so indexing doesn't apply) and suggests using a list instead when order/indexing is needed."
+    "rubric": "Correct if response says sets are unordered, so indexing doesn't apply."
   }
 ]

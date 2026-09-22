@@ -26,12 +26,12 @@
   {
     "key": "exhausted-iterator",
     "title": "چرا بار دوم خالی است؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\npairs = zip('abc', [1, 2, 3])\nprint(list(pairs))\nprint(list(pairs))\nsquares = [x * x for x in range(3)]\nprint(squares, squares)\n```\nخروجی چهار print را بنویس و در ۲ تا ۳ جمله توضیح بده چرا `pairs` و `squares` رفتار متفاوتی دارند و چه زمانی هر کدام انتخاب بهتری است.",
-    "expected_outcome": "`[('a', 1), ('b', 2), ('c', 3)]`، سپس `[]`، سپس `[0, 1, 4] [0, 1, 4]`. zip یک iterator تنبل و یک‌بارمصرف برمی‌گرداند: بار اول مصرف و exhausted می‌شود. list comprehension همان لحظه یک لیست کامل می‌سازد که بارها قابل استفاده است. iterator (map/filter/zip/generator expression) وقتی داده بزرگ است یا همه‌اش لازم نیست بهتر است؛ لیست وقتی نتیجه چند بار لازم است یا باید اندیس‌گذاری شود.",
+    "estimated_minutes": 2,
+    "prompt": "`pairs = zip(...)` رو دوبار `list(pairs)` می‌کنیم؛ بار دوم خالیه. چرا؟",
+    "expected_outcome": "zip یک iterator یک‌بارمصرفه (بعد از پیمایش کامل، exhausted می‌شه)",
     "hints": ["iterator بعد از پیمایش کامل، خالی است.", "list comprehension همه را همان لحظه محاسبه می‌کند."],
-    "rubric": "Correct: all four outputs right, explains lazy one-shot iterator vs materialized list, and gives a sensible when-to-use. Partial: outputs right but explanation shallow. Incorrect: expects the second list(pairs) to repeat the tuples."
+    "rubric": "Correct if response says zip returns a lazy, one-shot iterator that's exhausted after one full pass."
   }
 ]

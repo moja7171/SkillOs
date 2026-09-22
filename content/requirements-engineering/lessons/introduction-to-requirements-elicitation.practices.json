@@ -25,27 +25,27 @@
     "title": "استخراج نیازمندی فقط توی سطح سیستم اتفاق می‌افته؟",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه همکار می‌گه «استخراج نیازمندی فقط اول پروژه و فقط توی سطح کل سیستم انجام می‌شه؛ برای زیرسیستم‌ها و اجزا لازم نیست.» طبق این درس، این حرف درسته؟ چرا، با یه مثال از درس.",
-    "expected_outcome": "نه، درست نیست. استخراج نیازمندی می‌تونه توی هر سطح از سلسله‌مراتب سیستم (سیستم، زیرسیستم، جزء) و هر نقطه‌ای از چرخه‌ی عمر اتفاق بیفته. مثال درس: برای یه خودرو، هم از کاربران سیستم برای نیازمندی‌های سطح زیرسیستم (موتور، کابین سرنشین) نیازمندی می‌گیریم، هم توی سطح جزء (مدار مجتمع، نرم‌افزار سطح جزء) با کارشناسان و مهندسان طراح کار می‌کنیم.",
+    "estimated_minutes": 2,
+    "prompt": "یه همکار می‌گه «استخراج نیازمندی فقط اول پروژه و فقط توی سطح کل سیستم انجام می‌شه.» طبق این درس، این حرف درسته؟",
+    "expected_outcome": "نه (در هر سطح سلسله‌مراتب و هر نقطه از چرخه‌ی عمر)",
     "hints": [
       "درس صریحاً گفت استخراج نیازمندی توی «هر سطح از سلسله‌مراتب سیستم و هر نقطه‌ای از چرخه‌ی عمر» اتفاق می‌افته.",
       "به مثال خودرو (موتور، کابین سرنشین، مدار مجتمع) برگرد."
     ],
-    "rubric": "Correct if response says the claim is false and explains that elicitation happens at any system hierarchy level (system, subsystem, component) and any life-cycle point, citing the car example. Correct_with_hint if it says false but without a concrete example or level distinction. Incorrect if it agrees with the claim."
+    "rubric": "Correct if response says the claim is false, and elicitation happens at any system hierarchy level and any life-cycle point."
   },
   {
     "key": "acceptance-criteria-purpose",
-    "title": "چرا فقط جمع‌آوری نیازمندی برای مشخصات کافی نیست؟",
-    "form": "explanation",
+    "title": "چه چیز دیگه‌ای باید از استخراج نیازمندی بیرون بکشیم؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا جمع‌آوری نیازمندی فقط برای نوشتن مشخصاتی که مهندسان طراح استفاده می‌کنن کافی نیست؟ در ۲ تا ۳ جمله بگو چه چیز دیگه‌ای باید ازش بیرون بکشیم و چرا.",
-    "expected_outcome": "علاوه بر مشخصات فنی، باید معیارهای پذیرش (acceptance criteria) رو هم از استخراج نیازمندی بیرون بکشیم — یعنی معیارهایی که بعداً باهاشون می‌سنجیم آیا انتظارات ذی‌نفعان رو برآورده کردیم یا نه. دلیلش اینه که نمی‌شه ۱۰۰٪ به مهندسان طراح اعتماد کرد و صرفاً امیدوار بود کاربران از نتیجه راضی می‌شن؛ باید مداوم با ذی‌نفعان درگیر باشیم تا مطمئن بشیم چیزی که می‌سازیم واقعاً همونیه که اون‌ها در ذهن داشتن.",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، علاوه بر مشخصات فنی، چه چیز دیگه‌ای باید از استخراج نیازمندی بیرون بکشیم؟",
+    "expected_outcome": "معیارهای پذیرش (acceptance criteria)",
     "hints": [
       "درس یه اصطلاح مشخص برای این «چیز دیگه» به کار برد — دنبالش بگرد.",
-      "چرا فقط اعتماد به مهندسان طراح کافی نیست؟ درس یه جمله‌ی صریح درباره‌ش داشت."
+      "این معیارها بعداً برای چی استفاده می‌شن؟"
     ],
-    "rubric": "Correct if response names acceptance criteria as the additional thing to capture and explains why relying solely on design engineers isn't enough (continuous stakeholder engagement is needed to confirm the build matches intent). Correct_with_hint if acceptance criteria is named without the reasoning. Incorrect otherwise."
+    "rubric": "Correct only if response names acceptance criteria."
   }
 ]

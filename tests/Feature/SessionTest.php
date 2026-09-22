@@ -86,7 +86,7 @@ class SessionTest extends TestCase
         $page->assertSee('درست — بدون راهنمایی')->assertDontSee('ارسال پاسخ');
     }
 
-    public function test_wrong_answers_reveal_hints_then_the_answer(): void
+    public function test_wrong_answers_reveal_hints_but_not_the_answer(): void
     {
         $attempt = $this->startAttempt($this->mcq());
 
@@ -101,11 +101,20 @@ class SessionTest extends TestCase
         $this->assertSame(2, $attempt->hint_level);
         $this->actingAs($this->user)->get(route('session.show', $attempt))->assertSee('هینت دوم')->assertDontSee('گزینه‌ی ج چون');
 
+        // Both hints exhausted: further wrong answers keep the attempt open and never
+        // auto-reveal the answer — only the explicit give-up action does that.
         $this->actingAs($this->user)->post(route('session.submit', $attempt), ['response' => '3']);
+        $attempt->refresh();
+        $this->assertSame('started', $attempt->result_status);
+        $this->assertSame(2, $attempt->hint_level);
+        $this->assertArrayNotHasKey('revealed', $attempt->evidence);
+        $this->assertCount(3, $attempt->evidence['history']);
+        $this->actingAs($this->user)->get(route('session.show', $attempt))->assertDontSee('گزینه‌ی ج چون')->assertSee('ارسال پاسخ');
+
+        $this->actingAs($this->user)->post(route('session.give-up', $attempt))->assertRedirect();
         $attempt->refresh();
         $this->assertSame('incorrect', $attempt->result_status);
         $this->assertTrue($attempt->evidence['revealed']);
-        $this->assertCount(3, $attempt->evidence['history']);
         $this->actingAs($this->user)->get(route('session.show', $attempt))->assertSee('گزینه‌ی ج چون')->assertSee('این بار نشد');
     }
 

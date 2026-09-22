@@ -23,13 +23,13 @@
   },
   {
     "key": "too-many-to-unpack",
-    "title": "این کد چرا خطا می‌ده؟",
-    "form": "explanation",
+    "title": "چرا این کد ValueError می‌ده؟",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "```python\npoint = [3, 4, 5]\nx, y = point\n```\nاین کد با `ValueError: too many values to unpack` مواجه می‌شه. چرا، و چطور درستش کنیم؟",
-    "expected_outcome": "point سه عضو داره ولی فقط دو متغیر (x, y) برای باز کردنش گذاشتیم. باید یا یه متغیر سوم اضافه کنیم (x, y, z = point)، یا از * برای جمع‌کردن بقیه استفاده کنیم (x, y, *rest = point).",
+    "prompt": "`point = [3, 4, 5]` بعد `x, y = point` → ValueError: too many values to unpack. چرا؟",
+    "expected_outcome": "point سه عضو داره ولی فقط دو متغیر گذاشتیم",
     "hints": ["تعداد متغیرها باید با تعداد اعضای لیست برابر باشه.", "point سه عضو داره، ولی فقط دو متغیر نوشته شده."],
-    "rubric": "Correct if the answer explains the count mismatch (3 items, 2 variables) and proposes either adding a third variable or using * to collect the rest."
+    "rubric": "Correct if response says there's a count mismatch (3 items, 2 variables)."
   }
 ]

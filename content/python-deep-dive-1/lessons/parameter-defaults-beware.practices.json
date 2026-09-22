@@ -25,13 +25,13 @@
   },
   {
     "key": "intentional-cache",
-    "title": "cache عمدی",
-    "form": "explanation",
+    "title": "چرا closure/decorator بهتره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در مثال `factorial(n, cache={})` درس، همان «دام» به کار مفیدی تبدیل شد. در ۳ تا ۵ جمله توضیح بده (۱) چرا cache بین فراخوانی‌ها می‌ماند، (۲) چه خطری دارد اگر کسی `factorial(5, {})` صدا بزند یا cache را از بیرون تغییر دهد، و (۳) چرا مدرس می‌گوید closure/decorator راه بهتری است.",
-    "expected_outcome": "(۱) dict پیش‌فرض یک بار موقع def ساخته می‌شود و هر فراخوانی همان شیء را می‌بیند، پس نتایج ذخیره‌شده باقی می‌مانند. (۲) پیش‌فرض بخشی از امضای عمومی تابع است: کاربر می‌تواند cache را با dict خودش جایگزین کند (کش از دست می‌رود) یا با `factorial.__defaults__` به آن دست بزند؛ cache در معرض دید و دست‌کاری است. (۳) با closure/decorator، cache خصوصیِ تابع می‌شود و از امضا پنهان می‌ماند — همان memoization بدون نشت به رابط تابع.",
+    "estimated_minutes": 2,
+    "prompt": "توی factorial(n, cache={})، (۱) چرا cache بین فراخوانی‌ها می‌مونه؟ (۲) چرا closure/decorator راه بهتریه؟",
+    "expected_outcome": "(۱) dict پیش‌فرض یک‌بار موقع def ساخته می‌شه (۲) cache از امضای تابع پنهان می‌مونه",
     "hints": ["پیش‌فرض یک شیء زنده است که بین فراخوانی‌ها مشترک می‌ماند.", "به این فکر کن که cache در امضای تابع «دیده» می‌شود."],
-    "rubric": "Correct: mentions single evaluation at def time (shared object), the exposure/override risk via the parameter, and that closures/decorators hide the cache from the signature. Partial: two of three points. Incorrect: claims the cache is recreated per call."
+    "rubric": "Correct if (1) names the default being built once at def time, and (2) says closures/decorators hide the cache from the signature. Correct_with_hint if only one is right."
   }
 ]

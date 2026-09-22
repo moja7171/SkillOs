@@ -2,13 +2,13 @@
   {
     "key": "pipenv-vs-pip-venv",
     "title": "Pipenv چه مشکلی رو حل می‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "در ۱ تا ۲ جمله بگو Pipenv چه مزیتی نسبت به استفاده‌ی جدا از pip و venv داره.",
-    "expected_outcome": "Pipenv این دو ابزار رو توی یه ابزار واحد ترکیب می‌کنه -- با یه دستور (pipenv install)، هم محیط مجازی (در صورت نیاز) ساخته می‌شه، هم پکیج نصب می‌شه، بدون اینکه لازم باشه خودت جدا venv بسازی و جدا pip رو صدا بزنی.",
+    "estimated_minutes": 2,
+    "prompt": "Pipenv چه کاری رو با یه ابزار واحد انجام می‌ده که pip و venv جدا جدا انجام می‌دادن؟",
+    "expected_outcome": "ساخت محیط مجازی و نصب پکیج",
     "hints": ["به یاد بیار قبلاً برای همین کار چند تا دستور جدا لازم بود.", "Pipenv این چند مرحله رو با یه دستور انجام می‌ده."],
-    "rubric": "Correct if the answer explains Pipenv combines venv creation and pip installation into one tool/command."
+    "rubric": "Correct if response says Pipenv combines venv creation and package installation into one tool/command."
   },
   {
     "key": "venv-location-difference",

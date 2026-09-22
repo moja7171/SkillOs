@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
  *   feedback        last feedback text
  *   hints_shown     number of hints revealed so far (== hint_level)
  *   partial_retry   true once a partial verdict granted a retry
- *   revealed        true when the expected outcome was shown
+ *   revealed        true when the expected outcome was shown (only via giveUp())
  *   source          free|plan|review — where the attempt was launched from
  *   plan_item_id    set when launched from today's plan; that item completes on finalize
  *   history         [{response, verdict, feedback}]
@@ -109,15 +109,12 @@ class AttemptSession
         if ($attempt->hint_level < self::MAX_HINTS) {
             $attempt->hint_level++;
             $evidence['hints_shown'] = $attempt->hint_level;
-            $attempt->evidence = $evidence;
-            $attempt->save();
-
-            return $verdict;
         }
 
-        $evidence['revealed'] = true;
+        // Both hints exhausted: the learner keeps retrying (or explicitly gives up via
+        // giveUp()) — the answer is never auto-revealed without that click.
         $attempt->evidence = $evidence;
-        $this->finalize($attempt, 'incorrect');
+        $attempt->save();
 
         return $verdict;
     }

@@ -24,12 +24,12 @@
   {
     "key": "gt-implies-lt",
     "title": "چرا < هم کار می‌کنه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "یه کلاس فقط `__gt__` رو تعریف کرده، ولی وقتی `p1 < p2` رو می‌نویسیم بازم درست کار می‌کنه. در ۱ تا ۲ جمله بگو چرا.",
-    "expected_outcome": "چون پایتون به‌طور خودکار p1 < p2 رو معادل p2 > p1 در نظر می‌گیره و از همون متد __gt__ (با ترتیب برعکس آبجکت‌ها) استفاده می‌کنه — نیازی به تعریف جدای __lt__ نیست.",
+    "estimated_minutes": 2,
+    "prompt": "یه کلاس فقط __gt__ رو تعریف کرده، ولی p1 < p2 هم درست کار می‌کنه. چرا؟",
+    "expected_outcome": "پایتون p1 < p2 رو معادل p2 > p1 می‌گیره (از همون __gt__ استفاده می‌کنه)",
     "hints": ["پایتون بین عملگرهای < و > یه رابطه‌ی خودکار برقرار می‌کنه.", "p1 < p2 معادل چیه اگه جای دو طرف رو عوض کنیم؟"],
-    "rubric": "Correct if the answer explains Python automatically treats p1 < p2 as equivalent to p2 > p1, reusing the defined __gt__."
+    "rubric": "Correct if response says Python treats p1 < p2 as equivalent to p2 > p1, reusing __gt__."
   }
 ]

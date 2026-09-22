@@ -14,13 +14,13 @@
   },
   {
     "key": "ordering-bug-in-new-function",
-    "title": "همون باگ، یه جای دیگه",
-    "form": "explanation",
+    "title": "چرا classify(15) به‌جای Teenager، Child می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "یه هم‌تیمی می‌خواد سن یه نفر رو دسته‌بندی کنه: اگه بین ۰ تا ۱۲ سالشونه «کودک»، اگه بین ۱۳ تا ۱۹ سالشونه «نوجوان»، وگرنه «بزرگسال». این کد رو نوشته:\n```python\ndef classify(age):\n    if age >= 0:\n        return \"Child\"\n    if 13 <= age <= 19:\n        return \"Teenager\"\n    return \"Adult\"\n```\nبا `classify(15)` انتظار «Teenager» داره ولی «Child» می‌گیره. در ۲ تا ۳ جمله بگو چرا، و چطور درستش کنه.",
-    "expected_outcome": "شرط اول (`age >= 0`) برای هر سن غیرمنفی True‌ه، از جمله 15 — پس خیلی زود و همیشه برنده می‌شه و تابع هیچ‌وقت به شرط «نوجوان» نمی‌رسه. باید مثل FizzBuzz، شرط دقیق‌تر (نوجوان‌بودن) رو زودتر چک کنه، نه شرط عمومی‌تر (منفی‌نبودن).",
-    "hints": ["دقیقاً همون مشکل FizzBuzz رو داره: یه شرط عمومی زودتر از یه شرط دقیق‌تر چک می‌شه.", "age >= 0 برای همه‌ی سن‌های منطقی True‌ه، پس همیشه همون اول برمی‌گرده."],
-    "rubric": "Correct if the answer identifies that the general \"age >= 0\" condition matches first and always wins over the more specific teenager check, and proposes reordering to check the specific range first. Correct_with_hint if it identifies the symptom without the general-vs-specific ordering reasoning. Incorrect otherwise."
+    "estimated_minutes": 2,
+    "prompt": "`if age >= 0: return \"Child\"` قبل از چک نوجوان‌بودن اومده. چرا classify(15) باید Teenager بده ولی Child می‌گیره؟",
+    "expected_outcome": "شرط عمومی (age >= 0) زودتر چک می‌شه و همیشه برنده می‌شه",
+    "hints": ["دقیقاً همون مشکل FizzBuzz رو داره: یه شرط عمومی زودتر از یه شرط دقیق‌تر چک می‌شه.", "age >= 0 برای همه‌ی سن‌های منطقی True‌ه."],
+    "rubric": "Correct if response says the general condition (age >= 0) is checked first and always wins over the more specific check."
   }
 ]

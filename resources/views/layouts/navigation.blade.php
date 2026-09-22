@@ -20,7 +20,8 @@
                 </button>
             </x-slot>
             <x-slot name="content">
-                <x-dropdown-link :href="route('courses.index')" @class(['whitespace-nowrap font-semibold' => true, 'bg-surface2' => $coursesActive && ! request()->query('category')])>همه‌ی دوره‌ها</x-dropdown-link>
+                <x-dropdown-link :href="route('courses.index')" @class(['whitespace-nowrap font-semibold' => true, 'bg-surface2' => $coursesActive && ! request()->query('category') && ! request()->boolean('mine')])>همه‌ی دوره‌ها</x-dropdown-link>
+                <x-dropdown-link :href="route('courses.index', ['mine' => 1])" @class(['whitespace-nowrap' => true, 'bg-surface2' => $coursesActive && request()->boolean('mine')])>دوره‌های من</x-dropdown-link>
                 <div class="my-1 border-t border-line"></div>
                 @foreach (\App\Models\Course::CATEGORIES as $cat)
                     <x-dropdown-link :href="route('courses.index', ['category' => $cat])" @class(['whitespace-nowrap' => true, 'bg-surface2' => request()->query('category') === $cat])>{{ $cat }}</x-dropdown-link>
@@ -51,7 +52,8 @@
                 </x-slot>
                 <x-slot name="content">
                     <x-dropdown-link :href="route('home')" @class(['bg-surface2' => request()->routeIs('home')])>خانه</x-dropdown-link>
-                    <x-dropdown-link :href="route('courses.index')" @class(['bg-surface2' => $coursesActive && ! request()->query('category')])>همه‌ی دوره‌ها</x-dropdown-link>
+                    <x-dropdown-link :href="route('courses.index')" @class(['bg-surface2' => $coursesActive && ! request()->query('category') && ! request()->boolean('mine')])>همه‌ی دوره‌ها</x-dropdown-link>
+                    <x-dropdown-link :href="route('courses.index', ['mine' => 1])" @class(['bg-surface2' => $coursesActive && request()->boolean('mine')])>دوره‌های من</x-dropdown-link>
                     @foreach (\App\Models\Course::CATEGORIES as $cat)
                         <x-dropdown-link :href="route('courses.index', ['category' => $cat])" @class(['ps-6 text-[12.5px] text-muted whitespace-nowrap', 'bg-surface2' => request()->query('category') === $cat])>{{ $cat }}</x-dropdown-link>
                     @endforeach

@@ -1,14 +1,14 @@
 [
   {
     "key": "fix-star-import",
-    "title": "چرا star import مشکل‌سازه؟",
-    "form": "explanation",
+    "title": "چرا star import ریسکیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی نوشته `from sales import *` چون کوتاه‌تره. چرا این کار ریسکیه؟ در ۱ تا ۲ جمله توضیح بده.",
-    "expected_outcome": "چون این دستور همه‌ی اسم‌های ماژول sales رو بدون هشدار import می‌کنه؛ اگه یکی از این اسم‌ها تصادفاً هم‌نام با یه متغیر یا تابع موجود توی فایل فعلی باشه، بی‌سروصدا جایگزینش می‌کنه و باعث باگ می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "`from sales import *` چرا ریسکیه؟",
+    "expected_outcome": "می‌تونه بی‌سروصدا اسم‌های موجود رو جایگزین کنه",
     "hints": ["فکر کن sales یه متغیر یا تابع دیگه هم داشته باشه که اسمش رو نمی‌دونی.", "star import هیچ کنترلی روی اینکه دقیقاً چی import می‌شه، نمی‌ده."],
-    "rubric": "Correct if the answer explains star imports can silently overwrite existing names with no warning."
+    "rubric": "Correct if response says star imports can silently overwrite existing names."
   },
   {
     "key": "split-into-module",

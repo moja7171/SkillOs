@@ -25,13 +25,13 @@
   },
   {
     "key": "why-call-super-here",
-    "title": "چرا super().append(item) لازمه؟",
-    "form": "explanation",
+    "title": "بدون super().append چی می‌شه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "توی TrackableList، اگه خط `super().append(item)` رو از متد append حذف کنیم، چه اتفاقی می‌افته؟",
-    "expected_outcome": "بدون اون خط، append فقط پیام لاگ رو چاپ می‌کنه ولی عضو واقعاً به لیست اضافه نمی‌شه -- چون داریم append اصلی list رو کاملاً بازنویسی و جایگزین می‌کنیم، نه گسترشش می‌دیم. برای حفظ رفتار اصلی، باید صریح super().append(item) رو صدا بزنیم.",
-    "hints": ["بدون super()، رفتار اصلی list.append اصلاً اجرا نمی‌شه.", "این دقیقاً همون مشکلیه که توی درس بازنویسی متد با سازنده‌ی Mammal دیدیم."],
-    "rubric": "Correct if the answer explains omitting super().append(item) would fully replace the base behavior, so items would never actually be added to the list."
+    "estimated_minutes": 2,
+    "prompt": "توی TrackableList، اگه خط super().append(item) رو از append حذف کنیم، چه اتفاقی می‌افته؟",
+    "expected_outcome": "عضو واقعاً به لیست اضافه نمی‌شه (فقط لاگ چاپ می‌شه)",
+    "hints": ["بدون super()، رفتار اصلی list.append اصلاً اجرا نمی‌شه.", "این دقیقاً همون مشکلیه که توی درس بازنویسی متد دیدیم."],
+    "rubric": "Correct if response says items would never actually be added to the list without calling super().append()."
   }
 ]

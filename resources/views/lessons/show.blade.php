@@ -95,21 +95,34 @@
                     @endforelse
                 </div>
 
-                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap" @if ($lessonDone) style="border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);" @endif>
+                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap" @if ($lessonDone) style="border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);" @endif
+                     @unless ($lessonDone)
+                     x-data="{
+                         watchedVideoIds: {{ Js::from($lesson->watchedVideoIdsBy($user)->values()) }},
+                         videoIds: {{ Js::from($lesson->videos->pluck('id')) }},
+                         warn: false,
+                         get allVideosWatched() { return this.videoIds.every(id => this.watchedVideoIds.includes(id)); },
+                         submit(event) { if (! this.allVideosWatched) { event.preventDefault(); this.warn = true; } }
+                     }"
+                     @video-watched.window="if (! watchedVideoIds.includes($event.detail.videoId)) watchedVideoIds.push($event.detail.videoId)"
+                     @endunless>
                     @if ($lessonDone)
                         <div class="flex items-center gap-2.5 text-[13.5px]">
                             <span class="w-7 h-7 rounded-full grid place-items-center shrink-0" style="background: var(--ok); color: #06261a;"><x-icon name="check" class="w-4 h-4" /></span>
                             <span class="font-semibold">این درس رو انجام دادی.</span>
                         </div>
                     @else
-                        <div class="text-[13.5px] text-muted">
-                            @if ($practicesPassed)
-                                ویدیو/متن رو دیدی و تمرین‌ها رو درست جواب دادی؟ همینجا علامتش بزن.
-                            @else
-                                اول همه‌ی تمرین‌های بالا رو درست جواب بده، بعد می‌تونی این درس رو انجام‌شده علامت بزنی.
-                            @endif
+                        <div class="min-w-0">
+                            <div class="text-[13.5px] text-muted">
+                                @if ($practicesPassed)
+                                    ویدیو/متن رو دیدی و تمرین‌ها رو درست جواب دادی؟ همینجا علامتش بزن.
+                                @else
+                                    اول همه‌ی تمرین‌های بالا رو درست جواب بده، بعد می‌تونی این درس رو انجام‌شده علامت بزنی.
+                                @endif
+                            </div>
+                            <div x-show="warn" x-cloak x-transition class="error mt-1.5">هنوز همه‌ی ویدیوهای این درس رو کامل ندیدی — اول اون‌ها رو تا آخر ببین.</div>
                         </div>
-                        <form method="POST" action="{{ route('lessons.mark-done', $lesson) }}">
+                        <form method="POST" action="{{ route('lessons.mark-done', $lesson) }}" @submit="submit">
                             @csrf
                             <button type="submit" class="btn btn-primary" @disabled(! $practicesPassed)><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
                         </form>

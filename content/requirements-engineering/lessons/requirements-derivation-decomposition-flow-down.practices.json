@@ -36,16 +36,16 @@
   },
   {
     "key": "why-iterative-process",
-    "title": "چرا این فرایند «یک‌بار برای همیشه» نیست؟",
-    "form": "explanation",
+    "title": "این فرایند چرا هیچ‌وقت «تمام‌شده» نیست؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، وقتی می‌پرسیم «فرایند مشخص برای اشتقاق، تجزیه یا جاری‌سازی نیازمندی چیه؟»، جواب درس چیه، و چرا این فرایندها هیچ‌وقت «تمام‌شده» نیستن؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "جواب درس اینه که این فرایندها چیزی نیستن جز تکرار بیشتر فعالیت‌های مهندسی نیازمندی — یعنی هیچ دستورالعمل یک‌باره‌ای ندارن. این فرایندها تکرارشونده‌ان و در طول کل عمر سیستم، هرچه مفهوم سیستم از یه فاز چرخه‌ی عمر به فاز بعدی بالغ‌تر می‌شه، دوباره انجام می‌شن — چون با بالغ‌ترشدن طراحی، نیازمندی‌ها باید پالایش و به‌روزرسانی بشن تا همچنان نیاز و انتظار ذی‌نفعان رو برآورده کنن.",
+    "estimated_minutes": 2,
+    "prompt": "اشتقاق، تجزیه و جاری‌سازی نیازمندی چیزی نیستن جز چه چیزی؟ و چرا هیچ‌وقت «یک‌بار برای همیشه» تموم نمی‌شن؟",
+    "expected_outcome": "تکرار بیشتر فعالیت‌های مهندسی نیازمندی / با بالغ‌ترشدن سیستم دوباره تکرار می‌شن",
     "hints": [
       "درس دقیقاً به این سؤال با یه عبارت مشخص جواب داد — «تکرار بیشتر فعالیت‌های...» رو پیدا کن.",
-      "چرا با پیشرفت پروژه (نه فقط یه بار در ابتدا) این فرایندها دوباره لازم می‌شن؟"
+      "چرا با پیشرفت پروژه این فرایندها دوباره لازم می‌شن؟"
     ],
-    "rubric": "Correct if response states the answer is 'further iterations of requirements engineering activities' and explains these processes repeat across the system life cycle as the concept matures. Correct_with_hint if it says the process is iterative without naming why or without the life-cycle-maturity reasoning. Incorrect otherwise."
+    "rubric": "Correct if response says these are further iterations of requirements engineering activities that repeat as the system concept matures."
   }
 ]

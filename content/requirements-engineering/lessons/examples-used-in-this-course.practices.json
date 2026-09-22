@@ -22,16 +22,16 @@
   },
   {
     "key": "would-a-pure-software-example-work",
-    "title": "یه اپ ماشین‌حساب چطوره؟",
-    "form": "explanation",
+    "title": "کدوم دسته براش بی‌معنیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "فرض کن می‌خوای یه سیستم سوم هم به این دوره اضافه کنی: یه اپلیکیشن موبایل ساده‌ی ماشین‌حساب، بدون هیچ سخت‌افزار اختصاصی. در ۲ تا ۳ جمله بگو این مثال چه محدودیتی نسبت به ATM و پهپاد بذرپاش داره، برای یاد گرفتن انواع نیازمندی.",
-    "expected_outcome": "یه اپ ماشین‌حساب فقط نرم‌افزاره، پس نمی‌تونه نیازمندی‌های سخت‌افزاری یا رابط‌های فیزیکی بین سیستم‌ها رو نشون بده. دامنه‌ی نیازمندی‌هاش هم خیلی محدودتره (احتمالاً فقط چند تا نیازمندی کارکردی ساده و یه رابط کاربری)، در مقابل ATM/پهپاد که کسب‌وکار، ایمنی، و تعامل با محیط فیزیکی هم دارن.",
+    "estimated_minutes": 2,
+    "prompt": "یه اپ ماشین‌حساب فقط نرم‌افزاره، بدون سخت‌افزار اختصاصی. کدوم دسته از نیازمندی‌هایی که این درس اسم برد، براش اصلاً معنی نداره؟",
+    "expected_outcome": "نیازمندی‌های رابط بین سیستم‌ها (interface requirements)",
     "hints": [
-      "این درس گفت هر دو مثال «هم سخت‌افزار دارن هم نرم‌افزار» — این ویژگی رو یه اپ خالص نرم‌افزاری نداره.",
-      "به دسته‌های نیازمندی که این درس اسم برد فکر کن؛ کدومشون برای یه ماشین‌حساب معنی نداره؟"
+      "این درس گفت ATM و پهپاد «هم سخت‌افزار دارن هم نرم‌افزار» — این ویژگی رو یه اپ خالص نرم‌افزاری نداره.",
+      "به لیست شش‌گانه‌ی این درس فکر کن؛ کدومش به یه رابط فیزیکی بین دو سیستم نیاز داره؟"
     ],
-    "rubric": "Correct if response identifies that a pure-software example lacks hardware/physical-interface requirements and has a much narrower requirement scope than ATM/drone. Correct_with_hint if only one limitation is named. Incorrect if response claims it would work just as well with no real reasoning."
+    "rubric": "Correct if response names interface requirements (system-to-system interface) as the category that doesn't apply to a pure-software app. Correct_with_hint if it gestures at 'hardware' without naming the category."
   }
 ]

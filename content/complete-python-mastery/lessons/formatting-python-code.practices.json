@@ -12,13 +12,13 @@
   },
   {
     "key": "explain-pep8-to-a-new-teammate",
-    "title": "یه هم‌تیمی تازه پیوسته",
-    "form": "explanation",
+    "title": "PEP 8 چیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی تازه به تیمتون پیوسته و می‌پرسه: «چرا همه اینجا انقدر روی سبک نوشتن کد حساسن؟ PEP 8 دیگه چیه؟» در ۲ تا ۳ جمله جوابش بده.",
-    "expected_outcome": "PEP 8 راهنمای رسمی سبک نوشتن کد پایتونه. رعایتش باعث می‌شه کد افراد مختلف یه تیم یکدست و خواناتر باشه و خوندن کد همدیگه راحت‌تر بشه.",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی می‌پرسه «PEP 8 دیگه چیه؟» جواب کوتاهت چیه؟",
+    "expected_outcome": "راهنمای رسمی سبک نوشتن کد پایتون",
     "hints": ["PEP مخفف چیه؟ به سندهای رسمی زبان پایتون فکر کن.", "یکدستی کد بین اعضای تیم چه فایده‌ای داره؟"],
-    "rubric": "Correct: identifies PEP 8 as Python's official style guide AND mentions consistency/readability across a team. Partial: only one of the two. Incorrect: neither."
+    "rubric": "Correct if response identifies PEP 8 as Python's official style guide."
   }
 ]

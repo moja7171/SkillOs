@@ -2,13 +2,13 @@
   {
     "key": "why-virtual-environments",
     "title": "چرا محیط مجازی لازمه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "چرا نمی‌شه دو تا پروژه‌ی مختلف، هرکدوم به یه نسخه‌ی متفاوت از یه پکیج نیاز داشته باشن، بدون استفاده از محیط مجازی؟",
-    "expected_outcome": "چون بدون محیط مجازی، پکیج‌ها به‌شکل سراسری روی سیستم نصب می‌شن و فقط یه نسخه از هر پکیج می‌تونه هم‌زمان وجود داشته باشه -- محیط مجازی هر پروژه رو ایزوله می‌کنه تا نسخه‌ی خودش رو داشته باشه، بدون تداخل با پروژه‌های دیگه.",
+    "estimated_minutes": 2,
+    "prompt": "بدون محیط مجازی، پکیج‌ها به چه شکلی نصب می‌شن که باعث تداخل نسخه بین پروژه‌ها می‌شه؟",
+    "expected_outcome": "به‌شکل سراسری (global)",
     "hints": ["بدون ایزوله‌سازی، فقط یه نسخه از هر پکیج روی کل سیستم می‌مونه.", "محیط مجازی یعنی هر پروژه پوشه‌ی نصب پکیج‌های مخصوص خودش رو داره."],
-    "rubric": "Correct if the answer explains global installs only allow one version at a time, and virtual environments isolate per-project package installs."
+    "rubric": "Correct if response says packages install globally/system-wide without a virtual environment."
   },
   {
     "key": "activate-order",

@@ -25,13 +25,13 @@
   },
   {
     "key": "why-relative",
-    "title": "چرا relative و __all__؟",
-    "form": "explanation",
+    "title": "relative import چه مشکلی رو حل می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: relative import در `__init__.py` چه مشکلی را حل می‌کند؟ چرا `import *` که معمولاً بد است، در `__init__.py` به‌جاست؟ دو راه کنترل export با `import *` چیست و چرا ساختن `__all__` پکیج از `__all__` زیرماژول‌ها بهتر از فهرست دستی است؟",
-    "expected_outcome": "relative import وابستگی به نام پکیج والد را حذف می‌کند تا تغییر نام/جابه‌جایی پکیج، __init__ را نشکند. در __init__ هدف دقیقاً «بالا کشیدن» نام‌های عمومی زیرماژول‌ها به namespace پکیج است و با __all__ کنترل‌شده است، پس خطر آلودگی نام کم است. کنترل: پیشوند `_` و فهرست `__all__`. ترکیب `__all__`ها یک منبع حقیقت دارد؛ با فهرست دستی باید هر نام جدید را دو جا اضافه کنی.",
-    "hints": ["hard-code نام پکیج والد چه مشکلی دارد؟", "single source of truth."],
-    "rubric": "Correct: rename-safety, controlled star-import rationale, both export controls, and the single-source argument. Partial: three of four. Incorrect: says import * is always fine."
+    "estimated_minutes": 2,
+    "prompt": "relative import در __init__.py چه مشکلی رو حل می‌کنه؟",
+    "expected_outcome": "وابستگی به نام پکیج والد رو حذف می‌کنه (rename-safe)",
+    "hints": ["hard-code نام پکیج والد چه مشکلی دارد؟", "اگه اسم پکیج عوض بشه چی؟"],
+    "rubric": "Correct if response says relative imports remove hard-coded dependence on the parent package's name."
   }
 ]

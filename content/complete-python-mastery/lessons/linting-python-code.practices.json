@@ -1,14 +1,14 @@
 [
   {
     "key": "migrated-from-python2",
-    "title": "یه کد قدیمی رو بازآوری کن",
-    "form": "explanation",
+    "title": "چرا این خط توی پایتون ۳ لینتر می‌گیره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی یه پروژه‌ی قدیمی پایتون ۲ رو بهت داده که این خط توش قرمز شده:\n```python\nprint \"Hello, World!\"\n```\nبرایش توضیح بده چرا لینتر اینجا خطا می‌گیره و چطور درستش کنه.",
-    "expected_outcome": "در پایتون ۳، print یه تابعه و هر فراخوانی تابع باید با پرانتز باشه: print(\"Hello, World!\"). در پایتون ۲، print یه statement بود نه تابع، پس بدون پرانتز هم کار می‌کرد.",
+    "estimated_minutes": 2,
+    "prompt": "`print \"Hello, World!\"` توی پایتون ۳ لینتر خطا می‌گیره. چرا؟ چطور درستش کنیم؟",
+    "expected_outcome": "چون print توی پایتون ۳ تابعه، نه statement / باید پرانتز بذاریم: print(\"Hello, World!\")",
     "hints": ["توی پایتون ۳، print دیگه یه statement نیست.", "برای فراخوانی هر تابعی توی پایتون باید پرانتز بذاری."],
-    "rubric": "Correct: explains that print is a function in Python 3 (requires parentheses to be called) unlike Python 2 where it was a statement. Partial: says parentheses are missing but doesn't explain the function/statement distinction. Incorrect: unrelated or wrong explanation."
+    "rubric": "Correct if response says print is a function in Python 3 requiring parentheses. Correct_with_hint if only 'add parentheses' is given without the function/statement reason."
   },
   {
     "key": "explain-linting-to-a-beginner",

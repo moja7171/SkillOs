@@ -4,27 +4,27 @@
     "title": "کشف طلاکاری اضافی از طریق ردیابی",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "طبق درس، ردیابی چطور به کشف «طلاکاری اضافی (gold plating)» کمک می‌کنه؟ یه راه رایج که طلاکاری اضافی از اون سر برمی‌آره رو هم بنویس.",
-    "expected_outcome": "با تحلیل ماتریس ردیابی (مثلاً از دیاگرام فعالیت به مؤلفه)، اگه ببینیم چند مؤلفه یه فعالیت رو انجام می‌دن، بیش‌تخصیص/طلاکاری اضافی رو کشف کردیم. یکی از راه‌های رایج بروزش: مشتری تصادفی و بدون عبور از فرایند کنترل تغییر، درخواست نصب یه مؤلفه یا دستگاه می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "ردیابی چطور به کشف «طلاکاری اضافی (gold plating)» کمک می‌کنه؟",
+    "expected_outcome": "با دیدن چند مؤلفه که یه فعالیت رو انجام می‌دن (بیش‌تخصیص) توی ماتریس ردیابی",
     "hints": [
       "ردیابی به سؤال «کدوم مؤلفه این فعالیت رو انجام می‌ده؟» جواب می‌ده.",
       "طلاکاری اضافی یعنی ویژگی‌ای که هیچ‌کس رسماً درخواستش نکرده."
     ],
-    "rubric": "Full credit explains detecting over-allocation via traceability matrices and names at least one common cause of gold plating from the lesson."
+    "rubric": "Correct if response says over-allocation is detected by seeing multiple components perform one activity in the traceability matrix."
   },
   {
     "key": "traceability-impact-analysis-airliner",
-    "title": "تحلیل تأثیر با ردیابی",
-    "form": "scenario",
+    "title": "کدوم گروه‌ها تحت‌تأثیر افزایش سرعت هواپیما می‌شن؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "یه درخواست تغییر برای افزایش سرعت سفر یه هواپیمای مسافربری میاد. طبق مثال درس، ردیابی چه گروه‌هایی رو به‌عنوان تحت‌تأثیر شناسایی می‌کنه و چرا این نوع تحلیل بدون ردیابی عملاً غیرممکنه؟",
-    "expected_outcome": "ردیابی نشون می‌ده سرعت سفر به ساختار آیرودینامیکی، خواص مواد، مصرف سوخت و کنترل گرما مرتبطه — پس حداقل گروه بال/بدنه، گروه خواص مواد و گروه توان/پیشرانش تحت‌تأثیرن. بدون ردیابی، این تحلیل نمایی طولانی‌تر می‌شه و احتمال از‌قلم‌افتادن ارتباطات پنهان بالا می‌ره.",
+    "estimated_minutes": 2,
+    "prompt": "یه درخواست تغییر برای افزایش سرعت سفر هواپیما میاد. طبق مثال درس، ردیابی کدوم گروه‌ها رو به‌عنوان تحت‌تأثیر شناسایی می‌کنه؟",
+    "expected_outcome": "بال/بدنه، خواص مواد، و توان/پیشرانش",
     "hints": [
       "به مثال دقیق سرعت سفر هواپیما توی درس برگرد.",
-      "چرا درس گفت بدون ردیابی نمی‌تونیم سؤالات «اگه چه اتفاقی بیفته» بپرسیم؟"
+      "سرعت به آیرودینامیک، مواد، سوخت و گرما مرتبطه."
     ],
-    "rubric": "Full credit lists the affected groups from the lesson's example and explains why traceability is necessary for efficient, complete impact analysis."
+    "rubric": "Correct if at least two of the affected groups (airframe/aerodynamics, materials, propulsion/power) are named."
   }
 ]

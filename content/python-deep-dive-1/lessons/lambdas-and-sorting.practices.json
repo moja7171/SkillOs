@@ -25,13 +25,13 @@
   },
   {
     "key": "stable-sort",
-    "title": "چرا این ترتیب؟",
-    "form": "explanation",
+    "title": "چرا pear قبل از kiwi اومد؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "```python\nwords = ['pear', 'fig', 'apple', 'kiwi', 'plum']\nsorted(words, key=len)\n```\nخروجی را بنویس و توضیح بده چرا `pear` قبل از `kiwi` و `plum` آمده، با اینکه از نظر الفبایی بعد از هر دو است. اگر بخواهیم هم‌طول‌ها الفبایی هم باشند، key را چطور می‌نویسی؟",
-    "expected_outcome": "`['fig', 'pear', 'kiwi', 'plum', 'apple']`. key فقط طول را مقایسه می‌کند؛ pear/kiwi/plum همه طول ۴ دارند و از نظر key برابرند، و چون sort پایتون stable است ترتیب اولیه‌شان (pear, kiwi, plum) حفظ می‌شود. برای شکستن تساوی: `key=lambda w: (len(w), w)` → `['fig', 'kiwi', 'pear', 'plum', 'apple']`.",
-    "hints": ["عناصر با key برابر چه می‌شوند؟", "tuple به‌عنوان key: اول عنصر اول مقایسه می‌شود، بعد دومی."],
-    "rubric": "Correct: right output, explains stability for equal keys, and proposes a tuple key (len, word). Partial: output and stability right but no tie-breaker. Incorrect: wrong output or claims sorted is unstable."
+    "estimated_minutes": 2,
+    "prompt": "`sorted(['pear','fig','apple','kiwi','plum'], key=len)` رو در نظر بگیر. چرا pear قبل از kiwi و plum اومده، با اینکه الفبایی بعد از هردوئه؟",
+    "expected_outcome": "چون sort پایتون stable هست و طول‌شون برابره (ترتیب اولیه حفظ می‌شه)",
+    "hints": ["عناصر با key برابر چه می‌شوند؟", "sort پایتون stable است."],
+    "rubric": "Correct if response names sort stability for equal keys as the reason."
   }
 ]

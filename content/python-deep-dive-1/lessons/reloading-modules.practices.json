@@ -25,13 +25,13 @@
   },
   {
     "key": "when-reload",
-    "title": "کِی reload؟",
-    "form": "explanation",
+    "title": "چرا reload توی production توصیه نمی‌شه؟",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "در ۲ تا ۳ جمله: در چه محیطی reload منطقی است و چرا در production توصیه نمی‌شود؟ جایگزین درست تغییر کد در production چیست؟",
-    "expected_outcome": "در کار تعاملی (نوت‌بوک/REPL) برای دیدن تغییرات بدون restart. در production چون ارجاع‌های from-import و ماژول‌های دیگر ممکن است به اشیای قدیمی بچسبند و حالت ناسازگار پیش بیاید. جایگزین: restart برنامه (deploy مجدد).",
+    "prompt": "چرا reload توی production توصیه نمی‌شه؟ جایگزینش چیه؟",
+    "expected_outcome": "ارجاع‌های قدیمی می‌مونن (ناسازگار) / جایگزین: restart",
     "hints": ["به ارجاع‌های پراکنده در ماژول‌های دیگر فکر کن.", "ساده‌ترین راه سازگاری چیست؟"],
-    "rubric": "Correct: interactive use OK, production risk from stale references, restart as the alternative. Partial: two of three. Incorrect: recommends reload in production."
+    "rubric": "Correct if response says stale references risk inconsistency, and restart/redeploy is the alternative."
   }
 ]

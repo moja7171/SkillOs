@@ -22,30 +22,30 @@
   },
   {
     "key": "atm-minimal-guarantee",
-    "title": "تضمین حداقلی خودپرداز رو پیدا کن",
-    "form": "scenario",
+    "title": "کدوم بخش‌ها تضمین حداقلی‌ان؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه مشتری می‌خواد از خودپرداز ۵۰۰ هزار تومن برداشت کنه، ولی موجودی حسابش فقط ۱۰۰ هزار تومنه. خودپرداز درخواست رو رد می‌کنه، ولی کارت مشتری رو پس می‌ده و یه رسید چاپ می‌کنه که می‌گه «موجودی ناکافی». با توجه به این درس، کدوم بخش‌ها تضمین حداقلی (minimal guarantee) هستن و چرا؟ و چه فرقی با تضمین موفقیت (success guarantee) دارن؟",
-    "expected_outcome": "کارت پس‌داده‌شده و رسید «موجودی ناکافی» تضمین حداقلی‌ان — چیزهایی که صرف‌نظر از موفقیت یا شکست مأموریت، در پایان سناریو درست‌ان. تضمین موفقیت (مثل تحویل ۵۰۰ هزار تومن پول نقد) فقط وقتی برقراره که مأموریت کامل به هدف برسه؛ این‌جا چون مأموریت شکست خورد، تضمین موفقیت برقرار نشد ولی تضمین حداقلی همچنان برقراره.",
+    "estimated_minutes": 2,
+    "prompt": "خودپرداز درخواست برداشت رو رد می‌کنه (موجودی ناکافی)، ولی کارت مشتری رو پس می‌ده و رسید «موجودی ناکافی» چاپ می‌کنه. کدوم بخش‌ها تضمین حداقلی (minimal guarantee) هستن؟",
+    "expected_outcome": "پس‌دادن کارت و چاپ رسید «موجودی ناکافی»",
     "hints": [
-      "تضمین حداقلی چیزیه که «صرف‌نظر از موفقیت یا شکست» درسته — دنبال چنین چیزی بگرد.",
+      "تضمین حداقلی چیزیه که «صرف‌نظر از موفقیت یا شکست» درسته.",
       "تضمین موفقیت فقط وقتی برقراره که مأموریت کامل انجام بشه؛ این‌جا مأموریت (دادن پول) انجام نشد."
     ],
-    "rubric": "Correct if response identifies the returned card and the insufficient-funds receipt as minimal guarantees (true regardless of success/failure) and explains success guarantees only hold when the mission goal is achieved. Correct_with_hint if minimal guarantees are identified but the distinction from success guarantees is missing or wrong. Incorrect otherwise."
+    "rubric": "Correct if response names the returned card and the insufficient-funds receipt as the minimal guarantees."
   },
   {
     "key": "main-alternative-exception",
     "title": "اصلی، جایگزین یا استثنا؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "سه تا جمله داریم درباره‌ی ذخیره‌ی یه سند: (۱) «کاربر روی File کلیک می‌کند، سپس Save را می‌زند.» (۲) «کاربر Ctrl+S را می‌زند.» (۳) «برق قطع می‌شود و سند ذخیره‌نشده از بین می‌رود.» در ۳ تا ۴ جمله بگو کدوم یکی سناریوی اصلی، کدوم جایگزین، و کدوم استثناست، و فرق کلیدی جایگزین و استثنا در چیه.",
-    "expected_outcome": "(۱) می‌تونه سناریوی اصلی (رایج‌ترین روش) باشه، (۲) یه جایگزینه — روش دیگه‌ای برای رسیدن به همون هدف (ذخیره‌ی موفق سند)، بدون شکست. (۳) یه استثناست — یه شکست یا اتفاق غیرمنتظره (قطع برق) که سیستم رو از مسیر رسیدن به هدف خارج می‌کنه و نیاز به یه مسیر بازیابی (exception path) داره. فرق کلیدی: جایگزین هم به هدف می‌رسه، فقط از راه دیگه؛ استثنا از رسیدن به هدف جلوگیری می‌کنه و نیاز به بازیابی داره.",
+    "estimated_minutes": 2,
+    "prompt": "سه جمله درباره‌ی ذخیره‌ی سند: (۱) «کاربر روی File کلیک می‌کند، سپس Save را می‌زند.» (۲) «کاربر Ctrl+S را می‌زند.» (۳) «برق قطع می‌شود و سند ذخیره‌نشده از بین می‌رود.» کدوم اصلیه، کدوم جایگزین، کدوم استثنا؟",
+    "expected_outcome": "(۱) اصلی (۲) جایگزین (۳) استثنا",
     "hints": [
       "جایگزین هم در نهایت به همون هدف می‌رسه؛ استثنا سیستم رو از هدف دور می‌کنه.",
       "کدوم جمله یه اتفاق ناخواسته و بد رو توصیف می‌کنه؟"
     ],
-    "rubric": "Correct if response correctly labels (1) main, (2) alternative, (3) exception, and articulates that alternatives still reach the goal via a different path while exceptions derail from the goal and require recovery. Correct_with_hint if labels are right but the key distinction is missing. Incorrect if labels are wrong."
+    "rubric": "Correct if all three are labeled correctly: (1) main, (2) alternative, (3) exception. Correct_with_hint if two of three are right."
   }
 ]

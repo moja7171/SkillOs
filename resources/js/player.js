@@ -23,6 +23,18 @@ const SPEED_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 function read(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function write(key, value) { try { localStorage.setItem(key, value); } catch { /* private mode etc. */ } }
 
+// Records that this video was watched to the end (gates the "انجام دادم" button server-side —
+// see Lesson::allVideosWatchedBy) and tells any open picker/mark-done UI to update its checkmark.
+function markWatched(id) {
+    const token = document.querySelector('meta[name="csrf-token"]')?.content;
+    if (!token) return;
+    fetch(`/lesson-videos/${id}/watched`, {
+        method: 'POST',
+        headers: { 'X-CSRF-TOKEN': token, Accept: 'application/json' },
+    }).catch(() => { /* best-effort; a missed ping just leaves the gate closed */ });
+    window.dispatchEvent(new CustomEvent('video-watched', { detail: { videoId: Number(id) } }));
+}
+
 function formatSpeed(value) {
     return `${Math.round(value * 100) / 100}×`;
 }
@@ -98,6 +110,20 @@ function mountSpeedControl(player) {
 
     render();
     player.on('ratechange', render);
+}
+
+// Multi-video lessons mount every video's Plyr instance up front so switching between
+// them is instant, but each instance's `keyboard.global` listener sits on `window` with
+// no notion of which player is actually visible — so pressing space toggled play/pause on
+// every mounted video at once, not just the one on screen. Keep the global listener live
+// on only the active video per group (see setActiveVideo(), called from the video picker).
+const mountedPlayers = new Map();
+
+export function setActiveVideo(groupEl, activeIndex) {
+    groupEl.querySelectorAll('.js-player').forEach((el, i) => {
+        const player = mountedPlayers.get(el);
+        if (player) player.listeners.global(i === activeIndex);
+    });
 }
 
 export function mountPlayers(root = document) {
@@ -183,9 +209,13 @@ export function mountPlayers(root = document) {
             });
             player.on('seeked', save);
             player.on('pause', save);
-            player.on('ended', () => write(positionKey(id), '0'));
+            player.on('ended', () => { write(positionKey(id), '0'); markWatched(id); });
         }
 
         player.on('ratechange', () => write(SPEED_KEY, String(player.speed)));
+
+        mountedPlayers.set(el, player);
     });
+
+    root.querySelectorAll('[data-video-group]').forEach((groupEl) => setActiveVideo(groupEl, 0));
 }

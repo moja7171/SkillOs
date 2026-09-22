@@ -26,12 +26,12 @@
   {
     "key": "why-dry-matters",
     "title": "چرا تکرار کد بده؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "یه هم‌تیمی می‌گه «کپی-پیست یه متد کوچیک توی چند کلاس که مشکلی نداره، سرعتم بیشتره.» در ۱ تا ۲ جمله بهش توضیح بده چرا این کار مشکل‌سازه.",
-    "expected_outcome": "اگه بعداً یه باگ توی اون متد پیدا بشه یا رفتارش نیاز به تغییر داشته باشه، باید همه‌ی کپی‌هاش رو پیدا کنی و تک‌تک اصلاح کنی — احتمال فراموش‌کردن یکی‌شون و ناسازگاری بین کلاس‌ها بالا می‌ره. وراثت این مشکل رو با نگه‌داشتن رفتار مشترک توی یه‌جا حل می‌کنه.",
+    "prompt": "«کپی-پیست یه متد کوچیک توی چند کلاس مشکلی نداره» — چرا این کار مشکل‌سازه؟",
+    "expected_outcome": "چون هر باگ/تغییر باید توی همه‌ی کپی‌ها جدا اصلاح بشه",
     "hints": ["فکر کن بعداً یه باگ توی اون متد پیدا بشه، چقدر جا برای اصلاح لازمه.", "این همون اصل DRY (Don't Repeat Yourself) ه."],
-    "rubric": "Correct if the answer identifies the maintenance cost of duplicated code (multiple places to fix/update) as the core problem."
+    "rubric": "Correct if response names the maintenance cost of fixing/updating multiple copies."
   }
 ]

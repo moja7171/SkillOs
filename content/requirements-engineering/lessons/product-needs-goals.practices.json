@@ -25,7 +25,7 @@
     "title": "این هدف رو implementation-free کن",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
+    "estimated_minutes": 3,
     "prompt": "این هدف راه‌حل رو قفل کرده: «باید یه اپلیکیشن موبایل بسازیم که با فشردن یه دکمه، مستقیم پول رو به حساب کاربر واریز کنه.» طبق قانون implementation-free این درس، این جمله رو بازنویسی کن تا فقط قابلیت/نتیجه‌ی مورد نیاز رو بگه، بدون فرض کردن اپلیکیشن موبایل یا دکمه.",
     "expected_outcome": "چیزی شبیه: «کاربر باید بتونه بدون نیاز به مراجعه‌ی حضوری یا تعامل با یه انسان، پول رو سریع و مستقیم به حساب مقصد منتقل کنه.» نکته‌ی کلیدی: هیچ فرضی درباره‌ی نوع دستگاه (موبایل)، رابط کاربری (دکمه)، یا فناوری خاص نباید توش باشه — فقط قابلیت مدنظره.",
     "hints": [
@@ -36,16 +36,16 @@
   },
   {
     "key": "why-give-engineers-freedom",
-    "title": "چرا آزادی عمل مهندسان طراح مهمه؟",
-    "form": "explanation",
+    "title": "قفل کردن راه‌حل زودهنگام، چه فرصتی رو از بین می‌بره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "این درس گفت اگه راه‌حل رو زود توی نیاز/هدف قفل کنیم، آزادی عمل مهندسان طراح رو محدود می‌کنیم. در ۲ تا ۳ جمله بگو این محدودیت چه هزینه‌ای برای پروژه داره، حتی اگه راه‌حل قفل‌شده در نگاه اول منطقی به نظر برسه.",
-    "expected_outcome": "مهندسان طراح به‌روزترین دانش و ابزار فنی رو دارن و می‌تونن راه‌حل‌های بهینه‌تری پیدا کنن که شاید مهندس نیازمندی یا ذی‌نفع اصلاً بهش فکر نکرده. قفل کردن راه‌حل زودهنگام، این احتمال رو از بین می‌بره و ممکنه یه راه‌حل بهتر (ارزون‌تر، سبک‌تر، قابل‌اعتمادتر) رو کاملاً نادیده بگیریم — حتی اگه راه‌حل اولیه در ظاهر منطقی باشه.",
+    "estimated_minutes": 2,
+    "prompt": "اگه راه‌حل رو زود توی هدف قفل کنیم، چه فرصتی رو از دست می‌دیم؟",
+    "expected_outcome": "یه راه‌حل بهتر (که مهندس طراح می‌تونست پیدا کنه)",
     "hints": [
       "چه کسی بیشترین دانش فنی روز رو درباره‌ی راه‌حل‌های ممکن داره — ذی‌نفع، یا مهندس طراح؟",
       "اگه راه‌حل از قبل قفل شده باشه، چه فرصتی از دست می‌ره؟"
     ],
-    "rubric": "Correct if response explains that design engineers have the most up-to-date technical knowledge and locking a solution early forecloses potentially better alternatives, even if the locked-in solution seems reasonable. Correct_with_hint if only a vague 'it limits creativity' is said without the reasoning. Incorrect if no real reasoning given."
+    "rubric": "Correct if response names losing a potentially better solution/alternative that a design engineer could have found."
   }
 ]

@@ -26,12 +26,12 @@
   {
     "key": "why-tuple-record",
     "title": "چرا tuple و نه list؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: چرا برای رکورد `('London', 'UK', 8780000)` tuple مناسب‌تر از list است؟ «tuple ناهمگن، list همگن» یعنی چه و چرا این الگو رایج است؟ ضعف tuple به‌عنوان رکورد چیست؟",
-    "expected_outcome": "رکورد طول و ترتیب ثابت دارد و معنی از موقعیت می‌آید؛ tuple این را تضمین می‌کند (immutable) و با محتوای immutable کاملاً قفل و امن برای پاس دادن است. tuple عناصر با نوع‌های مختلف (نام، کشور، جمعیت) دارد؛ list معمولاً عناصر هم‌نوع دارد چون قرار است روی همه‌شان یک عمل انجام شود (مثلاً `city[2]` برای همه). ضعف: معنی موقعیت‌ها فقط یک قرارداد است و در کد دیده نمی‌شود — named tuple آن را حل می‌کند.",
+    "estimated_minutes": 2,
+    "prompt": "چرا برای رکورد `('London', 'UK', 8780000)` tuple مناسب‌تر از list است؟",
+    "expected_outcome": "چون طول/ترتیب ثابت داره و immutable ـه (رکورد قفل و امنه)",
     "hints": ["به طول/ترتیب ثابت و immutability فکر کن.", "چرا در حلقه روی لیست شهرها city[2] امن است؟"],
-    "rubric": "Correct: fixed length/order + immutability for records, heterogeneous vs homogeneous rationale, and the positional-meaning weakness. Partial: two of three. Incorrect: claims tuples are just read-only lists."
+    "rubric": "Correct if response ties tuple to fixed length/order and immutability for records."
   }
 ]

@@ -25,13 +25,13 @@
   },
   {
     "key": "slice-does-not-mutate",
-    "title": "یه هم‌تیمی سؤال داره",
-    "form": "explanation",
+    "title": "چرا original تغییر نکرد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته و تعجب کرده که چرا `original` تغییر نکرده:\n```python\noriginal = [1, 2, 3, 4, 5]\nfirst_two = original[:2]\nfirst_two[0] = 99\nprint(original)\n```\nدر ۱ تا ۲ جمله بهش توضیح بده چرا `original` هنوز `[1, 2, 3, 4, 5]`ه.",
-    "expected_outcome": "چون برش (slice) یه لیست کاملاً جدید می‌سازه، نه یه اشاره‌گر به همون لیست اصلی. تغییردادن first_two هیچ ربطی به original نداره.",
+    "estimated_minutes": 2,
+    "prompt": "`first_two = original[:2]` بعد `first_two[0] = 99`. چرا original هنوز دست‌نخورده‌ست؟",
+    "expected_outcome": "چون برش (slice) یه لیست کاملاً جدید می‌سازه",
     "hints": ["برش یه کپی می‌سازه، نه یه اشاره‌گر به همون لیست.", "first_two و original از این به بعد دو تا لیست کاملاً جدا هستن."],
-    "rubric": "Correct if the answer explains that slicing creates a new, independent list, so mutating the slice doesn't affect the original."
+    "rubric": "Correct if response says slicing creates a new, independent list."
   }
 ]

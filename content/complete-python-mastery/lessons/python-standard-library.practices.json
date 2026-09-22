@@ -2,13 +2,13 @@
   {
     "key": "batteries-included-meaning",
     "title": "«باتری‌های آماده» یعنی چی؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "به زبون خودت، در ۱ جمله بگو فلسفه‌ی «batteries included» پایتون یعنی چی.",
-    "expected_outcome": "یعنی پایتون بدون نیاز به نصب هیچ پکیج اضافه‌ای، از قبل یه کتابخانه‌ی بزرگ و آماده از ماژول‌ها داره که قابلیت‌های رایج (کار با فایل، تاریخ، پایگاه‌داده و غیره) رو پوشش می‌ده.",
+    "prompt": "فلسفه‌ی «batteries included» پایتون یعنی چی؟ (یه جمله)",
+    "expected_outcome": "بدون نصب اضافه، از قبل کتابخانه‌ی بزرگی از ماژول‌های آماده داره",
     "hints": ["به این فکر کن که چرا برای خیلی از کارهای رایج، نیازی به نصب چیزی نیست.", "منظور از «باتری» همون ماژول‌های آماده‌ی خود پایتونه."],
-    "rubric": "Correct if the answer explains Python ships with a large set of ready-to-use modules without needing extra installation."
+    "rubric": "Correct if response says Python ships with a large set of ready-to-use modules without extra installation."
   },
   {
     "key": "how-to-use-this-section",

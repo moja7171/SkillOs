@@ -1,31 +1,31 @@
 [
   {
     "key": "requirements-creep-vs-legit-change",
-    "title": "خزش نیازمندی یا تغییر مشروع؟",
-    "form": "scenario",
+    "title": "این چه نوع مسئله‌ایه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
-    "prompt": "قرارداد توسعه‌ی پهپاد کاشت بذر درخت بسته شده. وسط اجرا، مشتری می‌خواد یه قابلیت تازه (تشخیص نوع خاک) بدون تغییر بودجه یا زمان‌بندی اضافه بشه. توضیح بده این چه نوع مسئله‌ایه و طبق چه فرایندی باید باهاش برخورد کرد.",
-    "expected_outcome": "این نمونه‌ی کلاسیک خزش نیازمندی (requirements creep) است: اضافه‌کردن نیازمندی بدون افزایش متناظر بودجه/زمان/منابع. پاسخ خوب اشاره می‌کنه که این تغییر باید از مسیر رسمی کنترل تغییر عبور کنه (درخواست تغییر، تحلیل اثر روی هزینه/زمان‌بندی/نیازمندی‌های دیگه، مذاکره‌ی دوباره، توافق و به‌روزرسانی قرارداد) نه اینکه بی‌سروصدا به دامنه اضافه بشه.",
+    "estimated_minutes": 2,
+    "prompt": "قرارداد پهپاد بسته شده. وسط اجرا، مشتری می‌خواد یه قابلیت تازه (تشخیص نوع خاک) بدون تغییر بودجه یا زمان‌بندی اضافه بشه. این چه نوع مسئله‌ایه، و باید از چه مسیری عبور کنه؟",
+    "expected_outcome": "خزش نیازمندی (requirements creep) / مسیر رسمی کنترل تغییر",
     "hints": [
       "به تعریف خزش نیازمندی توی درس برگرد: رشد کنترل‌نشده‌ی نیازمندی بدون بازتعیین خط‌مبنا.",
       "فرایند کنترل تغییر شامل چه گام‌هایی بود؟"
     ],
-    "rubric": "Full credit identifies this as requirements creep and describes routing the change through a formal change-control process (impact analysis, renegotiation, contract update) rather than silently expanding scope."
+    "rubric": "Correct if response names requirements creep and states it must go through formal change control, not silent scope expansion."
   },
   {
     "key": "helicopter-engine-boundary-lesson",
     "title": "درس مرزبندی از مثال موتور هلیکوپتر",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "توی مثال ارتقای موتور توربین هلیکوپتر، چرا کاری که اول ساده به‌نظر می‌رسید («فقط موتور رو عوض کن») در عمل خیلی پیچیده‌تر شد؟ چه ابزاری برای جلوگیری از این مشکل توصیه شده؟",
-    "expected_outcome": "چون موتور تازه با سیستم‌های دیگه (کنترل سوخت، نمایشگر دمای کابین، رله‌ها، حسگرها) تعامل داشت که مرزهاشون از اول مشخص نبود. دیاگرام بافت (context diagram) به‌عنوان ابزار اصلی برای تعریف درست مرز سیستم توصیه شده.",
+    "estimated_minutes": 2,
+    "prompt": "توی مثال ارتقای موتور هلیکوپتر، کاری که اول ساده به‌نظر می‌رسید چرا در عمل پیچیده‌تر شد؟ چه ابزاری برای جلوگیری از این مشکل توصیه شده؟",
+    "expected_outcome": "تعامل پنهان با سیستم‌های دیگه (کنترل سوخت، حسگرها...) / دیاگرام بافت (context diagram)",
     "hints": [
       "چه چیزهایی غیر از خود موتور نیاز به تغییر داشتن؟",
       "کدوم آرتیفکت مهندسی سیستم مرز سیستم رو نشون می‌ده؟"
     ],
-    "rubric": "Full credit explains the hidden interactions (fuel control, cabin display temperature range, relays/sensors) and names context diagrams as the tool for defining system boundaries."
+    "rubric": "Correct if response names hidden interactions with other systems and context diagrams as the recommended tool."
   },
   {
     "key": "glossary-prevents-misinterpretation",

@@ -22,44 +22,44 @@
   },
   {
     "key": "why-delay-validation-risky",
-    "title": "چرا به‌تعویق‌انداختن اعتبارسنجی ریسک داره؟",
-    "form": "scenario",
+    "title": "به‌تعویق‌انداختن اعتبارسنجی چه ریسکی داره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه سازمان تصمیم گرفته اعتبارسنجی پهپاد بذرپاش رو تا بعد از تولید چند واحد اولیه به تعویق بندازه، به‌جای استفاده از قطعات تست راستی‌آزمایی. طبق این درس، این تصمیم چه مزایایی داره، و چه ریسک مشخصی رو به همراه می‌آره؟",
-    "expected_outcome": "مزایا: کشف مسائلی که توی طراحی/راستی‌آزمایی شناسایی نشدن، تأیید عملکرد واقعی توی شرایط دنیای واقعی، و صرفه‌جویی هزینه با استفاده از واحدهای تولیدی به‌جای ساخت قطعات تست اختصاصی. ریسک: اگه مسئله‌ای توی اعتبارسنجی کشف بشه، ممکنه نیاز به بازکاری پرهزینه داشته باشه و روی زمان‌بندی تولید کامل (full-rate production) اثر منفی بذاره — سازمان باید این معامله رو بسنجه و از قبل برنامه‌ی روشنی برای رسیدگی به مسائل احتمالی داشته باشه.",
+    "estimated_minutes": 2,
+    "prompt": "یه سازمان اعتبارسنجی پهپاد رو تا بعد از تولید چند واحد اولیه به تعویق انداخته، به‌جای ساخت قطعات تست جدا. این تصمیم چه ریسک مشخصی داره؟",
+    "expected_outcome": "بازکاری پرهزینه و تأثیر منفی روی زمان‌بندی تولید کامل",
     "hints": [
-      "درس سه مزیت مشخص برای این تصمیم آورد.",
-      "درس یه ریسک مشخص هم گفت — مرتبط با بازکاری و زمان‌بندی تولید کامل."
+      "درس یه ریسک مشخص گفت — مرتبط با بازکاری و زمان‌بندی تولید کامل.",
+      "اگه مسئله‌ای دیر کشف بشه، چیکار باید کرد؟"
     ],
-    "rubric": "Correct if response names at least two of the three lesson benefits AND the rework/schedule-impact risk of delaying validation. Correct_with_hint if only benefits or only the risk is covered. Incorrect otherwise."
+    "rubric": "Correct if response names the rework/schedule-impact risk of delaying validation."
   },
   {
     "key": "smart-metrics-connection",
     "title": "متریک اعتبارسنجی به چی وصله؟",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، متریک اعتبارسنجی به کدوم مفهوم قبلی این دوره پیوند خورده، و از کجا سرچشمه می‌گیره؟",
-    "expected_outcome": "متریک اعتبارسنجی به معیار اثربخشی (MOE) پیوند خورده و از همون ابتدای استخراج نیازمندی با ذی‌نفعان تعریف می‌شه — وقتی MOE مشخص شد، متریک‌های خاصی برای سنجش اثربخشی سیستم در برآوردن اون نیازمندی‌ها انتخاب می‌شن.",
+    "estimated_minutes": 2,
+    "prompt": "متریک اعتبارسنجی به کدوم مفهوم قبلی این دوره پیوند خورده؟",
+    "expected_outcome": "معیار اثربخشی (MOE)",
     "hints": [
       "این درس مستقیماً به یه اصطلاح دو-حرفی که چند ماژول قبل دیدیم اشاره کرد.",
-      "متریک اعتبارسنجی از چه مرحله‌ای از فرایند مهندسی نیازمندی سرچشمه می‌گیره؟"
+      "متریک اعتبارسنجی از چه مرحله‌ای سرچشمه می‌گیره؟"
     ],
-    "rubric": "Correct if response names MOE and states metrics are established during stakeholder requirements elicitation. Correct_with_hint if MOE is named without the elicitation-timing detail. Incorrect if MOE isn't named."
+    "rubric": "Correct only if response names MOE."
   },
   {
     "key": "regression-testing-after-redesign",
-    "title": "چرا بعد از بازطراحی، باید دوباره راستی‌آزمایی کنیم؟",
-    "form": "explanation",
+    "title": "بعد از بازطراحی، چرا دوباره راستی‌آزمایی لازمه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، وقتی حین اعتبارسنجی یه مسئله کشف می‌شه و جنبه‌ای از سیستم بازطراحی می‌شه، چرا لازمه اون عناصر رو دوباره راستی‌آزمایی کنیم؟ این فرایند چه اسمی داره؟",
-    "expected_outcome": "چون بازطراحی روی عناصری از سیستم تغییر ایجاد می‌کنه که قبلاً راستی‌آزمایی شده بودن — باید دوباره راستی‌آزمایی بشن تا مطمئن بشیم بازطراحی همچنان با مشخصات اصلی سازگاره (یعنی راستی‌آزمایی قبلی دیگه معتبر نیست چون خود سیستم تغییر کرده). این فرایند «تست رگرسیون» نامیده می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی یه جنبه از سیستم بعد از کشف یه مسئله بازطراحی می‌شه، این فرایند دوباره‌راستی‌آزمایی‌کردن چه اسمی داره؟",
+    "expected_outcome": "تست رگرسیون (regression testing)",
     "hints": [
-      "این همون اصطلاحیه که توی درس قبل (راستی‌آزمایی) هم دیدیمش — این‌جا دوباره تکرار شده، این بار در بافت اعتبارسنجی.",
+      "این همون اصطلاحیه که توی درس قبل (راستی‌آزمایی) هم دیدیمش.",
       "چرا صرف بازطراحی، راستی‌آزمایی قبلی رو بی‌اعتبار می‌کنه؟"
     ],
-    "rubric": "Correct if response explains redesigned elements must be re-verified to confirm continued compliance with the specification, and names this 'regression testing'. Correct_with_hint if the reasoning is given without naming regression testing, or vice versa. Incorrect otherwise."
+    "rubric": "Correct only if response names regression testing."
   }
 ]

@@ -22,30 +22,30 @@
   },
   {
     "key": "arctic-scenario-elements",
-    "title": "سناریوی پرواز در شرایط قطبی",
+    "title": "سناریوی قطبی، چی رو نباید ذکر کنه؟",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "درس مثال پرواز هواپیما توی شرایط برفی قطبی رو زد. چرا محیط عملیاتی به‌تنهایی می‌تونه باعث ساخت یه سناریوی جداگانه بشه، و توی نوشتن اون سناریو چه چیزی رو نباید ذکر کنیم؟",
-    "expected_outcome": "چون شرایط محیطی (مثل سرمای شدید و برف) می‌تونه نیازهای متفاوتی از سیستم بطلبه که توی یه محیط معتدل لازم نیست — پس رفتار سیستم توی اون محیط با محیط دیگه فرق می‌کنه و باید جدا مستند بشه. با این حال نباید راه‌حل‌های احتمالی (اسکی به‌جای چرخ، باتری پشتیبان، سیستم یخ‌زدایی) رو توی سناریو ذکر کرد — فقط قابلیت‌هایی که سیستم باید داشته باشه رو می‌گیم.",
+    "estimated_minutes": 2,
+    "prompt": "هواپیما توی شرایط برفی قطبی، یه سناریوی جداگانه می‌گیره چون محیط عملیاتی عوض شده. توی نوشتن این سناریو چه چیزی رو نباید ذکر کنیم؟",
+    "expected_outcome": "راه‌حل‌های احتمالی (مثل اسکی، باتری پشتیبان، یخ‌زدایی)",
     "hints": [
-      "به مثال هواپیمای قطبی در برابر هواپیمای معتدل برگرد — چرا این دو یه سناریو نیستن؟",
+      "به مثال هواپیمای قطبی در برابر هواپیمای معتدل برگرد.",
       "درس گفت این محیط ممکنه «راه‌حل‌هایی» بطلبه، ولی گفت این راه‌حل‌ها کجا نباید ذکر بشن."
     ],
-    "rubric": "Correct if response explains that operational environment alone can create a distinct scenario because it changes what the system needs to do, AND states that specific solutions (skis, heating, de-icing) should not be named in the scenario. Correct_with_hint if only one of these two points is present. Incorrect otherwise."
+    "rubric": "Correct if response names that specific solutions (skis, heating, de-icing) should not be named in the scenario."
   },
   {
     "key": "too-many-scenarios",
-    "title": "چند تا سناریو کافیه؟",
-    "form": "explanation",
+    "title": "چرا سناریوی بیشتر همیشه بهتر نیست؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، چرا داشتن سناریوی بیشتر همیشه بهتر نیست؟ در ۲ تا ۳ جمله توضیح بده چه خطری داره و مهندس نیازمندی‌ها باید چه تعادلی رو رعایت کنه.",
-    "expected_outcome": "سناریوی بیشتر معمولاً پایه‌ی محکم‌تری برای نیازمندی‌ها می‌سازه، اما بیش از حد زیاد بودنش تیم رو خسته و سردرگم می‌کنه، یا فقط همون داستان رو با تفاوت‌های جزئی تکرار می‌کنه بدون اینکه قابلیت جدید واقعی اضافه کنه — که این هزینه و زمان‌بندی پروژه رو بی‌دلیل بالا می‌بره. مهندس نیازمندی‌ها باید بین پوشش کافی و اجتناب از اضافه‌کاری تعادل برقرار کنه، که این مهارتی‌ست که با تجربه به‌دست میاد.",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، داشتن سناریوی بیشتر همیشه بهتر نیست. چرا؟",
+    "expected_outcome": "تیم رو خسته/سردرگم می‌کنه یا فقط هزینه و زمان اضافه می‌کنه بدون قابلیت جدید",
     "hints": [
       "درس دقیقاً گفت «یه مرز باریک» بین کافی و زیاد وجود داره.",
       "به هزینه و زمان‌بندی فکر کن — نه فقط «خسته‌شدن تیم»."
     ],
-    "rubric": "Correct if response explains both sides of the tradeoff: more scenarios build a stronger foundation, but too many overwhelm the team or add cost/schedule without new capability, and names this as a judgment skill. Correct_with_hint if only the downside or only the upside is mentioned. Incorrect if no real tradeoff reasoning given."
+    "rubric": "Correct if response names the downside: overwhelming the team or adding cost/schedule without real new capability."
   }
 ]

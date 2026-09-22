@@ -25,13 +25,13 @@
   },
   {
     "key": "range-with-step",
-    "title": "یه هم‌تیمی این خط رو نوشته",
-    "form": "explanation",
+    "title": "آرگومان سوم range چیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌خواد اعداد زوج بین ۰ تا ۱۰ (۰، ۲، ۴، ۶، ۸) رو چاپ کنه و این کد رو نوشته:\n```python\nfor number in range(0, 10, 2):\n    print(number)\n```\nدر ۲ تا ۳ جمله بهش بگو این کد درست کار می‌کنه یا نه، و چرا.",
-    "expected_outcome": "درست کار می‌کنه. آرگومان سوم `range` گامه (step) — یعنی هر تکرار چقدر جلو بره. با گام ۲ از ۰ شروع می‌کنه و هر بار ۲ تا میاد جلو: ۰، ۲، ۴، ۶، ۸ (۱۰ جزو نتیجه نیست چون آرگومان دوم همیشه مرز بالاییه، نه شامل).",
+    "estimated_minutes": 2,
+    "prompt": "`range(0, 10, 2)` رو در نظر بگیر. آرگومان سوم (2) چه نقشی داره؟",
+    "expected_outcome": "گام (step) — هر تکرار چقدر جلو بره",
     "hints": ["آرگومان سوم range چیه؟", "گام یعنی هر تکرار چند واحد جلو بره، نه فقط یکی‌یکی."],
-    "rubric": "Correct if the answer says the code is correct and explains the third argument as the step. Correct_with_hint if it says correct without explaining why. Incorrect if it says the code is wrong."
+    "rubric": "Correct if response names it as the step argument."
   }
 ]

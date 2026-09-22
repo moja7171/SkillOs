@@ -23,7 +23,7 @@
   {
     "key": "multiplicity-scenario",
     "title": "چهار تا پیستون یکسان",
-    "form": "scenario",
+    "form": "mcq",
     "difficulty": "core",
     "estimated_minutes": 3,
     "prompt": "توی سلسله‌مراتب موتور یه ماشین، مؤلفه‌ی «تولید قدرت» از ۴ تا پیستون کاملاً یکسان (همون متریال، همون شماره‌قطعه) تشکیل شده. طبق این درس، چطور این ۴ پیستون رو توی دیاگرام تعریف بلوک نشون می‌دیم؟",
@@ -43,16 +43,16 @@
   },
   {
     "key": "hierarchy-depends-on-perspective",
-    "title": "بالای سلسله‌مراتب، از دید کی؟",
-    "form": "explanation",
+    "title": "بالای سلسله‌مراتب برای کی چیه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "یه بانک که ATM می‌فروشه رو در نظر بگیر، و یه شرکت دیگه که فقط کارت‌خوان (card reader) می‌سازه و به شرکت‌های ATM می‌فروشه. سلسله‌مراتب سیستم این دو شرکت برای همون قطعه (کارت‌خوان) چه فرقی می‌کنه؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "برای بانک/شرکت ATM، خودِ ATM بالای سلسله‌مراتبه و کارت‌خوان یه مؤلفه یا زیرسیستم پایین‌تره. برای شرکت سازنده‌ی کارت‌خوان، کارت‌خوان خودش محصول اصلیشه — پس بالای سلسله‌مراتب خودشونه، و اجزای داخلی کارت‌خوان (موتور کشش کارت، سنسور، مدار خواندن) یه لایه پایین‌تر قرار می‌گیرن.",
+    "estimated_minutes": 2,
+    "prompt": "بانکی که ATM می‌فروشه، و شرکتی که فقط کارت‌خوان می‌سازه و به شرکت‌های ATM می‌فروشه. برای هرکدوم، بالای سلسله‌مراتب سیستم چیه؟",
+    "expected_outcome": "برای بانک: ATM / برای شرکت کارت‌خوان: خودِ کارت‌خوان",
     "hints": [
       "به مثال موتورساز در برابر خودروساز توی همین درس برگرد — دقیقاً همین الگوئه.",
       "سلسله‌مراتب به این بستگی داره محصول اصلی هر سازمان چیه، نه به خودِ قطعه."
     ],
-    "rubric": "Correct if response explains that the ATM company puts the ATM at the top (card reader as a lower-level component), while the card-reader manufacturer puts the card reader itself at the top (with its own internals one layer below). Correct_with_hint if the idea of perspective-dependence is present but not applied concretely to both companies. Incorrect if it claims the hierarchy is the same regardless of perspective."
+    "rubric": "Correct if both are named: ATM for the bank/ATM company, the card reader itself for the card-reader manufacturer. Correct_with_hint if only one is right."
   }
 ]

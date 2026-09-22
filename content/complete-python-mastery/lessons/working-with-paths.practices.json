@@ -15,13 +15,13 @@
   {
     "key": "with-name-doesnt-rename",
     "title": "چرا فایل رو عوض نکرد؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته و انتظار داره فایل روی دیسک تغییر نام بده:\n```python\np = Path(\"data.txt\")\np.with_name(\"backup.txt\")\n```\nولی وقتی به پوشه نگاه می‌کنه، هنوز فایل data.txt هست، نه backup.txt. چرا؟",
-    "expected_outcome": "چون with_name فایل رو واقعاً تغییر نام نمی‌ده -- فقط یه آبجکت Path جدید با اسم متفاوت برمی‌گردونه، بدون اینکه هیچ تغییری روی دیسک اعمال بشه. برای تغییرنام واقعی، باید از متدهای دیگه‌ای (مثل rename) استفاده کرد.",
-    "hints": ["with_name فقط یه Path جدید می‌سازه، عملیاتی روی دیسک انجام نمی‌ده.", "نتیجه‌ی with_name باید ذخیره و استفاده بشه، ولی خودش تغییری روی فایل واقعی نمی‌ذاره."],
-    "rubric": "Correct if the answer explains with_name returns a new Path object without touching the actual file on disk."
+    "estimated_minutes": 2,
+    "prompt": "`p.with_name(\"backup.txt\")` فایل روی دیسک رو تغییر نام نداد. چرا؟",
+    "expected_outcome": "چون with_name فقط یه Path جدید برمی‌گردونه، تغییری روی دیسک اعمال نمی‌کنه",
+    "hints": ["with_name فقط یه Path جدید می‌سازه، عملیاتی روی دیسک انجام نمی‌ده.", "نتیجه‌ی with_name باید ذخیره و استفاده بشه."],
+    "rubric": "Correct if response says with_name returns a new Path object without touching the actual file on disk."
   },
   {
     "key": "build-path-object",

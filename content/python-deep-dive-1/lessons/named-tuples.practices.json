@@ -25,13 +25,13 @@
   },
   {
     "key": "why-namedtuple",
-    "title": "چه چیزی رایگان می‌گیریم؟",
-    "form": "explanation",
+    "title": "named tuple چه چیزی رو رایگان می‌ده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: نسبت به یک کلاس دستی با `__init__`، named tuple چه چیزهایی را «رایگان» می‌دهد؟ چه چیزی از دست می‌دهیم؟ چرا `dot_product` نوشته‌شده با `zip` روی Point2D و Vector3D هر دو کار می‌کند ولی روی کلاس دستی نه؟",
-    "expected_outcome": "رایگان: `__repr__` خوانا، `__eq__` مبتنی بر مقدار، immutability، unpacking/iteration/indexing/slicing، سازگاری با توابع دنباله‌ای (max, zip, sorted) و ساخت با keyword. از دست می‌دهیم: mutability (نمی‌شود `pt.x = 100`) و فیلدهای با underscore. dot_product با zip روی هر iterable کار می‌کند و named tupleها tuple هستند؛ کلاس دستی iterable نیست مگر `__iter__` بنویسی.",
+    "estimated_minutes": 2,
+    "prompt": "نسبت به یک کلاس دستی با __init__، named tuple دو چیز رایگان چی می‌ده؟",
+    "expected_outcome": "مثلاً: __repr__ خوانا، __eq__ مبتنی بر مقدار، unpacking/iteration",
     "hints": ["named tuple یک tuple است.", "به __repr__ و __eq__ که در کلاس دستی باید بنویسی فکر کن."],
-    "rubric": "Correct: lists several free features, the immutability trade-off, and explains iterability for zip. Partial: two of three. Incorrect: says named tuples are mutable or not tuples."
+    "rubric": "Correct if at least two free features are named (repr, eq, immutability, iteration, keyword construction)."
   }
 ]

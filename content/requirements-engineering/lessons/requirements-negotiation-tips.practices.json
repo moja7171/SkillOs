@@ -4,14 +4,14 @@
     "title": "کاربرد نکته‌ی واژه‌نامه",
     "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 4,
-    "prompt": "طبق نکته‌ی «زبان شفاف و مختصر»، چرا جزئیات دقیق کلمه‌ی «بذر» (اندازه، وزن، ابعاد) بهتره توی واژه‌نامه بیاد تا مستقیم توی خود جمله‌ی نیازمندی؟",
-    "expected_outcome": "چون گنجاندن این جزئیات مستقیم توی جمله‌ی نیازمندی می‌تونه پیچیدگی و سردرگمی اضافه کنه؛ واژه‌نامه معنای دقیق کلمه رو جدا مشخص می‌کنه و جمله‌ی نیازمندی رو ساده و خوانا نگه می‌داره.",
+    "estimated_minutes": 2,
+    "prompt": "چرا جزئیات دقیق کلمه‌ی «بذر» (اندازه، وزن، ابعاد) بهتره توی واژه‌نامه بیاد تا مستقیم توی جمله‌ی نیازمندی؟",
+    "expected_outcome": "جمله‌ی نیازمندی ساده می‌مونه",
     "hints": [
       "به بخش نکته‌ی ۵ («زبان شفاف و مختصر») برگرد.",
       "هدف واژه‌نامه چیه که توی درس‌های قبلی هم دیدیم؟"
     ],
-    "rubric": "Full credit explains that putting the details in the glossary keeps the requirement statement itself simple while still pinning down the precise meaning."
+    "rubric": "Correct if response says the glossary keeps the requirement statement itself simple while pinning down precise meaning."
   },
   {
     "key": "ten-tips-order-check",

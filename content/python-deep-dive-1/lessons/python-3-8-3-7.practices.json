@@ -25,13 +25,13 @@
   },
   {
     "key": "defaults-mutable",
-    "title": "defaults و mutable",
-    "form": "explanation",
+    "title": "چرا هر سه فیلد [10] می‌شن؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۲ تا ۳ جمله توضیح بده چرا `namedtuple('NT', 'a b c', defaults=([],) * 3)` بعد از `nt.a.append(10)` هر سه فیلد را `[10]` نشان می‌دهد، این به کدام درس‌های قبلی برمی‌گردد، و چطور می‌توان سه لیست مستقل داشت.",
-    "expected_outcome": "`([],) * 3` یک شیء لیست را سه بار ارجاع می‌دهد؛ پیش‌فرض‌ها یک بار ساخته می‌شوند و بین instanceها هم مشترک‌اند (همان دام پیش‌فرض mutable در توابع و اشتراک ارجاع). راه‌حل: `defaults=([], [], [])` — که باز هم بین instanceهای مختلف NT مشترک است؛ اگر لیست تازه برای هر instance می‌خواهی، پیش‌فرض None بگذار و بعد `_replace` کن یا اصلاً از mutable در named tuple پرهیز کن.",
-    "hints": ["به `[[]] * 3` فکر کن.", "پیش‌فرض یک بار ساخته می‌شود."],
-    "rubric": "Correct: same-object replication, link to mutable-default lesson, and a fix (separate literals or None default) with the per-instance caveat. Partial: cause right, fix incomplete. Incorrect: thinks defaults are copied."
+    "estimated_minutes": 2,
+    "prompt": "namedtuple('NT', 'a b c', defaults=([],) * 3) بعد از nt.a.append(10) هر سه فیلد رو [10] نشون می‌ده. چرا؟",
+    "expected_outcome": "([],) * 3 یه شیء لیست رو سه بار ارجاع می‌ده (مشترکه)",
+    "hints": ["به [[]] * 3 فکر کن.", "پیش‌فرض یک بار ساخته می‌شود."],
+    "rubric": "Correct if response says ([],) * 3 repeats a reference to the same list object three times."
   }
 ]

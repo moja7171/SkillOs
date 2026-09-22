@@ -12,13 +12,13 @@
   },
   {
     "key": "no-add-error",
-    "title": "چرا خطا می‌گیریم؟",
-    "form": "explanation",
+    "title": "چرا این TypeError رخ می‌ده؟",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nclass Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\nresult = v1 + v2\n```\nو با `TypeError: unsupported operand type(s) for +` مواجه شده. چرا، و چطور درستش کنه؟",
-    "expected_outcome": "چون کلاس Vector متد جادویی __add__ رو تعریف نکرده، پایتون نمی‌دونه جمع‌زدن دو تا Vector یعنی چی. باید __add__(self, other) رو تعریف کنه که یه Vector جدید با مختصات جمع‌شده برگردونه.",
+    "estimated_minutes": 2,
+    "prompt": "`v1 + v2` روی دو تا Vector → TypeError: unsupported operand type(s) for +. چرا؟",
+    "expected_outcome": "چون کلاس Vector متد __add__ رو تعریف نکرده",
     "hints": ["پایتون از قبل نمی‌دونه چطور یه کلاس سفارشی رو با + جمع بزنه.", "متد جادویی مربوط به + رو باید خودت تعریف کنی."],
-    "rubric": "Correct if the answer identifies the missing __add__ method as the cause and proposes implementing it."
+    "rubric": "Correct if response names the missing __add__ method as the cause."
   }
 ]

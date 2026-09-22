@@ -13,12 +13,12 @@
   {
     "key": "choosing-a-package",
     "title": "چطور یه پکیج خوب انتخاب کنیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "وقتی برای یه قابلیت خاص، چند صد پکیج مختلف توی PyPI پیدا می‌کنی، چطور تشخیص می‌دی کدومش قابل‌اعتمادتره؟",
-    "expected_outcome": "می‌شه به سیگنال‌هایی مثل تعداد دانلود، تاریخ آخرین به‌روزرسانی، کیفیت مستندات، و نظر جامعه (مثلاً جست‌وجوی «بهترین پکیج پایتون برای X») نگاه کرد -- همه‌ی پکیج‌های ثبت‌شده لزوماً پایدار یا نگهداری‌شده نیستن.",
+    "prompt": "برای تشخیص قابل‌اعتماد بودن یه پکیج توی PyPI، به کدوم دو سیگنال نگاه می‌کنی؟",
+    "expected_outcome": "تعداد دانلود و تاریخ آخرین به‌روزرسانی",
     "hints": ["نه هر پکیجی توی PyPI باکیفیت یا فعاله.", "تعداد دانلود و تازه‌بودن به‌روزرسانی‌ها سرنخ خوبی‌ان."],
-    "rubric": "Correct if the answer mentions signals like download count, maintenance recency, or community opinion as ways to judge package quality."
+    "rubric": "Correct if response names signals like download count, maintenance recency, or community opinion."
   }
 ]

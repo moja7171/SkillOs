@@ -22,17 +22,17 @@
   },
   {
     "key": "curse-of-knowledge-scenario",
-    "title": "نفرین دانش سر یه ذی‌نفع",
-    "form": "scenario",
+    "title": "این پدیده اسمش چیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "توی یه جلسه‌ی استخراج نیازمندی برای پهپاد بذرپاش، مهندس مأموریت می‌گه: «سیستم باید از طریق لینک RF یه heartbeat به GCS بفرسته تا failsafe فعال نشه.» ذی‌نفع (یه کشاورز) سرش رو تکون می‌ده و می‌گه «باشه، خوبه»، ولی وقتی ازش می‌پرسی، معلوم می‌شه اصلاً نفهمیده منظور چیه. این چه پدیده‌ایه، و طبق این درس چطور باید از اول جلوش رو گرفت؟",
-    "expected_outcome": "این نمونه‌ی نفرین دانشه — مهندس فرض کرده ذی‌نفع همون سطح دانش فنی و واژگان تخصصی رو داره، ولی ذی‌نفع فقط برای اینکه خجالت نکشه موافقت کرده بدون اینکه بفهمه. راه‌حل این درس اینه که به‌جای زبان فنی، از حوزه‌ی مأموریت (سناریو با زبان ساده‌ی ذی‌نفع، مثلاً «پهپاد باید مرتب به کشاورز نشون بده هنوز زنده و در ارتباطه») استفاده کنیم تا ذی‌نفع واقعاً بفهمه و بتونه نظر بده.",
+    "estimated_minutes": 2,
+    "prompt": "مهندس مأموریت به یه کشاورز می‌گه: «سیستم باید از طریق لینک RF یه heartbeat به GCS بفرسته تا failsafe فعال نشه.» کشاورز می‌گه «باشه، خوبه» ولی چیزی نفهمیده. این پدیده اسمش چیه؟",
+    "expected_outcome": "نفرین دانش (curse of knowledge)",
     "hints": [
       "اسم این پدیده رو خود درس آورد — دقیقاً همون موقعی که مهندس فرض می‌کنه ذی‌نفع زبان فنی رو می‌فهمه.",
-      "راه‌حل درس، جایگزینی زبان فنی با زبان لایه‌ی مأموریت (سناریو/user story) با کلمات ذی‌نفعه، نه صرفاً «واضح‌تر حرف بزن»."
+      "مهندس داره فرض می‌کنه ذی‌نفع همون سطح دانش فنی رو داره."
     ],
-    "rubric": "Correct if response names the curse of knowledge and explains that the fix is expressing things in the stakeholder's own layman terms via the mission domain (scenario/mission description), not just speaking more clearly in technical terms. Correct_with_hint if the phenomenon is named but the fix is vague or generic. Incorrect if the phenomenon isn't identified."
+    "rubric": "Correct only if response names the curse of knowledge."
   },
   {
     "key": "mission-domain-components",

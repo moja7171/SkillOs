@@ -1,14 +1,14 @@
 [
   {
     "key": "indentation-bug-review",
-    "title": "یه هم‌تیمی کدش رو نشونت داده",
-    "form": "explanation",
+    "title": "چرا Drink water همیشه چاپ می‌شه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی این کد رو نوشته و می‌گه «چرا وقتی دما پایینه هم `Drink water` چاپ می‌شه؟!»\n```python\ntemperature = 15\n\nif temperature > 30:\n    print(\"It's warm\")\nprint(\"Drink water\")\n```\nدر ۳ تا ۴ جمله بهش توضیح بده مشکل کجاست و چطور درستش کنه.",
-    "expected_outcome": "خط `print(\"Drink water\")` تورفتگی نداره، پس عضو بلوک `if` نیست و همیشه اجرا می‌شه — فرقی نداره شرط True باشه یا False. راه‌حل: یه تب/۴ فاصله جلوش بذاریم تا هم‌تراز با `print(\"It's warm\")` بشه و عضو همون بلوک بشه.",
+    "estimated_minutes": 2,
+    "prompt": "`print(\"Drink water\")` بعد از یه بلوک if، همیشه چاپ می‌شه حتی وقتی شرط False‌ه. چرا؟",
+    "expected_outcome": "تورفتگی نداره، پس عضو بلوک if نیست",
     "hints": ["به تورفتگی (فاصله‌ی ابتدای خط) هر دو `print` دقت کن.", "فقط خطی که زیر `if` تورفتگی داره عضو اون بلوکه."],
-    "rubric": "Correct if the answer identifies the missing indentation on the second print as the cause (it runs unconditionally, outside the if block) AND states the fix (indent it to match the first print). Correct_with_hint if only one of the two is present. Incorrect if it blames something else (e.g. the condition itself, temperature value)."
+    "rubric": "Correct if response says the print lacks indentation so it's outside the if block, running unconditionally."
   },
   {
     "key": "elif-chain-trace",

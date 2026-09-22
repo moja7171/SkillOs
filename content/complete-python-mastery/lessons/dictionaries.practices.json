@@ -23,13 +23,13 @@
   },
   {
     "key": "keyerror-fix",
-    "title": "یه هم‌تیمی خطا گرفته",
-    "form": "explanation",
+    "title": "یه راه برای جلوگیری از KeyError",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nuser = {\"name\": \"Sara\"}\nprint(user[\"email\"])\n```\nو با `KeyError: 'email'` مواجه شده. دو تا راه‌حل مختلف بهش پیشنهاد بده.",
-    "expected_outcome": "راه اول: قبل از دسترسی، چک کنه کلید وجود داره: `if \"email\" in user: print(user[\"email\"])`. راه دوم: از get() استفاده کنه که خطا نمی‌ده: `print(user.get(\"email\"))` یا با مقدار پیش‌فرض `user.get(\"email\", \"unknown\")`.",
+    "estimated_minutes": 2,
+    "prompt": "`user[\"email\"]` → KeyError: 'email'. یه راه‌حل سریع (متد یا عملگر) که خطا نده رو نام ببر.",
+    "expected_outcome": "get() (مثلاً user.get(\"email\"))",
     "hints": ["یه راه: چک‌کردن وجود کلید قبل از دسترسی با in.", "راه دیگه: استفاده از متد get به‌جای کروشه."],
-    "rubric": "Correct if the answer proposes both: checking with `in` before accessing, AND using .get() as an alternative that never raises."
+    "rubric": "Correct if response names .get() or the in-check as a fix that avoids KeyError."
   }
 ]

@@ -25,13 +25,13 @@
   },
   {
     "key": "cell-explanation",
-    "title": "cell چیست؟",
-    "form": "explanation",
+    "title": "cell چیه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در ۳ تا ۵ جمله توضیح بده: وقتی `outer` تمام می‌شود و scope‌اش از بین می‌رود، چطور closure برگشتی هنوز به `x` دسترسی دارد؟ cell کجا وارد ماجرا می‌شود، چه چیزی مشترک است و چه چیزی می‌تواند تغییر کند؟ چرا `f1 = counter()` و `f2 = counter()` شمارنده‌های مستقل‌اند ولی دو تابع درونیِ یک فراخوانی، مشترک؟",
-    "expected_outcome": "پایتون برای نامی که بین دو scope مشترک است یک شیء cell می‌سازد؛ هم x در outer و هم x در inner به cell اشاره می‌کنند و cell به شیء واقعی. با پایان outer، نام محلی‌اش می‌رود ولی cell چون هنوز از closure ارجاع دارد زنده می‌ماند. آدرس cell ثابت است، ولی شیئی که cell به آن اشاره می‌کند (با nonlocal) می‌تواند عوض شود. هر فراخوانی counter یک scope و یک cell تازه می‌سازد → f1 و f2 مستقل؛ ولی دو تابع درونی در یک فراخوانی به همان cell وصل‌اند → مشترک.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی outer تمام می‌شه و scope‌اش از بین می‌ره، closure برگشتی چطور هنوز به x دسترسی داره؟",
+    "expected_outcome": "چون x توی یه شیء cell نگه‌داری می‌شه که closure بهش ارجاع داره",
     "hints": ["به reference counting فکر کن: چه چیزی cell را زنده نگه می‌دارد؟", "cell ثابت است؛ هدفش می‌تواند تغییر کند."],
-    "rubric": "Correct: explains the cell as shared indirection, kept alive by the closure's reference, mutable target via nonlocal, and per-call new cells vs shared cell within one call. Partial: two or three of these. Incorrect: says the value is copied into the inner function."
+    "rubric": "Correct if response says x lives in a cell object that the closure still references, keeping it alive."
   }
 ]

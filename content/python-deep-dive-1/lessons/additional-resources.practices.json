@@ -4,21 +4,21 @@
     "title": "transpose با zip",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nm = [(1, 2, 3), (4, 5, 6)]\nlist(zip(*m))\n```\nخروجی چیست و در ۲ جمله توضیح بده `*m` چه می‌کند و چرا نتیجه transpose است. اگر یکی از سطرها کوتاه‌تر باشد چه می‌شود و کدام ویژگی 3.10 کمک می‌کند؟",
-    "expected_outcome": "[(1, 4), (2, 5), (3, 6)]. `*m` سطرها را به آرگومان‌های جدا باز می‌کند (`zip((1,2,3), (4,5,6))`) و zip عناصر هم‌موقعیت را کنار هم می‌گذارد — یعنی ستون‌ها. سطر کوتاه‌تر باعث حذف بی‌صدای ستون‌های اضافه می‌شود؛ `zip(*m, strict=True)` (3.10) خطا می‌دهد.",
+    "estimated_minutes": 2,
+    "prompt": "`list(zip(*m))` با `m = [(1,2,3),(4,5,6)]` رو در نظر بگیر. `*m` دقیقاً چیکار می‌کنه؟",
+    "expected_outcome": "سطرها رو به آرگومان‌های جدا باز می‌کنه (unpacking)",
     "hints": ["* در فراخوانی = unpacking.", "zip ستون‌ها را می‌سازد."],
-    "rubric": "Correct: output, unpacking explanation, truncation caveat and strict=True. Partial: output + explanation only. Incorrect: wrong output."
+    "rubric": "Correct if response says *m unpacks the rows into separate positional arguments."
   },
   {
     "key": "where-to-look",
     "title": "کجا بگردم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "برای هر سؤال بگو اول کدام منبع را باز می‌کنی و چرا: (۱) «امضای دقیق `functools.lru_cache` در 3.12 چیست؟» (۲) «چرا پایتون پارامتر positional-only را با `/` اضافه کرد؟» (۳) «قاعده‌ی نام‌گذاری ثابت‌ها چیست؟»",
-    "expected_outcome": "(۱) docs.python.org با انتخاب نسخه‌ی 3.12 — مرجع رسمی و نسخه‌محور. (۲) PEP 570 — PEPها انگیزه و بحث طراحی را دارند. (۳) PEP 8 — راهنمای سبک (UPPER_CASE برای ثابت‌ها).",
+    "prompt": "برای «امضای دقیق یه تابع در نسخه‌ی خاص پایتون» کدوم منبع رو اول باز می‌کنی؟",
+    "expected_outcome": "docs.python.org (مستندات رسمی، نسخه‌محور)",
     "hints": ["مستندات برای «چه»، PEP برای «چرا».", "سبک = PEP 8."],
-    "rubric": "Correct: docs (version-specific), the relevant PEP for rationale, PEP 8 for style. Partial: two of three. Incorrect: Stack Overflow for all."
+    "rubric": "Correct if response names the official docs (docs.python.org) as the version-specific source."
   }
 ]

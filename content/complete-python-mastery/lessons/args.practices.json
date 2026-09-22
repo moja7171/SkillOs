@@ -14,14 +14,14 @@
   },
   {
     "key": "return-inside-loop-bug",
-    "title": "یه هم‌تیمی این تابع رو نوشته",
-    "form": "explanation",
+    "title": "چرا فقط اولین عدد برمی‌گرده؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌خواد همه‌ی اعداد رو با هم جمع بزنه، ولی همیشه فقط اولین عدد رو برمی‌گردونه:\n```python\ndef total(*values):\n    result = 0\n    for value in values:\n        result += value\n        return result\n```\nدر ۲ تا ۳ جمله بگو مشکل کجاست و چطور درستش کنه.",
-    "expected_outcome": "خط return تورفتگیش با بدنه‌ی حلقه یکیه، پس توی همون تکرار اول اجرا و تابع خارج می‌شه — بقیه‌ی اعداد اصلاً جمع زده نمی‌شن. راه‌حل: تورفتگی return رو کم کن تا هم‌تراز با for باشه، بعد از تموم‌شدن کل حلقه اجرا بشه.",
-    "hints": ["به تورفتگی خط return دقت کن، نسبت به for.", "return باید بعد از پایان کامل حلقه اجرا بشه، نه توی هر تکرار."],
-    "rubric": "Correct if the answer identifies the return statement's indentation (inside the loop body) as the bug and proposes dedenting it to align with the for statement. Correct_with_hint if it identifies the symptom without the indentation fix. Incorrect otherwise."
+    "estimated_minutes": 2,
+    "prompt": "توی این تابع، return تورفتگیش با بدنه‌ی حلقه یکیه و فقط اولین عدد برمی‌گرده. چرا، و کجا باید تورفتگی بشه؟",
+    "expected_outcome": "return توی حلقه اجرا می‌شه / باید هم‌تراز با for بشه (بعد از حلقه)",
+    "hints": ["به تورفتگی خط return دقت کن، نسبت به for.", "return باید بعد از پایان کامل حلقه اجرا بشه."],
+    "rubric": "Correct if response says return is inside the loop and should be dedented to run after the loop."
   },
   {
     "key": "write-args-function",

@@ -36,16 +36,16 @@
   },
   {
     "key": "why-table-format",
-    "title": "چرا فرمت جدولی برای ردیابی رابط‌ها بهتره؟",
-    "form": "explanation",
+    "title": "فرمت جدولی چه مزیتی برای ردیابی رابط‌ها داره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، فرمت جدولی نسبت به فرمت روایی یا لیستی چه مزیتی برای ردیابی رابط‌های ورودی/خروجی سیستم داره؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "فرمت جدولی برای هر گام ستون‌های جداگانه‌ای برای بازیگر، منابع، ورودی و خروجی داره، در حالی که فرمت روایی و لیستی این اطلاعات رو (اگه اصلاً باشن) داخل متن گم می‌کنن. این ستون‌های جدا کمک می‌کنن رابط‌های ورودی/خروجی هر گام رو دقیق و جداگانه ردیابی کنیم و مستقیم‌تر به جمله‌ی نیازمندی تبدیلشون کنیم.",
+    "estimated_minutes": 2,
+    "prompt": "فرمت جدولی نسبت به فرمت روایی/لیستی چه مزیت مشخصی برای ردیابی رابط‌های ورودی/خروجی سیستم داره؟",
+    "expected_outcome": "ستون‌های جداگانه برای ورودی/خروجی هر گام",
     "hints": [
       "به ستون‌های نمونه‌ای که درس برای فرمت جدولی معرفی کرد فکر کن — ورودی و خروجی جزوشون بودن.",
       "روایی و لیستی این اطلاعات رو کجا نگه می‌دارن؟ آیا ستون جدا دارن؟"
     ],
-    "rubric": "Correct if response explains that the table format has dedicated columns for actor/resources/inputs/outputs per step, making interface tracking explicit and separable, unlike narrative/list formats where this is buried in prose. Correct_with_hint if the general idea of 'more organized' is given without mentioning input/output columns specifically. Incorrect otherwise."
+    "rubric": "Correct if response names dedicated input/output columns per step as the advantage."
   }
 ]

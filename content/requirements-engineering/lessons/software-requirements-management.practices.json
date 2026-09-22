@@ -26,26 +26,26 @@
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "طبق این درس، «ردیابی متقابل (traceability)» بین چه سه چیزی رابطه برقرار می‌کنه، و این رابطه چه دو فایده‌ی مشخص می‌ده؟",
-    "expected_outcome": "ردیابی متقابل بین نیازمندی نرم‌افزار، عناصر طراحی و اجزای پیاده‌سازی رابطه برقرار می‌کنه. دو فایده‌ش: (۱) مطمئن می‌شه هر نیازمندی حین توسعه واقعاً پوشش داده شده، و (۲) کمک می‌کنه اثر تغییرات احتمالی روی بقیه‌ی سیستم شناسایی بشه.",
+    "prompt": "«ردیابی متقابل (traceability)» بین چه سه چیزی رابطه برقرار می‌کنه؟",
+    "expected_outcome": "نیازمندی، عناصر طراحی، اجزای پیاده‌سازی",
     "hints": [
-      "درس سه عنصر مشخص رو اسم برد که ردیابی بینشون رو وصل می‌کنه.",
-      "دو فایده‌اش هم مستقیم توی همون جمله اومدن."
+      "درس سه عنصر مشخص رو اسم برد.",
+      "این سه‌تا زنجیره‌ی توسعه رو تشکیل می‌دن."
     ],
-    "rubric": "Correct if response names requirements, design elements, and implementation components as the three linked items, and states both benefits (ensuring coverage, identifying change impact). Correct_with_hint if only 2 of 3 items or only one benefit is given. Incorrect otherwise."
+    "rubric": "Correct if requirements, design elements, and implementation components are all named."
   },
   {
     "key": "requirements-baseline-purpose",
-    "title": "خط‌مبنای نیازمندی چه نقشی داره؟",
-    "form": "explanation",
+    "title": "خط‌مبنای نیازمندی چیه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، «خط‌مبنای نیازمندی (requirements baseline)» چیه و چه نقشی توی مدیریت نیازمندی نرم‌افزار داره؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "خط‌مبنای نیازمندی یه نسخه‌ی ثابت از مجموعه‌ی نیازمندی‌هاست که به‌عنوان نقطه‌ی مرجع در طول توسعه عمل می‌کنه. نقشش اینه که به تیم کمک کنه تغییرات رو ردیابی کنه، پیشرفت رو بسنجه، و سازگاری رو در طول کل پروژه حفظ کنه — یعنی همه می‌تونن هر تغییر بعدی رو نسبت به همین نسخه‌ی ثابت بسنجن.",
+    "estimated_minutes": 2,
+    "prompt": "«خط‌مبنای نیازمندی (requirements baseline)» چیه؟",
+    "expected_outcome": "یه نسخه‌ی ثابت از نیازمندی‌ها که نقطه‌ی مرجع می‌شه",
     "hints": [
       "درس خط‌مبنا رو با عبارت «نسخه‌ی ثابت» و «نقطه‌ی مرجع» توصیف کرد.",
-      "سه چیزی که خط‌مبنا کمک می‌کنه انجام بدیم رو درس اسم برد: ردیابی تغییر، سنجش پیشرفت، حفظ سازگاری."
+      "این نسخه در طول توسعه تغییر نمی‌کنه."
     ],
-    "rubric": "Correct if response defines the baseline as a fixed version of requirements serving as a reference point, and explains it helps track changes, measure progress, and maintain consistency. Correct_with_hint if the definition is right but the three purposes are missing. Incorrect otherwise."
+    "rubric": "Correct if response defines the baseline as a fixed version of requirements serving as a reference point."
   }
 ]

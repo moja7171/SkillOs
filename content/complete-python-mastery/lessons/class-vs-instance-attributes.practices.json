@@ -26,12 +26,12 @@
   {
     "key": "choose-attribute-kind",
     "title": "ویژگی نمونه یا کلاس؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "داری یه کلاس `Employee` می‌نویسی. دو تا ویژگی لازم داری: `name` (اسم هر کارمند) و `company_name` (اسم شرکت، که برای همه‌ی کارمندها یکیه). کدوم باید ویژگی نمونه باشه، کدوم کلاس؟ چرا؟",
-    "expected_outcome": "name باید ویژگی نمونه باشه، چون هر کارمند اسم متفاوتی داره. company_name باید ویژگی کلاس باشه، چون بین همه‌ی کارمندها مشترکه و یکسانه.",
+    "estimated_minutes": 2,
+    "prompt": "توی کلاس Employee، name (اسم هر کارمند) و company_name (یکسان برای همه) رو داریم. کدوم باید ویژگی نمونه باشه، کدوم کلاس؟",
+    "expected_outcome": "name: نمونه / company_name: کلاس",
     "hints": ["چیزی که بین هر نمونه فرق می‌کنه، ویژگی نمونه‌ست.", "چیزی که برای همه یکسانه، ویژگی کلاسه."],
-    "rubric": "Correct if the answer assigns name as instance attribute (varies per employee) and company_name as class attribute (shared across all)."
+    "rubric": "Correct if both are right: name as instance, company_name as class attribute."
   }
 ]

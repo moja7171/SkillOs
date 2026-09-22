@@ -25,13 +25,13 @@
   },
   {
     "key": "sort-needs-keyword",
-    "title": "یه هم‌تیمی خطا گرفته",
-    "form": "explanation",
+    "title": "این TypeError چرا رخ داد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nnumbers.sort(lambda x: -x)\n```\nو با `TypeError: sort() takes no positional arguments` مواجه شده. مشکل چیه؟",
-    "expected_outcome": "sort() پارامترهاش (مثل key) رو فقط به‌صورت آرگومان کلیدی قبول می‌کنه، نه موقعیتی. باید بنویسه: `numbers.sort(key=lambda x: -x)`.",
+    "estimated_minutes": 2,
+    "prompt": "`numbers.sort(lambda x: -x)` با TypeError: sort() takes no positional arguments مواجه شده. مشکل چیه؟",
+    "expected_outcome": "sort() پارامترهاش رو فقط keyword قبول می‌کنه (باید key= بنویسیم)",
     "hints": ["sort() فقط آرگومان کلیدی قبول می‌کنه، نه موقعیتی.", "باید اسم پارامتر (key) رو صریح جلوی مقدار بنویسی."],
-    "rubric": "Correct if the answer explains that sort()'s parameters must be passed as keyword arguments, and proposes key=lambda x: -x as the fix."
+    "rubric": "Correct if response says sort()'s parameters must be passed as keyword arguments (key=...)."
   }
 ]

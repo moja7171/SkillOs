@@ -1,59 +1,59 @@
 [
   {
     "key": "re-conflict-or-not-triage",
-    "title": "این تعارض مسئولیت مهندس نیازمندیه؟",
-    "form": "scenario",
+    "title": "کدوم تعارض مسئولیت مهندس نیازمندیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
-    "prompt": "تیم توسعه‌ی پهپاد و تیم محیط‌زیست سر اینکه پهپاد باید از موتور الکتریکی استفاده کنه یا موتور احتراقی اختلاف دارن. در مقابل، دو مدیر بخش مالی و بازاریابی سازمان به‌خاطر یه اختلاف قدیمی شخصی با هم درگیرن که تصادفاً همین هفته توی جلسه‌ی بررسی نیازمندی هم بروز کرد. کدوم‌یک مسئولیت مهندس نیازمندیه و کدوم نیست؟ چرا؟",
-    "expected_outcome": "تعارض موتور الکتریکی/احتراقی به مهندسی نیازمندی مربوطه — چون از باورها و مفروضات فنی درباره‌ی سیستم ناشی می‌شه و مهندس نیازمندی می‌تونه با منطق و شواهد حلش کنه. تعارض مالی/بازاریابی به مهندسی نیازمندی مربوط نیست — چون ریشه‌اش دشمنی شخصی قدیمیه و خارج از توسعه‌ی محصول است؛ باید به یه رهبر سازمانی ارجاع بشه.",
+    "estimated_minutes": 2,
+    "prompt": "(۱) تیم توسعه و تیم محیط‌زیست سر موتور الکتریکی/احتراقی اختلاف دارن. (۲) دو مدیر به‌خاطر یه دشمنی شخصی قدیمی با هم درگیرن که تصادفاً توی جلسه بروز کرد. کدوم مسئولیت مهندس نیازمندیه؟",
+    "expected_outcome": "(۱) بله (فنی) (۲) نه (شخصی/سازمانی)",
     "hints": [
-      "به سؤال «آیا به توسعه‌ی محصولمون مربوطه؟» و «سابقه‌ی تاریخی» توی درس برگرد.",
+      "به سؤال «آیا به توسعه‌ی محصولمون مربوطه؟» توی درس برگرد.",
       "تعارض‌های فنی معمولاً با منطق و شواهد حل می‌شن، تعارض‌های شخصی نه."
     ],
-    "rubric": "Full credit correctly classifies the engine conflict as RE-related (technical, resolvable with logic/evidence) and the personal grudge as non-RE (organizational, historical), each with the reasoning from the lesson."
+    "rubric": "Correct if (1) is marked RE-related and (2) not RE-related. Correct_with_hint if only one is right."
   },
   {
     "key": "six-conflict-types-match",
-    "title": "تطبیق شش نوع تعارض",
+    "title": "تطبیق سه نوع تعارض",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 8,
-    "prompt": "برای هر مورد زیر، نوع تعارض (طبق شش نوع IREB CPRE) رو مشخص کن:\n۱) دو ذی‌نفع درباره‌ی حداقل زمان پرواز پهپاد (۳۰ در برابر ۶۰ دقیقه) اختلاف دارن چون یکی نگران هزینه‌ست و دیگری نگران پوشش مساحته.\n۲) یه ذی‌نفع همیشه لجوجانه روی موضعش می‌مونه و می‌گه استفاده از مواد غیرسبز اصلاً قابل‌قبول نیست، فارغ از هر استدلالی.\n۳) دو تیم چون قبلاً توی یه پروژه‌ی دیگه با هم درگیری داشتن، الان هم توی هر بحثی به‌جای تمرکز روی واقعیت‌ها به هم حمله می‌کنن.",
-    "expected_outcome": "۱) تعارض علایق (Interest) — چون از موضع‌های متفاوت بر پایه‌ی اهداف فردی/گروهی (هزینه در برابر پوشش) ناشی می‌شه. ۲) تعارض ارزش‌ها (Values) — لجاجت و امتناع از مصالحه، ریشه در اصول درازمدت. ۳) تعارض رابطه (Relationship) — ناشی از تجربه‌ی منفی قبلی بین طرفین.",
+    "estimated_minutes": 2,
+    "prompt": "برای هر مورد، نوع تعارض (طبق شش نوع IREB CPRE) رو مشخص کن: ۱) اختلاف بر سر زمان پرواز چون یکی نگران هزینه‌ست، دیگری نگران پوشش مساحت. ۲) یه ذی‌نفع لجوجانه هیچ استدلالی رو قبول نمی‌کنه. ۳) دو تیم به‌خاطر درگیری قبلی، الان هم به هم حمله می‌کنن نه به واقعیت‌ها.",
+    "expected_outcome": "۱) تعارض علایق (۲) تعارض ارزش‌ها (۳) تعارض رابطه",
     "hints": [
       "تعارض علایق معمولاً حول هزینه/مزیت شخصی یا گروهیه.",
-      "تعارض ارزش‌ها با لجاجت و امتناع از مصالحه مشخص می‌شه؛ تعارض رابطه با احساسات ناشی از تعاملات گذشته."
+      "تعارض ارزش‌ها با لجاجت مشخص می‌شه؛ تعارض رابطه با احساسات ناشی از تعاملات گذشته."
     ],
-    "rubric": "Full credit correctly labels all three: (1) interest conflict, (2) value conflict, (3) relationship conflict, each with brief justification."
+    "rubric": "Correct if all three are labeled: (1) interest, (2) value, (3) relationship conflict. Correct_with_hint if 2 of 3 are right."
   },
   {
     "key": "resolution-technique-mars-orbiter",
-    "title": "چه تکنیکی از فاجعه‌ی Mars Climate Orbiter جلوگیری می‌کرد؟",
-    "form": "explanation",
+    "title": "چه تکنیکی از Mars Climate Orbiter جلوگیری می‌کرد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 6,
-    "prompt": "درس، از دست‌رفتن Mars Climate Orbiter رو مثالی از تعارض داده (Conflicting Data) معرفی کرد — چون مهندسان از واحدهای متریک و انگلیسی مخلوط استفاده کردن. کدوم تکنیک حل تعارض این درس، به‌طور خاص برای تعارض‌های داده‌محور توصیه شده و چرا مناسبه؟",
-    "expected_outcome": "تکنیک توافق (Agreement) — چون شامل بررسی دقیق و مشترک داده‌ی موردبحث بین طرفین می‌شه که سوءتفاهم یا ناسازگاری رو (مثل تفاوت واحد اندازه‌گیری) قبل از وقوع خطا آشکار می‌کنه؛ رسیدن به اجماع درباره‌ی تفسیر و کاربرد داده از این نوع فاجعه جلوگیری می‌کنه.",
+    "estimated_minutes": 2,
+    "prompt": "از دست‌رفتن Mars Climate Orbiter (اختلاط واحد متریک/انگلیسی) نمونه‌ی تعارض داده بود. کدوم تکنیک حل تعارض این درس، مخصوص تعارض‌های داده‌محور توصیه شده؟",
+    "expected_outcome": "تکنیک توافق (Agreement)",
     "hints": [
-      "به بخش تکنیک «توافق» برگرد — گفته شده برای کدوم نوع تعارض به‌خصوص مفیده؟",
+      "به بخش تکنیک «توافق» برگرد.",
       "چرا بررسی مشترک داده جلوی این خطای خاص رو می‌گرفت؟"
     ],
-    "rubric": "Full credit names the agreement technique and explains it works by jointly examining and agreeing on data interpretation, which would have caught the metric/English unit mismatch."
+    "rubric": "Correct only if response names the agreement technique."
   },
   {
     "key": "compromise-vs-collaboration",
     "title": "مصالحه در برابر همکاری",
     "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "تفاوت اصلی بین تکنیک «مصالحه» و «همکاری» توی این درس چیه؟ با اشاره به مثال زمان پرواز پهپاد (۳۰ در برابر ۶۰ دقیقه) توضیح بده.",
-    "expected_outcome": "مصالحه یعنی هر دو طرف امتیاز می‌دن و به یه نقطه‌ی میانه می‌رسن بدون لزوماً فهمیدن دلیل زیربنایی خواسته‌ی طرف مقابل. همکاری عمیق‌تره — طرفین با گوش‌دادن فعال، دلایل واقعی زیربنایی (هزینه در برابر پوشش مساحت) رو کشف می‌کنن و راه‌حلی (۴۵ دقیقه) پیدا می‌کنن که واقعاً هر دو نگرانی رو برطرف کنه، نه فقط یه میانگین ریاضی.",
+    "estimated_minutes": 2,
+    "prompt": "تفاوت اصلی بین تکنیک «مصالحه» و «همکاری» چیه؟",
+    "expected_outcome": "مصالحه: امتیاز بدون فهم دلیل / همکاری: کشف دلیل زیربنایی",
     "hints": [
-      "همکاری شامل کشف دلیل زیربنایی درخواسته، نه فقط رسیدن به یه عدد وسط.",
+      "همکاری شامل کشف دلیل زیربنایی درخواسته‌ست، نه فقط رسیدن به یه عدد وسط.",
       "مصالحه می‌تونه بدون فهم عمیق دلایل هم اتفاق بیفته."
     ],
-    "rubric": "Full credit distinguishes compromise (splitting the difference, concessions) from collaboration (understanding underlying reasons to find a solution addressing both needs)."
+    "rubric": "Correct if response distinguishes compromise (splitting the difference without understanding reasons) from collaboration (understanding underlying reasons)."
   },
   {
     "key": "escalation-vs-acceptance-when",

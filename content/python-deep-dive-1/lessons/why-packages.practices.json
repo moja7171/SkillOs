@@ -14,13 +14,13 @@
   },
   {
     "key": "design-layout",
-    "title": "طراحی ساختار",
-    "form": "explanation",
+    "title": "چه معیاری برای گروه‌بندی ماژول‌ها به کار می‌بری؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "برنامه‌ای داری با این اجزا: `parse_csv`, `parse_json`, `to_csv`, `to_json`, `Invoice`, `Customer`, `send_email`, `send_sms`, `retry` (decorator عمومی), `log`. یک ساختار پکیجی پیشنهاد بده (درخت پوشه‌ها) و در ۲ تا ۳ جمله بگو چه معیارهایی برای گروه‌بندی به کار بردی و کاربر نهایی چطور باید به `Invoice` و `send_email` دسترسی داشته باشد.",
-    "expected_outcome": "مثلاً:\n```\napp/\n  io/ {__init__, csv.py (parse_csv,to_csv), json.py (parse_json,to_json)}\n  models/ {__init__, invoice.py, customer.py}\n  notify/ {__init__, email.py, sms.py}\n  utils/ {__init__, retry.py, log.py}\n```\nمعیار: هم‌خانواده بودن (فرمت‌ها، مدل‌ها، کانال‌های اطلاع‌رسانی، ابزار عمومی)، اندازه‌ی ماژول، و اینکه چیزهایی که با هم تغییر می‌کنند کنار هم باشند. کاربر: `from app.models import Invoice` و `from app.notify import send_email` — با export در __init__ هر پکیج.",
-    "hints": ["چیزهای هم‌خانواده را کنار هم بگذار.", "__init__ هر پکیج نام‌های عمومی را export کند."],
-    "rubric": "Correct: a sensible hierarchy grouping by concern, stated criteria, and user-facing access via package-level exports. Partial: flat modules only, or no export strategy. Incorrect: one file."
+    "estimated_minutes": 2,
+    "prompt": "وقتی می‌خوای اجزای یه برنامه (parse_csv، Invoice، send_email، retry و...) رو توی پکیج‌ها گروه‌بندی کنی، چه معیاری به کار می‌بری؟",
+    "expected_outcome": "هم‌خانواده‌بودن (چیزهایی که با هم تغییر می‌کنن کنار هم)",
+    "hints": ["چیزهای هم‌خانواده را کنار هم بگذار.", "فرمت‌ها، مدل‌ها، کانال‌های اطلاع‌رسانی، ابزار عمومی."],
+    "rubric": "Correct if response says grouping by related concern/concept (things that change together)."
   }
 ]

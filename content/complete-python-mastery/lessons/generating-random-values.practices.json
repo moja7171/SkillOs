@@ -15,13 +15,13 @@
   {
     "key": "shuffle-returns-none",
     "title": "چرا None چاپ می‌شه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "```python\nimport random\n\nnumbers = [1, 2, 3]\nresult = random.shuffle(numbers)\nprint(result)\n```\nاین کد None چاپ می‌کنه، نه یه لیست به‌هم‌ریخته. چرا؟",
-    "expected_outcome": "چون shuffle برخلاف choice/choices، خودِ لیست numbers رو مستقیم جای‌به‌جا می‌کنه (in place) و هیچ مقداری برنمی‌گردونه -- برای دیدن نتیجه باید خود numbers رو چاپ کرد، نه مقدار برگشتی shuffle رو.",
+    "estimated_minutes": 2,
+    "prompt": "`result = random.shuffle(numbers)` بعد `print(result)` → None. چرا؟",
+    "expected_outcome": "چون shuffle لیست رو in-place تغییر می‌ده و چیزی برنمی‌گردونه",
     "hints": ["shuffle لیست رو مستقیم تغییر می‌ده، نتیجه‌ی جدیدی برنمی‌گردونه.", "برای دیدن نتیجه باید خود numbers رو چاپ کنی، نه result."],
-    "rubric": "Correct if the answer explains shuffle mutates the list in place and returns None."
+    "rubric": "Correct if response says shuffle mutates the list in place and returns None."
   },
   {
     "key": "generate-password",

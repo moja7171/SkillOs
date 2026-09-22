@@ -14,14 +14,14 @@
   },
   {
     "key": "auth-logged-order",
-    "title": "auth و logged",
-    "form": "explanation",
+    "title": "کدوم ترتیب رو انتخاب می‌کنی؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "decorator `auth` اگر کاربر مجاز نباشد بدون صدا زدن تابع، خطا برمی‌گرداند. در ۲ تا ۳ جمله بگو تفاوت `@auth @logged def save()` با `@logged @auth def save()` چیست و برای «فقط فراخوانی‌های موفق لاگ شوند» کدام را انتخاب می‌کنی. معادل هر کدام را به شکل فراخوانی تودرتو بنویس.",
-    "expected_outcome": "`@auth @logged` = `save = auth(logged(save))`: auth بیرونی است؛ اگر رد کند، logged هرگز اجرا نمی‌شود → فقط فراخوانی‌های مجاز/موفق لاگ می‌شوند. `@logged @auth` = `logged(auth(save))`: logged بیرونی است و هر تلاشی، حتی رد‌شده، لاگ می‌شود. برای لاگ فقط موفق‌ها: `@auth` بالا.",
+    "estimated_minutes": 2,
+    "prompt": "می‌خوای فقط فراخوانی‌های موفق لاگ بشن. `@auth @logged def save()` یا `@logged @auth def save()`؟",
+    "expected_outcome": "@auth @logged (auth بیرونیه و جلوی logged رو برای رد‌شده‌ها می‌گیره)",
     "hints": ["بیرونی‌ترین decorator اول اجرا می‌شود.", "decoratorی که تابع را صدا نمی‌زند، زنجیره را قطع می‌کند."],
-    "rubric": "Correct: both nested forms right, explains that the outer decorator runs first and auth can short-circuit, picks @auth on top. Partial: right choice, muddled reasoning. Incorrect: reversed."
+    "rubric": "Correct if response picks @auth on top (outer) and says it can short-circuit before logged runs."
   },
   {
     "key": "write-stacked",

@@ -25,13 +25,13 @@
   },
   {
     "key": "package-vs-module",
-    "title": "پکیج در برابر ماژول",
-    "form": "explanation",
+    "title": "پکیج چه چیزی رو داره که ماژول نداره؟",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: چه چیزی یک پکیج را از ماژول متمایز می‌کند (از نظر فنی و از نظر فایل‌سیستم)؟ کد پکیج کجاست و چرا؟ import کردن یک پکیج به‌طور پیش‌فرض زیرماژول‌هایش را بار می‌کند؟",
-    "expected_outcome": "پکیج ماژولی است با `__path__` (پوشه‌اش) که می‌تواند ماژول/پکیج دیگر را در بر بگیرد؛ در فایل‌سیستم یک پوشه با `__init__.py` است. کد پکیج در `__init__.py` است چون به یک پوشه نمی‌شود کد داد ولی پکیج ماژول است و باید کدی اجرا شود. نه — فقط `__init__.py`های مسیر اجرا می‌شوند؛ زیرماژول‌ها باید صریحاً (یا از داخل __init__) import شوند.",
+    "estimated_minutes": 2,
+    "prompt": "چه چیزی یه پکیج رو از ماژول متمایز می‌کنه؟",
+    "expected_outcome": "__path__ (و در فایل‌سیستم، پوشه با __init__.py)",
     "hints": ["__path__ و __init__.py.", "بعد از import pack1، pack1.module1a هست؟"],
-    "rubric": "Correct: __path__/directory + __init__.py, code location rationale, and no auto-import of submodules. Partial: two of three. Incorrect: says importing a package imports everything inside."
+    "rubric": "Correct if response names __path__ or the directory+__init__.py structure."
   }
 ]

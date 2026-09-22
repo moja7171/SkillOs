@@ -2,13 +2,13 @@
   {
     "key": "when-to-use-array",
     "title": "الان وقتشه از آرایه استفاده کنیم؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی برنامه‌ای می‌نویسه که یه لیست ۲۰ تایی از قیمت‌های محصولات رو نگه می‌داره و می‌گه «بذار همین الان به‌جای لیست از array استفاده کنم، سریع‌تره». در ۱ تا ۲ جمله بهش بگو این کار الان لازمه یا نه.",
-    "expected_outcome": "نه، لازم نیست. تفاوت کارایی array و list فقط توی دنباله‌های خیلی بزرگ (چندهزارتایی به بالا) محسوسه؛ برای ۲۰ تا عدد، لیست کاملاً کافیه و نیازی به این بهینه‌سازی زودهنگام نیست.",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی می‌خواد لیست ۲۰تایی قیمت‌ها رو به array تبدیل کنه چون «سریع‌تره». الان لازمه؟",
+    "expected_outcome": "نه (تفاوت کارایی فقط توی دنباله‌های خیلی بزرگ محسوسه)",
     "hints": ["تفاوت کارایی فقط برای دنباله‌های خیلی بزرگ محسوسه.", "۲۰ تا عدد اصلاً به این مقیاس نمی‌رسه."],
-    "rubric": "Correct if the answer says no, explaining that array's performance benefit only matters at large scale and 20 items doesn't warrant it."
+    "rubric": "Correct if response says no, array's benefit only matters at large scale."
   },
   {
     "key": "array-type-error",

@@ -14,13 +14,13 @@
   },
   {
     "key": "single-file-app",
-    "title": "برنامه‌ی تک‌فایلی",
-    "form": "explanation",
+    "title": "چه فایلی باید در ریشه‌ی آرشیو باشه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله توضیح بده چطور یک برنامه‌ی چندپکیجی را به یک فایل قابل اجرا با `python app.zip` تبدیل می‌کنی (چه فایلی باید در ریشه‌ی آرشیو باشد، چطور آرشیو را می‌سازی)، دو مزیت این روش، و یک محدودیت آن.",
-    "expected_outcome": "در ریشه‌ی آرشیو `__main__.py` (نقطه‌ی ورود) به‌همراه پکیج‌ها قرار می‌گیرد؛ با `python -m zipfile -c app.zip __main__.py pkg/` یا `python -m zipapp` ساخته می‌شود؛ `python app.zip` پایتون را وادار می‌کند `__main__` را از داخل zip اجرا کند. مزایا: توزیع یک فایل، بدون نصب. محدودیت: extensionهای باینری (.so/.pyd) از داخل zip بارگذاری نمی‌شوند و برای وابستگی‌های خارجی راه استاندارد pip است.",
-    "hints": ["درس __main__ را به یاد بیاور.", "کدام نوع فایل از zip بار نمی‌شود؟"],
-    "rubric": "Correct: __main__.py at the root, zipfile/zipapp creation, run with python app.zip, two benefits, one limitation. Partial: three of four. Incorrect: thinks the zip must be extracted."
+    "estimated_minutes": 2,
+    "prompt": "برای `python app.zip` قابل‌اجرا باشه، چه فایلی باید در ریشه‌ی آرشیو باشه؟",
+    "expected_outcome": "__main__.py",
+    "hints": ["درس __main__ را به یاد بیاور.", "همون نقطه‌ی ورودی که برای پوشه هم لازم بود."],
+    "rubric": "Correct only if response names __main__.py."
   }
 ]

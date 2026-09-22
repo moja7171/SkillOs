@@ -26,26 +26,26 @@
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "طبق این درس، دو روش برای اختصاص سطح اولویت به نیازمندی‌ها چی‌ان؟ هرکدوم رو در یک جمله توضیح بده.",
-    "expected_outcome": "(۱) سیستم امتیازدهی/رتبه‌بندی: هر نیازمندی توی یه مقیاس (مثلاً ۱ تا ۱۰) برای هر معیار امتیاز می‌گیره و امتیازها جمع می‌شن تا اولویت کلی به‌دست بیاد. (۲) مقایسه‌ی زوجی: هر نیازمندی با تک‌تک نیازمندی‌های دیگه مقایسه می‌شه تا معلوم بشه کدوم مهم‌تره، و بر این پایه اولویت تخصیص داده می‌شه.",
+    "prompt": "دو روش برای اختصاص سطح اولویت به نیازمندی‌ها رو نام ببر.",
+    "expected_outcome": "امتیازدهی/رتبه‌بندی و مقایسه‌ی زوجی",
     "hints": [
       "درس دقیقاً این دو روش رو با این اسم‌ها معرفی کرد.",
       "یکی جمع‌کردن امتیازه، دیگری مقایسه‌ی دوتایی نیازمندی‌ها با هم."
     ],
-    "rubric": "Correct if response names and correctly explains both the scoring/ranking system and pairwise comparison method. Correct_with_hint if only one method is correctly explained. Incorrect if neither matches the lesson."
+    "rubric": "Correct if both scoring/ranking and pairwise comparison are named."
   },
   {
     "key": "why-check-priority-conflicts",
-    "title": "چرا تغییر اولویت یه نیازمندی می‌تونه خطرناک باشه؟",
-    "form": "explanation",
+    "title": "MBSE چطور بازبینی تغییر اولویت رو ساده می‌کنه؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "طبق این درس، وقتی اولویت یه نیازمندی رو تغییر می‌دیم، چرا باید بررسی کنیم این تغییر روی نیازمندی‌های دیگه چه اثری می‌ذاره؟ و اگه از MBSE یا ابزار مدیریت نیازمندی درست استفاده کنیم، این بررسی چطور ساده‌تر می‌شه؟",
-    "expected_outcome": "تغییر اولویت یه نیازمندی می‌تونه روی اولویت یا حتی شدنی‌بودن نیازمندی‌های دیگه اثر بذاره — از نظر عملکرد سیستم، هزینه، زمان‌بندی، ایمنی و عوامل حیاتی دیگه؛ بدون این بررسی، ممکنه یه تغییر به‌ظاهر بی‌ضرر با نیازمندی‌های دیگه تضاد ایجاد کنه. اگه از MBSE یا ابزار مدیریت نیازمندی با عناصر درست به‌هم‌پیونددار استفاده کنیم، دیگه لازم نیست کل مجموعه‌ی نیازمندی رو بازبینی کنیم — فقط باید عناصری که مستقیماً به نیازمندی تغییرکرده مرتبطن رو بررسی کنیم.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی اولویت یه نیازمندی رو تغییر می‌دیم، باید اثرش روی نیازمندی‌های دیگه رو بررسی کنیم. اگه از MBSE یا ابزار مدیریت نیازمندی درست استفاده کنیم، این بررسی چطور ساده‌تر می‌شه؟",
+    "expected_outcome": "فقط عناصر مستقیماً مرتبط بررسی می‌شن، نه کل مجموعه",
     "hints": [
-      "درس گفت این بررسی باید «تأثیر روی عملکرد سیستم، هزینه، زمان‌بندی، ایمنی» رو در نظر بگیره.",
-      "درس صریحاً گفت اگه از MBSE یا ابزار مدیریت نیازمندی استفاده کنیم، «دیگه لازم نیست کل مجموعه رو بازبینی کنیم»."
+      "درس صریحاً گفت اگه از MBSE یا ابزار مدیریت نیازمندی استفاده کنیم، «دیگه لازم نیست کل مجموعه رو بازبینی کنیم».",
+      "این ابزارها عناصر رو به‌هم پیوند می‌دن."
     ],
-    "rubric": "Correct if response explains that priority changes can affect other requirements' priority/feasibility (performance, cost, schedule, safety) and that MBSE/linked requirements tools narrow the review to only directly-linked elements instead of the whole set. Correct_with_hint if only one of these two points is made. Incorrect otherwise."
+    "rubric": "Correct if response says MBSE/linked tools narrow the review to only directly-linked elements instead of the whole set."
   }
 ]

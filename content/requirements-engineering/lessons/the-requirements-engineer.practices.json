@@ -22,30 +22,30 @@
   },
   {
     "key": "expert-bias-scenario",
-    "title": "تعصب تخصصی یه برنامه‌نویس",
-    "form": "scenario",
+    "title": "این چه ویژگی بدیه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه مهندس نیازمندی‌ها که قبلاً برنامه‌نویس بوده، توی جلسه‌ی استخراج نیازمندی برای پهپاد بذرپاش مدام پیشنهاد می‌ده که «مشکل رو با یه اپ موبایل جدید حل کنیم»، بدون اینکه واقعاً بررسی کنه آیا نیاز واقعی ذی‌نفعان همینه یا نه. در ۳ تا ۴ جمله بگو این چه ویژگی بدیه، و طبق این درس، مهندس باید چیکار کنه.",
-    "expected_outcome": "این تعصب تخصصیه — مهندس ناخودآگاه داره راه‌حل رو به سمت حوزه‌ی راحتش (نرم‌افزار) می‌کشونه، بدون تحلیل واقعی نیاز ذی‌نفعان. باید تخصص قبلیش رو کنار بذاره، از زاویه‌ی دید ذی‌نفعان (نه راه‌حل ذهنی خودش) نگاه کنه، و برای این کار از ابزارهایی مثل User Story و Use Case استفاده کنه.",
+    "estimated_minutes": 2,
+    "prompt": "یه مهندس نیازمندی‌ها که قبلاً برنامه‌نویس بوده، توی جلسه‌ی استخراج نیازمندی مدام پیشنهاد می‌ده «با یه اپ موبایل حل کنیم»، بدون بررسی نیاز واقعی ذی‌نفعان. این چه ویژگی بدیه؟",
+    "expected_outcome": "تعصب تخصصی (expert bias)",
     "hints": [
       "این درس دقیقاً همین الگو رو با اسم «expert bias» توصیف کرد.",
-      "راه‌حل درس چی بود؟ کدوم دو تا ابزار رو برای غلبه بر این تعصب معرفی کرد؟"
+      "مهندس داره راه‌حل رو به سمت حوزه‌ی راحت خودش می‌کشونه."
     ],
-    "rubric": "Correct if response identifies expert bias and mentions setting aside prior expertise / seeing through the stakeholder's lens (bonus if User Stories/Use Cases are named). Correct_with_hint if only the label 'expert bias' is given without the remedy. Incorrect if misidentified as a different trait."
+    "rubric": "Correct only if response names expert bias."
   },
   {
     "key": "why-layperson-terms",
-    "title": "چرا اصطلاح عامیانه، نه تخصصی؟",
-    "form": "explanation",
+    "title": "چرا با ذی‌نفع، نه با زبان تخصصی؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "این درس گفت مهندس نیازمندی‌ها باید تا حد امکان از اصطلاحات عامیانه (نه تخصصی مهندسی) وقتی با ذی‌نفعان صحبت می‌کنه استفاده کنه. در ۲ تا ۳ جمله بگو چرا این نکته مهمه، حتی اگه ذی‌نفع باهوش و تحصیل‌کرده باشه.",
-    "expected_outcome": "چون ذی‌نفعان معمولاً زبان فنی مهندسی رو بلد نیستن، حتی اگه در حوزه‌ی خودشون خیلی باهوش باشن. اگه مهندس نیازمندی از اصطلاح تخصصی استفاده کنه، ریسک سوءتفاهم یا نیازمندی‌ی نادرست‌فهمیده‌شده بالا می‌ره — و چون مهندس نیازمندی‌ها نقش «مترجم» بین ذی‌نفع و تیم فنی رو داره، این ارتباط شفاف حیاتیه.",
+    "estimated_minutes": 2,
+    "prompt": "چرا مهندس نیازمندی‌ها باید با ذی‌نفعان از اصطلاح عامیانه استفاده کنه، حتی اگه ذی‌نفع باهوش و تحصیل‌کرده باشه؟",
+    "expected_outcome": "چون معمولاً زبان فنی مهندسی رو بلد نیست",
     "hints": [
       "نقش مهندس نیازمندی‌ها در این درس چی توصیف شد؟ «مترجم» بین چه دو گروهی؟",
       "دانش تخصصی در یه حوزه (مثلاً مالی) به این معنی نیست که فرد اصطلاحات مهندسی رو هم بلده."
     ],
-    "rubric": "Correct if response explains that stakeholders generally lack engineering-specific vocabulary regardless of their own expertise, and connects this to the RE's translator role and the risk of miscommunicated requirements. Correct_with_hint if only one of these points is present. Incorrect if no real reasoning given."
+    "rubric": "Correct if response says stakeholders generally lack engineering-specific vocabulary regardless of their own expertise."
   }
 ]

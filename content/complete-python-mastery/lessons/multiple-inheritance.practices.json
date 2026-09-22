@@ -25,13 +25,13 @@
   },
   {
     "key": "why-dangerous",
-    "title": "چرا وراثت چندگانه با متدهای مشترک خطرناکه؟",
-    "form": "explanation",
+    "title": "چرا ترتیب کلاس‌های والد مهمه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "چرا وقتی دو تا کلاس والد یه متد هم‌نام دارن، ترتیبشون توی `class Manager(Employee, Person):` مهمه؟ در ۱ تا ۲ جمله توضیح بده.",
-    "expected_outcome": "چون پایتون به ترتیب نوشته‌شدن کلاس‌های والد می‌گرده و اولین کلاسی که اون متد رو داره برنده می‌شه؛ اگه یه نفر بعداً ترتیب رو عوض کنه، بدون هیچ خطا یا هشداری، رفتار برنامه بی‌سروصدا عوض می‌شه.",
-    "hints": ["فکر کن یه نفر ترتیب دو تا اسم رو جابه‌جا کنه -- چه اتفاقی می‌افته؟", "هیچ خطایی داده نمی‌شه، فقط نتیجه فرق می‌کنه."],
-    "rubric": "Correct if the answer explains parent-class order determines which same-named method wins, silently changing behavior if reordered."
+    "estimated_minutes": 2,
+    "prompt": "وقتی دو کلاس والد یه متد هم‌نام دارن، چرا ترتیبشون توی `class Manager(Employee, Person):` مهمه؟",
+    "expected_outcome": "چون پایتون به ترتیب می‌گرده و اولین کلاسی که اون متد رو داره برنده می‌شه",
+    "hints": ["فکر کن یه نفر ترتیب دو تا اسم رو جابه‌جا کنه — چه اتفاقی می‌افته؟", "هیچ خطایی داده نمی‌شه، فقط نتیجه فرق می‌کنه."],
+    "rubric": "Correct if response says parent-class order determines which same-named method wins."
   }
 ]

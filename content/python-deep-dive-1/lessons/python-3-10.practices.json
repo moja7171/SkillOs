@@ -25,13 +25,13 @@
   },
   {
     "key": "zip-strict-why",
-    "title": "چرا strict؟",
-    "form": "explanation",
+    "title": "چرا strict=True لازمه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: مشکل رفتار پیش‌فرض `zip` در کدی که طول برابر را فرض می‌کند چیست؟ چرا «اول طول‌ها را چک کن» با iteratorها جواب نمی‌دهد؟ `strict=True` چطور این را حل می‌کند و به کدام فلسفه‌ی مدیریت خطا نزدیک است؟",
-    "expected_outcome": "zip بی‌صدا با کوتاه‌ترین متوقف می‌شود و داده گم می‌شود بدون خطا. با iterator/generator، محاسبه‌ی طول آنها را مصرف می‌کند و zip بعدی خالی برمی‌گردد. strict=True هنگام مصرف، اگر یکی زودتر تمام شود ValueError می‌دهد — بدون چک قبلی؛ EAFP (ask forgiveness) به‌جای LBYL (look before you leap).",
-    "hints": ["len روی generator چه می‌کند؟", "EAFP در برابر LBYL."],
-    "rubric": "Correct: silent truncation, iterator exhaustion problem, strict raising on mismatch, EAFP framing. Partial: three of four. Incorrect: thinks strict pads the shorter."
+    "estimated_minutes": 2,
+    "prompt": "رفتار پیش‌فرض zip، وقتی طول‌ها نابرابرن، چه مشکلی داره؟",
+    "expected_outcome": "بی‌صدا با کوتاه‌ترین متوقف می‌شه و داده گم می‌شه (بدون خطا)",
+    "hints": ["len روی generator چه می‌کند؟", "strict=True چطور این رو حل می‌کنه؟"],
+    "rubric": "Correct if response says zip silently truncates to the shortest iterable, losing data without error."
   }
 ]

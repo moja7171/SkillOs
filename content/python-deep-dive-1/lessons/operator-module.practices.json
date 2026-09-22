@@ -25,13 +25,13 @@
   },
   {
     "key": "attrgetter-vs-methodcaller",
-    "title": "attrgetter در برابر methodcaller",
-    "form": "explanation",
+    "title": "کدوم رو برای key در sorted استفاده کنیم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "`attrgetter('upper')('abc')` چه برمی‌گرداند و `methodcaller('upper')('abc')` چه؟ در ۲ تا ۳ جمله تفاوت را توضیح بده و بگو کدام‌یک را برای `key` در `sorted(words, key=...)` (مرتب‌سازی بدون حساسیت به بزرگی حروف) به کار می‌بری و چرا.",
-    "expected_outcome": "attrgetter متد bound `'abc'.upper` را برمی‌گرداند (بدون صدا زدن؛ باید `()` اضافه شود)، methodcaller همان لحظه صدا می‌زند و `'ABC'` می‌دهد. برای key باید تابعی باشد که برای هر عنصر مقدار مقایسه‌شدنی برگرداند، پس `methodcaller('upper')` (یا `str.upper`) درست است؛ با attrgetter خروجی key متد است نه رشته و مقایسه معنی ندارد/خطا می‌دهد.",
+    "estimated_minutes": 2,
+    "prompt": "`attrgetter('upper')('abc')` متد بایند رو برمی‌گردونه (بدون صدا زدن)، `methodcaller('upper')('abc')` صدا می‌زنه و 'ABC' می‌ده. برای key در sorted (بدون حساسیت به بزرگی حروف) کدومش رو به کار می‌بری؟",
+    "expected_outcome": "methodcaller('upper') (چون خروجی باید مقایسه‌پذیر باشه، نه خود متد)",
     "hints": ["یکی متد را برمی‌گرداند، دیگری نتیجه‌ی صدا زدنش را.", "key باید چیزی قابل مقایسه برگرداند."],
-    "rubric": "Correct: attrgetter → bound method, methodcaller → 'ABC', picks methodcaller (or str.upper) for key with the right reason. Partial: outputs right but wrong/unclear key choice. Incorrect: says attrgetter returns 'ABC'."
+    "rubric": "Correct only if response picks methodcaller (or str.upper) with the reasoning that key needs a comparable value."
   }
 ]

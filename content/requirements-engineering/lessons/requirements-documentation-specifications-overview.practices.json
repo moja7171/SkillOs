@@ -26,26 +26,26 @@
     "form": "short_answer",
     "difficulty": "core",
     "estimated_minutes": 3,
-    "prompt": "طبق این درس، مشخصات نیازمندی ذی‌نفع (STRS) و مشخصات نیازمندی سیستم (SYRS) توی رویکرد تکرارشونده‌ی مهندسی نیازمندی چه نقشی دارن و چطور به هم مرتبطن؟",
-    "expected_outcome": "STRS نتیجه‌ی تکرار اولِ فعالیت مهندسی نیازمندیه — یه مشخصات سطح‌بالا که نیاز شناسایی‌شده رو اعتبارسنجی می‌کنه. SYRS نتیجه‌ی تکرار دومه — STRS به‌عنوان شرایط تازه استفاده می‌شه و نیازمندی‌ها تا سطح زیرسیستم (یا برای عناصر پرریسک، تا سطح جزء) تجزیه، اشتقاق و جاری می‌شن. یعنی SYRS پالایش جزئی‌تری از همون نیازمندی‌های STRSه.",
+    "prompt": "STRS و SYRS توی رویکرد تکرارشونده‌ی مهندسی نیازمندی، کدوم تکرار اوله و کدوم دومه؟",
+    "expected_outcome": "STRS: تکرار اول (سطح‌بالا) / SYRS: تکرار دوم (پالایش‌شده تا سطح زیرسیستم)",
     "hints": [
       "STRS محصول تکرار اوله؛ SYRS محصول تکرار دومه که خود STRS رو به‌عنوان ورودی می‌گیره.",
-      "درس گفت STRS تا سطح زیرسیستم (یا جزء برای موارد پرریسک) پالایش می‌شه — نتیجه‌ش چه اسمی داره؟"
+      "درس گفت STRS تا سطح زیرسیستم پالایش می‌شه."
     ],
-    "rubric": "Correct if response explains STRS as the first-iteration high-level output and SYRS as the second-iteration refinement (decomposed to subsystem/component level) that uses STRS as its starting condition. Correct_with_hint if only one document's role is explained. Incorrect otherwise."
+    "rubric": "Correct if STRS is named as first-iteration and SYRS as second-iteration refinement."
   },
   {
     "key": "documentation-vs-specification",
     "title": "مستندسازی نیازمندی با مشخصات چه فرقی داره؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، «مستندسازی نیازمندی (requirements documentation)» با «مشخصات (specification)» چه فرقی دارن؟ حداقل دو تفاوت مشخص از درس بیار.",
-    "expected_outcome": "مستندسازی نیازمندی کمتر رسمی و بدون‌ساختاره — مثلاً یه لیست نکته‌ای از اهداف/قابلیت‌های ذی‌نفعان. مشخصات از دستورالعمل‌های سخت‌گیرانه پیروی می‌کنه: زبان مشخص هر جمله‌ی نیازمندی، موقعیت دقیق هر نیازمندی توی سند (شماره‌گذاری و طرح سلسله‌مراتبی)، یه واژه‌نامه برای شفاف‌سازی اصطلاحات، و معمولاً پایه‌ی یه قرارداد رسمی بین خریدار و فروشنده می‌شه.",
+    "estimated_minutes": 2,
+    "prompt": "مستندسازی نیازمندی با مشخصات (specification) چه فرقی داره؟ یه ویژگی مشخص از مشخصات که مستندسازی نداره رو نام ببر.",
+    "expected_outcome": "مثلاً: شماره‌گذاری/سلسله‌مراتب، واژه‌نامه، یا پایه‌ی قرارداد رسمی",
     "hints": [
-      "درس چند ویژگی مشخص برای مشخصات (فرمت زبان، شماره‌گذاری، واژه‌نامه، پایه‌ی قرارداد) آورد که مستندسازی نداره.",
+      "درس چند ویژگی مشخص برای مشخصات آورد که مستندسازی نداره.",
       "به مثال «لیست نکته‌ای» به‌عنوان نمونه‌ی مستندسازیِ کمتر رسمی فکر کن."
     ],
-    "rubric": "Correct if response names at least two distinguishing features of a specification (strict language rules, numbering/hierarchy, glossary, contractual basis) versus the informal nature of documentation. Correct_with_hint if only one distinction is given. Incorrect otherwise."
+    "rubric": "Correct if response names at least one distinguishing feature of a specification (strict language, numbering/hierarchy, glossary, contractual basis)."
   }
 ]

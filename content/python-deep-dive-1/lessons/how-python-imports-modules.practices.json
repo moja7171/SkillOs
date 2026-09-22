@@ -25,13 +25,13 @@
   },
   {
     "key": "explain-compile-exec",
-    "title": "compile و exec",
-    "form": "explanation",
+    "title": "exec آرگومان دومش چیه و چرا؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "در ۳ تا ۵ جمله توضیح بده importer دستی درس چطور کار می‌کند: نقش `compile`، نقش آرگومان دوم `exec` (چرا `mod.__dict__`؟)، و چرا بعد از این کار `import module1` استاندارد در ماژول دیگری بدون وجود فایل `module1.py` موفق می‌شود ولی ویرایشگر اعتراض می‌کند.",
-    "expected_outcome": "compile متن منبع را به code object (bytecode) تبدیل می‌کند و filename فقط متادیتای منبع است. exec آن کد را اجرا می‌کند و dict داده‌شده را به‌عنوان namespace سراسری به کار می‌برد؛ با `mod.__dict__` هر def/متغیر سطح ماژول مستقیم داخل namespace ماژول می‌نشیند. چون ماژول با نام 'module1' در sys.modules ثبت شده، import استاندارد در مرحله‌ی اول (cache) آن را می‌یابد و اصلاً دنبال فایل نمی‌گردد؛ ویرایشگر اما به‌صورت ایستا دنبال فایل می‌گردد و نمی‌یابد.",
-    "hints": ["exec(code, globals) — globals کجاست؟", "قدم اول import چیست؟"],
-    "rubric": "Correct: compile→code object, exec with mod.__dict__ as globals, cache-first import explains success, static editor check explains the warning. Partial: three of four. Incorrect: claims exec creates the module."
+    "estimated_minutes": 2,
+    "prompt": "importer دستی درس، exec رو با mod.__dict__ به‌عنوان آرگومان دوم صدا می‌زنه. این آرگومان دوم چه نقشی داره؟",
+    "expected_outcome": "namespace سراسری اجرا (هر def/متغیر مستقیم اونجا می‌شینه)",
+    "hints": ["exec(code, globals) — globals کجاست؟", "هر متغیر سطح ماژول کجا باید بشینه؟"],
+    "rubric": "Correct if response says mod.__dict__ serves as the globals namespace for the executed code."
   }
 ]

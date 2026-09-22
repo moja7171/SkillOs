@@ -2,13 +2,13 @@
   {
     "key": "uninstall-leaves-indirect-deps",
     "title": "چرا این پکیج هنوز نصبه؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی `pipenv uninstall requests` رو اجرا کرده، ولی وقتی `pipenv graph` رو چک می‌کنه، هنوز وابستگی‌های requests (مثل certifi) نصب هستن. چرا؟",
-    "expected_outcome": "چون uninstall فقط خودِ requests رو از Pipfile و نصب حذف می‌کنه؛ وابستگی‌های غیرمستقیمش پاک نمی‌شن چون Pipenv نمی‌دونه جای دیگه‌ای هم استفاده می‌شن یا نه. اگه پروژه از صفر روی یه سیستم دیگه نصب بشه، چون دیگه توی Pipfile نیستن، اونجا نصب نمی‌شن.",
+    "estimated_minutes": 2,
+    "prompt": "`pipenv uninstall requests` چرا وابستگی‌های غیرمستقیمش (مثل certifi) رو پاک نمی‌کنه؟",
+    "expected_outcome": "فقط خود پکیج مستقیم رو حذف می‌کنه",
     "hints": ["uninstall فقط پکیج مستقیم رو حذف می‌کنه، نه وابستگی‌های اون.", "روی سیستم دیگه، از صفر نصب‌شدن، این وابستگی‌ها دیگه نمیان."],
-    "rubric": "Correct if the answer explains uninstall removes only the direct package, leaving indirect dependencies installed on the current machine (though they won't reinstall elsewhere)."
+    "rubric": "Correct if response says uninstall removes only the direct package, not its indirect dependencies."
   },
   {
     "key": "setup-py-fields",

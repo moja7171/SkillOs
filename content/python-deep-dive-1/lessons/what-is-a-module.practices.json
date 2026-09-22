@@ -25,13 +25,13 @@
   },
   {
     "key": "namespace-dict",
-    "title": "namespace یعنی dict",
-    "form": "explanation",
+    "title": "math.sqrt(2) از کجا پیدا می‌شه؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "در ۳ تا ۴ جمله: وقتی می‌نویسی `math.sqrt(2)`، پایتون چه جست‌وجوهایی انجام می‌دهد (از نام `math` تا شیء تابع)؟ `globals()`، `sys.modules` و `math.__dict__` هر کدام چه نقشی دارند؟",
-    "expected_outcome": "`math` در namespace ماژول جاری (`globals()`، یک dict) جست‌وجو می‌شود و به شیء ماژول می‌رسد؛ آن شیء همان است که در `sys.modules['math']` (cache سراسری) نگه داشته شده. سپس `.sqrt` یک lookup در `math.__dict__` (namespace خود ماژول) است که شیء تابع را می‌دهد؛ در نهایت با `(2)` صدا زده می‌شود. globals نام محلی به ماژول را نگه می‌دارد، sys.modules تضمین یک‌بار بارگذاری، و __dict__ محتوای ماژول.",
+    "estimated_minutes": 2,
+    "prompt": "وقتی می‌نویسی `math.sqrt(2)`، اول کجا دنبال math می‌گرده — sys.modules یا globals()؟",
+    "expected_outcome": "globals() (namespace ماژول جاری)",
     "hints": ["دو dict در دو سطح: ماژول جاری و ماژول math.", "sys.modules کجای این مسیر است؟"],
-    "rubric": "Correct: globals lookup → module object (cached in sys.modules) → __dict__ lookup → call; roles of each dict stated. Partial: two of three. Incorrect: thinks import copies functions into globals."
+    "rubric": "Correct if response says math is first looked up in globals() (the current module's namespace)."
   }
 ]

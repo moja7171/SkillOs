@@ -15,13 +15,13 @@
   {
     "key": "why-import-class-not-module",
     "title": "چرا datetime.datetime زشته؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
     "estimated_minutes": 2,
-    "prompt": "چرا این درس توصیه می‌کنه به‌جای `import datetime` و نوشتن `datetime.datetime(...)`، مستقیم کلاس رو با `from datetime import datetime` وارد کنیم؟",
-    "expected_outcome": "چون ماژول و کلاس هر دو اسمشون datetime‌ه؛ اگه فقط ماژول رو import کنیم، هر بار باید بنویسیم datetime.datetime(...) که تکراری و بدقواره‌ست. با import مستقیم کلاس، می‌شه ساده‌تر نوشت datetime(...).",
+    "prompt": "چرا توصیه می‌شه به‌جای import datetime، مستقیم `from datetime import datetime` بنویسیم؟",
+    "expected_outcome": "چون ماژول و کلاس هم‌نامن (datetime.datetime تکراریه)",
     "hints": ["ماژول datetime یه کلاس هم‌نام به اسم datetime داره.", "import کردن مستقیم کلاس، از تکرار اسم جلوگیری می‌کنه."],
-    "rubric": "Correct if the answer explains the module and class share the name datetime, so importing the class directly avoids the awkward datetime.datetime repetition."
+    "rubric": "Correct if response says the module and class share the name datetime, and direct import avoids repetition."
   },
   {
     "key": "parse-and-format",

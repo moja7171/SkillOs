@@ -23,29 +23,29 @@
   {
     "key": "choose-interview-type-and-mode",
     "title": "کدوم نوع مصاحبه و چه شکلی؟",
-    "form": "scenario",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 5,
-    "prompt": "تیم می‌خواد از ۲۰ نگهبان جنگل که به‌تازگی از پهپاد بذرپاش استفاده کردن، بازخورد بگیره — هدفشون کشف مشکلات و بهبودهای احتمالی محصول، نه صرفاً تأیید یه لیست سؤال ثابت. طبق این درس، کدوم نوع مصاحبه (سؤال آماده / محاوره‌ای / بدون سؤال آماده) و کدوم شکل (فردی / گروهی) مناسب‌تره؟ استدلالت رو بنویس.",
-    "expected_outcome": "چون هدف کشف مشکلات و بهبودهای ناشناخته‌ست (نه تأیید یه لیست ثابت)، مصاحبه‌ی محاوره‌ای یا بدون سؤال از پیش آماده مناسب‌تره — به مصاحبه‌شونده اجازه می‌ده روی چیزی که براش مهمه تمرکز کنه. برای شکل، مصاحبه‌ی فردی بهتره چون بازخورد کمتر مغرضانه‌ست و خطر تفکر گروهی (کسی که با یه فیچر مشکل داره ولی جلوی گروه موافقت می‌کنه) رو نداره — هرچند وقت و منابع بیشتری می‌بره.",
+    "estimated_minutes": 2,
+    "prompt": "تیم می‌خواد از ۲۰ نگهبان جنگل بازخورد بگیره تا مشکلات ناشناخته رو کشف کنه، نه تأیید یه لیست ثابت. کدوم نوع مصاحبه (سؤال آماده/محاوره‌ای/بدون سؤال آماده) و کدوم شکل (فردی/گروهی) مناسب‌تره؟",
+    "expected_outcome": "محاوره‌ای یا بدون سؤال آماده / فردی",
     "hints": [
       "کدوم نوع مصاحبه برای کشف چیزهای ناشناخته (نه تأیید فرضیه‌ی از پیش) بهتره؟",
       "تفکر گروهی (groupthink) چه خطری برای این هدف خاص داره؟"
     ],
-    "rubric": "Correct if response recommends the conversational or no-prepared-questions interview type (for open discovery) and individual interviews (to avoid groupthink bias), with reasoning for both. Correct_with_hint if only one of the two choices is justified correctly. Incorrect if the structured/prepared-questions type or group format is recommended without addressing the tradeoffs."
+    "rubric": "Correct if both are right: conversational/no-prepared-questions type, and individual format. Correct_with_hint if only one is right."
   },
   {
     "key": "average-vs-expert-interviewee",
     "title": "کاربر متوسط یا متخصص؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا برای انتخاب مصاحبه‌شونده‌های «کاربر» باید سراغ نماینده‌ی متوسط بریم، ولی برای «کارشناس حوزه» باید سراغ متخصص‌ترین افراد بریم؟ در ۲ تا ۳ جمله توضیح بده.",
-    "expected_outcome": "کاربران متوسط نماینده‌ی بازار اصلی محصول‌ان — تمرکز روی اون‌ها باعث می‌شه محصول برای اکثریت بازار موفق بشه، نه فقط برای موارد استثنایی. اما برای کارشناسان حوزه، نمایندگان متوسط عمق تخصص لازم برای شناسایی اطلاعات مهمی که روی طراحی سیستم اثر می‌ذاره رو ندارن — باید متخصص‌ترین و باتجربه‌ترین افراد رو انتخاب کرد تا نیازمندی‌های حیاتی از قلم نیفتن.",
+    "estimated_minutes": 2,
+    "prompt": "چرا برای مصاحبه‌شونده‌ی «کاربر» باید سراغ نماینده‌ی متوسط بریم، ولی برای «کارشناس حوزه» باید سراغ متخصص‌ترین افراد بریم؟",
+    "expected_outcome": "کاربر متوسط = بازار اصلی / کارشناس متوسط عمق تخصص کافی نداره",
     "hints": [
-      "برای کاربران، درس گفت هدف «بازار وسیع‌تر» بود — چرا کاربر متوسط این رو بهتر نشون می‌ده؟",
-      "برای کارشناسان، درس گفت نماینده‌ی متوسط «عمق تخصص لازم» رو نداره — این عمق برای چی لازمه؟"
+      "برای کاربران، درس گفت هدف «بازار وسیع‌تر» بود.",
+      "برای کارشناسان، درس گفت نماینده‌ی متوسط «عمق تخصص لازم» رو نداره."
     ],
-    "rubric": "Correct if response explains that average users represent the broader market for product success, while average representatives of expert groups lack the depth needed to surface critical design-affecting information, so experts must be chosen for those roles. Correct_with_hint if only one side of the distinction is explained. Incorrect otherwise."
+    "rubric": "Correct if response explains average users represent the broader market, while average experts lack the depth needed."
   }
 ]

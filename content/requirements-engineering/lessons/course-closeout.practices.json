@@ -1,16 +1,16 @@
 [
   {
     "key": "toolbox-mindset-reflection",
-    "title": "ذهنیت جعبه‌ابزار",
-    "form": "explanation",
+    "title": "استعاره‌ی جعبه‌ابزار یعنی چی؟",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 4,
-    "prompt": "مدرس دوره رو به یه جعبه‌ابزار توی گاراژ تشبیه کرد. این استعاره درباره‌ی نحوه‌ی استفاده از چیزی که توی این دوره یاد گرفتید، چی می‌گه؟",
-    "expected_outcome": "یعنی محتوای دوره مجموعه‌ای از ابزارها و اصوله، نه یه فرایند سفت‌وسخت که باید کامل و به همون ترتیب دنبال بشه. برای هر پروژه، فقط ابزارهای مناسب همون کار رو برمی‌داریم؛ بعضی پروژه‌ها به تغییر کوچیک توی ابزارها نیاز دارن و بعضی می‌تونن دقیقاً همون‌ها رو دوباره استفاده کنن.",
+    "estimated_minutes": 2,
+    "prompt": "مدرس دوره رو به یه جعبه‌ابزار توی گاراژ تشبیه کرد. این یعنی محتوای دوره چیه — یه فرایند سفت‌وسخت یا چی؟",
+    "expected_outcome": "مجموعه‌ای از ابزارها/اصول، نه یه فرایند سفت‌وسخت",
     "hints": [
       "به جمله‌ی «فرایندهای سفت‌وسختی وجود نداره، فقط اصول» برگرد.",
-      "چرا مدرس گفت شاید لازم باشه به دوره برگردید؟"
+      "برای هر پروژه فقط ابزارهای مناسب همون کار رو برمی‌داریم."
     ],
-    "rubric": "Full credit captures that course content is a flexible toolkit to draw from per-project, not a rigid process to follow verbatim."
+    "rubric": "Correct if response says the course content is a flexible toolkit/set of principles, not a rigid process."
   }
 ]

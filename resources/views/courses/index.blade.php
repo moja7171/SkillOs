@@ -1,10 +1,16 @@
-<x-app-layout title="همه‌ی دوره‌ها">
+<x-app-layout :title="$mine ? 'دوره‌های من' : 'همه‌ی دوره‌ها'">
     <div class="px-4 sm:px-8 py-7 max-w-[1600px] mx-auto" x-data="{ active: @js($activeCategory) }">
-        <h1 class="m-0 text-[22px] font-bold mb-1">همه‌ی دوره‌ها</h1>
-        <p class="text-muted mb-5">دوره‌ای که می‌خوای رو بردار؛ پیشرفتت فقط برای خودته.</p>
+        <h1 class="m-0 text-[22px] font-bold mb-1">{{ $mine ? 'دوره‌های من' : 'همه‌ی دوره‌ها' }}</h1>
+        <p class="text-muted mb-5">{{ $mine ? 'دوره‌هایی که برداشتی.' : 'دوره‌ای که می‌خوای رو بردار؛ پیشرفتت فقط برای خودته.' }}</p>
 
         @if ($courses->isEmpty())
-            <div class="card p-10 text-center text-muted">هنوز دوره‌ای وارد نشده. <span class="mono text-[12px]">php artisan content:import &lt;slug&gt;</span></div>
+            <div class="card p-10 text-center text-muted">
+                @if ($mine)
+                    هنوز هیچ دوره‌ای برنداشتی. <a href="{{ route('courses.index') }}" class="text-ink underline">از بین همه‌ی دوره‌ها</a> یکی رو بردار.
+                @else
+                    هنوز دوره‌ای وارد نشده. <span class="mono text-[12px]">php artisan content:import &lt;slug&gt;</span>
+                @endif
+            </div>
         @endif
 
         @foreach ($coursesByCategory as $category => $group)

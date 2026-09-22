@@ -19,6 +19,13 @@ class CourseController extends Controller
             ->orderBy('title')
             ->get();
 
+        // "دوره‌های من" (nav submenu) reuses this same page/view, just pre-filtered to
+        // courses the user already enrolled in — no separate controller/route needed.
+        $mine = $request->boolean('mine');
+        if ($mine) {
+            $courses = $courses->filter(fn ($c) => $c->enrollments->isNotEmpty())->values();
+        }
+
         // Display-only grouping (DECISIONS.md §58) — just makes the catalog page easier to
         // scan, no effect on enrollment/planner/streak. Category section order is fixed here;
         // uncategorized courses (a local fixture, say) fall into a trailing group with no label.
@@ -33,7 +40,7 @@ class CourseController extends Controller
             ? $request->query('category')
             : 'all';
 
-        return view('courses.index', compact('courses', 'coursesByCategory', 'activeCategory'));
+        return view('courses.index', compact('courses', 'coursesByCategory', 'activeCategory', 'mine'));
     }
 
     public function show(Request $request, Course $course): View

@@ -13,12 +13,12 @@
   {
     "key": "map-returns-iterable",
     "title": "چرا هیچی چاپ نشد؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "intro",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو زده و می‌گه «print که خروجی عجیبی داد، نه یه لیست»:\n```python\nresult = map(lambda x: x * 2, [1, 2, 3])\nprint(result)\n```\nدر ۱ تا ۲ جمله بهش بگو چرا، و چطور یه لیست واقعی بگیره.",
-    "expected_outcome": "map یه شیء map برمی‌گردونه (چیزی شبیه <map object at ...>)، نه مستقیم یه لیست. برای گرفتن لیست واقعی باید نتیجه رو با list() ببندی: list(map(...)).",
+    "estimated_minutes": 2,
+    "prompt": "`result = map(lambda x: x*2, [1,2,3])` بعد `print(result)` یه چیز عجیب چاپ می‌کنه، نه لیست. چرا، و چطور لیست واقعی بگیریم؟",
+    "expected_outcome": "map یه شیء map برمی‌گردونه / با list(map(...)) ببندیمش",
     "hints": ["map خودش پیمایش‌پذیره، ولی از نوع list نیست.", "list(...) دور کل عبارت map(...) رو بگیر."],
-    "rubric": "Correct if the answer explains map() returns a map object (not a list directly) and that wrapping with list() gives the actual list."
+    "rubric": "Correct if response says map() returns a map object (not a list) and list() is needed to materialize it."
   }
 ]

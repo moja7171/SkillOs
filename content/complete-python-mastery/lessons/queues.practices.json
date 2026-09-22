@@ -25,13 +25,13 @@
   },
   {
     "key": "why-deque-over-list",
-    "title": "چرا deque به‌جای لیست؟",
-    "form": "explanation",
+    "title": "چرا deque از list سریع‌تره؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "یه هم‌تیمی می‌گه «چه فرقی می‌کنه از لیست با pop(0) استفاده کنم یا از deque با popleft()؟ هر دو یه کارو می‌کنن.» در ۲ تا ۳ جمله بهش توضیح بده کجا این فرق واقعاً مهمه.",
-    "expected_outcome": "از نظر نتیجه یکی‌ان، ولی از نظر کارایی فرق دارن: حذف از ابتدای یه لیست بزرگ باعث می‌شه پایتون همه‌ی اعضای بعدی رو جابه‌جا کنه (کند، مخصوصاً با صف‌های بزرگ)؛ popleft() روی deque این کار رو بدون جابه‌جایی بقیه انجام می‌ده، پس همیشه سریعه — این فرق فقط توی صف‌های بزرگ محسوسه.",
+    "estimated_minutes": 2,
+    "prompt": "list.pop(0) و deque.popleft() نتیجه‌ی یکسان می‌دن. کدومش برای صف‌های بزرگ سریع‌تره، و چرا؟",
+    "expected_outcome": "deque.popleft() (چون pop(0) باید بقیه‌ی اعضا رو جابه‌جا کنه)",
     "hints": ["حذف از ابتدای لیست یعنی جابه‌جاکردن همه‌ی اعضای بعدی.", "این فرق فقط وقتی محسوسه که صف خیلی بزرگ باشه."],
-    "rubric": "Correct if the answer explains that list.pop(0) requires shifting all remaining items (slow for large lists) while deque.popleft() doesn't, and notes this matters mainly at scale."
+    "rubric": "Correct if response says deque.popleft() is faster because list.pop(0) requires shifting all remaining items."
   }
 ]

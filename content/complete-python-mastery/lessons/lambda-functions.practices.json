@@ -23,13 +23,13 @@
   },
   {
     "key": "when-not-to-use-lambda",
-    "title": "این باید لامبدا باشه؟",
-    "form": "explanation",
+    "title": "تابع پیچیده رو باید لامبدا کرد؟",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی می‌خواد یه تابع ۱۰ خطی (با چند تا شرط و حلقه) رو به یه لامبدا تبدیل کنه تا «کد کوتاه‌تر بشه». در ۱ تا ۲ جمله بهش بگو این ایده‌ی خوبیه یا نه، و چرا.",
-    "expected_outcome": "نه، ایده‌ی خوبی نیست. لامبدا برای توابع کوچیک و یک‌بارمصرف مناسبه؛ یه تابع پیچیده با چند شرط و حلقه توی یه def معمولی با اسم مشخص، خیلی خواناتر و قابل‌نگهداری‌تره.",
+    "estimated_minutes": 2,
+    "prompt": "یه هم‌تیمی می‌خواد یه تابع ۱۰ خطی با چند شرط و حلقه رو به لامبدا تبدیل کنه. ایده‌ی خوبیه؟",
+    "expected_outcome": "نه (لامبدا فقط برای توابع کوچیک و تک‌عبارتیه)",
     "hints": ["لامبدا فقط یه عبارت تک‌خطی می‌تونه داشته باشه، نه چند شرط/حلقه.", "خوانایی و قابل‌نگهداری‌بودن رو در نظر بگیر."],
-    "rubric": "Correct if the answer says no, and explains lambdas are meant for small, single-expression, one-off functions, not complex multi-line logic."
+    "rubric": "Correct if response says no, lambdas are meant for small single-expression functions."
   }
 ]

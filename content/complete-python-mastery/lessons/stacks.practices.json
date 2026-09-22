@@ -23,13 +23,13 @@
   },
   {
     "key": "empty-stack-check",
-    "title": "یه هم‌تیمی خطا گرفته",
-    "form": "explanation",
+    "title": "چرا IndexError گرفتیم؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته و با `IndexError: pop from empty list` مواجه شده:\n```python\nhistory = []\nlast = history.pop()\n```\nچرا این اتفاق افتاده، و چطور جلوش رو بگیریم؟",
-    "expected_outcome": "history خالیه، پس هیچ عضوی برای pop کردن نیست. قبل از صدازدن pop()، باید چک کنیم پشته خالی نیست: `if history: last = history.pop()` یا `if not history: ...`.",
+    "estimated_minutes": 2,
+    "prompt": "`history = []` بعد `history.pop()` → IndexError: pop from empty list. چرا، و قبل از pop باید چی چک کنیم؟",
+    "expected_outcome": "history خالیه / قبل از pop باید چک کنیم پشته خالی نیست",
     "hints": ["یه لیست خالی هیچ عضوی برای pop نداره.", "قبل از pop، با not یا یه شرط ساده چک کن پشته خالی نیست."],
-    "rubric": "Correct if the answer explains the stack is empty and proposes checking emptiness (e.g. `if history:` or `if not history:`) before calling pop()."
+    "rubric": "Correct if response says the stack is empty and an emptiness check is needed before pop()."
   }
 ]

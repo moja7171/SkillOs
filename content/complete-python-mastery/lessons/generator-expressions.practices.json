@@ -14,24 +14,24 @@
   },
   {
     "key": "generator-no-len",
-    "title": "یه هم‌تیمی خطا گرفته",
-    "form": "explanation",
+    "title": "چرا generator طول نداره؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته:\n```python\nsquares = (x * x for x in range(10))\nprint(len(squares))\n```\nو با `TypeError: object of type 'generator' has no len()` مواجه شده. چرا، و اگه واقعاً طول رو لازم داره چی‌کار کنه؟",
-    "expected_outcome": "generator مقادیرش رو از قبل نمی‌سازه، پس نمی‌دونه تا پیمایش کامل، چندتا مقدار قراره تولید کنه — برای همین طول نداره. اگه واقعاً طول لازمه، باید یا از یه list comprehension استفاده کنه (کروشه به‌جای پرانتز)، یا generator رو با list() به لیست تبدیل کنه.",
-    "hints": ["generator مقادیرش رو یکی‌یکی و توی لحظه تولید می‌کنه، نه از قبل.", "برای طول لازم داری، به یه لیست تبدیلش کن یا از اول با کروشه بسازش."],
-    "rubric": "Correct if the answer explains generators don't precompute their values (so no length is known in advance) and proposes converting to a list or using a list comprehension when length is needed."
+    "estimated_minutes": 2,
+    "prompt": "`squares = (x*x for x in range(10))` بعد `len(squares)` → TypeError: generator has no len(). چرا؟",
+    "expected_outcome": "generator مقادیرش رو از قبل نمی‌سازه (lazy)",
+    "hints": ["generator مقادیرش رو یکی‌یکی و توی لحظه تولید می‌کنه، نه از قبل.", "برای طول لازم داری، به یه لیست تبدیلش کن."],
+    "rubric": "Correct if response says generators don't precompute their values ahead of time."
   },
   {
     "key": "when-to-use-generator",
     "title": "لیست یا generator؟",
-    "form": "explanation",
+    "form": "short_answer",
     "difficulty": "stretch",
-    "estimated_minutes": 4,
-    "prompt": "داری یه تابع می‌نویسی که یک میلیون رکورد رو یکی‌یکی پردازش می‌کنه (فقط یه‌بار، به‌ترتیب، بدون نیاز به طول یا برگشتن به عقب). list comprehension بهتره یا generator expression؟ چرا؟",
-    "expected_outcome": "generator expression — چون فقط یه‌بار و به‌ترتیب پیمایش می‌کنیم، نیازی به نگه‌داشتن کل یک میلیون رکورد توی حافظه نیست؛ generator هر رکورد رو توی لحظه تولید می‌کنه، خیلی کم‌حجم‌تر از یه لیست میلیونی.",
-    "hints": ["نیازی به طول یا دسترسی مجدد به مقادیر نیست.", "حجم حافظه‌ی generator تقریباً ثابته، فرقی نداره تعداد چقدر باشه."],
-    "rubric": "Correct if the answer picks generator expression and explains the memory benefit for a large one-pass iteration."
+    "estimated_minutes": 2,
+    "prompt": "برای پردازش یک‌بار و به‌ترتیب یک میلیون رکورد (بدون نیاز به طول)، list comprehension بهتره یا generator expression؟",
+    "expected_outcome": "generator expression (حافظه‌ی کمتر)",
+    "hints": ["نیازی به طول یا دسترسی مجدد به مقادیر نیست.", "حجم حافظه‌ی generator تقریباً ثابته."],
+    "rubric": "Correct only if response picks generator expression."
   }
 ]

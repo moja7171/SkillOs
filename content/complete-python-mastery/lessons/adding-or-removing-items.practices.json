@@ -14,13 +14,13 @@
   },
   {
     "key": "remove-only-first",
-    "title": "یه هم‌تیمی گیج شده",
-    "form": "explanation",
+    "title": "چرا remove فقط یکی رو حذف کرد؟",
+    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه هم‌تیمی این کد رو نوشته تا همه‌ی «spam» ها رو از لیست حذف کنه:\n```python\ntags = [\"spam\", \"news\", \"spam\", \"promo\"]\ntags.remove(\"spam\")\nprint(tags)\n```\nمی‌گه انتظار داشته هر دو «spam» حذف بشن ولی یکیش هنوز مونده. چرا، و چطور هر دو تا رو حذف کنیم؟",
-    "expected_outcome": "remove فقط اولین موردی که پیدا می‌کنه رو حذف می‌کنه، نه همه‌ی موارد تکراری. برای حذف همه‌شون باید توی یه حلقه پیمایش کنیم و هربار remove رو صدا بزنیم تا هیچ‌کدوم نمونه (یا با list comprehension، فیلترشون کنیم).",
+    "estimated_minutes": 2,
+    "prompt": "`tags.remove(\"spam\")` روی لیستی با دو تا «spam» صدا زده شده، ولی فقط یکیش حذف شد. چرا؟",
+    "expected_outcome": "remove فقط اولین موردی که پیدا کنه رو حذف می‌کنه",
     "hints": ["remove فقط یکی رو حذف می‌کنه، هر چند مورد باشه.", "برای حذف همه‌ی تکراری‌ها، یه راه تکرار زدن remove تا وقتی چیزی نمونده‌ست."],
-    "rubric": "Correct if the answer explains remove() only deletes the first match, and proposes looping (or filtering) to remove every occurrence."
+    "rubric": "Correct if response says remove() only deletes the first match."
   }
 ]

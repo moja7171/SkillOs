@@ -1,0 +1,37 @@
+[
+  {
+    "key": "hon-weather-lesson",
+    "title": "درسِ HONWeather چی بود؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق داستانِ این درس، چرا سوییچ‌کردن از `HONWeather` به `ENWeather` این‌قدر دردسرساز بود؟",
+    "options": [
+      "چون دو کلاس امضای متدِ متفاوتی داشتن",
+      "چون `HONWeather` مستقیماً با کلیدواژه‌ی new ساخته می‌شد، هر جایی که استفاده شده بود",
+      "چون `ENWeather` کندتر از `HONWeather` بود",
+      "چون تیم اصلاً دسترسی به کدِ منبع نداشت"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "چون `HONWeather` مستقیماً با `new` ساخته می‌شد — هر جایی توی اپلیکیشن که استفاده شده بود، تیم مجبور بود پیداش کنه و تغییرش بده. این دقیقاً همون مشکلِ «new چسبه»ست.",
+    "hints": [
+      "درس می‌گه چیزی که تیم متوجهش می‌شه چیه — یه ضرب‌المثل که توی درسِ اینترفیس‌ها هم دیدیم.",
+      "به این فکر کن: اگه به‌جای `new HONWeather()` یه متدِ فکتوری صدا زده می‌شد، این مشکل پیش می‌اومد؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "parameterized-factory",
+    "title": "فکتوریِ پارامتری",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، وقتی دو ارائه‌دهنده‌ی آب‌وهوا داریم (یکی برای آسیا، یکی برای اروپا)، چطور متدِ فکتوری تصمیم می‌گیره کدوم نمونه رو برگردونه؟",
+    "expected_outcome": "متدِ فکتوری یه پارامتر (مثلاً اسمِ قاره) می‌گیره و بر اساسش تصمیم می‌گیره کدوم پیاده‌سازی رو برگردونه — مثلاً با یه switch روی نامِ قاره.",
+    "hints": [
+      "درس یه نمونه‌کدِ دقیق برای همین سناریو نشون می‌ده.",
+      "یه نسخه‌ی رایجِ دیگه‌ی همین الگو، خودِ پارامتر رو از یه فایلِ پیکربندی می‌خونه، به‌جای گرفتنش از کدِ فراخوان."
+    ],
+    "rubric": "Correct if response explains the factory method takes a parameter (e.g. continent name) and decides which implementation to return based on it. Incorrect if it gives a vague or unrelated answer."
+  }
+]

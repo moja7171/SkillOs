@@ -1,0 +1,37 @@
+[
+  {
+    "key": "repository-vs-layered-audience",
+    "title": "الگوی Repository با معماریِ لایه‌ای چه فرقی داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، الگوی Repository و الگوی معماریِ لایه‌ای هر دو از یه اصلِ مشترک نشأت می‌گیرن. فرقِ اصلی‌شون چیه؟",
+    "options": [
+      "الگوی Repository فقط برای NoSQL کار می‌کنه",
+      "مخاطبشون فرق داره — لایه‌ای بیشتر برای معمارها، Repository بیشتر برای توسعه‌دهنده‌ها",
+      "الگوی Repository نیازی به فکتوری نداره",
+      "هیچ فرقی ندارن، دقیقاً یه چیزن"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "هر دو از یه اصلِ مشترک (منعطف و قابل‌نگهداری‌ترکردنِ نرم‌افزار) نشأت می‌گیرن، ولی فرقِ اصلیشون مخاطبشونه — الگوی لایه‌ای بیشتر توسط معمارها استفاده می‌شه، الگوهای طراحی بیشتر سمتِ توسعه‌دهنده‌ها هدف‌گذاری شدن.",
+    "hints": [
+      "درس صراحتاً می‌گه «فرقِ اصلیشون مخاطبشونه».",
+      "به این فکر کن: کی معمولاً درباره‌ی لایه‌ها تصمیم می‌گیره، و کی درباره‌ی الگوهای طراحی؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "column-rename-scenario",
+    "title": "غلطِ تایپیِ یه اسمِ ستون",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق داستانِ این درس، یه غلطِ تایپیِ کوچیک توی اسمِ یه ستون، توی سیستمِ بدونِ Repository چه تأثیری داشت؟ و توی سیستمی که از الگوی Repository استفاده می‌کرد، همین تغییر چطور مدیریت می‌شد؟",
+    "expected_outcome": "توی سیستمِ بدونِ Repository، توسعه‌دهنده‌ها باید همه‌ی متدهایی که مستقیم SQL صادر می‌کردن رو می‌گشتن و تغییر می‌دادن — یه کارِ طاقت‌فرسا که همه‌ی تست‌ها رو هم دوباره لازم می‌کرد. توی سیستمِ با Repository، فقط کلاسِ Repository (که این ستون رو می‌شناسه) تغییر می‌کنه؛ بقیه‌ی کد که با اینترفیسِ IEmployeesRepository کار می‌کنه، اصلاً دست‌نخورده می‌مونه.",
+    "hints": [
+      "درس این داستان رو دقیقاً با عنوانِ «سه ماه بعد، فاجعه اتفاق می‌افته» تعریف می‌کنه.",
+      "به این فکر کن: چرا فقط یه کلاس باید تغییر کنه وقتی از Repository استفاده می‌کنیم؟"
+    ],
+    "rubric": "Correct if response explains both scenarios: without repository, the whole codebase must be searched and modified; with repository, only the repository class changes while calling code stays untouched. Correct_with_hint if only one scenario is explained. Incorrect if neither is explained correctly."
+  }
+]

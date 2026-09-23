@@ -1,0 +1,37 @@
+[
+  {
+    "key": "two-purposes-mcq",
+    "title": "لاگ‌گیری فقط برای خطاست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، یه سیستمِ خوب، لاگ‌گیری رو برای چند هدف استفاده می‌کنه؟",
+    "options": [
+      "فقط یه هدف: ردیابیِ خطاها",
+      "دو هدف: ردیابیِ خطاها، و جمع‌آوریِ داده‌ی عملیاتی",
+      "سه هدف: خطا، امنیت، و بازاریابی",
+      "لاگ‌گیری فقط برای دیباگ‌کردنِ موقعِ توسعه‌ست"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "دو هدف: ردیابیِ خطاها (استثناها با جزئیاتِ کامل)، و جمع‌آوریِ داده‌ی عملیاتی (مثلِ بازدیدِ ماژول‌ها، performanceِ متدها، حتی بازسازیِ جریانِ یه کاربرِ خاص).",
+    "hints": [
+      "درس دقیقاً با «۱.» و «۲.» این دو هدف رو می‌شماره.",
+      "یکی از این اهداف مربوط به استثناهاست، اون یکی به داده‌ی گسترده‌تری فراتر از خطا."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "where-to-store-logs",
+    "title": "لاگ‌ها کجا باید ذخیره بشن؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، محلِ ذخیره‌ی لاگ‌ها (فایل، دیتابیس، event log) چقدر اهمیت داره؟ چی واقعاً مهمه؟",
+    "expected_outcome": "محلِ دقیقِ ذخیره‌سازی چندان مهم نیست — هر جایی خوبه. چیزی که واقعاً مهمه اینه که واقعاً داده رو ذخیره کنی و بتونی بهش دسترسی داشته باشی.",
+    "hints": [
+      "درس صراحتاً می‌گه «واقعاً مهم نیست کجا».",
+      "به جمله‌ی پایانیِ درس فکر کن — چه شرطی رو حیاتی می‌دونه؟"
+    ],
+    "rubric": "Correct if response says the storage location doesn't matter much, and what matters is actually logging comprehensively and being able to access the data. Incorrect if it insists on a specific storage location as the key factor."
+  }
+]

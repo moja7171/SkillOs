@@ -1,0 +1,51 @@
+[
+  {
+    "key": "config-file-factory",
+    "title": "پارامتر از فایلِ پیکربندی",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، یه نسخه‌ی خیلی رایج از متدِ فکتوری، پارامترِ تصمیم‌گیری رو از کجا می‌خونه؟",
+    "options": [
+      "همیشه از کدِ فراخوان می‌گیره",
+      "از یه فایلِ پیکربندی، بدونِ اینکه اصلاً پارامتری بگیره",
+      "همیشه یه عدد تصادفی تولید می‌کنه",
+      "از دیتابیس در لحظه‌ی اجرا کوئری می‌زنه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "یه نسخه‌ی خیلی رایج اینه که فکتوری اصلاً پارامتری نگیره، بلکه پارامتر رو از یه فایلِ پیکربندی بخونه — مخصوصاً توی پیاده‌سازیِ DAL، جایی که نوعِ دیتابیس توی پیکربندی ذخیره می‌شه.",
+    "hints": [
+      "درس دقیقاً همین الگو رو با عنوانِ «یه نسخه‌ی خیلی رایج» معرفی می‌کنه.",
+      "این الگو مخصوصاً توی پیاده‌سازیِ کدوم لایه رایجه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "constructor-injection-advantage",
+    "title": "مزیتِ اصلیِ تزریقِ سازنده",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، مزیتِ اصلیِ تزریقِ سازنده (constructor injection) نسبت به الگوی سنتیِ متدِ فکتوری چیه؟",
+    "expected_outcome": "پایداری و راحتیِ تست — کلاسی که وابستگی‌هاش توی سازنده تزریق می‌شن، تستش خیلی راحت‌تره، چون متدِ تست می‌تونه کلاس رو با آبجکت‌های mock نمونه‌سازی کنه.",
+    "hints": [
+      "درس این مزیت رو با فونتِ بولد معرفی می‌کنه: «پایداری و راحتیِ تست».",
+      "به مثالِ `mockLogger` که درس میاره فکر کن."
+    ],
+    "rubric": "Correct if response mentions testability/stability advantage, specifically the ability to instantiate the class with mock objects. Incorrect if it gives a vague or unrelated answer."
+  },
+  {
+    "key": "di-vs-interface-recap",
+    "title": "اینترفیس یا تزریقِ وابستگی؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "درسِ قبل درباره‌ی اینترفیس‌ها بود و این درس درباره‌ی تزریقِ وابستگی. در ۲ تا ۳ جمله توضیح بده این دو مفهوم چه رابطه‌ای با هم دارن — اینترفیس چه سؤالی رو باز می‌ذاره، و تزریقِ وابستگی چطور جوابش می‌ده؟",
+    "expected_outcome": "اینترفیس اجازه می‌ده کدِ فراخوان با یه قرارداد کار کنه به‌جای یه کلاسِ مشخص، ولی این سؤال رو باز می‌ذاره که بالاخره یه پیاده‌سازیِ واقعی از کجا میاد. تزریقِ وابستگی جوابِ همین سؤاله — تکنیکی که پیاده‌سازیِ مشخص رو (مثلاً از طریقِ متدِ فکتوری یا سازنده) به اینترفیس تزریق می‌کنه، بدونِ اینکه کدِ فراخوان بدونه کدوم پیاده‌سازیه.",
+    "hints": [
+      "درس با «اون درس رو با یه سؤالِ باز تموم کردیم» شروع می‌شه — اون سؤال چی بود؟",
+      "به این فکر کن: اینترفیس فقط قراردادـه؛ کی مسئولِ پیداکردنِ پیاده‌سازیِ واقعیه؟"
+    ],
+    "rubric": "Correct if response explains interfaces leave open the question of where the concrete implementation comes from, and DI answers it by injecting the implementation. Correct_with_hint if only a partial connection is made. Incorrect if the two concepts are conflated or no real connection is drawn."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "bank-account-example",
+    "title": "چرا حسابِ بانکی مثالِ خوبیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا صورت‌حسابِ بانکی مثالِ خوبی برای Event Sourcing‌ـه؟",
+    "options": [
+      "چون یه موجودیت با چند فیلدِ ساده نشون می‌ده",
+      "چون به‌جای وضعیتِ فعلی، یه لیست از رویدادها (تراکنش‌ها) رو نشون می‌ده",
+      "چون همیشه سریع‌تر از دیتابیسِ معمولیه",
+      "چون هیچ تاریخچه‌ای نداره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "صورت‌حسابِ بانکی به‌جای نشون‌دادنِ خودِ موجودیت (مثلاً فقط موجودیِ فعلی)، یه لیست از رویدادهایی (تراکنش‌ها) که برای حساب اتفاق افتاده رو نشون می‌ده — دقیقاً همون چیزی که Event Sourcing انجام می‌ده.",
+    "hints": [
+      "درس صراحتاً می‌گه «توجه کن اینجا یه موجودیت با چند فیلدِ داده نمی‌بینی».",
+      "به این فکر کن: صورت‌حساب چه چیزی رو لیست می‌کنه — موجودیِ فعلی یا تک‌تکِ تراکنش‌ها؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "pros-and-cons",
+    "title": "بزرگ‌ترین ضعفِ Event Sourcing چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، بارزترین ضعفِ Event Sourcing چیه؟",
+    "expected_outcome": "هیچ دیدِ یکپارچه و واحدی از موجودیت نداری — برای دیدنِ وضعیتِ فعلی، باید از همه‌ی رویدادها عبور کنی و وضعیت رو بسازی، که می‌تونه زمان و منابع بگیره.",
+    "hints": [
+      "درس این ضعف رو با «بارزترینش» معرفی می‌کنه.",
+      "به این فکر کن: اگه فقط رویدادها ذخیره می‌شن، دیدنِ وضعیتِ فعلی چطور ممکنه؟"
+    ],
+    "rubric": "Correct if response says the lack of a unified current-state view, requiring you to replay all events to build the current state. Incorrect if it names the storage-consumption weakness instead or gives a vague answer."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "cqrs-solves-event-sourcing-weakness",
+    "title": "CQRS چه مشکلی از Event Sourcing رو حل می‌کنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، CQRS دقیقاً کدوم ضعفِ Event Sourcing رو حل می‌کنه؟",
+    "options": [
+      "مصرفِ زیادِ فضای ذخیره‌سازی",
+      "سختیِ بازیابیِ داده، چون دیدِ یکپارچه‌ای از موجودیت وجود نداره",
+      "کندیِ عملیاتِ نوشتن",
+      "پیچیدگیِ مدلِ داده"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "CQRS مشکلِ سختیِ بازیابیِ داده رو حل می‌کنه — با ساختنِ یه دیتابیسِ دومِ همیشه‌به‌روز که وضعیتِ کاملِ موجودیت‌ها رو نشون می‌ده، بدونِ نیاز به عبور از همه‌ی رویدادها.",
+    "hints": [
+      "درس می‌گه «الگوی CQRS دقیقاً همین مشکل رو حل می‌کنه» — کدوم مشکل، همونی که توی بخشِ «ارتباط با Event Sourcing» توضیح داده شد.",
+      "به این فکر کن: دیتابیسِ B (بازیابی) دقیقاً چه چیزی رو ممکن می‌کنه که دیتابیسِ A (Event Sourcing) نمی‌تونست؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-cqrs-not-common",
+    "title": "چرا CQRS همه‌جا استفاده نمی‌شه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، دلیلِ اصلیِ اینکه CQRS این‌قدر رایج نیست چیه؟",
+    "expected_outcome": "سادگی — CQRS به دو دیتابیس، یه موتورِ همگام‌سازی، و یه مکانیزمِ Event Sourcing نیاز داره، که پیاده‌سازیِ همه‌شون می‌تونه خیلی پیچیده باشه و همیشه هم لازم نیست.",
+    "hints": [
+      "درس این دلیل رو با «دلیلِ اصلی» معرفی می‌کنه.",
+      "به این فکر کن: چند تا قطعه‌ی زیرساختیِ اضافه برای پیاده‌کردنِ CQRS لازمه؟"
+    ],
+    "rubric": "Correct if response says simplicity — the complexity of needing two databases, a sync engine, and event sourcing isn't always justified. Incorrect if it gives a vague or unrelated answer."
+  }
+]

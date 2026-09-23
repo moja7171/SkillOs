@@ -1,0 +1,23 @@
+[
+  {
+    "key": "three-patterns-mcq",
+    "title": "سه الگوی این بخش کدومن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، سه الگوی معماریِ پیشرفته‌ای که بررسی می‌کنیم کدومن؟",
+    "options": [
+      "Factory، Repository، Facade",
+      "میکروسرویس‌ها، Event Sourcing، CQRS",
+      "لایه‌ها، اتصالِ سست، Stateless",
+      "REST، صف، Push Notification"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "سه الگو: میکروسرویس‌ها، Event Sourcing، و CQRS.",
+    "hints": [
+      "درس این سه الگو رو با فونتِ بولد توی جمله‌ی آخر می‌شمره.",
+      "الگوهای گزینه‌ی اول مالِ بخشِ الگوهای طراحی بودن، نه این بخش."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  }
+]

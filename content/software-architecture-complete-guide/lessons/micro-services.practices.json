@@ -1,0 +1,51 @@
+[
+  {
+    "key": "monolith-problem-mcq",
+    "title": "کدوم مشکلِ مونولیت با میکروسرویس حل می‌شه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، توی یه سیستمِ مونولیت، اگه یه استثنا توی یه کامپوننت رخ بده چه اتفاقی می‌افته؟ و میکروسرویس این مشکل رو چطور حل می‌کنه؟",
+    "options": [
+      "کلِ فرایند کرش می‌کنه؛ میکروسرویس با اجراییِ جداگانه‌ی هر سرویس فقط همون سرویس رو تحتِ‌تأثیر می‌ذاره",
+      "هیچ اتفاقی نمی‌افته؛ میکروسرویس این مشکل رو نداشته",
+      "فقط performance کم می‌شه؛ میکروسرویس سرعت رو بالا می‌بره",
+      "فقط دیتابیس تحتِ‌تأثیر قرار می‌گیره"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "توی مونولیت، چون همه‌چیز توی یه فرایندِ واحد اجرا می‌شه، یه استثنا توی یه کامپوننت کلِ فرایند رو می‌ندازه. توی میکروسرویس، چون هر سرویس توی فرایندِ خودش اجرا می‌شه، فقط همون سرویس تحتِ‌تأثیر قرار می‌گیره و بقیه به کارشون ادامه می‌دن.",
+    "hints": [
+      "درس اولین مشکلِ مونولیت رو دقیقاً همین می‌داند.",
+      "به این فکر کن: مزیتِ اجرا‌شدنِ هر سرویس توی فرایندِ جدا چیه؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "netflix-monitoring",
+    "title": "چرا میکروسرویس به پایشِ جدی نیاز داره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق مثالِ Netflix توی این درس، چرا سیستم‌های مبتنی بر میکروسرویس باید همیشه یه راه‌حلِ پایش رو جزءِ لاینفکِ طراحی کنن؟",
+    "expected_outcome": "چون سیستم‌های میکروسرویسی می‌تونن کلی سرویس داشته باشن (Netflix بیشتر از ۷۰۰ تا داره) و واقع‌بینانه نیست انتظار داشته باشیم با این‌همه سرویس، همیشه همه‌چیز خوب کار کنه — پس پایشِ مداوم ضروریه.",
+    "hints": [
+      "درس عددِ دقیقِ Netflix رو می‌ده.",
+      "به این فکر کن: با ۷۰۰ سرویس، شانسِ اینکه همه‌شون همیشه سالم باشن چقدره؟"
+    ],
+    "rubric": "Correct if response explains the sheer number of microservices (Netflix's 700+) makes constant monitoring necessary since not everything can always work perfectly. Incorrect if it gives a vague or unrelated answer."
+  },
+  {
+    "key": "microservice-design-cost",
+    "title": "طراحیِ میکروسرویس همیشه سریع‌تره؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق داستانِ این درس، یه تیمِ ناآشنا با میکروسرویس، سه ماه صرفِ طراحیِ یه سرویسِ ۵۰۰ خطی کرد. طبق این درس، این چه چیزی رو نشون می‌ده؟",
+    "expected_outcome": "نشون می‌ده طراحیِ یه سیستمِ توزیع‌شده کارِ پیچیده‌ایه — خیلی سخت‌تر از مونولیت — و باید خودت رو برای فکرکردنِ زیاد درباره‌ی طراحیِ میکروسرویس آماده کنی، حتی اگه خروجیِ نهایی از نظرِ حجمِ کد کوچیک به نظر برسه.",
+    "hints": [
+      "درس این داستان رو زیرِ عنوانِ «خودِ معماری» به‌عنوانِ یکی از معایب میاره.",
+      "به این فکر کن: چرا زمانِ زیاد صرف‌شده با حجمِ کدِ کم (۵۰۰ خط) توی تضاده؟"
+    ],
+    "rubric": "Correct if response explains this illustrates the complexity of designing a distributed system, requiring much more upfront thinking than a monolith even for small outputs. Incorrect if it gives a vague or unrelated answer."
+  }
+]

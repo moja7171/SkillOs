@@ -1,0 +1,37 @@
+[
+  {
+    "key": "extend-vs-modify",
+    "title": "گسترش‌دادن در مقابل تغییردادن",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، توی یه سیستمِ توسعه‌پذیر، برای اضافه‌کردنِ یه قابلیتِ جدید (مثلِ فرمتِ CSV) چیکار می‌کنیم؟",
+    "options": [
+      "کدِ اصلی (مثلاً همون دستورِ switch) رو تغییر می‌دیم",
+      "کدِ جدید اضافه می‌کنیم و کارِ خودش رو می‌کنه، بدونِ اینکه کدِ اصلی تغییر کنه",
+      "کلِ سیستم رو از اول می‌نویسیم",
+      "قابلیتِ جدید رو نادیده می‌گیریم"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "توی سیستمِ توسعه‌پذیر، کارکردِ سیستم رو گسترش می‌دیم — یعنی کدِ جدید اضافه می‌کنیم که کارش رو بکنه، بدونِ اینکه لازم باشه کدِ اصلی تغییر کنه.",
+    "hints": [
+      "درس یه فعلِ کلیدی رو با فونتِ بولد نشون می‌ده: «گسترشش بدیم».",
+      "به فرقِ رویکردِ ساده‌لوحانه (switch statement) با رویکردِ توسعه‌پذیر (factory + interface) فکر کن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "switch-statement-problem",
+    "title": "مشکلِ دستورِ switch چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق مثالِ این درس، توی یه سیستمِ ساده‌لوحانه که فرمت‌ساز با یه دستورِ switch پیاده شده، اضافه‌کردنِ فرمتِ CSV چه مشکلی ایجاد می‌کنه؟",
+    "expected_outcome": "باید یه تکه‌ی مرکزیِ کد (خودِ switch) رو تغییر بدیم و همه‌ی تست‌های لازم رو دوباره اجرا کنیم تا مطمئن بشیم چیزی رو خراب نکردیم — دقیقاً همون کاری که یه سیستمِ توسعه‌پذیر لازم نداره.",
+    "hints": [
+      "درس این مشکل رو دقیقاً همین‌شکلی توصیف می‌کنه — به فعلِ «باید تغییر بدیم» و «تست‌های لازم» توجه کن.",
+      "این مشکل رو با راه‌حلِ factory method/interface که بعدش میاد مقایسه کن."
+    ],
+    "rubric": "Correct if response mentions having to modify the central switch code and re-run tests to avoid breaking anything. Incorrect if it gives an unrelated or vague answer."
+  }
+]

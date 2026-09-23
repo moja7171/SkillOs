@@ -1,0 +1,37 @@
+[
+  {
+    "key": "scale-out-vs-up-mcq",
+    "title": "Scale Out یا Scale Up؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، کدوم گزینه توصیفِ scale out‌ـه؟",
+    "options": [
+      "به یه ماشینِ مجازیِ موجود، CPU و حافظه‌ی بیشتر اضافه می‌کنی",
+      "فقط ماشین‌های مجازیِ جدید اضافه می‌کنی، بدونِ دست‌زدن به ماشین‌های موجود",
+      "کدِ اپلیکیشن رو بازنویسی می‌کنی تا سریع‌تر بشه",
+      "سرورِ فعلی رو با یه سرورِ قوی‌تر عوض می‌کنی"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Scale out یعنی فقط ماشین‌های مجازیِ جدید اضافه می‌کنی و ماشین‌های موجود رو دست نمی‌زنی؛ scale up یعنی به یه ماشینِ موجود منابعِ بیشتر اضافه می‌کنی.",
+    "hints": [
+      "درس این دو مفهوم رو با دو بولتِ جدا تعریف می‌کنه.",
+      "به این فکر کن: کدومش نیازی به دست‌زدن به سرورهای موجود نداره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-scale-out-preferred",
+    "title": "چرا همیشه scale out رو ترجیح بدیم؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، دو دلیلِ اصلی‌ای که scale out همیشه به scale up ترجیح داده می‌شه رو نام ببر و در ۲ تا ۳ جمله توضیح بده.",
+    "expected_outcome": "۱. افزونگی: هرچی ماشینِ مجازیِ بیشتری داشته باشی، بیشتر در برابرِ کرش‌کردنِ یه ماشین محافظت می‌شی. ۲. محدودیتِ منابع: یه محدودیتِ فیزیکی برای CPU/حافظه‌ای که می‌شه به یه سرور اضافه کرد وجود داره، ولی تقریباً هیچ محدودیتی برای تعدادِ ماشین‌های مجازیِ اضافه‌شده به load balancer نیست.",
+    "hints": [
+      "درس این دو دلیل رو با «۱.» و «۲.» شماره‌گذاری می‌کنه.",
+      "یکی از دلایل مربوط به مقاومت در برابرِ کرش‌کردنه، اون یکی مربوط به سقفِ فیزیکیِ منابع."
+    ],
+    "rubric": "Correct if both reasons are explained: redundancy (protection against a single machine crashing) and resource limits (a single server has a physical ceiling, adding more VMs doesn't). Partial if only one reason is explained. Incorrect if neither reason is given correctly."
+  }
+]

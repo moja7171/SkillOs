@@ -1,0 +1,37 @@
+[
+  {
+    "key": "manual-testing-not-related",
+    "title": "تستِ دستی به قابلیتِ تست ربط داره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، تستِ دستی (manual testing) چه ربطی به ویژگیِ کیفیِ «قابلیتِ تست» داره؟",
+    "options": [
+      "دقیقاً همون چیزیه که قابلیتِ تست دربارشه",
+      "هیچ ربطی نداره — قابلیتِ تست به تست واحد و تستِ یکپارچگی مربوطه، نه تستِ دستی",
+      "فقط برای سیستم‌های دسکتاپ مرتبطه",
+      "قابلیتِ تست فقط یه اسمِ دیگه برای تستِ دستیه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس صراحتاً می‌گه تستِ دستی هیچ ربطی به قابلیتِ تست نداره. قابلیتِ تست به این مربوطه که تست‌کردنِ کد با تست واحد و تستِ یکپارچگی چقدر راحته.",
+    "hints": [
+      "درس یه جمله‌ی کوتاه و صریح داره: «این نوع هیچ ربطی به قابلیت تست نداره».",
+      "به تفاوتِ نوعِ تست‌کننده (آدمِ واقعی در مقابل کد) فکر کن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "add-and-check-positive",
+    "title": "متدِ add که هم جمع می‌کنه هم چک می‌کنه",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق مثالِ این درس، اگه متدِ `add` هم عملِ جمع رو انجام بده، هم چک کنه اعداد مثبت‌ان یا نه، چه مشکلی از نظرِ قابلیتِ تست پیش میاد؟ و راه‌حلش چیه؟",
+    "expected_outcome": "مشکل داریم توی جداکردنِ اکشنِ جمع‌کردن از اعتبارسنجی و تستِ مجزای هر کدوم — چون متد دیگه فقط مسئولِ یه اکشن نیست. راه‌حل اینه که بررسیِ مثبت‌بودن رو توی یه متدِ جدا (مثلاً `checkForPositive`) بذاریم و جداگونه تستش کنیم.",
+    "hints": [
+      "درس دو ویژگیِ سیستمِ آسون‌برای‌تست رو معرفی کرده — کدومش اینجا نقض شده؟",
+      "درس دقیقاً اسمِ متدِ پیشنهادی برای جداکردنِ این منطق رو می‌گه."
+    ],
+    "rubric": "Correct if response identifies this violates the single-responsibility testability trait and explains the fix is separating the positivity check into its own method (e.g. checkForPositive) to test independently. Correct_with_hint if only the problem or only the fix is named. Incorrect if no real reasoning is given."
+  }
+]

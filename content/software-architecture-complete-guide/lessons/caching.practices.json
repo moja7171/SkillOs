@@ -1,0 +1,51 @@
+[
+  {
+    "key": "cache-rule-of-thumb",
+    "title": "قاعده‌ی سرانگشتیِ cache",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، cache باید چه نوع داده‌ای رو نگه داره؟",
+    "options": [
+      "داده‌ای که کم خونده می‌شه و زیاد تغییر می‌کنه",
+      "داده‌ای که زیاد خونده می‌شه و کم تغییر می‌کنه",
+      "فقط داده‌ی حساس مثل رمز عبور",
+      "فقط داده‌هایی که بزرگ‌تر از ۱ مگابایت‌ان"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "قاعده‌ی سرانگشتی: cache باید داده‌ای رو نگه داره که زیاد خونده می‌شه (تا بازیابیِ سریع تجربه‌ی کاربری رو بهبود بده) و کم تغییر می‌کنه (تا هم‌گام‌نگه‌داشتنش با دیتاستور دردسرساز نشه).",
+    "hints": [
+      "درس این قاعده رو توی یه بلاک‌کوت با فونتِ بولد می‌ده.",
+      "دو کلمه‌ی کلیدی: «زیاد خونده می‌شه» و «کم تغییر می‌کنه»."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "stock-quotes-stale-cache",
+    "title": "چرا قیمتِ سهام برای in-process cache مشکل‌سازه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق مثالِ این درس، اگه داده‌ی قیمتِ سهام (که هر ثانیه تغییر می‌کنه) توی cacheِ درون‌حافظه/درون‌فرایندِ سه سرورِ جدا نگه داری بشه، چه مشکلی پیش میاد؟ و چرا cache توزیع‌شده این مشکل رو نداره؟",
+    "expected_outcome": "وقتی سرور شماره‌ی یک قیمتِ سهام رو به‌روز می‌کنه، فقط cacheِ خودش رو به‌روز می‌کنه — cacheِ سرورهای دو و سه کهنه (stale) می‌مونه، پس کاربرهایی که به این سرورها مسیریابی می‌شن داده‌ی اشتباه می‌بینن. با cache توزیع‌شده، این مشکل نیست چون نودها به‌صورت داخلی همگام می‌شن و به‌روزرسانی بلافاصله بینِ همه‌شون پخش می‌شه.",
+    "hints": [
+      "درس دقیقاً همین سناریو رو با «سه سرور با load balancer» قدم‌به‌قدم توضیح می‌ده.",
+      "به این فکر کن: cache درون‌حافظه/درون‌فرایند بخشی از کدِ کدوم سرورِ خاصه؟"
+    ],
+    "rubric": "Correct if response explains only the updating server's in-process cache gets refreshed while other servers' caches go stale, and distributed cache avoids this via automatic node synchronization. Correct_with_hint if only one half is explained. Incorrect if neither is explained correctly."
+  },
+  {
+    "key": "which-cache-type",
+    "title": "کدوم نوع cache؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه سیستم می‌خواد آبجکت‌های پیچیده‌ی سفارشی رو با بهترین performanceِ ممکن روی یه سرورِ واحد کش کنه، بدونِ نیاز به توزیع بینِ چند سرور. طبق جدولِ این درس، کدوم نوع cache مناسب‌تره، و چرا؟",
+    "expected_outcome": "cacheِ درون‌حافظه/درون‌فرایند — چون performanceِ فوق‌العاده سریع‌تری داره (بدونِ عملیاتِ شبکه) و می‌تونه هر نوع آبجکتی رو ذخیره کنه، برخلافِ cacheِ توزیع‌شده که معمولاً فقط انواعِ پایه رو پشتیبانی می‌کنه.",
+    "hints": [
+      "درس جمع‌بندیِ نهایی رو با «از … استفاده کن اگه …» می‌ده — دو تا شرط برای هر نوع.",
+      "به این فکر کن: نیازِ توزیع بینِ چند سرور اینجا وجود نداره؛ کدوم نوع بدونِ این نیاز بهتره؟"
+    ],
+    "rubric": "Correct if response picks in-memory/in-process cache and explains both reasons: better performance (no network hop) and support for complex objects. Correct_with_hint if the right type is picked without full reasoning. Incorrect if distributed cache is picked."
+  }
+]

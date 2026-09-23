@@ -1,0 +1,37 @@
+[
+  {
+    "key": "two-problems-mcq",
+    "title": "دو مشکلِ انتخابِ فناوریِ ناآشنا",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، انتخابِ یه پشته‌ی فناوریِ ناآشنا برای تیمِ توسعه، دو مشکلِ اصلی می‌تونه ایجاد کنه. کدوم گزینه هر دو رو درست بیان می‌کنه؟",
+    "options": [
+      "تأخیر (زمانِ یادگیری) و کیفیتِ پایین (بی‌تجربگی در تله‌ها و best practiceها)",
+      "هزینه‌ی بیشتر و از‌دست‌رفتنِ کارمند",
+      "کاهشِ امنیت و افزایشِ حجمِ کد",
+      "فقط یه مشکل هست: تأخیر"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "دو مشکل: تأخیر (توسعه‌دهنده‌ها باید وقت بذارن با فناوریِ جدید آشنا بشن) و کیفیتِ پایین (بی‌تجربگی یعنی ندونستنِ تله‌های رایج و best practiceها).",
+    "hints": [
+      "درس دقیقاً با «مشکلِ اول» و «مشکلِ دوم» این دو رو می‌شماره.",
+      "یکی از مشکلات به زمان‌بندی مربوطه، اون یکی به کیفیتِ نتیجه."
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "dotnet-to-java-vs-desktop-to-python",
+    "title": "کدوم مهاجرت سخت‌تره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا مهاجرتِ یه توسعه‌دهنده‌ی بک‌اندِ .NET به Java، خیلی راحت‌تر از مهاجرتِ یه توسعه‌دهنده‌ی دسکتاپِ ویندوز به بک‌اندِ Python‌ـه؟",
+    "expected_outcome": ".NET و Java پلتفرم‌های نسبتاً مشابهی‌ان (هر دو شیءگرا و static-typed)، پس مهارت‌ها منتقل می‌شن. ولی توسعه‌ی دسکتاپ از نظرِ مفهومی با توسعه‌ی وب کاملاً فرق داره و به طرزِ فکرِ متفاوتی نیاز داره، و علاوه بر این، حرکت از یه زبانِ static-typed به Pythonِ dynamic هم خودش یه تغییرِ بزرگه.",
+    "hints": [
+      "درس دقیقاً این دو مثال رو کنارِ هم می‌ذاره تا فرقشون رو نشون بده.",
+      "به این فکر کن: چه چیزی بینِ .NET و Java مشترکه که بینِ توسعه‌ی دسکتاپ و بک‌اندِ وب مشترک نیست؟"
+    ],
+    "rubric": "Correct if response explains .NET/Java are conceptually similar platforms (skills transfer) while desktop-to-web requires a totally different mindset plus a static-to-dynamic typing shift. Incorrect if it gives a vague or unrelated answer."
+  }
+]

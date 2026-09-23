@@ -1,0 +1,37 @@
+[
+  {
+    "key": "four-subsections-mcq",
+    "title": "چهار زیربخشِ هر جزء",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، برای هر جزء چهار زیربخش لازمه. کدوم گزینه جزوِ این چهارتا *نیست*؟",
+    "options": [
+      "نقشِ جزء توی معماری",
+      "پشته‌ی فناوری",
+      "خلاصه‌ی مدیریتیِ جزء",
+      "دستورالعمل‌های توسعه"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "چهار زیربخش: نقشِ جزء، پشته‌ی فناوری، معماریِ جزء، دستورالعمل‌های توسعه. «خلاصه‌ی مدیریتی» جزوِ این‌ها نیست — اون یه بخشِ کاملاً جداگونه‌ست که یه‌بار برای کلِ سیستم نوشته می‌شه، نه به‌ازای هر جزء.",
+    "hints": [
+      "درس این چهارتا رو با شماره‌های ۱ تا ۴ می‌شماره.",
+      "خلاصه‌ی مدیریتی رو توی درسِ قبلی بررسی کردیم — یادته کجای سند میومد؟"
+    ],
+    "rubric": "Correct only if option 2 is selected."
+  },
+  {
+    "key": "dont-repeat-for-every-component",
+    "title": "لازمه برای هر جزء تکرار کنیم؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، اگه چند جزء همون دلایلِ انتخابِ فناوری رو داشته باشن، آیا باید توضیحِ کاملِ پشته‌ی فناوری رو برای هر کدوم جداگونه تکرار کنیم؟",
+    "expected_outcome": "نه — این فرایند رو فقط برای اولین جزء کامل انجام بده، و برای بقیه‌ی اجزایی که همون دلایل معتبره، خواننده رو به همون توضیح ارجاع بده، به‌جای کپی‌پیست‌کردنِ تکراری.",
+    "hints": [
+      "درس این نکته رو با عبارتِ «نکته‌ی مهم» معرفی می‌کنه.",
+      "به این فکر کن: تکرارِ همون توضیح برای ۱۰ جزءِ مشابه، سند رو چقدر طولانی‌تر می‌کنه بدونِ ارزشِ اضافه؟"
+    ],
+    "rubric": "Correct if response says no, do the full explanation for the first component and refer readers back to it for others with the same reasoning. Incorrect if it says every component needs its own full repeated explanation."
+  }
+]

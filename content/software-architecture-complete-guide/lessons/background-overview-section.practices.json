@@ -1,0 +1,37 @@
+[
+  {
+    "key": "no-tech-terms-mcq",
+    "title": "کدوم کلمه توی بخشِ پس‌زمینه ممنوعه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، کدوم کلمه نباید توی بخشِ پس‌زمینه ظاهر بشه؟",
+    "options": [
+      "«افزایشِ بهره‌وری»",
+      "«میکروسرویس»",
+      "«مدیریتِ منابعِ انسانی»",
+      "«نگهداریِ زیاد»"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "درس صراحتاً می‌گه این بخش نباید هیچ جزئیاتِ فنی یا اصطلاحِ معماری‌ای داشته باشه — «بدون میکروسرویس، بدون زبانِ برنامه‌نویسی، بدون کلاود، هیچی».",
+    "hints": [
+      "درس یه لیستِ کوتاه از کلماتِ ممنوعه می‌ده.",
+      "به این فکر کن: بقیه‌ی گزینه‌ها مثالِ خودِ درس برای محتوای کسب‌وکاریِ این بخشن."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-first-section-important",
+    "title": "چرا اولین فرصتِ اصلاح اینجاست؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا مهمه که خطاهای احتمالی توی بخشِ پس‌زمینه هرچه زودتر تصحیح بشن؟",
+    "expected_outcome": "چون بقیه‌ی بخش‌های سند روی همین بخش بنا می‌شن — اگه پس‌زمینه دقیق نباشه، احتمالاً بقیه‌ی بخش‌ها هم باید تصحیح بشن.",
+    "hints": [
+      "درس این دلیل رو با «اول» توضیح می‌ده.",
+      "به این فکر کن: بخشِ نیازمندی‌ها و نمای‌کلیِ معماری، روی چه چیزی ساخته می‌شن؟"
+    ],
+    "rubric": "Correct if response explains the rest of the document builds on this section, so an inaccuracy here cascades. Incorrect if it gives a vague or unrelated answer."
+  }
+]

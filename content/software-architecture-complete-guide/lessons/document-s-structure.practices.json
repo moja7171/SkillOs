@@ -1,0 +1,37 @@
+[
+  {
+    "key": "five-sections-order",
+    "title": "کدوم بخش بعد از نیازمندی‌ها میاد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق ساختارِ پنج‌بخشیِ این درس، بعد از «نیازمندی‌ها»، بخشِ بعدیِ سند کدومه؟",
+    "options": [
+      "جزئیاتِ اجزا",
+      "خلاصه‌ی مدیریتی",
+      "پس‌زمینه",
+      "نمای‌کلیِ معماری"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "ترتیبِ بخش‌ها: پس‌زمینه → نیازمندی‌ها → خلاصه‌ی مدیریتی → نمای‌کلیِ معماری → جزئیاتِ اجزا.",
+    "hints": [
+      "درس این پنج بخش رو با شماره‌های ۱ تا ۵ می‌شماره.",
+      "پس‌زمینه اول میاد، نیازمندی‌ها دوم — بعدیش چیه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "no-technical-in-background",
+    "title": "بخشِ پس‌زمینه چه محتوایی نداره؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، بخشِ پس‌زمینه چه نوع محتوایی نباید داشته باشه؟",
+    "expected_outcome": "هیچ محتوای فنی یا معماری‌ای — این بخش فقط نقش و انگیزه‌ی سیستم رو از دیدِ کسب‌وکار توصیف می‌کنه.",
+    "hints": [
+      "درس این نکته رو دقیقاً توی توضیحِ بخشِ اول ذکر می‌کنه.",
+      "به این فکر کن: مخاطبِ اولین بخشِ سند کیه — همون‌هایی که معمولاً فنی نیستن."
+    ],
+    "rubric": "Correct if response says no technical or architectural content. Incorrect if it names something else."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "goal-of-the-meeting",
+    "title": "چرا اول باید هدفِ جلسه رو بدونیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، قبل از جواب‌دادن به انتقادِ CTO درباره‌ی stateless، معمار باید اول چی رو مشخص کنه؟",
+    "options": [
+      "اینکه CTO چقدر درباره‌ی فناوری می‌دونه",
+      "هدفِ جلسه — که گرفتنِ تأییدیه برای معماریه",
+      "اینکه چند نفرِ دیگه توی جلسه هستن",
+      "اینکه CTO موافقِ کدوم فناوریه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "معمار باید اول هدفِ جلسه رو مشخص کنه — که گرفتنِ تأییدیه برای معماریه. این هدف تعیین می‌کنه چه جوابی واقعاً کمک می‌کنه، نه اینکه چه جوابی حسِ حق‌به‌جانب‌بودن می‌ده.",
+    "hints": [
+      "درس با «یه چیز هست که نباید فراموشش کنیم: هدفِ این جلسه چیه؟» این بحث رو شروع می‌کنه.",
+      "به این فکر کن: اگه هدف رو ندونی، چطور می‌فهمی کدوم جواب بهت کمک می‌کنه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "smart-response-three-parts",
+    "title": "سه بخشِ جوابِ باهوشانه",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، جوابِ باهوشانه‌ای که به CTO داده شد («نکته‌ی خوبیه... بیا یه گفت‌وگوی جدا بذاریم») سه کارِ همزمان انجام داد. این سه کار رو توضیح بده.",
+    "expected_outcome": "۱. با گفتنِ «نکته‌ی خوبیه»، به CTO احترام گذاشت و سؤالش رو رد نکرد. ۲. با پیشنهادِ جلسه‌ی خصوصی، احترامِ بیشتری نشون داد. ۳. با اینکه بحث رو به بعد موکول کرد، از یه بحثِ فنیِ طولانی وسطِ جلسه پرهیز کرد.",
+    "hints": [
+      "درس این سه کار رو با «اول»، «دوم»، «سوم» می‌شماره.",
+      "به این فکر کن: هر جمله از پاسخ، دقیقاً چه اثری روی CTO می‌ذاره؟"
+    ],
+    "rubric": "Correct if response explains all three effects: showing respect by not dismissing the question, showing more respect by offering a private meeting, and avoiding a long technical derail in the meeting. Correct_with_hint if only 1-2 of the three are explained. Incorrect if none are explained correctly."
+  }
+]

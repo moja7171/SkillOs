@@ -1,0 +1,37 @@
+[
+  {
+    "key": "worst-response-to-criticism",
+    "title": "بدترین واکنش به انتقاد چیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، بدترین کاری که می‌شه با انتقاد کرد چیه؟",
+    "options": [
+      "سؤال‌کردنِ بیشتر برای فهمِ بهتر",
+      "دلخورشدن و برگشتنِ حمله",
+      "گفتنِ «حرفِ خوبیه، بذار بررسیش کنم»",
+      "پیشنهادِ یه جلسه‌ی جدا برای بحثِ عمیق‌تر"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "بدترین کار، دلخورشدن و برگشتنِ حمله‌ست — این تو رو توی موقعیتِ ضعیف قرار می‌ده و تصویرِ یه آدمِ ضعیف، غیرحرفه‌ای و نابالغ ازت می‌سازه.",
+    "hints": [
+      "درس این جمله رو دقیقاً با «بدترین کاری که می‌شه» شروع می‌کنه.",
+      "بقیه‌ی گزینه‌ها همه واکنش‌های توصیه‌شده‌ی درسن، نه اشتباه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "johns-real-motivation",
+    "title": "چرا جان مدام طراحی رو زیرِ سؤال می‌برد؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق داستانِ این درس، چرا «جان» مدام طراحیِ معماری رو زیرِ سؤال می‌برد و دردسر ایجاد می‌کرد؟",
+    "expected_outcome": "چون امیدوار بوده خودش معمارِ ارشدِ همین پروژه بشه و از اینکه این شغل رو نگرفته، ناامید و ناراحت بود — این ناامیدی رو با غرزدنِ مداوم و زیرِ سؤال‌بردنِ طراحی بیان می‌کرد.",
+    "hints": [
+      "درس می‌گه «چند ماه بعد معلوم شد» چی — این جمله‌ی کلیدیه.",
+      "به این فکر کن: رفتارِ جان چه دلیلِ شخصی‌ای داشت که ربطی به کیفیتِ واقعیِ طراحی نداشت؟"
+    ],
+    "rubric": "Correct if response explains John was upset about not getting the chief architect position himself, and expressed that frustration through constant criticism. Incorrect if it gives a vague or unrelated answer."
+  }
+]

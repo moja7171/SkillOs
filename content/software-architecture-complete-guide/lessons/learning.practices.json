@@ -1,0 +1,37 @@
+[
+  {
+    "key": "obsolete-frameworks",
+    "title": "چرا این فریم‌ورک‌ها مثال زده شدن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا jQuery، Grunt، AngularJS و Hadoop مثال زده می‌شن؟",
+    "options": [
+      "چون هنوز هم محبوب‌ترین فریم‌ورک‌های موجودن",
+      "چون نشون می‌دن فریم‌ورک‌هایی که همین چند سال پیش همه‌جا بودن، الان تقریباً فراموش شدن",
+      "چون همه‌شون توسطِ یه شرکتِ واحد ساخته شدن",
+      "چون هیچ‌کدومشون هیچ‌وقت محبوب نبودن"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "این مثال‌ها نشون می‌دن دنیای نرم‌افزار چقدر سریع تغییر می‌کنه — فریم‌ورک‌هایی که همین چند سال پیش فوق‌العاده محبوب بودن، الان تقریباً هیچ‌جا استفاده نمی‌شن.",
+    "hints": [
+      "درس این چهار مثال رو دقیقاً برای نشون‌دادنِ سرعتِ تغییر معرفی می‌کنه.",
+      "به این فکر کن: این مثال‌ها چه چیزی رو درباره‌ی «سازگار شو یا بمیر» ثابت می‌کنن؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "learning-sources",
+    "title": "منابعِ یادگیریِ مدرس این دوره",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، دو منبعِ اصلیِ یادگیریِ مدرس این دوره برای دانشِ مرتبط با معماری چی هستن؟",
+    "expected_outcome": "بلاگ‌ها و مقاله‌ها (مثلِ DZone، InfoQ، O'Reilly)، و شرکت در کنفرانس‌های سالانه‌ی نرم‌افزار و معماری (مثلِ O'Reilly Software Architecture Conference، QCon، NDC، Microsoft Build).",
+    "hints": [
+      "درس این دو منبع رو با «منابعِ اصلیِ مدرس این دوره» معرفی می‌کنه.",
+      "یکی از منابع نوشتاریه، اون یکی حضوری/رویدادمحوره."
+    ],
+    "rubric": "Correct if response mentions blogs/articles and conferences as the two main sources. Partial if only one is mentioned. Incorrect if neither is mentioned correctly."
+  }
+]

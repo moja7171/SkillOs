@@ -1,0 +1,51 @@
+[
+  {
+    "key": "five-final-components",
+    "title": "پنج جزءِ نهایی کدومن؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، اجزای نهاییِ اپلیکیشنِ IO2 کدومن؟",
+    "options": [
+      "فقط Receiver و Info",
+      "Receiver، Handler، Info، سرویسِ لاگِ مرکزی، دیتاستورِ مشترک",
+      "Receiver، Validator، Parser، Info",
+      "فقط یه جزءِ واحدِ مونولیتی"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "پنج جزء: Receiver (دریافتِ پیام)، Handler (اعتبارسنجی+پردازش+ذخیره)، Info (کوئریِ کاربر)، سرویسِ لاگِ مرکزی، و یه دیتاستورِ مشترک.",
+    "hints": [
+      "درس جمع‌بندیِ نهایی رو با «خب، عالیه» و اسمِ هر پنج جزء می‌ده.",
+      "توجه کن اعتبارسنجی و پردازش با هم یه جزءِ واحدن (Handler)، نه دو جزءِ جدا."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-receiver-fast-release",
+    "title": "چرا Receiver باید سریع درخواست رو آزاد کنه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا مهمه که Receiver درخواستِ به‌روزرسانیِ پیام رو تا حد ممکن سریع آزاد کنه؟",
+    "expected_outcome": "چون Receiver قراره زیرِ بارِ سنگین (۵۰۰ درخواستِ همزمان) کار کنه؛ به‌ازای هر میلی‌ثانیه‌ای که روی یه پیام کار می‌کنه، پیام‌های بیشتری منتظرِ پردازش‌ان — اگه سریع آزاد نکنه، به وضعیتِ کمبودِ thread می‌رسیم و سرویس شروع می‌کنه به پرتاب‌کردنِ استثنا.",
+    "hints": [
+      "درس این دلیل رو مستقیم بعد از اشاره به بارِ ۵۰۰ درخواستِ همزمان توضیح می‌ده.",
+      "به این فکر کن: اگه Receiver کند باشه، صفِ درخواست‌های منتظر چه اتفاقی می‌افته؟"
+    ],
+    "rubric": "Correct if response explains the heavy 500-concurrent-request load means delays compound and risk thread starvation/exceptions. Incorrect if it gives a vague or unrelated answer."
+  },
+  {
+    "key": "validation-and-processing-together",
+    "title": "چرا اعتبارسنجی و پردازش یه جزءِ واحدن؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، دو دیدگاه درباره‌ی اینکه اعتبارسنجی و پردازش باید یه جزءِ واحد باشن یا دو جزءِ جدا وجود داره. کدوم دیدگاه انتخاب شد، و چرا؟",
+    "expected_outcome": "دیدگاهِ دوم انتخاب شد: هر دو با هم یه جزءِ واحد (Handler) می‌شن. چون اعتبارسنجی کارِ نسبتاً کوچیک و غیراتمیکیه و بدونِ پردازش ارزشی نداره، و علاوه بر این، هر جزءِ اضافه یعنی یه فرایندِ دیگه که باید نگهداری بشه — که توی این سناریو هیچ توجیهی نداره.",
+        "hints": [
+      "درس دو دیدگاه رو با «بعضی می‌گن» و «بقیه می‌گن» معرفی می‌کنه.",
+      "به این فکر کن: هزینه‌ی نگهداریِ یه جزءِ اضافه چیه، و آیا اینجا توجیه‌پذیره؟"
+    ],
+    "rubric": "Correct if response identifies the second view was chosen (combine into one component) and explains both reasons: validation alone has no value without processing, and extra components mean extra maintenance overhead without justification. Correct_with_hint if only the conclusion is given without reasoning. Incorrect if it says they were split into separate components."
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "key": "total-load-540",
+    "title": "نیازمندیِ load نهایی چقدره؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، نیازمندیِ load در مجموع چه عددی شد و از کجا اومد؟",
+    "options": [
+      "۵۰۰ — فقط پیام‌های IoT",
+      "۵۴۰ — ۵۰۰ پیامِ همزمان به‌علاوه‌ی ۴۰ اکشنِ کاربرِ همزمان",
+      "۲,۰۰۰,۰۰۰ — تعدادِ کلِ کاربرها",
+      "۱۵,۰۰۰,۰۰۰ — تعدادِ پیام در ماه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "نیازمندیِ load در مجموع ۵۴۰ شد — ۵۰۰ پیامِ همزمان از دستگاه‌های IoT به‌علاوه‌ی ۴۰ کاربرِ همزمان.",
+    "hints": [
+      "درس این جمعِ نهایی رو دقیقاً توی آخرِ بخشِ «تعداد کاربرها» می‌ده.",
+      "دو تا عدد رو با هم جمع کن — یکیش مالِ دستگاه‌ها، یکیش مالِ کاربرها."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-99-percent-tolerable",
+    "title": "چرا ۹۹٪ تحملِ از‌دست‌رفتنِ پیام قابل‌قبوله؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، چرا نیازمندیِ تحملِ از‌دست‌رفتنِ پیام برای IO2 روی ۹۹٪ (نه ۱۰۰٪) تعریف شد؟ استدلالِ این تصمیم رو توضیح بده.",
+    "expected_outcome": "چون هر دستگاه هر چند ثانیه یه به‌روزرسانیِ جدید می‌فرسته که خودبه‌خود پیامِ قبلی رو منسوخ می‌کنه — اگه یه پیام از دست بره، چند ثانیه بعد یه پیامِ جدید می‌رسه و ضرری نمی‌رسه. کاربر احتمالاً حتی متوجه هم نمی‌شه.",
+    "hints": [
+      "درس می‌گه غریزه‌ی اول همیشه می‌گه «نباید هیچ پیامی از دست بره» — ولی بعدش چی رو نشون می‌ده که این غریزه رو زیرِ سؤال می‌بره؟",
+      "به فرکانسِ ارسالِ به‌روزرسانی‌ها از هر دستگاه فکر کن."
+    ],
+    "rubric": "Correct if response explains that frequent status updates make losing one message harmless since a fresh update arrives shortly after. Correct_with_hint if only the conclusion (99% is fine) is stated without the reasoning. Incorrect if it says the requirement should be 100%."
+  },
+  {
+    "key": "three-sla-tiers",
+    "title": "کدوم سطحِ SLA رو IO2 انتخاب کرد؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، روشِ «سه سطحِ SLA» چیه، و IO2 کدوم سطح رو انتخاب کرد و چرا؟",
+    "expected_outcome": "روش: سه سطح (نقره‌ای، طلایی، پلاتینیوم) تعریف می‌شه به‌جای بحث درباره‌ی اعدادِ دقیقِ آپ‌تایم. IO2 سطحِ پلاتینیوم رو انتخاب کرد، چون سیستم به‌روزرسانی‌های وضعیتِ زنده نشون می‌ده و باید همه‌ی ویژگی‌های یه سیستمِ قابل‌اطمینان و افزونه (stateless، scale out آسون، لاگ‌گیری/پایشِ گسترده) رو داشته باشه.",
+    "hints": [
+      "درس این سه سطح رو با اسمشون معرفی می‌کنه.",
+      "به این فکر کن: چرا بحث درباره‌ی ۹۷٪ در مقابلِ ۹۹٪ بی‌معنیه؟"
+    ],
+    "rubric": "Correct if response names the three tiers (silver/gold/platinum) and identifies IO2 chose platinum with the reasoning (live status updates need reliability/redundancy). Correct_with_hint if only the tier name is given without reasoning. Incorrect if the tiers or the choice are wrong."
+  }
+]

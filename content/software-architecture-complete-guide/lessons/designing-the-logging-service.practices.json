@@ -1,0 +1,51 @@
+[
+  {
+    "key": "three-steps-mcq",
+    "title": "سه قدمِ جزئیاتِ هر جزء",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، سه قدمِ اصلیِ جزئیاتِ هر جزء به چه ترتیبی هستن؟",
+    "options": [
+      "طراحیِ معماری → پشته‌ی فناوری → نوعِ اپلیکیشن",
+      "نوعِ اپلیکیشن → پشته‌ی فناوری → طراحیِ معماری",
+      "پشته‌ی فناوری → نوعِ اپلیکیشن → طراحیِ معماری",
+      "فقط یه قدم: طراحیِ معماری"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "سه قدم به همین ترتیب: اول نوعِ اپلیکیشن تعیین می‌شه، دوم پشته‌ی فناوری، سوم معماری طراحی می‌شه.",
+    "hints": [
+      "درس این سه قدم رو با «اول، دوم، سوم» می‌شماره.",
+      "به این فکر کن: منطقاً باید اول نوعِ اپلیکیشن رو بدونی تا بتونی پشته‌ی فناوری رو انتخاب کنی."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-console-or-service",
+    "title": "چرا کنسول و سرویس هر دو کاندیدان؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا اپ وب، وب API و موبایل برای سرویسِ لاگ کنار گذاشته شدن، و چرا کنسول یا سرویس هر دو انتخابِ درستین؟",
+    "expected_outcome": "اپ وب/وب API بر پایه‌ی مدلِ درخواست-پاسخ نیستن (سرویسِ لاگ همیشه روشنه و خودش فعالیت رو شروع می‌کنه)، و موبایل روی کلاینت اجرا می‌شه نه سرور. کنسول و سرویس هر دو برای فرایندهای طولانی‌مدتِ بدونِ رابطِ کاربری مناسبن — انتخابِ بینِ این دو صرفاً سلیقه‌ایه.",
+    "hints": [
+      "درس دقیقاً به هر پنج نوعِ اپلیکیشن یکی‌یکی نگاه می‌کنه و می‌گه چرا مناسب نیستن یا هستن.",
+      "به این فکر کن: سرویسِ لاگ منتظرِ درخواسته یا خودش فعالیت رو شروع می‌کنه؟"
+    ],
+    "rubric": "Correct if response explains web app/API are ruled out due to not being request-response, mobile is ruled out for running client-side, and console/service both fit long-running no-UI processes. Correct_with_hint if only partial reasoning is given. Incorrect if the reasoning is missing or wrong."
+  },
+  {
+    "key": "polling-layer-instead-of-ui",
+    "title": "لایه‌ی polling به‌جای چه لایه‌ای اومد؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، معماریِ لایه‌ایِ کلاسیک برای سرویسِ لاگ چطور تغییر کرد؟ کدوم لایه جایگزین شد و چرا؟",
+    "expected_outcome": "لایه‌ی UI/SI با یه لایه‌ی polling جایگزین شد، چون سرویسِ لاگ هیچ UI یا APIای نداره — یه فرایندِ طولانی‌مدته که هیچی رو در معرض دید نمی‌ذاره. لایه‌ی polling مسئولِ دسترسی به صف و بازیابیِ رکوردهاست، به‌جایِ در معرضِ دید‌گذاشتنِ یه رابط.",
+    "hints": [
+      "درس می‌گه «مسئله‌ی اصلی، لایه‌ی اوله — UI یا API».",
+      "به این فکر کن: سرویسِ لاگ چطور فعالیتش رو شروع می‌کنه — با دریافتِ درخواست یا با چک‌کردنِ دوره‌ایِ صف؟"
+    ],
+    "rubric": "Correct if response identifies the UI/SI layer was replaced with a polling layer, and explains why (the logging service exposes nothing, it's a long-running process). Correct_with_hint if only the fact is stated without reasoning. Incorrect if a different layer is named."
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "key": "nested-entities-order",
+    "title": "کدوم موجودیت اول توی URL میاد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، توی REST API وقتی موجودیت‌های تودرتو داریم (خونه ← دستگاه ← به‌روزرسانی)، از کدوم شروع می‌کنیم؟",
+    "options": [
+      "از بیرونی‌ترین موجودیت — خونه",
+      "از درونی‌ترین موجودیت — به‌روزرسانی",
+      "از وسط — دستگاه",
+      "ترتیب مهم نیست"
+    ],
+    "correct_option": 0,
+    "expected_outcome": "همیشه از بیرونی‌ترین موجودیت شروع می‌کنیم — چون خونه شاملِ دستگاه‌هاست که خودشون شاملِ به‌روزرسانی‌هان: `GET /houses/{houseId}/devices/updates`.",
+    "hints": [
+      "درس صراحتاً می‌گه «همیشه از بیرونی‌ترینشون شروع می‌کنیم».",
+      "به ترتیبِ تودرتو‌بودن فکر کن — خونه شاملِ چیه، و اون شاملِ چیه؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
+  },
+  {
+    "key": "query-string-vs-url-path",
+    "title": "چرا بازه‌ی زمانی توی query string میاد؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، چرا پارامترهای `from` و `to` به‌عنوانِ query string پاس داده می‌شن، نه بخشی از مسیرِ URL (مثلِ `/updates/{from}/{to}`)؟",
+    "expected_outcome": "چون URL باید فقط شاملِ ارجاع به موجودیت‌های واقعی باشه — خونه، دستگاه و به‌روزرسانی موجودیت‌ان که شناسه، ویژگی و کارکرد دارن. بازه‌ی زمانی موجودیت نیست، فقط یه پارامتره که کمک می‌کنه به‌روزرسانی‌های درست بازیابی بشن — پس بخشی از URL نمی‌شه.",
+    "hints": [
+      "درس این سؤال رو مستقیم می‌پرسه و جوابش رو با «جوابش خیلی ساده‌ست» می‌ده.",
+      "به این فکر کن: آیا `from` و `to` شناسه، ویژگی یا کارکردِ خاصِ خودشون رو دارن، مثلِ خونه یا دستگاه؟"
+    ],
+    "rubric": "Correct if response explains URLs represent real entities (with ids/properties/functionality) while the date range is just a parameter, not an entity. Correct_with_hint if only the conclusion is given without the entity-vs-parameter reasoning. Incorrect if no real reasoning is given."
+  },
+  {
+    "key": "always-200-mistake",
+    "title": "همیشه ۲۰۰ برگردوندن اشتباهه؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه معمارِ جونیور طراحی می‌کنه که API همیشه کدِ ۲۰۰ برگردونه، حتی وقتی خونه‌ی درخواست‌شده پیدا نمی‌شه — فقط یه بدنه‌ی JSONِ خالی برمی‌گردونه. طبق این درس، این چه مشکلی داره؟",
+    "expected_outcome": "این دقیقاً همون اشتباهِ رایجِ معمارهای جونیوره — کدهای پاسخِ HTTP باید نتیجه‌ی واقعیِ درخواست رو منعکس کنن. وقتی خونه پیدا نمی‌شه، باید ۴۰۴ برگرده تا کلاینت بفهمه داده‌ای که فرستاده اشتباه بوده، نه اینکه با یه ۲۰۰ گیج بشه.",
+    "hints": [
+      "درس دقیقاً همین اشتباه رو با عنوانِ «بعضی معمارهای جونیور» نام می‌بره.",
+      "به این فکر کن: کلاینت چطور می‌فهمه باید دوباره با شناسه‌ی درست امتحان کنه، اگه همیشه ۲۰۰ بگیره؟"
+    ],
+    "rubric": "Correct if response identifies this as the junior-architect mistake and explains 404 should be returned when the resource isn't found, so the client knows to retry with correct data. Incorrect if it says always returning 200 is acceptable."
+  }
+]

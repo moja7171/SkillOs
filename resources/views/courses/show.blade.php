@@ -46,6 +46,7 @@
                 <div class="card-h">
                     <h3>درس‌ها <span class="text-faint font-normal">· {{ fa_num($course->lessons_count) }}</span></h3>
                     @if ($enrollment)
+                        <span class="text-[12.5px] text-muted hidden sm:inline">{{ fa_num($doneLessonIds->count()) }} از {{ fa_num($course->lessons_count) }} درس انجام‌شده@if ($practiceProgress->sum('total')) · {{ fa_num($practiceProgress->sum('passed')) }} از {{ fa_num($practiceProgress->sum('total')) }} تمرین پاس‌شده@endif</span>
                         <x-course-progress :lessons="$course->lessons" :user="$user" class="w-64 hidden sm:block" />
                     @endif
                 </div>
@@ -97,8 +98,9 @@
                                             <x-level-badge :level="$levelOf($lesson)" />
                                             @if ($doneLessonIds->contains($lesson->id))
                                                 <span style="color: var(--ok);" title="این درس رو انجام دادی"><x-icon name="check" class="w-3.5 h-3.5" /></span>
-                                            @elseif ($seenLessonIds->contains($lesson->id))
-                                                <span class="text-faint" title="ویدیو/متن این درس رو دیدی"><x-icon name="check" class="w-3.5 h-3.5" /></span>
+                                            @endif
+                                            @if ($progress = $practiceProgress[$lesson->id] ?? null)
+                                                <span class="badge {{ $progress['passed'] === $progress['total'] ? 'badge-ok' : 'badge-ghost' }}" title="تمرین‌های پاس‌شده">تمرین {{ fa_num($progress['passed']) }}/{{ fa_num($progress['total']) }}</span>
                                             @endif
                                         </div>
                                     </td>

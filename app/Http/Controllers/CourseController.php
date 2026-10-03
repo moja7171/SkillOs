@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -55,20 +54,10 @@ class CourseController extends Controller
 
         $enrollment = $course->enrollmentFor($user);
 
-        // "Seen" (watched/read) is distinct from "level" — a lesson can sit at "learning"
-        // either because it's been watched but not yet practiced, or practiced but not
-        // yet mastered; the course table marks the two differently (DECISIONS §28).
-        $seenLessonIds = Activity::where('type', 'learn')
-            ->whereIn('lesson_id', $course->lessons->pluck('id'))
-            ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('result_status', 'completed'))
-            ->pluck('lesson_id');
+        // Lesson item and practice item are independent (DECISIONS.md §65).
+        $doneLessonIds = $course->doneLessonIdsFor($user);
+        $practiceProgress = $course->practiceProgressFor($user);
 
-        // The explicit "انجام دادم" mark — sticky, independent of mastery level (DECISIONS.md).
-        $doneLessonIds = Activity::where('type', 'learn')
-            ->whereIn('lesson_id', $course->lessons->pluck('id'))
-            ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('evidence->source', 'lesson_done'))
-            ->pluck('lesson_id');
-
-        return view('courses.show', compact('course', 'enrollment', 'seenLessonIds', 'doneLessonIds'));
+        return view('courses.show', compact('course', 'enrollment', 'doneLessonIds', 'practiceProgress'));
     }
 }

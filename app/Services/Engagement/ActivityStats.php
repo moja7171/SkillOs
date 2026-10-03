@@ -3,7 +3,6 @@
 namespace App\Services\Engagement;
 
 use App\Models\Activity;
-use App\Models\MasteryRecord;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 
@@ -45,20 +44,16 @@ class ActivityStats
     }
 
     /**
-     * Distinct lessons this learner has finished, by either signal (DECISIONS.md §43):
-     * real mastery at "آشنا" or above, or the explicit "انجام دادم" mark.
+     * Distinct lessons this learner has finished — the lesson item only (DECISIONS.md §65):
+     * every video watched, or the explicit mark for a lesson without videos. Practices and
+     * mastery level are separate signals.
      */
     public function lessonsDoneCount(User $user): int
     {
-        $viaMastery = MasteryRecord::where('user_id', $user->id)
-            ->whereIn('level', ['familiar', 'proficient', 'mastered'])
-            ->pluck('lesson_id');
-
-        $viaMarkDone = Activity::where('type', 'learn')
+        return Activity::where('type', 'learn')
             ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('evidence->source', 'lesson_done'))
-            ->pluck('lesson_id');
-
-        return $viaMastery->merge($viaMarkDone)->unique()->count();
+            ->distinct('lesson_id')
+            ->count('lesson_id');
     }
 
     /**

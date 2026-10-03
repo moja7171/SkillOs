@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
 use App\Models\Attempt;
 use App\Models\Course;
 use App\Models\Lesson;
@@ -41,12 +40,10 @@ class LessonController extends Controller
         $lessonDone = $lesson->isMarkedDoneBy($user);
         $practiceProgress = $lesson->practiceProgressFor($user);
 
-        // Sidebar circle: "marked done" is a separate, sticky signal from mastery level
-        // (DECISIONS.md) — batched here for the whole curriculum to avoid an N+1 in the loop.
-        $doneLessonIds = Activity::where('type', 'learn')
-            ->whereIn('lesson_id', $siblings->pluck('id'))
-            ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('evidence->source', 'lesson_done'))
-            ->pluck('lesson_id');
+        // Sidebar dots: the lesson item and the practice item are independent (DECISIONS.md §65),
+        // batched here for the whole curriculum to avoid an N+1 in the loop.
+        $doneLessonIds = $course->doneLessonIdsFor($user);
+        $coursePracticeProgress = $course->practiceProgressFor($user);
 
         // Per-practice status for the practice list below: each practice's *latest* attempt
         // decides whether it shows solved / needs another try / in progress / untouched —
@@ -62,7 +59,7 @@ class LessonController extends Controller
                 default => 'unsolved',
             });
 
-        return view('lessons.show', compact('lesson', 'course', 'enrollment', 'previous', 'next', 'lessonDone', 'practiceProgress', 'doneLessonIds', 'practiceStatus'));
+        return view('lessons.show', compact('lesson', 'course', 'enrollment', 'previous', 'next', 'lessonDone', 'practiceProgress', 'doneLessonIds', 'coursePracticeProgress', 'practiceStatus'));
     }
 
     /**

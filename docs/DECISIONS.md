@@ -989,3 +989,14 @@ Owner still needs to: (1) actually run the upload for all courses (started, in p
 **Why.** Owner: «هر درسی که تمرین داشت آیتم تمرین مستقل بعد از مرحله درسنامه باشه … درس تمام شده ولی تمریناش مونده». Watching proves exposure; practice proves learning — keeping them apart makes both honest.
 
 **Consequences.** No schema change (`video_views` + `attempts` already carry both signals). Supersedes the practice gate of §43 and the combined gate of §63 (the video part stays: the manual button on a lesson with unwatched videos is still 422). Follow-ups in the same series: sidebar/course-page show two dots per lesson and the lesson counter stops counting mastery (§65 part 2), a one-off backfill for existing learners (part 3, shipped as a data migration so `/_ops/update` runs it), and a «تمرین‌های عقب‌افتاده» card on Home (part 4, `ActivityStats::practiceBacklog`). `Planner` deliberately untouched: it is mastery-driven, already schedules the current lesson's practices, and never read `lesson_done`; making it schedule backlog practices of older lessons would be a separate planning decision.
+
+
+---
+
+## 66. Reviews only ever show a practice the learner has never answered (owner request, 2026-10-03)
+
+**Decision.** `Planner::pickReviewPractice()` now returns the lowest-id practice of the lesson with **no finished attempt** by this learner (any result counts as «done» — correct, hinted, partial or incorrect; an open `started` attempt or an `abandoned` one does not). When the whole pool has been attempted it still asks `ReviewPracticeGenerator` for a fresh one (§18) and picks that. If generation fails, the lesson gets **no review item that day** instead of falling back to the least-recently-attempted practice (the old §18 fallback, now removed).
+
+**Why.** Owner: a review should never re-show a practice the learner has already done — repeating one tests memory of the answer, not the skill.
+
+**Consequences.** (1) Reviews now depend on Gemini once a lesson's authored practices are all attempted; where Gemini is unreachable (S-61, production), those lessons silently drop out of the review queue until a relay exists — their `next_review_due_at` stays due, nothing is lost. (2) Only the review path changed: «تمرین درس فعلی» and «حفظ آمادگی» (source `plan`) still use the least-recently-attempted rotation and can repeat a practice. (3) A failed answer is not retried via review either — the learner can still reopen it from the lesson page.

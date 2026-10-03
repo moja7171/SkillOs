@@ -198,7 +198,7 @@ class PlannerTest extends TestCase
         $this->assertSame($generated->id, $items[0]->activity_id, 'the fresh, never-attempted practice is picked first');
     }
 
-    public function test_review_falls_back_to_the_normal_pool_when_generation_fails(): void
+    public function test_review_never_repeats_an_attempted_practice_even_when_generation_fails(): void
     {
         Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
         $this->mastery($this->lessons[0], 300, 'yesterday');
@@ -210,10 +210,41 @@ class PlannerTest extends TestCase
 
         $items = app(Planner::class)->today($this->user);
 
-        $this->assertCount(1, $items);
-        $this->assertSame('review', $items[0]->source);
-        $this->assertSame($practice->id, $items[0]->activity_id);
+        $this->assertSame(0, $items->where('source', 'review')->count());
         $this->assertSame(0, Activity::where('generated', true)->count());
+    }
+
+    public function test_review_picks_the_unattempted_practice_without_generating(): void
+    {
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
+        $this->mastery($this->lessons[0], 300, 'yesterday');
+        $this->completedLearn($this->lessons[0]);
+        $done = $this->lessons[0]->practices()->first();
+        $fresh = $this->lessons[0]->activities()->create(['key' => 'p2', 'type' => 'practice', 'title' => 'تمرین دوم', 'estimated_minutes' => 8, 'payload' => $done->payload]);
+        Attempt::create(['activity_id' => $done->id, 'user_id' => $this->user->id, 'result_status' => 'incorrect', 'completed_at' => now()]);
+
+        $this->mock(GeminiClient::class)->shouldNotReceive('generateJson');
+
+        $items = app(Planner::class)->today($this->user);
+
+        $this->assertSame('review', $items[0]->source);
+        $this->assertSame($fresh->id, $items[0]->activity_id);
+    }
+
+    public function test_an_open_or_abandoned_attempt_does_not_count_as_having_done_the_practice(): void
+    {
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
+        $this->mastery($this->lessons[0], 300, 'yesterday');
+        $this->completedLearn($this->lessons[0]);
+        $practice = $this->lessons[0]->practices()->first();
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $this->user->id, 'result_status' => 'started']);
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $this->user->id, 'result_status' => 'abandoned', 'completed_at' => now()]);
+
+        $this->mock(GeminiClient::class)->shouldNotReceive('generateJson');
+
+        $items = app(Planner::class)->today($this->user);
+
+        $this->assertSame($practice->id, $items->firstWhere('source', 'review')->activity_id);
     }
 
     public function test_overdue_reviews_are_capped_per_course(): void

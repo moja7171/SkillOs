@@ -86,15 +86,17 @@ class Lesson extends Model
     }
 
     /**
-     * Gate for the "انجام دادم" button: every practice has at least one correct
-     * (or correct-with-hint) attempt from this user. A lesson with no practices has
-     * nothing to gate on.
+     * How many of this lesson's practices the learner has answered correctly (or
+     * correct-with-hint) at least once. The practice item is independent of the lesson
+     * item (DECISIONS.md §65): finishing the lesson never waits on it, and vice versa.
+     *
+     * @return array{passed: int, total: int}
      */
-    public function allPracticesPassedBy(User $user): bool
+    public function practiceProgressFor(User $user): array
     {
         $practices = $this->relationLoaded('practices') ? $this->practices : $this->practices()->get();
         if ($practices->isEmpty()) {
-            return true;
+            return ['passed' => 0, 'total' => 0];
         }
 
         $passedActivityIds = Attempt::where('user_id', $user->id)
@@ -103,7 +105,18 @@ class Lesson extends Model
             ->pluck('activity_id')
             ->unique();
 
-        return $practices->pluck('id')->diff($passedActivityIds)->isEmpty();
+        return ['passed' => $practices->pluck('id')->intersect($passedActivityIds)->count(), 'total' => $practices->count()];
+    }
+
+    /**
+     * Practice item done: every practice answered correctly at least once. A lesson with
+     * no practices has no practice item, so this is false for it.
+     */
+    public function allPracticesPassedBy(User $user): bool
+    {
+        $progress = $this->practiceProgressFor($user);
+
+        return $progress['total'] > 0 && $progress['passed'] === $progress['total'];
     }
 
     /**
@@ -137,8 +150,9 @@ class Lesson extends Model
     }
 
     /**
-     * Marked done via the explicit "انجام دادم" action — sticky, independent of any
-     * later dip in numeric mastery from a failed review.
+     * Lesson item done (watched every video, or the explicit "انجام دادم" for a lesson
+     * without videos) — sticky, independent of practices and of any later dip in numeric
+     * mastery from a failed review.
      */
     public function isMarkedDoneBy(User $user): bool
     {

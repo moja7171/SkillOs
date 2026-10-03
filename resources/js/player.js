@@ -23,15 +23,18 @@ const SPEED_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 function read(key) { try { return localStorage.getItem(key); } catch { return null; } }
 function write(key, value) { try { localStorage.setItem(key, value); } catch { /* private mode etc. */ } }
 
-// Records that this video was watched to the end (gates the "انجام دادم" button server-side —
-// see Lesson::allVideosWatchedBy) and tells any open picker/mark-done UI to update its checkmark.
+// Records that this video was watched to the end (the server marks the lesson done once every
+// video is watched — see VideoViewController) and tells any open picker/lesson-card UI to update.
 function markWatched(id) {
     const token = document.querySelector('meta[name="csrf-token"]')?.content;
     if (!token) return;
     fetch(`/lesson-videos/${id}/watched`, {
         method: 'POST',
         headers: { 'X-CSRF-TOKEN': token, Accept: 'application/json' },
-    }).catch(() => { /* best-effort; a missed ping just leaves the gate closed */ });
+    })
+        .then((response) => response.json())
+        .then((data) => { if (data.lesson_done) window.dispatchEvent(new CustomEvent('lesson-done')); })
+        .catch(() => { /* best-effort; a missed ping just leaves the lesson open until the next view */ });
     window.dispatchEvent(new CustomEvent('video-watched', { detail: { videoId: Number(id) } }));
 }
 

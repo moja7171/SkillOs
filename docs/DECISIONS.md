@@ -973,3 +973,19 @@ Owner still needs to: (1) actually run the upload for all courses (started, in p
 **Scope of the immediate work.** This rule applies to every course, but only `requirements-engineering` is being reworked now (85 lessons, 244 practices: 79 mcq stay, 10 coding stay, 73 explanation + 42 scenario + 40 already-too-long short_answer — 155 practices total — get rewritten to true short answers). Other courses keep their existing `explanation`/`scenario` practices until a future session migrates them; no course should gain *new* essay-style practices from here on, including these untouched ones if they're ever extended.
 
 **Consequences / follow-ups.** `docs/AUTHORING.md` §6 updated with the new short-answer bar and a note that `explanation`/`scenario` are legacy-only. No code change yet — if every course is eventually migrated, `explanation`/`scenario` can be dropped from `FORMS`/`FORM_LABELS`/the blade view's form handling, and `Evaluator::evaluateWithRubric` collapses to one real form (`short_answer`) plus `coding`. Not done here.
+
+
+---
+
+## 65. Lesson and practice are two independent progress items (owner request, 2026-10-03)
+
+**Problem.** §43/§63 folded two different things into one tick: «I finished the lesson» and «I proved it by passing every practice». The «انجام دادم» button was disabled until every practice passed, so a learner who had watched the video could not record that — and practices they skipped just disappeared into the same state as practices they had never been shown.
+
+**Decision.** Each lesson has up to two items, each with its own completion:
+- **Lesson item** — done when every video has been watched to the end (`VideoViewController` marks it automatically via the existing `AttemptSession::markLessonDone`, `evidence.source = 'lesson_done'`), or, for a lesson with no videos, via the manual «انجام دادم» button. Practices never gate it.
+- **Practice item** — exists only when the lesson has practices; done when every practice has at least one `correct`/`correct_with_hint` attempt (`Lesson::practiceProgressFor()` → `{passed, total}`, `allPracticesPassedBy()` now false for a lesson with no practices). It never gates the lesson item or the next lesson (navigation stays free, §43).
+- The state «lesson done, practices pending» is first-class: the lesson page shows «تمرین‌هاش هنوز مونده» with a jump to the practice list.
+
+**Why.** Owner: «هر درسی که تمرین داشت آیتم تمرین مستقل بعد از مرحله درسنامه باشه … درس تمام شده ولی تمریناش مونده». Watching proves exposure; practice proves learning — keeping them apart makes both honest.
+
+**Consequences.** No schema change (`video_views` + `attempts` already carry both signals). Supersedes the practice gate of §43 and the combined gate of §63 (the video part stays: the manual button on a lesson with unwatched videos is still 422). Follow-ups in the same series: sidebar/course-page show two dots per lesson and the lesson counter stops counting mastery (§65 part 2), a one-off backfill for existing learners (part 3), and a «تمرین‌های عقب‌افتاده» queue (part 4).

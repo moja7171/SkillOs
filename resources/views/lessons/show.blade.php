@@ -69,8 +69,8 @@
 
                 <x-lesson-content :lesson="$lesson" class="card" />
 
-                <div class="card">
-                    <div class="card-h"><h3>تمرین‌ها <span class="text-faint font-normal">· {{ fa_num($lesson->practices->count()) }}</span></h3></div>
+                <div class="card" id="practices">
+                    <div class="card-h"><h3>تمرین‌ها <span class="text-faint font-normal">· {{ fa_num($practiceProgress['passed']) }} از {{ fa_num($lesson->practices->count()) }} پاس‌شده</span></h3></div>
                     @forelse ($lesson->practices as $practice)
                         @php $status = $practiceStatus[$practice->id] ?? null; @endphp
                         <div class="flex items-center gap-3 px-[18px] py-3 border-b border-line last:border-b-0">
@@ -95,38 +95,34 @@
                     @endforelse
                 </div>
 
-                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap" @if ($lessonDone) style="border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);" @endif
-                     @unless ($lessonDone)
-                     x-data="{
-                         watchedVideoIds: {{ Js::from($lesson->watchedVideoIdsBy($user)->values()) }},
-                         videoIds: {{ Js::from($lesson->videos->pluck('id')) }},
-                         warn: false,
-                         get allVideosWatched() { return this.videoIds.every(id => this.watchedVideoIds.includes(id)); },
-                         submit(event) { if (! this.allVideosWatched) { event.preventDefault(); this.warn = true; } }
-                     }"
-                     @video-watched.window="if (! watchedVideoIds.includes($event.detail.videoId)) watchedVideoIds.push($event.detail.videoId)"
-                     @endunless>
-                    @if ($lessonDone)
-                        <div class="flex items-center gap-2.5 text-[13.5px]">
-                            <span class="w-7 h-7 rounded-full grid place-items-center shrink-0" style="background: var(--ok); color: #06261a;"><x-icon name="check" class="w-4 h-4" /></span>
-                            <span class="font-semibold">این درس رو انجام دادی.</span>
-                        </div>
-                    @else
-                        <div class="min-w-0">
-                            <div class="text-[13.5px] text-muted">
-                                @if ($practicesPassed)
-                                    ویدیو/متن رو دیدی و تمرین‌ها رو درست جواب دادی؟ همینجا علامتش بزن.
-                                @else
-                                    اول همه‌ی تمرین‌های بالا رو درست جواب بده، بعد می‌تونی این درس رو انجام‌شده علامت بزنی.
-                                @endif
-                            </div>
-                            <div x-show="warn" x-cloak x-transition class="error mt-1.5">هنوز همه‌ی ویدیوهای این درس رو کامل ندیدی — اول اون‌ها رو تا آخر ببین.</div>
-                        </div>
-                        <form method="POST" action="{{ route('lessons.mark-done', $lesson) }}" @submit="submit">
-                            @csrf
-                            <button type="submit" class="btn btn-primary" @disabled(! $practicesPassed)><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
-                        </form>
+                {{-- Lesson item (DECISIONS.md §65): completes by itself when the last video ends; the manual
+                     button exists only for lessons without videos. Practices are a separate item and never gate it. --}}
+                @php $hasVideos = $lesson->videos->isNotEmpty(); @endphp
+                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap"
+                     x-data="{ done: {{ Js::from($lessonDone) }} }"
+                     @lesson-done.window="done = true"
+                     :style="done ? 'border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);' : ''">
+                    <div x-show="done" @unless ($lessonDone) x-cloak @endunless class="flex items-center gap-2.5 text-[13.5px]">
+                        <span class="w-7 h-7 rounded-full grid place-items-center shrink-0" style="background: var(--ok); color: #06261a;"><x-icon name="check" class="w-4 h-4" /></span>
+                        <span class="font-semibold">این درس رو انجام دادی.</span>
+                        @if ($practiceProgress['total'] > 0 && $practiceProgress['passed'] < $practiceProgress['total'])
+                            <span class="text-muted">تمرین‌هاش هنوز مونده.</span>
+                        @endif
+                    </div>
+                    @if ($practiceProgress['total'] > 0 && $practiceProgress['passed'] < $practiceProgress['total'])
+                        <a x-show="done" @unless ($lessonDone) x-cloak @endunless href="#practices" class="btn btn-primary"><x-icon name="play" class="w-4 h-4" /> برو به تمرین‌ها</a>
                     @endif
+                    @unless ($lessonDone)
+                        <div x-show="! done" class="text-[13.5px] text-muted min-w-0">
+                            {{ $hasVideos ? 'همه‌ی ویدیوهای این درس رو تا آخر ببین؛ درس خودکار انجام‌شده علامت می‌خوره.' : 'متن رو که خوندی همینجا علامتش بزن.' }}
+                        </div>
+                        @unless ($hasVideos)
+                            <form x-show="! done" method="POST" action="{{ route('lessons.mark-done', $lesson) }}">
+                                @csrf
+                                <button type="submit" class="btn btn-primary"><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
+                            </form>
+                        @endunless
+                    @endunless
                 </div>
 
                 <div class="grid gap-5 md:grid-cols-3">

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Attempt;
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Lesson;
@@ -71,5 +72,28 @@ class HomeTest extends TestCase
         MasteryRecord::create(['user_id' => $user->id, 'lesson_id' => $lesson->id, 'numeric_mastery' => 300, 'level' => MasteryService::levelFor(300), 'next_review_due_at' => now()->subDay()]);
 
         $this->actingAs($user)->get(route('home'))->assertOk()->assertDontSee('فقط یه مرور سریع');
+    }
+
+    public function test_finished_lessons_with_pending_practices_appear_in_the_backlog_until_passed(): void
+    {
+        $user = User::factory()->create();
+        $course = Course::factory()->create();
+        $lesson = Lesson::factory()->for($course)->withActivities()->create(['title' => 'درس عقب‌افتاده']);
+        Enrollment::factory()->for($user)->for($course)->scheduled(30)->create();
+
+        $this->actingAs($user)->get(route('home'))->assertOk()->assertDontSee('تمرین‌های عقب‌افتاده');
+
+        // Practices passed but lesson not finished: not a backlog item.
+        $practice = $lesson->practices()->first();
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $user->id, 'result_status' => 'correct']);
+        $this->actingAs($user)->get(route('home'))->assertOk()->assertDontSee('تمرین‌های عقب‌افتاده');
+
+        Attempt::where('activity_id', $practice->id)->delete();
+        $this->actingAs($user)->post(route('lessons.mark-done', $lesson));
+        $this->actingAs($user)->get(route('home'))->assertOk()
+            ->assertSee('تمرین‌های عقب‌افتاده')->assertSee('درس عقب‌افتاده');
+
+        Attempt::create(['activity_id' => $practice->id, 'user_id' => $user->id, 'result_status' => 'correct']);
+        $this->actingAs($user)->get(route('home'))->assertOk()->assertDontSee('تمرین‌های عقب‌افتاده');
     }
 }

@@ -141,6 +141,28 @@
                 </div>
             @endif
 
+            {{-- Lessons finished but practices still pending (DECISIONS.md §65) --}}
+            @if ($practiceBacklog['total'] > 0)
+                <div class="card">
+                    <div class="card-h">
+                        <h3>تمرین‌های عقب‌افتاده <span class="text-faint font-normal">· {{ fa_num($practiceBacklog['total']) }} درس</span></h3>
+                    </div>
+                    @foreach ($practiceBacklog['items'] as $row)
+                        <div class="flex items-center gap-3 px-[18px] py-3 border-b border-line last:border-b-0">
+                            <span class="flex-1 min-w-0">
+                                <span class="block truncate font-medium">{{ $row['lesson']->title }}</span>
+                                <span class="block text-[12px] text-faint truncate">{{ $row['lesson']->course->title }}</span>
+                            </span>
+                            <span class="badge badge-ghost">{{ fa_num($row['passed']) }} از {{ fa_num($row['total']) }}</span>
+                            <a href="{{ $row['lesson']->url() }}#practices" class="btn btn-sm"><x-icon name="play" class="w-3.5 h-3.5" /> تمرین‌ها</a>
+                        </div>
+                    @endforeach
+                    @if ($practiceBacklog['total'] > $practiceBacklog['items']->count())
+                        <div class="px-[18px] py-2.5 text-[12.5px] text-faint">و {{ fa_num($practiceBacklog['total'] - $practiceBacklog['items']->count()) }} درس دیگر.</div>
+                    @endif
+                </div>
+            @endif
+
             {{-- Weekly/monthly recap --}}
             @if ($weeklyStats['count'] > 0 || $monthlyStats['count'] > 0)
                 <div class="card">

@@ -45,6 +45,7 @@ class HomeController extends Controller
             'monthlyStats' => $stats->since($user, now()->subDays(30)),
             'quickReview' => $quickReview,
             'weakSpotCount' => $weakSpots->forUser($user)->count(),
+            'practiceBacklog' => $stats->practiceBacklog($user),
         ]);
     }
 }

@@ -1,0 +1,37 @@
+[
+  {
+    "key": "who-is-the-audience",
+    "title": "سند فقط برای توسعه‌دهنده‌هاست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، مخاطبِ واقعیِ سند معماری کیه؟",
+    "options": [
+      "فقط تیمِ توسعه",
+      "تقریباً همه‌ی افرادِ درگیر توی سیستم — تیمِ توسعه، مدیریت، و لیدرِ QA",
+      "فقط CEO و CTO",
+      "فقط مشتری"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "برخلافِ تصورِ اولیه، مخاطبِ سند تقریباً همه‌ی افرادِ درگیر توی سیستمه — از تیمِ توسعه گرفته تا مدیریت (مدیرِ پروژه، CTO، حتی CEO) و لیدرِ QA؛ هر کدوم چیزِ متفاوتی ازش می‌گیرن.",
+    "hints": [
+      "درس می‌گه «جواب ممکنه یه‌کم تعجب‌آور باشه» — این نشون می‌ده جواب چیزی فراتر از تصورِ اولیه‌ست.",
+      "درس سه نقش رو یکی‌یکی بررسی می‌کنه — چند نقش؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "why-qa-reads-it",
+    "title": "چرا لیدرِ QA سند رو می‌خونه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، لیدرِ QA با خوندنِ سند معماری چیکار می‌تونه بکنه؟",
+    "expected_outcome": "می‌تونه آماده‌سازیِ زیرساختِ تست رو شروع کنه — سرورهایی که باید نصب بشن، ابزارهای تستی که باید پیکربندی بشن — چون از فناوری‌های استفاده‌شده و تعداد و نوعِ سرویس‌ها باخبر می‌شه.",
+    "hints": [
+      "درس می‌گه این کار زمان‌بندیِ پروژه رو چطور تحتِ‌تأثیر قرار می‌ده.",
+      "به این فکر کن: زیرساختِ تست، به چه اطلاعاتی درباره‌ی سیستم نیاز داره؟"
+    ],
+    "rubric": "Correct if response mentions preparing test infrastructure (servers, test tool configuration) based on the technologies and services described. Incorrect if it gives a vague or unrelated answer."
+  }
+]

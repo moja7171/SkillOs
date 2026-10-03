@@ -1,0 +1,51 @@
+[
+  {
+    "key": "receiver-to-handler-why-queue",
+    "title": "چرا صف بینِ Receiver و Handler؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا بینِ Receiver و Handler از صف استفاده شد، نه REST API؟",
+    "options": [
+      "چون صف همیشه سریع‌تر از REST‌ـه",
+      "چون با REST، Receiver باید منتظرِ اتمامِ هر درخواست بمونه که به performanceِ حیاتیِ Receiver آسیب می‌زنه؛ صف مکانیزمِ فرستادن-و-فراموش‌کردن می‌ده",
+      "چون REST API نمی‌تونه بینِ دو سرویسِ داخلی استفاده بشه",
+      "چون Handler اصلاً به داده نیاز نداره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "با REST API، Receiver باید منتظرِ اتمامِ هر درخواست به Handler بمونه و خطاها رو مدیریت کنه — که به performanceِ حیاتیِ Receiver آسیب می‌زنه. صف یه مکانیزمِ «فرستادن و فراموش‌کردن» می‌ده که دقیقاً همینه که Receiver لازم داره.",
+    "hints": [
+      "درس صراحتاً می‌گه اگه REST استفاده بشه، Receiver «باید کلی کار بکنه» — این با چه هدفی از Receiver در تضاده؟",
+      "یادت باشه توی درسِ قبلی، مهم‌ترین ویژگیِ Receiver چی بود."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "file-based-logging-problems",
+    "title": "چرا لاگ‌گیریِ مبتنی بر فایل رد شد؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، راه‌حلِ اولیه برای فرستادنِ لاگ به سرویسِ لاگِ مرکزی، نوشتن روی فایل بود. دو مشکلِ این راه‌حل رو توضیح بده.",
+    "expected_outcome": "۱. توی محیطِ کلاود کار نمی‌کنه. ۲. فایل‌ها گرایش دارن قفل بشن، توسطِ آنتی‌ویروس اسکن و حذف بشن، یا توسطِ ادمین‌های بی‌احتیاط پاک بشن — یه منبعِ غیرقابل‌کنترل.",
+    "hints": [
+      "درس این دو مشکل رو با «۱.» و «۲.» شماره‌گذاری می‌کنه.",
+      "یکی از مشکلات مربوط به محیطِ دیپلویه، اون یکی به رفتارِ غیرقابل‌پیش‌بینیِ خودِ فایل‌ها."
+    ],
+    "rubric": "Correct if response explains both problems: doesn't work in cloud environments, and files are prone to locking/scanning/accidental deletion (uncontrolled resource). Correct_with_hint if only one problem is explained. Incorrect if neither is explained correctly."
+  },
+  {
+    "key": "database-vs-queue-for-logging",
+    "title": "دیتابیس یا صف برای لاگ؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا استفاده از صف برای انتقالِ لاگ به گزینه‌ی «نوشتن توی دیتابیس و pull‌کردن ازش» ترجیح داده شد؟",
+    "expected_outcome": "چون استفاده از دیتابیس توی این حالت، عملاً مجبورش می‌کنه مثل یه صف رفتار کنه (ذخیره‌سازیِ موقت + حذفِ فوریِ رکوردهای بازیابی‌شده) — پس به‌جای دوباره‌اختراع‌کردنِ چرخ، مستقیماً از خودِ مکانیزمِ صف استفاده می‌کنیم.",
+    "hints": [
+      "درس می‌گه استفاده از دیتابیس توی این حالت، دیتابیس رو «مجبور می‌کنه» چیکار کنه.",
+      "به عبارتِ «دوباره‌اختراع‌کردنِ چرخ» توی درس فکر کن."
+    ],
+    "rubric": "Correct if response explains using a database this way just makes it behave like a queue, so using an actual queue avoids reinventing the wheel. Incorrect if it gives a vague or unrelated answer."
+  }
+]

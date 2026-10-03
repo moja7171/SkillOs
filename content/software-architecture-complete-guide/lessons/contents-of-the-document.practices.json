@@ -1,0 +1,37 @@
+[
+  {
+    "key": "why-avoid-uml",
+    "title": "چرا از UML پرهیز می‌کنیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، مدرس این دوره چرا معمولاً از UML توی سندهای معماریش استفاده نمی‌کنه؟",
+    "options": [
+      "چون UML خیلی قدیمیه و منسوخ شده",
+      "چون بیشترِ مخاطبانِ سند با UML آشنا نیستن و معنیِ دیاگرام‌ها رو نمی‌فهمن",
+      "چون UML فقط برای دیتابیس‌ها کاربرد داره",
+      "چون UML خیلی گرون‌تر از ابزارهای دیگه‌ست"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "دلیلش به مخاطبِ سند برمی‌گرده — بیشترِ مخاطب‌ها با UML آشنا نیستن و اصلاً نمی‌فهمن دیاگرام‌ها و اصطلاحاتِ مختلف چه معنی‌ای دارن، پس استفاده از UML باعث می‌شه معمار وقتش رو صرفِ توضیح‌دادنِ خودِ دیاگرام‌ها کنه.",
+    "hints": [
+      "درس می‌گه «دلیلش خیلی ساده‌ست: یادته مخاطبِ سند رو گفتیم؟».",
+      "به این فکر کن: اگه یه مدیرِ پروژه یا CEO دیاگرامِ UML رو ببینه، چی می‌فهمه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "simple-document-recommendation",
+    "title": "مؤثرترین سند چه شکلیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق تجربه‌ی طراحیِ صدها سیستم که این درس بهش اشاره می‌کنه، مؤثرترین سندِ معماری چه شکلیه؟",
+    "expected_outcome": "ساده‌ترینش — فقط از زبانِ ساده استفاده کن، با کلماتِ ساده طراحیِ سیستم رو توضیح بده، و از اصطلاحاتِ پرزرق‌وبرقِ زیاد پرهیز کن.",
+    "hints": [
+      "درس این جمله رو با «بر اساسِ تجربه» شروع می‌کنه.",
+      "به این فکر کن: باید همیشه به ذهنِ کدوم مخاطب فکر کنی؟"
+    ],
+    "rubric": "Correct if response says the simplest document is most effective, using plain language over technical jargon. Incorrect if it recommends heavy diagramming or jargon-rich writing."
+  }
+]

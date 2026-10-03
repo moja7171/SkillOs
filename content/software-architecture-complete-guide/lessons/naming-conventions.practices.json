@@ -1,0 +1,37 @@
+[
+  {
+    "key": "class-noun-method-verb",
+    "title": "کلاس یا متد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، کدوم اسم‌گذاری با قاعده‌ی «محتوای نام» جور درمیاد؟",
+    "options": [
+      "کلاسی به اسمِ `RetrieveData`، متدی به اسمِ `DataRetriever`",
+      "کلاسی به اسمِ `DataRetriever`، متدی به اسمِ `RetrieveData`",
+      "هم کلاس و هم متد باید فعل باشن",
+      "هم کلاس و هم متد باید اسم باشن"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "نامِ کلاس‌ها همیشه باید اسم باشن (کلاس نماینده‌ی یه موجودیته) و نامِ متدها همیشه باید فعلِ امری باشن (متد نماینده‌ی یه اکشنه). پس `DataRetriever` (اسم) برای کلاس و `RetrieveData` (فعل) برای متد درسته.",
+    "hints": [
+      "درس دقیقاً همین دو مثال (`DataRetriever` و `RetrieveData`) رو می‌زنه.",
+      "به این فکر کن: کلاس نماینده‌ی چیه (یه موجودیت) و متد نماینده‌ی چیه (یه اکشن)؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "which-convention-matters-most",
+    "title": "کدوم قرارداد رو انتخاب کنیم؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق جمع‌بندیِ این درس، مهم‌تر از اینکه دقیقاً کدوم قراردادِ نام‌گذاری رو انتخاب کنی، چه چیزی اهمیت داره؟",
+    "expected_outcome": "اینکه این تصمیم رو هرچه زودتر بگیری و از همه مهم‌تر، همیشه بهش پایبند بمونی — یکسان‌بودنِ استفاده، مهم‌تر از انتخابِ خودِ قراردادِ خاصه.",
+    "hints": [
+      "درس می‌گه «مهم‌ترین چیز» چیه، نه اینکه کدوم قرارداد بهتره.",
+      "به این فکر کن: یه کدبیس با یه قراردادِ نه‌چندان ایده‌آل ولی یکدست، بهتره یا یه کدبیس با چند قراردادِ مختلط؟"
+    ],
+    "rubric": "Correct if response mentions consistently sticking to whichever convention is chosen, made early. Incorrect if it names a specific \"best\" convention instead."
+  }
+]

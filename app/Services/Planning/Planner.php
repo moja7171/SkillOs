@@ -317,38 +317,46 @@ class Planner
     }
 
     /**
-     * A review practice for this lesson. Once the learner has attempted every practice
-     * in the pool at least once, a new one is generated and added to it for good
-     * (DECISIONS.md §18), so repeat reviews don't just cycle the same authored 2-3
-     * questions; a generation failure (no API key, network) is swallowed and the
-     * learner still gets the normal rotation.
+     * A review practice for this lesson — always one the learner has never answered before
+     * (DECISIONS.md §66). When every practice in the pool has been attempted, a new one is
+     * generated and added to it for good (§18); if generation fails (no API key, network)
+     * there is nothing fresh to review, so the lesson simply gets no review item today
+     * rather than repeating a practice the learner has already done.
      */
     protected function pickReviewPractice(User $user, Lesson $lesson): ?Activity
     {
         $practices = $lesson->activities->where('type', 'practice');
+        if ($practices->isEmpty()) {
+            return null;
+        }
 
-        if ($practices->isNotEmpty() && $this->allAttempted($user, $practices)) {
+        if ($this->firstUnattempted($user, $practices) === null) {
             try {
                 $generated = $this->reviewPracticeGenerator->generate($lesson);
                 $lesson->setRelation('activities', $lesson->activities->push($generated));
+                $practices = $practices->push($generated);
             } catch (Throwable $e) {
                 report($e);
             }
         }
 
-        return $this->pickPractice($user, $lesson);
+        return $this->firstUnattempted($user, $practices);
     }
 
     /**
+     * The lowest-id practice with no finished attempt by this learner (an attempt that is
+     * still open or was abandoned doesn't count as having done it).
+     *
      * @param  Collection<int, Activity>  $practices
      */
-    protected function allAttempted(User $user, Collection $practices): bool
+    protected function firstUnattempted(User $user, Collection $practices): ?Activity
     {
         $attempted = Attempt::where('user_id', $user->id)
             ->whereIn('activity_id', $practices->pluck('id'))
+            ->whereNotIn('result_status', ['started', 'abandoned'])
             ->distinct()->pluck('activity_id');
 
-        return $practices->pluck('id')->diff($attempted)->isEmpty();
+        return $practices->sortBy('id')->first(fn (Activity $p) => ! $attempted->contains($p->id));
     }
 
     /**

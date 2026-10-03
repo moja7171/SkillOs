@@ -1,0 +1,37 @@
+[
+  {
+    "key": "invoker-knows-nothing",
+    "title": "مکانیزمِ Undo چقدر می‌دونه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، مکانیزمِ Undo (که invoker نامیده می‌شه) درباره‌ی دستورهایی که اجرا می‌کنه چقدر می‌دونه؟",
+    "options": [
+      "همه‌چیز رو می‌دونه — دقیقاً هر دستور چیکار می‌کنه",
+      "فقط می‌دونه هر دستور یه متدِ Execute داره؛ هیچ ایده‌ای از کارکردِ داخلیش نداره",
+      "فقط دستورهای مربوط به حذفِ کاراکتر رو می‌شناسه",
+      "اصلاً هیچ لیستی از دستورها نگه نمی‌داره"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "مکانیزمِ Undo فقط یه لیست از دستورها نگه می‌داره و هیچ ایده‌ای نداره هر دستور چیکار می‌کنه — فقط می‌دونه هر دستور یه متدِ Execute داره. این جداییِ کاملِ بینِ فراخوانی و کارکردِ واقعی، زیباییِ الگوی Command‌ـه.",
+    "hints": [
+      "درس صراحتاً می‌گه invoker «هیچ ایده‌ای نداره واقعاً دستور چیه».",
+      "به این فکر کن: چرا این ندونستن، خودش زیباییِ الگوـه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "naive-undo-problem",
+    "title": "مشکلِ پیاده‌سازیِ ساده‌لوحانه‌ی Undo",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، اگه کدِ مکانیزمِ Undo مستقیم متدی برای هر اکشن (حذفِ کاراکتر، تغییرِ فونت، حذفِ صفحه و…) داشته باشه، چه مشکلی پیش میاد؟",
+    "expected_outcome": "این طراحیِ بدیه — عملاً کلِ کارکردِ پردازشگرِ متن رو تکرار می‌کنه و حجمِ کد تقریباً دو برابر می‌شه؛ و هر بار که یه قابلیتِ جدید اضافه بشه، باید کدِ جدیدی هم به مکانیزمِ Undo اضافه بشه که به یه کدبیسِ عظیم و غیرخوانا منجر می‌شه.",
+    "hints": [
+      "درس این پیاده‌سازی رو با عبارتِ «این یه طراحیِ بده» توصیف می‌کنه.",
+      "به این فکر کن: چرا اضافه‌شدنِ هر قابلیتِ جدید به نرم‌افزار، باید روی مکانیزمِ Undo هم اثر بذاره؟"
+    ],
+    "rubric": "Correct if response explains it duplicates the whole word-processor functionality and every new feature requires new undo-mechanism code, leading to an unmaintainable codebase. Incorrect if it gives a vague or unrelated answer."
+  }
+]

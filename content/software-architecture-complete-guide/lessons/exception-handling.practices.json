@@ -1,0 +1,37 @@
+[
+  {
+    "key": "when-to-catch",
+    "title": "کِی باید catch کنیم؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چه وقتی catch‌کردنِ یه استثنا منطقیه؟",
+    "options": [
+      "همیشه، حتی اگه فقط بخوایم توی لاگ بنویسیمش",
+      "وقتی یه اکشنِ مشخص باید انجام بشه — مثل rollback، retry، یا wrap‌کردنِ استثنا",
+      "هیچ‌وقت؛ همیشه باید بذاریم استثنا بترکه",
+      "فقط وقتی کد توی محیطِ production باشه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "فقط وقتی که یه اکشنِ مشخص باید موقعِ پرتاب‌شدنِ استثنا انجام بشه — مثل rollback‌کردنِ تراکنش، اجرای retry، یا wrap‌کردنِ استثنا — catch‌کردنش منطقیه. صرفِ نوشتن توی لاگ کافی نیست؛ این کار رو می‌شه با یه مکانیزمِ مرکزی انجام داد.",
+    "hints": [
+      "درس صراحتاً می‌گه صرفاً لاگ‌نوشتن، «معمولاً روشِ خوبی نیست».",
+      "درس سه مثالِ مشخص از اکشن‌های منطقی می‌زنه — کدوم گزینه بهشون اشاره داره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "smallest-code-fragment",
+    "title": "try/catch روی کلِ متد؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه متد از اول تا آخرش با یه `try/catch` بزرگ احاطه شده، و داخلش هم به دیتابیس دسترسی داره، هم یه تقسیم انجام می‌ده. طبق این درس، این رویکرد چه مشکلی داره و رویکردِ درست چیه؟",
+    "expected_outcome": "این یه اشتباهِ رایجه — درس می‌گه try/catch باید روی کوچیک‌ترین تکه‌کدِ ممکن استفاده بشه. رویکردِ درست اینه که خطِ دسترسیِ دیتابیس با catchِ مخصوصِ استثنای SQL احاطه بشه، و خطِ تقسیم جداگونه با catchِ مخصوصِ تقسیم‌بر‌صفر — نه یه catchِ عمومیِ واحد برایِ کلِ متد.",
+    "hints": [
+      "درس صراحتاً می‌گه متدهایی که از اول تا آخر یه try/catch دارن، «این اشتباهه».",
+      "درس دو مثالِ دقیقاً همین سناریو (دیتابیس و تقسیم) رو با هم میاره."
+    ],
+    "rubric": "Correct if response identifies the whole-method try/catch as a mistake and explains the fix: wrap each specific risky line (database access, division) separately with its own targeted catch. Correct_with_hint if only the mistake is named without the fix. Incorrect if it defends the whole-method approach."
+  }
+]

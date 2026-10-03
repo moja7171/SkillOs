@@ -1,0 +1,37 @@
+[
+  {
+    "key": "new-is-glue",
+    "title": "«new چسبه» یعنی چی؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، ضرب‌المثلِ «new چسبه» به چه معنیه؟",
+    "options": [
+      "کلیدواژه‌ی new همیشه کندتر از سایرِ روش‌های ساختِ آبجکته",
+      "هر جا کلیدواژه‌ی new رو مستقیم برای ساختنِ یه آبجکتِ کلاسِ دیگه ببینی، یعنی اتصالِ محکم بینِ اون دو کلاس وجود داره",
+      "new فقط توی زبان‌های dynamically-typed کار می‌کنه",
+      "new همیشه باید داخلِ constructor استفاده بشه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "هر جا کلیدواژه‌ی new رو مستقیم ببینی، یعنی یه پیوندِ محکم و اتصالِ قوی بینِ دو کلاس هست — که معمولاً ایده‌ی بدیه و کد رو کمتر ماژولار می‌کنه.",
+    "hints": [
+      "درس این ضرب‌المثل رو با فونتِ بولد معرفی می‌کنه و مستقیم توضیحش می‌ده.",
+      "به مثالِ `new Calculator()` توی کدِ اولِ درس فکر کن — این خط چه مشکلی داره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "interface-hides-implementation",
+    "title": "کلاس اصلی چی رو نمی‌دونه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "توی نسخه‌ی دوم کدِ این درس، `MainClass` از `ICalculator calc = CalculatorFactory.GetInstance()` استفاده می‌کنه. کلاس اصلی دقیقاً چه چیزی رو دیگه نمی‌دونه، و این چه فایده‌ای داره؟",
+    "expected_outcome": "کلاس اصلی نمی‌دونه پیاده‌سازیِ مشخصِ ماشین‌حساب کدومه — می‌تونه همون کلاسِ قبلی باشه یا یه کلاسِ کاملاً متفاوت. فایده‌ش اینه که می‌شه پیاده‌سازی رو عوض کرد بدونِ اینکه کلاسِ اصلی یا بقیه‌ی کد ازش خبردار بشن.",
+    "hints": [
+      "درس می‌گه اینترفیس «چه کاری می‌تونه بکنه» رو تعریف می‌کنه، ولی «هیچ اشاره‌ای به پیاده‌سازیِ مشخص» نداره.",
+      "به این فکر کن: چرا این ندونستن، خودش یه مزیته، نه یه محدودیت؟"
+    ],
+    "rubric": "Correct if response explains the main class no longer knows the concrete implementation class, and connects this to being able to swap implementations without affecting calling code. Incorrect if it gives a vague or unrelated answer."
+  }
+]

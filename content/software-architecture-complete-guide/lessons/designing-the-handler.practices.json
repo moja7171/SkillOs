@@ -1,0 +1,37 @@
+[
+  {
+    "key": "handler-similar-to-logging",
+    "title": "Handler شبیهِ کدوم سرویسِ قبلیه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، سرویسِ Handler از نظرِ نوعِ اپلیکیشن خیلی شبیهِ کدوم سرویسِ دیگه‌ست، و چرا؟",
+    "options": [
+      "شبیهِ Receiver‌ـه، چون هر دو REST API‌ان",
+      "شبیهِ سرویسِ لاگه، چون هر دو از صف pull می‌کنن و همیشه فعالن، نه درخواست-پاسخ",
+      "شبیهِ Info‌ـه، چون هر دو با دیتابیس کار می‌کنن",
+      "شبیهِ هیچ‌کدوم نیست؛ کاملاً منحصربه‌فرده"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Handler دقیقاً شبیهِ سرویسِ لاگه — هر دو پیام/رکورد رو از یه صف pull می‌کنن و توی دیتاستور ذخیره می‌کنن؛ هیچ‌کدوم مدلِ درخواست-پاسخ ندارن، پس هر دو سرویسِ ویندوز شدن.",
+    "hints": [
+      "درس صراحتاً می‌گه «یادته چطور نوعِ سرویسِ لاگ رو انتخاب کردیم؟ خب، سرویسِ Handler خیلی شبیهشه».",
+      "به مدلِ اجراییِ هر دو فکر کن — درخواست-پاسخ یا همیشه-فعال؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "polling-layer-not-service-interface",
+    "title": "لایه‌ی اولِ Handler چیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، لایه‌ی اولِ معماریِ Handler به‌جای لایه‌ی سرویسِ معمولی چی نامیده می‌شه، و مسئولِ چیه؟",
+    "expected_outcome": "لایه‌ی polling — مسئولِ زمان‌بندیِ pollکردنِ صف و اجرای واقعیِ poll، به‌جای در‌معرض‌دیدگذاشتنِ یه API.",
+    "hints": [
+      "درس می‌گه «بذار اسمش رو، مثلِ سرویسِ لاگ، polling بذاریم».",
+      "به این فکر کن: Handler خودش فعالیت رو شروع می‌کنه یا منتظرِ درخواسته؟"
+    ],
+    "rubric": "Correct if response names the polling layer and explains its role (scheduling/executing queue polls). Incorrect if it names a different layer."
+  }
+]

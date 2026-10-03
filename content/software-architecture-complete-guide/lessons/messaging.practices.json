@@ -1,0 +1,51 @@
+[
+  {
+    "key": "push-notification-weakness",
+    "title": "ضعفِ اصلیِ push notification",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، بزرگ‌ترین ضعفِ push notification (مثلِ SignalR) چیه؟",
+    "options": [
+      "اندازه‌ی پیامش خیلی بزرگه",
+      "بازخورد و قابلیت‌اطمینان — کارِ fire-and-forget انجام می‌ده و سرور نمی‌فهمه پیام دریافت شده یا نه",
+      "پیچیدگیِ پیاده‌سازیش خیلی بالاست",
+      "فقط برای یه کلاینت کار می‌کنه، نه چند کلاینت"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "بزرگ‌ترین ضعفش بازخورد و قابلیت‌اطمینانه — این کتابخونه‌ها fire-and-forget کار می‌کنن، پس اگه پیام دریافت نشه (مشکلِ شبکه یا باگِ کلاینت)، سرور هیچ‌وقت نمی‌فهمه.",
+    "hints": [
+      "درس صراحتاً می‌گه «بازخورد و قابلیت‌اطمینان، بزرگ‌ترین ضعفِ این روشه».",
+      "برخلافِ اندازه‌ی پیام یا پیچیدگی که هر دو «خیلی کم»ان، این یکی واقعاً ضعیفه."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "rest-vs-queue-tradeoff",
+    "title": "REST یا صف؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "یه سرویسِ A باید یه پیام به سرویسِ B بفرسته. ترتیبِ پردازشِ پیام‌ها برای کسب‌وکار حیاتیه و هیچ پیامی نباید گم بشه، ولی performance اولویتِ ثانویه‌ست. طبق این درس، REST API یا صف — کدوم مناسب‌تره، و چرا؟",
+    "expected_outcome": "صف مناسب‌تره. صف تضمین می‌ده پیام‌ها یک‌بار و به همون ترتیبی که دریافت شدن پردازش بشن — که REST API این تضمین رو نمی‌ده. بله، صف کندتره و پیچیدگیِ بیشتری داره، ولی چون ترتیب و قابلیت‌اطمینان اینجا اولویتِ اصلی‌ان و performance ثانویه‌ست، این مصالحه توجیه‌پذیره.",
+    "hints": [
+      "درس دقیقاً همین معیارها (ترتیب، قابلیتِ‌اطمینان، performanceِ ثانویه) رو برای «کِی از صف استفاده کنیم» می‌ده.",
+      "به جدولِ جمع‌بندی نگاه کن — کدوم روش «اطمینانِ بالا» داره؟"
+    ],
+    "rubric": "Correct if response picks queue and explains the ordering/reliability guarantee, acknowledging the performance tradeoff is acceptable here. Correct_with_hint if queue is picked without full reasoning. Incorrect if REST API is picked or no real reasoning is given."
+  },
+  {
+    "key": "file-based-danger",
+    "title": "سه سرویس، یه فایل، فاجعه",
+    "form": "explanation",
+    "difficulty": "stretch",
+    "estimated_minutes": 4,
+    "prompt": "طبق سناریوی این درس، سه نمونه از یه سرویس دارن یه پوشه رو برای فایل‌های جدید poll می‌کنن، و یه فایلِ حاویِ رکوردهای انتقالِ پول اضافه می‌شه. دو مشکلِ ممکن رو توضیح بده، و بگو چرا درس توصیه می‌کنه به‌جای این روش از صف استفاده بشه.",
+    "expected_outcome": "مشکلِ اول: فایل ممکنه توسط اولین سرویس قفل بشه و بقیه استثنا بگیرن (که راستش خودش جلوی پردازشِ تکراری رو می‌گیره). مشکلِ دوم: اگه فایل قابل‌دسترسی بمونه، هر سه سرویس ممکنه محتواش رو پردازش و ذخیره کنن — یعنی رکوردهای پول چند بار پردازش بشن، که فاجعه‌باره. برخلافِ صف، این روش هیچ تضمینی برای «یک‌بار و فقط یک‌بار پردازش‌شدن» نداره، پس درس توصیه می‌کنه هر جا polling لازمه، از صف استفاده بشه.",
+    "hints": [
+      "درس دقیقاً این سناریو رو با عنوانِ «یه سناریوی خطرناک» توصیف می‌کنه.",
+      "به فرقِ اصلیِ این روش با صف فکر کن — کدوم تضمین رو نداره؟"
+    ],
+    "rubric": "Correct if response explains both problems (file locking causing exceptions in other instances, and multiple instances processing the same data if the file stays accessible) and connects it to the lack of the once-and-only-once guarantee that queues provide. Correct_with_hint if only one problem is explained. Incorrect if neither problem or the queue recommendation is explained."
+  }
+]

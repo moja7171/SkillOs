@@ -1,0 +1,51 @@
+[
+  {
+    "key": "match-principle-to-example",
+    "title": "کدوم اصل، کدوم مثال؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "یه کلاس با پنج متدِ نامرتبط (خواندن، اعتبارسنجی، رمزگشایی، رمزگذاری، ارسال) به سه کلاسِ کوچیک‌تر تقسیم می‌شه، ولی چون همه‌شون یه اینترفیسِ متورمِ واحد رو پیاده‌سازی می‌کنن، هنوز مجبورن همه‌ی پنج متد رو داشته باشن. کدوم اصلِ SOLID دقیقاً راه‌حلِ این مشکله؟",
+    "options": [
+      "Single Responsibility Principle",
+      "Interface Segregation Principle",
+      "Liskov Substitution Principle",
+      "Dependency Inversion Principle"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "این دقیقاً مثالِ خودِ درس برای Interface Segregation Principle‌ـه — به‌جای یه اینترفیسِ عمومیِ بزرگ، چند اینترفیسِ نازک و مخصوصِ هر کلاینت بساز.",
+    "hints": [
+      "درس دقیقاً همین سناریو (پنج متد، سه کلاس، یه اینترفیسِ واحد) رو برای یکی از اصول مثال می‌زنه.",
+      "اسمِ این اصل، مستقیم به «تفکیکِ اینترفیس» اشاره داره."
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "liskov-vs-polymorphism",
+    "title": "لیسکوف با پلی‌مورفیسم چه فرقی داره؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، اصل جایگزینیِ لیسکوف با پلی‌مورفیسمِ معمولی چه فرقِ کلیدی‌ای داره؟ با مثالِ `MailSender`/`AdvancedSender` توضیح بده.",
+    "expected_outcome": "پلی‌مورفیسم فقط می‌گه یه نوع می‌تونه با زیرنوعش جایگزین بشه بدونِ اینکه کد کامپایل نشه یا خراب بشه. اصل لیسکوف فراتر می‌ره و درباره‌ی زیرنوع‌بندیِ رفتاری حرفه — یعنی رفتارِ متد هم نباید تغییر کنه. مثلاً `AdvancedSender` اگه علاوه بر فرستادنِ ایمیل، یه کپیِ خودکار هم به آرشیو بفرسته، از نظرِ کامپایل مشکلی نداره (پلی‌مورفیسم رعایت شده)، ولی اصل لیسکوف رو زیر پا می‌ذاره چون رفتارِ غیرمنتظره‌ای اضافه کرده.",
+    "hints": [
+      "درس می‌گه لیسکوف «درباره‌ی کدنویسی یا کامپایل‌شدن حرف نمی‌زنه» — پس درباره‌ی چی حرف می‌زنه؟",
+      "به مثالِ کپیِ خودکارِ آرشیو فکر کن — چرا این کارِ اضافه، مشکل‌سازه حتی اگه کد کامپایل بشه؟"
+    ],
+    "rubric": "Correct if response explains polymorphism only concerns compile-time substitutability while Liskov concerns behavioral subtyping (the substituted type's behavior must not surprise the caller), using the MailSender example. Correct_with_hint if only the definition is given without the example. Incorrect if it conflates the two concepts."
+  },
+  {
+    "key": "srp-vs-ocp",
+    "title": "مسئولیتِ واحد یا باز-بسته؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه توسعه‌دهنده دو تغییر جدا اعمال می‌کنه: (۱) یه متدِ لاگ‌گیریِ واحد رو به دو کلاسِ جدا — یکی برای ساختنِ پیام، یکی برای نوشتنش — تقسیم می‌کنه. (۲) یه سیستمِ فرمت‌ساز رو طوری بازنویسی می‌کنه که برای اضافه‌کردنِ یه فرمتِ جدید، دیگه لازم نباشه کدِ موجود تغییر کنه. هر کدوم از این دو تغییر، کدوم اصلِ SOLID رو پیاده می‌کنه؟",
+    "expected_outcome": "تغییرِ اول، Single Responsibility Principle‌ـه — هر کلاس فقط یه مسئولیت داره (ساختن یا نوشتن، نه هر دو). تغییرِ دوم، Open-Closed Principle‌ـه — سیستم برای توسعه باز و برای تغییر بسته‌ست.",
+    "hints": [
+      "درس دقیقاً همین مثالِ لاگ‌گیری رو برای اصلِ اول می‌زنه.",
+      "تغییرِ دوم دقیقاً همون مثالی‌یه که توی درسِ توسعه‌پذیری هم دیدیم — این دو اصل به هم خیلی نزدیکن."
+    ],
+    "rubric": "Correct if response correctly maps change 1 to Single Responsibility and change 2 to Open-Closed. Correct_with_hint if only one mapping is correct. Incorrect if both are wrong or swapped."
+  }
+]

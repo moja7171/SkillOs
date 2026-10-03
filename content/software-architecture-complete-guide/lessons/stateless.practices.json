@@ -1,0 +1,51 @@
+[
+  {
+    "key": "state-stored-where",
+    "title": "state کجا باید ذخیره بشه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، توی معماریِ stateless، حالتِ (state) اپلیکیشن فقط کجا ذخیره می‌شه؟",
+    "options": [
+      "توی متغیرهای داخلیِ سرویس",
+      "توی دیتاستور، و رابطِ کاربری (اگه اصلاً داشته باشه)",
+      "توی cacheِ مرورگر فقط",
+      "توی فایل‌های لاگِ سرور"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "توی معماریِ stateless، حالت فقط توی دیتاستور و رابطِ کاربری ذخیره می‌شه — هیچ حالتی توی کدِ اپلیکیشن (مثلاً توی یه متغیرِ داخلیِ سرویس) نگه‌داری نمی‌شه.",
+    "hints": [
+      "درس این تعریف رو دقیقاً توی پاراگرافِ اول با فونتِ بولد می‌ده.",
+      "به مثالِ درس فکر کن — چرا ذخیره‌کردنِ اطلاعاتِ کاربر «توی یه متغیرِ داخلِ سرویس» باعث می‌شه سیستم stateful بشه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "login-routing-scenario",
+    "title": "کاربر دوباره باید وارد بشه؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق داستانِ این درس، یه کاربر با سرورِ شماره‌ی یک وارد می‌شه، ولی درخواستِ بعدیش (اضافه‌کردن به سبدِ خرید) به سرورِ شماره‌ی دو مسیریابی می‌شه. چرا کاربر یه پیامِ خطا می‌گیره که باید دوباره وارد بشه، و راه‌حلِ درست چیه؟",
+    "expected_outcome": "چون کدِ سرویس stateful‌ـه — اطلاعاتِ کاربر توی یه متغیرِ داخلیِ سرورِ شماره‌ی یک ذخیره شده، و سرورِ شماره‌ی دو اصلاً از این داده خبر نداره. راه‌حل: اطلاعاتِ کاربر رو توی یه دیتاستورِ مشترک (دیتابیس، NoSQL یا cacheِ توزیع‌شده) ذخیره کن که از همه‌ی سرورها قابل‌دسترسه — این‌طوری هر سروری که درخواست رو بگیره، از دیتاستور می‌فهمه کاربر کیه.",
+    "hints": [
+      "درس دقیقاً همین سناریو رو قدم‌به‌قدم تعریف می‌کنه — کجاش می‌گه «این سرور اصلاً نمی‌دونه این کاربر کیه»؟",
+      "به این فکر کن: راه‌حل چه چیزی رو از «فقط روی یه سرورِ خاص» به «قابل‌دسترس از همه‌ی سرورها» تغییر می‌ده؟"
+    ],
+    "rubric": "Correct if response explains the root cause (state stored only in server 1's memory, invisible to server 2) and the fix (move state to a shared datastore accessible from all servers). Correct_with_hint if only one half is explained. Incorrect if neither is explained correctly."
+  },
+  {
+    "key": "stateless-supports-what",
+    "title": "Stateless دقیقاً چی رو ممکن می‌کنه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق جمع‌بندیِ این درس، معماریِ stateless دقیقاً از کدوم دو ویژگیِ کیفی پشتیبانیِ کامل می‌کنه؟",
+    "expected_outcome": "مقیاس‌پذیری (scalability) و افزونگی (redundancy).",
+    "hints": [
+      "درس همین دو کلمه رو توی جمله‌ی آخرش نام می‌بره.",
+      "این دو ویژگی توی همین درس، قبل از رسیدن به معماریِ عملی، تعریف شدن."
+    ],
+    "rubric": "Correct if response names both scalability and redundancy. Partial if only one is named. Incorrect if neither is named correctly."
+  }
+]

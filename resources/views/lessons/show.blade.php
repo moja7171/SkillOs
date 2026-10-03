@@ -16,12 +16,15 @@
     $reviewCount = $reviewAttempts->count();
     $reviewSuccessCount = $reviewAttempts->whereIn('result_status', ['correct', 'correct_with_hint'])->count();
 
-    // Curriculum grouped by section, in course order. The sidebar circle counts a lesson
-    // as done at either signal: real mastery (>= «آشنا»), or the sticky "انجام دادم" mark —
-    // the two are deliberately different things (DECISIONS.md), but both mean "filled dot" here.
+    // Curriculum grouped by section, in course order. Each lesson has up to two independent
+    // dots (DECISIONS.md §65): the lesson item (watched / marked) and, when it has practices,
+    // the practice item. Mastery level is a third, separate signal and no longer fills either.
     $sections = $course->lessons->groupBy(fn ($l) => $l->section ?? '');
-    $levelIndexOrDone = fn ($l) => max(MasteryRecord::LEVEL_INDEX[$l->levelFor($user)], $doneLessonIds->contains($l->id) ? 2 : 0);
-    $doneCount = $course->lessons->filter(fn ($l) => $levelIndexOrDone($l) >= 2)->count();
+    $isLessonDone = fn ($l) => $doneLessonIds->contains($l->id);
+    $isPracticeDone = fn ($l) => isset($coursePracticeProgress[$l->id]) && $coursePracticeProgress[$l->id]['passed'] === $coursePracticeProgress[$l->id]['total'];
+    $doneCount = $course->lessons->filter($isLessonDone)->count();
+    $practicesPassedTotal = $coursePracticeProgress->sum('passed');
+    $practicesTotal = $coursePracticeProgress->sum('total');
     $total = $course->lessons->count();
     $position = $course->lessons->search(fn ($l) => $l->id === $lesson->id) + 1;
 @endphp
@@ -69,8 +72,8 @@
 
                 <x-lesson-content :lesson="$lesson" class="card" />
 
-                <div class="card">
-                    <div class="card-h"><h3>تمرین‌ها <span class="text-faint font-normal">· {{ fa_num($lesson->practices->count()) }}</span></h3></div>
+                <div class="card" id="practices">
+                    <div class="card-h"><h3>تمرین‌ها <span class="text-faint font-normal">· {{ fa_num($practiceProgress['passed']) }} از {{ fa_num($lesson->practices->count()) }} پاس‌شده</span></h3></div>
                     @forelse ($lesson->practices as $practice)
                         @php $status = $practiceStatus[$practice->id] ?? null; @endphp
                         <div class="flex items-center gap-3 px-[18px] py-3 border-b border-line last:border-b-0">
@@ -95,38 +98,34 @@
                     @endforelse
                 </div>
 
-                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap" @if ($lessonDone) style="border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);" @endif
-                     @unless ($lessonDone)
-                     x-data="{
-                         watchedVideoIds: {{ Js::from($lesson->watchedVideoIdsBy($user)->values()) }},
-                         videoIds: {{ Js::from($lesson->videos->pluck('id')) }},
-                         warn: false,
-                         get allVideosWatched() { return this.videoIds.every(id => this.watchedVideoIds.includes(id)); },
-                         submit(event) { if (! this.allVideosWatched) { event.preventDefault(); this.warn = true; } }
-                     }"
-                     @video-watched.window="if (! watchedVideoIds.includes($event.detail.videoId)) watchedVideoIds.push($event.detail.videoId)"
-                     @endunless>
-                    @if ($lessonDone)
-                        <div class="flex items-center gap-2.5 text-[13.5px]">
-                            <span class="w-7 h-7 rounded-full grid place-items-center shrink-0" style="background: var(--ok); color: #06261a;"><x-icon name="check" class="w-4 h-4" /></span>
-                            <span class="font-semibold">این درس رو انجام دادی.</span>
-                        </div>
-                    @else
-                        <div class="min-w-0">
-                            <div class="text-[13.5px] text-muted">
-                                @if ($practicesPassed)
-                                    ویدیو/متن رو دیدی و تمرین‌ها رو درست جواب دادی؟ همینجا علامتش بزن.
-                                @else
-                                    اول همه‌ی تمرین‌های بالا رو درست جواب بده، بعد می‌تونی این درس رو انجام‌شده علامت بزنی.
-                                @endif
-                            </div>
-                            <div x-show="warn" x-cloak x-transition class="error mt-1.5">هنوز همه‌ی ویدیوهای این درس رو کامل ندیدی — اول اون‌ها رو تا آخر ببین.</div>
-                        </div>
-                        <form method="POST" action="{{ route('lessons.mark-done', $lesson) }}" @submit="submit">
-                            @csrf
-                            <button type="submit" class="btn btn-primary" @disabled(! $practicesPassed)><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
-                        </form>
+                {{-- Lesson item (DECISIONS.md §65): completes by itself when the last video ends; the manual
+                     button exists only for lessons without videos. Practices are a separate item and never gate it. --}}
+                @php $hasVideos = $lesson->videos->isNotEmpty(); @endphp
+                <div class="card p-4 flex items-center justify-between gap-4 flex-wrap"
+                     x-data="{ done: {{ Js::from($lessonDone) }} }"
+                     @lesson-done.window="done = true"
+                     :style="done ? 'border-color: var(--ok); background: color-mix(in srgb, var(--ok) 8%, transparent);' : ''">
+                    <div x-show="done" @unless ($lessonDone) x-cloak @endunless class="flex items-center gap-2.5 text-[13.5px]">
+                        <span class="w-7 h-7 rounded-full grid place-items-center shrink-0" style="background: var(--ok); color: #06261a;"><x-icon name="check" class="w-4 h-4" /></span>
+                        <span class="font-semibold">این درس رو انجام دادی.</span>
+                        @if ($practiceProgress['total'] > 0 && $practiceProgress['passed'] < $practiceProgress['total'])
+                            <span class="text-muted">تمرین‌هاش هنوز مونده.</span>
+                        @endif
+                    </div>
+                    @if ($practiceProgress['total'] > 0 && $practiceProgress['passed'] < $practiceProgress['total'])
+                        <a x-show="done" @unless ($lessonDone) x-cloak @endunless href="#practices" class="btn btn-primary"><x-icon name="play" class="w-4 h-4" /> برو به تمرین‌ها</a>
                     @endif
+                    @unless ($lessonDone)
+                        <div x-show="! done" class="text-[13.5px] text-muted min-w-0">
+                            {{ $hasVideos ? 'همه‌ی ویدیوهای این درس رو تا آخر ببین؛ درس خودکار انجام‌شده علامت می‌خوره.' : 'متن رو که خوندی همینجا علامتش بزن.' }}
+                        </div>
+                        @unless ($hasVideos)
+                            <form x-show="! done" method="POST" action="{{ route('lessons.mark-done', $lesson) }}">
+                                @csrf
+                                <button type="submit" class="btn btn-primary"><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
+                            </form>
+                        @endunless
+                    @endunless
                 </div>
 
                 <div class="grid gap-5 md:grid-cols-3">
@@ -190,7 +189,7 @@
             <div class="px-4 py-3.5 border-b border-line flex items-start gap-3">
                 <div class="min-w-0 flex-1">
                     <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent truncate">{{ $course->title }}</a>
-                    <div class="text-[12px] text-muted mt-0.5">{{ fa_num($doneCount) }} از {{ fa_num($total) }} درس حداقل «آشنا»</div>
+                    <div class="text-[12px] text-muted mt-0.5">{{ fa_num($doneCount) }} از {{ fa_num($total) }} درس انجام‌شده@if ($practicesTotal) · {{ fa_num($practicesPassedTotal) }} از {{ fa_num($practicesTotal) }} تمرین پاس‌شده@endif</div>
                     <div class="levelbar mt-2 !gap-0 bg-surface2" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $total }}" aria-valuenow="{{ $doneCount }}" aria-label="پیشرفت دوره"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);"></span></div>
                 </div>
                 <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = false" title="بستن فهرست درس‌ها" aria-label="بستن فهرست درس‌ها"><x-icon name="x" class="w-4 h-4" /></button>
@@ -208,7 +207,7 @@
                 @foreach ($sections as $sectionTitle => $items)
                     @php
                         $isCurrentSection = $items->contains('id', $lesson->id);
-                        $sectionDone = $items->filter(fn ($l) => $levelIndexOrDone($l) >= 2)->count();
+                        $sectionDone = $items->filter($isLessonDone)->count();
                         $sectionMinutes = $items->sum('estimated_minutes');
                     @endphp
                     <div x-data="{ open: {{ ($isCurrentSection || $sectionTitle === '') ? 'true' : 'false' }} }" class="border-b border-line">
@@ -223,19 +222,30 @@
                         @endif
                         <div x-show="open">
                             @foreach ($items as $item)
-                                @php $i = $levelIndexOrDone($item); $isCurrent = $item->id === $lesson->id; @endphp
+                                @php
+                                    $isCurrent = $item->id === $lesson->id;
+                                    $itemPractice = $coursePracticeProgress[$item->id] ?? null;
+                                @endphp
                                 <a href="{{ $item->url() }}" @if ($isCurrent) data-current aria-current="page" @endif
                                    class="flex items-start gap-2.5 px-4 py-2.5 text-[13px] leading-[1.5] border-s-2 {{ $isCurrent ? 'bg-surface2 border-accent text-ink' : 'border-transparent text-ink hover:bg-hover' }}">
-                                    <span class="mt-[3px] w-4 h-4 rounded-full grid place-items-center shrink-0 text-[10px]"
-                                          style="{{ $i >= 2 ? 'background: var(--l'.$i.'); color: #fff;' : 'border: 1.5px solid var(--l'.$i.'); color: var(--l'.$i.');' }}">
-                                        @if ($i >= 2)<x-icon name="check" class="w-2.5 h-2.5" />@endif
+                                    <span class="mt-[3px] flex items-center gap-1 shrink-0">
+                                        <span class="w-4 h-4 rounded-full grid place-items-center text-[10px]" title="{{ $isLessonDone($item) ? 'درس انجام شده' : 'درس انجام نشده' }}"
+                                              style="{{ $isLessonDone($item) ? 'background: var(--ok); color: #fff;' : 'border: 1.5px solid var(--line2);' }}">
+                                            @if ($isLessonDone($item))<x-icon name="check" class="w-2.5 h-2.5" />@endif
+                                        </span>
+                                        @if ($itemPractice)
+                                            <span class="w-4 h-4 rounded-full grid place-items-center text-[10px]" title="تمرین‌ها: {{ fa_num($itemPractice['passed']) }} از {{ fa_num($itemPractice['total']) }}"
+                                                  style="{{ $isPracticeDone($item) ? 'background: var(--accent); color: #1a1200;' : ($itemPractice['passed'] > 0 ? 'border: 1.5px solid var(--accent);' : 'border: 1.5px dashed var(--line2);') }}">
+                                                @if ($isPracticeDone($item))<x-icon name="check" class="w-2.5 h-2.5" />@endif
+                                            </span>
+                                        @endif
                                     </span>
                                     <span class="min-w-0 flex-1">
                                         <span class="block truncate {{ $isCurrent ? 'font-semibold' : '' }}"><span class="num me-1">{{ $item->order + 1 }}.</span>{{ $item->title }}</span>
                                         <span class="block text-[11.5px] text-faint flex items-center gap-1.5">
                                             @if ($item->videos_count)<x-icon name="video" class="w-3 h-3" />@else<x-icon name="text" class="w-3 h-3" />@endif
                                             {{ fa_num($item->estimated_minutes) }} دقیقه
-                                            @if ($i === 1)<span class="text-l1">· در حال یادگیری</span>@endif
+                                            @if ($isLessonDone($item) && $itemPractice && ! $isPracticeDone($item))<span class="text-l1">· تمرین مونده</span>@endif
                                         </span>
                                     </span>
                                 </a>

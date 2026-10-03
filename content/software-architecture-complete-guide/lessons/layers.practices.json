@@ -1,0 +1,51 @@
+[
+  {
+    "key": "code-flow-rule",
+    "title": "SI می‌تونه مستقیم DAL رو صدا بزنه؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق مفهومِ «جریان کد»، آیا لایه‌ی SI می‌تونه مستقیماً کدِ لایه‌ی DAL رو صدا بزنه؟",
+    "options": [
+      "بله، هر وقت لازم باشه",
+      "نه، هر لایه فقط می‌تونه لایه‌ی دقیقاً زیرِ خودش رو صدا بزنه — یعنی SI فقط BL رو صدا می‌زنه",
+      "بله، ولی فقط اگه DAL هم SI رو صدا بزنه",
+      "نه، هیچ لایه‌ای اصلاً نباید لایه‌ی دیگه‌ای رو صدا بزنه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "یه لایه فقط می‌تونه لایه‌ی دقیقاً زیرِ خودش رو صدا بزنه — SI فقط BL رو صدا می‌زنه، هیچ‌وقت مستقیم DAL رو. این جداییِ سفت‌وسخت رو حفظ می‌کنه.",
+    "hints": [
+      "درس این قاعده رو با عنوانِ «جریان کد» به‌عنوانِ اولین مفهوم معرفی می‌کنه.",
+      "به این فکر کن: اگه SI مستقیم به DAL دسترسی داشته باشه، چه اتفاقی برای ماژولاریته می‌افته؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "exception-encapsulation",
+    "title": "چرا DAL نباید استثنای MySQL رو مستقیم پرتاب کنه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، اگه لایه‌ی DAL یه استثنای مشخصِ MySQL رو مستقیم به BL پرتاب کنه، چه مشکلی پیش میاد؟ و الگوی درست چیه؟",
+    "expected_outcome": "پرتاب‌کردنِ مستقیمِ استثنای MySQL یعنی BL می‌فهمه DAL از MySQL استفاده می‌کنه — درحالی‌که باید کاملاً از کارکردِ درونیِ DAL بی‌خبر باشه؛ این کپسوله‌سازیِ لایه‌ها رو می‌شکنه. الگوی درست اینه که DAL خودش استثنا رو تحلیل و لاگ کنه و یه استثنای جدیدِ عمومی (مثلاً DataException) با یه پیامِ کلی بسازه و بهSI بده.",
+    "hints": [
+      "درس می‌گه یکی از مهم‌ترین مفاهیمِ معماریِ لایه‌ای، کپسوله‌بودنِ لایه‌هاست — این استثنا این اصل رو چطور می‌شکنه؟",
+      "درس اسمِ یه کلاسِ استثنای عمومیِ پیشنهادی رو هم می‌ده."
+    ],
+    "rubric": "Correct if response explains that leaking the MySQL-specific exception breaks layer encapsulation (BL learns DAL's internals), and describes the fix: DAL catches/logs it and throws a generic exception with a general message. Correct_with_hint if only the problem or only the fix is explained. Incorrect if no real reasoning is given."
+  },
+  {
+    "key": "layer-vs-tier",
+    "title": "لایه یا Tier؟",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه اپلیکیشن از سه سرویسِ مستقل تشکیل شده که هر کدوم توی فرایندِ جدا دیپلوی شدن و با HTTP با هم حرف می‌زنن. طبق این درس، آیا باید این اپلیکیشن رو «سه‌لایه» بنامیم یا «سه‌tier»، و چرا؟",
+    "expected_outcome": "باید «سه‌tier» بنامیمش. Tier یه تکه‌کدِ توزیع‌شده‌ست که مستقل دیپلوی می‌شه و از طریقِ شبکه ارتباط برقرار می‌کنه. لایه، در مقابل، بخشی از یه جزءِ واحده که همه‌شون توی یه فرایندِ مشترک اجرا می‌شن، بدونِ شبکه.",
+    "hints": [
+      "درس دقیقاً می‌گه Tier «یه تکه‌کدِ توزیع‌شده»ست که «از طریقِ پروتکل‌های شبکه‌ای» ارتباط برقرار می‌کنه.",
+      "به این فکر کن: آیا سه سرویسِ این سناریو توی یه فرایندِ مشترک اجرا می‌شن یا فرایندهای جدا؟"
+    ],
+    "rubric": "Correct if response identifies this as \"tier\" (not \"layer\") and explains the distinction: tier is distributed across separate deployed processes communicating over the network, while layer is within one shared process. Correct_with_hint if the right term is picked without the reasoning. Incorrect if it calls this \"layers\"."
+  }
+]

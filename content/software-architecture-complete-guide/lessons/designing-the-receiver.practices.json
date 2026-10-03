@@ -1,0 +1,51 @@
+[
+  {
+    "key": "dal-replaced-by-queue-layer",
+    "title": "چرا DAL جایگزین شد؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا لایه‌ی DAL توی معماریِ Receiver با یه لایه‌ی دیگه جایگزین شد؟",
+    "options": [
+      "چون Receiver اصلاً به دیتابیس دسترسی نداره",
+      "چون Receiver پیام‌ها رو توی یه صف می‌ذاره، نه یه دیتاستورِ سنتی",
+      "چون DAL خیلی کند بود",
+      "چون Receiver اصلاً لایه‌بندی نمی‌شه"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "Receiver پیام‌ها رو توی یه صف می‌ذاره، نه یه دیتاستور — صف رو به‌عنوانِ یه روشِ انتقالِ پیام در نظر می‌گیریم، نه دیتاستور. پس به‌جای DAL، یه «لایه‌ی مدیریتِ صف» ساخته شد.",
+    "hints": [
+      "درس صراحتاً می‌گه «این سرویس هیچ دیتاستوری نداره».",
+      "به این فکر کن: اضافه‌کردنِ پیام به صف، چه فرقی با ذخیره‌کردنِ توی دیتابیس داره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "cross-cutting-logging-layer",
+    "title": "لایه‌ی لاگ‌گیری، لایه‌ی معمولیه؟",
+    "form": "short_answer",
+    "difficulty": "core",
+    "estimated_minutes": 2,
+    "prompt": "طبق این درس، چرا لایه‌ی لاگ‌گیریِ Receiver «لایه‌ی معمولی» نیست و چی نامیده می‌شه؟",
+    "expected_outcome": "چون بینِ لایه‌های دیگه قرار نمی‌گیره — یه لایه‌ی عمودیه، یا به اصطلاحِ حرفه‌ای cross-cutting concern، که برای همه‌ی لایه‌ها در دسترسه.",
+    "hints": [
+      "درس این نوع لایه رو با یه اصطلاحِ خاص معرفی می‌کنه.",
+      "به این فکر کن: چرا همه‌ی لایه‌ها (نه فقط یکیشون) باید بتونن لاگ بنویسن؟"
+    ],
+    "rubric": "Correct if response names cross-cutting concern (or \"vertical layer\") and explains it's accessible to all layers. Incorrect if it gives a vague or unrelated answer."
+  },
+  {
+    "key": "nfr-compliance-check",
+    "title": "چرا ۱٪ از‌دست‌رفتنِ پیام برای Receiver کافیه؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "طبق این درس، چرا یه REST API استاندارد برای برآوردنِ نیازمندیِ «۹۹٪ عدمِ از‌دست‌رفتنِ پیام» کافیه، و اگه این نیازمندی ۱۰۰٪ بود چه فرقی می‌کرد؟",
+    "expected_outcome": "چون احتمالِ از‌دست‌رفتنِ بیشتر از ۱٪ درخواست توی یه REST API معمولی خیلی پایینه، و سرویس هم کارِ زیادی انجام نمی‌ده — پس همین کافیه. اگه نیازمندی ۱۰۰٪ بود، باید یه مکانیزمِ پیچیده‌ی failsafe پیاده می‌شد تا مطمئن بشیم پیام هیچ‌وقت از دست نمی‌ره.",
+    "hints": [
+      "درس دقیقاً می‌گه «اینجاست که این فرق رو می‌بینیم» — کدوم فرق، همون فرقِ ۱۰۰٪ در مقابلِ ۹۹٪ که زودتر توی دوره گفته شد.",
+      "به این فکر کن: نیازمندیِ ۱۰۰٪ چه مکانیزمِ اضافه‌ای رو می‌طلبید؟"
+    ],
+    "rubric": "Correct if response explains standard REST API's low failure rate satisfies 99% tolerance, and contrasts with the complex failsafe mechanism a 100% requirement would demand. Correct_with_hint if only one side is explained. Incorrect if neither is explained correctly."
+  }
+]

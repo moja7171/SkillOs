@@ -1,0 +1,51 @@
+[
+  {
+    "key": "rest-still-coupled",
+    "title": "REST API کافیه برای اتصالِ سست؟",
+    "form": "mcq",
+    "difficulty": "intro",
+    "estimated_minutes": 2,
+    "prompt": "طبق مثالِ این درس، سرویسِ سهام از RMI به REST API سوییچ کرد و یه سرویسِ دیگه با Python باهاش کار می‌کرد. وقتی URLِ سرویسِ سهام عوض شد، چه اتفاقی افتاد؟",
+    "options": [
+      "هیچ مشکلی نبود، چون REST مستقل از پلتفرمه",
+      "همه‌ی سرویس‌هایی که باهاش کار می‌کردن باید کدشون رو تغییر می‌دادن — یعنی همچنان اتصالِ محکم وجود داشت",
+      "فقط سرویسِ سهام باید تغییر می‌کرد",
+      "سیستم خودش به‌طورِ خودکار URL جدید رو پیدا می‌کرد"
+    ],
+    "correct_option": 1,
+    "expected_outcome": "با اینکه REST مستقل از پلتفرمه، تغییرِ URL همچنان همه‌ی سرویس‌های فراخوان‌کننده رو مجبور به تغییرِ کد کرد — یعنی اتصالِ محکم هنوز وجود داشت، حتی با یه API استانداردِ مدرن.",
+    "hints": [
+      "درس می‌گه «این یعنی یه چیز: بینِ سرویس‌ها اتصالِ محکم وجود داره».",
+      "به این فکر کن: استفاده از REST به‌جای RMI، مشکلِ URLِ هاردکدشده رو حل می‌کنه؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
+  },
+  {
+    "key": "yellow-pages-vs-gateway",
+    "title": "دایرکتوری یا میانجی؟",
+    "form": "explanation",
+    "difficulty": "core",
+    "estimated_minutes": 4,
+    "prompt": "طبق این درس، دو راه‌حلِ «دایرکتوریِ زردصفحه» و «میانجی/دروازه» چه فرقِ کلیدی‌ای با هم دارن؟",
+    "expected_outcome": "توی دایرکتوری، سرویسِ فراخوان‌کننده هنوز می‌دونه چه سرویسی رو می‌خواد صدا بزنه — فقط URLش رو از دایرکتوری می‌پرسه و خودش مستقیم بهش وصل می‌شه. توی میانجی، سرویسِ فراخوان‌کننده اصلاً نمی‌دونه سرویسِ هدف کدومه یا حتی وجود داره — فقط از میانجی می‌خواد کاری انجام بشه، و میانجی خودش تصمیم می‌گیره کجا بفرسته.",
+    "hints": [
+      "درس می‌گه توی راه‌حلِ دوم، «سرویسِ فراخوان‌کننده اصلاً نمی‌دونه URL سرویسِ سهام چیه، یا حتی اصلاً همچین سرویسی وجود داره یا نه».",
+      "توی راه‌حلِ اول، سرویس همچنان می‌دونه دنبالِ چه سرویسیه — فقط آدرسش رو نمی‌دونه."
+    ],
+    "rubric": "Correct if response explains the key difference: in the directory approach the caller still knows which service it wants and connects directly after lookup, while in the gateway approach the caller doesn't even know the target service exists. Correct_with_hint if only one solution is described accurately. Incorrect if both are conflated."
+  },
+  {
+    "key": "spider-web-identification",
+    "title": "شناساییِ شبکه‌ی تار عنکبوت",
+    "form": "scenario",
+    "difficulty": "core",
+    "estimated_minutes": 3,
+    "prompt": "یه سیستمِ ۸ سرویسی داری که هر سرویس مستقیم به چند سرویسِ دیگه با URL هاردکدشده وصل می‌شه. طبق این درس، این نقشه‌ی سرویس‌ها چه نامی داره، و اگه یه URL عوض بشه چه اتفاقی می‌افته؟",
+    "expected_outcome": "این یه «شبکه‌ی تار عنکبوت»ـه. اگه یه URL عوض بشه، همه‌ی سرویس‌هایی که مستقیم بهش وصل بودن تحتِ‌تأثیر قرار می‌گیرن — یه سورپرایزِ ناخوشایند که نشونه‌ی مطمئنِ اتصالِ محکمه.",
+    "hints": [
+      "درس این اسم رو مستقیم برای همچین نقشه‌ای به کار می‌بره.",
+      "به این فکر کن: چرا این الگو رو «سورپرایزِ ناخوشایند» توصیف می‌کنه؟"
+    ],
+    "rubric": "Correct if response names \"spider web\" and explains a single URL change ripples across all directly-connected services. Incorrect if it doesn't identify the pattern by name or misses the ripple-effect consequence."
+  }
+]

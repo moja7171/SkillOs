@@ -37,6 +37,7 @@ return array(
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\VideoView' => $baseDir . '/app/Models/VideoView.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
+    'App\\Services\\Ai\\AiModelChain' => $baseDir . '/app/Services/Ai/AiModelChain.php',
     'App\\Services\\Ai\\Concerns\\UsesOutboundProxy' => $baseDir . '/app/Services/Ai/Concerns/UsesOutboundProxy.php',
     'App\\Services\\Ai\\GeminiClient' => $baseDir . '/app/Services/Ai/GeminiClient.php',
     'App\\Services\\Content\\CourseImporter' => $baseDir . '/app/Services/Content/CourseImporter.php',

@@ -9,6 +9,7 @@ use App\Models\Lesson;
 use App\Models\User;
 use App\Services\Ai\GeminiClient;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class SessionTest extends TestCase
@@ -208,6 +209,22 @@ class SessionTest extends TestCase
         $this->assertSame('started', $attempt->result_status);
         $this->assertSame(0, $attempt->hint_level);
         $this->assertEmpty($attempt->evidence['history']);
+    }
+
+    public function test_a_gemini_outage_on_every_model_shows_the_friendly_error_not_a_server_error(): void
+    {
+        $attempt = $this->startAttempt($this->coding());
+        config(['services.gemini.api_key' => 'test-key', 'services.gemini.judge_models' => ['model-a']]);
+        Http::fake(['generativelanguage.googleapis.com/*' => Http::response(['error' => 'down'], 503)]);
+
+        $this->actingAs($this->user)
+            ->from(route('session.show', $attempt))
+            ->post(route('session.submit', $attempt), ['response' => 'my code'])
+            ->assertRedirect(route('session.show', $attempt))
+            ->assertSessionHas('error')
+            ->assertSessionHasInput('response', 'my code');
+
+        $this->assertSame('started', $attempt->fresh()->result_status);
     }
 
     public function test_empty_response_is_rejected_in_persian(): void

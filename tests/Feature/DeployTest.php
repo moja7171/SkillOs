@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\User;
+use App\Services\Ai\AiModelChain;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
@@ -96,6 +97,35 @@ class DeployTest extends TestCase
         Http::fake(['generativelanguage.googleapis.com/*' => Http::response('nope', 500)]);
 
         $this->get('/_ops/ai-check?token=secret')->assertOk()->assertSee('Gemini relay test FAILED');
+    }
+
+    public function test_ops_ai_chains_flags_a_retired_model_and_one_that_is_skipped(): void
+    {
+        config([
+            'app.ops_token' => 'secret',
+            'services.gemini.api_key' => 'test-key',
+            'services.gemini.judge_models' => ['retired-model', 'tired-model'],
+            'services.gemini.generate_models' => ['tired-model'],
+        ]);
+        (new AiModelChain)->markUnavailable('gemini', 'tired-model', AiModelChain::KIND_DAILY_QUOTA, 3600);
+
+        Http::fake([
+            'generativelanguage.googleapis.com/v1beta/models/retired-model' => Http::response(['error' => 'gone'], 404),
+            'generativelanguage.googleapis.com/v1beta/models/tired-model' => Http::response(['name' => 'models/tired-model']),
+        ]);
+
+        $this->get('/_ops/ai-chains?token=secret')
+            ->assertOk()
+            ->assertSee('1. retired-model — GONE', false)
+            ->assertSee('2. tired-model — exists; SKIPPED (daily_quota)', false)
+            ->assertDontSee('test-key', false);
+    }
+
+    public function test_ops_ai_chains_is_disabled_without_the_token(): void
+    {
+        config(['app.ops_token' => 'secret']);
+
+        $this->get('/_ops/ai-chains?token=wrong')->assertNotFound();
     }
 
     public function test_registration_requires_the_invite_code_when_configured(): void

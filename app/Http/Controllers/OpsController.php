@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Services\Ai\AiModelChain;
 use App\Services\Ai\GeminiClient;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -18,7 +19,7 @@ use Illuminate\Support\Str;
  */
 class OpsController extends Controller
 {
-    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'update', 'delete-course', 'deploy-log', 'ai-check'];
+    public const ACTIONS = ['status', 'migrate', 'import', 'optimize', 'clear', 'update', 'delete-course', 'deploy-log', 'ai-check', 'ai-chains'];
 
     public function __invoke(Request $request, string $action): Response
     {
@@ -45,6 +46,7 @@ class OpsController extends Controller
                 'delete-course' => $out = $this->deleteCourse($request->query('slug')),
                 'deploy-log' => $out = $this->deployLog(),
                 'ai-check' => $out = $this->aiCheck(),
+                'ai-chains' => $out = $this->aiChains(),
             };
         } catch (\Throwable $e) {
             $out[] = 'ERROR: '.$e->getMessage();
@@ -211,7 +213,12 @@ class OpsController extends Controller
     {
         $proxy = config('services.ai_proxy.url');
 
-        $out = ['ai proxy: '.($proxy ?: '(direct — no relay configured)')];
+        $gemini = new GeminiClient;
+        $out = [
+            'ai proxy: '.($proxy ?: '(direct — no relay configured)'),
+            'gemini judge chain: '.$this->chainNames($gemini->configuredChain(GeminiClient::PROFILE_JUDGE)),
+            'gemini generate chain: '.$this->chainNames($gemini->configuredChain(GeminiClient::PROFILE_GENERATE)),
+        ];
 
         try {
             $result = app(GeminiClient::class)->generateJson(
@@ -220,10 +227,76 @@ class OpsController extends Controller
             );
             $out[] = 'Gemini relay test SUCCESS: '.json_encode($result);
         } catch (\Throwable $e) {
+            // GeminiClient hides the provider's reply from its own message; the
+            // previous exception (token-gated here) is where the real cause lives.
             $out[] = 'Gemini relay test FAILED: '.$e->getMessage();
+
+            if ($e->getPrevious() !== null) {
+                $out[] = 'cause: '.Str::limit($e->getPrevious()->getMessage(), 400);
+            }
         }
 
         return $out;
+    }
+
+    /**
+     * Per chain: each model's place in the order, whether Google still serves
+     * it (a retired model is stale config), whether the app is currently
+     * skipping it and why, and today's success/failure counts. Spends no
+     * generation quota.
+     *
+     * @return list<string>
+     */
+    protected function aiChains(): array
+    {
+        $chains = new AiModelChain;
+        $gemini = new GeminiClient;
+        $exists = [];
+        $out = [];
+
+        foreach ([GeminiClient::PROFILE_JUDGE, GeminiClient::PROFILE_GENERATE] as $profile) {
+            $out[] = "gemini {$profile} chain (best first):";
+
+            foreach ($chains->status('gemini', $gemini->configuredChain($profile)) as $position => $row) {
+                $exists[$row['model']] ??= $gemini->modelExists($row['model']);
+                $out[] = $this->chainRow($position + 1, $row, $exists[$row['model']]);
+            }
+        }
+
+        return $out;
+    }
+
+    /**
+     * @param  array{model: string, thinking_level: ?string, available: bool, reason: ?string, since: ?int, until: ?int, today: array{ok: int, fail: int, last_ok_at: ?int, last_fail_at: ?int, last_fail_reason: ?string}}  $row
+     */
+    protected function chainRow(int $position, array $row, ?bool $exists): string
+    {
+        $existence = match ($exists) {
+            true => 'exists',
+            false => 'GONE — retired, remove it from the list',
+            null => 'existence unknown',
+        };
+
+        $rotation = $row['available']
+            ? 'in rotation'
+            : "SKIPPED ({$row['reason']}) until ".date('H:i:s', (int) $row['until']);
+
+        $level = $row['thinking_level'] !== null ? ":{$row['thinking_level']}" : '';
+        $today = $row['today'];
+        $lastFailure = $today['last_fail_reason'] !== null ? ", last failure: {$today['last_fail_reason']}" : '';
+
+        return "  {$position}. {$row['model']}{$level} — {$existence}; {$rotation}; today ok {$today['ok']} / failed {$today['fail']}{$lastFailure}";
+    }
+
+    /**
+     * @param  list<array{model: string, thinking_level: ?string}>  $chain
+     */
+    protected function chainNames(array $chain): string
+    {
+        return implode(' → ', array_map(
+            fn (array $entry) => $entry['model'].($entry['thinking_level'] !== null ? ":{$entry['thinking_level']}" : ''),
+            $chain,
+        ));
     }
 
     /**

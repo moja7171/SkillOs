@@ -69,7 +69,7 @@ class ReviewPracticeGenerator
             'required' => ['title', 'form', 'difficulty', 'prompt', 'expected_outcome', 'rubric', 'hints'],
         ];
 
-        $result = $this->gemini->generateJson($prompt, $schema);
+        $result = $this->gemini->generateJson($prompt, $schema, GeminiClient::PROFILE_GENERATE);
         $this->validate($result);
 
         return $lesson->activities()->create([

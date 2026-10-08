@@ -199,6 +199,12 @@ class Planner
         // Minutes already on today's plan (completed or still open) count against the budget.
         $budget = max(0, $enrollment->daily_time_minutes - $existingForCourse->sum('duration_minutes'));
 
+        // Nothing fits an empty budget (fillBudget would drop every candidate), and
+        // finding candidates can call Gemini (pickReviewPractice) — so don't, on a page view.
+        if ($budget === 0) {
+            return;
+        }
+
         foreach ($this->candidatesFor($user, $enrollment, $budget, $alreadyPlanned) as $candidate) {
             PlanItem::create([
                 'user_id' => $user->id,

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\DB;
  *   revealed        true when the expected outcome was shown (only via giveUp())
  *   source          free|plan|review — where the attempt was launched from
  *   plan_item_id    set when launched from today's plan; that item completes on finalize
+ *                   (as does any open item of today's plan for the same activity)
  *   history         [{response, verdict, feedback}]
  *   level_change    {from, to} when the lesson's level moved on finalize
  */
@@ -47,7 +48,7 @@ class AttemptSession
 
     /**
      * Launch from today's plan: the attempt inherits the item's source (plan|review)
-     * and completes it when finalized. Outside-plan attempts never complete plan items.
+     * and completes it when finalized. An attempt for an activity that is not on today's plan completes nothing.
      */
     public function startPlanned(User $user, PlanItem $planItem): Attempt
     {
@@ -147,10 +148,14 @@ class AttemptSession
                 $attempt->save();
             }
 
-            if ($planItemId = $attempt->evidence['plan_item_id'] ?? null) {
-                PlanItem::where('id', $planItemId)->where('user_id', $attempt->user_id)->where('status', 'scheduled')
-                    ->update(['status' => 'completed']);
-            }
+            // The launching item completes, and so does any other open item of today's
+            // plan for the same activity: finishing something from the lesson page (the
+            // player, the practice list) must tick it on the home page too.
+            PlanItem::where('user_id', $attempt->user_id)
+                ->where('status', 'scheduled')
+                ->where(fn ($q) => $q->where('id', $attempt->evidence['plan_item_id'] ?? 0)
+                    ->orWhere(fn ($q) => $q->where('activity_id', $attempt->activity_id)->whereDate('scheduled_for', today())))
+                ->update(['status' => 'completed']);
 
             $attempt->activity->lesson->course->enrollments()
                 ->where('user_id', $attempt->user_id)

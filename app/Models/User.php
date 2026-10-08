@@ -50,6 +50,25 @@ class User extends Authenticatable
         $this->save();
     }
 
+    /**
+     * The streak as it stands now: the stored count only holds while the last active day
+     * is today or yesterday — after a longer gap it is already broken, even though the
+     * column is only reset by the next activity.
+     */
+    public function currentStreak(): int
+    {
+        if ($this->streak_last_date === null || $this->streak_last_date->lt(today()->subDay())) {
+            return 0;
+        }
+
+        return $this->streak_count;
+    }
+
+    public function hasRecordedActivityToday(): bool
+    {
+        return (bool) $this->streak_last_date?->isSameDay(today());
+    }
+
     public function enrollments(): HasMany
     {
         return $this->hasMany(Enrollment::class);

@@ -21,7 +21,7 @@
 
 | Surface | Route | Content | Primary action |
 |---|---|---|---|
-| Home | `/` | Continue Learning CTA, Today per course, My courses with progress bars | Continue Learning |
+| Home | `/` | Today's plan: remaining count/minutes, one «شروع امروز» button, one merged reviews-first queue; recap, backlog and courses collapsed under «بیشتر» (DECISIONS §68) | Start today |
 | All courses | `/courses` | Catalog cards (title, outcome, lessons count, enrolled badge) | Enroll |
 | Course | `/courses/{slug}` | Outcome, sources, lessons table (#, title, level, minutes, lock), enrollment config in sidebar | Continue (scoped) / Enroll |
 | Lesson (course player) | `/courses/{slug}/lessons/{slug}` | Persistent curriculum sidebar on the left (sections, levels, current highlighted), tabs ویدیو / متن, key points, practices list, status / files / prerequisites, prev/next | Practice / Next lesson |

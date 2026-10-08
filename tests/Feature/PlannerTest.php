@@ -11,6 +11,7 @@ use App\Models\MasteryRecord;
 use App\Models\PlanItem;
 use App\Models\User;
 use App\Services\Ai\GeminiClient;
+use App\Services\Content\ReviewPracticeGenerator;
 use App\Services\Mastery\MasteryService;
 use App\Services\Planning\Planner;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -316,28 +317,37 @@ class PlannerTest extends TestCase
         $this->assertCount(1, $plan['alternatives'], 'the review lesson has no second practice to offer freely');
     }
 
-    public function test_planned_attempt_completes_its_item_but_free_attempt_does_not(): void
+    public function test_finishing_a_planned_activity_ticks_its_item_whichever_way_it_was_launched(): void
     {
         Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
         $items = app(Planner::class)->today($this->user);
         $learnItem = $items->firstWhere('source', 'plan');
+        $otherItem = $items->where('source', 'plan')->where('id', '!=', $learnItem->id)->first();
 
-        // Free launch of the same activity from the lesson page: the item stays open.
+        // Free launch of the same activity from the lesson page: it is still the same work, so the item ticks.
         $this->actingAs($this->user)->post(route('session.start', $learnItem->activity));
         $free = Attempt::latest('id')->first();
         $this->actingAs($this->user)->post(route('session.complete', $free));
-        $this->assertSame('scheduled', $learnItem->fresh()->status);
+        $this->assertSame('completed', $learnItem->fresh()->status);
         $this->assertSame('free', $free->fresh()->evidence['source']);
+        if ($otherItem) {
+            $this->assertSame('scheduled', $otherItem->fresh()->status);
+        }
 
-        // Launch from the plan: completes it and the home page shows it ticked.
+        $this->actingAs($this->user)->post(route('session.start-planned', $learnItem))->assertStatus(422);
+        $this->actingAs($this->user)->get(route('home'))->assertOk()->assertSee('۱ کار مونده')->assertSee('۱ از ۲');
+    }
+
+    public function test_planned_attempt_carries_plan_evidence_and_completes_its_item(): void
+    {
+        Enrollment::factory()->for($this->user)->for($this->course)->scheduled(30)->create();
+        $learnItem = app(Planner::class)->today($this->user)->firstWhere('source', 'plan');
+
         $this->actingAs($this->user)->post(route('session.start-planned', $learnItem))->assertRedirect();
         $planned = Attempt::latest('id')->first();
         $this->assertSame('plan', $planned->evidence['source']);
         $this->actingAs($this->user)->post(route('session.complete', $planned));
         $this->assertSame('completed', $learnItem->fresh()->status);
-
-        $this->actingAs($this->user)->post(route('session.start-planned', $learnItem))->assertStatus(422);
-        $this->actingAs($this->user)->get(route('home'))->assertOk()->assertSee('۱ از ۲ انجام شده');
     }
 
     public function test_review_launched_from_plan_is_review_evidence(): void
@@ -402,5 +412,22 @@ class PlannerTest extends TestCase
 
         $this->actingAs(User::factory()->create())->post(route('session.start-planned', $item))->assertForbidden();
         $this->assertSame('scheduled', $item->fresh()->status);
+    }
+
+    public function test_an_exhausted_budget_never_asks_gemini_for_a_review_practice(): void
+    {
+        $enrollment = Enrollment::factory()->for($this->user)->for($this->course)->scheduled(10)->create();
+        $lesson = $this->lessons[0];
+        $this->mastery($lesson, 300, 'yesterday');
+        // Every authored practice already answered: a review would have to generate a new one.
+        Attempt::create(['activity_id' => $lesson->practices()->first()->id, 'user_id' => $this->user->id, 'result_status' => 'correct', 'completed_at' => now()]);
+        PlanItem::create([
+            'user_id' => $this->user->id, 'enrollment_id' => $enrollment->id, 'activity_id' => $lesson->learnActivity->id,
+            'scheduled_for' => today(), 'duration_minutes' => 10, 'status' => 'completed', 'source' => 'plan', 'reason' => 'شروع درس',
+        ]);
+
+        $this->mock(ReviewPracticeGenerator::class)->shouldNotReceive('generate');
+
+        $this->assertCount(1, app(Planner::class)->today($this->user));
     }
 }

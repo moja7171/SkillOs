@@ -3,8 +3,10 @@
 namespace Tests\Feature;
 
 use App\Models\Attempt;
+use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\MasteryRecord;
+use App\Models\PlanItem;
 use App\Models\User;
 use App\Models\VideoView;
 use App\Services\Mastery\MasteryService;
@@ -126,5 +128,27 @@ class LessonMarkDoneTest extends TestCase
 
         $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('این درس رو انجام دادی');
         $this->actingAs($user)->get(route('courses.show', $lesson->course))->assertOk()->assertSee('این درس رو انجام دادی');
+    }
+
+    public function test_finishing_a_lesson_from_its_page_ticks_todays_open_plan_item(): void
+    {
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->withActivities()->create();
+        $enrollment = Enrollment::factory()->for($user)->for($lesson->course)->scheduled(30)->create();
+        $video = $lesson->videos()->create(['order' => 0, 'url' => 'https://example.com/a.mp4']);
+
+        $item = PlanItem::create([
+            'user_id' => $user->id, 'enrollment_id' => $enrollment->id, 'activity_id' => $lesson->learnActivity->id,
+            'scheduled_for' => today(), 'duration_minutes' => 10, 'status' => 'scheduled', 'source' => 'plan', 'reason' => 'شروع درس',
+        ]);
+        $yesterday = PlanItem::create([
+            'user_id' => $user->id, 'enrollment_id' => $enrollment->id, 'activity_id' => $lesson->learnActivity->id,
+            'scheduled_for' => today()->subDay(), 'duration_minutes' => 10, 'status' => 'scheduled', 'source' => 'plan', 'reason' => 'شروع درس',
+        ]);
+
+        $this->actingAs($user)->post(route('lesson-videos.watched', $video))->assertOk();
+
+        $this->assertSame('completed', $item->fresh()->status);
+        $this->assertSame('scheduled', $yesterday->fresh()->status);
     }
 }

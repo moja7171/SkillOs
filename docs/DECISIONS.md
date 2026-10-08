@@ -61,7 +61,7 @@ today(user):
 - Content for `current` is generated lazily if `skills.content_generated_at` is null (see §6).
 - **Continue Learning** = first uncompleted plan item (reviews first, then by item priority). Alternatives = next plan item + a free practice of the current skill of the top item.
 - **Skip** = plan item status `skipped`. No reschedule.
-- **Outside-plan activity**: an attempt whose activity has no scheduled plan item today does not mark anything completed.
+- **Outside-plan activity**: an attempt whose activity has no scheduled plan item today does not mark anything completed. (A free attempt of an activity that *is* on today's plan does tick it — §68.)
 
 **Recovery.** Nothing special. Overdue reviews are simply due; the per-item cap of 3 reviews/day bounds the return-after-absence plan. Overdue reviews that don't fit today are picked up on following days, oldest first.
 

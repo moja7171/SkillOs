@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -45,5 +46,19 @@ class StreakTest extends TestCase
         $user->recordActivityToday();
 
         $this->assertSame(4, $user->streak_count);
+    }
+
+    public function test_the_day_rolls_over_at_tehran_midnight(): void
+    {
+        $this->assertSame('Asia/Tehran', config('app.timezone'));
+
+        // 20:29 UTC is 23:59 in Tehran (UTC+3:30, no DST since 2022); one minute later is the next day.
+        Carbon::setTestNow(Carbon::parse('2026-10-08 20:29:00', 'UTC'));
+        $this->assertSame('2026-10-08', today()->toDateString());
+
+        Carbon::setTestNow(Carbon::parse('2026-10-08 20:30:00', 'UTC'));
+        $this->assertSame('2026-10-09', today()->toDateString());
+
+        Carbon::setTestNow();
     }
 }

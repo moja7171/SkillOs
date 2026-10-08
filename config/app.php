@@ -68,11 +68,12 @@ return [
     |
     | Here you may specify the default timezone for your application, which
     | will be used by the PHP date and date-time functions. The timezone
-    | is set to "UTC" by default as it is suitable for most use cases.
+    | is Asia/Tehran: "today" (plan, streak, reviews) rolls over at local
+    | midnight, not 03:30 (DECISIONS.md §68).
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'Asia/Tehran'),
 
     /*
     |--------------------------------------------------------------------------

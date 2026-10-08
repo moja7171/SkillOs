@@ -11,6 +11,7 @@ use App\Models\MasteryRecord;
 use App\Models\PlanItem;
 use App\Models\User;
 use App\Services\Ai\GeminiClient;
+use App\Services\Content\ReviewPracticeGenerator;
 use App\Services\Mastery\MasteryService;
 use App\Services\Planning\Planner;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -411,5 +412,22 @@ class PlannerTest extends TestCase
 
         $this->actingAs(User::factory()->create())->post(route('session.start-planned', $item))->assertForbidden();
         $this->assertSame('scheduled', $item->fresh()->status);
+    }
+
+    public function test_an_exhausted_budget_never_asks_gemini_for_a_review_practice(): void
+    {
+        $enrollment = Enrollment::factory()->for($this->user)->for($this->course)->scheduled(10)->create();
+        $lesson = $this->lessons[0];
+        $this->mastery($lesson, 300, 'yesterday');
+        // Every authored practice already answered: a review would have to generate a new one.
+        Attempt::create(['activity_id' => $lesson->practices()->first()->id, 'user_id' => $this->user->id, 'result_status' => 'correct', 'completed_at' => now()]);
+        PlanItem::create([
+            'user_id' => $this->user->id, 'enrollment_id' => $enrollment->id, 'activity_id' => $lesson->learnActivity->id,
+            'scheduled_for' => today(), 'duration_minutes' => 10, 'status' => 'completed', 'source' => 'plan', 'reason' => 'شروع درس',
+        ]);
+
+        $this->mock(ReviewPracticeGenerator::class)->shouldNotReceive('generate');
+
+        $this->assertCount(1, app(Planner::class)->today($this->user));
     }
 }

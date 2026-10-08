@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enrollment;
+use App\Models\Lesson;
+use App\Models\MasteryRecord;
 use App\Services\Engagement\ActivityStats;
 use App\Services\Insights\WeakSpots;
 use App\Services\Planning\Planner;
@@ -13,39 +16,47 @@ class HomeController extends Controller
     public function __invoke(Request $request, Planner $planner, ActivityStats $stats, WeakSpots $weakSpots): View
     {
         $user = $request->user();
-        $plan = $planner->continueLearning($user);
 
         $enrollments = $user->enrollments()
-            ->with(['course.lessons.masteryRecords' => fn ($q) => $q->where('user_id', $user->id)])
+            ->with(['course' => fn ($q) => $q->withCount('lessons')])
             ->orderBy('priority')
             ->get()
-            ->sortBy(fn ($e) => $e->status === 'active' ? 0 : 1)
+            ->sortBy(fn (Enrollment $e) => $e->status === 'active' ? 0 : 1)
             ->values();
 
-        $todayByEnrollment = $planner->orderForLearner($plan['items'])->groupBy('enrollment_id');
+        // One flat queue in the order the session page's «بعدی» walks it: reviews first,
+        // then course priority (DECISIONS.md §68).
+        $queue = $planner->orderForLearner($planner->today($user));
+        $open = $queue->where('status', 'scheduled')->values();
+        $done = $queue->where('status', 'completed');
+        // Skipped items leave the day's denominator: «not today» must not read as unfinished.
+        $counted = $queue->where('status', '!=', 'skipped');
 
-        $daysSinceLastActivity = $user->streak_last_date ? $user->streak_last_date->diffInDays(today()) : null;
+        $scheduled = $enrollments->filter->isScheduled();
+        $lessonIds = Lesson::whereIn('course_id', $scheduled->pluck('course_id'))->select('id');
+        $dueReviews = MasteryRecord::where('user_id', $user->id)->whereIn('lesson_id', $lessonIds);
 
-        // A due review already sitting in today's plan, offered as a low-friction
-        // shortcut on low-motivation days — same priority order as $primary, skipped
-        // when the review already *is* the main recommendation so it isn't shown twice.
-        $quickReview = $todayByEnrollment->flatten()
-            ->first(fn ($item) => $item->source === 'review' && $item->status === 'scheduled' && ! $plan['primary']?->is($item));
+        $backlog = $stats->practiceBacklog($user);
 
         return view('home', [
             'enrollments' => $enrollments,
-            'primary' => $plan['primary'],
-            'alternatives' => $plan['alternatives'],
-            'todayByEnrollment' => $todayByEnrollment,
-            'plannedMinutes' => $plan['items']->sum('duration_minutes'),
-            'doneMinutes' => $plan['items']->where('status', 'completed')->sum('duration_minutes'),
-            'streakCount' => $user->streak_count,
-            'daysSinceLastActivity' => $daysSinceLastActivity,
+            'unscheduled' => $enrollments->where('status', 'active')->reject->isScheduled()->values(),
+            'queue' => $queue,
+            'next' => $open->first(),
+            'openCount' => $open->count(),
+            'doneCount' => $done->count(),
+            'countedTotal' => $counted->count(),
+            'remainingMinutes' => $open->sum('duration_minutes'),
+            'extraDueReviews' => max(0, (clone $dueReviews)->where('next_review_due_at', '<=', now())->count() - $open->where('source', 'review')->count()),
+            'tomorrowReviews' => (clone $dueReviews)->whereDate('next_review_due_at', today()->addDay())->count(),
+            'continueCourse' => $scheduled->where('status', 'active')->first()?->course,
+            'streakCount' => $user->currentStreak(),
+            'recordedToday' => $user->hasRecordedActivityToday(),
+            'daysSinceLastActivity' => $user->streak_last_date ? (int) $user->streak_last_date->diffInDays(today()) : null,
             'weeklyStats' => $stats->since($user, now()->subDays(7)),
             'monthlyStats' => $stats->since($user, now()->subDays(30)),
-            'quickReview' => $quickReview,
             'weakSpotCount' => $weakSpots->forUser($user)->count(),
-            'practiceBacklog' => $stats->practiceBacklog($user),
+            'practiceBacklog' => $backlog,
         ]);
     }
 }

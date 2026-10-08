@@ -31,7 +31,7 @@ class PagesRenderTest extends TestCase
 
         $this->actingAs($user);
 
-        $this->get(route('home'))->assertOk()->assertSee('هنوز دوره‌ای برنداشتی');
+        $this->get(route('home'))->assertOk()->assertSee('اولین دوره‌ت رو انتخاب کن');
         $this->get(route('courses.index'))->assertOk()->assertSee('دوره‌ی آزمایشی')->assertSee('۲ درس');
         $this->get(route('courses.show', $course))->assertOk()->assertSee('برداشتن دوره')->assertSee('درس اول');
         $this->get(route('lessons.show', [$course, $second]))->assertOk()->assertSee('درس اول')->assertSee('تمرین کد')->assertSee('<h2>مقدمه</h2>', false);

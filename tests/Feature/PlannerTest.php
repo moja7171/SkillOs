@@ -335,7 +335,7 @@ class PlannerTest extends TestCase
         }
 
         $this->actingAs($this->user)->post(route('session.start-planned', $learnItem))->assertStatus(422);
-        $this->actingAs($this->user)->get(route('home'))->assertOk()->assertSee('۱ از ۲ انجام شده');
+        $this->actingAs($this->user)->get(route('home'))->assertOk()->assertSee('۱ کار مونده')->assertSee('۱ از ۲');
     }
 
     public function test_planned_attempt_carries_plan_evidence_and_completes_its_item(): void

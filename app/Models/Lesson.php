@@ -47,7 +47,8 @@ class Lesson extends Model
 
     public function practices(): HasMany
     {
-        return $this->hasMany(Activity::class)->where('type', 'practice')->orderBy('id');
+        // AI-made review questions (generated) are not part of the lesson's practice item (§65).
+        return $this->hasMany(Activity::class)->where('type', 'practice')->where('generated', false)->orderBy('id');
     }
 
     public function masteryRecords(): HasMany

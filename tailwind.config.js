@@ -28,6 +28,7 @@ export default {
                 faint: 'var(--faint)',
                 accent: 'var(--accent)',
                 'accent-ink': 'var(--accent-ink)',
+                'accent-text': 'var(--accent-text)',
                 ok: 'var(--ok)',
                 warn: 'var(--warn)',
                 bad: 'var(--bad)',

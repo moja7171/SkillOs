@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Attempt;
 use App\Models\Course;
 use App\Models\Lesson;
-use App\Models\MasteryRecord;
 use App\Services\Evaluation\AttemptSession;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -63,16 +62,14 @@ class LessonController extends Controller
     }
 
     /**
-     * The explicit "انجام دادم" action, now only for lessons without videos (lessons with
-     * videos complete automatically when the last one ends — DECISIONS.md §65). Practices
-     * are a separate item and never gate this.
+     * The learner's own «انجام دادم» / «قبلاً دیدمش» (DECISIONS.md §65, §70). A lesson with
+     * videos also completes by itself when the last one ends; practices are a separate
+     * item and never gate this.
      */
     public function markDone(Request $request, Lesson $lesson, AttemptSession $sessions): RedirectResponse
     {
         $user = $request->user();
         $lesson->loadMissing('practices', 'videos', 'learnActivity');
-
-        abort_unless($lesson->allVideosWatchedBy($user), 422);
 
         if (! $lesson->isMarkedDoneBy($user)) {
             $sessions->markLessonDone($user, $lesson->learnActivity);
@@ -82,15 +79,11 @@ class LessonController extends Controller
     }
 
     /**
-     * "Continue": the first lesson the learner has not reached «آشنا» on, else the first lesson.
+     * «ادامه»: see Course::nextLessonFor().
      */
     public function continue(Request $request, Course $course): RedirectResponse
     {
-        $user = $request->user();
-        $course->load(['lessons.masteryRecords' => fn ($q) => $q->where('user_id', $user->id)]);
-
-        $lesson = $course->lessons->first(fn (Lesson $l) => MasteryRecord::LEVEL_INDEX[$l->levelFor($user)] < 2)
-            ?? $course->lessons->first();
+        $lesson = $course->nextLessonFor($request->user());
 
         abort_if($lesson === null, 404);
 

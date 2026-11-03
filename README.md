@@ -1,6 +1,6 @@
 # SkillOS
 
-A personal learning OS: authored courses → lessons (video + rewritten text + practices) → daily plan → learn / practice / AI feedback → spaced review. Persian UI, RTL, Jalali dates. Built for one person plus a couple of friends.
+A personal learning OS: authored courses → lessons (video + rewritten text + practices) → learn / practice / AI feedback → spaced review queue. Persian UI, RTL, Jalali dates. Built for one person plus a couple of friends.
 
 Product docs live in `docs/` — `PRD.md`, `DESIGN.md`, `DECISIONS.md` (algorithms and numbers), `STORIES.md` (build tracker), and **`AUTHORING.md` — the manual for writing lessons; read it before touching `content/`**.
 

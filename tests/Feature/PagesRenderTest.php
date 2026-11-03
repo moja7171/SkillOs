@@ -5,7 +5,6 @@ namespace Tests\Feature;
 use App\Models\Course;
 use App\Models\Enrollment;
 use App\Models\Lesson;
-use App\Models\MasteryRecord;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -31,20 +30,19 @@ class PagesRenderTest extends TestCase
 
         $this->actingAs($user);
 
-        $this->get(route('home'))->assertOk()->assertSee('اولین دوره‌ت رو انتخاب کن');
+        $this->get(route('home'))->assertOk()->assertSee('هنوز دوره‌ای برنداشتی');
         $this->get(route('courses.index'))->assertOk()->assertSee('دوره‌ی آزمایشی')->assertSee('۲ درس');
         $this->get(route('courses.show', $course))->assertOk()->assertSee('برداشتن دوره')->assertSee('درس اول');
         $this->get(route('lessons.show', [$course, $second]))->assertOk()->assertSee('درس اول')->assertSee('تمرین کد')->assertSee('<h2>مقدمه</h2>', false);
 
-        $enrollment = Enrollment::factory()->for($user)->for($course)->create();
-        $this->get(route('home'))->assertOk()->assertSee('دوره‌ی آزمایشی')->assertSee('بدون زمان روزانه');
-        $this->get(route('courses.show', $course))->assertOk()->assertSee('زمان‌بندی')->assertSee('نیاز به درس اول');
-        $this->get(route('lessons.show', [$course, $second]))->assertOk()->assertSee('باید حداقل «آشنا» بشه');
-        $this->get(route('enrollments.edit', $enrollment))->assertOk();
+        Enrollment::factory()->for($user)->for($course)->create();
+        $this->get(route('home'))->assertOk()->assertSee('دوره‌ی آزمایشی')->assertSee('درس ۱ از ۲');
+        $this->get(route('courses.show', $course))->assertOk()->assertSee('نیاز به درس اول');
+        $this->get(route('lessons.show', [$course, $second]))->assertOk()->assertSee('رو تا سطح «آشنا» برسونی');
         $this->get(route('profile.edit'))->assertOk();
     }
 
-    public function test_lesson_urls_are_nested_under_the_course_and_continue_picks_the_first_unfamiliar_lesson(): void
+    public function test_lesson_urls_are_nested_under_the_course_and_continue_picks_the_first_lesson_not_done(): void
     {
         $user = User::factory()->create();
         $course = Course::factory()->create(['slug' => 'demo']);
@@ -61,17 +59,7 @@ class PagesRenderTest extends TestCase
         $this->get("/lessons/{$second->id}")->assertRedirect($second->url()); // old bookmarks
 
         $this->get(route('courses.learn', $course))->assertRedirect($first->url());
-        MasteryRecord::create(['user_id' => $user->id, 'lesson_id' => $first->id, 'level' => 'familiar', 'numeric_mastery' => 500]);
+        $this->post(route('lessons.mark-done', $first));
         $this->get(route('courses.learn', $course))->assertRedirect($second->url());
-    }
-
-    public function test_validation_errors_are_in_persian(): void
-    {
-        $enrollment = Enrollment::factory()->create();
-
-        $this->actingAs($enrollment->user)
-            ->from(route('enrollments.edit', $enrollment))
-            ->put(route('enrollments.update', $enrollment), ['priority' => 9, 'status' => 'active'])
-            ->assertSessionHasErrors(['priority' => 'اولویت نباید بزرگ‌تر از 5 باشد.']);
     }
 }

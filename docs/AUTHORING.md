@@ -118,7 +118,7 @@ Rubric conventions:
 - mcq: exactly `Correct only if option N is selected.` with N = `correct_option` (the validator checks this).
 - open forms: `Correct: … Partial: … Incorrect: …` — name the specific facts/steps that must appear, and what is an acceptable alternative. The grader returns `correct | correct_with_hint | incorrect`, so "Partial" describes what still counts as correct-with-reservations.
 
-Per-lesson mix that works: one `intro` (usually mcq, 1–2 min), one `core` (coding or short_answer, 4–6 min), one `core`/`stretch` (short_answer or mcq, 3–4 min). Difficulty drives the planner's choice; keep the distribution roughly 1/1/1 across a section. (`explanation` is legacy — see §6.)
+Per-lesson mix that works: one `intro` (usually mcq, 1–2 min), one `core` (coding or short_answer, 4–6 min), one `core`/`stretch` (short_answer or mcq, 3–4 min). Difficulty is only a label on the practice; keep the distribution roughly 1/1/1 across a section. (`explanation` is legacy — see §6.)
 
 ## 4. Workflow for a section (do this, in this order)
 

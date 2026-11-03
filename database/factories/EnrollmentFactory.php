@@ -22,12 +22,6 @@ class EnrollmentFactory extends Factory
             'course_id' => Course::factory(),
             'status' => 'active',
             'priority' => 3,
-            'daily_time_minutes' => null,
         ];
-    }
-
-    public function scheduled(int $minutes = 30): static
-    {
-        return $this->state(fn () => ['daily_time_minutes' => $minutes]);
     }
 }

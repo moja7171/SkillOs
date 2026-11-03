@@ -86,7 +86,7 @@ class ActivityStats
             ->whereHas('attempts', fn ($q) => $q->where('user_id', $user->id)->where('evidence->source', 'lesson_done'))
             ->pluck('lesson_id');
 
-        $practices = Activity::where('type', 'practice')->whereIn('lesson_id', $doneLessonIds)->get(['id', 'lesson_id']);
+        $practices = Activity::where('type', 'practice')->where('generated', false)->whereIn('lesson_id', $doneLessonIds)->get(['id', 'lesson_id']);
         $passedIds = $user->attempts()
             ->whereIn('activity_id', $practices->pluck('id'))
             ->whereIn('result_status', ['correct', 'correct_with_hint'])

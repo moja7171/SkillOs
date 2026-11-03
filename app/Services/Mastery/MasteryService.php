@@ -73,6 +73,27 @@ class MasteryService
         });
     }
 
+    /**
+     * Takes one attempt's effect back out (a reported review question, DECISIONS.md §70)
+     * and makes the lesson due again so its next review gets a different question.
+     */
+    public function revertAttempt(Attempt $attempt): void
+    {
+        $record = MasteryRecord::where('user_id', $attempt->user_id)
+            ->where('lesson_id', $attempt->activity->lesson_id)
+            ->first();
+        if ($record === null) {
+            return;
+        }
+
+        $numeric = max(0, min(self::MAX, $record->numeric_mastery - $this->deltaFor($attempt)));
+        $record->fill([
+            'numeric_mastery' => $numeric,
+            'level' => self::levelFor($numeric),
+            'next_review_due_at' => today(),
+        ])->save();
+    }
+
     public static function levelFor(int $numeric): string
     {
         foreach (self::THRESHOLDS as $level => $min) {

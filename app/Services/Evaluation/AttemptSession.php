@@ -4,7 +4,6 @@ namespace App\Services\Evaluation;
 
 use App\Models\Activity;
 use App\Models\Attempt;
-use App\Models\PlanItem;
 use App\Models\User;
 use App\Services\Mastery\MasteryService;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +17,7 @@ use Illuminate\Support\Facades\DB;
  *   hints_shown     number of hints revealed so far (== hint_level)
  *   partial_retry   true once a partial verdict granted a retry
  *   revealed        true when the expected outcome was shown (only via giveUp())
- *   source          free|plan|review — where the attempt was launched from
- *   plan_item_id    set when launched from today's plan; that item completes on finalize
- *                   (as does any open item of today's plan for the same activity)
+ *   source          free|review|lesson_done — where the attempt was launched from
  *   history         [{response, verdict, feedback}]
  *   level_change    {from, to} when the lesson's level moved on finalize
  */
@@ -30,45 +27,22 @@ class AttemptSession
 
     public function __construct(protected Evaluator $evaluator, protected MasteryService $mastery) {}
 
-    public function start(User $user, Activity $activity, string $source = 'free', ?PlanItem $planItem = null): Attempt
+    public function start(User $user, Activity $activity, string $source = 'free'): Attempt
     {
-        $evidence = ['source' => $source, 'hints_shown' => 0, 'history' => []];
-        if ($planItem) {
-            $evidence['plan_item_id'] = $planItem->id;
-        }
-
         return $user->attempts()->create([
             'activity_id' => $activity->id,
             'started_at' => now(),
             'result_status' => 'started',
             'hint_level' => 0,
-            'evidence' => $evidence,
+            'evidence' => ['source' => $source, 'hints_shown' => 0, 'history' => []],
         ]);
     }
 
     /**
-     * Launch from today's plan: the attempt inherits the item's source (plan|review)
-     * and completes it when finalized. An attempt for an activity that is not on today's plan completes nothing.
-     */
-    public function startPlanned(User $user, PlanItem $planItem): Attempt
-    {
-        return $this->start($user, $planItem->activity, $planItem->source === 'review' ? 'review' : 'plan', $planItem);
-    }
-
-    /**
-     * Learn activities have no right or wrong: the learner marks them done.
-     */
-    public function completeLearn(Attempt $attempt): void
-    {
-        $this->finalize($attempt, 'completed');
-    }
-
-    /**
-     * The explicit "انجام دادم" action on the lesson page (DECISIONS.md): the learner
-     * confirms a lesson is done, once every one of its practices has been answered
-     * correctly. Recorded as its own attempt (evidence.source = 'lesson_done') so it can
-     * be told apart from a plan-driven "آماده‌ام" and stays a permanent record even if a
-     * later review knocks the numeric mastery back down.
+     * The lesson item is done (DECISIONS.md §65): every video watched, or the learner's own
+     * «قبلاً دیدمش» / «انجام دادم» on the lesson page. Recorded as its own attempt
+     * (evidence.source = 'lesson_done') so it stays a permanent record even if a later
+     * review knocks the numeric mastery back down.
      */
     public function markLessonDone(User $user, Activity $learnActivity): Attempt
     {
@@ -95,6 +69,16 @@ class AttemptSession
             $assisted = $attempt->hint_level > 0 || ! empty($evidence['partial_retry']);
             $attempt->evidence = $evidence;
             $this->finalize($attempt, $assisted ? 'correct_with_hint' : 'correct');
+
+            return $verdict;
+        }
+
+        // A review question is answered once: a wrong answer shows the answer and the
+        // explanation instead of hints and retries (DECISIONS.md §70).
+        if (($evidence['source'] ?? null) === 'review') {
+            $evidence['revealed'] = true;
+            $attempt->evidence = $evidence;
+            $this->finalize($attempt, 'incorrect');
 
             return $verdict;
         }
@@ -147,15 +131,6 @@ class AttemptSession
                 $attempt->evidence = $evidence;
                 $attempt->save();
             }
-
-            // The launching item completes, and so does any other open item of today's
-            // plan for the same activity: finishing something from the lesson page (the
-            // player, the practice list) must tick it on the home page too.
-            PlanItem::where('user_id', $attempt->user_id)
-                ->where('status', 'scheduled')
-                ->where(fn ($q) => $q->where('id', $attempt->evidence['plan_item_id'] ?? 0)
-                    ->orWhere(fn ($q) => $q->where('activity_id', $attempt->activity_id)->whereDate('scheduled_for', today())))
-                ->update(['status' => 'completed']);
 
             $attempt->activity->lesson->course->enrollments()
                 ->where('user_id', $attempt->user_id)

@@ -3,10 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\Attempt;
-use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\MasteryRecord;
-use App\Models\PlanItem;
 use App\Models\User;
 use App\Models\VideoView;
 use App\Services\Mastery\MasteryService;
@@ -37,13 +35,16 @@ class LessonMarkDoneTest extends TestCase
         $this->assertFalse($lesson->allPracticesPassedBy($user));
     }
 
-    public function test_mark_done_is_rejected_for_a_lesson_with_unwatched_videos(): void
+    public function test_a_lesson_with_unwatched_videos_can_be_marked_done_with_already_seen(): void
     {
         $user = User::factory()->create();
         $lesson = Lesson::factory()->withActivities()->create();
         $lesson->videos()->create(['order' => 0, 'url' => 'https://example.com/a.mp4']);
 
-        $this->actingAs($user)->post(route('lessons.mark-done', $lesson))->assertStatus(422);
+        $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('قبلاً دیدمش');
+        $this->actingAs($user)->post(route('lessons.mark-done', $lesson))->assertRedirect($lesson->url());
+
+        $this->assertTrue($lesson->isMarkedDoneBy($user));
     }
 
     public function test_the_lesson_completes_by_itself_when_the_last_video_ends(): void
@@ -128,27 +129,5 @@ class LessonMarkDoneTest extends TestCase
 
         $this->actingAs($user)->get($lesson->url())->assertOk()->assertSee('این درس رو انجام دادی');
         $this->actingAs($user)->get(route('courses.show', $lesson->course))->assertOk()->assertSee('این درس رو انجام دادی');
-    }
-
-    public function test_finishing_a_lesson_from_its_page_ticks_todays_open_plan_item(): void
-    {
-        $user = User::factory()->create();
-        $lesson = Lesson::factory()->withActivities()->create();
-        $enrollment = Enrollment::factory()->for($user)->for($lesson->course)->scheduled(30)->create();
-        $video = $lesson->videos()->create(['order' => 0, 'url' => 'https://example.com/a.mp4']);
-
-        $item = PlanItem::create([
-            'user_id' => $user->id, 'enrollment_id' => $enrollment->id, 'activity_id' => $lesson->learnActivity->id,
-            'scheduled_for' => today(), 'duration_minutes' => 10, 'status' => 'scheduled', 'source' => 'plan', 'reason' => 'شروع درس',
-        ]);
-        $yesterday = PlanItem::create([
-            'user_id' => $user->id, 'enrollment_id' => $enrollment->id, 'activity_id' => $lesson->learnActivity->id,
-            'scheduled_for' => today()->subDay(), 'duration_minutes' => 10, 'status' => 'scheduled', 'source' => 'plan', 'reason' => 'شروع درس',
-        ]);
-
-        $this->actingAs($user)->post(route('lesson-videos.watched', $video))->assertOk();
-
-        $this->assertSame('completed', $item->fresh()->status);
-        $this->assertSame('scheduled', $yesterday->fresh()->status);
     }
 }

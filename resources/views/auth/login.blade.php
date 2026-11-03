@@ -20,7 +20,7 @@
         </div>
 
         <label for="remember_me" class="inline-flex items-center gap-2 text-[13px] text-muted">
-            <input id="remember_me" type="checkbox" name="remember" class="form-checkbox rounded border-line2 bg-surface2 text-accent focus:ring-accent">
+            <input id="remember_me" type="checkbox" name="remember" class="form-checkbox rounded border-line2 bg-surface2 text-accent-text focus:ring-accent">
             <span>مرا به خاطر بسپار</span>
         </label>
 

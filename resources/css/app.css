@@ -5,15 +5,15 @@
 /* ---- Design tokens (see docs/DESIGN.md "Visual system") ---- */
 @layer base {
     :root {
-        --bg: #f5f6f8; --surface: #ffffff; --surface2: #f0f2f5; --line: #e2e5ea; --line2: #d0d5dd;
-        --ink: #171a21; --muted: #5f6779; --faint: #616c7a; --accent: #d98a0b; --accent-ink: #ffffff;
-        --ok: #1a9f72; --warn: #d98a0b; --bad: #d9384f; --code: #eef1f4; --hover: #f8f9fb;
-        --l0: #a3aab8; --l1: #3b6fd6; --l2: #1a9f72; --l3: #d98a0b; --l4: #8a5cf5;
+        --bg: #f1f3f7; --surface: #fcfcfd; --surface2: #e8ecf2; --line: #dde2ea; --line2: #cbd2dd;
+        --ink: #1d2330; --muted: #566074; --faint: #667085; --accent: #f0a020; --accent-ink: #1a1200; --accent-text: #b86e00;
+        --ok: #12805b; --warn: #b86e00; --bad: #d9384f; --code: #eceff4; --hover: #f5f7fa;
+        --l0: #8a93a5; --l1: #3b6fd6; --l2: #12805b; --l3: #b86e00; --l4: #7c4dde;
         color-scheme: light;
     }
     .dark {
         --bg: #0d1117; --surface: #161b22; --surface2: #1f242e; --line: #2a3140; --line2: #38404f;
-        --ink: #e6edf3; --muted: #9ba8ba; --faint: #7e8795; --accent: #f0a020; --accent-ink: #1a1200;
+        --ink: #e6edf3; --muted: #9ba8ba; --faint: #7e8795; --accent: #f0a020; --accent-ink: #1a1200; --accent-text: #f0a020;
         --ok: #2fbf8f; --warn: #f0a020; --bad: #e5534b; --code: #12161d; --hover: #1a2029;
         --l0: #4b5263; --l1: #5b8def; --l2: #2fbf8f; --l3: #f0a020; --l4: #b58cff;
         color-scheme: dark;
@@ -22,7 +22,7 @@
     [x-cloak] { display: none !important; }
     body { @apply font-sans text-[14px] leading-[1.7]; }
     code, pre, .mono { @apply font-mono text-[12.5px]; direction: ltr; text-align: left; unicode-bidi: isolate; }
-    a { @apply text-accent; }
+    a { color: var(--accent-text); }
     a:hover { @apply text-ink; }
 }
 

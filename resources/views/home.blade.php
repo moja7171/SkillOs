@@ -17,50 +17,23 @@
                 <section aria-label="دوره‌های من" class="flex flex-col gap-4">
                     <h2 class="m-0 text-[16px] font-bold">دوره‌های من</h2>
 
-                    @forelse ($mine as $row)
-                        @if ($loop->first)
-                            <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
-                        @endif
-                        @php $course = $row['course']; $color = course_color($course->id); @endphp
-                        <a href="{{ route('courses.learn', $course) }}" class="card rounded-[18px] p-5 flex flex-col gap-3.5 text-ink shadow-sm hover:text-ink hover:border-line2">
-                            <div class="flex items-center gap-3">
-                                <span class="w-[42px] h-[42px] rounded-xl grid place-items-center shrink-0 text-[18px] font-extrabold" dir="auto"
-                                      style="background: color-mix(in srgb, {{ $color }} 16%, transparent); color: {{ $color }};">{{ mb_substr($course->title, 0, 1) }}</span>
-                                <div class="min-w-0">
-                                    <div class="font-bold text-[15px] truncate" dir="auto">{{ $course->title }}</div>
-                                    <div class="text-[12.5px] text-muted">
-                                        @if ($row['position'])درس {{ fa_num($row['position']) }} از {{ fa_num($course->lessons_count) }}@else{{ fa_num($course->lessons_count) }} درس@endif
-                                    </div>
-                                </div>
-                            </div>
-                            @if ($row['next'])
-                                <div class="text-[13.5px]" dir="auto">{{ $row['next']->title }}</div>
-                            @endif
-                            <div class="flex items-center gap-2.5">
-                                <div class="flex-1 h-1.5 rounded-full bg-surface2 overflow-hidden" role="progressbar" aria-label="پیشرفت دوره" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ $row['percent'] }}">
-                                    <div class="h-full rounded-full" style="width: {{ $row['percent'] }}%; background: {{ $color }};"></div>
-                                </div>
-                                <span class="text-[12.5px] text-muted">{{ fa_num($row['percent']) }}٪</span>
-                            </div>
-                        </a>
-                        @if ($loop->last)
-                            </div>
-                        @endif
-                    @empty
-                        <div class="card rounded-[18px] p-6 text-[13.5px] text-muted">هنوز دوره‌ای برنداشتی. از پایین یکی رو انتخاب کن.</div>
-                    @endforelse
+                    @if ($mine->isEmpty())
+                        <div class="card p-6 text-[13.5px] text-muted">هنوز دوره‌ای برنداشتی. از پایین یکی رو انتخاب کن.</div>
+                    @else
+                        <div class="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-3.5">
+                            @foreach ($mine as $row)
+                                <x-course-card :course="$row['course']" :href="route('courses.learn', $row['course'])" :enrolled="true" :progress="$row" />
+                            @endforeach
+                        </div>
+                    @endif
                 </section>
 
                 @if ($others->isNotEmpty())
                     <section aria-label="بقیه‌ی دوره‌ها" class="flex flex-col gap-4">
                         <h2 class="m-0 text-[16px] font-bold">{{ $mine->isEmpty() ? 'دوره‌ها' : 'بقیه‌ی دوره‌ها' }} <span class="font-normal text-faint text-[13px]">· {{ fa_num($others->count()) }} دوره</span></h2>
-                        <div class="grid grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-3.5">
+                        <div class="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-3.5">
                             @foreach ($others as $course)
-                                <a href="{{ route('courses.show', $course) }}" class="card rounded-2xl p-4 flex flex-col gap-2.5 min-h-[124px] text-ink shadow-sm hover:text-ink hover:border-line2">
-                                    <span class="w-[34px] h-[34px] rounded-[10px] bg-surface2 text-muted grid place-items-center font-extrabold" dir="auto">{{ mb_substr($course->title, 0, 1) }}</span>
-                                    <span class="font-semibold text-[14px] leading-[1.6] line-clamp-2" dir="auto">{{ $course->title }}</span>
-                                    <span class="text-[12.5px] text-faint mt-auto">{{ fa_num($course->lessons_count) }} درس@if ($course->category) · {{ $course->category }}@endif</span>
-                                </a>
+                                <x-course-card :course="$course" :href="route('courses.show', $course)" :can-enroll="true" />
                             @endforeach
                         </div>
                     </section>

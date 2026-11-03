@@ -30,7 +30,7 @@ class HomeController extends Controller
             ->values();
 
         $mine = $enrollments->map(function (Enrollment $enrollment) use ($user) {
-            $course = $enrollment->course->loadCount('lessons');
+            $course = $enrollment->course->loadCount('lessons')->loadSum('lessons as lessons_minutes_sum', 'estimated_minutes');
             $next = $course->nextLessonFor($user);
             $done = $course->doneLessonIdsFor($user)->count();
 
@@ -43,6 +43,7 @@ class HomeController extends Controller
         });
 
         $others = Course::withCount('lessons')
+            ->withSum('lessons as lessons_minutes_sum', 'estimated_minutes')
             ->whereNotIn('id', $enrollments->pluck('course_id'))
             ->orderByRaw('category_order is null')
             ->orderBy('category_order')

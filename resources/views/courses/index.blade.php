@@ -31,41 +31,9 @@
                 <div class="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     @foreach ($group as $course)
                         @php $enrolled = $course->enrollments->isNotEmpty(); @endphp
-                        <div class="card overflow-hidden flex flex-col">
-                            <a href="{{ route('courses.show', $course) }}" class="flex-1 flex flex-col text-ink hover:text-ink">
-                                <div class="relative aspect-[16/9] shrink-0">
-                                    <x-course-cover :course="$course" />
-                                    <div class="absolute inset-x-2 top-2 flex items-start justify-between gap-2">
-                                        @if ($category !== '' && $course->category_order)
-                                            <span class="badge bg-surface/90 backdrop-blur-sm shadow-sm" title="ترتیب پیشنهادی توی «{{ $category }}»">قدم {{ fa_num($course->category_order) }}</span>
-                                        @else
-                                            <span></span>
-                                        @endif
-                                        @if ($enrolled)
-                                            <span class="badge badge-ok bg-surface/90 backdrop-blur-sm shadow-sm"><span class="dot"></span>برداشته‌شده</span>
-                                        @endif
-                                    </div>
-                                </div>
-                                <div class="p-3.5 pb-2 flex-1 flex flex-col gap-1.5">
-                                    <div class="text-[14px] font-semibold leading-[1.4] line-clamp-2">{{ $course->title }}</div>
-                                    <div class="text-[12px] text-muted line-clamp-2">{{ $course->description ?? $course->outcome_statement }}</div>
-                                </div>
-                            </a>
-                            <div class="flex items-center justify-between gap-2 px-3.5 pb-3.5 pt-2 mt-auto border-t border-line">
-                                <div class="flex items-center gap-2 text-[11.5px] text-faint">
-                                    <span>{{ fa_num($course->lessons_count) }} درس</span>
-                                    @if ($course->lessons_minutes_sum)
-                                        <span>· {{ fa_num((int) round($course->lessons_minutes_sum / 60)) }} ساعت</span>
-                                    @endif
-                                </div>
-                                @unless ($enrolled)
-                                    <form method="POST" action="{{ route('courses.enroll', $course) }}">
-                                        @csrf
-                                        <button type="submit" class="btn btn-sm"><x-icon name="plus" class="w-3 h-3" /> برداشتن</button>
-                                    </form>
-                                @endunless
-                            </div>
-                        </div>
+                        <x-course-card :course="$course" :href="route('courses.show', $course)" :enrolled="$enrolled"
+                                       :step="$category !== '' ? $course->category_order : null" :step-title="'ترتیب پیشنهادی توی «'.$category.'»'"
+                                       :can-enroll="! $enrolled" />
                     @endforeach
                 </div>
             </div>

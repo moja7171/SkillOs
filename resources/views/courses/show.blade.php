@@ -83,7 +83,7 @@
                                 <tr x-show="open[{{ $loop->parent->index }}]">
                                     <td class="num">{{ $lesson->order + 1 }}</td>
                                     <td>
-                                        <a href="{{ $lesson->url() }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent">{{ $lesson->title }}</a>
+                                        <a href="{{ $lesson->url() }}" class="font-medium {{ $locked ? 'text-muted' : 'text-ink' }} hover:text-accent-text">{{ $lesson->title }}</a>
                                         @if ($lesson->summary)
                                             <div class="text-[12.5px] text-muted">{{ $lesson->summary }}</div>
                                         @endif
@@ -118,29 +118,11 @@
             @if (! $enrollment)
                 <div class="card p-[18px]" style="border-color: color-mix(in srgb, var(--accent) 50%, transparent);">
                     <div class="text-[15px] font-semibold mb-1">این دوره رو بردار</div>
-                    <div class="text-[13px] text-muted mb-4">بعدش زمان روزانه و اولویتش رو تنظیم می‌کنی و توی پلن میاد.</div>
+                    <div class="text-[13px] text-muted mb-4">بعد از برداشتن، پیشرفتت ثبت می‌شه و مرورها هم برات ساخته می‌شن.</div>
                     <form method="POST" action="{{ route('courses.enroll', $course) }}">
                         @csrf
                         <x-primary-button class="w-full"><x-icon name="plus" class="w-4 h-4" /> برداشتن دوره</x-primary-button>
                     </form>
-                </div>
-            @else
-                <div class="card">
-                    <div class="card-h">
-                        <h3>زمان‌بندی</h3>
-                        <a href="{{ route('enrollments.edit', $enrollment) }}" class="iconbtn w-7 h-7" title="ویرایش" aria-label="ویرایش زمان‌بندی"><x-icon name="gear" class="w-3.5 h-3.5" /></a>
-                    </div>
-                    <div class="px-[18px] py-1.5">
-                        <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">اولویت</span><span class="font-semibold">{{ fa_num($enrollment->priority) }} از ۵</span></div>
-                        <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">زمان روزانه</span><span class="font-semibold">{{ $enrollment->daily_time_minutes ? fa_num($enrollment->daily_time_minutes).' دقیقه' : '—' }}</span></div>
-                        <div class="flex justify-between py-2"><span class="text-muted">ساعت ترجیحی</span><span class="font-semibold">{{ $enrollment->preferred_time ? fa_num(substr($enrollment->preferred_time, 0, 5)) : '—' }}</span></div>
-                    </div>
-                    @unless ($enrollment->daily_time_minutes)
-                        <div class="mx-[18px] mb-3 alert alert-warn flex items-center gap-2">
-                            <x-icon name="clock" class="w-4 h-4 shrink-0" />
-                            <span>بدون زمان روزانه، این دوره توی پلن نمیاد — انگار هنوز شروع نشده. <a href="{{ route('enrollments.edit', $enrollment) }}" class="font-semibold underline">همین الان زمان‌بندیش کن</a>.</span>
-                        </div>
-                    @endunless
                 </div>
             @endif
 

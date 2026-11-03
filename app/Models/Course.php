@@ -53,6 +53,26 @@ class Course extends Model
     }
 
     /**
+     * Where «ادامه» goes: the first lesson whose lesson item isn't done, else the first one
+     * with practices still to pass, else the first lesson (DECISIONS.md §70).
+     */
+    public function nextLessonFor(User $user): ?Lesson
+    {
+        $lessons = $this->relationLoaded('lessons') ? $this->lessons : $this->lessons()->get();
+        $done = $this->doneLessonIdsFor($user);
+
+        $undone = $lessons->first(fn (Lesson $lesson) => ! $done->contains($lesson->id));
+        if ($undone) {
+            return $undone;
+        }
+
+        $progress = $this->practiceProgressFor($user);
+
+        return $lessons->first(fn (Lesson $lesson) => isset($progress[$lesson->id]) && $progress[$lesson->id]['passed'] < $progress[$lesson->id]['total'])
+            ?? $lessons->first();
+    }
+
+    /**
      * Practice-item progress per lesson, keyed by lesson id; lessons without practices are
      * absent (they have no practice item). Same pass rule as Lesson::practiceProgressFor().
      *
@@ -61,6 +81,7 @@ class Course extends Model
     public function practiceProgressFor(User $user): Collection
     {
         $practices = Activity::where('type', 'practice')
+            ->where('generated', false)
             ->whereIn('lesson_id', $this->lessons()->pluck('id'))
             ->get(['id', 'lesson_id']);
 

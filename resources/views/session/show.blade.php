@@ -2,7 +2,6 @@
     $course = $lesson->course;
     $payload = $activity->payload ?? [];
     $evidence = $attempt->evidence ?? [];
-    $isLearn = $activity->isLearn();
     $form = $payload['form'] ?? null;
     $lastVerdict = $evidence['verdict'] ?? null;
     $feedback = $evidence['feedback'] ?? null;
@@ -19,30 +18,23 @@
     $resultClass = match ($attempt->result_status) {
         'correct' => 'badge-ok', 'correct_with_hint' => 'badge-warn', 'incorrect' => 'badge-bad', default => 'badge-ghost',
     };
-    $nextLabel = $nextPlanItem
-        ? 'بعدی: '.$nextPlanItem->activity->title
-        : ($next ? ($isLearn ? 'برو سراغ تمرین: '.$next->title : 'تمرین بعدی: '.$next->title) : 'برگرد به درس');
-    $nextAction = $nextPlanItem ? route('session.start-planned', $nextPlanItem) : ($next ? route('session.start', $next) : null);
 @endphp
 <x-app-layout :title="$activity->title">
     <x-slot name="nav">
         <nav class="h-14 border-b border-line bg-surface flex items-center px-4 sm:px-6 gap-4">
-            @if ($open && ! $isLearn)
+            @if ($open && ! $isReview)
                 <button type="button" x-data="" x-on:click="$dispatch('open-modal', 'cancel-attempt')" class="iconbtn" title="خروج از تمرین" aria-label="خروج از تمرین"><x-icon name="arrow" class="w-4 h-4" /></button>
             @else
-                <a href="{{ $lesson->url() }}" class="iconbtn" title="خروج از جلسه" aria-label="خروج از جلسه"><x-icon name="arrow" class="w-4 h-4" /></a>
+                <a href="{{ $isReview ? route('home') : $lesson->url() }}" class="iconbtn" title="خروج" aria-label="خروج"><x-icon name="arrow" class="w-4 h-4" /></a>
             @endif
             <div class="min-w-0 leading-[1.4]">
                 <div class="text-[12px] text-muted truncate">{{ $course->title }} <span class="text-faint">/</span> {{ $lesson->title }}</div>
-                <div class="font-bold text-[15px] truncate">{{ $isLearn ? 'یادگیری: ' : 'تمرین: ' }}{{ $activity->title }}</div>
+                <div class="font-bold text-[15px] truncate">{{ $isReview ? 'مرور' : 'تمرین: '.$activity->title }}</div>
             </div>
             <div class="hidden sm:flex items-center gap-2">
-                @if ($isLearn)
-                    <span class="badge badge-ghost"><x-icon name="play" class="w-3 h-3" /> یادگیری</span>
+                @if ($isReview)
+                    <span class="badge badge-ghost"><x-icon name="refresh" class="w-3 h-3" /> مرور</span>
                 @else
-                    @if (($evidence['source'] ?? null) === 'review')
-                        <span class="badge badge-ghost"><x-icon name="refresh" class="w-3 h-3" /> مرور</span>
-                    @endif
                     {{-- "تمرین" is implied by the form label below it (e.g. "چندگزینه‌ای"), so it isn't repeated here --}}
                     <span class="badge badge-ghost">{{ $activity->formLabel() }}</span>
                     <span @class(['badge', 'badge-ok' => ($payload['difficulty'] ?? '') === 'intro', 'badge-warn' => ($payload['difficulty'] ?? '') === 'core', 'badge-bad' => ($payload['difficulty'] ?? '') === 'stretch'])>{{ $activity->difficultyLabel() }}</span>
@@ -55,31 +47,113 @@
         </nav>
     </x-slot>
 
-    @if ($isLearn)
-        <div class="px-4 sm:px-8 py-6 max-w-4xl mx-auto flex flex-col gap-5">
-            <x-lesson-content :lesson="$lesson" class="card" />
-            <div class="card p-5 flex items-center justify-between gap-4 flex-wrap">
+    @if ($isReview)
+        @php
+            $mdOpts = ['html_input' => 'strip', 'allow_unsafe_links' => false];
+            $points = $lesson->key_points ?? [];
+            $mistakes = $lesson->common_mistakes ?? [];
+            $chosen = isset($evidence['response']) ? (int) $evidence['response'] : null;
+            $correctOption = (int) ($payload['correct_option'] ?? -1);
+            $passed = in_array($attempt->result_status, ['correct', 'correct_with_hint'], true);
+        @endphp
+        <div class="px-4 sm:px-8 py-8 max-w-2xl mx-auto flex flex-col gap-5" x-data="{ stage: {{ $open ? "'recap'" : "'question'" }}, sending: false }">
+
+            {{-- Recap first (authored key points), then one question (DECISIONS.md §70). --}}
+            <div x-show="stage === 'recap'" class="card rounded-[18px] p-6 flex flex-col gap-4">
+                <div class="text-[12.5px] font-semibold text-muted">اول یه نگاه سریع به درس</div>
+                <h2 class="m-0 text-[20px] font-bold" dir="auto">{{ $lesson->title }}</h2>
+                @if (! empty($points))
+                    <ul class="m-0 ps-5 list-disc text-[14px] leading-[1.9]">
+                        @foreach ($points as $point)<li>{!! Str::inlineMarkdown($point, $mdOpts) !!}</li>@endforeach
+                    </ul>
+                @elseif ($lesson->summary)
+                    <p class="m-0 text-[14px] leading-[1.9]">{{ $lesson->summary }}</p>
+                @endif
+                @if (! empty($mistakes))
+                    <div>
+                        <div class="text-[12.5px] font-semibold text-bad mb-1.5">اشتباهات رایج</div>
+                        <ul class="m-0 ps-5 list-disc text-[13.5px] text-muted leading-[1.9]">
+                            @foreach ($mistakes as $mistake)<li>{!! Str::inlineMarkdown($mistake, $mdOpts) !!}</li>@endforeach
+                        </ul>
+                    </div>
+                @endif
+                <button type="button" class="btn btn-primary self-start" @click="stage = 'question'"><x-icon name="play" class="w-4 h-4" /> بزن بریم سوال</button>
+            </div>
+
+            <div x-show="stage === 'question'" @if ($open) x-cloak @endif class="card rounded-[18px] p-6 flex flex-col gap-5">
+                <div class="prose-fa">{!! Str::markdown($payload['prompt'] ?? '', $mdOpts) !!}</div>
+
+                @if (session('error'))
+                    <div class="alert alert-bad">{{ session('error') }}</div>
+                @endif
+
                 @if ($open)
-                    <div class="text-muted text-[13.5px]">وقتی ویدیو رو دیدی یا متن رو خوندی، بزن بریم تمرین.</div>
-                    <form method="POST" action="{{ route('session.complete', $attempt) }}">
+                    <form method="POST" action="{{ route('session.submit', $attempt) }}" class="flex flex-col gap-4" x-on:submit="sending = true">
                         @csrf
-                        <x-primary-button><x-icon name="check" class="w-4 h-4" /> آماده‌ام</x-primary-button>
+                        <div class="flex flex-col gap-2">
+                            @foreach ($payload['options'] as $i => $option)
+                                <label class="flex items-center gap-3 rounded-lg border border-line2 bg-surface2 px-4 py-3 cursor-pointer hover:border-faint has-[:checked]:border-accent">
+                                    <input type="radio" name="response" value="{{ $i }}" class="form-radio text-accent focus:ring-accent bg-surface border-line2" required>
+                                    <span class="text-[14px]">{!! Str::inlineMarkdown($option, $mdOpts) !!}</span>
+                                </label>
+                            @endforeach
+                        </div>
+                        <x-input-error :messages="$errors->get('response')" />
+                        <button type="submit" class="btn btn-primary self-start" :disabled="sending"><x-icon name="check" class="w-4 h-4" /> ثبت پاسخ</button>
                     </form>
                 @else
-                    <div class="text-[13.5px] flex items-center gap-2 flex-wrap">
-                        <span>این درس رو خوندی. حالا امتحانش کن.</span>
-                        @if (! empty($evidence['level_change']))
+                    <div class="flex flex-col gap-2">
+                        @foreach ($payload['options'] as $i => $option)
+                            <div @if ($i === $correctOption) style="background: color-mix(in srgb, var(--ok) 10%, transparent);" @endif @class([
+                                'flex items-center gap-3 rounded-lg border px-4 py-3 text-[14px]',
+                                'border-ok' => $i === $correctOption,
+                                'border-bad' => $i === $chosen && $i !== $correctOption,
+                                'border-line2 bg-surface2' => $i !== $correctOption && $i !== $chosen,
+                            ])>
+                                @if ($i === $correctOption)<x-icon name="check" class="w-4 h-4 shrink-0 text-ok" />@elseif ($i === $chosen)<x-icon name="x" class="w-4 h-4 shrink-0 text-bad" />@endif
+                                <span>{!! Str::inlineMarkdown($option, $mdOpts) !!}</span>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="alert {{ $passed ? 'alert-ok' : 'alert-bad' }} flex items-start gap-2.5">
+                        <x-icon :name="$passed ? 'check' : 'x'" class="w-4 h-4 mt-1 shrink-0" />
+                        <span class="font-semibold text-[13.5px]">{{ $passed ? 'درسته.' : 'این بار نشد؛ جواب درست علامت خورده.' }}</span>
+                    </div>
+
+                    @if (! empty($payload['expected_outcome']))
+                        <div class="rounded-lg bg-surface2 px-4 py-3">
+                            <div class="text-[12.5px] font-semibold text-muted mb-1">توضیح</div>
+                            <div class="prose-fa">{!! Str::markdown($payload['expected_outcome'], $mdOpts) !!}</div>
+                        </div>
+                    @endif
+
+                    @if (! empty($evidence['level_change']))
+                        <div class="flex items-center gap-2 text-[13.5px]">
+                            <span class="text-muted">سطح این درس:</span>
+                            <x-level-badge :level="$evidence['level_change']['from']" />
+                            <span class="text-faint">←</span>
                             <x-level-badge :level="$evidence['level_change']['to']" />
+                        </div>
+                    @endif
+
+                    <div class="flex items-center gap-3 flex-wrap pt-1">
+                        @if ($reviewsLeft > 0)
+                            <form method="POST" action="{{ route('reviews.start') }}">
+                                @csrf
+                                <x-primary-button><x-icon name="refresh" class="w-4 h-4" /> مرور بعدی ({{ fa_num($reviewsLeft) }} مونده)</x-primary-button>
+                            </form>
+                            <a href="{{ route('home') }}" class="btn btn-ghost">برگرد به خانه</a>
+                        @else
+                            <a href="{{ route('home') }}" class="btn btn-primary">مرورها تموم شد — برگرد به خانه</a>
+                        @endif
+                        @if ($activity->generated)
+                            <form method="POST" action="{{ route('session.report', $attempt) }}" class="ms-auto">
+                                @csrf
+                                <button type="submit" class="text-[12.5px] text-faint hover:text-ink underline">این سوال مشکل داره</button>
+                            </form>
                         @endif
                     </div>
-                    @if ($nextAction)
-                        <form method="POST" action="{{ $nextAction }}">
-                            @csrf
-                            <x-primary-button><x-icon name="play" class="w-4 h-4" /> {{ $nextLabel }}</x-primary-button>
-                        </form>
-                    @else
-                        <a href="{{ route('home') }}" class="btn btn-primary">برگرد به خانه</a>
-                    @endif
                 @endif
             </div>
         </div>
@@ -99,7 +173,7 @@
                         <div class="flex flex-col gap-1.5 mt-3">
                             @foreach ($payload['attachments'] as $file)
                                 @php $ext = strtolower(pathinfo(parse_url($file['url'], PHP_URL_PATH) ?? '', PATHINFO_EXTENSION)); $downloadSrc = media_download_url($file['url']); @endphp
-                                <a href="{{ $downloadSrc ?? media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-2.5 text-[13px] text-ink hover:text-accent"
+                                <a href="{{ $downloadSrc ?? media_url($file['url']) }}" target="_blank" rel="noopener" download class="flex items-center gap-2.5 text-[13px] text-ink hover:text-accent-text"
                                    @if ($downloadSrc) data-fallback-src="{{ media_url($file['url']) }}" @endif>
                                     <span class="badge badge-ghost uppercase">{{ $ext ?: 'file' }}</span>
                                     <span class="truncate">{{ $file['title'] }}</span>
@@ -123,8 +197,8 @@
 
                     @for ($i = 0; $i < $hintsShown; $i++)
                         <div class="rounded-lg px-4 py-3 flex items-start gap-2.5 text-[13.5px]" style="background: color-mix(in srgb, var(--accent) 10%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);">
-                            <x-icon name="bulb" class="w-4 h-4 mt-1 shrink-0 text-accent" />
-                            <div><span class="font-semibold text-accent">راهنمایی {{ fa_num($i + 1) }} از ۲ · </span><span class="text-muted">{!! Str::inlineMarkdown($payload['hints'][$i] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span></div>
+                            <x-icon name="bulb" class="w-4 h-4 mt-1 shrink-0 text-accent-text" />
+                            <div><span class="font-semibold text-accent-text">راهنمایی {{ fa_num($i + 1) }} از ۲ · </span><span class="text-muted">{!! Str::inlineMarkdown($payload['hints'][$i] ?? '', ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span></div>
                         </div>
                     @endfor
 
@@ -135,7 +209,7 @@
                                 <div class="flex flex-col gap-2">
                                     @foreach ($payload['options'] as $i => $option)
                                         <label class="flex items-center gap-3 rounded-lg border border-line2 bg-surface2 px-4 py-3 cursor-pointer hover:border-faint has-[:checked]:border-accent">
-                                            <input type="radio" name="response" value="{{ $i }}" class="form-radio text-accent focus:ring-accent bg-surface border-line2" @checked(old('response', $evidence['response'] ?? null) == (string) $i) required>
+                                            <input type="radio" name="response" value="{{ $i }}" class="form-radio text-accent-text focus:ring-accent bg-surface border-line2" @checked(old('response', $evidence['response'] ?? null) == (string) $i) required>
                                             <span class="text-[14px]">{!! Str::inlineMarkdown($option, ['html_input' => 'strip', 'allow_unsafe_links' => false]) !!}</span>
                                         </label>
                                     @endforeach
@@ -242,19 +316,21 @@
                         </button>
                         <button type="button" x-data="" x-on:click="$dispatch('open-modal', 'give-up')" class="btn btn-ghost ms-auto">بی‌خیال، جواب رو نشون بده</button>
                     @else
-                        @if ($nextAction)
-                            <form method="POST" action="{{ $nextAction }}">
+                        @if ($next)
+                            <form method="POST" action="{{ route('session.start', $next) }}">
                                 @csrf
-                                <x-primary-button><x-icon name="play" class="w-4 h-4" /> {{ $nextLabel }}</x-primary-button>
+                                <x-primary-button><x-icon name="play" class="w-4 h-4" /> تمرین بعدی: {{ $next->title }}</x-primary-button>
                             </form>
                         @else
-                            <a href="{{ route('home') }}" class="btn btn-primary">برگرد به خانه</a>
+                            <a href="{{ $lesson->url() }}" class="btn btn-primary">برگرد به درس</a>
                         @endif
                         <form method="POST" action="{{ route('session.start', $activity) }}">
                             @csrf
                             <button type="submit" class="btn"><x-icon name="refresh" class="w-4 h-4" /> دوباره همین تمرین</button>
                         </form>
-                        <a href="{{ $lesson->url() }}" class="btn btn-ghost ms-auto">برگرد به درس</a>
+                        @if ($next)
+                            <a href="{{ $lesson->url() }}" class="btn btn-ghost ms-auto">برگرد به درس</a>
+                        @endif
                     @endif
                 </div>
             </div>

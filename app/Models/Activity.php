@@ -58,9 +58,4 @@ class Activity extends Model
     {
         return $this->hasMany(Attempt::class);
     }
-
-    public function planItems(): HasMany
-    {
-        return $this->hasMany(PlanItem::class);
-    }
 }

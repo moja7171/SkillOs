@@ -118,7 +118,7 @@ Rubric conventions:
 - mcq: exactly `Correct only if option N is selected.` with N = `correct_option` (the validator checks this).
 - open forms: `Correct: … Partial: … Incorrect: …` — name the specific facts/steps that must appear, and what is an acceptable alternative. The grader returns `correct | correct_with_hint | incorrect`, so "Partial" describes what still counts as correct-with-reservations.
 
-Per-lesson mix that works: one `intro` (usually mcq, 1–2 min), one `core` (coding or short_answer, 4–6 min), one `core`/`stretch` (short_answer or mcq, 3–4 min). Difficulty drives the planner's choice; keep the distribution roughly 1/1/1 across a section. (`explanation` is legacy — see §6.)
+Per-lesson mix that works: one `intro` (usually mcq, 1–2 min), one `core` (coding or short_answer, 4–6 min), one `core`/`stretch` (short_answer or mcq, 3–4 min). Difficulty is only a label on the practice; keep the distribution roughly 1/1/1 across a section. (`explanation` is legacy — see §6.)
 
 ## 4. Workflow for a section (do this, in this order)
 
@@ -163,6 +163,8 @@ Sanity check at the end of a section: every lesson `.md` > 800 bytes, every prac
 **Don't.** Don't translate the transcript's spoken asides ("so let's go ahead and…"). Don't invent examples the video didn't use when the video's example is fine. Don't add sections the video doesn't cover just to be complete — the text must stay in step with the video tab. Don't repeat key points at the end (they're rendered from `course.json`). Don't leave TODOs.
 
 ## 6. Practices: what good ones look like
+
+> **Non-programming courses are MCQ-only, and MCQs must be hard (owner rule, 2026-11-03, DECISIONS.md §69).** Two types exist: `coding` (programming courses only) and `mcq`. Author an MCQ as a scenario or a decision, not a recall question; every wrong option is a real misconception or a half-true statement as long and specific as the right one (never make the right option the longest); spread `correct_option` evenly over 0–3 (`validate.py` warns on both tells). The `short_answer` rules below apply only to the older Python courses.
 
 > **No essay-style answers (owner rule, 2026-09-22, DECISIONS.md §64).** Every non-mcq, non-coding practice must be a true `short_answer`: recall a specific fact/term/name/number/reason in 1–2 words, not a paragraph of reasoning. A prompt may ask for more than one such short answer when natural (two or three named items), but never "explain in 3–4 sentences." `explanation` and `scenario` are **legacy forms** — don't author new ones; existing ones in other courses get migrated over time, starting with `requirements-engineering`.
 

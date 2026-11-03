@@ -3,17 +3,16 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}?v={{ filemtime(public_path('favicon.svg')) }}">
-<meta name="theme-color" content="#0e1014">
+<meta name="theme-color" content="#f1f3f7">
 
 <title>{{ isset($title) ? $title.' · ' : '' }}{{ config('app.name', 'SkillOS') }}</title>
 
-{{-- Apply the saved theme before first paint. Dark is the default. --}}
+{{-- Apply the saved theme before first paint. Light is the default (DECISIONS.md §70). --}}
 <script>
     (function () {
         try {
-            var t = localStorage.getItem('theme');
-            if (t !== 'light') document.documentElement.classList.add('dark');
-        } catch (e) { document.documentElement.classList.add('dark'); }
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
     })();
 </script>
 

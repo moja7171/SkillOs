@@ -8,40 +8,38 @@
 |---|---|
 | Catalog, not user topics | `courses`/`lessons` have no `user_id`; they are written only by `content:import`. |
 | Lesson is the mastery unit | `mastery_records` is per (user, lesson). Course progress is an aggregate. |
-| Enrollment carries learner config | `enrollments` = user × course with priority, daily time, status. |
+| Enrollment is just user × course | `enrollments` = user × course, `last_activity_at` orders Home; the old schedule columns are unused (DECISIONS §70). |
 | Logo | `<x-application-logo>` — amber rounded tile with a white rising path and a dark dot at the top (the learning path, «you are here»); same mark as `public/favicon.svg`. Wordmark: Skill**OS** with OS in accent. |
-| Two paths per lesson | Lesson page and Session show tabs ویدیو / متن from `lesson_videos` + `lessons.content`. |
+| One page per lesson | Only the lesson page shows tabs ویدیو / متن from `lesson_videos` + `lessons.content`; the session page is for practices and reviews. |
 | AI evaluates only | The only runtime Gemini call is `evaluate_response`. |
 | Mastery from evidence only | The only writer of `numeric_mastery` is `MasteryService::applyAttempt()`. |
 | No raw scores | Numeric mastery and verdicts never reach a Blade view. |
-| Recovery not backlog | `Planner::today` is a pure function of state; nothing is stored ahead. |
+| Reviews are a queue, not a plan | `ReviewQueue` computes today's reviews from `mastery_records`; nothing is scheduled ahead (DECISIONS §70). |
 | Re-import is safe | Content is upserted by stable slugs/keys so attempts and mastery survive edits. |
 
 ## 2. Surfaces
 
 | Surface | Route | Content | Primary action |
 |---|---|---|---|
-| Home | `/` | Today's plan: remaining count/minutes, one «شروع امروز» button, one merged reviews-first queue; recap, backlog and courses collapsed under «بیشتر» (DECISIONS §68) | Start today |
+| Home | `/` | «دوره‌های من» (latest progress first, next lesson + progress), then the other courses; side column: review card + streak with this week's days (DECISIONS §70) | Continue a course / Start review |
 | All courses | `/courses` | Catalog cards (title, outcome, lessons count, enrolled badge) | Enroll |
 | Course | `/courses/{slug}` | Outcome, sources, lessons table (#, title, level, minutes, lock), enrollment config in sidebar | Continue (scoped) / Enroll |
 | Lesson (course player) | `/courses/{slug}/lessons/{slug}` | Persistent curriculum sidebar on the left (sections, levels, current highlighted), tabs ویدیو / متن, key points, practices list, status / files / prerequisites, prev/next | Practice / Next lesson |
-| Continue | `/courses/{slug}/learn` | Redirects to the first lesson below «آشنا» | — |
-| Session | `/session/{activity}` | Learn tabs → practice → hints → feedback → next | Submit / Next |
-| Week | `/week` | Today's plan + due reviews for 6 days (read-only) | Open activity |
-| Enrollment config | `/enrollments/{id}/edit` | Priority, Daily Time, Preferred time, Status | Save |
+| Continue | `/courses/{slug}/learn` | Redirects to `Course::nextLessonFor` (first lesson not done, else first with practices left) | — |
+| Session | `/session/{attempt}` | Practice: lesson text beside the task → hints → feedback → next unsolved practice of the same lesson. Review: recap (key points) → one 4-option question → answer + explanation → next review | Submit / Next |
+| Review start | `POST /reviews/start` | Opens (or resumes) the next due review | — |
 
 ### 2.1 Session flow
 
 | Step | System | Learner sees |
 |---|---|---|
 | Start | Load activity + lesson | Title, course, ~minutes |
-| Learn (learn activity, or first practice of an unlearned lesson) | Tabs: video (recommended if present) / text; key points card | Content, "آماده‌ام" |
 | Practice | Render by form (mcq radios / textarea / code textarea) | The task |
 | Evaluate | mcq → rule; otherwise Gemini with rubric → verdict + feedback | Feedback text only |
 | Wrong | Show `hints[hint_level]`, increment, retry (max 2) | Hint, retry box |
 | Exhausted | Show expected outcome; attempt = incorrect | Answer + explanation |
 | Update | Store Attempt, apply mastery delta, set next review | New qualitative level if changed |
-| Next | Planner picks next activity | One Next Best Action |
+| Next | Practice: next unsolved practice of the lesson, else back to the lesson. Review: next due review | One next step, never another lesson |
 
 ### 2.2 Feedback state machine
 
@@ -87,7 +85,7 @@ Persian UI, `dir="rtl"`, desktop-first. LeetCode-inspired density: top nav, main
 | `enrollments` | User × course config | `user_id`, `course_id` (unique pair), `priority`, `daily_time_minutes`, `preferred_time`, `status`, `last_activity_at` |
 | `attempts` | One execution of an activity | `activity_id`, `user_id`, `started_at`, `completed_at`, `result_status`, `hint_level`, `evidence` json |
 | `mastery_records` | Current state per (user, lesson) | `numeric_mastery` 0–1000, `level`, `last_evaluated_at`, `next_review_due_at` |
-| `plan_items` | Today's materialized plan | `user_id`, `enrollment_id`, `activity_id`, `scheduled_for`, `duration_minutes`, `status`, `source`, `reason` |
+| `plan_items` | Unused since DECISIONS §70 (was today's materialized plan) | `user_id`, `enrollment_id`, `activity_id`, `scheduled_for`, `duration_minutes`, `status`, `source`, `reason` |
 
 Removed in v0.3: `learning_items`, `skills`, `skill_dependencies`, `resources`.
 
@@ -148,13 +146,13 @@ A failed call never mutates state; the learner can retry.
 
 Contract unchanged: `MasteryService::applyAttempt(Attempt)` is the only writer; numbers in DECISIONS.md §3–4 apply per lesson. Course progress = count of lessons per level.
 
-## 6. Planning
+## 6. Reviews
 
-`Planner::today(User)` — DECISIONS.md §2 with "skill" read as "lesson" and "item" as "enrollment". `current` lesson = first by order with level < proficient whose prerequisites are ≥ familiar.
+`ReviewQueue` — DECISIONS.md §70: due lessons (active enrollments, oldest first, 10 a day), one unanswered 4-option question each (authored, else generated), recap from `key_points`/`common_mistakes`. There is no daily plan.
 
 ## 7. Lifecycle
 
-Pause/Archive: enrollment leaves planning, data kept. Reactivate after >14 days: reviews due today for lessons ≥ familiar. Maintenance: reviews only.
+Enrolling is one click. A lesson's review comes due from `mastery_records.next_review_due_at` (§3); enrollments with status paused/archived are skipped by the review queue.
 
 ## 8. Build Sequence (v0.3)
 
@@ -162,8 +160,7 @@ Pause/Archive: enrollment leaves planning, data kept. Reactivate after >14 days:
 2. Import the first real course (Advanced Python) from the owner's materials.
 3. Session: learn → practice → evaluate (rule + Gemini) → hints → feedback; attempts.
 4. MasteryService + level display + course progress.
-5. Planner::today + Continue Learning + Home.
-6. Week view, Skip, lifecycle.
+5. ReviewQueue + Home (DECISIONS §70; was Planner + week view).
 7. Use it for a week; tune.
 
 ## Appendix — System Map
@@ -174,6 +171,6 @@ Pause/Archive: enrollment leaves planning, data kept. Reactivate after >14 days:
 | Intent | Enrollment | What am I learning now, how much per day? |
 | Execution | Attempts | What did I do? |
 | State | MasteryRecords (per lesson) | Where am I? |
-| Planning | Planner + today's PlanItems | What next, when? |
+| Reviews | ReviewQueue over MasteryRecords | What should I refresh today? |
 
 When in doubt, prioritize the loop: Activity → Evidence → Mastery → Next Action.

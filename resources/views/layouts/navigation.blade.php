@@ -1,7 +1,7 @@
 <nav class="sticky top-0 z-20 h-14 border-b border-line bg-surface flex items-center px-4 sm:px-8 gap-4 sm:gap-7">
     <a href="{{ route('home') }}" class="flex items-center gap-2.5 font-bold text-[16px] text-ink hover:text-ink">
         <x-application-logo class="w-7 h-7" />
-        <span class="hidden sm:inline tracking-tight">Skill<span class="text-accent">OS</span></span>
+        <span class="hidden sm:inline tracking-tight">Skill<span class="text-accent-text">OS</span></span>
     </a>
 
     @php
@@ -29,7 +29,6 @@
             </x-slot>
         </x-dropdown>
 
-        <x-nav-link :href="route('week')" :active="request()->routeIs('week')">هفته</x-nav-link>
         @if (auth()->user()->is_admin)
             <x-nav-link :href="route('friends')" :active="request()->routeIs('friends')">دوستان</x-nav-link>
         @endif
@@ -57,7 +56,6 @@
                     @foreach (\App\Models\Course::CATEGORIES as $cat)
                         <x-dropdown-link :href="route('courses.index', ['category' => $cat])" @class(['ps-6 text-[12.5px] text-muted whitespace-nowrap', 'bg-surface2' => request()->query('category') === $cat])>{{ $cat }}</x-dropdown-link>
                     @endforeach
-                    <x-dropdown-link :href="route('week')" @class(['bg-surface2' => request()->routeIs('week')])>هفته</x-dropdown-link>
                     @if (auth()->user()->is_admin)
                         <x-dropdown-link :href="route('friends')" @class(['bg-surface2' => request()->routeIs('friends')])>دوستان</x-dropdown-link>
                     @endif

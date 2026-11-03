@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\Activity;
 use App\Models\Attempt;
-use App\Models\Enrollment;
 use App\Models\Lesson;
 use App\Models\User;
 use App\Services\Ai\GeminiClient;
@@ -48,26 +47,38 @@ class SessionTest extends TestCase
         return Attempt::latest('id')->first();
     }
 
-    public function test_learn_session_completes_and_offers_first_practice(): void
+    public function test_an_old_learn_attempt_sends_you_to_the_lesson_page(): void
     {
-        Enrollment::factory()->for($this->user)->for($this->lesson->course)->create();
-        $learn = $this->lesson->learnActivity;
+        $attempt = $this->startAttempt($this->lesson->learnActivity);
 
-        $attempt = $this->startAttempt($learn);
-        $this->assertSame('started', $attempt->result_status);
+        $this->actingAs($this->user)->get(route('session.show', $attempt))->assertRedirect($this->lesson->url());
+    }
 
-        $this->actingAs($this->user)->get(route('session.show', $attempt))->assertOk()->assertSee('آماده‌ام')->assertSee('<h2>مقدمه</h2>', false);
+    public function test_after_a_practice_only_the_next_unsolved_practice_of_the_same_lesson_is_offered(): void
+    {
+        // Another course has its own work; it must never be suggested from here.
+        $elsewhere = Lesson::factory()->withActivities()->create(['title' => 'درس جای دیگه']);
+        $this->user->enrollments()->create(['course_id' => $elsewhere->course_id, 'status' => 'active', 'priority' => 1]);
 
-        $this->actingAs($this->user)->post(route('session.complete', $attempt))->assertRedirect(route('session.show', $attempt));
+        // Controllers are cached per route across requests, so the fake goes in first.
+        $this->mock(GeminiClient::class)->shouldReceive('generateJson')->once()->andReturn(['verdict' => 'correct', 'feedback' => 'ok']);
 
-        $attempt->refresh();
-        $this->assertSame('completed', $attempt->result_status);
-        $this->assertNotNull($attempt->completed_at);
-        $this->assertNotNull(Enrollment::first()->last_activity_at);
-        $this->assertSame(1, $this->user->fresh()->streak_count);
+        $attempt = $this->startAttempt($this->coding());
+        $this->actingAs($this->user)->post(route('session.give-up', $attempt));
 
-        $this->actingAs($this->user)->get(route('session.show', $attempt))->assertOk()->assertSee('برو سراغ تمرین')->assertDontSee('آماده‌ام');
-        $this->actingAs($this->user)->post(route('session.complete', $attempt))->assertStatus(422);
+        $this->actingAs($this->user)->get(route('session.show', $attempt))->assertOk()
+            ->assertSee('تمرین بعدی: چندگزینه‌ای')
+            ->assertDontSee('درس جای دیگه');
+
+        // Both practices of the lesson passed: nothing else is offered, only the way back.
+        $mcq = $this->startAttempt($this->mcq());
+        $this->actingAs($this->user)->post(route('session.submit', $mcq), ['response' => '2']);
+        $coding = $this->startAttempt($this->coding());
+        $this->actingAs($this->user)->post(route('session.submit', $coding), ['response' => 'x']);
+
+        $this->actingAs($this->user)->get(route('session.show', $coding))->assertOk()
+            ->assertDontSee('تمرین بعدی')
+            ->assertSee('برگرد به درس');
     }
 
     public function test_mcq_correct_answer_without_hint_is_independent_success(): void

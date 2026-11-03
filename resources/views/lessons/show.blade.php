@@ -62,7 +62,7 @@
                 @if ($enrollment && $blockedBy->isNotEmpty())
                     <div class="alert alert-warn flex items-center gap-2">
                         <x-icon name="lock" class="w-4 h-4 shrink-0" />
-                        <span>پلن این درس رو هنوز پیشنهاد نمی‌ده — اول {{ $blockedBy->pluck('title')->join('، ') }} باید حداقل «آشنا» بشه. ولی می‌تونی همین الان آزادانه بخونیش.</span>
+                        <span>بهتره اول {{ $blockedBy->pluck('title')->join('، ') }} رو تا سطح «آشنا» برسونی. ولی می‌تونی همین الان آزادانه بخونیش.</span>
                     </div>
                 @endif
 
@@ -119,12 +119,17 @@
                         <div x-show="! done" class="text-[13.5px] text-muted min-w-0">
                             {{ $hasVideos ? 'همه‌ی ویدیوهای این درس رو تا آخر ببین؛ درس خودکار انجام‌شده علامت می‌خوره.' : 'متن رو که خوندی همینجا علامتش بزن.' }}
                         </div>
-                        @unless ($hasVideos)
+                        @if ($hasVideos)
+                            <form x-show="! done" method="POST" action="{{ route('lessons.mark-done', $lesson) }}">
+                                @csrf
+                                <button type="submit" class="text-[13px] text-muted underline hover:text-ink">قبلاً دیدمش</button>
+                            </form>
+                        @else
                             <form x-show="! done" method="POST" action="{{ route('lessons.mark-done', $lesson) }}">
                                 @csrf
                                 <button type="submit" class="btn btn-primary"><x-icon name="check" class="w-4 h-4" /> انجام دادم</button>
                             </form>
-                        @endunless
+                        @endif
                     @endunless
                 </div>
 
@@ -188,7 +193,7 @@
                x-init="$nextTick(() => { const cur = $el.querySelector('[data-current]'); const box = $refs.list; if (cur && box) { box.scrollTop = Math.max(0, cur.offsetTop - box.clientHeight / 2); } })">
             <div class="px-4 py-3.5 border-b border-line flex items-start gap-3">
                 <div class="min-w-0 flex-1">
-                    <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent truncate">{{ $course->title }}</a>
+                    <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent-text truncate">{{ $course->title }}</a>
                     <div class="text-[12px] text-muted mt-0.5">{{ fa_num($doneCount) }} از {{ fa_num($total) }} درس انجام‌شده@if ($practicesTotal) · {{ fa_num($practicesPassedTotal) }} از {{ fa_num($practicesTotal) }} تمرین پاس‌شده@endif</div>
                     <div class="levelbar mt-2 !gap-0 bg-surface2" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $total }}" aria-valuenow="{{ $doneCount }}" aria-label="پیشرفت دوره"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);"></span></div>
                 </div>
@@ -199,7 +204,7 @@
                 <form method="POST" action="{{ route('courses.enroll', $course) }}" class="px-4 py-3 border-b border-line">
                     @csrf
                     <x-primary-button class="w-full !h-9 text-[13px]"><x-icon name="plus" class="w-4 h-4" /> برداشتن دوره</x-primary-button>
-                    <div class="text-[12px] text-muted mt-2 leading-[1.7]">تا برنداری، پیشرفتت ثبت نمی‌شه و توی پلن نمیاد.</div>
+                    <div class="text-[12px] text-muted mt-2 leading-[1.7]">تا برنداری، پیشرفتت ثبت نمی‌شه و مرورش نمیاد.</div>
                 </form>
             @endunless
 

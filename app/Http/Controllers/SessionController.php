@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use App\Models\Attempt;
-use App\Models\PlanItem;
 use App\Services\Evaluation\AttemptSession;
-use App\Services\Planning\Planner;
+use App\Services\Mastery\MasteryService;
+use App\Services\Review\ReviewQueue;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -14,7 +14,7 @@ use RuntimeException;
 
 class SessionController extends Controller
 {
-    public function __construct(protected AttemptSession $session, protected Planner $planner) {}
+    public function __construct(protected AttemptSession $session, protected ReviewQueue $reviews, protected MasteryService $mastery) {}
 
     public function start(Request $request, Activity $activity): RedirectResponse
     {
@@ -24,7 +24,7 @@ class SessionController extends Controller
     }
 
     /**
-     * Smart entry point for a free (non-plan) activity: resumes an open attempt, or shows
+     * Smart entry point for a free activity: resumes an open attempt, or shows
      * the most recent finished one (with its result and the full history below it) instead
      * of silently starting a blank new attempt over an already-answered practice. Starting
      * genuinely fresh is a deliberate separate action — the "دوباره همین تمرین" button on a
@@ -46,16 +46,6 @@ class SessionController extends Controller
         return redirect()->route('session.show', $attempt);
     }
 
-    public function startPlanned(Request $request, PlanItem $planItem): RedirectResponse
-    {
-        abort_unless($planItem->user_id === $request->user()->id, 403);
-        abort_unless($planItem->status === 'scheduled', 422);
-
-        $attempt = $this->session->startPlanned($request->user(), $planItem);
-
-        return redirect()->route('session.show', $attempt);
-    }
-
     /**
      * Browser Back/Forward or a refresh can replay an action URL as GET. Instead of a 405,
      * resume the learner's open attempt for that activity, or send them home.
@@ -73,24 +63,30 @@ class SessionController extends Controller
             : redirect()->route('home');
     }
 
-    public function show(Request $request, Attempt $attempt): View
+    public function show(Request $request, Attempt $attempt): View|RedirectResponse
     {
         $this->authorizeOwner($attempt);
 
         $attempt->load('activity.lesson.course', 'activity.lesson.videos');
         $lesson = $attempt->activity->lesson;
-        $open = $this->session->isOpen($attempt);
 
-        // Next Best Action: the planner's recommendation once this attempt is done;
-        // fall back to the lesson's own practices when nothing is planned.
-        $nextPlanItem = null;
-        $nextActivity = null;
+        // Watching a lesson happens on the lesson page only (DECISIONS.md §70).
+        if ($attempt->activity->isLearn()) {
+            return redirect($lesson->url());
+        }
+
+        $open = $this->session->isOpen($attempt);
+        $isReview = ($attempt->evidence['source'] ?? null) === 'review';
+
+        // What comes after: a review leads to the next review, a practice to the next
+        // unsolved practice of the same lesson — never to another lesson.
+        $next = null;
+        $reviewsLeft = 0;
         if (! $open) {
-            $nextPlanItem = $this->planner->continueLearning($request->user())['primary'];
-            if (! $nextPlanItem) {
-                $nextActivity = $attempt->activity->isLearn()
-                    ? $lesson->practices()->first()
-                    : $lesson->practices()->where('id', '>', $attempt->activity_id)->first();
+            if ($isReview) {
+                $reviewsLeft = $this->reviews->due($request->user())->count();
+            } else {
+                $next = $this->nextPractice($attempt);
             }
         }
 
@@ -108,20 +104,11 @@ class SessionController extends Controller
             'activity' => $attempt->activity,
             'lesson' => $lesson,
             'open' => $open,
-            'nextPlanItem' => $nextPlanItem,
-            'next' => $nextActivity,
+            'isReview' => $isReview,
+            'next' => $next,
+            'reviewsLeft' => $reviewsLeft,
             'history' => $history,
         ]);
-    }
-
-    public function complete(Attempt $attempt): RedirectResponse
-    {
-        $this->authorizeOwner($attempt);
-        abort_unless($attempt->activity->isLearn() && $this->session->isOpen($attempt), 422);
-
-        $this->session->completeLearn($attempt);
-
-        return redirect()->route('session.show', $attempt);
     }
 
     public function submit(Request $request, Attempt $attempt): RedirectResponse
@@ -166,10 +153,46 @@ class SessionController extends Controller
         $this->authorizeOwner($attempt);
         abort_unless($this->session->isOpen($attempt), 422);
 
-        $lesson = $attempt->activity->lesson;
+        $destination = ($attempt->evidence['source'] ?? null) === 'review' ? route('home') : $attempt->activity->lesson->url();
         $attempt->delete();
 
-        return redirect($lesson->url());
+        return redirect($destination);
+    }
+
+    /**
+     * «این سوال مشکل داره» on an AI-written review question (DECISIONS.md §70): the
+     * learner's attempt and its effect on mastery are taken back, the question is retired
+     * for everyone, and the lesson is due again so its next review writes a new one.
+     */
+    public function report(Attempt $attempt): RedirectResponse
+    {
+        $this->authorizeOwner($attempt);
+        $activity = $attempt->activity;
+        abort_unless($activity->generated && ! $this->session->isOpen($attempt), 422);
+
+        $this->mastery->revertAttempt($attempt);
+        $attempt->delete();
+        $activity->update(['payload' => $activity->payload + ['retired' => true]]);
+
+        return redirect()->route('home')->with('status', 'سوال کنار گذاشته شد. مرور بعدی این درس یه سوال تازه می‌گیره.');
+    }
+
+    /**
+     * The next practice of the same lesson the learner hasn't passed yet: after this one
+     * if there is one, else the earliest left.
+     */
+    protected function nextPractice(Attempt $attempt): ?Activity
+    {
+        $passed = Attempt::where('user_id', $attempt->user_id)
+            ->whereIn('result_status', ['correct', 'correct_with_hint'])
+            ->pluck('activity_id');
+
+        $unsolved = $attempt->activity->lesson->practices()
+            ->where('id', '!=', $attempt->activity_id)
+            ->whereNotIn('id', $passed)
+            ->get();
+
+        return $unsolved->first(fn (Activity $a) => $a->id > $attempt->activity_id) ?? $unsolved->first();
     }
 
     protected function authorizeOwner(Attempt $attempt): void

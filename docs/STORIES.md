@@ -95,6 +95,8 @@ Today's list is currently flat (every course's items interleaved, ordered by `Pl
 
 ### [ ] C-03 «مسیر رهبری فنی» — 10 courses from `course/Management course/` (2026-09-16, in progress)
 Owner dropped `course/Management course/` — 10 numbered sub-folders (559 lectures total, 36G), each a separate Udemy-style course by a different instructor, spanning requirements engineering, software architecture (×3), product management, agile/scrum, engineering management, tech/org leadership, and AI-era leadership. Discussed with the owner before touching anything: **10 separate `Course` rows**, not one giant course (per-course enrollment/pacing/streak/planner already assumes one coherent subject; these 10 are unrelated topics that should be startable independently — zero schema change either way). The umbrella name **«مسیر رهبری فنی»** is a *conceptual* grouping for how these are introduced, not a DB entity — no track/program layer exists and none was requested. Same full authoring depth (practices+rubrics, key_points, common_mistakes, scenario-threading) as C-01/C-02 for all 10, owner's explicit choice over a lighter format. A separate `course/scrum course/` folder held 2 more courses, originally set aside as out of scope for C-03 — now picked up as its own story, C-04 below.
+**Practice rewrite (2026-11-03, DECISIONS §69):** non-programming courses are MCQ-only and MCQs must be hard. `requirements-engineering` done (8 sections, 243 practices); `software-architecture-complete-guide` next; the other 8 courses get MCQ-only practices when their lessons are authored.
+
 
 Planned course list, in build order (folder # → slug):
 1. `requirements-engineering` — Requirements Engineering (IREB/INCOSE), 86 lectures — **in progress, this is first**

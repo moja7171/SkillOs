@@ -1031,3 +1031,14 @@ Owner still needs to: (1) actually run the upload for all courses (started, in p
 
 **Not done / follow-ups.** `ReviewPracticeGenerator` can still run synchronously inside `Planner::today` on the first view of the day when a course has budget and an exhausted practice pool (§66); moving that to the start of a session or a queued job is the next step if the first view is slow. Three definitions of «current lesson» (Planner, `courses.learn`, mark-done) still differ. A dedicated «پیشرفت» page for recap/weak spots/backlog was considered and deferred — they stay in «بیشتر».
 
+
+
+## 69. Two practice types only — hard MCQ and (programming courses only) coding; non-programming courses are MCQ-only (owner rule, 2026-11-03)
+
+**Problem.** The owner reviewed the «مسیر رهبری فنی» practices and asked for just two kinds: coding and 4-option. Non-programming courses have no coding practices, so they carry MCQ only. The existing MCQs were also too easy: in `requirements-engineering` the correct option was the single longest option in 67 of 80 questions (slot 0 held the answer in 55), in `software-architecture-complete-guide` 90 of 111 (slot 1 held it in 89). A learner could pass by picking the longest option.
+
+**Decision.** (1) Non-programming courses (all of C-03) use `mcq` only; `short_answer`/`explanation`/`scenario`, and the non-code «coding» practices in `requirements-engineering`, are rewritten as MCQs rather than kept. Real `coding` stays for the Python courses. §64's short-answer bar is superseded for these courses. (2) An MCQ must not give its answer away: scenario or decision framed, not recall; every wrong option is a real misconception (or a half-true statement) of the same length and tone as the right one; the right answer is spread evenly over the four slots. (3) `validate.py` now warns per course when the correct option is the strictly longest in more than 40% of MCQs or when one slot holds more than 35% of the answers (needs ≥ 12 MCQs).
+
+**Scope and order.** First pass: the two courses that have practices — `requirements-engineering` (244 practices) and `software-architecture-complete-guide` (202). The other eight C-03 courses still have skeleton lesson text and no practices; they get MCQ-only practices when their lessons are authored. App code (`FORMS`, `Activity::FORM_LABELS`, `ReviewPracticeGenerator`) is untouched — the Python courses still use the older forms (§64).
+
+**Practice keys.** A key is kept when the rewritten practice still tests the same idea; where the question changed (e.g. `atm-owner-classification` → `teen-driver-parent`) a new key is used. Re-import with `--prune` to drop the retired keys.

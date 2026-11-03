@@ -19,6 +19,39 @@ REQUIRED = ['key', 'title', 'form', 'difficulty', 'estimated_minutes', 'prompt',
 PERSIAN = re.compile(r'[؀-ۿ]')
 
 
+def check_mcq_tells(root, slugs, warnings):
+    """Warn when MCQs give the answer away by shape: the correct option is usually the longest, or sits in one slot.
+
+    Random guessing gives 25% for both; the thresholds leave room for chance on small courses.
+    """
+    total = longest = 0
+    slots = [0, 0, 0, 0]
+    for s in slugs:
+        pj = os.path.join(root, 'lessons', f'{s}.practices.json')
+        if not os.path.exists(pj):
+            continue
+        try:
+            practices = json.load(open(pj, encoding='utf-8'))
+        except json.JSONDecodeError:
+            continue
+        for p in practices:
+            opts = p.get('options') or []
+            c = p.get('correct_option')
+            if p.get('form') != 'mcq' or len(opts) != 4 or not isinstance(c, int) or not 0 <= c <= 3:
+                continue
+            total += 1
+            slots[c] += 1
+            lens = [len(o) for o in opts]
+            if lens[c] == max(lens) and lens.count(max(lens)) == 1:
+                longest += 1
+    if total < 12:
+        return
+    if longest / total > 0.40:
+        warnings.append(f'mcq tell: the correct option is the strictly longest in {longest}/{total} MCQs ({longest * 100 // total}%, chance ≈ 25%) — make wrong options as long and specific as the right one')
+    if max(slots) / total > 0.35:
+        warnings.append(f'mcq tell: correct_option distribution {slots} is lopsided — spread the right answer evenly over the 4 slots')
+
+
 def main():
     slug = sys.argv[1] if len(sys.argv) > 1 else 'python-deep-dive-1'
     root = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'content', slug)
@@ -78,7 +111,8 @@ def main():
                     m = re.search(r'option (\d)', p.get('rubric', ''))
                     if not m or int(m.group(1)) != p.get('correct_option'):
                         problems.append(f'{s}/{k}: rubric must say "Correct only if option {p.get("correct_option")} is selected."')
-    extra = {os.path.basename(f)[:-3] for f in glob.glob(os.path.join(root, 'lessons', '*.md'))} - set(slugs)
+    check_mcq_tells(root, slugs, warnings)
+    extra = {os.path.basename(f)[:-3] for f in glob.glob(os.path.join(root, 'lessons', '*.md')) if not f.endswith('.en.md')} - set(slugs)
     if extra:
         problems.append(f'lesson files not in course.json: {sorted(extra)}')
 

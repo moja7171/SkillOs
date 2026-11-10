@@ -124,6 +124,16 @@
                         <x-primary-button class="w-full"><x-icon name="plus" class="w-4 h-4" /> برداشتن دوره</x-primary-button>
                     </form>
                 </div>
+            @else
+                <div class="card p-[18px]">
+                    <div class="text-[15px] font-semibold mb-1">کنسل کردن دوره</div>
+                    <div class="text-[13px] text-muted mb-4">دوره از لیست «دوره‌های من» و مرورها برداشته می‌شه. پیشرفتت پاک نمی‌شه و با برداشتن دوباره ادامه پیدا می‌کنه.</div>
+                    <form method="POST" action="{{ route('courses.unenroll', $course) }}" onsubmit="return confirm('این دوره از لیست دوره‌هات برداشته بشه؟')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn w-full">کنسل کردن دوره</button>
+                    </form>
+                </div>
             @endif
 
             @if ($course->source_note)

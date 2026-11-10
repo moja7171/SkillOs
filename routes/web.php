@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses.show');
     Route::post('courses/{course}/enroll', [EnrollmentController::class, 'store'])->name('courses.enroll');
+    Route::delete('courses/{course}/enroll', [EnrollmentController::class, 'destroy'])->name('courses.unenroll');
 
     Route::get('courses/{course}/learn', [LessonController::class, 'continue'])->name('courses.learn');
     Route::get('courses/{course}/lessons/{lesson:slug}', [LessonController::class, 'show'])->scopeBindings()->name('lessons.show');

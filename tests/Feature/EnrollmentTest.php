@@ -64,4 +64,26 @@ class EnrollmentTest extends TestCase
         $this->actingAs($user)->get(route('courses.index'))->assertOk()
             ->assertDontSee(route('courses.enroll', $course), false);
     }
+
+    public function test_unenrolling_removes_only_my_enrollment_and_keeps_progress(): void
+    {
+        $me = User::factory()->create();
+        $other = User::factory()->create();
+        $course = Course::factory()->create();
+        Enrollment::factory()->for($me)->for($course)->create();
+        Enrollment::factory()->for($other)->for($course)->create();
+
+        $this->actingAs($me)->get(route('courses.show', $course))->assertOk()
+            ->assertSee(route('courses.unenroll', $course), false);
+
+        $this->actingAs($me)->delete(route('courses.unenroll', $course))
+            ->assertRedirect(route('courses.show', $course))->assertSessionHas('status');
+
+        $this->assertSame(0, Enrollment::where('user_id', $me->id)->count());
+        $this->assertSame(1, Enrollment::where('user_id', $other->id)->count());
+
+        // Cancelling again is a harmless no-op, and the course can be taken again.
+        $this->actingAs($me)->delete(route('courses.unenroll', $course))->assertRedirect(route('courses.show', $course));
+        $this->actingAs($me)->post(route('courses.enroll', $course))->assertRedirect(route('courses.learn', $course));
+    }
 }

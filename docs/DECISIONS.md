@@ -1066,3 +1066,7 @@ Owner still needs to: (1) actually run the upload for all courses (started, in p
 **Supersedes.** §2 (planner) and §19 (video days), §68 (Home as today's plan), §18 (no recap, no MCQ in reviews; generation is still a narrow exception), and the review-selection part of §66 (never an answered question — kept, now enforced in `ReviewQueue::questionFor`). §11's «dark-first» becomes light-first.
 
 **Consequences / follow-ups.** (1) A due review whose lesson has no unanswered authored MCQ calls Gemini when «شروع مرور» is pressed; on failure that lesson is skipped and stays due, and the Home count can include lessons that fail. (2) Generated questions are shared between learners; a report retires them for everyone. (3) `public/build` must be rebuilt after the Tailwind changes (done in the same change). (4) Dropping `plan_items` and the unused enrollment columns is left for a migration.
+
+## 71. A taken course can be cancelled (owner request, 2026-11-10)
+
+«کنسل کردن دوره» on the course page (`DELETE courses/{course}/enroll`, `courses.unenroll`, asks for confirmation) deletes the learner's `Enrollment` row and nothing else. Mastery records, attempts and video views are kept, so taking the course again resumes where they stopped. The course leaves «دوره‌های من» on Home and its lessons stop appearing in the review queue and streak stats (both already filter by enrollment). Cancelling a course that isn't taken is a no-op.

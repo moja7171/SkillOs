@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SubtitleGlossaryController;
 use App\Http\Controllers\VideoViewController;
 use App\Http\Controllers\WeakSpotsController;
 use App\Models\Lesson;
@@ -20,11 +21,14 @@ Route::middleware('auth')->group(function () {
     Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
     Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses.show');
     Route::post('courses/{course}/enroll', [EnrollmentController::class, 'store'])->name('courses.enroll');
+    Route::delete('courses/{course}/enroll', [EnrollmentController::class, 'destroy'])->name('courses.unenroll');
 
     Route::get('courses/{course}/learn', [LessonController::class, 'continue'])->name('courses.learn');
     Route::get('courses/{course}/lessons/{lesson:slug}', [LessonController::class, 'show'])->scopeBindings()->name('lessons.show');
     Route::post('lessons/{lesson}/mark-done', [LessonController::class, 'markDone'])->name('lessons.mark-done');
     Route::post('lesson-videos/{lessonVideo}/watched', [VideoViewController::class, 'store'])->name('lesson-videos.watched');
+    Route::get('lesson-videos/{lessonVideo}/glossary', [SubtitleGlossaryController::class, 'show'])->name('lesson-videos.glossary');
+    Route::post('lesson-videos/{lessonVideo}/lookup', [SubtitleGlossaryController::class, 'lookup'])->middleware('throttle:40,1')->name('lesson-videos.lookup');
     // Old bookmark form; lesson pages now live under their course.
     Route::get('lessons/{lesson}', fn (Lesson $lesson) => redirect()->route('lessons.show', [$lesson->course, $lesson], 301));
 

@@ -73,7 +73,8 @@
                     @if ($embed['kind'] === 'file')
                         <div class="player-shell rounded-lg overflow-hidden bg-black" dir="ltr">
                             <video class="js-player" playsinline preload="metadata" crossorigin="anonymous"
-                                   data-video-id="{{ $video->id }}" data-captions-default="{{ $video->subtitles[0]['lang'] ?? 'en' }}">
+                                   data-video-id="{{ $video->id }}" data-captions-default="{{ $video->subtitles[0]['lang'] ?? 'en' }}"
+                                   @if ($video->interactive_subtitles) data-glossary-url="{{ route('lesson-videos.glossary', $video) }}" data-lookup-url="{{ route('lesson-videos.lookup', $video) }}" @endif>
                                 @php $downloadSrc = media_download_url($embed['src']); @endphp
                                 <source src="{{ $downloadSrc ?? media_url($embed['src']) }}" type="video/mp4"
                                         @if ($downloadSrc) data-fallback-src="{{ media_url($embed['src']) }}" @endif>

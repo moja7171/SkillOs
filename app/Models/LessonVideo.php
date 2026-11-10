@@ -5,20 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-#[Fillable(['lesson_id', 'order', 'title', 'url', 'subtitles'])]
+#[Fillable(['lesson_id', 'order', 'title', 'url', 'subtitles', 'interactive_subtitles'])]
 class LessonVideo extends Model
 {
     protected function casts(): array
     {
         return [
             'subtitles' => 'array',
+            'interactive_subtitles' => 'boolean',
         ];
     }
 
     public function lesson(): BelongsTo
     {
         return $this->belongsTo(Lesson::class);
+    }
+
+    public function glossary(): HasOne
+    {
+        return $this->hasOne(VideoGlossary::class);
     }
 
     /**

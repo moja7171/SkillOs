@@ -129,3 +129,22 @@
     .prose-fa td { @apply px-3 py-1.5 border-b border-line align-top; }
     .prose-fa blockquote { @apply border-s-2 border-line2 ps-3 text-muted; }
 }
+
+/* Interactive subtitles (DECISIONS.md §73) */
+.player-shell .plyr__captions { pointer-events: none; z-index: 4; }
+.player-shell .iu { pointer-events: auto; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: none; border-radius: 3px; }
+.player-shell .iu:hover,
+.player-shell .iu.is-active { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.player-shell .iu.is-active { background: color-mix(in srgb, var(--accent) 30%, transparent); }
+.player-shell .iw-popup { transition: top .15s ease, left .15s ease; position: absolute; z-index: 30; width: min(320px, calc(100% - 16px)); padding: 12px 14px; border-radius: 12px; background: var(--surface); color: var(--ink); border: 1px solid var(--line2); box-shadow: 0 10px 30px rgba(0, 0, 0, .35); font-family: 'Vazirmatn', Tahoma, sans-serif; line-height: 1.7; text-align: start; }
+.player-shell .iw-head { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.player-shell .iw-term { flex: 1; min-width: 0; font-size: 15px; font-weight: 700; direction: ltr; unicode-bidi: isolate; text-align: left; overflow-wrap: anywhere; }
+.player-shell .iw-btn { width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 13px; color: var(--muted); background: transparent; border: 0; cursor: pointer; }
+.player-shell .iw-btn:hover { background: var(--surface2); color: var(--ink); }
+.player-shell .iw-meaning { font-size: 15px; font-weight: 600; color: var(--accent-text); }
+.player-shell .iw-meaning.is-loading { color: var(--muted); font-weight: 400; }
+.player-shell .iw-note { margin-top: 2px; font-size: 13px; color: var(--muted); }
+.player-shell .iw-line { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); font-size: 13px; }
+.player-shell .iw-en { color: var(--faint); text-align: left; unicode-bidi: isolate; }
+.player-shell .iw-fa { margin-top: 2px; color: var(--ink); }
+.player-shell .iw-meaning.is-error { color: var(--muted); font-weight: 400; font-size: 13px; }

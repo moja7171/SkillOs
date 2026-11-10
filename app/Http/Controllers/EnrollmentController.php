@@ -22,4 +22,15 @@ class EnrollmentController extends Controller
 
         return redirect()->route('courses.show', $course)->with('status', 'قبلاً این دوره رو برداشتی.');
     }
+
+    /**
+     * Drop the course from the learner's list. Only the enrollment goes: mastery records and
+     * attempts stay, so taking the course again resumes where they stopped.
+     */
+    public function destroy(Request $request, Course $course): RedirectResponse
+    {
+        $request->user()->enrollments()->where('course_id', $course->id)->delete();
+
+        return redirect()->route('courses.show', $course)->with('status', 'دوره از لیست دوره‌های تو برداشته شد. پیشرفتت نگه داشته شده.');
+    }
 }

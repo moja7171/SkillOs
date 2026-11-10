@@ -1070,3 +1070,7 @@ Owner still needs to: (1) actually run the upload for all courses (started, in p
 ## 71. A taken course can be cancelled (owner request, 2026-11-10)
 
 «کنسل کردن دوره» on the course page (`DELETE courses/{course}/enroll`, `courses.unenroll`, asks for confirmation) deletes the learner's `Enrollment` row and nothing else. Mastery records, attempts and video views are kept, so taking the course again resumes where they stopped. The course leaves «دوره‌های من» on Home and its lessons stop appearing in the review queue and streak stats (both already filter by enrollment). Cancelling a course that isn't taken is a no-op.
+
+## 72. «مسیر رهبری فنی» holds only the three architecture courses (owner request, 2026-11-10)
+
+The path is now exactly: 1) معماری و طراحی سیستم‌های مدرن مقیاس‌بزرگ (`large-scale-systems-design`), 2) مطالعات موردی طراحی معماری و سیستم (`system-design-case-studies`), 3) راهنمای کامل تبدیل‌شدن به معمار نرم‌افزار (`software-architecture-complete-guide`) — in that order (`category_order` 1–3). The other seven former members (requirements-engineering, becoming-a-product-manager, advanced-scrum-master, practical-guide-for-tech-leaders, become-an-engineering-manager, organizational-leadership-ai-era, generative-ai-in-organizations) lost `category`/`category_order` and fall into the catalog's trailing unlabeled group (§58); their lessons, enrollments and progress are untouched. Supersedes the «10 courses in leadership order» grouping in §58. Display-only, as before.

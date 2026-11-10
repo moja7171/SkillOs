@@ -345,6 +345,9 @@ One flat reviews-first queue, one «شروع امروز» button, remaining coun
 ### [x] S-69 Cancel a taken course (DECISIONS.md §71)
 - «کنسل کردن دوره» on the course page deletes the enrollment only; progress is kept and resumes if the course is taken again. Tests in `EnrollmentTest`.
 
+### [x] S-70 «مسیر رهبری فنی» = three architecture courses (DECISIONS.md §72)
+- Path order: large-scale-systems-design → system-design-case-studies → software-architecture-complete-guide. The other 7 courses lost their category (unlabeled group). Run `/_ops/import` on the host to apply.
+
 ### [ ] S-60 Videos unreachable from phone/other devices — Cloudflare Tunnel blocked, pivoted to download host + SSH fallback (DECISIONS.md §53/§59, in progress)
 `MEDIA_BASE_URL=http://localhost:8765` only ever worked on the owner's own daily machine. `growwise.ir`'s full DNS was migrated to Cloudflare and a named tunnel built, but `cloudflared` can't reach Cloudflare's edge at all — port 7844 is blocked at the network/carrier level (confirmed on wifi and mobile data alike; `ngrok` hit the same wall). A VPN-proxied workaround was proven to work but the owner declined it as a standing dependency. **App side done:** video/caption `<source>`/`<track>` *and* attachment download links now try an optional download host first (`MEDIA_DOWNLOAD_BASE_URL`) with the local machine as an automatic browser-side fallback — see DECISIONS.md §59. **Infra side, in progress:** owner bought a Parspack download-hosting plan (100GB, `dl.growwise.ir` → Cloudflare-proxied for free SSL) and is uploading all ~72GB of course videos there via `lftp`; once done, `MEDIA_DOWNLOAD_BASE_URL` gets set in production and this closes out. SSH-from-Parspack + reverse-tunnel is still the noted fallback if the download host doesn't pan out. **See DECISIONS.md §53/§59 for exact status.**
 

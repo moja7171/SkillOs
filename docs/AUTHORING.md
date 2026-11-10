@@ -206,3 +206,15 @@ Sanity check at the end of a section: every lesson `.md` > 800 bytes, every prac
 - [ ] `tools/authoring/validate.py <slug>` OK; `content:import` OK; importer test green
 - [ ] `docs/STORIES.md` progress line updated
 - [ ] one commit, message `C-xx: «section» section authored (N lessons, M practices)`
+
+## 9. Interactive-subtitle glossary (DECISIONS.md §73)
+
+Opt a course in with `"interactive_subtitles": true` in `course.json` (every video then offers tap-a-word lookups, answered live and cached). To make the meanings *authored and reviewed* instead:
+
+```sh
+php artisan subtitles:glossary <slug> --video=001 --max-requests=20   # needs GEMINI_API_KEY (+ AI_PROXY_*); resumable, rerun to continue
+php artisan subtitles:glossary <slug> --check                          # missing / invalid cues per video
+php artisan content:import <slug>                                      # loads content/<slug>/glossary/*.json
+```
+
+File `content/<slug>/glossary/<video-file-stem>.json`: `{"version":1,"video":"…mp4","cues":{"<start ms>": {"t":"Persian translation of the line","w":[{"s":"load balancer","fa":"…","n":"optional one-line Persian explanation"}]}}}`. `s` must be the exact text from the cue (whole words, any case); `fa` ≤ 6 words, English technical terms stay English with a Persian gloss. Cue key = the cue's start time in ms in the English `.vtt` (the platform's `--- … ---` banner cue is skipped). Review a few videos by reading `t`/`w` against the transcript before bulk-generating a whole course; a hand-fixed entry survives re-runs only if all cues of its 14-cue chunk are present.

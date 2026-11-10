@@ -1,4 +1,5 @@
 import Plyr from 'plyr';
+import { mountInteractiveCaptions } from './interactive-captions';
 
 // Persian UI strings for the player. Keyboard: space/K play, ←/→ or J/L ±5s,
 // ↑/↓ volume, M mute, F fullscreen, C captions, 0–9 jump to %.
@@ -189,6 +190,7 @@ export function mountPlayers(root = document) {
 
         // Speed +/- control added after the built-ins (near the settings button).
         mountSpeedControl(player);
+        mountInteractiveCaptions(player, el);
 
         // Resume where the learner stopped (skip if near the start or the end).
         // Metadata may already be loaded before Plyr wires up, so try on both events.

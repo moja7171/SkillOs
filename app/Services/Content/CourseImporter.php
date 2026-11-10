@@ -36,7 +36,7 @@ class CourseImporter
 
         $lessonsData = $this->validateLessons($data['lessons'], $dir);
 
-        return DB::transaction(function () use ($slug, $data, $lessonsData, $prune) {
+        return DB::transaction(function () use ($slug, $dir, $data, $lessonsData, $prune) {
             $course = Course::updateOrCreate(['slug' => $slug], [
                 'title' => $data['title'],
                 'description' => $data['description'] ?? null,
@@ -67,12 +67,17 @@ class CourseImporter
                 // Videos carry no learner state: replace wholesale.
                 $lesson->videos()->delete();
                 foreach ($ld['videos'] ?? [] as $i => $video) {
-                    $lesson->videos()->create([
+                    $glossary = $this->glossaryFor($dir, $video);
+                    $created = $lesson->videos()->create([
                         'order' => $i,
                         'title' => $video['title'] ?? null,
                         'url' => $this->mediaUrl($data, $video, 'url', 'file'),
                         'subtitles' => $this->subtitleTracks($data, $video),
+                        'interactive_subtitles' => $glossary !== null || ! empty($data['interactive_subtitles']),
                     ]);
+                    if ($glossary !== null) {
+                        $created->glossary()->create(['data' => $glossary]);
+                    }
                 }
 
                 Activity::updateOrCreate(['lesson_id' => $lesson->id, 'key' => 'learn'], [
@@ -259,6 +264,31 @@ class CourseImporter
         $base = rtrim((string) ($course['video_base_url'] ?? '/media/'), '/');
 
         return $base.'/'.implode('/', array_map('rawurlencode', explode('/', $video[$fileKey])));
+    }
+
+    /**
+     * The interactive-subtitle glossary of a video (content/<slug>/glossary/<video file stem>.json,
+     * made by `subtitles:glossary`), re-encoded compactly; null when the video has none.
+     *
+     * @param  array<string, mixed>  $video
+     */
+    protected function glossaryFor(string $dir, array $video): ?string
+    {
+        if (empty($video['file'])) {
+            return null;
+        }
+
+        $path = "$dir/glossary/".pathinfo($video['file'], PATHINFO_FILENAME).'.json';
+        if (! File::exists($path)) {
+            return null;
+        }
+
+        $glossary = $this->readJson($path);
+        if (! is_array($glossary['cues'] ?? null) || $glossary['cues'] === []) {
+            throw new ImportException("$path: \"cues\" must be a non-empty object.");
+        }
+
+        return json_encode($glossary, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 
     /**

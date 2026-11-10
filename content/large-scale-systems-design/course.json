@@ -6,6 +6,7 @@
   "video_base_url": "/media/large-scale-systems-design/",
   "category": "مسیر رهبری فنی",
   "category_order": 1,
+  "interactive_subtitles": true,
   "lessons": [
     {
       "slug": "course-overview",

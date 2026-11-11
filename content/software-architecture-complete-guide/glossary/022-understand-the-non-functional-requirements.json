@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "video": "022-understand-the-non-functional-requirements.mp4",
+  "cues": {
+    "431": {"t":"گام بعدی در روند معماری این است که non-functional requirements سیستم را درک کنیم.","w":[{"s":"non-functional requirements","fa":"نیازمندی‌های غیرکارکردی","n":"ویژگی‌ها و محدودیت‌های فنی سیستم که رفتار آن را تعریف می‌کنند."},{"s":"architectural process","fa":"روند معماری"}]},
+    "6656": {"t":"Non-functional requirements نوع خاصی از نیازمندی‌ها هستند که برخی ویژگی‌های فنی و service-level سیستم را تعریف می‌کنند.","w":[{"s":"Non-functional requirements","fa":"نیازمندی‌های غیرکارکردی"},{"s":"service-level","fa":"سطح خدمات"}]},
+    "13857": {"t":"برای مثال، رایج‌ترین non-functional requirements درباره concurrent number of users، بارهای سنگین، volumes of data و performance هستند.","w":[{"s":"concurrent number of users","fa":"تعداد کاربران همزمان"},{"s":"volumes of data","fa":"حجم‌های داده"},{"s":"performance","fa":"کارایی"}]},
+    "23260": {"t":"همان‌طور که در بخش بعدی خواهیم دید، client و system analyst معمولاً از non-functional requirements آگاه نیستند","w":[{"s":"client","fa":"کارفرما"},{"s":"system analyst","fa":"تحلیلگر سیستم"}]},
+    "29908": {"t":"و این وظیفه معمار است که به آن‌ها کمک کند تا آن نیازمندی‌ها را formulate کنند.","w":[{"s":"formulate","fa":"تدوین کردن","n":"تبدیل کردن خواسته‌ها به چارچوب و ساختار مشخص فنی."}]},
+    "34597": {"t":"برای ما معماران، non-functional requirements بسیار مهم‌تر از نیازمندی‌های معمولی هستند.","w":[{"s":"non-functional requirements","fa":"نیازمندی‌های غیرکارکردی"}]},
+    "40763": {"t":"من هرگز کار روی یک سیستم را قبل از اینکه دقیقا بدانم non-functional requirements آن چیست شروع نمی‌کنم، زیرا تعداد زیادی architectural elements","w":[{"s":"non-functional requirements","fa":"نیازمندی‌های غیرکارکردی"},{"s":"architectural elements","fa":"عناصر معماری"}]},
+    "48713": {"t":"می‌توانند تحت تأثیر آن نیازمندی‌ها قرار گیرند.","w":[]}
+  }
+}

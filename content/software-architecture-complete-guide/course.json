@@ -608,7 +608,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "028-conclusion-architecture-process.mp4"
+          "file": "028-conclusion-architecture-process.mp4",
+          "subtitles": [
+            {
+              "file": "028-conclusion-architecture-process.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "028-conclusion-architecture-process.fa.vtt"
         }
       ],
       "key_points": [
@@ -757,7 +764,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "035-conclusion-requirements.mp4"
+          "file": "035-conclusion-requirements.mp4",
+          "subtitles": [
+            {
+              "file": "035-conclusion-requirements.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "035-conclusion-requirements.fa.vtt"
         }
       ],
       "key_points": [
@@ -952,7 +966,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "044-summary-application-types.mp4"
+          "file": "044-summary-application-types.mp4",
+          "subtitles": [
+            {
+              "file": "044-summary-application-types.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "044-summary-application-types.fa.vtt"
         }
       ],
       "key_points": [
@@ -1107,7 +1128,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "052-summary-technology-stack.mp4"
+          "file": "052-summary-technology-stack.mp4",
+          "subtitles": [
+            {
+              "file": "052-summary-technology-stack.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "052-summary-technology-stack.fa.vtt"
         }
       ],
       "key_points": [
@@ -1284,7 +1312,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "060-summary-ilities.mp4"
+          "file": "060-summary-ilities.mp4",
+          "subtitles": [
+            {
+              "file": "060-summary-ilities.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "060-summary-ilities.fa.vtt"
         }
       ],
       "key_points": [
@@ -1515,7 +1550,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "070-summary-components.mp4"
+          "file": "070-summary-components.mp4",
+          "subtitles": [
+            {
+              "file": "070-summary-components.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "070-summary-components.fa.vtt"
         }
       ],
       "key_points": [
@@ -1667,7 +1709,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "077-summary-design-patterns.mp4"
+          "file": "077-summary-design-patterns.mp4",
+          "subtitles": [
+            {
+              "file": "077-summary-design-patterns.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "077-summary-design-patterns.fa.vtt"
         }
       ],
       "key_points": [
@@ -1849,7 +1898,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "085-summary-system-architecture.mp4"
+          "file": "085-summary-system-architecture.mp4",
+          "subtitles": [
+            {
+              "file": "085-summary-system-architecture.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "085-summary-system-architecture.fa.vtt"
         }
       ],
       "key_points": [
@@ -2637,7 +2693,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "118-summary-advanced-architectures.mp4"
+          "file": "118-summary-advanced-architectures.mp4",
+          "subtitles": [
+            {
+              "file": "118-summary-advanced-architectures.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "118-summary-advanced-architectures.fa.vtt"
         }
       ],
       "key_points": [
@@ -2838,7 +2901,14 @@
       "estimated_minutes": 1,
       "videos": [
         {
-          "file": "126-summary-soft-skills.mp4"
+          "file": "126-summary-soft-skills.mp4",
+          "subtitles": [
+            {
+              "file": "126-summary-soft-skills.en.vtt",
+              "lang": "en"
+            }
+          ],
+          "subtitle": "126-summary-soft-skills.fa.vtt"
         }
       ],
       "key_points": [

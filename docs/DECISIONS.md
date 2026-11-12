@@ -1094,3 +1094,16 @@ The path is now exactly: 1) معماری و طراحی سیستم‌های مد�
 ## 74. «مسیر رهبری فنی» order changed: Memi Lavi first (owner request, 2026-11-11)
 
 New order (`category_order`): 1) راهنمای کامل تبدیل‌شدن به معمار نرم‌افزار (`software-architecture-complete-guide`, Memi Lavi), 2) معماری و طراحی سیستم‌های مدرن مقیاس‌بزرگ (`large-scale-systems-design`, Pogrebinsky), 3) مطالعات موردی طراحی معماری و سیستم (`system-design-case-studies`, Pogrebinsky). Supersedes the order in §72 (membership unchanged). Display-only; run `/_ops/import` on the host to apply. Interactive subtitles (§73) stay on `large-scale-systems-design` for now — it is no longer "the first course of the path", just the first one with a glossary.
+
+## 75. Interactive subtitles now cover all three «مسیر رهبری فنی» courses (2026-11-12)
+
+**State.** `software-architecture-complete-guide` (113 videos), `large-scale-systems-design` (41) and `system-design-case-studies` (19) all have an authored glossary and pass `subtitles:glossary --check`; `interactive_subtitles` is on for all three (case-studies switched on in `course.json`, after `category_order`). Committed as `b03f0a3` / `ce60b5e`, pushed to `main` and `deploy`. No design change to §73.
+
+**Models.** Memi Lavi's first ~47 videos were made with `gemini-3.5-flash`, the rest of that course and everything in the other two courses with `gemini-3.5-flash-lite` / `gemini-3.1-flash-lite` (flash's daily quota resets ~11:30 Tehran). A sample of case-studies 001 read against the English subtitles was good (translation correct, technical terms kept in English, no trivial words glossed). Regenerating Memi Lavi 063+ with flash is optional and not done.
+
+**Procedure that worked.** The Gemini/relay 503 is frequent and transient; `subtitles:glossary` stops on the first failed request and resumes per 14-cue chunk, so a wrapper loop reruns it with `--max-requests` = *remaining* budget (not a fixed number) and counts a failed request as spent. About 200 requests covered the second half of large-scale, ~190 the 19 case-studies videos. Cues the model skips (typically the last ones of a video, e.g. closing "please leave a review" lines, or a one-word continuation like `event time.`) are added by hand: one line per cue in the glossary file, keyed by the cue's start ms, `"t"` Persian, `"w"` may be `[]`.
+
+**Deploy.** Glossaries reach the live site with the normal flow: `tools/deploy-push.sh` → cPanel «Update from Remote» → `.cpanel.yml` runs `deploy.php`, which re-imports every course (so no manual `/_ops/import` is needed); check `/_ops/deploy-log`. The ten Memi Lavi conclusion/summary media files on `dl.growwise.ir` were already renamed (verified: all 30 URLs return 200), so the rename follow-up of 2026-11-11 is closed.
+
+**Still open.** Whether the live lookup (words not in a glossary) should also return the whole-sentence translation (`SubtitleTranslator::lookup`, `SubtitleGlossaryController::lookup`; already-cached lookups have none) — owner to decide.
+

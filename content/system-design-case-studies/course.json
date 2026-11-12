@@ -6,6 +6,7 @@
   "video_base_url": "/media/system-design-case-studies/",
   "category": "مسیر رهبری فنی",
   "category_order": 3,
+  "interactive_subtitles": true,
   "lessons": [
     {
       "slug": "course-overview",

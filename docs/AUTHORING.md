@@ -164,6 +164,8 @@ Sanity check at the end of a section: every lesson `.md` > 800 bytes, every prac
 
 ## 6. Practices: what good ones look like
 
+> **Practice only where it earns its place (owner rule, 2026-11-14, DECISIONS.md §76).** Don't give every lesson practices. Introductions, summaries, previews, purely descriptive and opinion lessons get none (an empty `[]` practices file); keep 1–3 scenario/decision practices on lessons that teach a skill or a choice.
+
 > **Non-programming courses are MCQ-only, and MCQs must be hard (owner rule, 2026-11-03, DECISIONS.md §69).** Two types exist: `coding` (programming courses only) and `mcq`. Author an MCQ as a scenario or a decision, not a recall question; every wrong option is a real misconception or a half-true statement as long and specific as the right one (never make the right option the longest); spread `correct_option` evenly over 0–3 (`validate.py` warns on both tells). The `short_answer` rules below apply only to the older Python courses.
 
 > **No essay-style answers (owner rule, 2026-09-22, DECISIONS.md §64).** Every non-mcq, non-coding practice must be a true `short_answer`: recall a specific fact/term/name/number/reason in 1–2 words, not a paragraph of reasoning. A prompt may ask for more than one such short answer when natural (two or three named items), but never "explain in 3–4 sentences." `explanation` and `scenario` are **legacy forms** — don't author new ones; existing ones in other courses get migrated over time, starting with `requirements-engineering`.

@@ -1107,3 +1107,13 @@ New order (`category_order`): 1) راهنمای کامل تبدیل‌شدن ب�
 
 **Still open.** Whether the live lookup (words not in a glossary) should also return the whole-sentence translation (`SubtitleTranslator::lookup`, `SubtitleGlossaryController::lookup`; already-cached lookups have none) — owner to decide.
 
+## 76. Practice only where it earns its place; `software-architecture-complete-guide` converted to hard MCQs (owner request, 2026-11-14)
+
+**Problem.** The owner reviewed the course: nearly every lesson carried practices (111 of 113 lessons, 202 practices), including 1-minute intros, summaries and process previews, so exercises felt forced. The course also still had 90 short_answer/explanation/scenario practices that §69 had scheduled for MCQ conversion, and its 111 MCQs were recall questions with the tells §69 describes (correct option strictly longest in 75%, slot 1 holding 80%).
+
+**Decision.** (1) A practice exists only where the lesson teaches a skill or decision a learner benefits from rehearsing. Introductions, summaries, course/process previews, purely descriptive lessons (application types, external considerations, document-section definitions) and opinion lessons (architect role, mindset, soft skills) get no practice: their `.practices.json` is `[]`. (2) The 43 lessons that keep practices (66 in total, 1 for short lessons, 2 for medium, 3 for the longest) were rewritten from scratch as scenario/decision MCQs under the §69 rules: non-programming course, so `mcq` only; wrong options are real misconceptions or half-truths of similar length; the answer is never the strictly longest option (0 of 66) and slots are even (15/17/17/17).
+
+**Process.** Drop first (empty `[]` files, so the validator still sees a practices file), then rewrite section by section. `course-overview` and `course-closeout` stay practice-free; `course-closeout` got `key_points` so `validate.py` is clean (0 warnings). Old practice keys were not reused (new questions), so learner records on removed practices are deleted by `content:import --prune` (what `deploy.php` runs).
+
+**Sidebar (same day).** The lesson-done event now carries the lesson id; the sidebar updates its tick, counters, bar and «تمرین مونده» flag live, and the active lesson row has an accent tint distinct from the section headers.
+

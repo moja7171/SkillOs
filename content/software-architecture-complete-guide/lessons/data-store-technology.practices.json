@@ -1,51 +1,44 @@
 [
   {
-    "key": "sql-vs-nosql-concept",
-    "title": "SQL و NoSQL: محصول یا مفهوم؟",
+    "key": "orders-and-stock",
+    "title": "سفارش و موجودیِ انبار",
     "form": "mcq",
-    "difficulty": "intro",
+    "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "طبق این درس، وقتی از «SQL» و «NoSQL» حرف می‌زنیم، دقیقاً درباره‌ی چی صحبت می‌کنیم؟",
+    "prompt": "برای یه فروشگاهِ آنلاین، داده‌ها ساخت‌یافته‌ست و حجمش در حدِ چند ترابایته. وقتی مشتری کالایی رو سفارش می‌ده، ثبتِ سفارش و کم‌شدنِ موجودی باید با هم انجام بشن یا هیچ‌کدوم. کدوم انتخاب درست‌تره؟",
     "options": [
-      "دو محصولِ خاص، مثلِ SQL Server و MongoDB",
-      "دو مفهومِ ذخیره‌سازیِ داده، نه محصولاتِ خاص",
-      "دو نسخه‌ی مختلف از یه محصولِ واحد",
-      "دو زبانِ برنامه‌نویسیِ متفاوت"
+      "NoSQL؛ چون همیشه سریع‌تره و eventual consistency برای موجودی مشکلی نیست، چون ناسازگاریِ چندثانیه‌ای هیچ‌وقت به فروشِ اشتباه نمی‌رسه",
+      "دیتابیسِ SQL؛ تراکنش ACID هر دو کار رو اتمیک می‌کنه و حجمِ این سیستم هم بزرگ نیست که NoSQL لازم باشه",
+      "NoSQL؛ چون سندهای JSON منعطف‌ان و می‌شه سفارش و موجودی رو توی یه سند گذاشت، پس دیگه به هیچ تراکنشی نیازی نیست",
+      "SQL، ولی فقط چون ۴۰ ساله وجود داره؛ دیتابیس‌های NoSQL هیچ‌وقت و به هیچ شکلی از تراکنش ACID پشتیبانی نمی‌کنن و نخواهند کرد"
     ],
     "correct_option": 1,
-    "expected_outcome": "درس صراحتاً می‌گه داریم درباره‌ی محصولاتی مثل SQL Server یا MongoDB صحبت نمی‌کنیم، بلکه درباره‌ی دو مفهومِ ذخیره‌سازیِ داده حرف می‌زنیم.",
+    "expected_outcome": "SQL با تراکنش (ACID) و داده‌ی ساخت‌یافته برای این سیستم مناسبه. توی NoSQL معمولاً eventual consistency هست؛ هرچند مرزِ این دو کم‌رنگ شده (مثلاً MongoDB تراکنش ACID اضافه کرده).",
     "hints": [
-      "درس یه بخشِ کامل با عنوانِ «اول، دو مفهوم رو بشناسیم» داره.",
-      "به این فکر کن: SQL Server و MySQL هر دو یه مفهومِ واحد رو پیاده می‌کنن — کدوم؟"
+      "«یا همه یا هیچ» اسمِ کدوم ویژگیه؟",
+      "غول‌پیکر یعنی چند ده ترابایت؛ این سیستم به اون اندازه می‌رسه؟"
     ],
     "rubric": "Correct only if option 1 is selected."
   },
   {
-    "key": "eventual-consistency",
-    "title": "چرا NoSQL فقط بخشی از ACID رو پشتیبانی می‌کنه؟",
-    "form": "explanation",
+    "key": "giant-unstructured-store",
+    "title": "انبارِ داده‌ی غول‌پیکر",
+    "form": "mcq",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، بیشترِ دیتابیس‌های NoSQL به‌جای تراکنشِ کاملِ ACID، از eventual consistency (سازگاریِ نهایی) استفاده می‌کنن. در ۲ تا ۳ جمله توضیح بده این یعنی چی و چرا NoSQL این مصالحه رو انتخاب کرده.",
-    "expected_outcome": "Eventual consistency یعنی دیتابیس تضمین می‌ده اکشن اجرا می‌شه، ولی تضمین نمی‌ده دقیقاً کِی — کد باید بتونه با ناسازگاریِ موقتِ داده کنار بیاد. دلیلِ این انتخاب اینه که تراکنشِ کامل، performance رو زیر بارِ سنگین کند می‌کنه، و NoSQL هدفش اصلی‌ش سرعت و مقیاسه.",
-    "hints": [
-      "درس می‌گه eventual consistency چه چیزی رو تضمین می‌کنه و چه چیزی رو تضمین نمی‌کنه.",
-      "به رابطه‌ی بینِ «هدفِ اصلیِ NoSQL» (که قبل‌تر توی درس گفته شد) و این مصالحه فکر کن."
-    ],
-    "rubric": "Correct if response explains eventual consistency guarantees the action happens but not exactly when, and connects the tradeoff to NoSQL's performance/scale goals (full ACID would hurt performance at scale). Correct_with_hint if only the definition is given without the reasoning. Incorrect if it says NoSQL fully supports ACID or gives no real explanation."
-  },
-  {
-    "key": "blurring-lines-example",
-    "title": "مرزِ SQL و NoSQL داره کم‌رنگ می‌شه",
-    "form": "short_answer",
-    "difficulty": "stretch",
     "estimated_minutes": 2,
-    "prompt": "طبق نکته‌ی پایانیِ این درس، یکی از مشتری‌های مدرس این دوره MongoDB رو کنار گذاشت و به‌جاش چی رو انتخاب کرد، و چرا؟",
-    "expected_outcome": "SQL Server رو انتخاب کرد، چون از ترکیبِ پشتیبانیِ کاملِ تراکنش و قابلیتِ کوئریِ خوبِ JSON خوشش اومد — چیزی که قبلاً فقط توی NoSQL پیدا می‌شد.",
-    "hints": [
-      "این مثال دقیقاً توی بخشِ «یه نکته‌ی آخر» درسه.",
-      "به این فکر کن: چه دو قابلیتی که قبلاً جدا از هم بودن، الان توی SQL Server با هم اومدن؟"
+    "prompt": "قراره سیستمی میلیاردها سند JSON با فیلدهای کاملاً متفاوت و حجمِ چند ده ترابایت ذخیره کنه و روی سرورهای زیادی توزیع بشه. کدوم گزینه با درس هم‌خونه و چه بهایی داره؟",
+    "options": [
+      "SQL؛ چون ACID هر ردیف رو تضمین می‌کنه و با یه جدولِ بزرگ و ستون‌های nullable می‌شه فیلدهای متفاوت رو هم راحت و بدونِ افتِ performance نگه داشت",
+      "NoSQL مثل MongoDB؛ مقیاس و بدون‌schema‌بودن رو می‌ده، به‌شرطی که کد با ناسازگاریِ موقتِ داده (eventual consistency) کنار بیاد",
+      "SQL؛ چون با رشدِ حجم performance دیتابیس‌های رابطه‌ای بهتر می‌شه و schema برای هر رکورد اصلاً هزینه‌ای به سیستم تحمیل نمی‌کنه",
+      "NoSQL؛ چون همه‌ی دیتابیس‌های NoSQL یه زبانِ کوئریِ استاندارد دارن، پس بعداً هم می‌شه بدونِ هیچ تغییری از محصولی به محصولِ دیگه رفت"
     ],
-    "rubric": "Correct if response names SQL Server and explains the reason (full transaction support combined with good JSON querying). Incorrect if it names a different product or gives no reasoning."
+    "correct_option": 1,
+    "expected_outcome": "قدرتِ NoSQL مقیاس و performance روی داده‌ی بزرگ و بدون‌ساختاره. بهاش: eventual consistency و نبودِ زبانِ کوئریِ استاندارد (هر محصول زبان و درایورِ خودش رو داره).",
+    "hints": [
+      "وقتی هر رکورد schema و تراکنش می‌خواد، با رشدِ حجم چی می‌شه؟",
+      "NoSQL از ACID چه بخشی رو معمولاً کنار می‌ذاره؟"
+    ],
+    "rubric": "Correct only if option 1 is selected."
   }
 ]

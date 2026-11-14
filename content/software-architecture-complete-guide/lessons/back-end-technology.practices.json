@@ -1,51 +1,44 @@
 [
   {
-    "key": "node-not-for-services",
-    "title": "Node.js برای کدوم نوع اپلیکیشن مناسب نیست؟",
+    "key": "long-running-service",
+    "title": "سرویسِ ساعت‌ها پردازش",
     "form": "mcq",
-    "difficulty": "intro",
+    "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "طبق این درس، Node.js برای کدوم نوع کاربرد هدف‌گذاری *نشده*؟",
+    "prompt": "تیمی که همه تجربه‌ی JavaScript دارن می‌خواد یه سرویسِ پس‌زمینه بسازه که ساعت‌ها پردازشِ طولانی انجام می‌ده، روی سرورهای لینوکسی. چون Node.js آشناست، پیشنهاد می‌کنن همون رو انتخاب کنن. نظرِ معمار طبقِ درس چیه؟",
     "options": [
-      "اپ‌های وبی با عملیاتِ I/O همزمانِ زیاد",
-      "فرایندهای طولانی‌مدت — یعنی نباید برای ساختنِ سرویس ازش استفاده کرد",
-      "اپ‌هایی با concurrency بالا",
-      "اپلیکیشن‌هایی با سینتکسِ JavaScript"
+      "Node.js درسته چون performance عالی داره و چون یه فرایندِ طولانی فقط I/O زیادی داره، پس تقریباً برای هر نوع اپلیکیشنی ایده‌آله",
+      "PHP بهتره چون یادگیریش از همه راحت‌تره و همین راحتی ارزشش رو برای کامپوننت‌های طولانی‌مدتِ سرور هم بالا می‌بره و ریسکی نداره",
+      "Node.js برای فرایندهای طولانی‌مدت هدف‌گذاری نشده؛ برای سرویس باید سراغِ Java، .NET Core یا Python رفت",
+      ".NET Classic بهترینه چون static-typed و بالغه و کراس‌پلتفرم‌نبودنش مهم نیست؛ لینوکس فقط یه جزئیاته که با تنظیم حل می‌شه"
     ],
-    "correct_option": 1,
-    "expected_outcome": "درس صراحتاً می‌گه Node.js برای فرایندهای طولانی‌مدت هدف‌گذاری نشده، پس نباید برای ساختنِ سرویس ازش استفاده کرد — ولی برای اپ‌های وبِ با I/O همزمانِ زیاد باید بالای لیست باشه.",
+    "correct_option": 2,
+    "expected_outcome": "Node.js برای اپ‌های وبِ با I/O همزمان و کوتاه عالیه ولی برای فرایندهای طولانی‌مدت (سرویس) توصیه نمی‌شه. PHP هم تمرکزی روی کامپوننت‌های طولانی نداره و .NET Classic فقط ویندوز بود.",
     "hints": [
-      "درس یه جمله‌ی صریح داره: «پس برای ساختنِ سرویس ازش استفاده نکن».",
-      "این محدودیت با بهینه‌بودنش برای concurrency در تضاد نیست — دو موضوعِ جدان."
+      "Node.js رو برای چه نوع کاری توصیه نکرده بودن؟",
+      "محیطِ اجرا لینوکسه؛ کدوم کاندیدا اون رو پوشش نمی‌داد؟"
     ],
-    "rubric": "Correct only if option 1 is selected."
+    "rubric": "Correct only if option 2 is selected."
   },
   {
-    "key": "dotnet-classic-limitation",
-    "title": "بزرگ‌ترین محدودیتِ .NET Classic",
-    "form": "short_answer",
+    "key": "dotnet-on-linux",
+    "title": "استفاده از دنیای مایکروسافت روی لینوکس",
+    "form": "mcq",
     "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "طبق این درس، بزرگ‌ترین محدودیتِ .NET Classic نسبت به بقیه‌ی گزینه‌های این جدول چیه؟",
-    "expected_outcome": ".NET Classic کراس‌پلتفرم نیست — فقط برای اپلیکیشن‌های مبتنی بر ویندوز مرتبطه، درحالی‌که بقیه‌ی گزینه‌های جدول (به‌جز همین یکی) کراس‌پلتفرم‌ان.",
-    "hints": [
-      "به ستونِ «کراس‌پلتفرم» توی جدولِ جمع‌بندی نگاه کن — فقط یه ردیف «نه» داره.",
-      "درس این محدودیت رو با یه جمله‌ی کوتاه و مستقیم بیان می‌کنه."
+    "prompt": "سازمانی که با ابزارهای مایکروسافت راحته (Visual Studio، C#) می‌خواد یه وب API سریع بسازه که روی کانتینرهای لینوکسی اجرا بشه. کدوم انتخاب با جدولِ مقایسه‌ی درس می‌خونه؟",
+    "options": [
+      ".NET Classic؛ چون بالغ‌ترین نسخه‌ست و با وجودِ اینکه روی ویندوز تعریف شده، بدونِ هیچ محدودیتی روی لینوکس هم اجرا می‌شه",
+      "Node.js؛ چون تنها گزینه‌ی هم static-typed هم کراس‌پلتفرمه و بنابراین جایگزینِ مستقیمِ دنیای مایکروسافت حساب می‌شه",
+      ".NET Core؛ نسلِ بعدیِ .NET که کراس‌پلتفرمه و سریعه، به شرطِ اینکه چند کمبودِ اون دوره (مثل ORM و OData) رو بپذیرن",
+      "Java؛ چون Java تنها پلتفرمِ کراس‌پلتفرمِ لیسته و فقط با Visual Studio می‌شه کدش رو نوشت، پس با ابزارهای تیم هم‌خوانه"
     ],
-    "rubric": "Correct if response identifies .NET Classic is not cross-platform / Windows-only. Incorrect if it names a different limitation or gives no answer."
-  },
-  {
-    "key": "pick-platform-scenario",
-    "title": "یه تیم که با Python و Postgres راحته",
-    "form": "scenario",
-    "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه تیمِ توسعه با Python و Postgres تجربه‌ی زیادی داره و قراره یه سرویسِ داده‌محورِ نه‌چندان پیچیده بسازه که نیازِ خاصی به performanceِ فوق‌العاده نداره. طبق این درس، آیا باید مجبورشون کرد به‌جاش .NET Core یا Java یاد بگیرن؟ چرا؟",
-    "expected_outcome": "نه، لازم نیست. درس می‌گه تقریباً هر ترکیبی کار می‌کنه، فقط پلتفرم باید بتونه به‌شکلِ لازم (کنسول/سرویس/وب) پیاده بشه و به دیتابیس دسترسی داشته باشه. Python هم برای این کار کاملاً مناسبه.",
+    "correct_option": 2,
+    "expected_outcome": ".NET Classic فقط برای ویندوزه؛ .NET Core با هدفِ پشتیبانی از cross-platform و performance ساخته شد. Node.js dynamic-typed و Java هم با IDEهای زیادی کار می‌کنه.",
     "hints": [
-      "درس درباره‌ی یه ترکیبِ مشابه (Python و Postgres) صراحتاً مثال می‌زنه — چی درباره‌ش می‌گه؟",
-      "به این فکر کن: آیا تصمیمِ پشته‌ی فناوری باید فارغ از تجربه‌ی تیم گرفته بشه؟"
+      "کدوم نسخه‌ی .NET کراس‌پلتفرم نیست؟",
+      "هدفِ اصلیِ .NET Core چه شکافی رو پر می‌کرد؟"
     ],
-    "rubric": "Correct if response says no, explains almost any combination works as long as the platform meets the technical needs, and references sticking with the team's existing experience. Correct_with_hint if it says \"no\" without the reasoning. Incorrect if it recommends switching platforms without justification."
+    "rubric": "Correct only if option 2 is selected."
   }
 ]

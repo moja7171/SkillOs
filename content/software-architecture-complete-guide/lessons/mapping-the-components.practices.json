@@ -1,51 +1,44 @@
 [
   {
-    "key": "five-final-components",
-    "title": "پنج جزءِ نهایی کدومن؟",
+    "key": "why-a-handler",
+    "title": "چرا Handler جدا از Receiver؟",
     "form": "mcq",
-    "difficulty": "intro",
+    "difficulty": "core",
     "estimated_minutes": 2,
-    "prompt": "طبق این درس، اجزای نهاییِ اپلیکیشنِ IO2 کدومن؟",
+    "prompt": "Receiver باید ۵۰۰ درخواستِ همزمان از دستگاه‌های IoT بگیره. پیام‌ها چهار فرمتِ مختلف دارن و باید اعتبارسنجی و به فرمتِ یکسان تبدیل بشن. چرا این کار به یه جزءِ جدا (Handler) سپرده می‌شه؟",
     "options": [
-      "فقط Receiver و Info",
-      "Receiver، Handler، Info، سرویسِ لاگِ مرکزی، دیتاستورِ مشترک",
-      "Receiver، Validator، Parser، Info",
-      "فقط یه جزءِ واحدِ مونولیتی"
+      "چون Receiver باید درخواست رو خیلی سریع آزاد کنه؛ پس فقط پیام رو می‌گیره و ذخیره می‌کنه و اعتبارسنجی و تبدیل با Handler انجام می‌شه",
+      "چون هر جزء حتماً باید فقط یک وظیفه داشته باشه و Receiver با گرفتنِ پیام و اعتبارسنجیِ همزمان این اصل رو نقض می‌کرد و جلوی رشد رو می‌گرفت",
+      "چون برای هر نوعِ دستگاه باید یه Receiverِ جدا ساخته بشه و Handler فقط نقشِ هماهنگ‌کننده‌ی این چهار Receiver رو داره",
+      "چون Info به‌طور مستقیم باید پیام‌های دستگاه رو اعتبارسنجی کنه و Handler صرفاً پیام‌ها رو برای Info آماده می‌کنه تا خودش پردازششون کنه"
     ],
-    "correct_option": 1,
-    "expected_outcome": "پنج جزء: Receiver (دریافتِ پیام)، Handler (اعتبارسنجی+پردازش+ذخیره)، Info (کوئریِ کاربر)، سرویسِ لاگِ مرکزی، و یه دیتاستورِ مشترک.",
+    "correct_option": 0,
+    "expected_outcome": "Receiver زیرِ بارِ سنگینه و نباید وظایفِ اضافه داشته باشه. اعتبارسنجی و تبدیلِ پیام به فرمتِ یکسان (که داده رو از منبعش مستقل می‌کنه) توی جزءِ جدا انجام می‌شه.",
     "hints": [
-      "درس جمع‌بندیِ نهایی رو با «خب، عالیه» و اسمِ هر پنج جزء می‌ده.",
-      "توجه کن اعتبارسنجی و پردازش با هم یه جزءِ واحدن (Handler)، نه دو جزءِ جدا."
+      "Receiver باید چقدر زود درخواست رو آزاد کنه؟",
+      "ربطی بین Info و پیام‌های ورودی هست؟"
     ],
-    "rubric": "Correct only if option 1 is selected."
+    "rubric": "Correct only if option 0 is selected."
   },
   {
-    "key": "why-receiver-fast-release",
-    "title": "چرا Receiver باید سریع درخواست رو آزاد کنه؟",
-    "form": "short_answer",
+    "key": "validation-and-processing",
+    "title": "اعتبارسنجی و پردازش: یک جزء یا دو؟",
+    "form": "mcq",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، چرا مهمه که Receiver درخواستِ به‌روزرسانیِ پیام رو تا حد ممکن سریع آزاد کنه؟",
-    "expected_outcome": "چون Receiver قراره زیرِ بارِ سنگین (۵۰۰ درخواستِ همزمان) کار کنه؛ به‌ازای هر میلی‌ثانیه‌ای که روی یه پیام کار می‌کنه، پیام‌های بیشتری منتظرِ پردازش‌ان — اگه سریع آزاد نکنه، به وضعیتِ کمبودِ thread می‌رسیم و سرویس شروع می‌کنه به پرتاب‌کردنِ استثنا.",
+    "estimated_minutes": 2,
+    "prompt": "توی Handler هم اعتبارسنجی هست هم پردازش. همکارت می‌گه «هر جزء باید فقط یک کار بکنه، پس برای پردازش یه جزءِ جدا بساز». کدوم جواب با استدلالِ درس می‌خونه؟",
+    "options": [
+      "جداشون کن، چون هر جزء حتماً باید فقط یک مسئولیت داشته باشه و تعدادِ فرایندها هیچ‌وقت نباید روی تصمیم‌های معماری اثر بذاره و مهم نیست",
+      "جداشون کن، چون جزءِ جدا همیشه مقیاس‌پذیریِ بیشتری می‌ده و هزینه‌ی نگهداریِ فرایندِ اضافه در برابرِ این مزیت ناچیزه",
+      "اینجا یه جزءِ واحد بهتره؛ این دو دست‌به‌دستِ هم می‌رن و جزءِ اضافه یه فرایندِ دیگه برای نگهداریه که توجیهی نداره",
+      "اعتبارسنجی و پردازش رو به Info بده، چون Info نزدیک‌ترین جزء به داده‌ی ذخیره‌شده‌ست و می‌تونه همه‌ی کارها رو یک‌جا بکنه"
+    ],
+    "correct_option": 2,
+    "expected_outcome": "درس می‌گه جوابِ قطعی نداره (بعضی‌ها «یک جزء یک وظیفه» رو می‌گن)، ولی اینجا اعتبارسنجی و پردازش از دیدِ بالاتر یه سرویسِ واحدن و جزءِ اضافه فقط هزینه‌ی نگهداری اضافه می‌کنه.",
     "hints": [
-      "درس این دلیل رو مستقیم بعد از اشاره به بارِ ۵۰۰ درخواستِ همزمان توضیح می‌ده.",
-      "به این فکر کن: اگه Receiver کند باشه، صفِ درخواست‌های منتظر چه اتفاقی می‌افته؟"
+      "هر جزءِ اضافه چه هزینه‌ای داره؟",
+      "این دو کار از بالا چطور به‌نظر می‌رسن؟"
     ],
-    "rubric": "Correct if response explains the heavy 500-concurrent-request load means delays compound and risk thread starvation/exceptions. Incorrect if it gives a vague or unrelated answer."
-  },
-  {
-    "key": "validation-and-processing-together",
-    "title": "چرا اعتبارسنجی و پردازش یه جزءِ واحدن؟",
-    "form": "explanation",
-    "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "طبق این درس، دو دیدگاه درباره‌ی اینکه اعتبارسنجی و پردازش باید یه جزءِ واحد باشن یا دو جزءِ جدا وجود داره. کدوم دیدگاه انتخاب شد، و چرا؟",
-    "expected_outcome": "دیدگاهِ دوم انتخاب شد: هر دو با هم یه جزءِ واحد (Handler) می‌شن. چون اعتبارسنجی کارِ نسبتاً کوچیک و غیراتمیکیه و بدونِ پردازش ارزشی نداره، و علاوه بر این، هر جزءِ اضافه یعنی یه فرایندِ دیگه که باید نگهداری بشه — که توی این سناریو هیچ توجیهی نداره.",
-        "hints": [
-      "درس دو دیدگاه رو با «بعضی می‌گن» و «بقیه می‌گن» معرفی می‌کنه.",
-      "به این فکر کن: هزینه‌ی نگهداریِ یه جزءِ اضافه چیه، و آیا اینجا توجیه‌پذیره؟"
-    ],
-    "rubric": "Correct if response identifies the second view was chosen (combine into one component) and explains both reasons: validation alone has no value without processing, and extra components mean extra maintenance overhead without justification. Correct_with_hint if only the conclusion is given without reasoning. Incorrect if it says they were split into separate components."
+    "rubric": "Correct only if option 2 is selected."
   }
 ]

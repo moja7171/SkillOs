@@ -1,37 +1,23 @@
 [
   {
-    "key": "when-to-catch",
-    "title": "کِی باید catch کنیم؟",
+    "key": "giant-try-catch",
+    "title": "try/catchِ سرتاسریِ متد",
     "form": "mcq",
-    "difficulty": "intro",
-    "estimated_minutes": 2,
-    "prompt": "طبق این درس، چه وقتی catch‌کردنِ یه استثنا منطقیه؟",
-    "options": [
-      "همیشه، حتی اگه فقط بخوایم توی لاگ بنویسیمش",
-      "وقتی یه اکشنِ مشخص باید انجام بشه — مثل rollback، retry، یا wrap‌کردنِ استثنا",
-      "هیچ‌وقت؛ همیشه باید بذاریم استثنا بترکه",
-      "فقط وقتی کد توی محیطِ production باشه"
-    ],
-    "correct_option": 1,
-    "expected_outcome": "فقط وقتی که یه اکشنِ مشخص باید موقعِ پرتاب‌شدنِ استثنا انجام بشه — مثل rollback‌کردنِ تراکنش، اجرای retry، یا wrap‌کردنِ استثنا — catch‌کردنش منطقیه. صرفِ نوشتن توی لاگ کافی نیست؛ این کار رو می‌شه با یه مکانیزمِ مرکزی انجام داد.",
-    "hints": [
-      "درس صراحتاً می‌گه صرفاً لاگ‌نوشتن، «معمولاً روشِ خوبی نیست».",
-      "درس سه مثالِ مشخص از اکشن‌های منطقی می‌زنه — کدوم گزینه بهشون اشاره داره؟"
-    ],
-    "rubric": "Correct only if option 1 is selected."
-  },
-  {
-    "key": "smallest-code-fragment",
-    "title": "try/catch روی کلِ متد؟",
-    "form": "scenario",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "یه متد از اول تا آخرش با یه `try/catch` بزرگ احاطه شده، و داخلش هم به دیتابیس دسترسی داره، هم یه تقسیم انجام می‌ده. طبق این درس، این رویکرد چه مشکلی داره و رویکردِ درست چیه؟",
-    "expected_outcome": "این یه اشتباهِ رایجه — درس می‌گه try/catch باید روی کوچیک‌ترین تکه‌کدِ ممکن استفاده بشه. رویکردِ درست اینه که خطِ دسترسیِ دیتابیس با catchِ مخصوصِ استثنای SQL احاطه بشه، و خطِ تقسیم جداگونه با catchِ مخصوصِ تقسیم‌بر‌صفر — نه یه catchِ عمومیِ واحد برایِ کلِ متد.",
-    "hints": [
-      "درس صراحتاً می‌گه متدهایی که از اول تا آخر یه try/catch دارن، «این اشتباهه».",
-      "درس دو مثالِ دقیقاً همین سناریو (دیتابیس و تقسیم) رو با هم میاره."
+    "estimated_minutes": 2,
+    "prompt": "یه متدِ سی‌خطی از اولین تا آخرین خط توی `try` و `catch (Exception)` هست؛ catch فقط لاگ می‌نویسه و ادامه می‌ده. وسطش یه خط به دیتابیس می‌ره و یه خط تقسیم داره. کدوم اصلاح با درس می‌خونه؟",
+    "options": [
+      "catch عمومی بمونه ولی توش rollback بذار، چون هر استثنایی یعنی مشکل و برگرداندنِ تراکنش همیشه امن‌ترین واکنشه، حتی برای تقسیم بر صفر",
+      "برای تمامِ خط‌های متد try/catchِ جدا بذار، حتی خط‌هایی که هیچ استثنایی ازشون پرتاب نمی‌شه، تا مطمئن باشیم هیچ چیزی ازقلم نمی‌افته",
+      "try/catch فقط دورِ خطِ دیتابیس با استثنای مشخصِ SQL، اونم برای کاری مثلِ rollback یا retry؛ لاگِ ساده با مکانیزمِ مرکزی",
+      "همه‌ی catchها حذف بشن و استثناها بی‌صدا از متد عبور کنن تا برنامه بی‌اینکه خطایی نشون بده و بدونِ هیچ لاگی به کارش ادامه بده"
     ],
-    "rubric": "Correct if response identifies the whole-method try/catch as a mistake and explains the fix: wrap each specific risky line (database access, division) separately with its own targeted catch. Correct_with_hint if only the mistake is named without the fix. Incorrect if it defends the whole-method approach."
+    "correct_option": 2,
+    "expected_outcome": "فقط وقتی catch کن که کاری باهاش داری، همیشه استثنای مشخص بگیر، و try/catch رو روی کوچک‌ترین تکه‌کد بذار. catchِ عمومی ممکنه تقسیم بر صفر رو با خطای دیتابیس اشتباه بگیره و rollbackِ بی‌معنی بزنه.",
+    "hints": [
+      "catchِ بدونِ نوعِ مشخص چه استثناهای نامربوطی رو هم می‌گیره؟",
+      "چه کارهایی دلیلِ موجهِ catch کردن‌ان؟"
+    ],
+    "rubric": "Correct only if option 2 is selected."
   }
 ]

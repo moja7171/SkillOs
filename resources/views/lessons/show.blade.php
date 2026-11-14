@@ -29,7 +29,15 @@
     $position = $course->lessons->search(fn ($l) => $l->id === $lesson->id) + 1;
 @endphp
 <x-app-layout :title="$lesson->title">
-    <div x-data="{ sidebar: false }" @keydown.escape.window="sidebar = false" class="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+    <div x-data="{
+            sidebar: false,
+            doneIds: {{ Js::from($doneLessonIds->values()->all()) }},
+            total: {{ $total }},
+            isDone(id) { return this.doneIds.includes(id); },
+            markDone(id) { if (id && ! this.isDone(id)) { this.doneIds.push(id); } },
+            countDone(ids) { return ids.filter((id) => this.isDone(id)).length; },
+            fa(n) { return String(n).replace(/[0-9]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[d]); },
+        }" @lesson-done.window="markDone($event.detail?.lessonId)" @keydown.escape.window="sidebar = false" class="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
 
         {{-- ================= Lesson (right side in RTL) ================= --}}
         <div class="min-w-0">
@@ -194,8 +202,8 @@
             <div class="px-4 py-3.5 border-b border-line flex items-start gap-3">
                 <div class="min-w-0 flex-1">
                     <a href="{{ route('courses.show', $course) }}" class="block font-bold text-[14px] text-ink hover:text-accent-text truncate">{{ $course->title }}</a>
-                    <div class="text-[12px] text-muted mt-0.5">{{ fa_num($doneCount) }} از {{ fa_num($total) }} درس انجام‌شده@if ($practicesTotal) · {{ fa_num($practicesPassedTotal) }} از {{ fa_num($practicesTotal) }} تمرین پاس‌شده@endif</div>
-                    <div class="levelbar mt-2 !gap-0 bg-surface2" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $total }}" aria-valuenow="{{ $doneCount }}" aria-label="پیشرفت دوره"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);"></span></div>
+                    <div class="text-[12px] text-muted mt-0.5"><span x-text="fa(doneIds.length)">{{ fa_num($doneCount) }}</span> از {{ fa_num($total) }} درس انجام‌شده@if ($practicesTotal) · {{ fa_num($practicesPassedTotal) }} از {{ fa_num($practicesTotal) }} تمرین پاس‌شده@endif</div>
+                    <div class="levelbar mt-2 !gap-0 bg-surface2" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $total }}" aria-valuenow="{{ $doneCount }}" :aria-valuenow="doneIds.length" aria-label="پیشرفت دوره"><span style="width: {{ $total ? round($doneCount / $total * 100, 1) : 0 }}%; background: var(--ok);" :style="{ width: (total ? Math.round(doneIds.length / total * 1000) / 10 : 0) + '%' }"></span></div>
                 </div>
                 <button type="button" class="iconbtn lg:hidden shrink-0" @click="sidebar = false" title="بستن فهرست درس‌ها" aria-label="بستن فهرست درس‌ها"><x-icon name="x" class="w-4 h-4" /></button>
             </div>
@@ -220,7 +228,7 @@
                             <button type="button" @click="open = !open" class="w-full flex items-center gap-2 px-4 py-3 text-start bg-surface2 hover:bg-hover">
                                 <div class="min-w-0 flex-1">
                                     <div class="text-[13px] font-semibold truncate">{{ $sectionTitle }}</div>
-                                    <div class="text-[11.5px] text-faint mt-0.5">{{ fa_num($sectionDone) }} / {{ fa_num($items->count()) }} · {{ fa_num($sectionMinutes) }} دقیقه</div>
+                                    <div class="text-[11.5px] text-faint mt-0.5"><span x-text="fa(countDone({{ Js::from($items->pluck('id')->values()->all()) }}))">{{ fa_num($sectionDone) }}</span> / {{ fa_num($items->count()) }} · {{ fa_num($sectionMinutes) }} دقیقه</div>
                                 </div>
                                 <x-icon name="chevron" class="w-3.5 h-3.5 text-faint transition-transform" ::class="open ? '-rotate-90' : 'rotate-90'" />
                             </button>
@@ -232,11 +240,13 @@
                                     $itemPractice = $coursePracticeProgress[$item->id] ?? null;
                                 @endphp
                                 <a href="{{ $item->url() }}" @if ($isCurrent) data-current aria-current="page" @endif
-                                   class="flex items-start gap-2.5 px-4 py-2.5 text-[13px] leading-[1.5] border-s-2 {{ $isCurrent ? 'bg-surface2 border-accent text-ink' : 'border-transparent text-ink hover:bg-hover' }}">
+                                   class="flex items-start gap-2.5 px-4 py-2.5 text-[13px] leading-[1.5] border-s-4 text-ink {{ $isCurrent ? 'lesson-nav-current' : 'border-transparent hover:bg-hover' }}">
                                     <span class="mt-[3px] flex items-center gap-1 shrink-0">
                                         <span class="w-4 h-4 rounded-full grid place-items-center text-[10px]" title="{{ $isLessonDone($item) ? 'درس انجام شده' : 'درس انجام نشده' }}"
-                                              style="{{ $isLessonDone($item) ? 'background: var(--ok); color: #fff;' : 'border: 1.5px solid var(--line2);' }}">
-                                            @if ($isLessonDone($item))<x-icon name="check" class="w-2.5 h-2.5" />@endif
+                                              :title="isDone({{ $item->id }}) ? 'درس انجام شده' : 'درس انجام نشده'"
+                                              style="{{ $isLessonDone($item) ? 'background: var(--ok); color: #fff;' : 'border: 1.5px solid var(--line2);' }}"
+                                              :style="isDone({{ $item->id }}) ? 'background: var(--ok); color: #fff;' : 'border: 1.5px solid var(--line2);'">
+                                            <span x-show="isDone({{ $item->id }})" @unless ($isLessonDone($item)) x-cloak @endunless class="grid place-items-center"><x-icon name="check" class="w-2.5 h-2.5" /></span>
                                         </span>
                                         @if ($itemPractice)
                                             <span class="w-4 h-4 rounded-full grid place-items-center text-[10px]" title="تمرین‌ها: {{ fa_num($itemPractice['passed']) }} از {{ fa_num($itemPractice['total']) }}"
@@ -246,11 +256,11 @@
                                         @endif
                                     </span>
                                     <span class="min-w-0 flex-1">
-                                        <span class="block truncate {{ $isCurrent ? 'font-semibold' : '' }}"><span class="num me-1">{{ $item->order + 1 }}.</span>{{ $item->title }}</span>
+                                        <span class="block truncate lesson-nav-title {{ $isCurrent ? 'font-semibold' : '' }}"><span class="num me-1">{{ $item->order + 1 }}.</span>{{ $item->title }}</span>
                                         <span class="block text-[11.5px] text-faint flex items-center gap-1.5">
                                             @if ($item->videos_count)<x-icon name="video" class="w-3 h-3" />@else<x-icon name="text" class="w-3 h-3" />@endif
                                             {{ fa_num($item->estimated_minutes) }} دقیقه
-                                            @if ($isLessonDone($item) && $itemPractice && ! $isPracticeDone($item))<span class="text-l1">· تمرین مونده</span>@endif
+                                            @if ($itemPractice && ! $isPracticeDone($item))<span class="text-l1" x-show="isDone({{ $item->id }})" @unless ($isLessonDone($item)) x-cloak @endunless>· تمرین مونده</span>@endif
                                         </span>
                                     </span>
                                 </a>

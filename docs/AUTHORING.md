@@ -164,6 +164,8 @@ Sanity check at the end of a section: every lesson `.md` > 800 bytes, every prac
 
 ## 6. Practices: what good ones look like
 
+> **Practice only where it earns its place (owner rule, 2026-11-14, DECISIONS.md §76).** Don't give every lesson practices. Introductions, summaries, previews, purely descriptive and opinion lessons get none (an empty `[]` practices file); keep 1–3 scenario/decision practices on lessons that teach a skill or a choice.
+
 > **Non-programming courses are MCQ-only, and MCQs must be hard (owner rule, 2026-11-03, DECISIONS.md §69).** Two types exist: `coding` (programming courses only) and `mcq`. Author an MCQ as a scenario or a decision, not a recall question; every wrong option is a real misconception or a half-true statement as long and specific as the right one (never make the right option the longest); spread `correct_option` evenly over 0–3 (`validate.py` warns on both tells). The `short_answer` rules below apply only to the older Python courses.
 
 > **No essay-style answers (owner rule, 2026-09-22, DECISIONS.md §64).** Every non-mcq, non-coding practice must be a true `short_answer`: recall a specific fact/term/name/number/reason in 1–2 words, not a paragraph of reasoning. A prompt may ask for more than one such short answer when natural (two or three named items), but never "explain in 3–4 sentences." `explanation` and `scenario` are **legacy forms** — don't author new ones; existing ones in other courses get migrated over time, starting with `requirements-engineering`.
@@ -218,3 +220,6 @@ php artisan content:import <slug>                                      # loads c
 ```
 
 File `content/<slug>/glossary/<video-file-stem>.json`: `{"version":1,"video":"…mp4","cues":{"<start ms>": {"t":"Persian translation of the line","w":[{"s":"load balancer","fa":"…","n":"optional one-line Persian explanation"}]}}}`. `s` must be the exact text from the cue (whole words, any case); `fa` ≤ 6 words, English technical terms stay English with a Persian gloss. Cue key = the cue's start time in ms in the English `.vtt` (the platform's `--- … ---` banner cue is skipped). Review a few videos by reading `t`/`w` against the transcript before bulk-generating a whole course; a hand-fixed entry survives re-runs only if all cues of its 14-cue chunk are present.
+
+Bulk generation tips (DECISIONS.md §75): the relay often answers 503 — rerun; the command stops at the first failed request and resumes per chunk, so wrap it in a loop that passes the *remaining* request budget as `--max-requests`. Model chain via env only: `GEMINI_GENERATE_MODELS='gemini-3.5-flash:minimal,gemini-3.5-flash-lite'` when flash's daily quota is free (resets ~11:30 Tehran), else `'gemini-3.5-flash-lite,gemini-3.1-flash-lite'`. After a run, `--check` lists missing cues; add skipped ones by hand (one line per cue, key = start ms, `"w":[]` is fine). Never put keys in files or commits.
+

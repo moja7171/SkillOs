@@ -59,7 +59,7 @@ class LessonMarkDoneTest extends TestCase
         $this->assertFalse($lesson->isMarkedDoneBy($user));
 
         $this->actingAs($user)->post(route('lesson-videos.watched', $video2))
-            ->assertOk()->assertJson(['watched' => true, 'lesson_done' => true]);
+            ->assertOk()->assertJson(['watched' => true, 'lesson_done' => true, 'lesson_id' => $lesson->id]);
         $this->assertTrue($lesson->fresh()->isMarkedDoneBy($user));
 
         // Re-watching never records a second completion.

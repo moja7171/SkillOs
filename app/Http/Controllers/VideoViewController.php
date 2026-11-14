@@ -32,6 +32,6 @@ class VideoViewController extends Controller
             $lessonDone = true;
         }
 
-        return response()->json(['watched' => true, 'lesson_done' => $lessonDone]);
+        return response()->json(['watched' => true, 'lesson_done' => $lessonDone, 'lesson_id' => $lesson->id]);
     }
 }

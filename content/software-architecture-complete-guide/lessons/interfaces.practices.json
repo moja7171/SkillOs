@@ -1,37 +1,23 @@
 [
   {
-    "key": "new-is-glue",
-    "title": "«new چسبه» یعنی چی؟",
+    "key": "new-is-sticky",
+    "title": "new چسبه",
     "form": "mcq",
-    "difficulty": "intro",
-    "estimated_minutes": 2,
-    "prompt": "طبق این درس، ضرب‌المثلِ «new چسبه» به چه معنیه؟",
-    "options": [
-      "کلیدواژه‌ی new همیشه کندتر از سایرِ روش‌های ساختِ آبجکته",
-      "هر جا کلیدواژه‌ی new رو مستقیم برای ساختنِ یه آبجکتِ کلاسِ دیگه ببینی، یعنی اتصالِ محکم بینِ اون دو کلاس وجود داره",
-      "new فقط توی زبان‌های dynamically-typed کار می‌کنه",
-      "new همیشه باید داخلِ constructor استفاده بشه"
-    ],
-    "correct_option": 1,
-    "expected_outcome": "هر جا کلیدواژه‌ی new رو مستقیم ببینی، یعنی یه پیوندِ محکم و اتصالِ قوی بینِ دو کلاس هست — که معمولاً ایده‌ی بدیه و کد رو کمتر ماژولار می‌کنه.",
-    "hints": [
-      "درس این ضرب‌المثل رو با فونتِ بولد معرفی می‌کنه و مستقیم توضیحش می‌ده.",
-      "به مثالِ `new Calculator()` توی کدِ اولِ درس فکر کن — این خط چه مشکلی داره؟"
-    ],
-    "rubric": "Correct only if option 1 is selected."
-  },
-  {
-    "key": "interface-hides-implementation",
-    "title": "کلاس اصلی چی رو نمی‌دونه؟",
-    "form": "short_answer",
     "difficulty": "core",
-    "estimated_minutes": 3,
-    "prompt": "توی نسخه‌ی دوم کدِ این درس، `MainClass` از `ICalculator calc = CalculatorFactory.GetInstance()` استفاده می‌کنه. کلاس اصلی دقیقاً چه چیزی رو دیگه نمی‌دونه، و این چه فایده‌ای داره؟",
-    "expected_outcome": "کلاس اصلی نمی‌دونه پیاده‌سازیِ مشخصِ ماشین‌حساب کدومه — می‌تونه همون کلاسِ قبلی باشه یا یه کلاسِ کاملاً متفاوت. فایده‌ش اینه که می‌شه پیاده‌سازی رو عوض کرد بدونِ اینکه کلاسِ اصلی یا بقیه‌ی کد ازش خبردار بشن.",
-    "hints": [
-      "درس می‌گه اینترفیس «چه کاری می‌تونه بکنه» رو تعریف می‌کنه، ولی «هیچ اشاره‌ای به پیاده‌سازیِ مشخص» نداره.",
-      "به این فکر کن: چرا این ندونستن، خودش یه مزیته، نه یه محدودیت؟"
+    "estimated_minutes": 2,
+    "prompt": "MainClass این خط رو داره: `private Calculator calc = new Calculator();`. می‌خوایم بعداً بتونیم ماشین‌حسابِ پیشرفته‌تری جایگزین کنیم بدونِ دست‌زدن به MainClass. کدوم راه واقعاً مشکل رو حل می‌کنه؟",
+    "options": [
+      "یه اینترفیس ICalculator تعریف کن و MainClass فقط به اون ارجاع بده؛ پیاده‌سازی رو از یه متدِ فکتوری مثلِ GetInstance بگیر",
+      "فقط نوعِ متغیر رو به ICalculator عوض کن ولی new Calculator() رو همون‌جا نگه دار؛ چون نوعِ متغیر اینترفیسه، کلاس دیگه به Calculator گره نخورده",
+      "از Calculator یه کلاسِ فرزندِ پیشرفته بساز و هر جایی که لازمه جایگزین کن، چون ارث‌بری اتصالِ بینِ کلاس‌ها رو سست می‌کنه و بدونِ تغییر کار می‌کنه",
+      "همون new رو نگه دار ولی کلاس رو static کن؛ چون وقتی نمونه‌ای ساخته نمی‌شه دیگه چیزی به چیزی نمی‌چسبه و جایگزینی هم ساده می‌شه"
     ],
-    "rubric": "Correct if response explains the main class no longer knows the concrete implementation class, and connects this to being able to swap implementations without affecting calling code. Incorrect if it gives a vague or unrelated answer."
+    "correct_option": 0,
+    "expected_outcome": "«new چسبه»: هر new یعنی اتصالِ محکم. با اینترفیس، کلاسِ اصلی نمی‌دونه کدوم پیاده‌سازی رو داره؛ نگه‌داشتنِ new Calculator() حتی با نوعِ اینترفیس هنوز اون پیوند رو نگه می‌داره.",
+    "hints": [
+      "کلاسِ اصلی باید اسمِ کدوم کلاس رو توی کدش اصلاً ننویسه؟",
+      "پیاده‌سازی از کجا میاد، اگه خودِ کلاس نسازدش؟"
+    ],
+    "rubric": "Correct only if option 0 is selected."
   }
 ]

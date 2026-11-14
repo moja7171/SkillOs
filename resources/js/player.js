@@ -34,7 +34,7 @@ function markWatched(id) {
         headers: { 'X-CSRF-TOKEN': token, Accept: 'application/json' },
     })
         .then((response) => response.json())
-        .then((data) => { if (data.lesson_done) window.dispatchEvent(new CustomEvent('lesson-done')); })
+        .then((data) => { if (data.lesson_done) window.dispatchEvent(new CustomEvent('lesson-done', { detail: { lessonId: data.lesson_id } })); })
         .catch(() => { /* best-effort; a missed ping just leaves the lesson open until the next view */ });
     window.dispatchEvent(new CustomEvent('video-watched', { detail: { videoId: Number(id) } }));
 }

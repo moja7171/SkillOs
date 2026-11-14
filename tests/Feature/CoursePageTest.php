@@ -66,14 +66,31 @@ class CoursePageTest extends TestCase
         $lesson = Lesson::factory()->withActivities()->create();
         Enrollment::factory()->for($user)->for($lesson->course)->create();
 
-        $this->actingAs($user)->get($lesson->url())->assertOk()
-            ->assertSee('۰ از ۱ درس انجام‌شده')
-            ->assertDontSee('تمرین مونده');
+        // Not done yet: the flag is in the markup but hidden (x-cloak) until the lesson-done event fires.
+        $html = $this->actingAs($user)->get($lesson->url())->assertOk()
+            ->assertSee('>۰</span> از ۱ درس انجام‌شده', false)
+            ->getContent();
+        $this->assertMatchesRegularExpression('/x-cloak\s*>· تمرین مونده/u', $html);
 
         $this->actingAs($user)->post(route('lessons.mark-done', $lesson));
-        $this->actingAs($user)->get($lesson->url())->assertOk()
-            ->assertSee('۱ از ۱ درس انجام‌شده')
+        $html = $this->actingAs($user)->get($lesson->url())->assertOk()
+            ->assertSee('>۱</span> از ۱ درس انجام‌شده', false)
             ->assertSee('۰ از ۱ تمرین پاس‌شده')
-            ->assertSee('تمرین مونده');
+            ->getContent();
+        $this->assertMatchesRegularExpression('/>\s*· تمرین مونده/u', $html);
+        $this->assertDoesNotMatchRegularExpression('/x-cloak\s*>· تمرین مونده/u', $html);
+    }
+
+    public function test_the_lesson_sidebar_is_wired_to_update_live_when_a_lesson_finishes(): void
+    {
+        $user = User::factory()->create();
+        $lesson = Lesson::factory()->withActivities()->create();
+        Enrollment::factory()->for($user)->for($lesson->course)->create();
+
+        $this->actingAs($user)->get($lesson->url())->assertOk()
+            ->assertSee('@lesson-done.window="markDone($event.detail?.lessonId)"', false)
+            ->assertSee('doneIds: []', false)
+            ->assertSee('isDone('.$lesson->id.')', false)
+            ->assertSee('lesson-nav-current');
     }
 }

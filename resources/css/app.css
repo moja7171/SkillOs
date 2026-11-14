@@ -148,3 +148,10 @@
 .player-shell .iw-en { color: var(--faint); text-align: left; unicode-bidi: isolate; }
 .player-shell .iw-fa { margin-top: 2px; color: var(--ink); }
 .player-shell .iw-meaning.is-error { color: var(--muted); font-weight: 400; font-size: 13px; }
+
+/* Active lesson in the curriculum sidebar — distinct from the section headers (bg-surface2) and hover rows. */
+.lesson-nav-current {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+}
+.lesson-nav-current .lesson-nav-title { color: var(--accent-text); }
